@@ -1,0 +1,82 @@
+#!/usr/bin/env doomscript
+;; -*- lexical-binding: t; -*-
+
+;; Copyright 2024 Google LLC
+;;
+;; Licensed under the Apache License, Version 2.0 (the "License");
+;; you may not use this file except in compliance with the License.
+;; You may obtain a copy of the License at
+;;
+;;     http://www.apache.org/licenses/LICENSE-2.0
+;;
+;; Unless required by applicable law or agreed to in writing, software
+;; distributed under the License is distributed on an "AS IS" BASIS,
+;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;; See the License for the specific language governing permissions and
+;; limitations under the License.
+
+(defcli! build-profile-loader
+  ((profile-name ("-n" form) "Profile name.")
+   (base-directory ("-b" dir) "Base directory (for profile and straight).")
+   (unset-profile ("-u") "Unset DOOMPROFILE at startup."))
+  "Write Doom's profile loader."
+  (let* ((profile-directory (expand-file-name "profile/" base-directory))
+         (load-file (expand-file-name "loader/init.el" base-directory))
+         (new-profiles `((,profile-name
+                          (_ :eval
+;; HACK: install advice of doom-profile-init-file from the profile loader,
+;; because we do not gain control between here and Doom using this to find the
+;; profile init file (from which our own init.el is loaded).
+(defvar doom-profile-data-dir)
+(defvar doom-profile-dir)
+;; Having to specify this seems like a bug(?)
+(declare-function doom-profile-init-file@unstraightened "init")
+(declare-function doom-profile-key "doom-lib")
+(define-advice doom-profile-init-file (:override (profile) unstraightened)
+  "Return unstraightened's profile init file.
+
+`doom-profile-init-file' locates the profile relative to `doom-data-dir', but
+nix-doom-emacs-unstraightened keeps its profile in a different location.
+Override `doom-profile-init-file' to confirm it is called to get the default
+or unstraightened profile (erroring out otherwise), then return the custom path.
+
+Returning the unstraightened profile if the default profile is
+requested makes `doom doctor' work."
+  (declare (side-effect-free t))
+  (let* ((my-profile ,(symbol-name profile-name))
+         ;; Open-code cl-destructuring-bind into (name . ref),
+         ;; to avoid loading cl in the profile loader.
+         (ref (if profile (doom-profile-key profile t) (cons nil nil)))
+         (name (pop ref)))
+    (unless (or (null name)
+                (and (not (string-empty-p my-profile))
+                     (string-equal name my-profile)))
+      (error "Accessing other profiles from Unstraightened is unsupported."))
+    (unless (or (null ref)
+                (string-equal "0" ref))
+      (error
+       "Accessing other profile versions from Unstraightened is unsupported."))
+    (file-name-concat doom-profile-dir
+                      (format "init.%d.%d.el"
+                              emacs-major-version emacs-minor-version))))
+)
+                          (user-emacs-directory . ,doom-emacs-dir)
+                          (doom-profile-data-dir . ,profile-directory)
+                          ,@(when unset-profile '(("DOOMPROFILE" . nil)))))))
+    (doom-profiles-write-load-file new-profiles load-file)
+    ;; HACK: Disable native compilation to avoid a recompilation loop.
+    ;;
+    ;; When early-init.el loads this Emacs looks for the .eln file in its native
+    ;; location, triggering async native compilation if it is missing there, but
+    ;; async native compilation then writes it to its eln cache in
+    ;; doom-profile-cache-dir, where it is never found.
+    ;;
+    ;; We trigger native-comp by having a function in the profile loader: that's
+    ;; sufficiently unusual I won't try to get this changed in Doom proper
+    ;; before 3.0.
+    (find-file load-file)
+    (add-file-local-variable-prop-line 'no-native-compile t)
+    (save-buffer)
+    (byte-compile-file load-file)))
+
+(run! "build-profile-loader" (cdr (member "--" argv)))

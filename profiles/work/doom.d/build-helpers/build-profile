@@ -1,0 +1,116 @@
+#!/usr/bin/env doomscript
+;; -*- lexical-binding: t; -*-
+
+;; Copyright 2024 Google LLC
+;;
+;; Licensed under the Apache License, Version 2.0 (the "License");
+;; you may not use this file except in compliance with the License.
+;; You may obtain a copy of the License at
+;;
+;;     http://www.apache.org/licenses/LICENSE-2.0
+;;
+;; Unless required by applicable law or agreed to in writing, software
+;; distributed under the License is distributed on an "AS IS" BASIS,
+;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;; See the License for the specific language governing permissions and
+;; limitations under the License.
+
+;; Set from run!
+(defvar site-lisp)
+(defvar init-file)
+
+(defun generate-unstraightened-init-load ()
+  "Load unstraightened init.el."
+  `((defun unstraightened--startup-init ()
+      (doom-load ,init-file))))
+
+(add-to-list
+ 'doom-profile-generators
+ '("00-unstraightened-init.auto.el" generate-unstraightened-init-load unstraightened--startup-init))
+
+(defun generate-nix-autoloads ()
+  "Pull in autoloads for non-ELPA emacsWithPackages dependencies."
+  `((defun unstraightened--startup-nix-autoloads ()
+      (let ((load-in-progress t))
+        ,@(let (filenames)
+            (dolist (filename (directory-files site-lisp))
+              (when (string-suffix-p "-autoloads.el" filename)
+                (push (expand-file-name filename site-lisp) filenames)))
+            (doom-autoloads--scan
+             filenames doom-autoloads-excluded-files 'literal))))))
+
+(add-to-list
+ 'doom-profile-generators
+ '("80-loaddefs-nix.auto.el" generate-nix-autoloads unstraightened--startup-nix-autoloads))
+
+;; Doom runs this with package.el activated, but suppresses activation during
+;; normal startup. Store the side effects of activation in the profile to avoid
+;; (slow) package activation during normal startup.
+;;
+;; package-activate-1 does:
+;; - Load autoloads. Duplicated by generate-unstraightened-autoloads.
+;; - Add to load-path. Doom already stores load-path.
+;; - Add Info node. Doom already stores Info-directory-list.
+;; - Add name to package-activated-list. Stored below.
+
+(defun generate-unstraightened-autoloads ()
+  "Like doom-profile--generate-package-autoloads but for package.el."
+  `((defun unstraightened--startup-unstraightened-autoloads ()
+      (let ((load-in-progress t))
+        ,@(doom-autoloads--scan
+           (mapcar (lambda (s)
+                     (format "%s.el"
+                             (package--autoloads-file-name
+                              (package-get-descriptor s))))
+                   ;; Packages are (currently...) pushed onto
+                   ;; package-activated-list as they are activated. Reverse the
+                   ;; list here so packages activated first get their autoloads
+                   ;; loaded first.
+                   ;;
+                   ;; An example package that requires this is geiser-guile: it
+                   ;; calls geiser-activate-implementation from autoloads,
+                   ;; requiring geiser's autoloads are loaded first.
+                   (nreverse
+                    (seq-difference package-activated-list
+                                    (mapcar #'intern-soft
+                                            doom-autoloads-excluded-packages))))
+           doom-autoloads-excluded-files
+           'literal)))))
+
+(add-to-list
+ 'doom-profile-generators
+ '("90-loaddefs-unstraightened.auto.el" generate-unstraightened-autoloads unstraightened--startup-unstraightened-autoloads))
+
+;; Subtle: Doom currently combines the partials in lexicographical order, but
+;; calls their closures in doom-profile-generators list order.
+;;
+;; Those orders are identical for Doom's own generators (so this may not be
+;; intentional). But it means unstraightened--startup-init runs later than
+;; intended.
+;;
+;; Fix it by sorting the list.
+;;
+;; TODO: ask about this upstream.
+(setq doom-profile-generators
+      (seq-sort-by #'car #'string< doom-profile-generators))
+
+(add-to-list 'doom-autoloads-cached-vars 'package-activated-list)
+
+(defcli! build-profile
+    ((site-lisp ("-l" dir) "site-lisp directory to load autoloads from")
+     (init-file ("-i" file) "unstraightened init.el"))
+  "Write a Doom profile."
+  ;; This also loads our generated profile's init.el (so we include the right
+  ;; packages in the profile).
+  (doom-modules-initialize)
+  ;; Load our init.el, so we can load straight without hitting
+  ;; doom-initialize-packages / doom-initialize-core-packages.
+  (doom-load init-file)
+  ;; Now load straight (straight-prune-build-cache is not autoloaded).
+  (require 'straight)
+  ;; Trigger a write of straight's build cache (which we write into the profile
+  ;; and load again later).
+  (straight-prune-build-cache)
+  (doom-profile-generate))
+
+(run! "build-profile" (cdr (member "--" argv)))

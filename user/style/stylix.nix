@@ -10,6 +10,7 @@ in
 
   imports = [ inputs.stylix.homeModules.stylix ];
 
+  stylix.enable = true;
   home.file.".currenttheme".text = userSettings.theme;
   stylix.autoEnable = false;
   stylix.polarity = themePolarity;
@@ -34,10 +35,10 @@ in
     };
     emoji = {
       name = "Noto Emoji";
-      package = pkgs.noto-fonts-monochrome-emoji;
+      package = pkgs.monochrome-emoji;
     };
     sizes = {
-      terminal = 18;
+      terminal = 11;
       applications = 12;
       popups = 12;
       desktop = 12;

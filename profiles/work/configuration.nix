@@ -6,6 +6,7 @@
     ../../system/app/flatpak.nix
     ../../hardware-configuration.nix
     (./. + "../../../system/wm"+("/"+userSettings.wm)+".nix")
+    ../../system/style/stylix.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -64,7 +65,10 @@
     ];
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
   # --- User ---
   users.users.salivala = {
     isNormalUser = true;
@@ -85,7 +89,9 @@
 	  unzip
     openssl
     discord
+    home-manager
     #runescape
+    pavucontrol
     #runelite
     #greetd.tuigreet
     playerctl

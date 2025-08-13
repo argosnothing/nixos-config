@@ -22,14 +22,15 @@
         name = "Hayden"; # name/identifier
         email = "argosnothing@gmail.com"; # email (used for certain configurations)
         dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
-        theme = "doom-one"; # selcted theme from my themes directory (./themes/)
+        theme = "ayu-dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11"; # window manager type (hyprland or x11) translator
         browser = "firefox"; # Default browser; must select one from ./user/app/browser/
         spawnBrowser = browser; # Browser spawn command
         defaultRoamDir = "Personal.p"; # Default org roam directory relative to ~/Org
         term = "alacritty"; # Default terminal command;
-        font = "Intel One Mono"; # Selected font
+        font = "Fira Code"; # Selected font
+        fontPkg = pkgs.fira-code; # Font package
         editor = "neovide"; # Default editor;
         spawnEditor = if (editor == "emacsclient") then
                         "emacsclient -c -a 'emacs'"
@@ -45,6 +46,9 @@
                            editor)); # generates a command that can be used to spawn editor inside a gui
       };
 
+      pkgs-emacs = import inputs.emacs-pin-nixpkgs {
+        system = systemSettings.system;
+      };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
@@ -64,6 +68,7 @@
           inherit pkgs;
           modules = [
             #./home.nix
+	    inputs.nix-doom-emacs-unstraightened.homeModule
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") # load home.nix from prof
           ];
 
@@ -80,7 +85,7 @@
             ./hardware-configuration.nix
           ];
           specialArgs = {
-            inherit inputs systemSettings userSettings;
+            inherit inputs systemSettings userSettings lib;
           };
         };
       };
@@ -91,11 +96,17 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    ags.url = "github:Aylur/ags";
+    emacs-pin-nixpkgs.url = "nixpkgs/f72123158996b8d4449de481897d855bc47c7bf6";
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
     dotfiles.url = "github:argosnothing/dotfiles";
     dotfiles.flake = false;
-
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";

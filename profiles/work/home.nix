@@ -1,4 +1,4 @@
-{pkgs, userSettings, config, ... }:
+{pkgs, userSettings, inputs, config, ... }:
 let
   aliases = {
     updatehome = "home-manager switch --flake ~/.dotfiles/#user";
@@ -8,16 +8,16 @@ in {
   imports = [
     ../../user/app/browser/firefox.nix
     (./. + "../../../user/wm"+("/"+userSettings.wm+"/"+userSettings.wm)+".nix")
-    #../../user/style/stylix.nix # Styling and themes for my apps
+    ../../user/style/stylix.nix # Styling and themes for my apps
     ../../user/app/flatpak/flatpak.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
   programs.home-manager.enable = true;
 
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs;
+  programs.doom-emacs = {
+   enable = true;
+   doomDir = ./doom.d/doomdir;
   };
 
   programs.bash = {
@@ -36,7 +36,6 @@ in {
     package = pkgs.bibata-cursors;
     size = 24;
   };
-
 
   xdg.enable = true;
   # Make sure non‑GTK apps + Hyprland see it
@@ -70,6 +69,9 @@ in {
     hyprshot
     spotify
     pulsemixer
+    nmap
+    fd
+    traceroute
     (pkgs.writeShellScriptBin "gget" ''
     set -euo pipefail
     u="$1"

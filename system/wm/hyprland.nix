@@ -1,7 +1,11 @@
 { inputs, pkgs, lib, ... }: let
   pkgs-hyprland = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
-  imports = [ ./wayland.nix ./pipewire.nix ./dbus.nix ];
+  imports = [
+    ./wayland.nix
+    ./pipewire.nix
+    ./dbus.nix
+  ];
 
   security.pam.services.login.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
@@ -14,12 +18,4 @@ in {
   };
 
   services.xserver.excludePackages = [ pkgs.xterm ];
-
-  services.xserver.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    enableHidpi = true;
-    theme = "chili";
-    package = pkgs.kdePackages.sddm;  # <- fixed alias
-  };
 }

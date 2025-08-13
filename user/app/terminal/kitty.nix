@@ -1,12 +1,14 @@
-{ pkgs, lib, ... }:
-
+{ userSettings, config, ... }:
 {
-  home.packages = with pkgs; [
-    kitty
-  ];
-  programs.kitty.enable = true;
-  programs.kitty.settings = {
-    background_opacity = lib.mkForce "0.85";
-    modify_font = "cell_width 90%";
+  programs.kitty = {
+    enable = true;
+    settings = {
+      font_family = userSettings.font;
+      font_size = config.stylix.fonts.sizes.terminal;
+      disable_ligatures = "never";
+    };
+    extraConfig = ''
+      font_features ${userSettings.font} +liga +clig +calt
+    '';
   };
 }

@@ -1,9 +1,54 @@
 # modules/hyprland.nix
-{ pkgs, config, lib, userSettings, systemSettings, ... }:
+{ pkgs, inputs, config, lib, userSettings, systemSettings, ... }:
 {
   imports = [
+    ./waybar/default.nix
+    ../../shell/cava/default.nix
     ../../app/terminal/kitty.nix
+    ../../app/terminal/alacritty.nix
+    ./waybar/default.nix
   ];
+  home.packages = with pkgs; [
+    wireplumber
+    libgtop
+    bluez
+    networkmanager
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+    gtksourceview3
+    libsoup_3
+    grimblast
+    jq
+    wf-recorder
+    hyprpicker
+    btop
+    matugen
+    swww
+    nwg-displays
+    waybar
+    alsa-utils  ];
+
+  systemd.user.services.hyprpolkitagent = {
+    Unit = {
+      Description = "Hyprpolkitagent - Polkit authentication agent";
+      After = [ "graphical-session.target" ];
+      Wants = [ "graphical-session.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprpolkitagent}/bin/hyprpolkitagent";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -26,7 +71,6 @@
         "dbus-update-activation-environment --all"
         "/usr/bin/gnome-keyring-daemon --start --components=secrets"
         "exec /usr/libexec/pam_kwallet_init"
-        "waybar & /usr/libexec/xfce-polkit & nm-applet"
         "swayidle -w -C /usr/share/swayidle/config"
         ''swaybg -i "$HOME/.config/wallpapers/main.jpg" -m fill''
       ];
@@ -214,4 +258,3 @@
     };
   };
 }
-
