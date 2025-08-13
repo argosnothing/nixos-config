@@ -3,12 +3,13 @@ let
   aliases = {
     updatehome = "home-manager switch --flake ~/.dotfiles/#user";
     updatesystem = "sudo nixos-rebuild switch --flake ~/.dotfiles/#nixos";
+    updateemacs = "nix run ~/.dotfiles/profiles/work/doom.d/#doom-emacs";
   };
 in {
   imports = [
     ../../user/app/browser/firefox.nix
     (./. + "../../../user/wm"+("/"+userSettings.wm+"/"+userSettings.wm)+".nix")
-    ../../user/style/stylix.nix # Styling and themes for my apps
+    ../../user/style/stylix.nix
     ../../user/app/flatpak/flatpak.nix
   ];
   home.username = userSettings.username;
@@ -54,12 +55,23 @@ in {
     "XCURSOR_SIZE,24"
   ];
 
+  stylix.targets.nixcord.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;
     name = if (config.stylix.polarity == "dark") then "Papirus-Dark" else "Papirus-Light";
   };
 
+  programs.vesktop.enable = true;
+  programs.firefox = {
+    enable = true;
+  };
+  stylix.targets.firefox = {
+    enable = true;
+    profileNames = ["default"];
+  };
+  stylix.targets.vesktop.enable = true;
   home.packages = with pkgs; [
     kitty
     wofi
@@ -72,6 +84,9 @@ in {
     nmap
     fd
     traceroute
+    neofetch
+    discord
+    vesktop
     (pkgs.writeShellScriptBin "gget" ''
     set -euo pipefail
     u="$1"

@@ -25,6 +25,7 @@
   };
 
   # --- Basics ---
+  boot.plymouth.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.consoleLogLevel = 3;
@@ -59,6 +60,7 @@
 
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal
       pkgs.xdg-desktop-portal-gtk
@@ -88,7 +90,6 @@
 	  wev
 	  unzip
     openssl
-    discord
     home-manager
     #runescape
     pavucontrol

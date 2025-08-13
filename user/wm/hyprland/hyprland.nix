@@ -6,7 +6,7 @@
     ../../shell/cava/default.nix
     ../../app/terminal/kitty.nix
     ../../app/terminal/alacritty.nix
-    ./waybar/default.nix
+    ./waybar/waybar.nix
   ];
   home.packages = with pkgs; [
     wireplumber
@@ -30,6 +30,7 @@
     waybar
     alsa-utils  ];
 
+  programs.rofi.enable = true;
   systemd.user.services.hyprpolkitagent = {
     Unit = {
       Description = "Hyprpolkitagent - Polkit authentication agent";
@@ -49,6 +50,7 @@
     };
   };
 
+  stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -56,7 +58,7 @@
       # variables
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
-      "$menu" = "rofi -show drun";
+      "$menu" = "rofi -show drun -show-icons";
       "$mainMod" = "MOD5";
       "$lockCommand" = "loginctl lock-session";
 
@@ -79,8 +81,6 @@
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(a89984)";
-        "col.inactive_border" = "rgb(3c3836)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -88,13 +88,10 @@
 
       decoration = {
         rounding = 2;
-        active_opacity = 1.8;
-        inactive_opacity = 1.0;
         shadow = {
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "rgba(1a1a1aee)";
         };
         blur = {
           enabled = true;
@@ -162,7 +159,7 @@
 
       # rules & workspace config
       windowrulev2 = [
-        "opacity 0.5 0.6, onworkspace:special:magic"
+        #"opacity 0.5 0.6, onworkspace:special:magic"
       ];
 
       workspace = [
@@ -176,6 +173,7 @@
 
       # binds
       bind = [
+        "SUPER SHIFT, S, exec, grimblast copy area"
         "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
         "$mainMod, Return, exec, $terminal"
         "$mainMod, C, killactive,"

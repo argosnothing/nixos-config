@@ -11,6 +11,7 @@ in
   imports = [ inputs.stylix.nixosModules.stylix ];
 
   stylix.homeManagerIntegration.autoImport = true;
+  stylix.targets.grub.enable = true;
   stylix.autoEnable = false;
   stylix.enable = true;
   stylix.polarity = themePolarity;
@@ -43,5 +44,4 @@ in
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt5ct";
   };
-
 }
