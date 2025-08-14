@@ -4,7 +4,6 @@
   imports = [
     #../../system/app/remote_tooling.nix
     ../../system/app/flatpak.nix
-    ../../hardware-configuration.nix
     (./. + "../../../system/wm"+("/"+userSettings.wm)+".nix")
     ../../system/style/stylix.nix
   ];
