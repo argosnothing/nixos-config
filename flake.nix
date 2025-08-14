@@ -23,7 +23,7 @@
         name = "Hayden"; # name/identifier
         email = "argosnothing@gmail.com"; # email (used for certain configurations)
         dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
-        theme = "horizon-dark"; # selcted theme from my themes directory (./themes/)
+        theme = "ayu-dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11"; # window manager type (hyprland or x11) translator
         browser = "firefox"; # Default browser; must select one from ./user/app/browser/
