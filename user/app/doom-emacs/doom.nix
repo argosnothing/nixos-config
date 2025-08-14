@@ -9,16 +9,23 @@ let
     extension = ".el";
   };
 
-  doomDirWithTheme = pkgs.runCommand "doomdir-with-theme" {} ''
+  doomDir = pkgs.runCommand "doomdir" {} ''
     mkdir -p $out/themes
-    cp -r ${doomDirBase}/* $out/
-    cp ${stylixTheme} $out/themes/doom-stylix-theme.el
+    ln -s ${./doom.d/doomdir/init.el}      $out/init.el
+    ln -s ${./doom.d/doomdir/config.el}    $out/config.el
+    ln -s ${./doom.d/doomdir/packages.el}  $out/packages.el
+    ln -s ${
+      config.lib.stylix.colors {
+        template  = builtins.readFile ./themes/doom-stylix-theme.el.mustache;
+        extension = ".el";
+      }
+    } $out/themes/doom-stylix-theme.el
   '';
 in
 {
   programs.doom-emacs = {
    enable = true;
-   doomDir = ./doom.d/doomdir;
+   doomDir = doomDir;
   };
   #programs.doom-emacs.enable = true;
   #programs.doom-emacs.doomDir = doomDirWithTheme;

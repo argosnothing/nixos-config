@@ -35,7 +35,7 @@
 ;;(load! "~/.emacs.d/system-vars.el")
 ;;(setq custom-theme-directory "~/.emacs.d/themes/")
 (setq doom-theme 'doom-stylix)
-(load-theme 'doom-one t)
+;;(load-theme 'doom-one t)
 
 ;; Transparent background
 (if (string= system-nix-profile "wsl")
