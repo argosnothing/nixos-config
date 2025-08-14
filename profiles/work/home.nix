@@ -76,6 +76,10 @@ in {
     profileNames = ["default"];
   };
   stylix.targets.vesktop.enable = true;
+  stylix.targets.vencord = {
+    enable = true;
+    extraCss = ".page_c48ade background-color: ${config.lib.stylix.colors.withHashtag.base01} !important;\nbananas";
+  };
 
   home.packages =
     (with pkgs;[

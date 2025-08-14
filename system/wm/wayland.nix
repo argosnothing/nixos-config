@@ -19,7 +19,6 @@
           ScreenHeight = "1080";
           Font = config.stylix.fonts.sansSerif.name;
           FontSize = "12";
-
           RoundCorners = "20";
 
           #BackgroundPlaceholder = "${config.stylix.image}";

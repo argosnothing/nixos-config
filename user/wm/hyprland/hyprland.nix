@@ -31,7 +31,6 @@
     alsa-utils  ];
 
   xdg.enable = true;
-  programs.rofi.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -69,7 +68,7 @@
       # variables
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
-      "$menu" = "rofi -show drun -show-icons";
+      "$menu" = "wofi --show drun --allow-images";
       "$mainMod" = "MOD5";
       "$lockCommand" = "loginctl lock-session";
 
