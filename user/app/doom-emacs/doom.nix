@@ -2,133 +2,34 @@
 let
   themePolarity = lib.removeSuffix "\n" (builtins.readFile (./. + "../../../../themes"+("/"+userSettings.theme)+"/polarity.txt"));
   dashboardLogo = ./. + "/nix-" + themePolarity + ".webp";
+  doomDirBase = ./doom.d;
+
+  stylixTheme = config.lib.stylix.colors.withHashtag {
+    template  = builtins.readFile ./themes/doom-stylix-theme.el.mustache;
+    extension = ".el";
+  };
+
+  doomDirWithTheme = pkgs.runCommand "doomdir-with-theme" {} ''
+    mkdir -p $out/themes
+    cp -r ${doomDirBase}/* $out/
+    cp ${stylixTheme} $out/themes/doom-stylix-theme.el
+  '';
 in
 {
-  imports = [
-    inputs.nix-doom-emacs.hmModule
-    ../git/git.nix
-    ../../shell/sh.nix
-    ../../shell/cli-collection.nix
-  ];
-
   programs.doom-emacs = {
-    enable = true;
-    emacsPackage = pkgs-emacs.emacs29-pgtk;
-    doomPrivateDir = ./.;
-    # This block from https://github.com/znewman01/dotfiles/blob/be9f3a24c517a4ff345f213bf1cf7633713c9278/emacs/default.nix#L12-L34
-    # Only init/packages so we only rebuild when those change.
-    doomPackageDir = let
-      filteredPath = builtins.path {
-        path = ./.;
-        name = "doom-private-dir-filtered";
-        filter = path: type:
-          builtins.elem (baseNameOf path) [ "init.el" "packages.el" ];
-      };
-      in pkgs-emacs.linkFarm "doom-packages-dir" [
-        {
-          name = "init.el";
-          path = "${filteredPath}/init.el";
-        }
-        {
-          name = "packages.el";
-          path = "${filteredPath}/packages.el";
-        }
-        {
-          name = "config.el";
-          path = pkgs-emacs.emptyFile;
-        }
-      ];
-  # End block
+   enable = true;
+   doomDir = ./doom.d/doomdir;
   };
+  #programs.doom-emacs.enable = true;
+  #programs.doom-emacs.doomDir = doomDirWithTheme;
 
-  home.file.".emacs.d/themes/doom-stylix-theme.el".source = config.lib.stylix.colors {
-      template = builtins.readFile ./themes/doom-stylix-theme.el.mustache;
-      extension = ".el";
-  };
-
-  home.packages = (with pkgs-emacs; [
-    emacs-lsp-booster
-    file
-    wmctrl
-    jshon
-    aria
-    hledger
-    hunspell hunspellDicts.en_US-large
-    (pkgs-emacs.mu.override { emacs = emacs29-pgtk; })
-    (pkgs.callPackage ./pkgs/org-analyzer.nix {})
-    emacsPackages.mu4e
-    isync
-    msmtp
-    (python3.withPackages (p: with p; [
-      pandas
-      requests
-      epc lxml
-      pysocks
-      pymupdf
-      markdown
-    ]))
-  ]) ++ (with pkgs-stable; [
-    nodejs
-    nodePackages.mermaid-cli
-  ]) ++ (with pkgs; [
-    openssl
-    stunnel
-  ]);
-
-  services.mbsync = {
-    enable = true;
-    package = pkgs-stable.isync;
-    frequency = "*:0/5";
-  };
-
-  home.file.".emacs.d/org-yaap" = {
-    source = "${inputs.org-yaap}";
-    recursive = true;
-  };
-
-  home.file.".emacs.d/org-side-tree" = {
-    source = "${inputs.org-side-tree}";
-    recursive = true;
-  };
-
-  home.file.".emacs.d/org-timeblock" = {
-    source = "${inputs.org-timeblock}";
-    recursive = true;
-  };
-
-  home.file.".emacs.d/org-nursery" = {
-    source = "${inputs.org-nursery}";
-  };
-
-  home.file.".emacs.d/org-krita" = {
-    source = "${inputs.org-krita}";
-  };
-
-  home.file.".emacs.d/org-xournalpp" = {
-    source = "${inputs.org-xournalpp}";
-  };
-
-  home.file.".emacs.d/org-sliced-images" = {
-    source = "${inputs.org-sliced-images}";
-  };
-
-  home.file.".emacs.d/magit-file-icons" = {
-    source = "${inputs.magit-file-icons}";
-  };
+  #home.file.".emacs.d/themes/doom-stylix-theme.el".source =
+  # config.lib.stylix.colors.withHashtag {
+  # template  = builtins.readFile ./themes/doom-stylix-theme.el.mustache;
+  # extension = ".el";
+ #};
 
   home.file.".emacs.d/dashboard-logo.webp".source = dashboardLogo;
-  home.file.".emacs.d/scripts/copy-link-or-file/copy-link-or-file-to-clipboard.sh" = {
-    source = ./scripts/copy-link-or-file/copy-link-or-file-to-clipboard.sh;
-    executable = true;
-  };
-
-  home.file.".emacs.d/phscroll" = {
-    source = "${inputs.phscroll}";
-  };
-
-  home.file.".emacs.d/mini-frame" = {
-    source = "${inputs.mini-frame}";
-  };
 
   home.file.".emacs.d/system-vars.el".text = ''
   ;;; ~/.emacs.d/config.el -*- lexical-binding: t; -*-

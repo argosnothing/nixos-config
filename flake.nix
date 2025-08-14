@@ -1,7 +1,7 @@
 {
   description = "NixOS with HM (flakes) + Hyprland + hyprland-plugins";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, hyprland, dotfiles, hyprland-plugins, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, hyprland, dotfiles, hyprland-plugins, nixpkgs-unstable, ... }:
     let
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
@@ -22,7 +22,7 @@
         name = "Hayden"; # name/identifier
         email = "argosnothing@gmail.com"; # email (used for certain configurations)
         dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
-        theme = "woodland"; # selcted theme from my themes directory (./themes/)
+        theme = "horizon-dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11"; # window manager type (hyprland or x11) translator
         browser = "firefox"; # Default browser; must select one from ./user/app/browser/
@@ -51,7 +51,8 @@
       };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-
+      system = systemSettings.system;
+      pkgsUnstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true;};
       # Systems that can run tests:
       supportedSystems = [ "aarch64-linux" "i686-linux" "x86_64-linux" ];
 
@@ -73,7 +74,7 @@
           ];
 
           extraSpecialArgs = {
-            inherit inputs systemSettings userSettings;
+            inherit inputs systemSettings userSettings pkgsUnstable;
           };
         };
       };
@@ -94,6 +95,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     ags.url = "github:Aylur/ags";

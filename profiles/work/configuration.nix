@@ -91,10 +91,7 @@
 	  unzip
     openssl
     home-manager
-    #runescape
     pavucontrol
-    #runelite
-    #greetd.tuigreet
     playerctl
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

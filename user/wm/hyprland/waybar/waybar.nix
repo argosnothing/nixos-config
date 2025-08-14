@@ -1,8 +1,17 @@
-{ ... }: {
-
-  stylix.targets.waybar.enable = true;
+{ config, ... }:
+let style = import ./style.nix {inherit config;}; in
+{
+  stylix.targets.waybar = {
+    enable = false;
+    addCss = false;
+  };
   programs.waybar = {
     enable = true;
+    systemd = {
+      enable = true;
+      target = "graphical-session.target";
+    };
+    style = style;
     settings = [{
       layer = "top";
       position = "bottom";
@@ -14,8 +23,6 @@
       modules-left = [
         "hyprland/workspaces"
         "custom/divider"
-        "custom/weather"
-        "custom/divider"
         "cpu"
         "custom/divider"
         "memory"
@@ -25,11 +32,7 @@
         "tray"
         "network"
         "custom/divider"
-        "backlight"
-        "custom/divider"
         "pulseaudio"
-        "custom/divider"
-        "battery"
         "custom/divider"
         "clock"
       ];
@@ -53,16 +56,6 @@
         format-alt = " {used:0.1f}G";
         max-length = 10;
       };
-      backlight = {
-        format = "󰖨 {}";
-        device = "acpi_video0";
-      };
-      "custom/weather" = {
-        tooltip = true;
-        format = "{}";
-        restart-interval = 300;
-        exec = "/home/roastbeefer/.cargo/bin/weather";
-      };
       tray = {
         icon-size = 13;
         tooltip = false;
@@ -79,7 +72,7 @@
           <tt><small>{calendar}</small></tt>'';
       };
       pulseaudio = {
-        format = "{icon} {volume}%";
+        format = "{icon}   {volume}%";
         tooltip = false;
         format-muted = " Muted";
         on-click = "pamixer -t";

@@ -32,8 +32,24 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+;;(load! "~/.emacs.d/system-vars.el")
+;;(setq custom-theme-directory "~/.emacs.d/themes/")
+(setq doom-theme 'doom-stylix)
+(load-theme 'doom-one t)
 
+;; Transparent background
+(if (string= system-nix-profile "wsl")
+    ;; Can't be that tranparent under wsl because no blur
+    (funcall (lambda ()
+               (set-frame-parameter nil 'alpha-background 98)
+               (add-to-list 'default-frame-alist '(alpha-background . 98))
+               ))
+  ;; On Linux I can enable blur, however
+  (funcall (lambda ()
+             (set-frame-parameter nil 'alpha-background 85)
+             (add-to-list 'default-frame-alist '(alpha-background . 85))
+             ))
+  )
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)

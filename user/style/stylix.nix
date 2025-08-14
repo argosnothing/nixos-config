@@ -10,8 +10,8 @@ in
 
   imports = [ inputs.stylix.homeModules.stylix ];
   stylix.enable = true;
-  home.file.".currenttheme".text = userSettings.theme;
   stylix.autoEnable = false;
+  home.file.".currenttheme".text = userSettings.theme;
   stylix.polarity = themePolarity;
   stylix.image = pkgs.fetchurl {
     url = backgroundUrl;
@@ -113,7 +113,7 @@ in
     enable = true;
     style.package = pkgs.libsForQt5.breeze-qt5;
     style.name = "breeze-dark";
-    platformTheme = "kde";
+    platformTheme.name = "kde";
   };
   fonts.fontconfig.defaultFonts = {
     monospace = [ userSettings.font ];

@@ -2,10 +2,10 @@
 { pkgs, inputs, config, lib, userSettings, systemSettings, ... }:
 {
   imports = [
-    ./waybar/default.nix
     ../../shell/cava/default.nix
     ../../app/terminal/kitty.nix
     ../../app/terminal/alacritty.nix
+    ./filechooser/termfilechooser.nix
     ./waybar/waybar.nix
   ];
   home.packages = with pkgs; [
@@ -27,10 +27,18 @@
     matugen
     swww
     nwg-displays
-    waybar
+    hyprpolkitagent
     alsa-utils  ];
 
+  xdg.enable = true;
   programs.rofi.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
   systemd.user.services.hyprpolkitagent = {
     Unit = {
       Description = "Hyprpolkitagent - Polkit authentication agent";
@@ -40,7 +48,7 @@
     };
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.hyprpolkitagent}/bin/hyprpolkitagent";
+      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;
@@ -50,10 +58,13 @@
     };
   };
 
+  #stylix.targets.hyprpaper.enable = true;
+  services.hyprpaper.enable = true;
+
   stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
-
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     settings = {
       # variables
       "$terminal" = "kitty";
@@ -74,7 +85,6 @@
         "/usr/bin/gnome-keyring-daemon --start --components=secrets"
         "exec /usr/libexec/pam_kwallet_init"
         "swayidle -w -C /usr/share/swayidle/config"
-        ''swaybg -i "$HOME/.config/wallpapers/main.jpg" -m fill''
       ];
 
       general = {
@@ -139,7 +149,7 @@
       master.new_status = "master";
 
       misc = {
-        force_default_wallpaper = 0;
+        #force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
 
