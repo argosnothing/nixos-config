@@ -14,6 +14,7 @@
         bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
         grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
         gpuType = "amd"; # amd, intel or nvidia; only makes some slight mods for amd at the moment
+	hardware = "envy";
       };
 
       # ----- USER SETTINGS ----- #
@@ -83,7 +84,7 @@
           system = systemSettings.system;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
-            ./hardware-configuration.nix
+	    (./. + "/hardware" + ("/" + systemSettings.hardware) + "/hardware-configuration.nix")
           ];
           specialArgs = {
             inherit inputs systemSettings userSettings lib;
