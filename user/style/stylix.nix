@@ -103,9 +103,7 @@ in
   stylix.targets.hyprpaper.enable = lib.mkDefault false;
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ''+config.stylix.image+''
-
     wallpaper = ,''+config.stylix.image+''
-
   '';
   home.packages = with pkgs; [
      libsForQt5.qt5ct pkgs.libsForQt5.breeze-qt5 libsForQt5.breeze-icons pkgs.noto-fonts-monochrome-emoji

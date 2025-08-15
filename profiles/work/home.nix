@@ -2,8 +2,6 @@
 let
   aliases = {
     updatehome = "home-manager switch --flake ~/.dotfiles/#user";
-    updatesystem = "sudo nixos-rebuild switch --flake ~/.dotfiles/#nixos";
-    updateemacs = "nix run ~/.dotfiles/profiles/work/doom.d/#doom-emacs";
   };
 in {
   imports = [

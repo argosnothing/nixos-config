@@ -14,7 +14,6 @@
         bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
         grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
         gpuType = "amd"; # amd, intel or nvidia; only makes some slight mods for amd at the moment
-	      hardware = "desktop";
       };
 
       # ----- USER SETTINGS ----- #
@@ -79,19 +78,31 @@
           };
         };
       };
+
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        desktop = lib.nixosSystem {
           system = systemSettings.system;
           modules = [
+            ./hardware/desktop/hardware-configuration.nix
+            ./system/hardware/nvidia.nix
+            ./system/hardware/desktop/hardware-commands.nix
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
-	    (./. + "/hardware" + ("/" + systemSettings.hardware) + "/hardware-configuration.nix")
+          ];
+          specialArgs = {
+            inherit inputs systemSettings userSettings lib;
+          };
+        };
+
+        laptop = lib.nixosSystem {
+          system = systemSettings.system;
+          modules = [
+            ./hardware/envy/hardware-configuration.nix
           ];
           specialArgs = {
             inherit inputs systemSettings userSettings lib;
           };
         };
       };
-
     };
 
   inputs = {

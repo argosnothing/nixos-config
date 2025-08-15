@@ -30,6 +30,7 @@
     hyprpolkitagent
     alsa-utils  ];
 
+  services.hyprpaper.enable = true;
   xdg.enable = true;
   xdg.portal = {
     enable = true;
