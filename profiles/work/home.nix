@@ -68,7 +68,6 @@ in {
     name = if (config.stylix.polarity == "dark") then "Papirus-Dark" else "Papirus-Light";
   };
 
-  programs.vesktop.enable = true;
   programs.firefox = {
     enable = true;
   };
@@ -89,8 +88,6 @@ in {
         fd
         traceroute
         neofetch
-        discord
-        vesktop
         spotify-player
         spotify
         (pkgs.writeShellScriptBin "gget" ''

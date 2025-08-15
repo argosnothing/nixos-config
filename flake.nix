@@ -70,6 +70,7 @@
         user = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            inputs.nixcord.homeModules.nixcord
 	          inputs.nix-doom-emacs-unstraightened.homeModule
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") # load home.nix from prof
           ];
