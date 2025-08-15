@@ -66,14 +66,13 @@
 
     in {
       homeConfigurations = {
+        home-manager.sharedModules = [inputs.nixcord.homeModules.nixcord];
         user = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            #./home.nix
-	    inputs.nix-doom-emacs-unstraightened.homeModule
+	          inputs.nix-doom-emacs-unstraightened.homeModule
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") # load home.nix from prof
           ];
-
           extraSpecialArgs = {
             inherit inputs systemSettings userSettings pkgsUnstable lib;
           };
@@ -99,6 +98,9 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+    };
     ags.url = "github:Aylur/ags";
     emacs-pin-nixpkgs.url = "nixpkgs/f72123158996b8d4449de481897d855bc47c7bf6";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";

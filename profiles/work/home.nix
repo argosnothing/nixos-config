@@ -10,6 +10,7 @@ in {
     ../../user/app/browser/firefox.nix
     (./. + "../../../user/wm"+("/"+userSettings.wm+"/"+userSettings.wm)+".nix")
     ../../user/style/stylix.nix
+    #../../user/app/vesktop/vesktop.nix
     ../../user/app/flatpak/flatpak.nix
     ../../user/app/doom-emacs/doom.nix
   ];
@@ -75,12 +76,6 @@ in {
     enable = true;
     profileNames = ["default"];
   };
-  stylix.targets.vesktop.enable = true;
-  stylix.targets.vencord = {
-    enable = true;
-    extraCss = ".page_c48ade background-color: ${config.lib.stylix.colors.withHashtag.base01} !important;\nbananas";
-  };
-
   home.packages =
     (with pkgs;[
         kitty
