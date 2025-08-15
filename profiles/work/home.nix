@@ -10,7 +10,7 @@ in {
     ../../user/app/browser/firefox.nix
     (./. + "../../../user/wm"+("/"+userSettings.wm+"/"+userSettings.wm)+".nix")
     ../../user/style/stylix.nix
-    #../../user/app/vesktop/vesktop.nix
+    ../../user/app/nixcord/nixcord.nix
     ../../user/app/flatpak/flatpak.nix
     ../../user/app/doom-emacs/doom.nix
   ];
