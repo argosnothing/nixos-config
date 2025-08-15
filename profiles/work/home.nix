@@ -12,8 +12,8 @@ in {
     ../../user/style/stylix.nix
     ../../user/app/flatpak/flatpak.nix
     ../../user/app/doom-emacs/doom.nix
-    #../../user/app/vesktop/vesktop.nix
-    ../../user/app/vesktop/vesktop-themed.nix
+    ../../user/app/vesktop/vesktop.nix
+    #../../user/app/vesktop/vesktop-themed.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;

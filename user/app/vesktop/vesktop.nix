@@ -1,32 +1,17 @@
-{lib, pkgs, config, inputs, ...}:
+{ lib, pkgs, config, inputs, userSettings, ... }:
+let
+  overridePath =
+    ../../../themes/${userSettings.theme}/user/app/vesktop.css;
+  hasThemeOverride = builtins.pathExists overridePath;
+in
 {
-  programs.vesktop = {
-    enable = true;
-    vencord = {
-      settings = {
-        enabledThemes = [ "Stylix" ];
-      };
-    };
-  };
+  stylix.targets.vesktop.enable = !hasThemeOverride;
+  stylix.targets.vencord.enable = !hasThemeOverride;
 
-  stylix.targets.vesktop = {
-    enable = true;
-  };
-  stylix.targets.vencord = {
-    extraCss = ''
-       .container-2cd8Mz { background: transparent !important; }
-    '';
-    enable = true;
-  };
-  # Reuse Stylix’s store CSS for both apps
-  xdg.configFile."vesktop/themes/stylix.theme.css".source =
-  config.xdg.configFile."Vencord/themes/stylix.theme.css".source;
+  programs.vesktop.enable = true;
 
-  # Point Vesktop to that exact store path (not a home path)
-  xdg.configFile."vesktop/settings/settings.json".text = builtins.toJSON {
-    themeLinks = [
-      "${config.xdg.configFile."vesktop/themes/stylix.theme.css".source}"
-    ];
-    # keep other keys you need…
+   programs.vesktop.vencord = lib.mkIf hasThemeOverride {
+    themes.${userSettings.theme} = builtins.readFile overridePath;
+    settings.enabledThemes = [ "${userSettings.theme}.css" ];
   };
 }
