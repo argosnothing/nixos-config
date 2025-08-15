@@ -74,7 +74,7 @@
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") # load home.nix from prof
           ];
           extraSpecialArgs = {
-            inherit inputs systemSettings userSettings pkgsUnstable lib;
+            inherit inputs systemSettings userSettings pkgsUnstable;
           };
         };
       };
