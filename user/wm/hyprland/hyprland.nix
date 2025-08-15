@@ -57,9 +57,6 @@
     };
   };
 
-  #stylix.targets.hyprpaper.enable = true;
-  services.hyprpaper.enable = true;
-
   stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;

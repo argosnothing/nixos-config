@@ -100,6 +100,7 @@ in
     };
     ".config/qt5ct/qt5ct.conf".text = pkgs.lib.mkBefore (builtins.readFile ./qt5ct.conf);
   };
+  stylix.targets.hyprpaper.enable = lib.mkDefault false;
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ''+config.stylix.image+''
 

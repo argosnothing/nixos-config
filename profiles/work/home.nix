@@ -10,9 +10,9 @@ in {
     ../../user/app/browser/firefox.nix
     (./. + "../../../user/wm"+("/"+userSettings.wm+"/"+userSettings.wm)+".nix")
     ../../user/style/stylix.nix
-    ../../user/app/nixcord/nixcord.nix
     ../../user/app/flatpak/flatpak.nix
     ../../user/app/doom-emacs/doom.nix
+    ../../user/app/vesktop/vesktop.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
@@ -68,9 +68,6 @@ in {
     name = if (config.stylix.polarity == "dark") then "Papirus-Dark" else "Papirus-Light";
   };
 
-  programs.firefox = {
-    enable = true;
-  };
   stylix.targets.firefox = {
     enable = true;
     profileNames = ["default"];
