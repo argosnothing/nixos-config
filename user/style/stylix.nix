@@ -10,7 +10,7 @@ in
 
   imports = [ inputs.stylix.homeModules.stylix ];
   stylix.enable = true;
-  stylix.autoEnable = false;
+  stylix.autoEnable = true;
   home.file.".currenttheme".text = userSettings.theme;
   stylix.polarity = themePolarity;
   stylix.image = pkgs.fetchurl {
@@ -31,10 +31,6 @@ in
     sansSerif = {
       name = userSettings.font;
       package = userSettings.fontPkg;
-    };
-    emoji = {
-      name = "Noto Emoji";
-      package = pkgs.monochrome-emoji;
     };
     sizes = {
       terminal = 11;
@@ -100,11 +96,6 @@ in
     };
     ".config/qt5ct/qt5ct.conf".text = pkgs.lib.mkBefore (builtins.readFile ./qt5ct.conf);
   };
-  stylix.targets.hyprpaper.enable = lib.mkDefault false;
-  home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ''+config.stylix.image+''
-    wallpaper = ,''+config.stylix.image+''
-  '';
   home.packages = with pkgs; [
      libsForQt5.qt5ct pkgs.libsForQt5.breeze-qt5 libsForQt5.breeze-icons pkgs.noto-fonts-monochrome-emoji
   ];

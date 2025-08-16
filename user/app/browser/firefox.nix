@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  stylix.targets.firefox.enable = true;
   programs.firefox = {
     enable = true;
     policies = {

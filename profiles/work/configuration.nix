@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, userSettings, inputs, ... }:
 
 {
   imports = [
@@ -9,7 +9,10 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  programs.steam = {
+      enable = true;
+      # if you want flatpak instead, set this false and use flatpak
+  };
   # --- GPU (NVIDIA) ---
   hardware.graphics.enable = true;        # replaces old hardware.opengl.enable
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -90,8 +93,30 @@
 	  unzip
     openssl
     home-manager
+    lutris
     pavucontrol
     playerctl
+    inputs.swww.packages.${pkgs.system}.swww
+     # support both 32-bit and 64-bit applications
+    wineWowPackages.stable
+
+    # support 32-bit only
+    wine
+
+    # support 64-bit only
+    (wine.override { wineBuild = "wine64"; })
+
+    # support 64-bit only
+    wine64
+
+    # wine-staging (version with experimental features)
+    wineWowPackages.staging
+
+    # winetricks (all versions)
+    winetricks
+
+    # native wayland support (unstable)
+    wineWowPackages.waylandFull
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

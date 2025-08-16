@@ -5,8 +5,10 @@
     ../../shell/cava/default.nix
     ../../app/terminal/kitty.nix
     ../../app/terminal/alacritty.nix
+    ./swww/swww.nix
     ./filechooser/termfilechooser.nix
-    ./waybar/waybar.nix
+    #./waybar/waybar.nix
+    ./hyprpanel/hyprpanel.nix
   ];
   home.packages = with pkgs; [
     wireplumber
@@ -30,7 +32,6 @@
     hyprpolkitagent
     alsa-utils  ];
 
-  services.hyprpaper.enable = true;
   xdg.enable = true;
   xdg.portal = {
     enable = true;
@@ -61,6 +62,7 @@
   stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
     settings = {
       # variables
@@ -82,6 +84,7 @@
         "/usr/bin/gnome-keyring-daemon --start --components=secrets"
         "exec /usr/libexec/pam_kwallet_init"
         "swayidle -w -C /usr/share/swayidle/config"
+        "swww img ${config.stylix.image}"
       ];
 
       general = {
@@ -180,7 +183,7 @@
 
       # binds
       bind = [
-        "SUPER SHIFT, S, exec, grimblast copy area"
+        "SUPER SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
         "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
         "$mainMod, Return, exec, $terminal"
         "$mainMod, C, killactive,"

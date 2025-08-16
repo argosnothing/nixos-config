@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-emacs, pkgs-stable, inputs, userSettings, systemSettings, ... }:
+{ config, lib, pkgs, pkgs-stable, inputs, userSettings, systemSettings, ... }:
 let
   themePolarity = lib.removeSuffix "\n" (builtins.readFile (./. + "../../../../themes"+("/"+userSettings.theme)+"/polarity.txt"));
   dashboardLogo = ./. + "/nix-" + themePolarity + ".webp";
@@ -27,14 +27,6 @@ in
    enable = true;
    doomDir = doomDir;
   };
-  #programs.doom-emacs.enable = true;
-  #programs.doom-emacs.doomDir = doomDirWithTheme;
-
-  #home.file.".emacs.d/themes/doom-stylix-theme.el".source =
-  # config.lib.stylix.colors.withHashtag {
-  # template  = builtins.readFile ./themes/doom-stylix-theme.el.mustache;
-  # extension = ".el";
- #};
 
   home.file.".emacs.d/dashboard-logo.webp".source = dashboardLogo;
 

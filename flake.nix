@@ -1,7 +1,7 @@
 {
   description = "NixOS with HM (flakes) + Hyprland + hyprland-plugins";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, hyprland, dotfiles, hyprland-plugins, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, hyprland, dotfiles, hyprland-plugins, nixpkgs-unstable, swww, ... }:
     let
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
@@ -22,7 +22,7 @@
         name = "Hayden"; # name/identifier
         email = "argosnothing@gmail.com"; # email (used for certain configurations)
         dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
-        theme = "gruvbox-dark-hard"; # selcted theme from my themes directory (./themes/)
+        theme = "solarized-dark"; # selcted theme from my themes directory (./themes/)
         wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11"; # window manager type (hyprland or x11) translator
         browser = "firefox"; # Default browser; must select one from ./user/app/browser/
@@ -46,9 +46,6 @@
                            editor)); # generates a command that can be used to spawn editor inside a gui
       };
 
-      pkgs-emacs = import inputs.emacs-pin-nixpkgs {
-        system = systemSettings.system;
-      };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
       system = systemSettings.system;
@@ -89,7 +86,7 @@
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
           ];
           specialArgs = {
-            inherit inputs systemSettings userSettings lib;
+            inherit inputs systemSettings userSettings lib swww;
           };
         };
 
@@ -99,7 +96,7 @@
             ./hardware/envy/hardware-configuration.nix
           ];
           specialArgs = {
-            inherit inputs systemSettings userSettings lib;
+            inherit inputs systemSettings userSettings lib swww;
           };
         };
       };
@@ -110,6 +107,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    swww.url = "github:LGFae/swww";
     nixcord = {
       url = "github:kaylorben/nixcord";
     };

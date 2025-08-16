@@ -11,11 +11,14 @@ in {
     ../../user/app/flatpak/flatpak.nix
     ../../user/app/doom-emacs/doom.nix
     ../../user/app/vesktop/vesktop.nix
+    ../../user/scripts/export-colors.nix
+    #../../user/app/steam/steam.nix welp this didn't work in home, huh?
     #../../user/app/vesktop/vesktop-themed.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
   programs.home-manager.enable = true;
+
 
   programs.bash = {
     enable = true;
@@ -74,6 +77,7 @@ in {
   home.packages =
     (with pkgs;[
         kitty
+        prismlauncher
         wofi
         rofi
         gitkraken
