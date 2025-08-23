@@ -1,6 +1,6 @@
 {inputs, settings, ...}: {
   imports = [
-    inputs.stylix.homeManagerModules.stylix
+    ../../nixosModules/user/style/stylix.nix
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
     ../../nixosModules/user/apps/gtk.nix

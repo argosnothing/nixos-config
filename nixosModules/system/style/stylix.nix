@@ -1,6 +1,12 @@
-{inputs, pkgs, settings, ...}: {
+{
+  inputs,
+  pkgs,
+  settings,
+  ...
+}: {
   stylix = {
     enable = true;
+    autoEnable = true;
     # Base16 theme - you can change this to any base16 theme
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # Use swww for wallpaper management instead of setting a static image
@@ -43,7 +49,7 @@
       grub.enable = false;
     };
   };
-  
+
   # Add swww for wallpaper management
   environment.systemPackages = [
     inputs.swww.packages.${pkgs.system}.swww
