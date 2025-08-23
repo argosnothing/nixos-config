@@ -1,7 +1,9 @@
-{settings, pkgs, ...}: {
+{inputs, settings, ...}: {
   imports = [
+    inputs.stylix.homeManagerModules.stylix
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
+    ../../nixosModules/user/apps/gtk.nix
     ../../nixosModules/user/wm/hyprland/hyprland.nix
     ../../nixosModules/user/terminal/default.nix
   ];

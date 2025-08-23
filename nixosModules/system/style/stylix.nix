@@ -1,17 +1,14 @@
 {inputs, pkgs, settings, ...}: {
   stylix = {
     enable = true;
-    
     # Base16 theme - you can change this to any base16 theme
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    
     # Use swww for wallpaper management instead of setting a static image
     # This allows you to change wallpapers dynamically with swww
     image = pkgs.fetchurl {
       url = "https://github.com/NixOS/nixos-artwork/raw/master/wallpapers/nix-wallpaper-nineish-dark-gray.png";
       sha256 = "sha256-nhIUtCy/Hgy8P0eUssEJ0ikcOBjdAb3Uu8VqThZOWFs=";
     };
-    
     # Fonts configuration from settings
     fonts = {
       monospace = {
@@ -43,10 +40,7 @@
 
     # Target applications
     targets = {
-      console.enable = true;
-      grub.enable = true;
-      gtk.enable = true;
-      plymouth.enable = true;
+      grub.enable = false;
     };
   };
   

@@ -16,10 +16,15 @@
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
+    papirus-icon-theme
+    hicolor-icon-theme
     gtk3
     gtk4
     glib
     gsettings-desktop-schemas
+    # Icon fonts
+    font-awesome
+    material-design-icons
   ];
 
   security.pam.services.login.enableGnomeKeyring = true;
@@ -33,11 +38,15 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
     config = {
       common = {
         default = ["gtk"];
+      };
+      hyprland = {
+        default = ["hyprland" "gtk"];
       };
     };
   };

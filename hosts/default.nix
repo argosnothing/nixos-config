@@ -4,8 +4,8 @@
   settings = {
     username = "salivala";
     wm = "hyprland";
-    monoFont = "Fira Code";
-    monoFontPkg = pkgs.fira-code;
+    monoFont = "FiraCode Nerd Font";
+    monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";
     serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
