@@ -1,6 +1,6 @@
 # Tie All the hosts together
-args: let
-  desktop = import ./desktop/default.nix args;
+{inputs, ...}: let
+  desktop = import ./desktop/default.nix {inputs};
   settings = {
     username = "salivala";
     wm = "hyprland";
