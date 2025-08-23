@@ -6,7 +6,7 @@ in
     ../services/dbus.nix
     ../services/gnome-keyring.nix
   ];
-  services.displayManager.sddm.enable = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
@@ -19,7 +19,7 @@ in
     gsettings-desktop-schemas
   ];
 
-  program.hyprland = {
+  programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;

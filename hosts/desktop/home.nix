@@ -7,7 +7,10 @@
   ];
   
   home.username = settings.username;
-  home.homeDirectory = "/home/${settings.username}";
+  home.homeDirectory = "/home/" + settings.username;
+  programs.bash = {
+    enable = true;
+  };
   nixpkgs.config.allowUnfree = true;
   home.stateVersion = "25.05";
 }

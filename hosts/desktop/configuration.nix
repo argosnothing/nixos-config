@@ -1,4 +1,10 @@
-{inputs, pkgs, pkgsUnstable, settings, ...}: {
+{
+  inputs,
+  pkgs,
+  pkgsUnstable,
+  settings,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
@@ -7,13 +13,25 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
+
   boot.plymouth.enable = true;
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
     devices = ["nodev"];
   };
+  boot.loader.grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.consoleLogLevel = 3;
+  boot.kernelParams = [
+    "quiet"
+    "loglevel=3"
+    "systemd.show_status=false"
+    "rd.udev.log_priority=3"
+    "vt.global_cursor_default=0" # optional, hides blinking cursor
+  ];
+  boot.kernel.sysctl."kernel.printk" = "3 3 3 3";
+
   networking.hostName = "desktop";
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -46,15 +64,18 @@
   ];
 
   # Enable missing services that are causing errors
-  security.rtkit.enable = true;  # RealtimeKit for audio/video performance
   services.upower.enable = true; # UPower for power management
-  services.dbus.enable = true;   # D-Bus system message bus
-  
+  services.dbus.enable = true; # D-Bus system message bus
+
   # Fix seat management for Wayland sessions
   services.seatd.enable = true;
-  
+
   # Audio services
-  security.polkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
