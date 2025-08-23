@@ -6,6 +6,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
   boot.plymouth.enable = true;
   boot.loader.grub = {
     enable = true;
