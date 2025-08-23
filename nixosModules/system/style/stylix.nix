@@ -7,8 +7,8 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    # Base16 theme - you can change this to any base16 theme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    # Base16 theme - from settings
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
     # Use swww for wallpaper management instead of setting a static image
     # This allows you to change wallpapers dynamically with swww
     image = pkgs.fetchurl {
@@ -31,7 +31,7 @@
       };
       sizes = {
         applications = 12;
-        terminal = 12;
+        terminal = 8;
         desktop = 10;
         popups = 10;
       };
@@ -50,8 +50,21 @@
     };
   };
 
-  # Add swww for wallpaper management
+  # Add swww and icon fonts for wallpaper management
   environment.systemPackages = [
     inputs.swww.packages.${pkgs.system}.swww
   ];
+
+  # Ensure icon fonts are available system-wide
+  fonts = {
+    packages = with pkgs; [
+      settings.monoFontPkg
+      settings.sansFontPkg 
+      settings.serifFontPkg
+      nerd-fonts.symbols-only
+      font-awesome
+      material-design-icons
+    ];
+    fontconfig.enable = true;
+  };
 }

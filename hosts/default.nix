@@ -10,6 +10,8 @@
     serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
+    # Stylix theme
+    stylixTheme = "gruvbox-dark-hard";
   };
 in {
   nixosConfigurations = desktop.nixosConfigurations; # // laptop.nixosConfigurations;

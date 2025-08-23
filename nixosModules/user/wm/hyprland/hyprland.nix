@@ -15,7 +15,7 @@ in {
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
       pkgs.hyprlandPlugins.hypr-dynamic-cursors
