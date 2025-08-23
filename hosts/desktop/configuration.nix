@@ -2,9 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../nixosModules/system/services/dbus.nix
     ../../nixosModules/system/wm/hyprland.nix
-    ../../nixosModules/system/wm/login.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
