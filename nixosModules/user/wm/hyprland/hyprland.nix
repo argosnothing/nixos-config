@@ -11,7 +11,6 @@ in {
     wofi
     rofi
     bibata-cursors
-    xdg-desktop-portal-hyprland
   ];
 
  home.pointerCursor = {
@@ -43,7 +42,7 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;  # Disable to prevent conflicts with system-level portal
     # Remove the portal package to prevent conflicts
     # portalPackage = pkgs.xdg-desktop-portal-hyprland;
     plugins = [
@@ -86,8 +85,6 @@ in {
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment PATH QT_QPA_PLATFORMTHEME"
-        # Wait a bit before starting portal to ensure Hyprland is ready
-        "sleep 2 && systemctl --user start xdg-desktop-portal-hyprland"
       ];
 
       general = {

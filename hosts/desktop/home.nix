@@ -5,7 +5,7 @@
     ../../nixosModules/user/wm/hyprland/hyprland.nix
     ../../nixosModules/user/terminal/default.nix
   ];
-  
+  programs.home-manager.enable = true;
   home.username = settings.username;
   home.homeDirectory = "/home/" + settings.username;
   programs.bash = {

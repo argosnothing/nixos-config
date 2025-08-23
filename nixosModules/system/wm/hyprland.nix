@@ -10,7 +10,7 @@ in
     enable = true;
     wayland.enable = true;
   };
-
+  # System packages
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     gtk3
@@ -19,6 +19,9 @@ in
     gsettings-desktop-schemas
   ];
 
+  security.pam.services.login.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -26,7 +29,9 @@ in
     portalPackage = pkgs-hyprland.xdg-desktop-portal-hyprland;
   };
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
+
+  # Ensure GTK cache is built
   programs.dconf.enable = true;
   services.dbus.enable = true;
 }

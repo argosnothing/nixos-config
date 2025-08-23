@@ -77,14 +77,6 @@
     polkit.enable = true;
   };
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
   # Environment variables for Electron apps
   environment.sessionVariables = {
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
