@@ -41,14 +41,12 @@
       size = 24;
     };
 
-    # Target applications - disable wallpaper management to use swww
+    # Target applications
     targets = {
       console.enable = true;
       grub.enable = true;
       gtk.enable = true;
       plymouth.enable = true;
-      # Disable stylix wallpaper management to use swww instead
-      hyprland.enable = false;
     };
   };
   
