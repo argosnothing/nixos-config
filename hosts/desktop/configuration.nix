@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ../../nixosModules/system/wm/hyprland.nix
+    ../../nixosModules/system/misc/remote_tooling.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
