@@ -58,6 +58,7 @@ in {
         "/usr/bin/gnome-keyring-daemon --start --components=secrets"
         "exec /usr/libexec/pam_kwallet_init"
         "swayidle -w -C /usr/share/swayidle/config"
+        "swww-daemon"
       ];
 
       general = {
