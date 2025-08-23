@@ -16,17 +16,17 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = inputs @ {nixpkgs, nixpkgs-unstable, ...}: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgsUnstable = import inputs.nixpkgs-unstable {
+    pkgsUnstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
-    inputs' = inputs // { inherit pkgsUnstable; };
   in {
-    inherit (import ./hosts/default.nix { inputs = inputs'; inherit pkgs system; }) nixosConfigurations homeConfigurations;
+    inherit (import ./hosts/default.nix { inherit inputs pkgs pkgsUnstable system; }) nixosConfigurations homeConfigurations;
   };
 }

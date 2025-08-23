@@ -1,7 +1,8 @@
-{inputs, pkgs, settings, ...}: {
+{inputs, pkgs, pkgsUnstable, settings, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
+    ../../nixosModules/system/services/dbus.nix
     ../../nixosModules/system/wm/hyprland.nix
     ../../nixosModules/system/wm/login.nix
   ];
@@ -37,18 +38,12 @@
     openssl
     home-manager
     pavucontrol
-    # Audio control utilities
     wireplumber
     pipewire
-    # Screenshot utilities
     grimblast
-    # Screen brightness control
     brightnessctl
-    # Media control
     playerctl
-    # Screen locker dependencies
     swayidle
-    # Wayland session utilities
     dbus
   ];
 
@@ -68,6 +63,13 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  # Environment variables for Electron apps
+  environment.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
+    ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
   };
 
   system.stateVersion = "25.05"; # Did you read the comment?

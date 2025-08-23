@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{pkgsUnstable, ...}: {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -6,6 +6,6 @@
     powerManagement.finegrained = false;
     open = true; # Revert back to open source driver
     nvidiaSettings = true;
-    package = inputs.pkgsUnstable.linuxPackages.nvidiaPackages.latest;
+    package = pkgsUnstable.linuxPackages.nvidiaPackages.latest;
   };
 }

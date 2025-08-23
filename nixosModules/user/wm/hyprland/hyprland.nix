@@ -11,6 +11,7 @@ in {
     wofi
     rofi
     bibata-cursors
+    xdg-desktop-portal-hyprland
   ];
 
  home.pointerCursor = {
@@ -43,7 +44,8 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    # Remove the portal package to prevent conflicts
+    # portalPackage = pkgs.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
     ];
@@ -82,10 +84,10 @@ in {
       ];
 
       exec-once = [
-        "dbus-update-activation-environment --all"
-        "/usr/bin/gnome-keyring-daemon --start --components=secrets"
-        "exec /usr/libexec/pam_kwallet_init"
-        "swayidle -w -C /usr/share/swayidle/config"
+        "dbus-update-activation-environment --systemd --all"
+        "systemctl --user import-environment PATH QT_QPA_PLATFORMTHEME"
+        # Wait a bit before starting portal to ensure Hyprland is ready
+        "sleep 2 && systemctl --user start xdg-desktop-portal-hyprland"
       ];
 
       general = {

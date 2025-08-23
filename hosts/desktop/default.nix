@@ -1,17 +1,15 @@
 # Configure both system and user for this machine
-{inputs, pkgs, system, settings, ...}:
+{inputs, pkgs, pkgsUnstable, system, settings, ...}:
 {
-  nixosConfigurations = {
-    desktop = inputs.nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs settings; };
-      modules = [
-        ./configuration.nix
-      ];
-    };
-  };
-
-  homeConfigurations = {
+    nixosConfigurations = {
+      desktop = inputs.nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs settings pkgsUnstable; };
+        modules = [
+          ./configuration.nix
+        ];
+      };
+    };  homeConfigurations = {
     user = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit inputs settings; };
