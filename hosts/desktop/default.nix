@@ -1,8 +1,5 @@
 # Configure both system and user for this machine
-{inputs, settings, ...}: let
-  system = "x86_64-linux";
-  pkgs = inputs.nixpkgs.legacyPackages.${system};
-in
+{inputs, pkgs, system, settings, ...}:
 {
   nixosConfigurations = {
     desktop = inputs.nixpkgs.lib.nixosSystem {

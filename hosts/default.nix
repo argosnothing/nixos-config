@@ -1,6 +1,6 @@
 # Tie All the hosts together
-{inputs, pkgs, ...}: let
-  desktop = import ./desktop/default.nix {inherit inputs pkgs settings;};
+{inputs, pkgs, system, ...}: let
+  desktop = import ./desktop/default.nix {inherit inputs pkgs system settings;};
   settings = {
     username = "salivala";
     wm = "hyprland";

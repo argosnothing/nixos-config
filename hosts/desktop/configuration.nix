@@ -21,7 +21,7 @@
 
   users.users."${settings.username}" = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
   };
 
   environment.shells = with pkgs; [zsh];
@@ -51,6 +51,24 @@
     # Wayland session utilities
     dbus
   ];
+
+  # Enable missing services that are causing errors
+  security.rtkit.enable = true;  # RealtimeKit for audio/video performance
+  services.upower.enable = true; # UPower for power management
+  services.dbus.enable = true;   # D-Bus system message bus
+  
+  # Fix seat management for Wayland sessions
+  services.seatd.enable = true;
+  
+  # Audio services
+  security.polkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }

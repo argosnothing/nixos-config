@@ -21,7 +21,12 @@
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    pkgsUnstable = import inputs.nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    inputs' = inputs // { inherit pkgsUnstable; };
   in {
-    inherit (import ./hosts/default.nix { inherit inputs pkgs;}) nixosConfigurations homeConfigurations;
+    inherit (import ./hosts/default.nix { inputs = inputs'; inherit pkgs system; }) nixosConfigurations homeConfigurations;
   };
 }

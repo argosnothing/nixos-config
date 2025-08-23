@@ -40,16 +40,6 @@ in {
     };
   };
 
-
-  xdg.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
