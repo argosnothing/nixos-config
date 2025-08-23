@@ -2,6 +2,7 @@
   imports = [
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
+    ../../nixosModules/user/wm/hyprland/hyprland.nix
   ];
   
   home.packages = with pkgs; [kitty];

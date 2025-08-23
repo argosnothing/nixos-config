@@ -1,0 +1,298 @@
+# modules/hyprland.nix
+{
+  pkgs,
+  ...
+}: let
+  navBindings = import ./config/nav-bindings.nix;
+in {
+  imports = [
+  ];
+  home.packages = with pkgs; [
+    wireplumber
+    libgtop
+    bluez
+    networkmanager
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+    gtksourceview3
+    libsoup_3
+    grimblast
+    jq
+    wf-recorder
+    hyprpicker
+    hyprshot
+    btop
+    matugen
+    swww
+    nwg-displays
+    hyprpolkitagent
+    alsa-utils
+    qogir-icon-theme
+    wofi
+    rofi
+  ];
+
+  xdg.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+  # Cursor theme (Hyprland-specific)
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Qogir";
+    package = pkgs.qogir-icon-theme;
+    size = 24;
+  };
+
+  gtk.cursorTheme = {
+    name = "Qogir";
+    package = pkgs.qogir-icon-theme;
+  };
+
+  # Session variables for Hyprland
+  home.sessionVariables = {
+    XCURSOR_THEME = "Qogir";
+    XCURSOR_SIZE = "24";
+    
+    # Electron/Chromium Wayland configuration
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    ELECTRON_NO_ASAR = "1";
+    ELECTRON_ENABLE_LOGGING = "0";
+    
+    # Force Wayland for Electron apps
+    NIXOS_OZONE_WL = "1";
+  };
+
+  systemd.user.services.hyprpolkitagent = {
+    Unit = {
+      Description = "Hyprpolkitagent - Polkit authentication agent";
+      After = ["graphical-session.target"];
+      Wants = ["graphical-session.target"];
+      PartOf = ["graphical-session.target"];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+    Install = {
+      WantedBy = ["graphical-session.target"];
+    };
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    plugins = [
+      pkgs.hyprlandPlugins.hyprspace
+      pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    ];
+    extraConfig = ''
+      submap = resize
+      bind = , H, resizeactive, -40 0
+      bind = , L, resizeactive,  40 0
+      bind = , J, resizeactive,  0 40
+      bind = , K, resizeactive,  0 -40
+      bind = , Escape, submap, reset
+      bind = , R, submap, reset
+      submap = reset
+    '';
+    settings = {
+      # variables
+      "$terminal" = "kitty";
+      "$menu" = "wofi --show drun --allow-images";
+      "$mainMod" = "MOD1";
+      "$lockCommand" = "loginctl lock-session";
+
+      monitor = [",preferred,auto,auto"];
+
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+        
+        # Electron/Chromium Wayland settings
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "ELECTRON_NO_ASAR,1"
+        
+        # Reduce Electron debug output
+        "ELECTRON_ENABLE_LOGGING,0"
+        "CHROMIUM_FLAGS,--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+      ];
+
+      exec-once = [
+        "dbus-update-activation-environment --all"
+        "/usr/bin/gnome-keyring-daemon --start --components=secrets"
+        "exec /usr/libexec/pam_kwallet_init"
+        "swayidle -w -C /usr/share/swayidle/config"
+      ];
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 5;
+        border_size = 1;
+        resize_on_border = false;
+        allow_tearing = false;
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 2;
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+        };
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+
+      animations = {
+        enabled = true;
+        bezier = [
+          "easeOutQuint,0.23,1,0.32,1"
+          "easeInOutCubic,0.65,0.05,0.36,1"
+          "linear,0,0,1,1"
+          "almostLinear,0.5,0.5,0.75,1.0"
+          "quick,0.15,0,0.1,1"
+        ];
+        animation = [
+          "global, 1, 10, default"
+          "border, 1, 5.39, easeOutQuint"
+          "windows, 1, 4.79, easeOutQuint"
+          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+          "windowsOut, 1, 1.49, linear, popin 87%"
+          "fadeIn, 1, 1.73, almostLinear"
+          "fadeOut, 1, 1.46, almostLinear"
+          "fade, 1, 3.03, quick"
+          "layers, 1, 3.81, easeOutQuint"
+          "layersIn, 1, 4, easeOutQuint, fade"
+          "layersOut, 1, 1.5, linear, fade"
+          "fadeLayersIn, 1, 1.79, almostLinear"
+          "fadeLayersOut, 1, 1.39, almostLinear"
+          "workspaces, 1, 1.94, almostLinear, slide"
+          "workspacesIn, 1, 1.21, almostLinear, slide"
+          "workspacesOut, 1, 1.94, almostLinear, slide"
+          "specialWorkspace, 1, 4, easeOutQuint, slidefadevert -50%"
+        ];
+      };
+
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+
+      master.new_status = "master";
+
+      misc = {
+        #force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+        middle_click_paste = false;
+      };
+
+      plugin = {
+        overview = {
+          affectStrut = false;
+          exitOnClick = true;
+          exitOnSwitch = true;
+        };
+        dynamic-cursors = {
+          enabled = true;
+          mode = "tilt";
+        };
+      };
+
+      input = {
+        kb_layout = "us";
+        kb_variant = "";
+        kb_model = "";
+        kb_options = "lv3:ralt_switch";
+        kb_rules = "";
+        follow_mouse = 1;
+        force_no_accel = true;
+        sensitivity = 0;
+        touchpad.natural_scroll = true;
+      };
+
+      gestures.workspace_swipe = true;
+
+      # rules & workspace config
+      windowrulev2 = [
+        "opacity 0.85 0.75, onworkspace:special:spec1"
+        "opacity 0.85 0.75, onworkspace:special:spec2"
+        "opacity 0.85 0.75, onworkspace:special:spec3"
+        "opacity 0.85 0.75, onworkspace:special:spec4"
+        "opacity 0.85 0.75, onworkspace:special:spec5"
+        "opacity 0.85 0.75, onworkspace:special:spec6"
+        "opacity 0.85 0.75, onworkspace:special:spec7"
+        "opacity 0.85 0.75, onworkspace:special:spec8"
+        "opacity 0.85 0.75, onworkspace:special:spec9"
+      ];
+
+      workspace = [
+        "special:spec1, gapsin:15, gapsout:120"
+        "special:spec2, gapsin:15, gapsout:120"
+        "special:spec3, gapsin:15, gapsout:120"
+        "special:spec4, gapsin:15, gapsout:120"
+        "special:spec5, gapsin:15, gapsout:120"
+        "special:spec6, gapsin:15, gapsout:120"
+        "special:spec7, gapsin:15, gapsout:120"
+        "special:spec8, gapsin:15, gapsout:120"
+        "special:spec9, gapsin:15, gapsout:120"
+      ];
+
+      windowrule = [
+        "suppressevent maximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      ];
+
+      bind = [
+        "$mainMod SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
+        "$mainMod, R, submap, resize"
+        "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod, C, killactive,"
+        "$mainMod, M, exit,"
+        "$mainMod, V, togglefloating,"
+        "$mainMod, space, exec, $menu"
+        "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
+        "$mainMod, F, fullscreen"
+        "$mainMod Shift, L, exec, $lockCommand"
+        "$mainMod, Tab, overview:toggle"
+      ] ++ navBindings.navBindings;
+
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
+
+      bindl = [
+        ",XF86AudioNext, exec, playerctl next"
+        ",XF86AudioPause, exec, playerctl play-pause"
+        ",XF86AudioPlay, exec, playerctl play-pause"
+        ",XF86AudioPrev, exec, playerctl previous"
+      ];
+    };
+  };
+}
