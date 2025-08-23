@@ -11,7 +11,7 @@ in
   nixosConfigurations = {
     desktop = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = inputs // { inherit settings; };
+      specialArgs = { inherit inputs settings; };
       modules = [
         ./configuration.nix
       ];
@@ -21,7 +21,7 @@ in
   homeConfigurations = {
     user = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = inputs // { inherit settings; };
+      extraSpecialArgs = { inherit inputs settings; };
       modules = [
         ./home.nix
       ];
