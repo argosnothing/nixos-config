@@ -1,6 +1,8 @@
 {inputs, pkgs, settings, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../../nixosModules/system/wm/hyprland.nix
+    ../../nixosModules/system/wm/login.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
