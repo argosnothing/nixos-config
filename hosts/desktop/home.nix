@@ -3,9 +3,9 @@
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
     ../../nixosModules/user/wm/hyprland/hyprland.nix
+    ../../nixosModules/user/terminal/default.nix
   ];
   
-  home.packages = with pkgs; [kitty];
   home.username = settings.username;
   home.homeDirectory = "/home/${settings.username}";
   nixpkgs.config.allowUnfree = true;

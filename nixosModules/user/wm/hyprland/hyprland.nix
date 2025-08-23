@@ -8,28 +8,6 @@ in {
   imports = [
   ];
   home.packages = with pkgs; [
-    wireplumber
-    libgtop
-    bluez
-    networkmanager
-    dart-sass
-    wl-clipboard
-    upower
-    gvfs
-    gtksourceview3
-    libsoup_3
-    grimblast
-    jq
-    wf-recorder
-    hyprpicker
-    hyprshot
-    btop
-    matugen
-    swww
-    nwg-displays
-    hyprpolkitagent
-    alsa-utils
-    qogir-icon-theme
     wofi
     rofi
   ];
@@ -94,7 +72,6 @@ in {
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
-      pkgs.hyprlandPlugins.hypr-dynamic-cursors
     ];
     extraConfig = ''
       submap = resize
@@ -207,10 +184,6 @@ in {
           affectStrut = false;
           exitOnClick = true;
           exitOnSwitch = true;
-        };
-        dynamic-cursors = {
-          enabled = true;
-          mode = "tilt";
         };
       };
 

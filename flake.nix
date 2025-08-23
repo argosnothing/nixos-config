@@ -19,7 +19,9 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
-    inherit (import ./hosts/default.nix { inherit inputs;}) nixosConfigurations homeConfigurations;
+    inherit (import ./hosts/default.nix { inherit inputs pkgs;}) nixosConfigurations homeConfigurations;
   };
 }
