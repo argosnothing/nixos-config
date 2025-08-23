@@ -2,13 +2,15 @@
   style = import ./style.nix {inherit config;};
 in {
   stylix.targets.waybar = {
-    enable = false;
+    enable = true;
     addCss = false;
   };
   programs.waybar = {
     enable = true;
     systemd = {
-      enable = false;
+      enable = true;
+      target = "graphical-session.target";
+      enableDebug = true;
     };
     style = style;
     settings = [
@@ -110,6 +112,18 @@ in {
           tooltip = false;
         };
       }
+    ];
+  };
+
+  # Fix waybar systemd service environment for Wayland
+  systemd.user.services.waybar = {
+    Service.Environment = [
+      "WAYLAND_DISPLAY=wayland-1"
+      "XDG_CURRENT_DESKTOP=Hyprland"
+      "XDG_SESSION_DESKTOP=Hyprland"
+      "XDG_RUNTIME_DIR=/run/user/1000"
+      "MOZ_ENABLE_WAYLAND=1"
+      "XDG_SESSION_TYPE=wayland"
     ];
   };
 }

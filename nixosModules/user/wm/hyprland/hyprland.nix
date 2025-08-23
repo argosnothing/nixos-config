@@ -4,6 +4,7 @@
 in {
   imports = [
     ./config/cursor.nix
+    ./waybar/waybar.nix
   ];
   home.packages = with pkgs; [
     wofi
@@ -12,13 +13,14 @@ in {
     hyprpicker
     hyprshot
     hyprpolkitagent
+    grim
+    slurp
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    systemd.enable = true;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
-      pkgs.hyprlandPlugins.hypr-dynamic-cursors
     ];
     extraConfig = ''
       submap = resize
@@ -56,7 +58,6 @@ in {
         "dbus-update-activation-environment --all"
         "/usr/bin/gnome-keyring-daemon --start --components=secrets"
         "exec /usr/libexec/pam_kwallet_init"
-        "exec waybar"
         "swayidle -w -C /usr/share/swayidle/config"
         "swww-daemon"
       ];
@@ -133,10 +134,6 @@ in {
           affectStrut = false;
           exitOnClick = true;
           exitOnSwitch = true;
-        };
-        dynamic-cursors = {
-          enabled = true;
-          mode = "tilt";
         };
       };
 
