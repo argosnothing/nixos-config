@@ -5,6 +5,7 @@ in
   imports = [
     ../services/dbus.nix
     ../services/gnome-keyring.nix
+    ../services/pipewire.nix
   ];
   services.displayManager.sddm = {
     enable = true;

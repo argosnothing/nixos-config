@@ -1,8 +1,5 @@
 # modules/hyprland.nix
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   navBindings = import ./config/nav-bindings.nix;
 in {
   imports = [
@@ -11,40 +8,49 @@ in {
     wofi
     rofi
     bibata-cursors
+    hyprpicker
+    hyprshot
+    hyprpolkitagent
   ];
 
- home.pointerCursor = {
+  xdg.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+  home.pointerCursor = {
     gtk.enable = true;
-    # x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 16;
   };
 
-  gtk = {
-    enable = true;
+  gtk.cursorTheme = {
+    name = "Qogir";
+    package = pkgs.Qogir-icon-theme;
+  };
 
-    theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
-
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-
-    font = {
-      name = "Sans";
-      size = 11;
-    };
+  # Session variables for Hyprland
+  home.sessionVariables = {
+    XCURSOR_THEME = "Qogir";
+    XCURSOR_SIZE = "24";
+    
+    # Electron/Chromium Wayland configuration
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    ELECTRON_NO_ASAR = "1";
+    ELECTRON_ENABLE_LOGGING = "0";
+    
+    # Force Wayland for Electron apps
+    NIXOS_OZONE_WL = "1";
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;  # Disable to prevent conflicts with system-level portal
-    # Remove the portal package to prevent conflicts
-    # portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    systemd.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
     ];
@@ -72,11 +78,11 @@ in {
         "HYPRCURSOR_SIZE,24"
         "XCURSOR_THEME,Bibata-Modern-Ice"
         "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        
+
         # Electron/Chromium Wayland settings
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "ELECTRON_NO_ASAR,1"
-        
+
         # Reduce Electron debug output
         "ELECTRON_ENABLE_LOGGING,0"
         "CHROMIUM_FLAGS,--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
@@ -206,20 +212,22 @@ in {
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 
-      bind = [
-        "$mainMod SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
-        "$mainMod, R, submap, resize"
-        "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
-        "$mainMod, Return, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, space, exec, $menu"
-        "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
-        "$mainMod, F, fullscreen"
-        "$mainMod Shift, L, exec, $lockCommand"
-        "$mainMod, Tab, overview:toggle"
-      ] ++ navBindings.navBindings;
+      bind =
+        [
+          "$mainMod SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
+          "$mainMod, R, submap, resize"
+          "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
+          "$mainMod, Return, exec, $terminal"
+          "$mainMod, C, killactive,"
+          "$mainMod, M, exit,"
+          "$mainMod, V, togglefloating,"
+          "$mainMod, space, exec, $menu"
+          "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
+          "$mainMod, F, fullscreen"
+          "$mainMod Shift, L, exec, $lockCommand"
+          "$mainMod, Tab, overview:toggle"
+        ]
+        ++ navBindings.navBindings;
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
