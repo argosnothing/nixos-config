@@ -1,17 +1,19 @@
-{inputs, pkgs, ...}: let
-  pkgs-hyprland = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
-{
+{pkgs, ...}: {
   imports = [
     ../services/dbus.nix
     ../services/gnome-keyring.nix
     ../services/pipewire.nix
   ];
-  services.displayManager.sddm = {
+  services.greetd = {
     enable = true;
-    wayland.enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
   };
-  # System packages
+
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     gtk3
@@ -25,9 +27,19 @@ in
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
-    portalPackage = pkgs-hyprland.xdg-desktop-portal-hyprland;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = ["gtk"];
+      };
+    };
   };
 
   services.xserver.excludePackages = [pkgs.xterm];
