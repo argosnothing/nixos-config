@@ -1,7 +1,7 @@
 # Configure both system and user for this machine
-args: let
+{inputs, ...}: let
   system = "x86_64-linux";
-  pkgs = args.nixpkgs.legacyPackages.${system};
+  pkgs = inputs.nixpkgs.legacyPackages.${system};
   settings = {
     username = "salivala";
     wm = "hyprland";
@@ -9,21 +9,21 @@ args: let
 in
 {
   nixosConfigurations = {
-    desktop = args.nixpkgs.lib.nixosSystem {
+    desktop = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = args;
+      specialArgs = inputs;
       modules = [
-        ./configuration.nix { inherit args settings;}
+        ./configuration.nix { inherit settings;}
       ];
     };
   };
 
   homeConfigurations = {
-    user = args.inputs.home-manager.lib.homeManagerConfiguration {
+    user = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = args;
+      extraSpecialArgs = inputs;
       modules = [
-        ./home.nix { inherit args settings;}
+        ./home.nix { inherit settings;}
       ];
     };
   };
