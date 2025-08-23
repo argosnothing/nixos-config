@@ -1,6 +1,7 @@
 {inputs, pkgs, settings, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ./nvidia.nix
     ../../nixosModules/system/wm/hyprland.nix
     ../../nixosModules/system/wm/login.nix
   ];
@@ -36,6 +37,19 @@
     openssl
     home-manager
     pavucontrol
+    # Audio control utilities
+    wireplumber
+    pipewire
+    # Screenshot utilities
+    grimblast
+    # Screen brightness control
+    brightnessctl
+    # Media control
+    playerctl
+    # Screen locker dependencies
+    swayidle
+    # Wayland session utilities
+    dbus
   ];
 
   system.stateVersion = "25.05"; # Did you read the comment?

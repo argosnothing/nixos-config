@@ -10,60 +10,44 @@ in {
   home.packages = with pkgs; [
     wofi
     rofi
+    bibata-cursors
   ];
+
+ home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
+  };
+
 
   xdg.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
     ];
-  };
-
-  # Cursor theme (Hyprland-specific)
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "Qogir";
-    package = pkgs.qogir-icon-theme;
-    size = 24;
-  };
-
-  gtk.cursorTheme = {
-    name = "Qogir";
-    package = pkgs.qogir-icon-theme;
-  };
-
-  # Session variables for Hyprland
-  home.sessionVariables = {
-    XCURSOR_THEME = "Qogir";
-    XCURSOR_SIZE = "24";
-    
-    # Electron/Chromium Wayland configuration
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    ELECTRON_NO_ASAR = "1";
-    ELECTRON_ENABLE_LOGGING = "0";
-    
-    # Force Wayland for Electron apps
-    NIXOS_OZONE_WL = "1";
-  };
-
-  systemd.user.services.hyprpolkitagent = {
-    Unit = {
-      Description = "Hyprpolkitagent - Polkit authentication agent";
-      After = ["graphical-session.target"];
-      Wants = ["graphical-session.target"];
-      PartOf = ["graphical-session.target"];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-    Install = {
-      WantedBy = ["graphical-session.target"];
-    };
   };
 
   wayland.windowManager.hyprland = {
@@ -95,6 +79,8 @@ in {
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "XCURSOR_THEME,Bibata-Modern-Ice"
+        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
         
         # Electron/Chromium Wayland settings
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
