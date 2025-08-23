@@ -1,4 +1,4 @@
-{inputs, pkgs, ...}: {
+{inputs, pkgs, settings, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -15,9 +15,8 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users.salivala = {
+  users.users."${settings.username}" = {
     isNormalUser = true;
-    description = "Salivala";
     extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout"];
   };
 

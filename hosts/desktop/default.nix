@@ -2,6 +2,10 @@
 args: let
   system = "x86_64-linux";
   pkgs = args.nixpkgs.legacyPackages.${system};
+  settings = {
+    username = "salivala";
+    wm = "hyprland";
+  };
 in
 {
   nixosConfigurations = {
@@ -9,8 +13,7 @@ in
       inherit system;
       specialArgs = args;
       modules = [
-        ./configuration.nix
-        ./hardware-configuration.nix
+        ./configuration.nix { inherit args settings;}
       ];
     };
   };
@@ -20,7 +23,7 @@ in
       inherit pkgs;
       extraSpecialArgs = args;
       modules = [
-        ./home.nix
+        ./home.nix { inherit args settings;}
       ];
     };
   };
