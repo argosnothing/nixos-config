@@ -1,6 +1,7 @@
 # Tie All the hosts together
 {inputs, pkgs, pkgsUnstable, system, ...}: let
   desktop = import ./desktop/default.nix {inherit inputs pkgs pkgsUnstable system settings;};
+  laptop = import ./laptop/default.nix {inherit inputs pkgs pkgsUnstable system settings;};
   settings = {
     username = "salivala";
     wm = "hyprland";
@@ -14,6 +15,6 @@
     stylixTheme = "gruvbox-dark-hard";
   };
 in {
-  nixosConfigurations = desktop.nixosConfigurations; # // laptop.nixosConfigurations;
-  homeConfigurations = desktop.homeConfigurations; # // laptop.homeConfigurations;
+  nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations;
+  homeConfigurations = desktop.homeConfigurations  // laptop.homeConfigurations;
 }

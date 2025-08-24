@@ -24,6 +24,7 @@
     efiSupport = true;
     devices = ["nodev"];
   };
+  networking.networkmanager.enable = true;
   boot.loader.grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.consoleLogLevel = 3;
