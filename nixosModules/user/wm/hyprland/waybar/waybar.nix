@@ -24,21 +24,23 @@ in {
         height = 0;
         modules-left = [
           "hyprland/workspaces"
-          "custom/divider"
           "cpu"
-          "custom/divider"
           "memory"
         ];
         modules-center = ["hyprland/window"];
         modules-right = [
           "tray"
           "network"
-          "custom/divider"
           "pulseaudio"
-          "custom/divider"
           "clock"
         ];
-        "hyprland/window" = {format = "{}";};
+        "hyprland/window" = {
+          format = "{title}";
+          separate-outputs = true;
+          rewrite = {
+            "^$" = "Desktop";
+          };
+        };
         "wlr/workspaces" = {
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";

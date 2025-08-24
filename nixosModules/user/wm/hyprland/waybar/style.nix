@@ -1,12 +1,14 @@
 {config, ...}: let
   styles = config.lib.stylix.colors.withHashtag;
   font = config.stylix.fonts.monospace.name or "monospace";
+  topMargin = "5px";
 in ''
   window#waybar {
+    margin-top: 10px;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 13px; /* text size controls height */
-    background: ${styles.base00};
+    background: transparent;
   }
 
   window#waybar,
@@ -22,7 +24,6 @@ in ''
   }
 
   #window,
-  #workspaces,
   #tray,
   #clock,
   #battery,
@@ -37,14 +38,30 @@ in ''
   #privacy,
   #custom-start,
   #custom-end,
-  #custom-divider,
-  #custom-separator,
   #custom-leftend,
   #custom-rightend {
+    padding: 4px 8px;
+    margin: ${topMargin} 2px 0 2px;
+    background: ${styles.base00};
+    color: ${styles.base0D};
+    border-radius: 6px;
+  }
+
+  #workspaces {
+    padding: 4px 8px;
+    margin: ${topMargin} 2px 0 2px;
+    background: ${styles.base00};
+    color: ${styles.base0D};
+    border-radius: 6px;
+  }
+
+  #custom-divider,
+  #custom-separator {
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    background: transparent;
     color: ${styles.base0D};
   }
 
