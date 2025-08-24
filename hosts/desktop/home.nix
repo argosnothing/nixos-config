@@ -16,9 +16,30 @@
   home.packages = with pkgs; [
     desktop-file-utils
     discord
+    direnv
+    libsForQt5.qt5ct
+    pkgs.libsForQt5.breeze-qt5
+    libsForQt5.breeze-icons
+    pkgs.noto-fonts-monochrome-emoji
   ];
+  qt = {
+    enable = true;
+    style.package = pkgs.libsForQt5.breeze-qt5;
+    style.name = "breeze-dark";
+    platformTheme.name = userSettings.wm;
+  };
+  fonts.fontconfig = {
+    defaultFonts = {
+      monospace = [settings.monoFont];
+      sansSerif = [settings.sansFont];
+      serif = [settings.serifFont];
+    };
+  };
   programs.bash = {
     enable = true;
+  };
+  home.sessionVariables = {
+    BROWSER = "firefox";
   };
   home.username = settings.username;
   home.homeDirectory = "/home/" + settings.username;

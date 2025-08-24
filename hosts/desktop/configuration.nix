@@ -68,6 +68,14 @@
     dbus
   ];
 
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
   # Enable missing services that are causing errors
   services.upower.enable = true; # UPower for power management
   services.dbus.enable = true; # D-Bus system message bus

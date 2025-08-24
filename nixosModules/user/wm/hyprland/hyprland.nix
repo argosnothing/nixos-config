@@ -5,6 +5,7 @@ in {
   imports = [
     ./config/cursor.nix
     ./config/wallpaper-manager.nix
+    ./wofi/wofi.nix
     ./waybar/waybar.nix
   ];
   home.packages = with pkgs; [
