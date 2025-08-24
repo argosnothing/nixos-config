@@ -17,12 +17,6 @@
     };
   };
   
-  # Qt integration with GTK
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-  
   # Add necessary icon packages
   home.packages = with pkgs; [
     adwaita-icon-theme
