@@ -39,17 +39,9 @@ in {
     # Force Wayland for Electron apps
     NIXOS_OZONE_WL = "1";
   };
-  xdg.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hyprspace
     ];
