@@ -1,4 +1,6 @@
-{pkgsUnstable, ...}: {
+{pkgs, pkgsUnstable, config, ...}: let 
+    nvidiaPackage = pkgsUnstable.linuxPackages_xanmod_latest.nvidiaPackages.latest;
+in {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -6,6 +8,6 @@
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
-    package = pkgsUnstable.linuxPackages.nvidiaPackages.latest;
+    package = nvidiaPackage;
   };
 }

@@ -14,4 +14,5 @@
     enable = true;
     profileNames = ["default"];
   };
+  stylix.targets.vscode.enable = true;
 }

@@ -69,7 +69,9 @@
     swayidle
     dbus
   ];
-
+  # Use unstable kernel to match unstable NVIDIA drivers  
+  #boot.kernelPackages = pkgsUnstable.linuxPackages;
+    boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
