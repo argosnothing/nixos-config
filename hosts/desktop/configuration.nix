@@ -51,13 +51,13 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
   environment.systemPackages = with pkgs; [
     vim
     git
     gitkraken
     unzip
     openssl
+    inputs.swww.packages.${pkgs.system}.swww
     xdg-utils
     home-manager
     pavucontrol
@@ -78,25 +78,17 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
-  # Enable missing services that are causing errors
   services.upower.enable = true; # UPower for power management
   services.dbus.enable = true; # D-Bus system message bus
-
-  # Fix seat management for Wayland sessions
   services.seatd.enable = true;
-
-  # Audio services
   security = {
     rtkit.enable = true;
     polkit.enable = true;
   };
-
-  # Environment variables for Electron apps
   environment.sessionVariables = {
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
     ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
   };
-
   system.stateVersion = "25.05"; # Did you read the comment?
 }

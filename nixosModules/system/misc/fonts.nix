@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, settings, ...}: {
   # Fonts are nice to have
   fonts.packages = with pkgs; [
     # Fonts
@@ -68,6 +68,15 @@
     nerd-fonts.ubuntu-sans
     nerd-fonts.victor-mono
     nerd-fonts.zed-mono
+    settings.monoFontPkg
+    settings.sansFontPkg
+    settings.serifFontPkg
+    nerd-fonts.symbols-only
+    font-awesome
+    material-design-icons
+    adwaita-icon-theme
+    hicolor-icon-theme
+    papirus-icon-theme
     source-code-pro
   ];
 }
