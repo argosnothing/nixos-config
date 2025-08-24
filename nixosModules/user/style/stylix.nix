@@ -7,13 +7,20 @@
   imports = [
     inputs.stylix.homeModules.stylix
   ];
+  fonts.fontconfig = {
+    defaultFonts = {
+      monospace = [settings.monoFont];
+      sansSerif = [settings.sansFont];
+      serif = [settings.serifFont];
+    };
+  };
   stylix = {
     enable = true;
     autoEnable = true;
-    
+
     # Base16 theme - from settings, same as system
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
-    
+
     # Font sizes - same as system
     fonts = {
       sizes = {
@@ -23,8 +30,9 @@
         popups = 10;
       };
     };
-    
+
     targets = {
+      gtk.enable = true;
       firefox = {
         enable = true;
         profileNames = ["default"];

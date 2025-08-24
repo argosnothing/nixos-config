@@ -157,27 +157,17 @@ in {
 
       # rules & workspace config
       windowrulev2 = [
-        "opacity 0.85 0.75, onworkspace:special:spec1"
-        "opacity 0.85 0.75, onworkspace:special:spec2"
-        "opacity 0.85 0.75, onworkspace:special:spec3"
-        "opacity 0.85 0.75, onworkspace:special:spec4"
-        "opacity 0.85 0.75, onworkspace:special:spec5"
-        "opacity 0.85 0.75, onworkspace:special:spec6"
-        "opacity 0.85 0.75, onworkspace:special:spec7"
-        "opacity 0.85 0.75, onworkspace:special:spec8"
-        "opacity 0.85 0.75, onworkspace:special:spec9"
+        "opacity 0.85 0.75, onworkspace:special:specq"
+        "opacity 0.85 0.75, onworkspace:special:specw"
+        "opacity 0.85 0.75, onworkspace:special:spece"
+        "opacity 0.85 0.75, onworkspace:special:specs"
       ];
 
       workspace = [
-        "special:spec1, gapsin:15, gapsout:120"
-        "special:spec2, gapsin:15, gapsout:120"
-        "special:spec3, gapsin:15, gapsout:120"
-        "special:spec4, gapsin:15, gapsout:120"
-        "special:spec5, gapsin:15, gapsout:120"
-        "special:spec6, gapsin:15, gapsout:120"
-        "special:spec7, gapsin:15, gapsout:120"
-        "special:spec8, gapsin:15, gapsout:120"
-        "special:spec9, gapsin:15, gapsout:120"
+        "special:specq, gapsin:15, gapsout:120"
+        "special:specw, gapsin:15, gapsout:120"
+        "special:spece, gapsin:15, gapsout:120"
+        "special:specs, gapsin:15, gapsout:120"
       ];
 
       windowrule = [

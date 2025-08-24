@@ -52,7 +52,17 @@
       nerd-fonts.symbols-only
       font-awesome
       material-design-icons
+      # Add icon themes for system-wide compatibility
+      adwaita-icon-theme
+      hicolor-icon-theme  
+      papirus-icon-theme
     ];
     fontconfig.enable = true;
+  };
+  
+  # Ensure proper GTK/icon theme environment for all applications
+  environment.variables = {
+    # Set fallback icon theme for applications that don't inherit from stylix
+    GTK_ICON_THEME_NAME = "Adwaita";
   };
 }

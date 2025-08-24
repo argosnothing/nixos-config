@@ -15,6 +15,7 @@
   programs.home-manager.enable = true;
   home.packages = with pkgs; [
     desktop-file-utils
+    discord
   ];
   programs.bash = {
     enable = true;
