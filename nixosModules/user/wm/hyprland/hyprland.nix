@@ -5,7 +5,7 @@ in {
   imports = [
     ./config/cursor.nix
     ./config/wallpaper-manager.nix
-    ./config/termfilechooser.nix
+    #./config/termfilechooser.nix
     ./wofi/wofi.nix
     ./waybar/waybar.nix
   ];

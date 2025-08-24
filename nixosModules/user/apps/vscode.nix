@@ -6,6 +6,8 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
+        bbenoist.nix
+        jnoortheen.nix-ide
         github.copilot
         github.copilot-chat
         yzhang.markdown-all-in-one
