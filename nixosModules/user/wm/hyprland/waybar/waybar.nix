@@ -64,6 +64,9 @@ in {
           icon-size = 13;
           tooltip = false;
           spacing = 10;
+          show-passive-items = false;
+          reverse-direction = false;
+          on-update = "";
         };
         network = {
           format = "󰖩 {essid}";

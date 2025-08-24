@@ -6,11 +6,6 @@
         "OpenSC PKCS#11 Module" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
       };
     };
-    profiles.default = {
-      settings = {
-        "ui.key.menuAccessKeyFocuses" = false;
-      };
-    };
   };
 
   xdg.mimeApps.defaultApplications = {

@@ -22,7 +22,6 @@
     
     packages = [
       "com.valvesoftware.Steam"
-      "com.spotify.Client"
       { appId = "com.jagex.Launcher"; origin = "JagexLauncher"; }  # Official Jagex Launcher
       { appId = "com.jagex.Launcher.ThirdParty.RuneLite"; origin = "JagexLauncher"; }  # RuneLite from Jagex Launcher remote
       "org.freedesktop.Platform.Compat.i386//23.08" # 32-bit compat extension for Jagex Launcher

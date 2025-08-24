@@ -4,14 +4,12 @@
   settings,
   ...
 }: {
+  stylix.targets.grub.enable = false;
+  stylix.homeManagerIntegration.autoImport = true;
   stylix = {
     enable = true;
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
-    image = pkgs.fetchurl {
-      url = "https://github.com/NixOS/nixos-artwork/raw/master/wallpapers/nix-wallpaper-nineish-dark-gray.png";
-      sha256 = "sha256-nhIUtCy/Hgy8P0eUssEJ0ikcOBjdAb3Uu8VqThZOWFs=";
-    };
     fonts = {
       monospace = {
         package = settings.monoFontPkg;
@@ -25,20 +23,10 @@
         package = settings.serifFontPkg;
         name = settings.serifFont;
       };
-      sizes = {
-        applications = 12;
-        terminal = 8;
-        desktop = 10;
-        popups = 10;
+      emoji = {
+        name = "Noto Color Emoji";
+        package = pkgs.noto-fonts-emoji-blob-bin;
       };
-    };
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 24;
-    };
-    targets = {
-      grub.enable = false;
     };
   };
   environment.systemPackages = [
@@ -47,22 +35,20 @@
   fonts = {
     packages = with pkgs; [
       settings.monoFontPkg
-      settings.sansFontPkg 
+      settings.sansFontPkg
       settings.serifFontPkg
       nerd-fonts.symbols-only
       font-awesome
       material-design-icons
       # Add icon themes for system-wide compatibility
       adwaita-icon-theme
-      hicolor-icon-theme  
+      hicolor-icon-theme
       papirus-icon-theme
     ];
-    fontconfig.enable = true;
   };
-  
+
   # Ensure proper GTK/icon theme environment for all applications
   environment.variables = {
     # Set fallback icon theme for applications that don't inherit from stylix
-    GTK_ICON_THEME_NAME = "Adwaita";
   };
 }

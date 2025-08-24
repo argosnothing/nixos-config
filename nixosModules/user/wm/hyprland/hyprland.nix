@@ -5,15 +5,18 @@ in {
   imports = [
     ./config/cursor.nix
     ./config/wallpaper-manager.nix
+    ./config/termfilechooser.nix
     ./wofi/wofi.nix
     ./waybar/waybar.nix
   ];
   home.packages = with pkgs; [
     wofi
     rofi
+    wireplumber
     bibata-cursors
     hyprpicker
     hyprshot
+    nwg-displays
     hyprpolkitagent
     grim
     slurp
@@ -21,6 +24,7 @@ in {
     gtksourceview3
     libsoup_3
     qogir-icon-theme
+    alsa-utils
   ];
   # Session variables for Hyprland
   home.sessionVariables = {
@@ -34,6 +38,13 @@ in {
 
     # Force Wayland for Electron apps
     NIXOS_OZONE_WL = "1";
+  };
+  xdg.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
   wayland.windowManager.hyprland = {
     enable = true;
@@ -182,10 +193,10 @@ in {
       ];
 
       workspace = [
-        "special:specq, gapsin:15, gapsout:120"
-        "special:specw, gapsin:15, gapsout:120"
-        "special:spece, gapsin:15, gapsout:120"
-        "special:specs, gapsin:15, gapsout:120"
+        "special:specq, gapsin:15, gapsout:50"
+        "special:specw, gapsin:15, gapsout:50"
+        "special:spece, gapsin:15, gapsout:50"
+        "special:specs, gapsin:15, gapsout:50"
       ];
 
       windowrule = [

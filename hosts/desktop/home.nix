@@ -1,6 +1,7 @@
 {
   pkgs,
   settings,
+  inputs,
   ...
 }: {
   imports = [
@@ -12,9 +13,12 @@
     ../../nixosModules/user/wm/hyprland/hyprland.nix
     ../../nixosModules/user/terminal/default.nix
   ];
-  programs.home-manager.enable = true;
   home.packages = with pkgs; [
     desktop-file-utils
+    spotify
+    neofetch
+    microsoft-edge
+    pulsemixer
     discord
     direnv
     libsForQt5.qt5ct

@@ -14,29 +14,35 @@
       serif = [settings.serifFont];
     };
   };
-  stylix = {
+  stylix.enable = true;
+  stylix.autoEnable = true;
+  stylix.polarity = "dark";
+  stylix.targets.hyprland.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
+  stylix.targets.firefox = {
     enable = true;
-    autoEnable = true;
-
-    # Base16 theme - from settings, same as system
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
-
-    # Font sizes - same as system
-    fonts = {
-      sizes = {
-        applications = 12;
-        terminal = 10;
-        desktop = 10;
-        popups = 10;
-      };
+    profileNames = ["default"];
+  };
+  stylix.fonts = {
+    monospace = {
+      name = settings.monoFont;
+      package = settings.monoFontPkg;
     };
-
-    targets = {
-      gtk.enable = true;
-      firefox = {
-        enable = true;
-        profileNames = ["default"];
-      };
+    serif = {
+      name = settings.serifFont;
+      package = settings.serifFontPkg;
+    };
+    sansSerif = {
+      name = settings.sansFont;
+      package = settings.sansFontPkg;
+    };
+    sizes = {
+      applications = 12;
+      terminal = 10;
+      desktop = 10;
+      popups = 10;
     };
   };
+
+  stylix.targets.gtk.enable = true;
 }
