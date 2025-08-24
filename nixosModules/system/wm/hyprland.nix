@@ -3,7 +3,6 @@
     ../services/dbus.nix
     ../services/gnome-keyring.nix
     ../services/pipewire.nix
-    ../services/greetd-wallpaper.nix
   ];
   services.greetd = {
     enable = true;
@@ -23,7 +22,6 @@
     gtk4
     glib
     gsettings-desktop-schemas
-    swww
     # Icon fonts
     font-awesome
     material-design-icons

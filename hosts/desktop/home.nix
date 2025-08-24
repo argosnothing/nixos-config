@@ -15,7 +15,20 @@
   programs.home-manager.enable = true;
   home.packages = with pkgs; [
     desktop-file-utils
+    swww
   ];
+  
+  # Install wallpaper manager script
+  home.file."bin/wallpaper-manager" = {
+    source = ../../media/wallpaper-manager.sh;
+    executable = true;
+  };
+  
+  # Install wallpapers to home directory
+  home.file."/.local/share/wallpapers" = {
+    source = ../../media/wallpapers;
+    recursive = true;
+  };
   programs.bash = {
     enable = true;
   };
