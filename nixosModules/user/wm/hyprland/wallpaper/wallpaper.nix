@@ -1,16 +1,20 @@
-{...}: {
-  # Wallpaper systemd service that depends on waybar
+{pkgs, ...}: {
+  imports = [
+    ./wallpaper-manager.nix
+  ];
+
+  # Wallpaper systemd service that depends on graphical session
   systemd.user.services.wallpaper = {
     Unit = {
       Description = "Restore wallpaper on session start";
-      After = ["waybar.service"];
-      Wants = ["waybar.service"];
+      After = ["graphical-session.target" "hyprland-session.target"];
+      Wants = ["graphical-session.target"];
       PartOf = ["graphical-session.target"];
     };
     
     Service = {
       Type = "oneshot";
-      ExecStart = "/home/salivala/bin/wallpaper-manager current";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'wallpaper-manager current'";
       Environment = [
         "WAYLAND_DISPLAY=wayland-1"
         "XDG_CURRENT_DESKTOP=Hyprland"
