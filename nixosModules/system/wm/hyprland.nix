@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: let
+  pkgs-hyprland = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
   imports = [
     ../services/dbus.nix
     ../services/gnome-keyring.nix
@@ -32,23 +34,9 @@
 
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = ["gtk"];
-      };
-      hyprland = {
-        default = ["hyprland" "gtk"];
-      };
-    };
+    portalPackage = pkgs-hyprland.xdg-desktop-portal-hyprland;
   };
 
   services.xserver.excludePackages = [pkgs.xterm];

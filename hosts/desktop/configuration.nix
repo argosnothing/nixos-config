@@ -9,7 +9,7 @@
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../nixosModules/system/fonts.nix
+    ../../nixosModules/system/misc/fonts.nix
     ../../nixosModules/system/app/flatpak.nix
     ../../nixosModules/system/wm/hyprland.nix
     ../../nixosModules/system/style/stylix.nix
@@ -58,6 +58,7 @@
     gitkraken
     unzip
     openssl
+    xdg-utils
     home-manager
     pavucontrol
     wireplumber
