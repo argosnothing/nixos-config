@@ -52,7 +52,7 @@ in ''
     padding-top: 0;
     padding-bottom: 0;
     margin: 0 2px;
-    border-radius: 6px;
+    border-radius: 0;
     background: ${styles.base00};
     color: ${styles.base05};
     border: 1px solid ${styles.base02};
