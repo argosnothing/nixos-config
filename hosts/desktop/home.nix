@@ -26,7 +26,7 @@
     enable = true;
     style.package = pkgs.libsForQt5.breeze-qt5;
     style.name = "breeze-dark";
-    platformTheme.name = userSettings.wm;
+    platformTheme.name = settings.wm;
   };
   fonts.fontconfig = {
     defaultFonts = {

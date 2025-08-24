@@ -10,7 +10,7 @@
         ];
       };
     };  homeConfigurations = {
-    user = inputs.home-manager.lib.homeManagerConfiguration {
+    "${settings.username}@desktop" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit inputs settings; };
       modules = [
