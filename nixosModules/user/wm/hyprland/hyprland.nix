@@ -4,8 +4,8 @@
 in {
   imports = [
     ./config/cursor.nix
+    ./config/wallpaper-manager.nix
     ./waybar/waybar.nix
-    ./wallpaper/wallpaper.nix
   ];
   home.packages = with pkgs; [
     wofi
