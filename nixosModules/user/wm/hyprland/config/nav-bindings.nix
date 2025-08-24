@@ -41,28 +41,22 @@
     "$mainMod SHIFT, 9, movetoworkspace, 9"
     "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-    # Navigate between special workspaces using W/S and I/K
-    "$mainMod, W, exec, cycle-special-workspaces next"  # next special workspace
-    "$mainMod, S, exec, cycle-special-workspaces prev"  # previous special workspace  
-    "$mainMod, I, exec, cycle-special-workspaces next"  # next special workspace (right hand)
-    "$mainMod, K, exec, cycle-special-workspaces prev"  # previous special workspace (right hand)
-
     # Hide any currently visible special workspace (never toggle, always hide)
-    "$mainMod, Escape, exec, hide-current-special-workspace"  # hide current special workspace
+    "$mainMod, Escape, togglespecialworkspace,"  # hide current special workspace
 
     # Show special workspace status 
     "$mainMod SHIFT, Escape, exec, kitty --class floating-terminal -e bash -c 'special-workspace-status; echo; echo \"Press any key to close...\"; read -n 1'"  # show special workspace status
 
     # Special workspaces spec1-spec9 with $mainMod CTRL 1-9
-    "$mainMod CTRL, 1, workspace, special:spec1"
-    "$mainMod CTRL, 2, workspace, special:spec2"
-    "$mainMod CTRL, 3, workspace, special:spec3"
-    "$mainMod CTRL, 4, workspace, special:spec4"
-    "$mainMod CTRL, 5, workspace, special:spec5"
-    "$mainMod CTRL, 6, workspace, special:spec6"
-    "$mainMod CTRL, 7, workspace, special:spec7"
-    "$mainMod CTRL, 8, workspace, special:spec8"
-    "$mainMod CTRL, 9, workspace, special:spec9"
+    "$mainMod CTRL, 1, togglespecialworkspace, spec1"
+    "$mainMod CTRL, 2, togglespecialworkspace, spec2"
+    "$mainMod CTRL, 3, togglespecialworkspace, spec3"
+    "$mainMod CTRL, 4, togglespecialworkspace, spec4"
+    "$mainMod CTRL, 5, togglespecialworkspace, spec5"
+    "$mainMod CTRL, 6, togglespecialworkspace, spec6"
+    "$mainMod CTRL, 7, togglespecialworkspace, spec7"
+    "$mainMod CTRL, 8, togglespecialworkspace, spec8"
+    "$mainMod CTRL, 9, togglespecialworkspace, spec9"
 
     # Move window to special workspaces spec1-spec9 with $mainMod CTRL SHIFT 1-9
     "$mainMod CTRL SHIFT, 1, movetoworkspace, special:spec1"

@@ -45,6 +45,9 @@ in {
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         
+        # Flatpak app discovery
+        "XDG_DATA_DIRS,$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
+        
         # Electron/Chromium Wayland settings
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "ELECTRON_NO_ASAR,1"

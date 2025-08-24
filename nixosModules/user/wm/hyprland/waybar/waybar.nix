@@ -117,13 +117,23 @@ in {
 
   # Fix waybar systemd service environment for Wayland
   systemd.user.services.waybar = {
-    Service.Environment = [
-      "WAYLAND_DISPLAY=wayland-1"
-      "XDG_CURRENT_DESKTOP=Hyprland"
-      "XDG_SESSION_DESKTOP=Hyprland"
-      "XDG_RUNTIME_DIR=/run/user/1000"
-      "MOZ_ENABLE_WAYLAND=1"
-      "XDG_SESSION_TYPE=wayland"
-    ];
+    Unit = {
+      After = ["graphical-session.target" "hyprland-session.target"];
+      Wants = ["graphical-session.target"];
+      ConditionEnvironment = "WAYLAND_DISPLAY";
+    };
+    Service = {
+      Environment = [
+        "WAYLAND_DISPLAY=wayland-1"
+        "XDG_CURRENT_DESKTOP=Hyprland"  
+        "XDG_SESSION_DESKTOP=Hyprland"
+        "XDG_RUNTIME_DIR=/run/user/1000"
+        "MOZ_ENABLE_WAYLAND=1"
+        "XDG_SESSION_TYPE=wayland"
+      ];
+      ExecStartPre = "/bin/sh -c 'until [ -S $${XDG_RUNTIME_DIR}/$${WAYLAND_DISPLAY} ]; do sleep 1; done'";
+      Restart = "on-failure";
+      RestartSec = "5";
+    };
   };
 }

@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../../nixosModules/user/style/stylix.nix
+    ../../nixosModules/user/apps/flatpak/flatpak.nix
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
     ../../nixosModules/user/apps/gtk.nix
