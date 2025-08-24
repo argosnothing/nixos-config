@@ -2,7 +2,8 @@
   pkgs,
   ...
 }: let
-  wallpaperDir = ../../../../../../media/wallpapers;
+  # Reference the wallpapers from the home directory where they'll be copied
+  wallpaperDir = "$HOME/.local/share/wallpapers";
   
   wallpaper-manager = pkgs.writeShellScriptBin "wallpaper-manager" ''
     #!/usr/bin/env bash
@@ -63,7 +64,7 @@ in {
   
   # Copy wallpapers to a known location in the home directory
   home.file.".local/share/wallpapers" = {
-    source = wallpaperDir;
+    source = ../../../../../media/wallpapers;
     recursive = true;
   };
 }
