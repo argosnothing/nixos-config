@@ -13,13 +13,29 @@
     
     case "$1" in
         "next"|"nextimg")
-            # Pick a random wallpaper from the nix-managed wallpapers
-            WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.bmp" -o -iname "*.gif" \) | shuf -n 1)
+            # Get all wallpapers in sorted order for consistent cycling
+            mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" \( -type f -o -type l \) \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.bmp" -o -iname "*.gif" \) | sort)
             
-            if [ -z "$WALLPAPER" ]; then
+            if [ ''${#WALLPAPERS[@]} -eq 0 ]; then
                 echo "No wallpapers found in $WALLPAPER_DIR"
                 exit 1
             fi
+            
+            # Find current wallpaper index or start at 0
+            CURRENT_INDEX=0
+            if [ -f "$STATE_FILE" ]; then
+                CURRENT_WALLPAPER=$(cat "$STATE_FILE")
+                for i in "''${!WALLPAPERS[@]}"; do
+                    if [ "''${WALLPAPERS[i]}" = "$CURRENT_WALLPAPER" ]; then
+                        CURRENT_INDEX=$i
+                        break
+                    fi
+                done
+            fi
+            
+            # Get next wallpaper (cycle back to 0 if at end)
+            NEXT_INDEX=$(( (CURRENT_INDEX + 1) % ''${#WALLPAPERS[@]} ))
+            WALLPAPER="''${WALLPAPERS[NEXT_INDEX]}"
             
             # Save current wallpaper to state file
             echo "$WALLPAPER" > "$STATE_FILE"
@@ -38,19 +54,19 @@
                     echo "Set wallpaper: $(basename "$WALLPAPER")"
                 else
                     echo "Wallpaper file not found: $WALLPAPER"
-                    # Fallback to a random wallpaper if the saved one doesn't exist
-                    echo "Selecting a new random wallpaper..."
+                    # Fallback to cycling to the next wallpaper
+                    echo "Cycling to next wallpaper..."
                     exec "$0" next
                 fi
             else
-                echo "No wallpaper state file found. Selecting a random wallpaper..."
+                echo "No wallpaper state file found. Starting wallpaper cycle..."
                 exec "$0" next
             fi
             ;;
             
         *)
             echo "Usage: wallpaper-manager {next|current|set}"
-            echo "  next    - Pick and set a random wallpaper"
+            echo "  next    - Cycle to the next wallpaper"
             echo "  current - Set wallpaper from saved state"
             exit 1
             ;;
