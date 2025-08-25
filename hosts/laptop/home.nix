@@ -16,6 +16,8 @@
   home.packages = with pkgs; [
     desktop-file-utils
     discord
+    nautilus
+    loupe
   ];
   programs.bash = {
     enable = true;
