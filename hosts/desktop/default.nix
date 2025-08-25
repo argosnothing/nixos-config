@@ -9,7 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "desktop";
-    wm = "gnome";
+    wm = "hyprland";
     fonts = {
       sizes = {
         applications = 12;

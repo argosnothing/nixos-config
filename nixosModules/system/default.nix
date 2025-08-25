@@ -4,5 +4,6 @@
     ./misc
     ./services
     ./wms
+    ./style
   ];
 }

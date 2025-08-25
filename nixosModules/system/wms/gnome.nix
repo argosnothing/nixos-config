@@ -7,7 +7,7 @@
   options = {
     wms.gnome.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "Enable GNOME as the window manager.";
     };
   };

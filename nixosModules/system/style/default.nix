@@ -1,7 +1,4 @@
 {
-  inputs,
-  pkgs,
-  settings,
   ...
 }: {
   imports = [ ../../stylix-config.nix ];
