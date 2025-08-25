@@ -9,7 +9,8 @@
     ../../nixosModules/user/apps/firefox.nix
     ../../nixosModules/user/apps/vscode.nix
     ../../nixosModules/user/apps/gtk.nix
-    ../../nixosModules/user/wm/hyprland/hyprland.nix
+    #../../nixosModules/user/wm/hyprland/hyprland.nix
+    ../../nixosModules/system/wm/gnome.nix
     ../../nixosModules/user/terminal/default.nix
   ];
   programs.home-manager.enable = true;
@@ -17,6 +18,7 @@
     desktop-file-utils
     discord
     nautilus
+    pulsemixer
     loupe
     spotify
   ];

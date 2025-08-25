@@ -12,8 +12,8 @@
     battery.enable = true;
     fonts = {
       sizes = {
-        applications = 12;
-        terminal = 10;
+        applications = 10;
+        terminal = 8;
         desktop = 10;
         popups = 10;
       };

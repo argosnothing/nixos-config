@@ -9,8 +9,10 @@
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ../../nixosModules/system/misc/keyd.nix
+    #./input.nix
     ../../nixosModules/system/app/flatpak.nix
-    ../../nixosModules/system/wm/hyprland.nix
+    #../../nixosModules/system/wm/hyprland.nix
+    ../../nixosModules/system/wm/gnome.nix
     ../../nixosModules/system/style/stylix.nix
     ../../nixosModules/system/misc/remote_tooling.nix
   ];
