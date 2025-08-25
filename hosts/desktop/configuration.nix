@@ -9,11 +9,7 @@
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../nixosModules/system/misc/fonts.nix
-    ../../nixosModules/system/app/flatpak.nix
-    ../../nixosModules/system/wm/hyprland.nix
-    ../../nixosModules/system/style/stylix.nix
-    ../../nixosModules/system/misc/remote_tooling.nix
+    ../nixosModules/system
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
