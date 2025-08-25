@@ -11,7 +11,6 @@
   defaultSettings = {
     username = "salivala";
     flakedir = "~/nixos-config";
-    wm = "hyprland";
     monoFont = "FiraCode Nerd Font";
     monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";
