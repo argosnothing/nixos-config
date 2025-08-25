@@ -11,7 +11,6 @@
         github.copilot
         github.copilot-chat
         yzhang.markdown-all-in-one
-        mkhl.direnv
       ];
       userSettings = {
         "workbench.iconTheme" = "vs-seti";
