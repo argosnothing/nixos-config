@@ -10,7 +10,7 @@
     ../../nixosModules/user/apps/vscode.nix
     ../../nixosModules/user/apps/gtk.nix
     #../../nixosModules/user/wm/hyprland/hyprland.nix
-    ../../nixosModules/system/wm/gnome.nix
+    ../../nixosModules/user/wm/gnome.nix
     ../../nixosModules/user/terminal/default.nix
   ];
   programs.home-manager.enable = true;
