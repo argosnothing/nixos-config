@@ -26,6 +26,15 @@ in {
     qogir-icon-theme
     alsa-utils
   ];
+
+  programs.yazi = {
+    enable = true;
+    settings = {
+      mgr = {
+        show_hidden = true;
+      };
+    };
+  };
   # Session variables for Hyprland
   home.sessionVariables = {
     XCURSOR_THEME = "Qogir";

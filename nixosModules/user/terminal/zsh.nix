@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, settings, ... }:
 {
   home.packages = [ pkgs.zsh-powerlevel10k];
   programs.zsh = {
@@ -22,7 +22,7 @@
       theme = "powerlevel10k";
       custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
     };
-    #shellAliases = import ../../scripts/aliases.nix;
+    shellAliases = import ./nixos-aliases.nix { inherit settings; };
     initContent = ''
       [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
     '';

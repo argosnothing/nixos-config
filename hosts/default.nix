@@ -4,6 +4,7 @@
   laptop = import ./laptop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   defaultSettings = {
     username = "salivala";
+    flakedir = "~/nixos-config";
     wm = "hyprland";
     monoFont = "FiraCode Nerd Font";
     monoFontPkg = pkgs.nerd-fonts.fira-code;
