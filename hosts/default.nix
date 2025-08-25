@@ -12,6 +12,14 @@
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
     stylixTheme = "gruvbox-dark-hard";
+    fonts = {
+      sizes = {
+        applications = 12;
+        terminal = 10;
+        desktop = 10;
+        popups = 10;
+      };
+    };
   };
 in {
   nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations;

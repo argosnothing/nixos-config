@@ -9,6 +9,14 @@
 }: let
   settings = defaultSettings // {
     hostname = "desktop";
+    fonts = {
+      sizes = {
+        applications = 12;
+        terminal = 10;
+        desktop = 10;
+        popups = 10;
+      };
+    };
   };
 in {
   nixosConfigurations = {
