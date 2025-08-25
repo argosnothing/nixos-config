@@ -9,6 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
+    battery.enable = true;
     fonts = {
       sizes = {
         applications = 12;

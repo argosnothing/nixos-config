@@ -1,4 +1,4 @@
-{config, ...}: let
+{config, lib, settings, ...}: let
   style = import ./style.nix {inherit config;};
 in {
   stylix.targets.waybar = {
@@ -28,7 +28,8 @@ in {
           "memory"
         ];
         modules-center = ["hyprland/window"];
-        modules-right = [
+        modules-right = lib.flatten [
+          (lib.optionals settings.battery.enable ["battery"])
           "tray"
           "network"
           "pulseaudio"

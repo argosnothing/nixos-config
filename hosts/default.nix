@@ -13,6 +13,7 @@
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
     stylixTheme = "gruvbox-dark-hard";
+    battery.enable = false;
     fonts = {
       sizes = {
         applications = 12;
