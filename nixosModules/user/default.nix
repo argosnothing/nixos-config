@@ -1,0 +1,7 @@
+{...}: {
+  imports = [
+    ./apps
+    ./style
+    ./wms
+  ];
+}

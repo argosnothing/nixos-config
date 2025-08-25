@@ -1,7 +1,4 @@
 {
-  conifg,
-  lib,
-  pkgs,
   settings,
   ...
 }: {
@@ -10,5 +7,4 @@
     ./hyprland.nix
   ];
   wms."${settings.wm}".enable = true;
-
 }

@@ -9,7 +9,7 @@
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../nixosModules/system
+    ../../nixosModules/system
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

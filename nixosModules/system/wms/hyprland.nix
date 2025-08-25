@@ -7,7 +7,7 @@
 }: let
 in {
   imports = [
-    ../services/
+    ../services
   ];
   options = {
     wms.hyprland.enable = lib.mkOption {
