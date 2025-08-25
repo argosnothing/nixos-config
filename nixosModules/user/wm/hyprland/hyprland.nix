@@ -25,7 +25,35 @@ in {
     libsoup_3
     qogir-icon-theme
     alsa-utils
+    # Font rendering packages
+    fontconfig
+    freetype
   ];
+
+  # Font configuration for better X11 app rendering
+  home.file.".config/fontconfig/fonts.conf".text = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+      <match target="font">
+        <edit name="antialias" mode="assign">
+          <bool>true</bool>
+        </edit>
+        <edit name="hinting" mode="assign">
+          <bool>true</bool>
+        </edit>
+        <edit name="hintstyle" mode="assign">
+          <const>hintslight</const>
+        </edit>
+        <edit name="rgba" mode="assign">
+          <const>rgb</const>
+        </edit>
+        <edit name="lcdfilter" mode="assign">
+          <const>lcddefault</const>
+        </edit>
+      </match>
+    </fontconfig>
+  '';
 
   programs.yazi = {
     enable = true;
@@ -87,6 +115,27 @@ in {
         # Reduce Electron debug output
         "ELECTRON_ENABLE_LOGGING,0"
         "CHROMIUM_FLAGS,--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+
+        # X11/XWayland font rendering and scaling - GNOME-style
+        "GDK_SCALE,1"
+        "GDK_DPI_SCALE,1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "QT_SCALE_FACTOR,1"
+        
+        # Enhanced X11 font rendering (GNOME approach)
+        "FREETYPE_PROPERTIES,truetype:interpreter-version=40"
+        "QT_FONT_DPI,96"
+        "QT_WAYLAND_FORCE_DPI,96"
+        
+        # Force X11 font antialiasing like GNOME
+        "QT_XFT_ANTIALIAS,1"
+        "QT_XFT_HINTING,1"
+        "QT_XFT_HINTSTYLE,hintslight"
+        "QT_XFT_RGBA,rgb"
+        
+        # XWayland scaling fixes
+        "XWAYLAND_NO_GLAMOR,0"
+        "_JAVA_AWT_WM_NONREPARENTING,1"
       ];
 
       exec-once = [
@@ -157,6 +206,11 @@ in {
       };
 
       master.new_status = "master";
+
+      xwayland = {
+        use_nearest_neighbor = false;
+        force_zero_scaling = true;
+      };
 
       misc = {
         disable_hyprland_logo = true;
