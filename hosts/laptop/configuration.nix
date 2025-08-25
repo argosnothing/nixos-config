@@ -8,7 +8,7 @@
   imports = [
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
-    ./input.nix
+    ../../nixosModules/system/misc/keyd.nix
     ../../nixosModules/system/app/flatpak.nix
     ../../nixosModules/system/wm/hyprland.nix
     ../../nixosModules/system/style/stylix.nix

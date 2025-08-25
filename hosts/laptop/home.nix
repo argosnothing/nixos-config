@@ -18,6 +18,7 @@
     discord
     nautilus
     loupe
+    spotify
   ];
   programs.bash = {
     enable = true;
