@@ -1,5 +1,11 @@
 # Tie All the hosts together
-{inputs, pkgs, pkgsUnstable, system, ...}: let
+{
+  inputs,
+  pkgs,
+  pkgsUnstable,
+  system,
+  ...
+}: let
   desktop = import ./desktop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   laptop = import ./laptop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   defaultSettings = {
@@ -25,5 +31,5 @@
   };
 in {
   nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations;
-  homeConfigurations = desktop.homeConfigurations  // laptop.homeConfigurations;
+  homeConfigurations = desktop.homeConfigurations // laptop.homeConfigurations;
 }
