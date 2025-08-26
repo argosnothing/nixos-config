@@ -11,4 +11,5 @@
 **Notes**  
 * If an import is a directory, this is nix shorthand for directory/default.nix
 * flake.nix imports the hosts/default.nix attributes, typically those are in flake.nix, but don't like the idea of flake.nix being any more than just inputs for my config. 
-hosts/default.nix has TWO entry points. nixosConfigurations and homeConfigurations. I have a standalone home-manager setup so building system level and home level are different commands. ( see [here](./nixosModules/user/apps/terminal/nixos-aliases.nix) for shorthands of these commands ) 
+hosts/default.nix has TWO entry points. nixosConfigurations and homeConfigurations. I have a standalone home-manager setup so building system level and home level are different commands. ( see [here](./nixosModules/user/apps/terminal/nixos-aliases.nix) for shorthands of these commands )
+* "settings" name passed around is for system config related stuff. hosts/default.nix includes a defaultSettings, which each host then merges their additions/overrides. Of note that the windowmanager (wm) attribute is NOT provided by the defaultSettings, so a new host will need to specify their desktop. This is by design. 
