@@ -8,5 +8,5 @@
 -> From there just follow the imports = []    
 
 
-**Notes**
-* If an import is a directory, this is nix shorthand for directory/default.nix
+**Notes**  
+If an import is a directory, this is nix shorthand for directory/default.nix
