@@ -2,7 +2,7 @@
   imports = [
     ./terminal
     ./flatpak
-    ./neovim
+    ./nvf
     ./firefox.nix
     ./vscode.nix
     ./gtk.nix
