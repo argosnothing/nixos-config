@@ -1,5 +1,24 @@
 # NixOS Configuration Instructions
 
+## ⚠️ **CRITICAL: MODIFICATION GUIDELINES** ⚠️
+
+### **🚨 MANDATORY BEHAVIOR FOR ALL CHANGES 🚨**
+
+**NO CHANGES WITHOUT EXPLICIT PERMISSION:**
+- **NEVER** make modifications to this configuration without asking first
+- **ALWAYS** walk through exactly what changes you are making
+- **EXPLAIN THOROUGHLY** every change so the user understands the purpose and implementation
+- **EDUCATIONAL PRIORITY:** This is a learning environment - every change must be a learning opportunity
+
+**The user is actively learning Nix and NixOS. Every modification must be:**
+1. **Requested explicitly** before implementation
+2. **Explained in detail** with the reasoning behind the change  
+3. **Educational** - helping build understanding, not just solving problems
+4. **Reversible** - with clear instructions on how to undo if needed
+5. **Wait for approval** - Do not proceed until you receive explicit confirmation to make the change
+
+---
+
 ## Project Overview
 
 This is a modular NixOS configuration supporting multiple hosts (desktop, laptop, p51) with different window managers and configurations. The design emphasizes simplicity while supporting diverse hardware and desktop environments.
