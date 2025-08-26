@@ -1,15 +1,14 @@
 require'nvim-treesitter.configs'.setup {
-  -- Syntax highlighting
+  auto_install = false,
+  
   highlight = {
     enable = true,
   },
   
-  -- Automatic indentation
   indent = {
     enable = true,
   },
   
-  -- Incremental selection
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -20,3 +19,6 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+vim.cmd('syntax on')
+vim.cmd('filetype plugin indent on')

@@ -16,6 +16,16 @@ in {
   };
 
   config = lib.mkIf config.neovim.enable {
+    # Add Nix development tools to home packages
+    home.packages = with pkgs; [
+      nixd              # Nix LSP server
+      alejandra         # Nix formatter (better than nixpkgs-fmt)
+      stylua            # Lua formatter
+      # statix            # Nix linter (may not be available)
+      # shfmt             # Shell script formatter
+      # shellcheck        # Shell script linter
+    ];
+    
     programs.neovim = {
       enable = true;
       viAlias = true;
@@ -23,91 +33,60 @@ in {
       vimdiffAlias = true;
       defaultEditor = true;
       
-      # Extra packages available to Neovim
-      extraPackages = with pkgs; [
-        # LSP servers
-        nixd
-        lua-language-server
+      extraLuaConfig = ''
+        -- Enable syntax highlighting
+        vim.cmd('syntax enable')
+        vim.opt.termguicolors = true
         
-        # Formatters
-        alejandra
-        stylua
+        -- Basic editor settings
+        vim.opt.number = true
+        vim.opt.relativenumber = true
+        vim.opt.cursorline = true
+        vim.opt.signcolumn = "yes"
         
-        # Tools
-        ripgrep
-        fd
-        tree-sitter
-        git
-      ];
+        -- Enhanced syntax highlighting settings
+        vim.opt.synmaxcol = 3000  -- Increase syntax highlighting limit
+        vim.opt.re = 0            -- Use new regex engine
+      '';
       
       plugins = with pkgs.vimPlugins; [
-        # File explorer
         {
           plugin = nvim-tree-lua;
           config = toLuaFile ./nvim-tree.lua;
         }
         nvim-web-devicons
         
-        # Fuzzy finder
+        # Enhanced Nix support
         {
-          plugin = telescope-nvim;
-          config = toLuaFile ./telescope.lua;
-        }
-        telescope-fzf-native-nvim
-        plenary-nvim
-        
-        # Navigation
-        {
-          plugin = harpoon;
-          config = toLuaFile ./harpoon.lua;
+          plugin = vim-nix;
+          config = toLuaFile ./nix-syntax.lua;
         }
         
-        # Git
-        {
-          plugin = vim-fugitive;
-          config = toLuaFile ./fugitive.lua;
-        }
-        
-        # Utilities
-        {
-          plugin = undotree;
-          config = toLuaFile ./undotree.lua;
-        }
-        
-        # LSP & Completion
+        # LSP and completion
         {
           plugin = nvim-lspconfig;
           config = toLuaFile ./lsp.lua;
         }
-        {
-          plugin = nvim-cmp;
-          config = toLuaFile ./completion.lua;
-        }
+        nvim-cmp
         cmp-nvim-lsp
         cmp-buffer
+        cmp-path
+        luasnip
+        cmp_luasnip
         
-        # Syntax highlighting
+        # Treesitter for syntax highlighting
         {
-          plugin = nvim-treesitter.withPlugins (p: [
-            p.tree-sitter-nix
-            p.tree-sitter-vim
-            p.tree-sitter-bash
-            p.tree-sitter-lua
-            p.tree-sitter-python
-            p.tree-sitter-json
-            p.tree-sitter-yaml
-            p.tree-sitter-markdown
-          ]);
+          plugin = nvim-treesitter.withAllGrammars;
           config = toLuaFile ./treesitter.lua;
         }
+        nvim-treesitter-textobjects
         
-        # Theme
-        gruvbox-nvim
+        # Formatting and linting
+        {
+          plugin = none-ls-nvim;
+          config = toLuaFile ./none-ls.lua;
+        }
       ];
-      
-      extraLuaConfig = ''
-        ${builtins.readFile ./options.lua}
-      '';
     };
   };
 }

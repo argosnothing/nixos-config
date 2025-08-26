@@ -20,7 +20,11 @@
     nix-flatpak.url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
   };
 
-  outputs = inputs @ {nixpkgs, nixpkgs-unstable, ...}: let
+  outputs = inputs @ {
+    nixpkgs,
+    nixpkgs-unstable,
+    ...
+  }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     pkgsUnstable = import nixpkgs-unstable {
@@ -28,6 +32,6 @@
       config.allowUnfree = true;
     };
   in {
-    inherit (import ./hosts/default.nix { inherit inputs pkgs pkgsUnstable system; }) nixosConfigurations homeConfigurations;
+    inherit (import ./hosts/default.nix {inherit inputs pkgs pkgsUnstable system;}) nixosConfigurations homeConfigurations;
   };
 }
