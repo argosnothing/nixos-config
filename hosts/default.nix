@@ -8,6 +8,7 @@
 }: let
   desktop = import ./desktop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   laptop = import ./laptop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
+  p51 = import ./p51 {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   defaultSettings = {
     username = "salivala";
     flakedir = "~/nixos-config";
@@ -29,6 +30,6 @@
     };
   };
 in {
-  nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations;
-  homeConfigurations = desktop.homeConfigurations // laptop.homeConfigurations;
+  nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations // p51.nixosConfigurations;
+  homeConfigurations = desktop.homeConfigurations // laptop.homeConfigurations // p51.homeConfigurations;
 }

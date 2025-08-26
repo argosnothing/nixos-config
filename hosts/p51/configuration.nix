@@ -6,6 +6,9 @@
   ...
 }: {
   imports = [
+    inputs.stylix.nixosModules.stylix
+	./hardware-configuration.nix
+	./nvidia.nix
 	../../nixosModules/system
   ];
 
