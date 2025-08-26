@@ -1,10 +1,14 @@
-{pkgs, ...}:
 {
-  home.packages = with pkgs; [ alejandra nixd ];
+  pkgs,
+  pkgsUnstable,
+  ...
+}: {
+  home.packages = with pkgs; [alejandra nixd];
   programs.vscode = {
     enable = true;
+    package = pkgsUnstable.vscode;
     profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgsUnstable.vscode-extensions; [
         vscodevim.vim
         bbenoist.nix
         jnoortheen.nix-ide
@@ -16,8 +20,6 @@
         "workbench.iconTheme" = "vs-seti";
         "terminal.integrated.fontLigatures" = true;
         "terminal.integrated.fontFamily" = "MesloLGS NF, FiraCode Nerd Font, JetBrainsMono Nerd Font, monospace";
-        
-        # Fix Vim key repeat
         "vim.handleKeys" = {
           "<C-a>" = false;
           "<C-f>" = false;
@@ -28,10 +30,10 @@
         "vim.insertModeKeyBindings" = [];
         "vim.normalModeKeyBindingsNonRecursive" = [];
         "vim.autoindent" = true;
-        
+
         # Enable key repeat for all keys in VS Code
         "keyboard.dispatch" = "keyCode";
-        
+
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
         "nixpkgs" = {

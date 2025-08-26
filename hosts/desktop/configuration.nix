@@ -13,10 +13,6 @@
     ../../nixosModules/system
   ];
 
-  # Desktop-specific configuration
-  kernels.xandmod.enable = true; # Enable high-performance kernel for desktop
-
-  # Desktop-specific packages
   environment.systemPackages = with pkgs; [
     inputs.swww.packages.${pkgs.system}.swww # Desktop wallpaper manager
     xdg-utils

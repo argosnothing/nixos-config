@@ -17,7 +17,7 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.kernels.xandmod.enable {
-      boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+      boot.kernelPackages = pkgsUnstable.linuxPackages_xanmod_latest;
     })
     {
       # Shared system configuration for all hosts
@@ -77,6 +77,7 @@
         brightnessctl
         playerctl
         dbus
+        home-manager
       ];
 
       # XDG Portal configuration
@@ -100,14 +101,14 @@
         polkit.enable = true;
       };
 
-      # Environment variables for Electron apps
-      environment.sessionVariables = {
-        ELECTRON_OZONE_PLATFORM_HINT = "auto";
-        NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
-        ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
-      };
+  # Environment variables for Electron apps
+  environment.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
+    ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
+  };
 
-      system.stateVersion = "25.05";
+  system.stateVersion = "25.05";
     }
   ];
 }

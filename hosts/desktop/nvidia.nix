@@ -1,7 +1,8 @@
 {pkgs, pkgsUnstable, config, ...}: let 
-    nvidiaPackage = pkgsUnstable.linuxPackages_xanmod_latest.nvidiaPackages.latest;
+    nvidiaPackage = pkgsUnstable.linuxPackages.nvidiaPackages.beta;
 in {
   services.xserver.videoDrivers = ["nvidia"];
+  hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
