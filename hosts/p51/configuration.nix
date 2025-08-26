@@ -35,7 +35,7 @@
   ];
   boot.kernel.sysctl."kernel.printk" = "3 3 3 3";
 
-  networking.hostName = "desktop";
+  networking.hostName = "p51";
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -47,6 +47,7 @@
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+  #programs.nm-applet.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   environment.systemPackages = with pkgs; [
