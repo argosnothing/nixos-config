@@ -20,7 +20,94 @@
       boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
     })
     {
+      # Shared system configuration for all hosts
+      nix.settings.experimental-features = ["nix-command" "flakes"];
+      nixpkgs.config.allowUnfree = true;
+      
+      # Boot configuration
+      boot.plymouth.enable = true;
+      boot.loader.grub = {
+        enable = true;
+        efiSupport = true;
+        devices = ["nodev"];
+      };
+      boot.loader.grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
+      boot.loader.efi.canTouchEfiVariables = true;
+      boot.consoleLogLevel = 3;
+      boot.kernelParams = [
+        "quiet"
+        "loglevel=3"
+        "systemd.show_status=false"
+        "rd.udev.log_priority=3"
+        "vt.global_cursor_default=0" # optional, hides blinking cursor
+      ];
+      boot.kernel.sysctl."kernel.printk" = "3 3 3 3";
+
+      # Networking
       networking.hostName = settings.hostname;
+      networking.networkmanager.enable = true;
+      
+      # Locale and time
+      time.timeZone = "America/New_York";
+      i18n.defaultLocale = "en_US.UTF-8";
+
+      # User configuration
+      users.users."${settings.username}" = {
+        isNormalUser = true;
+        extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
+      };
+
+      # Shell configuration
+      environment.shells = with pkgs; [zsh];
+      users.defaultUserShell = pkgs.zsh;
+      programs.zsh.enable = true;
+      nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
+      # Core system packages
+      environment.systemPackages = with pkgs; [
+        vim
+        git
+        gitkraken
+        unzip
+        openssl
+        pavucontrol
+        wireplumber
+        pipewire
+        grimblast
+        brightnessctl
+        playerctl
+        dbus
+      ];
+
+      # XDG Portal configuration
+      xdg.portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        extraPortals = [
+          pkgs.xdg-desktop-portal
+          pkgs.xdg-desktop-portal-gtk
+        ];
+      };
+
+      # System services
+      services.upower.enable = true; # UPower for power management
+      services.dbus.enable = true; # D-Bus system message bus
+      services.seatd.enable = true;
+
+      # Security
+      security = {
+        rtkit.enable = true;
+        polkit.enable = true;
+      };
+
+      # Environment variables for Electron apps
+      environment.sessionVariables = {
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
+        ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
+      };
+
+      system.stateVersion = "25.05";
     }
   ];
 }

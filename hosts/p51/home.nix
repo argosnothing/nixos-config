@@ -1,25 +1,14 @@
 {
   pkgs,
-  settings,
   ...
 }: {
   imports = [
-    ../../nixosModules/user
+    ../home.nix # Import shared home configuration
   ];
-  programs.home-manager.enable = true;
+
+  # Add P51-specific packages to the shared list
   home.packages = with pkgs; [
-    desktop-file-utils
-    discord
     nautilus
-    pulsemixer
     loupe
-    spotify
   ];
-  programs.bash = {
-    enable = true;
-  };
-  home.username = settings.username;
-  home.homeDirectory = "/home/" + settings.username;
-  nixpkgs.config.allowUnfree = true;
-  home.stateVersion = "25.05";
 }

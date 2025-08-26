@@ -3,88 +3,22 @@
   pkgs,
   lib,
   pkgsUnstable,
-  settings,
   ...
 }: {
   imports = [
+    ../configuration.nix # Import shared system configuration
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
     ../../nixosModules/system
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nixpkgs.config.allowUnfree = true;
+  # Desktop-specific configuration
+  kernels.xandmod.enable = true; # Enable high-performance kernel for desktop
 
-  boot.plymouth.enable = true;
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    devices = ["nodev"];
-  };
-  networking.networkmanager.enable = true;
-  boot.loader.grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.consoleLogLevel = 3;
-  boot.kernelParams = [
-    "quiet"
-    "loglevel=3"
-    "systemd.show_status=false"
-    "rd.udev.log_priority=3"
-    "vt.global_cursor_default=0" # optional, hides blinking cursor
-  ];
-  boot.kernel.sysctl."kernel.printk" = "3 3 3 3";
-
-  networking.hostName = "desktop";
-  time.timeZone = "America/New_York";
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  users.users."${settings.username}" = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
-  };
-
-  environment.shells = with pkgs; [zsh];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  # Desktop-specific packages
   environment.systemPackages = with pkgs; [
-    vim
-    git
-    gitkraken
-    unzip
-    openssl
-    inputs.swww.packages.${pkgs.system}.swww
+    inputs.swww.packages.${pkgs.system}.swww # Desktop wallpaper manager
     xdg-utils
-    pavucontrol
-    wireplumber
-    pipewire
-    grimblast
-    brightnessctl
-    playerctl
-    dbus
   ];
-
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
-  services.upower.enable = true; # UPower for power management
-  services.dbus.enable = true; # D-Bus system message bus
-  services.seatd.enable = true;
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-  };
-  environment.sessionVariables = {
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
-    ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
-  };
-  system.stateVersion = "25.05"; # Did you read the comment?
 }
