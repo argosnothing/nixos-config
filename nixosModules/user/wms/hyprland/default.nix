@@ -100,6 +100,11 @@ in {
         bind = , Escape, submap, reset
         bind = , R, submap, reset
         submap = reset
+
+        # NoBinds submap - disables all mainMod keybinds for remote desktop use
+        submap = nobinds
+        bind = , XF86Tools, submap, reset
+        submap = reset
       '';
       settings = {
         # variables
@@ -161,7 +166,7 @@ in {
           border_size = 1;
           resize_on_border = false;
           allow_tearing = false;
-          layout = "dwindle";
+          layout = "master";
         };
 
         decoration = {
@@ -280,7 +285,9 @@ in {
             "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
             "$mainMod, F, fullscreen"
             "$mainMod Shift, L, exec, $lockCommand"
-            "$mainMod, Tab, overview:toggle"
+            "SUPER, Tab, overview:toggle"
+            # Toggle NoBinds mode (disable all mainMod keybinds)
+            ", XF86Tools, submap, nobinds"
           ]
           ++ navBindings.navBindings;
 

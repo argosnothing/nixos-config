@@ -26,6 +26,7 @@ in {
           "hyprland/workspaces"
           "cpu"
           "memory"
+          "hyprland/submap"
         ];
         modules-center = ["hyprland/window"];
         modules-right = lib.flatten [
@@ -41,6 +42,11 @@ in {
           rewrite = {
             "^$" = "Desktop";
           };
+        };
+        "hyprland/submap" = {
+          format = " {}";
+          max-length = 20;
+          tooltip = false;
         };
         "wlr/workspaces" = {
           on-scroll-up = "hyprctl dispatch workspace e+1";

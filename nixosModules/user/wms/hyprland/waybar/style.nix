@@ -39,7 +39,8 @@ in ''
   #custom-start,
   #custom-end,
   #custom-leftend,
-  #custom-rightend {
+  #custom-rightend,
+  #submap {
     padding: 4px 8px;
     margin: ${topMargin} 2px 0 2px;
     background: ${styles.base00};
@@ -85,6 +86,18 @@ in ''
     background: ${styles.base08};
     color: ${styles.base00};
     border-color: ${styles.base08};
+  }
+
+  #submap {
+    background: ${styles.base08};
+    color: ${styles.base00};
+    font-weight: bold;
+    border: 1px solid ${styles.base08};
+    padding: 4px 8px;
+    margin: ${topMargin} 2px 0 2px;
+    border-radius: 6px;
+    min-height: 0;
+    font-size: 13px;
   }
 
 ''

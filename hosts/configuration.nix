@@ -23,7 +23,7 @@
       # Shared system configuration for all hosts
       nix.settings.experimental-features = ["nix-command" "flakes"];
       nixpkgs.config.allowUnfree = true;
-      
+
       # Boot configuration
       boot.plymouth.enable = true;
       boot.loader.grub = {
@@ -46,7 +46,7 @@
       # Networking
       networking.hostName = settings.hostname;
       networking.networkmanager.enable = true;
-      
+
       # Locale and time
       time.timeZone = "America/New_York";
       i18n.defaultLocale = "en_US.UTF-8";
@@ -70,13 +70,16 @@
         gitkraken
         unzip
         openssl
+        wev
         pavucontrol
+        usbutils
         wireplumber
         pipewire
         grimblast
         brightnessctl
         playerctl
         dbus
+        google-chrome
         home-manager
       ];
 
@@ -101,14 +104,14 @@
         polkit.enable = true;
       };
 
-  # Environment variables for Electron apps
-  environment.sessionVariables = {
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
-    ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
-  };
+      # Environment variables for Electron apps
+      environment.sessionVariables = {
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
+        ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
+      };
 
-  system.stateVersion = "25.05";
+      system.stateVersion = "25.05";
     }
   ];
 }
