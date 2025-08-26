@@ -4,14 +4,7 @@
   ...
 }: {
   imports = [
-    ../../nixosModules/user/style/stylix.nix
-    ../../nixosModules/user/apps/flatpak/flatpak.nix
-    ../../nixosModules/user/apps/firefox.nix
-    ../../nixosModules/user/apps/vscode.nix
-    ../../nixosModules/user/apps/gtk.nix
-    ../../nixosModules/user/wm/hyprland/hyprland.nix
-    #../../nixosModules/user/wm/gnome/gnome.nix
-    ../../nixosModules/user/terminal/default.nix
+    ../../nixosModules/user
   ];
   programs.home-manager.enable = true;
   home.packages = with pkgs; [

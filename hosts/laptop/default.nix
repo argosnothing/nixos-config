@@ -9,6 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
+    wm = "hyprland";
     battery.enable = true;
     fonts = {
       sizes = {
