@@ -7,9 +7,10 @@
 }: {
   imports = [
     inputs.stylix.nixosModules.stylix
-	./hardware-configuration.nix
-	./nvidia.nix
-	../../nixosModules/system
+    ./hardware-configuration.nix
+    ./input.nix
+    ./nvidia.nix
+    ../../nixosModules/system
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -50,6 +51,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    libinput
     git
     gitkraken
     unzip
