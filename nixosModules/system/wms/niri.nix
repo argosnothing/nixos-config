@@ -13,12 +13,6 @@
   };
   config = lib.mkIf config.wms.niri.enable {
     greeters.tuigreet.enable = true;
-    programs.niri = {
-      enable = true;
-      wayland = true;
-      xwayland = true;
-    };
-
     services.xserver.excludePackages = [pkgs.xterm];
 
     # Ensure GTK cache is built

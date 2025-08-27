@@ -13,9 +13,8 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
-    wayland.windowManager.niri = {
+    programs.niri = {
       enable = true;
-      systemd.enable = true;
     };
   };
 }
