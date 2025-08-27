@@ -11,7 +11,9 @@
   p51 = import ./p51 {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   defaultSettings = {
     username = "salivala";
-    flakedir = "~/nixos-config";
+    homedir = "nixos-config"; # TODO: make relative path use this
+    flakedir = "~/${defaultSettings.homedir}";
+    absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
     monoFont = "FiraCode Nerd Font";
     monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";

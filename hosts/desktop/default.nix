@@ -7,18 +7,20 @@
   defaultSettings,
   ...
 }: let
-  settings = defaultSettings // {
-    hostname = "desktop";
-    wm = "hyprland";
-    fonts = {
-      sizes = {
-        applications = 12;
-        terminal = 10;
-        desktop = 10;
-        popups = 10;
+  settings =
+    defaultSettings
+    // {
+      hostname = "desktop";
+      wm = "hyprland";
+      fonts = {
+        sizes = {
+          applications = 12;
+          terminal = 10;
+          desktop = 10;
+          popups = 10;
+        };
       };
     };
-  };
 in {
   nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
