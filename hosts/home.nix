@@ -13,6 +13,7 @@
     desktop-file-utils
     discord
     pulsemixer
+    tdrop
     spotify
   ];
 
