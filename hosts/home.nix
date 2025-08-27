@@ -25,10 +25,10 @@
   # User directory configuration
   home.username = settings.username;
   home.homeDirectory = "/home/" + settings.username;
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # State version
   home.stateVersion = "25.05";
 
