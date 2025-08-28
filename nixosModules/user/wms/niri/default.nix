@@ -49,6 +49,7 @@
         
         spawn-at-startup = [
           {command = ["xwayland-satellite"];}
+          {command = ["swww-daemon"];}
         ];
         
         input = {
@@ -75,55 +76,57 @@
           "Alt+R".action = spawn "wofi" "--show" "run";
 
           # Window management
-          "Alt+Q".action = close-window;
+          "Alt+C".action = close-window;
           "Alt+F".action = maximize-column;
           "Alt+Shift+F".action = fullscreen-window;
 
-          # Navigation (A/D for left/right, J/K for up/down)
+          # Navigation (A/J for left, D/L for right - two ways for each direction)
           "Alt+A".action = focus-column-left;
+          "Alt+J".action = focus-column-left;
           "Alt+D".action = focus-column-right;
-          "Alt+J".action = focus-window-down;
-          "Alt+K".action = focus-window-up;
+          "Alt+L".action = focus-column-right;
 
-          # Moving windows
+          # Moving windows (same pattern for moving)
           "Alt+Shift+A".action = move-column-left;
+          "Alt+Shift+J".action = move-column-left;
           "Alt+Shift+D".action = move-column-right;
-          "Alt+Shift+J".action = move-window-down;
-          "Alt+Shift+K".action = move-window-up;
+          "Alt+Shift+L".action = move-column-right;
 
-          # Workspace navigation
-          "Alt+1".action = focus-workspace 1;
-          "Alt+2".action = focus-workspace 2;
-          "Alt+3".action = focus-workspace 3;
-          "Alt+4".action = focus-workspace 4;
-          "Alt+5".action = focus-workspace 5;
-          "Alt+6".action = focus-workspace 6;
-          "Alt+7".action = focus-workspace 7;
-          "Alt+8".action = focus-workspace 8;
-          "Alt+9".action = focus-workspace 9;
-          "Alt+0".action = focus-workspace 10;
+          # Window stacking
+          "Alt+Z".action = consume-window-into-column;  # Pull adjacent window into this column
+          "Alt+X".action = expel-window-from-column;    # Push window out to its own column
 
-          # Move windows to workspaces
-          "Alt+Shift+1".action = move-column-to-workspace 1;
-          "Alt+Shift+2".action = move-column-to-workspace 2;
-          "Alt+Shift+3".action = move-column-to-workspace 3;
-          "Alt+Shift+4".action = move-column-to-workspace 4;
-          "Alt+Shift+5".action = move-column-to-workspace 5;
-          "Alt+Shift+6".action = move-column-to-workspace 6;
-          "Alt+Shift+7".action = move-column-to-workspace 7;
-          "Alt+Shift+8".action = move-column-to-workspace 8;
-          "Alt+Shift+9".action = move-column-to-workspace 9;
-          "Alt+Shift+0".action = move-column-to-workspace 10;
+          # Workspace navigation (1-10)
+          "Alt+1".action.focus-workspace = 1;
+          "Alt+2".action.focus-workspace = 2;
+          "Alt+3".action.focus-workspace = 3;
+          "Alt+4".action.focus-workspace = 4;
+          "Alt+5".action.focus-workspace = 5;
+          "Alt+6".action.focus-workspace = 6;
+          "Alt+7".action.focus-workspace = 7;
+          "Alt+8".action.focus-workspace = 8;
+          "Alt+9".action.focus-workspace = 9;
+          "Alt+0".action.focus-workspace = 10;
 
-          # Column resizing
-          "Alt+H".action = set-column-width "-10%";
-          "Alt+L".action = set-column-width "+10%";
-          "Alt+Shift+H".action = set-window-height "-10%";
-          "Alt+Shift+L".action = set-window-height "+10%";
+          # Workspace navigation (up/down - mirrored like left/right navigation)
+          "Alt+I".action = focus-workspace-up;
+          "Alt+W".action = focus-workspace-up;    # Mirror for other hand
+          "Alt+K".action = focus-workspace-down;
+          "Alt+S".action = focus-workspace-down;  # Mirror for other hand          # Move window to workspace (relative movement - niri doesn't support direct workspace numbers)
+          "Alt+Shift+I".action.move-column-to-workspace-up = { focus = true; };
+          "Alt+Shift+W".action.move-column-to-workspace-up = { focus = true; };
+          "Alt+Shift+K".action.move-column-to-workspace-down = { focus = true; };
+          "Alt+Shift+S".action.move-column-to-workspace-down = { focus = true; };
+
+          # Column resizing (Alt+- to make smaller, Alt+= to make bigger)
+          "Alt+minus".action = set-column-width "-10%";
+          "Alt+equal".action = set-column-width "+10%";
+          "Alt+Shift+minus".action = set-window-height "-10%";
+          "Alt+Shift+equal".action = set-window-height "+10%";
 
           # Screenshots
-          "Alt+S".action = screenshot;
-          "Alt+Shift+S".action = screenshot-window;
+          "Alt+Shift+P".action = screenshot;
+          "Alt+Shift+O".action = screenshot-window;
 
           # Media keys
           "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
@@ -133,7 +136,8 @@
 
         # Layout configuration
         layout = {
-          gaps = 16;
+          gaps = 8;  # Reduced from 16 to 8 for less spacing
+          focus-ring.enable = false;  # Disable the ugly border around focused windows
           preset-column-widths = [
             {proportion = 0.33333;}
             {proportion = 0.5;}
