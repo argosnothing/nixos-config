@@ -1,4 +1,6 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }: let
@@ -73,14 +75,22 @@
     esac
   '';
 in {
-  home.packages = [
-    wallpaper-manager
-    pkgs.swww
-  ];
-  
-  # Copy wallpapers to a known location in the home directory
-  home.file.".local/share/wallpapers" = {
-    source = ../../../../../media/wallpapers;
-    recursive = true;
+  options.scripts.wallpaper-manager.enable = lib.mkOption {
+    type = lib.types.bool;
+    default = true;
+    description = "Enable wallpaper manager script with swww integration.";
+  };
+
+  config = lib.mkIf config.scripts.wallpaper-manager.enable {
+    home.packages = [
+      wallpaper-manager
+      pkgs.swww
+    ];
+    
+    # Copy wallpapers to a known location in the home directory
+    home.file.".local/share/wallpapers" = {
+      source = ../../../../media/wallpapers;
+      recursive = true;
+    };
   };
 }

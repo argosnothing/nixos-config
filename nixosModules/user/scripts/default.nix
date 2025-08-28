@@ -5,6 +5,10 @@ let
   ggrab = pkgs.writeShellScriptBin "ggrab" (builtins.readFile ./ggrab.sh);
 in
 {
+  imports = [
+    ./wallpaper-manager.nix
+  ];
+
   options.scripts.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;

@@ -9,7 +9,6 @@
 in {
   imports = [
     ./config/cursor.nix
-    ./config/wallpaper-manager.nix
     ./wofi
     ./waybar/waybar.nix
   ];
