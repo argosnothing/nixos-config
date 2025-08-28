@@ -11,7 +11,7 @@
     defaultSettings
     // {
       hostname = "desktop";
-      wm = "hyprland";
+      wm = "niri";
       fonts = {
         sizes = {
           applications = 12;

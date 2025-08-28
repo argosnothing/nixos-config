@@ -2,8 +2,12 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.niri.nixosModules.niri
+  ];
   options = {
     wms.niri.enable = pkgs.lib.mkOption {
       type = pkgs.lib.types.bool;
@@ -12,8 +16,15 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
+    # Enable the niri program through the flake's NixOS module
+    programs.niri.enable = true;
+
+    greeters.tuigreet.wm = "niri-session";
     greeters.tuigreet.enable = true;
     services.xserver.excludePackages = [pkgs.xterm];
+
+    # Enable Wayland requirements
+    programs.xwayland.enable = true;
 
     # Ensure GTK cache is built
     programs.dconf.enable = true;
