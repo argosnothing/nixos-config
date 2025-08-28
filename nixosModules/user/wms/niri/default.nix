@@ -21,7 +21,6 @@
   config = lib.mkIf config.wms.niri.enable {
     quickshell.enable = true;
     yazi.enable = true;
-    
     programs.niri.enable = true;
   };
 }
