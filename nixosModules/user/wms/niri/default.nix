@@ -8,6 +8,7 @@
   imports = [
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
+    ../../ricing/quickshell
     ./wofi.nix
   ];
   options = {
