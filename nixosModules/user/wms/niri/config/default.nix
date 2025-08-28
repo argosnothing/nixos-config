@@ -3,7 +3,10 @@
     ./packages.nix
     ./portals.nix
     ./session.nix
-    ./bindings.nix
-    ./settings.nix
+    ./binds.nix
+    ./environment.nix
+    ./startup.nix
+    ./input.nix
+    ./layout.nix
   ];
 }
