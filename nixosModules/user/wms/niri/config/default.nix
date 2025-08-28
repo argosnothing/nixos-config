@@ -8,5 +8,6 @@
     ./startup.nix
     ./input.nix
     ./layout.nix
+    ./settings.nix
   ];
 }

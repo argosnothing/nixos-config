@@ -2,5 +2,6 @@
   imports = [
     ./flatpak.nix
     ./via.nix
+    ./steam.nix
   ];
 }

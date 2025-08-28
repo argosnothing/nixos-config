@@ -34,7 +34,7 @@
       ];
 
       packages = [
-        "com.valvesoftware.Steam"
+        #"com.valvesoftware.Steam"
         {
           appId = "com.jagex.Launcher";
           origin = "JagexLauncher";
@@ -48,15 +48,15 @@
       ];
 
       overrides = {
-        "com.valvesoftware.Steam" = {
-          Context.filesystems = [
-            "~/.themes:ro"
-            "~/.icons:ro"
-            "~/.local/share/icons:ro"
-            "/usr/share/icons:ro"
-            "/usr/share/themes:ro"
-          ];
-        };
+       #"com.valvesoftware.Steam" = {
+       #  Context.filesystems = [
+       #    "~/.themes:ro"
+       #    "~/.icons:ro"
+       #    "~/.local/share/icons:ro"
+       #    "/usr/share/icons:ro"
+       #    "/usr/share/themes:ro"
+       #  ];
+       #};
         global = {
           Context.filesystems = [
             "~/.themes:ro"
