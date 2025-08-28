@@ -11,7 +11,7 @@
     "Alt+T".action = spawn "kitty";
     "Alt+E".action = spawn "kitty" "-e" "yazi";  # Terminal file manager
     "Alt+N".action = spawn "nemo";               # GUI file manager  
-    "Alt+Space".action = spawn "wofi" "--show" "drun";
+    "Alt+Space".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     "Alt+R".action = spawn "wofi" "--show" "run";
 
     # Window management

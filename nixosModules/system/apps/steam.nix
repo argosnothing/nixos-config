@@ -57,13 +57,5 @@
 
     # Enable realtime scheduling for better gaming performance
     security.rtkit.enable = true;
-
-    # Ensure necessary system libraries for Steam
-    system.activationScripts = {
-      steamLibraries = lib.stringAfter [ "users" ] ''
-        # Create necessary Steam directories and symlinks
-        mkdir -p /home/${config.users.users.salivala.name or "salivala"}/.steam
-      '';
-    };
   };
 }
