@@ -1,21 +1,14 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    nautilus
+  home.packages = [
+    # Create a nautilus wrapper that always uses X11 backend
+    (pkgs.symlinkJoin {
+      name = "nautilus-x11";
+      paths = [ pkgs.nautilus ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/nautilus \
+          --set GDK_BACKEND x11
+      '';
+    })
   ];
-  
-  # Set X11 backend for nautilus to prevent crashes on close
-  home.sessionVariables = {
-    # Only affect nautilus specifically
-  };
-  
-  # Alternative: use programs.nautilus when available, or desktop entry override
-  xdg.desktopEntries.nautilus = {
-    name = "Files";
-    comment = "Access and organize files";
-    exec = "env GDK_BACKEND=x11 nautilus %U";
-    icon = "org.gnome.Nautilus";
-    mimeType = ["inode/directory"];
-    categories = ["Utility" "Core" "GTK"];
-    startupNotify = true;
-  };
 }
