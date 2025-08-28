@@ -17,6 +17,13 @@
     spotify
   ];
 
+  programs.helix = {
+    enable = true;
+    languages.language = [{
+      name = "nix";
+    }];
+  };
+
   # Basic program configuration
   programs.bash = {
     enable = true;

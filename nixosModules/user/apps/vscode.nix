@@ -3,7 +3,7 @@
   pkgsUnstable,
   ...
 }: {
-  home.packages = with pkgs; [alejandra nixd];
+  home.packages = with pkgs; [alejandra nixd ];
   programs.vscode = {
     enable = true;
     package = pkgsUnstable.vscode;
@@ -30,6 +30,7 @@
         "vim.insertModeKeyBindings" = [];
         "vim.normalModeKeyBindingsNonRecursive" = [];
         "vim.autoindent" = true;
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
 
         # Enable key repeat for all keys in VS Code
         "keyboard.dispatch" = "keyCode";
