@@ -43,10 +43,18 @@
 
       NIXOS_OZONE_WL = "1";
     };
+    programs.yazi = {
+      enable = true;
+      settings = {
+        mgr = {
+          show_hidden = true;
+        };
+      };
+    };
+
     programs.niri = {
       enable = true;
       settings = {
-        # Basic input configuration
         environment."NIXOS_OZONE_WL" = "1";
         environment."DISPLAY" = ":0";
         

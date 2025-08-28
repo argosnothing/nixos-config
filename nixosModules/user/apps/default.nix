@@ -7,6 +7,5 @@
     ./firefox.nix
     ./vscode.nix
     ./gtk.nix
-    ./nautilus.nix
   ];
 }

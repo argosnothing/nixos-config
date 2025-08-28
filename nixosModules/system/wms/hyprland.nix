@@ -14,6 +14,7 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
+    greeters.tuigreet.wm = "Hyprland";
     greeters.tuigreet.enable = true;
     programs.hyprland = {
       enable = true;
@@ -39,6 +40,5 @@ in {
 
     security.pam.services.login.enableGnomeKeyring = true;
     services.gnome.gnome-keyring.enable = true;
-
   };
 }
