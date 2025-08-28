@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     wireplumber
     bibata-cursors
+    qogir-theme  # Includes cursor theme
     nwg-displays
     grim
     libsoup_3

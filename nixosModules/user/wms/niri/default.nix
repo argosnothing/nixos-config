@@ -19,7 +19,7 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
-    quickshell.enable = true;
+    noctalia.enable = true;  # Enable Noctalia Shell instead of basic QuickShell
     yazi.enable = true;
     programs.niri.enable = true;
   };
