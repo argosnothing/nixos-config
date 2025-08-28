@@ -19,6 +19,8 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
+    # Enable QuickShell for niri
+    quickshell.enable = true;
     home.packages = with pkgs; [
       wireplumber
       bibata-cursors

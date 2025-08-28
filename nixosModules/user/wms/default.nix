@@ -1,8 +1,6 @@
 {settings, ...}: {
-  imports = [ 
-    ./hyprland
-    ./gnome
-    ./niri
+  imports = [
+    (./. + "/${settings.wm}")
   ];
   wms.${settings.wm}.enable = true;
 }

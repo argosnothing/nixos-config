@@ -18,6 +18,10 @@
     };
     nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake";
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
     nix-flatpak.url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
   };

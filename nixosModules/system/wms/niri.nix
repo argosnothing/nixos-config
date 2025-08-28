@@ -29,6 +29,10 @@
     # Ensure GTK cache is built
     programs.dconf.enable = true;
     services.dbus.enable = true;
+    
+    # Enable Qt for QuickShell QML language server support
+    qt.enable = true;
+    
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       papirus-icon-theme
@@ -39,6 +43,10 @@
       gsettings-desktop-schemas
       font-awesome
       material-design-icons
+      
+      # Qt packages for QuickShell
+      qt6.full
+      qt6.qttools  # includes qmlls language server
     ];
 
     security.pam.services.login.enableGnomeKeyring = true;

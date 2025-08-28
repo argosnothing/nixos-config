@@ -3,9 +3,7 @@
   ...
 }: {
   imports = [
-    ./gnome.nix
-    ./hyprland.nix
-    ./niri.nix
+    (./. + "/${settings.wm}.nix")
   ];
   wms."${settings.wm}".enable = true;
 }
