@@ -20,6 +20,7 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
+    yazi.enable = true;
     home.packages = with pkgs; [
       wireplumber
       bibata-cursors
@@ -63,14 +64,6 @@ in {
       </fontconfig>
     '';
 
-    programs.yazi = {
-      enable = true;
-      settings = {
-        mgr = {
-          show_hidden = true;
-        };
-      };
-    };
     # Session variables for Hyprland
     home.sessionVariables = {
       XCURSOR_THEME = "Qogir";

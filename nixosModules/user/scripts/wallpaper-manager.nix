@@ -43,7 +43,7 @@
             echo "$WALLPAPER" > "$STATE_FILE"
             
             # Set the wallpaper
-            ${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type fade --transition-duration 1
+            swww img "$WALLPAPER" --transition-type fade --transition-duration 1
             echo "Set wallpaper: $(basename "$WALLPAPER")"
             ;;
             
@@ -52,7 +52,7 @@
             if [ -f "$STATE_FILE" ]; then
                 WALLPAPER=$(cat "$STATE_FILE")
                 if [ -f "$WALLPAPER" ]; then
-                    ${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type fade --transition-duration 1
+                    swww img "$WALLPAPER" --transition-type fade --transition-duration 1
                     echo "Set wallpaper: $(basename "$WALLPAPER")"
                 else
                     echo "Wallpaper file not found: $WALLPAPER"
@@ -84,12 +84,11 @@ in {
   config = lib.mkIf config.scripts.wallpaper-manager.enable {
     home.packages = [
       wallpaper-manager
-      pkgs.swww
     ];
     
     # Copy wallpapers to a known location in the home directory
     home.file.".local/share/wallpapers" = {
-      source = ../../../../media/wallpapers;
+      source = ../../../media/wallpapers;
       recursive = true;
     };
   };

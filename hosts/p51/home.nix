@@ -8,7 +8,6 @@
 
   # Add P51-specific packages to the shared list
   home.packages = with pkgs; [
-    nautilus
     loupe
   ];
 }

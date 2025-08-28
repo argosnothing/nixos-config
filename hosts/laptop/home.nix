@@ -8,7 +8,6 @@
 
   # Add laptop-specific packages to the shared list
   home.packages = with pkgs; [
-    nautilus
     loupe
   ];
 }

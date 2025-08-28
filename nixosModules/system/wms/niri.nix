@@ -28,7 +28,16 @@
 
     # Ensure GTK cache is built
     programs.dconf.enable = true;
-    services.dbus.enable = true;
+    services.dbus = {
+      enable = true;
+      # GNOME services needed for Nautilus and other GUI apps outside GNOME Desktop
+      packages = with pkgs; [
+        gcr
+        gnome-settings-daemon
+        libsecret
+      ];
+    };
+    services.gvfs.enable = true;  # Virtual filesystem support for Nautilus
     
     # Enable Qt for QuickShell QML language server support
     qt.enable = true;
@@ -47,6 +56,10 @@
       # Qt packages for QuickShell
       qt6.full
       qt6.qttools  # includes qmlls language server
+      
+      # Additional GNOME components for GUI functionality  
+      gcr
+      libsecret
     ];
 
     security.pam.services.login.enableGnomeKeyring = true;
