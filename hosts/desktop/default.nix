@@ -11,7 +11,7 @@
     defaultSettings
     // {
       hostname = "desktop";
-      wm = "niri";
+      wm = "cosmic";
       fonts = {
         sizes = {
           applications = 12;
