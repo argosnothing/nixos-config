@@ -5,5 +5,6 @@
     {command = ["xwayland-satellite"];}
     {command = ["swww-daemon"];}
     {command = ["noctalia-shell"];}
+    {command = ["discord"];}
   ];
 }

@@ -2,6 +2,11 @@
 
 {
   programs.niri.settings = {
+    # Named workspaces
+    workspaces = {
+      discord = {};
+    };
+
     # Noctalia recommended window rules
     window-rules = [
       {
@@ -12,6 +17,10 @@
           bottom-right = 20.0;
         };
         clip-to-geometry = true;
+      }
+      {
+        matches = [{ app-id = "discord"; }];
+        open-on-workspace = "discord";
       }
     ];
 

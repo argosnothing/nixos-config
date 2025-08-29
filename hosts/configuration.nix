@@ -70,6 +70,7 @@
         gitkraken
         unzip
         openssl
+        networkmanagerapplet
         wev
         pavucontrol
         usbutils

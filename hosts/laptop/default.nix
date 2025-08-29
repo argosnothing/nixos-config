@@ -9,7 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
-    wm = "hyprland";
+    wm = "niri";
     battery.enable = true;
     fonts = {
       sizes = {
@@ -33,7 +33,7 @@ in {
   homeConfigurations = {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit inputs settings;};
+      extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
         ./home.nix
       ];

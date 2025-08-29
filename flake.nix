@@ -18,6 +18,10 @@
     };
     nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake";
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -13,6 +13,7 @@
     "Alt+N".action = spawn "nemo";               # GUI file manager  
     "Alt+Space".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     "Alt+R".action = spawn "wofi" "--show" "run";
+    "Alt+Q".action.focus-workspace = "discord";  # Go to Discord workspace
 
     # Window management
     "Alt+C".action = close-window;
