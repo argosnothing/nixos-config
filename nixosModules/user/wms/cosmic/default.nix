@@ -21,8 +21,8 @@
       nautilus
       
       # Additional utilities that work well with COSMIC
-      gnome.gnome-calculator
-      gnome.gnome-calendar
+      gnome-calculator
+      gnome-calendar
       
       # Flatpak support for user
       flatpak

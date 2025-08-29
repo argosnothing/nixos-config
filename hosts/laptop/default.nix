@@ -9,7 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
-    wm = "niri";
+    wm = "cosmic";
     battery.enable = true;
     fonts = {
       sizes = {
