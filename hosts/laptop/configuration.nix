@@ -16,6 +16,5 @@
   
   # Laptop-specific packages
   environment.systemPackages = with pkgs; [
-    home-manager
   ];
 }

@@ -30,16 +30,14 @@
     programs.dconf.enable = true;
     services.dbus = {
       enable = true;
-      # GNOME services needed for Nautilus and other GUI apps outside GNOME Desktop
       packages = with pkgs; [
         gcr
         gnome-settings-daemon
         libsecret
       ];
     };
-    services.gvfs.enable = true;  # Virtual filesystem support for Nautilus
+    services.gvfs.enable = true;
     
-    # Enable Qt for QuickShell QML language server support
     qt.enable = true;
     
     environment.systemPackages = with pkgs; [

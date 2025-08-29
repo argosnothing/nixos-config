@@ -9,7 +9,6 @@
     pkgs.libsForQt5.breeze-qt5
     libsForQt5.breeze-icons
     pkgs.noto-fonts-monochrome-emoji
-    # loupe  # Temporarily commented to test if this pulls in nautilus
     prismlauncher
   ];
 }
