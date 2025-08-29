@@ -17,6 +17,5 @@
   # Laptop-specific packages
   environment.systemPackages = with pkgs; [
     home-manager
-    swayidle # Idle management for laptop power saving
   ];
 }

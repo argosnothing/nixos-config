@@ -1,6 +1,12 @@
 {
+  pkgs,
+  config,
+  lib,
   ...
 }: {
   imports = [ ../../stylix-config.nix ];
-  stylix.targets.grub.enable = false;
+  config = lib.mkIf config.styles.stylix.enable {
+    stylix.targets.grub.enable = false;
+  };
+
 }
