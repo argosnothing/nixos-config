@@ -9,9 +9,9 @@
 }: let
   settings =
     defaultSettings
-    // {
+    // { 
       hostname = "desktop";
-      wm = "cosmic";
+      wm = "plasma";
       fonts = {
         sizes = {
           applications = 12;

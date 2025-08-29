@@ -18,6 +18,7 @@
       ];
       userSettings = {
         "workbench.iconTheme" = "vs-seti";
+        "workbench.colorTheme" = "Github Light";
         "terminal.integrated.fontLigatures" = true;
         "terminal.integrated.fontFamily" = "MesloLGS NF, FiraCode Nerd Font, JetBrainsMono Nerd Font, monospace";
         "vim.handleKeys" = {
