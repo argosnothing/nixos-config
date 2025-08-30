@@ -70,16 +70,11 @@
         gitkraken
         unzip
         openssl
-        wev
-        pavucontrol
         usbutils
-        wireplumber
         pipewire
         grimblast
         brightnessctl
-        playerctl
         dbus
-        google-chrome
         home-manager
       ];
 

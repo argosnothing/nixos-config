@@ -12,8 +12,6 @@
   home.packages = with pkgs; [
     desktop-file-utils
     discord
-    pulsemixer
-    tdrop
     spotify
   ];
 

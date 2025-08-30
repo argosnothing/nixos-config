@@ -1,5 +1,4 @@
-{pkgs, pkgsUnstable, config, ...}: let 
-    nvidiaPackage = pkgsUnstable.linuxPackages.nvidiaPackages.beta;
+{...}: let 
 in {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.graphics.enable = true;
@@ -9,6 +8,5 @@ in {
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
-    package = nvidiaPackage;
   };
 }

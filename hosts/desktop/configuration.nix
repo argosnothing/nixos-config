@@ -15,7 +15,6 @@
   via.enable = true;
   environment.systemPackages = with pkgs; [
     xorg.xev
-    inputs.swww.packages.${pkgs.system}.swww # Desktop wallpaper manager
     xdg-utils
   ];
 }
