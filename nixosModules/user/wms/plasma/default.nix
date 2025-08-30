@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    inputs.plasma-manager.homeManagerModules.plasma-manager
+    #inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
   options = {
     wms.plasma.enable = lib.mkOption {
@@ -24,16 +24,16 @@
       kdePackages.krfb
       easyeffects
     ];
-    programs.plasma = {
-      enable = true;
-      hotkeys.commands = {
-        launch-discord = {
-          name = "Launch Discord";
-          key = "Alt+Q";
-          command = "discord";
-        };
-      };
-    };
+   #programs.plasma = {
+   #  enable = true;
+   #  hotkeys.commands = {
+   #    launch-discord = {
+   #      name = "Launch Discord";
+   #      key = "Alt+Q";
+   #      command = "discord";
+   #    };
+   #  };
+   #};
     services.kdeconnect.enable = true;
     styles.stylix.enable = false;
   };
