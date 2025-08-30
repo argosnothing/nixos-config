@@ -27,6 +27,7 @@ in {
     programs.dconf.enable = true;
     services.dbus.enable = true;
     environment.systemPackages = with pkgs; [
+      inputs.swww.packages.${pkgs.system}.swww # Desktop wallpaper manager
       adwaita-icon-theme
       papirus-icon-theme
       hicolor-icon-theme

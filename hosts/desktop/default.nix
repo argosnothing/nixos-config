@@ -9,7 +9,7 @@
 }: let
   settings =
     defaultSettings
-    // { 
+    // {
       hostname = "desktop";
       wm = "plasma";
       fonts = {

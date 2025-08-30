@@ -3,7 +3,7 @@
   pkgsUnstable,
   ...
 }: {
-  home.packages = with pkgs; [alejandra nixd ];
+  home.packages = with pkgs; [alejandra nixd];
   programs.vscode = {
     enable = true;
     package = pkgsUnstable.vscode;
@@ -18,7 +18,6 @@
       ];
       userSettings = {
         "workbench.iconTheme" = "vs-seti";
-        "workbench.colorTheme" = "Github Light";
         "terminal.integrated.fontLigatures" = true;
         "terminal.integrated.fontFamily" = "MesloLGS NF, FiraCode Nerd Font, JetBrainsMono Nerd Font, monospace";
         "vim.handleKeys" = {
