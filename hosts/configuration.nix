@@ -78,27 +78,6 @@
         home-manager
       ];
 
-      # XDG Portal configuration
-      xdg.portal = {
-        enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = [
-          pkgs.xdg-desktop-portal
-          pkgs.xdg-desktop-portal-gtk
-        ];
-      };
-
-      # System services
-      services.upower.enable = true; # UPower for power management
-      services.dbus.enable = true; # D-Bus system message bus
-      services.seatd.enable = true;
-
-      # Security
-      security = {
-        rtkit.enable = true;
-        polkit.enable = true;
-      };
-
       # Environment variables for Electron apps
       environment.sessionVariables = {
         ELECTRON_OZONE_PLATFORM_HINT = "auto";

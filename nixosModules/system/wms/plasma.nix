@@ -20,7 +20,7 @@
       settings = {
         Wayland = {
           # Force SDDM to use only primary display to avoid multi-monitor NVIDIA issues
-          CompositorCommand = "kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1";
+          #CompositorCommand = "kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1";
         };
       };
     };
