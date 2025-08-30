@@ -12,6 +12,16 @@
     };
   };
   config = lib.mkIf config.wms.gnome.enable {
-    # do user level gnome stuff here.
+    home.packages = with pkgs; [
+    ];
+    styles.stylix.enable = false;
+    # Enable GNOME fractional scaling (allows 150% in display settings)
+    dconf.settings = {
+      "org/gnome/mutter" = {
+        "experimental-features" = ["scale-monitor-framebuffer"];
+        # Note: 1.5 is not always respected, but this enables 150% in the GUI
+        # "preferred-scaling-factor" = 1.5; # Uncomment if you want to try forcing 150%
+      };
+    };
   };
 }

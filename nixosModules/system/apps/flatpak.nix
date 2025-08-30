@@ -28,21 +28,21 @@
           location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
         }
         {
-          name = "JagexLauncher";
-          location = "https://jagexlauncher.flatpak.mcswain.dev/JagexLauncher.flatpakrepo";
+         #name = "JagexLauncher";
+         #location = "https://jagexlauncher.flatpak.mcswain.dev/JagexLauncher.flatpakrepo";
         }
       ];
 
       packages = [
         #"com.valvesoftware.Steam"
-        {
-          appId = "com.jagex.Launcher";
-          origin = "JagexLauncher";
-        } # Official Jagex Launcher
-        {
-          appId = "com.jagex.Launcher.ThirdParty.RuneLite";
-          origin = "JagexLauncher";
-        } # RuneLite from Jagex Launcher remote
+        #{
+         #appId = "com.jagex.Launcher";
+         #origin = "JagexLauncher";
+       #} # Official Jagex Launcher
+       #{
+       # #appId = "com.jagex.Launcher.ThirdParty.RuneLite";
+       # #origin = "JagexLauncher";
+       #} # RuneLite from Jagex Launcher remote
         "org.freedesktop.Platform.Compat.i386//23.08" # 32-bit compat extension for Jagex Launcher
         "org.freedesktop.Platform.GL32.nvidia-580-76-05//1.4" # 32-bit NVIDIA OpenGL drivers for Steam
       ];

@@ -13,6 +13,7 @@
     desktop-file-utils
     discord
     spotify
+    bolt-launcher
   ];
 
   programs.helix = {
@@ -50,13 +51,5 @@
       sansSerif = [settings.sansFont];
       serif = [settings.serifFont];
     };
-  };
-
-  # Qt configuration
-  qt = {
-    enable = true;
-    style.package = pkgs.libsForQt5.breeze-qt5;
-    style.name = "breeze-dark";
-    platformTheme.name = settings.wm;
   };
 }

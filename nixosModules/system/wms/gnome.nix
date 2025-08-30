@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgsUnstable,
   lib,
   config,
   ...
@@ -12,10 +13,15 @@
     };
   };
   config = lib.mkIf config.wms.gnome.enable {
+
+    environment.systemPackages = with pkgs; [
+      gnomeExtensions.task-up-ultralite
+    ];
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
+    styles.stylix.enable = false;
   };
 }

@@ -11,7 +11,7 @@
     defaultSettings
     // {
       hostname = "desktop";
-      wm = "plasma";
+      wm = "gnome";
       fonts = {
         sizes = {
           applications = 12;
