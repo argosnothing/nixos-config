@@ -36,6 +36,6 @@
       };
     };
     services.kdeconnect.enable = true;
-    styles.stylix.enable = false;
+    styles.stylix.enable = false; # less headache just turning this off for a full dektop environment. 
   };
 }
