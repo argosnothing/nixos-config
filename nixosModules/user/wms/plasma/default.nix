@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
+    ./panel.nix
   ];
   options = {
     wms.plasma.enable = lib.mkOption {

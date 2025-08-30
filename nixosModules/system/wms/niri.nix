@@ -37,9 +37,9 @@
       ];
     };
     services.gvfs.enable = true;
-    
+
     qt.enable = true;
-    
+
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       papirus-icon-theme
@@ -50,12 +50,11 @@
       gsettings-desktop-schemas
       font-awesome
       material-design-icons
-      
+      inputs.swww.packages.${pkgs.system}.swww # Desktop wallpaper manager
       # Qt packages for QuickShell
       qt6.full
-      qt6.qttools  # includes qmlls language server
-      
-      # Additional GNOME components for GUI functionality  
+      qt6.qttools # includes qmlls language server
+      # Additional GNOME components for GUI functionality
       gcr
       libsecret
     ];
