@@ -24,6 +24,7 @@
         "vim.handleKeys" = {
           "<C-a>" = false;
           "<C-f>" = false;
+          "<C-p>" = false;
         };
         "vim.useSystemClipboard" = true;
         "vim.useCtrlKeys" = true;
