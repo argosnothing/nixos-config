@@ -70,7 +70,6 @@ in {
             name = widgets.pager;
             config = {
               General = {
-                showOnlyCurrentScreen = true;
                 showWindowIcons = true;
               };
             };

@@ -8,6 +8,7 @@
   imports = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
     ./panel.nix
+    ./input.nix
   ];
   options = {
     wms.plasma.enable = lib.mkOption {
@@ -27,6 +28,19 @@
     ];
     programs.plasma = {
       enable = true;
+      overrideConfig = true;
+      
+      workspace = {
+        lookAndFeel = "org.kde.breezedark.desktop";
+        colorScheme = "BreezeDark";
+        theme = "breeze-dark";
+      };
+      
+      kwin.virtualDesktops = {
+        number = 4;
+        names = [ "Desktop 1" "Desktop 2" "Desktop 3" "Desktop 4" ];
+      };
+      
       hotkeys.commands = {
         launch-discord = {
           name = "Launch Discord";
