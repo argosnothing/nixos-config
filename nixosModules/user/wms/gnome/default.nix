@@ -13,14 +13,30 @@
   };
   config = lib.mkIf config.wms.gnome.enable {
     home.packages = with pkgs; [
+      adwaita-icon-theme
+      guake
+      gnome-tweaks
+      gnomeExtensions.advanced-alttab-window-switcher
+      gnomeExtensions.alt-tab-current-monitor
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.dash-in-panel
+      gnomeExtensions.unmess
+      gnomeExtensions.gsconnect
+      gnomeExtensions.gsnap
+      gnomeExtensions.task-up-ultralite
+      gnomeExtensions.user-themes
     ];
     styles.stylix.enable = false;
-    # Enable GNOME fractional scaling (allows 150% in display settings)
     dconf.settings = {
       "org/gnome/mutter" = {
-        "experimental-features" = ["scale-monitor-framebuffer"];
-        # Note: 1.5 is not always respected, but this enables 150% in the GUI
-        # "preferred-scaling-factor" = 1.5; # Uncomment if you want to try forcing 150%
+        "experimental-features" = [ "scale-monitor-framebuffer" ];
+      };
+      "org/gnome/desktop/interface" = {
+        "cursor-theme" = "Adwaita";
+        "icon-theme" = "Adwaita";
+      };
+      "org/gnome/shell/app-switcher" = {
+        "current-workspace-only" = true;
       };
     };
   };
