@@ -167,11 +167,6 @@ with lib.hm.gvariant; {
 
     "org/gnome/shell/extensions/dash-to-panel" = {
       animate-appicon-hover = true;
-      animate-appicon-hover-animation-extent = {
-        RIPPLE = 4;
-        PLANK = 4;
-        SIMPLE = 1;
-      };
       appicon-style = "NORMAL";
       dot-position = "BOTTOM";
       dot-style-focused = "SQUARES";
