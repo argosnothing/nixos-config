@@ -42,6 +42,10 @@
       "org/gnome/shell/app-switcher" = {
         "current-workspace-only" = true;
       };
+      "org/gnome/mutter/wayland" = {
+        "xwayland-grab-access-rules" = [ "Wfica" ];
+        "xwayland-allow-grabs" = true;
+      };
     };
   };
 }
