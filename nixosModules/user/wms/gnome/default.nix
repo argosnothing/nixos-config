@@ -4,6 +4,9 @@
   lib,
   ...
 }: {
+  imports = [
+    ./dconf.nix
+  ];
   options = {
     wms.gnome.enable = lib.mkOption {
       type = lib.types.bool;
@@ -14,6 +17,7 @@
   config = lib.mkIf config.wms.gnome.enable {
     home.packages = with pkgs; [
       adwaita-icon-theme
+      dconf2nix
       guake
       gnome-tweaks
       gnomeExtensions.advanced-alttab-window-switcher

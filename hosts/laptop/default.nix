@@ -9,7 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
-    wm = "cosmic";
+    wm = "gnome";
     battery.enable = true;
     fonts = {
       sizes = {
