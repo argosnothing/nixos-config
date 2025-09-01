@@ -20,6 +20,7 @@
       dconf2nix
       guake
       gnome-tweaks
+      gnome-pomodoro
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.alt-tab-current-monitor
       gnomeExtensions.dash-to-panel

@@ -181,7 +181,7 @@ with lib.hm.gvariant; {
       isolate-workspaces = true;
       overview-click-to-exit = false;
       prefs-opened = false;
-      show-apps-icon-file = "";
+      show-apps-icon-file = "/home/${settings.username}/${settings.homedir}/media/icons/NixOS.svg";
       show-apps-icon-side-padding = 8;
       show-apps-override-escape = true;
       stockgs-force-hotcorner = false;
