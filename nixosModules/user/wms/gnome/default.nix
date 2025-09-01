@@ -25,9 +25,9 @@
       gnomeExtensions.alt-tab-current-monitor
       gnomeExtensions.dash-to-panel
       gnomeExtensions.dash-in-panel
+      gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
       gnomeExtensions.unmess
       gnomeExtensions.gsconnect
-      gnomeExtensions.gsnap
       gnomeExtensions.task-up-ultralite
       gnomeExtensions.user-themes
     ];
