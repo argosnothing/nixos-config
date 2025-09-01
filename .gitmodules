@@ -1,0 +1,3 @@
+[submodule "media/wallpapers/walls"]
+	path = media/wallpapers/walls
+	url = https://github.com/argosnothing/walls.git
