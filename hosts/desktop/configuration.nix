@@ -13,7 +13,6 @@
 
   steam.enable = true;
   via.enable = true;
-  kernels.chaotic.enable = true;
   environment.systemPackages = with pkgs; [
     xorg.xev
     xdg-utils

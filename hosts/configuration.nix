@@ -7,37 +7,7 @@
   lib,
   ...
 }: {
-  imports = [
-    inputs.chaotic.nixosModules.nyx-cache
-    inputs.chaotic.nixosModules.nyx-overlay
-    inputs.chaotic.nixosModules.nyx-registry
-  ];
-  options = {
-    kernels.xandmod.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable the Xanmod kernel.";
-    };
-    kernels.chaotic.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable the Chaotic kernel.";
-    };
-  };
-
   config = lib.mkMerge [
-    (lib.mkIf config.kernels.xandmod.enable {
-      boot.kernelPackages = pkgsUnstable.linuxPackages_xanmod_latest;
-    })
-    (lib.mkIf config.kernels.chaotic.enable {
-      environment.systemPackages = [];
-      system.modulesTree = [(lib.getOutput "modules" pkgs.linuxPackages_catchyos.kernel)];
-      boot.kernelPackages = pkgs.linuxPackages_catchyos;
-    })
-    {
-      # Enable virtualization tools and services
-      system.misc.virtualization.enable = true;
-    }
     {
       # Shared system configuration for all hosts
       nix.settings.experimental-features = ["nix-command" "flakes"];

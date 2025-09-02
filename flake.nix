@@ -7,9 +7,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    };
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
