@@ -15,6 +15,7 @@
   via.enable = true;
   kernels.cachyos.enable = true;
   environment.systemPackages = with pkgs; [
+    cachix
     xorg.xev
     xdg-utils
   ];

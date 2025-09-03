@@ -1,6 +1,7 @@
 {
   pkgs,
   settings,
+  lib,
   ...
 }: {
   # Shared home-manager configuration for all hosts
@@ -18,9 +19,11 @@
 
   programs.helix = {
     enable = true;
-    languages.language = [{
-      name = "nix";
-    }];
+    languages.language = [
+      {
+        name = "nix";
+      }
+    ];
   };
 
   # Basic program configuration

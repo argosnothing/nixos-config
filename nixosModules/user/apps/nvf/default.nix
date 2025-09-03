@@ -65,7 +65,7 @@
           };
           lsp = {
             enable = true;
-            server = "nixd";
+            server = "nil";
             options = {
               nixpkgs = {
                 expr = "import <nixpkgs> { }";
@@ -91,7 +91,7 @@
       };
 
       autocomplete = {
-        #nvim-cmp.enable = true;
+        nvim-cmp.enable = true;
         blink-cmp.enable = true;
       };
 

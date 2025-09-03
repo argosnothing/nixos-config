@@ -5,11 +5,6 @@ let
   ggrab = pkgs.writeShellScriptBin "ggrab" (builtins.readFile ./ggrab.sh);
 in
 {
-  # Wallpaper manager disabled - using Noctalia's built-in wallpaper system
-  imports = [
-    # ./wallpaper-manager.nix
-  ];
-
   options.scripts.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
