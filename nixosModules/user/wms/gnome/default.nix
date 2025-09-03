@@ -16,11 +16,15 @@
   };
   config = lib.mkIf config.wms.gnome.enable {
     home.packages = with pkgs; [
+      gtop
       adwaita-icon-theme
       dconf2nix
-      guake
       gnome-tweaks
       gnome-pomodoro
+      gnomeExtensions.vertical-workspaces
+      gnomeExtensions.ddterm
+      gnomeExtensions.tray-icons-reloaded
+      gnomeExtensions.vitals
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.alt-tab-current-monitor
       gnomeExtensions.dash-to-panel
@@ -28,7 +32,6 @@
       gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
       gnomeExtensions.unmess
       gnomeExtensions.gsconnect
-      gnomeExtensions.task-up-ultralite
       gnomeExtensions.user-themes
     ];
     styles.stylix.enable = false;

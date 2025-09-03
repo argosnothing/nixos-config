@@ -4,4 +4,5 @@
     ./via.nix
     ./steam.nix
   ];
+  programs.firefox.enable = true;
 }
