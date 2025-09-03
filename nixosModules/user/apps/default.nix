@@ -4,7 +4,7 @@
     ./terminal
     ./flatpak
     ./nvf
-    #./firefox.nix
+    ./firefox.nix
     ./vscode.nix
     ./gtk.nix
     ./yazi.nix
