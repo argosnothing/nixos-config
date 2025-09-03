@@ -13,9 +13,7 @@
     };
   };
   config = lib.mkIf config.wms.gnome.enable {
-
-    environment.systemPackages = with pkgs; [
-    ];
+    services.gnome.gnome-browser-connector.enable = true;
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = true;

@@ -146,7 +146,7 @@ with lib.hm.gvariant; {
     };
 
     "org/gnome/shell" = {
-      disabled-extensions = ["just-perfection-desktop@just-perfection" "window-title-is-back@fthx" "task-up@fthx" "gSnap@micahosborne" "unmess@ezix.org" "yaru-like-panel@fthx" "dash-in-panel@fthx" "task-up-ultralite@fthx" "alt-tab-current-monitor@esauvisky.github.io"];
+      disable-user-extensions = false;
       enabled-extensions = ["extension-list@tu.berry" "top-bar-organizer@julian.gse.jsts.xyz" "unite@hardpixel.eu" "gnomeGlobalAppMenu@lestcape" "user-theme@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "advanced-alt-tab@G-dH.github.com" "dash-to-panel@jderose9.github.com"];
       favorite-apps = [];
       last-selected-power-profile = "performance";
