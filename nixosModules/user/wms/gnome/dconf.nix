@@ -52,6 +52,10 @@ with lib.hm.gvariant; {
       toolbar-style = "text";
     };
 
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-windows = ["<Alt>Tab"];
+    };
+
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
     };

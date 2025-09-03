@@ -7,7 +7,23 @@
   lib,
   ...
 }: {
+  imports = [
+    inputs.chaotic.nixosModules.nyx-cache
+    inputs.chaotic.nixosModules.nyx-overlay
+    inputs.chaotic.nixosModules.nyx-registry
+  ];
+  options = {
+    kernels.cachyos.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable the cachyos kernel.";
+    };
+  };
   config = lib.mkMerge [
+    (lib.mkIf config.kernels.cachyos.enable {
+      boot.kernelPackages = pkgs.linuxPackages_cachyos;
+      system.modulesTree = [(lib.getOutput "modules" pkgs.linuxPackages_cachyos.kernel)];
+    })
     {
       # Shared system configuration for all hosts
       nix.settings.experimental-features = ["nix-command" "flakes"];
