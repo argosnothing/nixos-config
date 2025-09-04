@@ -12,8 +12,8 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+        name = "catppuccin";
+        style = "mocha";
       };
       options.termguicolors = true;
       statusline.lualine.enable = true;
@@ -65,7 +65,7 @@
           };
           lsp = {
             enable = true;
-            server = "nil";
+            server = "nixd";
             options = {
               nixpkgs = {
                 expr = "import <nixpkgs> { }";
@@ -92,7 +92,7 @@
 
       autocomplete = {
         nvim-cmp.enable = true;
-        blink-cmp.enable = true;
+        #blink-cmp.enable = true;
       };
 
       filetree = {

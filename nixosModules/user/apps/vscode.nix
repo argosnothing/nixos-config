@@ -1,6 +1,7 @@
 {
   pkgs,
-  lib,
+  config,
+  settings,
   pkgsUnstable,
   ...
 }: {
@@ -41,6 +42,12 @@
         "nix.enableLanguageServer" = true;
         "nixpkgs" = {
           "expr" = "import <nixpkgs>";
+        };
+        "nixos" = {
+          "expr" = "(builtins.getFlake \"${settings.absoluteflakedir}\").nixosConfigurations.${settings.hostname}.options";
+        };
+        "home-manager" = {
+          "expr" = "(builtins.getFlake \"${settings.absoluteflakedir}\").homeConfigurations.\"${settings.username}@${settings.hostname}\".options";
         };
         "nix.formatterPath" = "alejandra";
         "formatting" = {
