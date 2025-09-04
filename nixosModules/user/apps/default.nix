@@ -6,6 +6,7 @@
     ./nvf
     ./firefox.nix
     ./vscode.nix
+    ./zed
     ./gtk.nix
     ./yazi.nix
   ];
