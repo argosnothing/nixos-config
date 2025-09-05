@@ -7,7 +7,6 @@
   imports = [
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
-    ../../ricing/quickshell
     ./wofi.nix
     ./config
   ];
@@ -19,7 +18,7 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
-    noctalia.enable = true;  # Enable Noctalia Shell instead of basic QuickShell
+    noctalia.enable = true;
     yazi.enable = true;
     programs.niri.enable = true;
   };

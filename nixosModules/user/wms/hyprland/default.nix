@@ -3,6 +3,7 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }: let
   navBindings = import ./config/nav-bindings.nix;
@@ -20,7 +21,8 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    yazi.enable = true;
+    yazi.enable = false;
+    noctalia-shell.enable = true;
     home.packages = with pkgs; [
       nwg-displays
       wireplumber
@@ -152,6 +154,7 @@ in {
           "exec /usr/libexec/pam_kwallet_init"
           "swayidle -w -C /usr/share/swayidle/config"
           "swww-daemon"
+          "noctalia-shell"
         ];
 
         general = {

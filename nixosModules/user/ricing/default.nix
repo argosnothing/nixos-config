@@ -1,0 +1,3 @@
+{...}: {
+  imports = [ ./noctalia-shell.nix  ];
+}
