@@ -9,9 +9,9 @@
   navBindings = import ./config/nav-bindings.nix;
 in {
   imports = [
+    ../../ricing
     ./config/cursor.nix
     ./wofi
-    ./waybar/waybar.nix
   ];
   options = {
     wms.hyprland.enable = lib.mkOption {
