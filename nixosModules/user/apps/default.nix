@@ -7,8 +7,6 @@
     ./firefox.nix
     ./vscode.nix
     ./zed
-    ./schizofox
-    ./gtk.nix
     ./yazi.nix
   ];
 }

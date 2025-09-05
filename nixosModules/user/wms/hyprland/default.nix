@@ -22,6 +22,7 @@ in {
   config = lib.mkIf config.wms.hyprland.enable {
     yazi.enable = true;
     home.packages = with pkgs; [
+      nwg-displays
       wireplumber
       bibata-cursors
       hyprpicker
@@ -106,6 +107,7 @@ in {
         "$lockCommand" = "loginctl lock-session";
 
         monitor = [",preferred,auto,auto"];
+        # monitor =Virtual-1, zxy, 
 
         env = [
           "XCURSOR_SIZE,24"

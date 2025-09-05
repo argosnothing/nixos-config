@@ -9,4 +9,5 @@
     prismlauncher
     r2modman
   ];
+  zed.enable = true;
 }
