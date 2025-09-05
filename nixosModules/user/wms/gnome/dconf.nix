@@ -152,19 +152,20 @@ with lib.hm.gvariant; {
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "extension-list@tu.berry" 
-        "top-bar-organizer@julian.gse.jsts.xyz" 
-        "unite@hardpixel.eu" 
-        "gnomeGlobalAppMenu@lestcape" 
-        "user-theme@gnome-shell-extensions.gcampax.github.com" 
-        "gsconnect@andyholmes.github.io" 
-        "advanced-alt-tab@G-dH.github.com" 
+        "extension-list@tu.berry"
+        "top-bar-organizer@julian.gse.jsts.xyz"
+        "unite@hardpixel.eu"
+        "gnomeGlobalAppMenu@lestcape"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "gsconnect@andyholmes.github.io"
+        "advanced-alt-tab@G-dH.github.com"
         "dash-to-panel@jderose9.github.com"
         "trayIconsReloaded@selfmade.pl"
         "pomodoro@arun.codito.in"
         "ddterm@amezin.github.com"
         "vertical-workspaces@G-dH.github.com"
-        ];
+        "wintile@nowsci.com"
+      ];
       favorite-apps = [];
       last-selected-power-profile = "performance";
       welcome-dialog-last-shown-version = "48.2";
@@ -357,9 +358,9 @@ with lib.hm.gvariant; {
     "com/github/amezin/ddterm" = {
       background-color = "rgb(0,43,54)";
       background-opacity = 0.77;
-      ddterm-toggle-hotkey = [ "<Alt>Return" ];
+      ddterm-toggle-hotkey = ["<Alt>Return"];
       foreground-color = "rgb(131,148,150)";
-      palette = [ "rgb(46,52,54)" "rgb(204,0,0)" "rgb(78,154,6)" "rgb(196,160,0)" "rgb(52,101,164)" "rgb(117,80,123)" "rgb(6,152,154)" "rgb(211,215,207)" "rgb(85,87,83)" "rgb(239,41,41)" "rgb(138,226,52)" "rgb(252,233,79)" "rgb(114,159,207)" "rgb(173,127,168)" "rgb(52,226,226)" "rgb(238,238,236)" ];
+      palette = ["rgb(46,52,54)" "rgb(204,0,0)" "rgb(78,154,6)" "rgb(196,160,0)" "rgb(52,101,164)" "rgb(117,80,123)" "rgb(6,152,154)" "rgb(211,215,207)" "rgb(85,87,83)" "rgb(239,41,41)" "rgb(138,226,52)" "rgb(252,233,79)" "rgb(114,159,207)" "rgb(173,127,168)" "rgb(52,226,226)" "rgb(238,238,236)"];
       transparent-background = true;
       use-theme-colors = true;
     };
