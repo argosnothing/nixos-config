@@ -4,6 +4,7 @@
     ./terminal
     ./flatpak
     ./nvf
+    ./mpv
     ./firefox.nix
     ./vscode.nix
     ./zed
