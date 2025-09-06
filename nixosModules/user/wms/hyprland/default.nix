@@ -23,6 +23,7 @@ in {
     yazi.enable = false;
     noctalia-shell.enable = true;
     home.packages = with pkgs; [
+      waycorner
       nwg-displays
       wireplumber
       bibata-cursors
@@ -66,6 +67,12 @@ in {
       </fontconfig>
     '';
 
+    home.file.".config/waycorner/config.toml".text = ''
+      [main-monitor]
+      enter_command = [];
+      locations = ["top-left"]
+    '';
+
     # Session variables for Hyprland
     home.sessionVariables = {
       XCURSOR_THEME = "Qogir";
@@ -83,7 +90,7 @@ in {
       enable = true;
       systemd.enable = true;
       plugins = [
-        pkgs.hyprlandPlugins.hyprspace
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       ];
       extraConfig = ''
         submap = resize
@@ -238,6 +245,16 @@ in {
             exitOnClick = true;
             exitOnSwitch = true;
           };
+          hyprexpo = {
+            columns = 3;
+            gap_size = 5;
+            bg_col = "rgb(111111)";
+            workspace_method = ["center" "current"]; # [center/first] [workspace] e.g. first 1 or center m+1
+            enable_gesture = true;
+            gesture_fingers = 3;
+            gesture_distance = 300;
+            gesture_positive = true;
+          };
         };
 
         input = {
@@ -286,7 +303,7 @@ in {
             "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
             "$mainMod, F, fullscreen"
             "$mainMod Shift, L, exec, $lockCommand"
-            "SUPER, Tab, overview:toggle"
+            #"SUPER, Tab, hyprexpo:toggle"
             # Toggle NoBinds mode (disable all mainMod keybinds)
             ", XF86Tools, submap, nobinds"
           ]
