@@ -7,6 +7,7 @@
   inputs,
   ...
 }: let
+  system = pkgs.stdenv.hostPlatform.system;
 in {
   imports = [
     ../../ricing
@@ -89,6 +90,8 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
+      package = inputs.hyprland.packages.${system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
       plugins = [
         inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       ];
@@ -269,7 +272,9 @@ in {
           touchpad.natural_scroll = true;
         };
 
-        gestures.workspace_swipe = true;
+        gesture = [
+          "3,horizontal,workspace"
+        ];
 
         # rules & workspace config
         windowrulev2 = [

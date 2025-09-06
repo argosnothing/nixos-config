@@ -9,7 +9,7 @@
 }: let
   settings = defaultSettings // {
     hostname = "laptop";
-    wm = "gnome";
+    wm = "hyprland";
     battery.enable = true;
     fonts = {
       sizes = {
