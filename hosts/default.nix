@@ -20,7 +20,7 @@
     serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
-    stylixTheme = "gruvbox-dark-hard";
+    stylixTheme = "catppuccin-mocha";
     battery.enable = false;
     fonts = {
       sizes = {

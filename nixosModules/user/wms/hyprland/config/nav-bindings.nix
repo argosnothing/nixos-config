@@ -1,5 +1,15 @@
 {
-  navBindings = [
+  config,
+  lib,
+  ...
+}: {
+  options.hyprland.navBindings = lib.mkOption {
+    type = lib.types.listOf lib.types.str;
+    default = [];
+    description = "Navigation bindings for Hyprland";
+  };
+
+  config.hyprland.navBindings = [
     "$mainMod, left, movefocus, l"
     "$mainMod, right, movefocus, r"
     "$mainMod, up, movefocus, u"

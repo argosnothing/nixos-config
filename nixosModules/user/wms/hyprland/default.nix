@@ -3,15 +3,14 @@
   pkgs,
   config,
   lib,
+  settings,
   inputs,
   ...
 }: let
-  navBindings = import ./config/nav-bindings.nix;
 in {
   imports = [
     ../../ricing
-    ./config/cursor.nix
-    ./wofi
+    ./config
   ];
   options = {
     wms.hyprland.enable = lib.mkOption {
@@ -104,12 +103,17 @@ in {
       settings = {
         # variables
         "$terminal" = "kitty";
-        "$menu" = "wofi --show drun --allow-images";
+        "$menu" = "noctalia-shell ipc call launcher toggle";
         "$mainMod" = "MOD1";
         "$lockCommand" = "loginctl lock-session";
 
-        monitor = [",preferred,auto,auto"];
-        # monitor =Virtual-1, zxy, 
+        monitor =
+          if (settings.hostname == "desktop")
+          then [
+            "DP-1,3840x2160@160,0x0,1.25"
+            "DP-2,1920x1080,3072x288,1.0"
+          ]
+          else [",preferred,auto,auto"];
 
         env = [
           "XCURSOR_SIZE,24"
@@ -252,10 +256,10 @@ in {
 
         # rules & workspace config
         windowrulev2 = [
-          "opacity 0.95 0.75, onworkspace:special:specq"
-          "opacity 0.95 0.75, onworkspace:special:specw"
-          "opacity 0.95 0.75, onworkspace:special:spece"
-          "opacity 0.95 0.75, onworkspace:special:specs"
+          "opacity 0.95 0.95, onworkspace:special:specq"
+          "opacity 0.95 0.95, onworkspace:special:specw"
+          "opacity 0.95 0.95, onworkspace:special:spece"
+          "opacity 0.95 0.95, onworkspace:special:specs"
         ];
 
         workspace = [
@@ -286,7 +290,7 @@ in {
             # Toggle NoBinds mode (disable all mainMod keybinds)
             ", XF86Tools, submap, nobinds"
           ]
-          ++ navBindings.navBindings;
+          ++ config.hyprland.navBindings;
 
         bindm = [
           "$mainMod, mouse:272, movewindow"

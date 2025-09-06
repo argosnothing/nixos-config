@@ -10,9 +10,6 @@
   };
 
   config = lib.mkIf config.noctalia-shell.enable {
-    # Automatically enable QuickShell when Noctalia is enabled
-    quickshell.enable = true;
-
     home.packages =
       [
         inputs.noctalia-shell.packages.${pkgs.system}.default

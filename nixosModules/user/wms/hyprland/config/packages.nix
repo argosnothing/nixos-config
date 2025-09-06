@@ -1,3 +1,7 @@
-{...}: {
-  home.packages = with pkgs; [nemo];
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    nemo
+    nemo-fileroller
+    loupe
+  ];
 }
