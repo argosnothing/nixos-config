@@ -1,14 +1,10 @@
 # Configure both system and user for this machine
 {
   inputs,
+  pkgs,
   pkgsUnstable,
   ...
 }: let
-  nixpkgs = import inputs.nixpkgs { 
-    system = settings.system;
-    config.allowUnfree = true;
-  };
-  pkgs = nixpkgs;
   settings =
     (import ../defaultSettings.nix { inherit pkgs; })
     // {
