@@ -24,14 +24,14 @@
   in {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      specialArgs = {inherit inputs settings pkgsUnstable;};
+      extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
-        (../hosts + "/${hostname}/home.nix")
+        (./. + ../hosts + "/${hostname}/home.nix")
       ];
     };
   };
 in {
-  flake.nixosConfigurations =
+  flake.homeConfigurations =
     mkHome {hostname = "desktop";}
     // mkHome {hostname = "laptop";}
     // mkHome {hostname = "p51";};

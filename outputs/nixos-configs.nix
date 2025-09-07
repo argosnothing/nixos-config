@@ -1,17 +1,11 @@
 {
   inputs,
+  pkgs,
+  pkgsUnstable,
   ...
 }: let
-  system = "x86_64-linux";
-  pkgs = import inputs.nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-  pkgsUnstable = import inputs.nixpkgs-unstable {
-    inherit system;
-    config.allowUnfree = true;
-  };
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
+  inherit (inputs) nixpkgs self;
   mkSystem = {
     wm ? "hyprland",
     hostname,
@@ -22,9 +16,9 @@
         inherit hostname wm;
       };
   in {
-    ${hostname} = pkgs.lib.nixosSystem {
+    ${hostname} = nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      specialArgs = {inherit inputs settings pkgsUnstable;};
+      specialArgs = {inherit inputs settings pkgsUnstable self;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
       ];
