@@ -1,5 +1,6 @@
 {
   imports = [
-    ./hosts
+    ./nixos-configs.nix
+    ./home-configs.nix
   ];
 }

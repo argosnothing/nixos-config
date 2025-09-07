@@ -33,7 +33,7 @@ in {
   flake.homeConfigurations = {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit inputs settings;};
+      extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
         ./home.nix
       ];

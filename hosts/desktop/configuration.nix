@@ -8,7 +8,7 @@
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../../nixosModules/system
+    ../../nixosModules/system
   ];
 
   steam.enable = true;

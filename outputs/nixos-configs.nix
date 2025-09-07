@@ -12,7 +12,7 @@
     config.allowUnfree = true;
   };
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
-  mkHome = {
+  mkSystem = {
     wm ? "hyprland",
     hostname,
   }: let
@@ -22,17 +22,17 @@
         inherit hostname wm;
       };
   in {
-    "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
+    ${hostname} = pkgs.lib.nixosSystem {
       inherit pkgs;
       specialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
-        (../hosts + "/${hostname}/home.nix")
+        (../hosts + "/${hostname}/configuration.nix")
       ];
     };
   };
 in {
   flake.nixosConfigurations =
-    mkHome {hostname = "desktop";}
-    // mkHome {hostname = "laptop";}
-    // mkHome {hostname = "p51";};
+    mkSystem {hostname = "desktop";}
+    // mkSystem {hostname = "laptop";}
+    // mkSystem {hostname = "p51";};
 }
