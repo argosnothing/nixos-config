@@ -6,7 +6,7 @@
 }: {
   # Shared home-manager configuration for all hosts
   imports = [
-    ../../nixosModules/user
+    ../nixosModules/user
   ];
 
   # Core packages shared across all hosts

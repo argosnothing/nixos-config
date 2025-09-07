@@ -26,7 +26,7 @@
       inherit pkgs;
       extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
-        (./. + ../hosts + "/${hostname}/home.nix")
+        ../hosts/${hostname}/home.nix
       ];
     };
   };
