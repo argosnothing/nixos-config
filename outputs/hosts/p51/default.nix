@@ -4,10 +4,9 @@
   pkgs,
   pkgsUnstable,
   system,
-  defaultSettings,
   ...
 }: let
-  settings = defaultSettings // {
+  settings = import ../defaultSettings.nix // {
     hostname = "p51";
     wm = "hyprland";
     battery.enable = true;
@@ -21,7 +20,7 @@
     };
   };
 in {
-  nixosConfigurations = {
+  flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {inherit inputs settings pkgsUnstable;};
@@ -30,7 +29,7 @@ in {
       ];
     };
   };
-  homeConfigurations = {
+  flake.homeConfigurations = {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs settings;};

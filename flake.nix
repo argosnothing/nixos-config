@@ -1,13 +1,14 @@
 {
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = inputs.systems;
-      imports = [ ./outputs ];
+      systems = import inputs.systems;
+      imports = [./outputs];
     };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     swww.url = "github:LGFae/swww";
+    flake-compat.url = "github:edolstra/flake-compat";
     systems.url = "github:/nix-systems/default";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";

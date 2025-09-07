@@ -21,7 +21,7 @@
     };
   };
 in {
-  nixosConfigurations = {
+  flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {inherit inputs settings pkgsUnstable;};
@@ -30,7 +30,7 @@ in {
       ];
     };
   };
-  homeConfigurations = {
+  flake.homeConfigurations = {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
