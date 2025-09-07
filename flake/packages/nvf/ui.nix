@@ -1,6 +1,7 @@
 {
   vim = {
     options.tabstop = 4;
+    options.shiftwidth = 4;
 
     dashboard.alpha = {
       enable = true;
@@ -18,7 +19,7 @@
     filetree.neo-tree.enable = true;
 
     theme = {
-      enable = true;
+      enable = false;
       name = "tokyonight";
       style = "night";
     };

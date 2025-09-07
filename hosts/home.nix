@@ -18,38 +18,23 @@
   ];
 
   mpv.enable = true;
-
-  programs.helix = {
-    enable = true;
-    languages.language = [
-      {
-        name = "nix";
-      }
-    ];
-  };
-
-  # Basic program configuration
+  nvf.enable = true;
   programs.bash = {
     enable = true;
   };
   programs.home-manager.enable = true;
 
-  # User directory configuration
   home.username = settings.username;
   home.homeDirectory = "/home/" + settings.username;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # State version
   home.stateVersion = "25.05";
 
-  # Session variables
   home.sessionVariables = {
     BROWSER = "firefox";
   };
 
-  # Font configuration
   fonts.fontconfig = {
     defaultFonts = {
       monospace = [settings.monoFont];

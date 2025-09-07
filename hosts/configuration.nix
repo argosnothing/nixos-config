@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   config,
-  pkgsUnstable,
   settings,
   lib,
   ...
@@ -79,7 +78,6 @@
 
       # Core system packages
       environment.systemPackages = with pkgs; [
-        vim
         git
         gitkraken
         unzip
