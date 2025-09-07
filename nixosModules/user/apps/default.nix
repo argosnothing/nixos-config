@@ -8,5 +8,6 @@
     ./vscode.nix
     ./zed
     ./yazi.nix
+    ./nvf.nix
   ];
 }

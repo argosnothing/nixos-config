@@ -3,9 +3,9 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
       imports = [./outputs];
-      perSystem = { pkgs, ... }: {
+      perSystem = { system, ... }: {
         _module.args.pkgs = import inputs.nixpkgs {
-          inherit (pkgs.stdenv.hostPlatform) system;
+          inherit system;
           config = {
             allowUnfree = true;
           };
