@@ -6,7 +6,7 @@
   lib,
   ...
 }: {
-  option = {
+  options = {
     mpv.enable = lib.mkEnableOption "Enable mpv media player";
   };
 

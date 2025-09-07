@@ -17,6 +17,8 @@
     bolt-launcher
   ];
 
+  mpv.enable = true;
+
   programs.helix = {
     enable = true;
     languages.language = [

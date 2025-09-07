@@ -70,8 +70,9 @@ in {
 
     home.file.".config/waycorner/config.toml".text = ''
       [main-monitor]
-      enter_command = [];
-      locations = ["top-left"]
+      enter_command = ["hyprctl", "dispatch", "overview:toggle"]
+      locations = ["top_left"]
+      timout_ms = 150
     '';
 
     # Session variables for Hyprland
@@ -90,10 +91,8 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
-      package = inputs.hyprland.packages.${system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
       plugins = [
-        inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+        pkgs.hyprlandPlugins.hyprspace
       ];
       extraConfig = ''
         submap = resize
@@ -169,6 +168,7 @@ in {
           "swayidle -w -C /usr/share/swayidle/config"
           "swww-daemon"
           "noctalia-shell"
+          "exec waycorner"
         ];
 
         general = {
@@ -244,6 +244,8 @@ in {
 
         plugin = {
           overview = {
+            autoScroll = true;
+            centerAligned = false;
             affectStrut = false;
             exitOnClick = true;
             exitOnSwitch = true;
@@ -251,6 +253,7 @@ in {
           hyprexpo = {
             columns = 3;
             gap_size = 5;
+            skip_empty = true;
             bg_col = "rgb(111111)";
             workspace_method = ["center" "current"]; # [center/first] [workspace] e.g. first 1 or center m+1
             enable_gesture = true;
@@ -272,10 +275,9 @@ in {
           touchpad.natural_scroll = true;
         };
 
-        gesture = [
-          "3,horizontal,workspace"
-        ];
-
+        gestures = { 
+          workspace_swipe = true;
+        };
         # rules & workspace config
         windowrulev2 = [
           "opacity 0.95 0.95, onworkspace:special:specq"
@@ -298,7 +300,7 @@ in {
 
         bind =
           [
-            "$mainMod SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
+            "SUPER SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
             "$mainMod, R, submap, resize"
             "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
             "$mainMod, Return, exec, $terminal"
@@ -308,7 +310,6 @@ in {
             "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
             "$mainMod, F, fullscreen"
             "$mainMod Shift, L, exec, $lockCommand"
-            #"SUPER, Tab, hyprexpo:toggle"
             # Toggle NoBinds mode (disable all mainMod keybinds)
             ", XF86Tools, submap, nobinds"
           ]
