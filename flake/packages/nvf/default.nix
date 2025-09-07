@@ -21,6 +21,11 @@
       registers = "unnamedplus";
     };
 
+    binds = {
+      whichKey.enable = true;
+      cheatsheet.enable = true;
+    };
+
     utility = {
       mkdir.enable = true;
       nix-develop.enable = true;

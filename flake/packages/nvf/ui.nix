@@ -19,9 +19,9 @@
     filetree.neo-tree.enable = true;
 
     theme = {
-      enable = false;
-      name = "tokyonight";
-      style = "night";
+      enable = true;
+      name = "catppuccin";
+      style = "latte";
     };
 
     ui = {

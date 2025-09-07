@@ -1,7 +1,7 @@
 {
   pkgs,
   settings,
-  lib,
+  inputs,
   ...
 }: {
   # Shared home-manager configuration for all hosts
@@ -15,10 +15,10 @@
     discord
     spotify
     bolt-launcher
+    inputs.self.packages.${pkgs.system}.nvf
   ];
 
   mpv.enable = true;
-  nvf.enable = true;
   programs.bash = {
     enable = true;
   };
