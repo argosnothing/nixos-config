@@ -1,8 +1,14 @@
 {
+  outputs = {flake-parts, ...} @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = inputs.systems;
+      imports = [ ./outputs ];
+    };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     swww.url = "github:LGFae/swww";
+    systems.url = "github:/nix-systems/default";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,21 +36,5 @@
     flake-parts.url = "github:/hercules-ci/flake-parts";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
     nix-flatpak.url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
-  };
-
-  outputs = inputs @ {
-    nixpkgs,
-    nixpkgs-unstable,
-    ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgsUnstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    inherit (import ./hosts/default.nix {inherit inputs pkgs pkgsUnstable system;}) nixosConfigurations homeConfigurations;
-    packages.${system} = import ./packages/default.nix {inherit pkgs pkgsUnstable inputs system;};
   };
 }

@@ -1,14 +1,8 @@
 # Tie All the hosts together
 {
-  inputs,
   pkgs,
-  pkgsUnstable,
-  system,
   ...
 }: let
-  desktop = import ./desktop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
-  laptop = import ./laptop/default.nix {inherit inputs pkgs pkgsUnstable system defaultSettings;};
-  p51 = import ./p51 {inherit inputs pkgs pkgsUnstable system defaultSettings;};
   defaultSettings = {
     username = "salivala";
     homedir = "nixos-config"; # TODO: make relative path use this
@@ -32,6 +26,9 @@
     };
   };
 in {
-  nixosConfigurations = desktop.nixosConfigurations // laptop.nixosConfigurations // p51.nixosConfigurations;
-  homeConfigurations = desktop.homeConfigurations // laptop.homeConfigurations // p51.homeConfigurations;
+  imports = [
+    ./desktop
+    ./laptop
+    ./p51
+  ];
 }
