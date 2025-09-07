@@ -2,7 +2,8 @@
   inputs,
   ...
 }: let
-  system = "x86_64-linux";
+  defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
+  system = defaultSettings.system;
   pkgs = import inputs.nixpkgs {
     inherit system;
     config.allowUnfree = true;
@@ -11,7 +12,6 @@
     inherit system;
     config.allowUnfree = true;
   };
-  defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
   mkHome = {
     wm ? "hyprland",
     hostname,

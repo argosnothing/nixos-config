@@ -68,12 +68,12 @@ in {
       </fontconfig>
     '';
 
-    home.file.".config/waycorner/config.toml".text = ''
-      [main-monitor]
-      enter_command = ["hyprctl", "dispatch", "overview:toggle"]
-      locations = ["top_left"]
-      timout_ms = 150
-    '';
+   #home.file.".config/waycorner/config.toml".text = ''
+   #  [main-monitor]
+   #  enter_command = ["hyprctl", "dispatch", "overview:toggle"]
+   #  locations = ["top_left"]
+   #  timout_ms = 150
+   #'';
 
     # Session variables for Hyprland
     home.sessionVariables = {
@@ -92,7 +92,7 @@ in {
       enable = true;
       systemd.enable = true;
       plugins = [
-        pkgs.hyprlandPlugins.hyprspace
+        #pkgs.hyprlandPlugins.hyprspace
       ];
       extraConfig = ''
         submap = resize

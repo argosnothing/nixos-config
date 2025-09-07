@@ -12,6 +12,7 @@ in {
   imports = [
     ./nixos-configs.nix
     ./home-configs.nix
+    ./packages.nix
   ];
 
   _module.args = {
