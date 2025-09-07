@@ -27,7 +27,6 @@
     {
       # Shared system configuration for all hosts
       nix.settings.experimental-features = ["nix-command" "flakes"];
-      nixpkgs.config.allowUnfree = true;
 
       # Boot configuration
       boot.plymouth.enable = true;

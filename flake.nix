@@ -3,6 +3,14 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
       imports = [./outputs];
+      perSystem = { pkgs, ... }: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit (pkgs.stdenv.hostPlatform) system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      };
     };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
