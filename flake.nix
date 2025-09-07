@@ -45,5 +45,6 @@
     };
   in {
     inherit (import ./hosts/default.nix {inherit inputs pkgs pkgsUnstable system;}) nixosConfigurations homeConfigurations;
+    packages.${system} = import ./packages/default.nix {inherit pkgs pkgsUnstable inputs;};
   };
 }

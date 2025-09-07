@@ -20,7 +20,7 @@
     serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
-    stylixTheme = "catppuccin-mocha";
+    stylixTheme = "catppuccin-latte"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
     battery.enable = false;
     fonts = {
       sizes = {
