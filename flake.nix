@@ -27,7 +27,7 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    schizofox.url = "github:schizofox/schizofox";
+    flake-parts.url = "github:/hercules-ci/flake-parts";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
     nix-flatpak.url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
   };
@@ -45,6 +45,6 @@
     };
   in {
     inherit (import ./hosts/default.nix {inherit inputs pkgs pkgsUnstable system;}) nixosConfigurations homeConfigurations;
-    packages.${system} = import ./packages/default.nix {inherit pkgs pkgsUnstable inputs;};
+    packages.${system} = import ./packages/default.nix {inherit pkgs pkgsUnstable inputs system;};
   };
 }
