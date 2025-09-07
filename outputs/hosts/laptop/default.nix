@@ -7,19 +7,21 @@
   defaultSettings,
   ...
 }: let
-  settings = defaultSettings // {
-    hostname = "laptop";
-    wm = "hyprland";
-    battery.enable = true;
-    fonts = {
-      sizes = {
-        applications = 10;
-        terminal = 10;
-        desktop = 10;
-        popups = 10;
+  settings =
+    (import ../defaultSettings.nix {inherit pkgs;})
+    // {
+      hostname = "laptop";
+      wm = "hyprland";
+      battery.enable = true;
+      fonts = {
+        sizes = {
+          applications = 10;
+          terminal = 10;
+          desktop = 10;
+          popups = 10;
+        };
       };
     };
-  };
 in {
   flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {

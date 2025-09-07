@@ -6,19 +6,21 @@
   system,
   ...
 }: let
-  settings = import ../defaultSettings.nix // {
-    hostname = "p51";
-    wm = "hyprland";
-    battery.enable = true;
-    fonts = {
-      sizes = {
-        applications = 8;
-        terminal = 8;
-        desktop = 8;
-        popups = 8;
+  settings =
+    (import ../defaultSettings.nix {inherit pkgs;})
+    // {
+      hostname = "p51";
+      wm = "hyprland";
+      battery.enable = true;
+      fonts = {
+        sizes = {
+          applications = 8;
+          terminal = 8;
+          desktop = 8;
+          popups = 8;
+        };
       };
     };
-  };
 in {
   flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {

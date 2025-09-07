@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./input.nix
     ./nvidia.nix
-    ../../nixosModules/system
+    ../../../nixosModules/system
   ];
 
   # P51-specific configuration

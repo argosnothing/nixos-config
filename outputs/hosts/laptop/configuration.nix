@@ -8,7 +8,7 @@
     ../configuration.nix # Import shared system configuration
     inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
-    ../../nixosModules/system
+    ../../../nixosModules/system
   ];
 
   # Laptop-specific configuration

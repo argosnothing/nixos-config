@@ -3,11 +3,10 @@
   inputs,
   pkgs,
   pkgsUnstable,
-  system,
   ...
 }: let
   settings =
-    import ../defaultSettings.nix
+    (import ../defaultSettings.nix { inherit pkgs; })
     // {
       hostname = "desktop";
       wm = "hyprland";
@@ -23,7 +22,7 @@
 in {
   flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
-      inherit system;
+      inherit pkgs;
       specialArgs = {inherit inputs settings pkgsUnstable;};
       modules = [
         ./configuration.nix

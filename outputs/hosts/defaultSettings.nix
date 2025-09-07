@@ -1,5 +1,6 @@
 {pkgs, ...}: let 
   defaultSettings = {
+    system = "x86_64-linux";
     username = "salivala";
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
