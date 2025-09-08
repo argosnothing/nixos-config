@@ -9,5 +9,6 @@
     ./input.nix
     ./layout.nix
     ./settings.nix
+    ./output.nix
   ];
 }

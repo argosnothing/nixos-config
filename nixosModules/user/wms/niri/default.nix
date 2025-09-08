@@ -7,8 +7,8 @@
   imports = [
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
-    ./wofi.nix
     ./config
+    ../../ricing
   ];
   options = {
     wms.niri.enable = lib.mkOption {
@@ -18,8 +18,7 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
-    noctalia.enable = true;
-    yazi.enable = true;
+    noctalia-shell.enable = true;
     programs.niri.enable = true;
   };
 }

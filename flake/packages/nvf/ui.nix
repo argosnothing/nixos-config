@@ -21,7 +21,7 @@
     theme = {
       enable = true;
       name = "catppuccin";
-      style = "latte";
+      style = "frappe";
     };
 
     ui = {
