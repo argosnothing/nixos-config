@@ -2,6 +2,7 @@
 
 {
   programs.niri.settings = {
+    prefer-no-csd = true;
     # Named workspaces
     workspaces = {
       discord = {};

@@ -14,7 +14,7 @@
     };
   };
   config = lib.mkIf config.styles.stylix.enable {
-    stylix.polarity = "dark";
+    stylix.polarity = settings.polarity;
     stylix = {
       enable = true;
       autoEnable = true;

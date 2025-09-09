@@ -2,6 +2,8 @@
 
 {
   programs.niri.settings.input = {
+    focus-follows-mouse.enable = true;
+    mod-key = "Alt";
     keyboard.xkb.layout = "us";
     touchpad = {
       tap = true;

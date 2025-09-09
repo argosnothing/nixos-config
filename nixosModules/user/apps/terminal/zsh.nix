@@ -9,6 +9,7 @@
         "git"
         "sudo"
         "z"
+        "direnv"
         "history"
         "colored-man-pages"
         "extract"

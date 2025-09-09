@@ -93,6 +93,7 @@ in {
       systemd.enable = true;
       plugins = [
         #pkgs.hyprlandPlugins.hyprspace
+        pkgs.hyprlandPlugins.hyprexpo
         #pkgs.hyprlandPlugins.hyprsplit
       ];
       extraConfig = ''

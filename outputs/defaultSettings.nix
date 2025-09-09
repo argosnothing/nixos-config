@@ -11,7 +11,8 @@
     serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
     sansFontPkg = pkgs.liberation_ttf;
-    stylixTheme = "catppuccin-latte"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
+    stylixTheme = "catppuccin-frappe"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
+    polarity = "dark";
     battery.enable = false;
     fonts = {
       sizes = {

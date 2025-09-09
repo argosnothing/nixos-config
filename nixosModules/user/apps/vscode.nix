@@ -8,12 +8,14 @@
   home.packages = with pkgs; [alejandra nixd];
   programs.vscode = {
     enable = true;
-    package = pkgsUnstable.vscode;
+    package = pkgs.vscode;
     profiles.default = {
-      extensions = with pkgsUnstable.vscode-extensions; [
+      extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         bbenoist.nix
         jnoortheen.nix-ide
+        rust-lang.rust-analyzer
+        vadimcn.vscode-lldb
         github.copilot
         github.copilot-chat
         yzhang.markdown-all-in-one

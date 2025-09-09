@@ -20,5 +20,8 @@
   config = lib.mkIf config.wms.niri.enable {
     noctalia-shell.enable = true;
     programs.niri.enable = true;
+    programs.niri.settings.debug = {
+      wait-for-frame-completion-before-queueing = [];
+    };
   };
 }

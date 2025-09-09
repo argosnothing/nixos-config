@@ -32,7 +32,7 @@
   };
 in {
   flake.homeConfigurations =
-    mkHome {hostname = "desktop"; wm = "niri";}
+    mkHome {hostname = "desktop";}
     // mkHome {hostname = "laptop";}
     // mkHome {hostname = "p51";};
 }

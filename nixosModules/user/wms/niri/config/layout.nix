@@ -2,7 +2,7 @@
 
 {
   programs.niri.settings.layout = {
-    gaps = 8;
+    border.enable = false;
     focus-ring.enable = false;
     background-color = "transparent";
     preset-column-widths = [

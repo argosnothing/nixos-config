@@ -13,8 +13,12 @@
   home.packages = with pkgs; [
     desktop-file-utils
     discord
+    nix-direnv
+    nix-direnv-flakes
+    direnv
     spotify
     bolt-launcher
+    inputs.self.packages.${pkgs.system}.ns
     inputs.self.packages.${pkgs.system}.nvf
   ];
 
