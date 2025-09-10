@@ -1,6 +1,12 @@
-{pkgs, config, lib, ...}: {
-
-programs.helix = {
+{
+  pkgs,
+  config,
+  lib,
+  settings,
+  inputs,
+  ...
+}: {
+  programs.helix = {
     enable = true;
     settings = {
       editor = {
@@ -11,37 +17,15 @@ programs.helix = {
         auto-save = true; # Auto-save files on focus loss
       };
     };
-
     languages = {
       language-server = {
-        gopls = {
-          command = "gopls"; #
-        };
-        nil = {
-          command = "nil";
-        };
-        bash-language-server = {
-          command = "bash-language-server"; #
-          args = ["start"];
+        nixd = {
+          command = "nixd";
+          formatting = {
+            command = ["alejandra"];
+          };
         };
       };
-      language = [
-        {
-          name = "go";
-          language-servers = ["gopls"];
-          auto-format = true;
-        }
-        {
-          name = "nix";
-          language-servers = ["nil"];
-          auto-format = true;
-        }
-        {
-          name = "bash";
-          language-servers = ["bash-language-server"];
-          auto-format = false;
-        }
-      ];
     };
 
     # Language server packages and tree-sitter support
@@ -51,7 +35,6 @@ programs.helix = {
       nil # Nix language server - Nix file support with LSP features
       bash-language-server # Bash language server - shell script analysis and completion
 
-      # Formatters (for better syntax highlighting and formatting)
       alejandra
       shellcheck #Improves bash highlighting
 

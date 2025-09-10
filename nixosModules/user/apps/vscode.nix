@@ -7,7 +7,7 @@
 }: {
   home.packages = with pkgs; [alejandra nixd];
   programs.vscode = {
-    enable = true;
+    enable = false;
     package = pkgs.vscode;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
