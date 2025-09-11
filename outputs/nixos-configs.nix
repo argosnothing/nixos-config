@@ -1,6 +1,7 @@
 {
   inputs,
-  pkgs, pkgsUnstable,
+  pkgs,
+  pkgsUnstable,
   ...
 }: let
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
@@ -21,11 +22,12 @@
       specialArgs = {inherit inputs settings pkgsUnstable self;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
-        home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.extraSpecialArgs = { inherit inputs settings pkgsUnstable; };
-            home-manager.users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
-          }
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
+          home-manager.users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
+        }
       ];
     };
   };
