@@ -26,6 +26,11 @@
     shellAliases = import ./nixos-aliases.nix { inherit settings; };
     initContent = ''
       [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+      [[ -f ~/.profile ]] && source ~/.profile
+    '';
+    envExtra = ''
+      export EDITOR=vim
+      export VISUAL=vim
     '';
   };
   home.file.".p10k.zsh".source = ./.p10k.zsh;

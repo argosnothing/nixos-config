@@ -17,6 +17,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-compat.url = "github:edolstra/flake-compat";
     systems.url = "github:/nix-systems/default";
+    sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";

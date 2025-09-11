@@ -6,6 +6,15 @@
   lib,
   ...
 }: {
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
+
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/${settings.username}/.config/sops/age/keys.txt";
+  sops.secrets.example-key = {};
+  sops.secrets."myservice/my_subdir/my_secret" = {};
   # Shared system configuration for all hosts
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -60,6 +69,7 @@
 
   # Core system packages
   environment.systemPackages = with pkgs; [
+    sops
     git
     gitkraken
     unzip
