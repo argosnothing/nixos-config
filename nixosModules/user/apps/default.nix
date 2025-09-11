@@ -2,6 +2,7 @@
   home.packages = with pkgs; [ gh ];
   imports = [
     ./terminal
+    ./utilities
     ./flatpak
     ./mpv
     ./firefox.nix

@@ -1,3 +1,10 @@
-{pkgs, settings, config, ...}: {
-  ./zoxide
+{
+  pkgs,
+  settings,
+  config,
+  ...
+}: {
+  imports = [
+    ./zoxide
+  ];
 }
