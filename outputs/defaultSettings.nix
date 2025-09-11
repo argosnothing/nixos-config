@@ -2,6 +2,7 @@
   defaultSettings = {
     system = "x86_64-linux";
     username = "salivala";
+    gitEmail = "argosnothing@gmail.com";
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
     absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";

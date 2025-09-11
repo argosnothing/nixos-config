@@ -40,6 +40,7 @@
     insert_final_newline = true
     tab_width = 2
   '';
+  git.enable = true;
 
   programs.home-manager.enable = true;
 
