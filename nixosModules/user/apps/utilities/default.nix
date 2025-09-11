@@ -1,0 +1,3 @@
+{pkgs, settings, config, ...}: {
+  ./zoxide
+}

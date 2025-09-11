@@ -18,6 +18,7 @@
   sops.secrets."myservice/my_subdir/my_secret" = {};
   # Shared system configuration for all hosts
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.package = pkgs.nixVersions.latest;
 
   # Boot configuration
   boot.plymouth.enable = true;
