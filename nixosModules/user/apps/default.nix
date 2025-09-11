@@ -9,5 +9,6 @@
     ./zed
     ./helix
     ./nvf
+    ./git
   ];
 }
