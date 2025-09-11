@@ -10,6 +10,7 @@
     wm ? "hyprland",
     hostname,
   }: let
+    home-manager = inputs.home-manager;
     settings =
       defaultSettings
       // {
@@ -21,6 +22,11 @@
       specialArgs = {inherit inputs settings pkgsUnstable self;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
+        home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.extraSpecialArgs = { inherit inputs settings pkgsUnstable; };
+            home-manager.users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
+          }
       ];
     };
   };

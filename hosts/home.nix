@@ -11,6 +11,10 @@
 
   # Core packages shared across all hosts
   home.packages = with pkgs; [
+    jq
+    wev
+    fzf
+    ytfzf
     desktop-file-utils
     discord
     nix-direnv
@@ -19,13 +23,24 @@
     spotify
     bolt-launcher
     inputs.self.packages.${pkgs.system}.ns
-    inputs.self.packages.${pkgs.system}.nvf
   ];
 
   mpv.enable = true;
   programs.bash = {
     enable = true;
   };
+
+  home.file.".editorconfig".text = ''
+    root = true
+    
+    [*]
+    charset = utf-8
+    end_of_line = lf
+    indent_style = space
+    insert_final_newline = true
+    tab_width = 2
+  '';
+
   programs.home-manager.enable = true;
 
   home.username = settings.username;

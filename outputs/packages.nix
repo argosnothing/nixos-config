@@ -8,9 +8,8 @@
   in {
     packages = {
       ns = pkgs.callPackage ../flake/packages/ns.nix {};
-
-      nvf = mkNvf [../flake/packages/nvf/extended.nix];
-      nvf-minimal = mkNvf [];
+      #nvf = mkNvf [../flake/packages/nvf/extended.nix];
+      #nvf-minimal = mkNvf [];
     };
   };
 }

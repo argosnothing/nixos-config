@@ -3,7 +3,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
       imports = [./outputs];
-      perSystem = { system, ... }: {
+      perSystem = {system, ...}: {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           config = {

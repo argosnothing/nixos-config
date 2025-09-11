@@ -179,7 +179,7 @@ in {
           border_size = 1;
           resize_on_border = false;
           allow_tearing = false;
-          layout = "master";
+          layout = "dwindle";
         };
 
         decoration = {
@@ -286,6 +286,7 @@ in {
           "opacity 0.95 0.95, onworkspace:special:specw"
           "opacity 0.95 0.95, onworkspace:special:spece"
           "opacity 0.95 0.95, onworkspace:special:specs"
+          #"setprop , class:Wfica"
         ];
 
         workspace = [
@@ -297,15 +298,19 @@ in {
 
         windowrule = [
           "suppressevent maximize, class:.*"
+          #"keepaspectratio, suppressevent fullscreen activate movewindow, class:Wfica"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          "float,title:.*vim.*"
         ];
 
         bind =
           [
-            "SUPER SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
+            "ALT1 CTRL SHIFT, S, exec, env GRIMBLAST_HIDE_CURSOR=1 grimblast copy area"
             "$mainMod, R, submap, resize"
             "$mainMod SHIFT, R, exec, pkill -SIGUSR2 waybar"
             "$mainMod, Return, exec, $terminal"
+            "$mainMod Shift, Return, exec, [float; move cursor -50% -50%; size 50% 50%] $terminal vim"
+            "$mainMod CTRL, S, exec, [float; move cursor -50% -50%] $terminal ns"
             "$mainMod, C, killactive,"
             "$mainMod, V, togglefloating,"
             "$mainMod, space, exec, $menu"
@@ -318,7 +323,7 @@ in {
           ++ config.hyprland.navBindings;
 
         bindm = [
-          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:274, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
 
