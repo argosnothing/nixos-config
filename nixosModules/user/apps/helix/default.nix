@@ -6,39 +6,39 @@
   inputs,
   ...
 }: {
-  programs.helix = {
-    enable = true;
-    settings = {
-      editor = {
-        line-number = "relative"; # Show relative line numbers
-        mouse = false; # Disable mouse support for keyboard-only workflow
-        lsp.display-messages = true; # Show LSP diagnostic messages
-        file-picker.hidden = false; # Show hidden files in file picker
-        auto-save = true; # Auto-save files on focus loss
+  options = {
+    helix.enable = lib.mkEnableOption "feeling adventurous are we?";
+  };
+  config = lib.mkIf config.helix.enable {
+    programs.helix = {
+      enable = true;
+      settings = {
+        editor = {
+          line-number = "relative";
+          mouse = false;
+          lsp.display-messages = true;
+          file-picker.hidden = false;
+          auto-save = true;
+        };
       };
-    };
-    languages = {
-      language-server = {
-        nixd = {
-          command = "nixd";
-          formatting = {
-            command = ["alejandra"];
+      languages = {
+        language-server = {
+          nixd = {
+            command = "nixd";
+            formatting = {
+              command = ["alejandra"];
+            };
           };
         };
       };
+
+      extraPackages = with pkgs; [
+        gopls
+        nil
+        bash-language-server
+        alejandra
+        shellcheck
+      ];
     };
-
-    # Language server packages and tree-sitter support
-    extraPackages = with pkgs; [
-      # Language Servers
-      gopls # Go language server - provides completion, diagnostics, formatting
-      nil # Nix language server - Nix file support with LSP features
-      bash-language-server # Bash language server - shell script analysis and completion
-
-      alejandra
-      shellcheck #Improves bash highlighting
-
-      # Use 'hx -g fetch' and 'hx -g build' to install/update grammars
-    ];
   };
 }

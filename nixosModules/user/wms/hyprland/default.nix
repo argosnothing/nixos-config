@@ -21,7 +21,6 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    yazi.enable = false;
     noctalia-shell.enable = true;
     home.packages = with pkgs; [
       waycorner

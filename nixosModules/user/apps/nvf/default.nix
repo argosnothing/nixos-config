@@ -85,10 +85,8 @@
       type = "alejandra";
     };
     lsp = {
-      server = "nixd";
+      servers = "nil";
       enable = true;
-      options = {
-      };
     };
   };
 

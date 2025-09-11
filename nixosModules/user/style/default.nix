@@ -10,7 +10,6 @@
   hasStylix = config.styles.stylix.enable;
 in  {
   imports = [
-    inputs.stylix.homeModules.stylix
     ../../stylix-config.nix
   ];
   config = lib.mkMerge [

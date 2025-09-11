@@ -1,7 +1,6 @@
 {
   inputs,
-  pkgs,
-  pkgsUnstable,
+  pkgs, pkgsUnstable,
   ...
 }: let
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};

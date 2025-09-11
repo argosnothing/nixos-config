@@ -13,7 +13,6 @@
 
   steam.enable = true;
   via.enable = true;
-  kernels.cachyos.enable = false; # dey broke dey flake!
   environment.systemPackages = with pkgs; [
     cachix
     xorg.xev
