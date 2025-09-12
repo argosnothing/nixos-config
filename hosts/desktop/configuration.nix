@@ -12,6 +12,7 @@
   ];
 
   steam.enable = true;
+  zfs.enable = true;
   via.enable = true;
   environment.systemPackages = with pkgs; [
     cachix

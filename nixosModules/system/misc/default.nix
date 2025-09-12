@@ -3,6 +3,6 @@
     ./fonts.nix
     ./keyd.nix
     ./cachix.nix
-    ./remote_tooling.nix
+    #./remote_tooling.nix
   ];
 }
