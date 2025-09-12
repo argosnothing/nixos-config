@@ -46,6 +46,7 @@
     brightnessctl
     dbus
     home-manager
+    unetbootin
   ];
 
   # Environment variables for Electron apps
