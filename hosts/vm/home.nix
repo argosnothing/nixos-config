@@ -1,5 +1,5 @@
 {pkgs, settings, ...}: {
-  imports = [ ../../nixosModules/user/apps/nvf];
+  imports = [];
   home.packages = with pkgs; [
     inputs.self.packages.${pkgs.system}.ns
   ];
