@@ -6,7 +6,11 @@
   boot.supportedFilesystems = ["zfs"];
   boot.initrd.supportedFilesystems = ["zfs"];
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
-  networking.hostId = "openssl rand -hex 4"; # put contents of that command here
+  networking.hostId = "deadbeef"; # generate with `openssl rand -hex 4`
+  users.users."${settings.username}" = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
+  };
 
   services.zfs.autoScrub.enable = true;
   services.zfs.trim.enable = true;
