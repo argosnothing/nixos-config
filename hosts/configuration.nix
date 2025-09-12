@@ -72,6 +72,7 @@
   # Core system packages
   environment.systemPackages = with pkgs; [
     sops
+    hdparm
     git
     gitkraken
     unzip

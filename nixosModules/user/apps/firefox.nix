@@ -12,6 +12,7 @@
     };
   };
   config = lib.mkIf config.firefox.enable {
+    # I need this for my job
     programs.firefox = {
       enable = true;
       policies = {
