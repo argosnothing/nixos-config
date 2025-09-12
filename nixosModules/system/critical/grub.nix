@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   settings,
   ...
 }: {
@@ -14,6 +15,12 @@
   };
   config = lib.mkIf config.grub.enable {
     boot.plymouth.enable = true;
+    boot.loader.grub = {
+      enable = true;
+      efiSupport = true;
+      devices = ["nodev"];
+    };
+    boot.loader.grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.consoleLogLevel = 3;
     boot.kernelParams = [
