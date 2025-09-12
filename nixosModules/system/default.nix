@@ -5,5 +5,6 @@
     ./services
     ./wms
     ./style
+    ./critical
   ];
 }

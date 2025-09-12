@@ -8,6 +8,7 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    ../nixosModules/system/critical
   ];
 
   sops.defaultSopsFile = ../secrets/secrets.yaml;
@@ -15,6 +16,7 @@
   sops.age.keyFile = "/home/${settings.username}/.config/sops/age/keys.txt";
   sops.secrets.ssh = {};
   sops.secrets.example-key = {};
+  sops.secrets."pc_password" = {};
   sops.secrets."myservice/my_subdir/my_secret" = {};
   # Shared system configuration for all hosts
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -61,6 +63,7 @@
   users.users."${settings.username}" = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
+    hashedPasswordFile = config.sops.secrets.pc_password.path;
   };
 
   # Shell configuration
