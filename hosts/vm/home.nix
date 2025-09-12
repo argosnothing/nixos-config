@@ -8,6 +8,5 @@
   programs.bash = {
     enable = true;
   };
-  git.enable = true;
   programs.home-manager.enable = true;
 }

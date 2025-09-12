@@ -14,6 +14,7 @@ in {
     ./desktop
     ./laptop
     ./p51
+    ./vm
   ];
 
   _module.args = {
