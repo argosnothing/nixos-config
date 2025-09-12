@@ -12,9 +12,9 @@
     hostname,
   }: let
     home-manager = inputs.home-manager;
-    hostAttrsPath = ../hosts + "${hostname}/attrs.nix";
+    hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs = if builtins.pathExists hostAttrsPath then import hostAttrsPath else {};
-    settings = lib.recursiveUpdate defaultSettings hostAttrs;
+    settings = (lib.recursiveUpdate defaultSettings hostAttrs) // { inherit wm hostname;};
   in {
     ${hostname} = nixpkgs.lib.nixosSystem {
       inherit pkgs;
