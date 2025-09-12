@@ -7,11 +7,7 @@
   ...
 }: {
   options = {
-    grub.enable = lib.mkOption {
-      default = true;
-      type = lib.types.bool;
-      description = "For now lets assume it's the default";
-    };
+    grub.enable = lib.mkEnableOption "grub firmware";
   };
   config = lib.mkIf config.grub.enable {
     boot.plymouth.enable = true;
