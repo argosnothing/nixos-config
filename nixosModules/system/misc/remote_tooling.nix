@@ -13,4 +13,13 @@ in {
     p11-kit
     (citrix_workspace.override {inherit extraCerts;})
   ];
+
+  custom.persist.home = {
+    directories = [
+      ".ICAClient"
+      ".config/Citrix"
+      ".local/share/Citrix"
+    ];
+    files = [".local/share/applications/wfica.desktop"];
+  };
 }
