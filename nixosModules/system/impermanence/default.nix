@@ -57,19 +57,6 @@ in {
           default = [];
           description = "Files to persist in home directory";
         };
-
-        cache = {
-          directories = lib.mkOption {
-            type = lib.types.listOf lib.types.str;
-            default = [];
-            description = "Home directories to persist, but not to snapshot";
-          };
-          files = lib.mkOption {
-            type = lib.types.listOf lib.types.str;
-            default = [];
-            description = "Home files to persist, but not to snapshot";
-          };
-        };
       };
     };
   };
@@ -131,8 +118,8 @@ in {
         directories = lib.unique cfg.root.cache.directories;
 
         users.${settings.username} = {
-          files = lib.unique (cfg.home.cache.files ++ hmPersistCfg.home.cache.files);
-          directories = lib.unique (cfg.home.cache.directories ++ hmPersistCfg.home.cache.directories);
+          files = lib.unique (hmPersistCfg.home.cache.files);
+          directories = lib.unique (hmPersistCfg.home.cache.directories);
         };
       };
     };

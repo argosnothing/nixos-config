@@ -52,9 +52,24 @@
         ];
       }}";
     };
-
     # Create Noctalia configuration directory
     xdg.configFile."noctalia/.keep".text = "";
     xdg.cacheFile."noctalia/images/.keep".text = "";
+
+    custom.persist.home = {
+      files = lib.mkAfter [
+        ".config/noctaliasettings.json"
+        ".config/noctaliacolors.json"
+      ];
+      cache = {
+        directories = lib.mkAfter [
+          ".cache/noctaliaimages"
+        ];
+        files = lib.mkAfter [
+          ".cache/noctalianotifications.json"
+          ".cache/noctalialocation.json"
+        ];
+      };
+    };
   };
 }

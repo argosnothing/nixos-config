@@ -8,6 +8,7 @@ let
   inherit (lib.types) listOf str;
 in
 {
+  imports =  [./persist.nix];
   options.custom = {
     persist = {
       home = {

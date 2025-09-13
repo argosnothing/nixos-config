@@ -5,9 +5,6 @@ let
 in
 {
   config = lib.mkIf enabled {
-    environment.persistence."/persist".directories = [
-      "/var/lib/greetd"
-    ];
     custom.persist.home.directories = lib.mkAfter [
       ".config/sops"
       ".ssh"
@@ -16,12 +13,6 @@ in
       ".config/vesktop"
       ".config/Vencord"
       "nixos-config"
-    ];
-
-    custom.persist.home.cache.directories = lib.mkAfter [
-      ".cache/mozilla"
-      ".config/discord/Cache"
-      ".config/vesktop/Cache"
     ];
   };
 }
