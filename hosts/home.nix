@@ -30,6 +30,20 @@
     enable = true;
   };
 
+  custom.persist.home = {
+    directories = [
+      "Downloads"
+      "Pictures"
+      "Projects"
+      "Videos"
+    ];
+    cache.directories = [
+      ".cache/nix-search-tv"
+      ".cache/nvidia"
+      ".cache/kitty"
+    ];
+  };
+
   home.file.".editorconfig".text = ''
     root = true
     

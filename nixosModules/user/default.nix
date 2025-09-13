@@ -4,5 +4,6 @@
     ./scripts
     ./style
     ./wms
+    ./impermanence
   ];
 }

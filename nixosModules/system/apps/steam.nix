@@ -26,7 +26,7 @@
 
     custom.persist.home.directories = [
       ".local/share/Steam"
-      ".steam/steam"
+      ".steam"
       ".local/share/lutris"
     ];
 

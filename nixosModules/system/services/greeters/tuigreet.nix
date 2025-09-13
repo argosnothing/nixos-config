@@ -18,6 +18,9 @@ in {
     };
   };
   config = lib.mkIf config.greeters.tuigreet.enable {
+    custom.persist.root.cache.directories = [
+      "/var/cache/tuigreet/lastuser"
+    ];
     services.greetd = {
       enable = true;
       settings = {
