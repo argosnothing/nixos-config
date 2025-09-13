@@ -6,5 +6,6 @@
     ./wms
     ./style
     ./critical
+    ./impermanence
   ];
 }

@@ -9,12 +9,10 @@
     assertNoHomeDirs = paths:
       assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
   in {
+    imports = [./persist.nix];
     persist = {
       enable =
-        lib.mkEnableOption "Impermanence"
-        // {
-          default = true;
-        };
+        lib.mkEnableOption "Impermanence";
       root = {
         directories = lib.mkOption {
           type = lib.types.listOf lib.types.str;
@@ -130,7 +128,7 @@
         files = lib.unique (["/etc/machine-id"] ++ cfg.root.cache.files);
         directories = lib.unique cfg.root.cache.directories;
 
-        users.${settings} = {
+        users.${settings.username} = {
           files = lib.unique cfg.home.cache.files;
           directories = lib.unique cfg.home.cache.directories;
         };
