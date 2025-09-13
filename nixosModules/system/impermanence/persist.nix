@@ -5,7 +5,9 @@ let
 in
 {
   config = lib.mkIf enabled {
-
+    environment.persistence."/persist".directories = [
+      "/var/lib/greetd"
+    ];
     custom.persist.home.directories = lib.mkAfter [
       ".config/sops"
       ".ssh"

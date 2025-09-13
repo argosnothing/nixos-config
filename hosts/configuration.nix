@@ -21,12 +21,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   users.users.root.initialPassword = "password";
-  users.mutableUsers = false;
+  #users.mutableUsers = false;
   users.users."${settings.username}" = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
-    initialPassword = "password";
-    hashedPasswordFile = config.sops.secrets.pc_password.path;
+    hashedPasswordFile = config.sops.secrets."pc_password".path;
   };
 
   # Shell configuration
