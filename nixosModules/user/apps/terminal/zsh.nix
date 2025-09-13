@@ -1,6 +1,23 @@
-{ pkgs, settings, ... }:
 {
-  home.packages = [ pkgs.zsh-powerlevel10k];
+  pkgs,
+  settings,
+  ...
+}: {
+  home.packages = [
+    pkgs.zsh-powerlevel10k
+    (pkgs.writeShellApplication
+    {
+      name = "show-tmpfs";
+      runtimeInputs = [pkgs.fd];
+      text = ''
+        sudo fd --one-file-system --base-directory / --type f --hidden \
+          --exclude "/etc/{ssh,passwd,shadow}" \
+          --exclude "*.timer" \
+          --exclude "/var/lib/NetworkManager" \
+          --exec ls -lS | sort -rn -k5 | awk '{print $5, $9}'
+      '';
+    })
+  ];
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
@@ -23,7 +40,7 @@
       theme = "powerlevel10k";
       custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
     };
-    shellAliases = import ./nixos-aliases.nix { inherit settings; };
+    shellAliases = import ./nixos-aliases.nix {inherit settings;};
     initContent = ''
       [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
       [[ -f ~/.profile ]] && source ~/.profile
