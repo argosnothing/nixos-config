@@ -4,12 +4,12 @@
   settings,
   ...
 }: {
+    imports = [./persist.nix];
   # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
   options.custom = let
     assertNoHomeDirs = paths:
       assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
   in {
-    imports = [./persist.nix];
     persist = {
       enable =
         lib.mkEnableOption "Impermanence";
@@ -74,17 +74,28 @@
   config = lib.mkIf config.custom.persist.enable {
     security.sudo.extraConfig = "Defaults lecture=never";
 
+    fileSystems."/" = lib.mkForce {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      neededForBoot = true;
+      options = [
+        "defaults"
+        "size=2G"  # whatever size you feel comfortable with
+        "mode=755"
+      ];
+    };
+
+
     fileSystems = {
-      "/".neededForBoot = true;
       "/nix".neededForBoot = true;
       "/boot".neededForBoot = true;
       "/cache".neededForBoot = true;
       "/persist".neededForBoot = true;
     };
 
-    boot.initrd.postResumeCommands = lib.mkAfter ''
-      zfs rollback -r zroot/root@blank
-    '';
+   #boot.initrd.postResumeCommands = lib.mkAfter ''
+   #  zfs rollback -r zroot/root@blank
+   #'';
 
     # FIX: replace above with this
     # boot.initrd.systemd.services.rollback = {
