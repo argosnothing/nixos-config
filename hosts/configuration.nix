@@ -26,6 +26,7 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
     hashedPasswordFile = config.sops.secrets."pc_password".path;
+    initialPassword = "password";
   };
 
   # Shell configuration
