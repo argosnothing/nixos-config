@@ -38,6 +38,7 @@
 
   # Core system packages
   environment.systemPackages = with pkgs; [
+    fastfetch
     sops
     hdparm
     git

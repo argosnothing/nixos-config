@@ -28,7 +28,7 @@
         theme = {
           enable = true;
           name = "catppuccin";
-          style = "frappe";
+          style = "mocha";
         };
         extraPackages = [pkgs.vimPlugins.direnv-vim];
       };
