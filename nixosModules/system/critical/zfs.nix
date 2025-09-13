@@ -12,6 +12,7 @@
     boot.initrd.supportedFilesystems = ["zfs"];
     boot.zfs.devNodes = settings.zfs.devNodes;
     networking.hostId = settings.zfs.hostId;
+    services.zfs.autoSnapshot.enable = true;
     services.zfs.autoScrub.enable = true;
     services.zfs.trim.enable = true;
   };
