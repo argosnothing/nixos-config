@@ -14,7 +14,7 @@
 
   steam.enable = true;
   zfs.enable = true;
-  custom.persist.enable = false;
+  custom.persist.enable = true;
   via.enable = true;
   environment.systemPackages = with pkgs; [
     cachix

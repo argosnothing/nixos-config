@@ -18,6 +18,12 @@
   config = lib.mkIf config.systemFlatpak.enable {
     xdg.portal.enable = true;
 
+    environment.persistence."/persist" = lib.mkIf config.custom.persist.enable {
+      directories = [
+        "var/lib/flatpak"
+      ];
+    };
+
     services.flatpak = {
       enable = true;
 
@@ -34,12 +40,6 @@
         "org.freedesktop.Platform.Compat.i386//23.08"
         "org.freedesktop.Platform.GL32.nvidia-580-76-05//1.4"
       ];
-
-      environment.persistence."/persist" = lib.mkIf config.custom.persist.enable {
-        directories = [
-          "var/lib/flatpak"
-        ];
-      };
 
       overrides = {
         global = {
