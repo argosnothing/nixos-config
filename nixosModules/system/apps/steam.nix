@@ -24,6 +24,12 @@
       ];
     };
 
+    custom.persist.home.directories = [
+      ".local/share/Steam"
+      ".steam/steam"
+      ".local/share/lutris"
+    ];
+
     # Gaming-related system packages
     environment.systemPackages = with pkgs; [
       gamescope # Steam's microcompositor for gaming

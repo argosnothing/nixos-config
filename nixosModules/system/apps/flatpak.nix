@@ -20,7 +20,7 @@
 
     environment.persistence."/persist" = lib.mkIf config.custom.persist.enable {
       directories = [
-        "var/lib/flatpak"
+        "/var/lib/flatpak"
       ];
     };
 
