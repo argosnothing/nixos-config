@@ -21,6 +21,7 @@
       specialArgs = {inherit inputs settings pkgsUnstable self;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
+        inputs.impermanence.nixosModules.impermanence
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
