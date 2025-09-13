@@ -8,6 +8,7 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
     ../nixosModules/system/critical
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];

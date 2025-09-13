@@ -3,13 +3,16 @@
   config,
   settings,
   ...
-}: {
-    imports = [./persist.nix];
-  # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
-  options.custom = let
-    assertNoHomeDirs = paths:
-      assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
-  in {
+}:
+# Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
+let
+  cfg = config.custom.persist;
+  hmPersistCfg = config.hm.custom.persist;
+  assertNoHomeDirs = paths:
+    assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
+in {
+  imports = [./persist.nix];
+  options.custom = {
     persist = {
       enable =
         lib.mkEnableOption "Impermanence";
@@ -80,11 +83,10 @@
       neededForBoot = true;
       options = [
         "defaults"
-        "size=2G"  # whatever size you feel comfortable with
+        "size=2G" # whatever size you feel comfortable with
         "mode=755"
       ];
     };
-
 
     fileSystems = {
       "/nix".neededForBoot = true;
@@ -93,27 +95,7 @@
       "/persist".neededForBoot = true;
     };
 
-   #boot.initrd.postResumeCommands = lib.mkAfter ''
-   #  zfs rollback -r zroot/root@blank
-   #'';
-
-    # FIX: replace above with this
-    # boot.initrd.systemd.services.rollback = {
-    #   description = "Rollback root filesystem to a pristine state on boot";
-    #   wantedBy = ["initrd.target"];
-    #   after = ["zfs-import-zroot.service"];
-    #   before = ["sysroot.mount"];
-    #   path = [pkgs.zfs];
-    #   unitConfig.DefaultDependencies = "no";
-    #   serviceConfig.Type = "oneshot";
-    #   script = ''
-    #     zfs rollback -r zroot/local/root@blank && echo ">> rollback complete <<" || echo "!! rollback failed !!"
-    #   '';
-    # };
-
-    environment.persistence = let
-      cfg = config.custom.persist;
-    in {
+    environment.persistence = {
       "/persist" = {
         hideMounts = false;
         files =
@@ -128,8 +110,17 @@
         );
 
         users.${settings.username} = {
-          files = lib.unique cfg.home.files;
-          directories = lib.unique cfg.home.directories;
+          files = lib.unique (cfg.home.files ++ hmPersistCfg.home.files);
+          directories =
+            lib.unique
+            (
+              [
+                ".cache/dconf"
+                ".config/dconf"
+              ]
+              ++ cfg.home.directories
+              ++ hmPersistCfg.home.directories
+            );
         };
       };
 
@@ -140,8 +131,8 @@
         directories = lib.unique cfg.root.cache.directories;
 
         users.${settings.username} = {
-          files = lib.unique cfg.home.cache.files;
-          directories = lib.unique cfg.home.cache.directories;
+          files = lib.unique (cfg.home.cache.files ++ hmPersistCfg.home.cache.files);
+          directories = lib.unique (cfg.home.cache.directories ++ hmPersistCfg.home.cache.directories);
         };
       };
     };
