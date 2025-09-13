@@ -37,12 +37,11 @@
         "virtualenv"
         "vi-mode"
       ];
-      theme = "powerlevel10k";
-      custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      theme = "lambda";
+      #custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
     initContent = ''
-      [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
       [[ -f ~/.profile ]] && source ~/.profile
     '';
     envExtra = ''
