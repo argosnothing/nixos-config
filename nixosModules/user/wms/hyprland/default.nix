@@ -9,7 +9,6 @@
   inherit (config.custom.ricing.shells) shell;
 in {
   imports = [
-    ../../ricing
     ./config
   ];
   options = {
