@@ -5,11 +5,14 @@
   config,
   ...
 }: {
-  config = (lib.mkIf config.custom.ricing.shells.shell == "noctalia-shell") {
-    ricing.shells.shell = {
+  options = {
+    noctalia-shell.enable = lib.mkEnableOption "Enable Noctalia Shell Env";
+  };
+
+  config = lib.mkIf config.noctalia-shell.enable {
+    ricing = {
       hasShell = true;
       execCommand = "noctalia-shell";
-      launcherCommand = "noctalia-shell ipc call launcher toggle";
     };
     home.packages =
       [

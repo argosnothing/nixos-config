@@ -27,7 +27,7 @@
     wm ? "hyprland",
     hostname,
   }: let
-    home-manager = inputs.home-manager;
+    inherit (inputs) home-manager;
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
       if builtins.pathExists hostAttrsPath
@@ -43,9 +43,11 @@
         inputs.impermanence.nixosModules.impermanence
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.extraSpecialArgs = {inherit inputs settings pkgsStable;};
-          home-manager.users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
+          home-manager = {
+            useGlobalPkgs = true;
+            extraSpecialArgs = {inherit inputs settings pkgsStable;};
+            users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
+          };
         }
       ];
     };

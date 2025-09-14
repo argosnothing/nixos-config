@@ -2,10 +2,8 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
-}: let
-in {
+}: {
   options = {
     wms.hyprland.enable = lib.mkOption {
       type = lib.types.bool;
@@ -21,11 +19,13 @@ in {
       xwayland.enable = true;
     };
 
-    services.xserver.excludePackages = [pkgs.xterm];
-
     # Ensure GTK cache is built
     programs.dconf.enable = true;
-    services.dbus.enable = true;
+    services = {
+      xserver.excludePackages = [pkgs.xterm];
+      dbus.enable = true;
+      gnome.gnome-keyring.enable = true;
+    };
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       papirus-icon-theme
@@ -39,6 +39,5 @@ in {
     ];
 
     security.pam.services.login.enableGnomeKeyring = true;
-    services.gnome.gnome-keyring.enable = true;
   };
 }

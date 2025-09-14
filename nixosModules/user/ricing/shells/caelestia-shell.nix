@@ -10,10 +10,12 @@ self,
  imports = [
     #inputs.caelestia-shell.homeManagerModules.default
  ];
-  options = {
-    caelestia-shell.enable = lib.mkEnableOption "Enable Caelestia shell Env";
-  };
-  config = lib.mkIf config.caelestia-shell.enable {
+  config = lib.mkIf (config.custom.ricing.shells.shell == "caelestia-shell") {
+    ricing.shells.shell = {
+      hasShell = true;
+      execCommand = "caelestia-shell";
+      launcherCommand = "caelestia-shell ipc call drawers toggle launcher";
+    };
     home.packages = [inputs.caelestia-shell.packages."${settings.system}".with-cli];
    #programs.caelestia = {
    #  enable = true;

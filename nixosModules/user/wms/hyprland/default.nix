@@ -6,7 +6,7 @@
   settings,
   ...
 }: let
-  system = pkgs.stdenv.hostPlatform.system;
+  inherit (config.custom.ricing.shells) shell;
 in {
   imports = [
     ../../ricing
@@ -22,70 +22,64 @@ in {
   config = lib.mkIf config.wms.hyprland.enable {
     noctalia-shell.enable = true;
     caelestia-shell.enable = false;
-    home.packages = with pkgs; [
-      waycorner
-      nwg-displays
-      wireplumber
-      bibata-cursors
-      hyprpicker
-      hyprshot
-      nwg-displays
-      hyprpolkitagent
-      grim
-      slurp
-      gvfs
-      gtksourceview3
-      libsoup_3
-      qogir-icon-theme
-      alsa-utils
-      fontconfig
-      freetype
-    ];
+    home = {
+      packages = with pkgs; [
+        nwg-displays
+        wireplumber
+        bibata-cursors
+        hyprpicker
+        hyprshot
+        nwg-displays
+        hyprpolkitagent
+        grim
+        slurp
+        gvfs
+        gtksourceview3
+        libsoup_3
+        qogir-icon-theme
+        alsa-utils
+        fontconfig
+        freetype
+      ];
 
-    # Font configuration for better X11 app rendering
-    home.file.".config/fontconfig/fonts.conf".text = ''
-      <?xml version="1.0"?>
-      <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-      <fontconfig>
-        <match target="font">
-          <edit name="antialias" mode="assign">
-            <bool>true</bool>
-          </edit>
-          <edit name="hinting" mode="assign">
-            <bool>true</bool>
-          </edit>
-          <edit name="hintstyle" mode="assign">
-            <const>hintslight</const>
-          </edit>
-          <edit name="rgba" mode="assign">
-            <const>rgb</const>
-          </edit>
-          <edit name="lcdfilter" mode="assign">
-            <const>lcddefault</const>
-          </edit>
-        </match>
-      </fontconfig>
-    '';
+      # Font configuration for better X11 app rendering
+      file.".config/fontconfig/fonts.conf".text = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="font">
+            <edit name="antialias" mode="assign">
+              <bool>true</bool>
+            </edit>
+            <edit name="hinting" mode="assign">
+              <bool>true</bool>
+            </edit>
+            <edit name="hintstyle" mode="assign">
+              <const>hintslight</const>
+            </edit>
+            <edit name="rgba" mode="assign">
+              <const>rgb</const>
+            </edit>
+            <edit name="lcdfilter" mode="assign">
+              <const>lcddefault</const>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
 
-   #home.file.".config/waycorner/config.toml".text = ''
-   #  [main-monitor]
-   #  enter_command = ["hyprctl", "dispatch", "overview:toggle"]
-   #  locations = ["top_left"]
-   #  timout_ms = 150
-   #'';
+      # Session variables for Hyprland
+      sessionVariables = {
+        XCURSOR_THEME = "Qogir";
+        XCURSOR_SIZE = "24";
 
-    # Session variables for Hyprland
-    home.sessionVariables = {
-      XCURSOR_THEME = "Qogir";
-      XCURSOR_SIZE = "24";
+        # Electron/Chromium Wayland configuration
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        ELECTRON_NO_ASAR = "1";
+        ELECTRON_ENABLE_LOGGING = "0";
 
-      # Electron/Chromium Wayland configuration
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      ELECTRON_NO_ASAR = "1";
-      ELECTRON_ENABLE_LOGGING = "0";
-
-      # Force Wayland for Electron apps
-      NIXOS_OZONE_WL = "1";
+        # Force Wayland for Electron apps
+        NIXOS_OZONE_WL = "1";
+      };
     };
     wayland.windowManager.hyprland = {
       enable = true;
@@ -108,11 +102,8 @@ in {
         submap = reset
       '';
       settings = {
-        # variables
         "$terminal" = "kitty";
-        "$menu" = "noctalia-shell ipc call launcher toggle";
-        #"$menu" = "caelestia shell drawers toggle launcher";
-        #"$menu" = "caelestia-shell ipc call drawers toggle launcher";
+        "$menu" = shell.launcherCommand;
         "$mainMod" = "MOD1";
         "$lockCommand" = "loginctl lock-session";
 
@@ -161,16 +152,20 @@ in {
           "_JAVA_AWT_WM_NONREPARENTING,1"
         ];
 
-        exec-once = [
-          "dbus-update-activation-environment --all"
-          "/usr/bin/gnome-keyring-daemon --start --components=secrets"
-          "exec /usr/libexec/pam_kwallet_init"
-          "swayidle -w -C /usr/share/swayidle/config"
-          "swww-daemon"
-          #"caelestia-shell"
-          "noctalia-shell"
-          "exec waycorner"
-        ];
+        exec-once =
+          [
+            "dbus-update-activation-environment --all"
+            "/usr/bin/gnome-keyring-daemon --start --components=secrets"
+            "exec /usr/libexec/pam_kwallet_init"
+            "swayidle -w -C /usr/share/swayidle/config"
+            "swww-daemon"
+            #"caelestia-shell"
+            #"noctalia-shell"
+            #"exec waycorner"
+          ]
+          ++ [
+            config.custom.ricing.shells.shell.execCommand
+          ];
 
         general = {
           gaps_in = 5;
@@ -276,9 +271,9 @@ in {
           touchpad.natural_scroll = true;
         };
 
-       #gestures = { # figure out what this is in .50
-       #  workspace_swipe = true;
-       #};
+        #gestures = { # figure out what this is in .50
+        #  workspace_swipe = true;
+        #};
         # rules & workspace config
         windowrulev2 = [
           "opacity 0.95 0.95, onworkspace:special:specq"
