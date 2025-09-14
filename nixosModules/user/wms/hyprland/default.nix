@@ -20,8 +20,8 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    noctalia-shell.enable = false;
-    caelestia-shell.enable = true;
+    noctalia-shell.enable = true;
+    caelestia-shell.enable = false;
     home.packages = with pkgs; [
       waycorner
       nwg-displays
@@ -110,9 +110,9 @@ in {
       settings = {
         # variables
         "$terminal" = "kitty";
-        #"$menu" = "noctalia-shell ipc call launcher toggle";
+        "$menu" = "noctalia-shell ipc call launcher toggle";
         #"$menu" = "caelestia shell drawers toggle launcher";
-        "$menu" = "caelestia-shell ipc call drawers toggle launcher";
+        #"$menu" = "caelestia-shell ipc call drawers toggle launcher";
         "$mainMod" = "MOD1";
         "$lockCommand" = "loginctl lock-session";
 
@@ -167,8 +167,8 @@ in {
           "exec /usr/libexec/pam_kwallet_init"
           "swayidle -w -C /usr/share/swayidle/config"
           "swww-daemon"
-          "caelestia-shell"
-          #"noctalia-shell"
+          #"caelestia-shell"
+          "noctalia-shell"
           "exec waycorner"
         ];
 

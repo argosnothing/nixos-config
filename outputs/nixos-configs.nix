@@ -4,7 +4,7 @@
   ...
 }: let
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
-  inherit (inputs) nixpkgs self;
+  inherit (inputs) nixpkgs nixpkgs-stable self;
   system = "x86_64-linux";
   cfg = {
     allowUnfree = true;
@@ -15,6 +15,10 @@
     ];
   };
   pkgs = import nixpkgs {
+    inherit system;
+    config = cfg;
+  };
+  pkgsStable = import nixpkgs-stable {
     inherit system;
     config = cfg;
   };
@@ -31,19 +35,16 @@
       else {};
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
   in {
-    nixpkgs.config.permittedInsecurePackages = [
-      "libsoup-2.74.3"
-    ];
     ${hostname} = nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      specialArgs = {inherit inputs settings self;};
+      specialArgs = {inherit inputs settings self pkgsStable;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
-          home-manager.extraSpecialArgs = {inherit inputs settings;};
+          home-manager.extraSpecialArgs = {inherit inputs settings pkgsStable;};
           home-manager.users."${settings.username}".imports = [(../hosts + "/${settings.hostname}" + /home.nix)];
         }
       ];

@@ -12,10 +12,12 @@
   config = lib.mkIf config.noctalia-shell.enable {
     home.packages =
       [
-        inputs.noctalia-shell.packages.${pkgs.system}.default
+       inputs.noctalia-shell.packages.${pkgs.system}.default
+       inputs.quickshell.packages.${pkgs.system}.default
       ]
       ++ (with pkgs; [
-        # Noctalia-specific runtime dependencies
+        #libsForQt5.qt5.qtgraphicaleffects
+        kdePackages.qt5compat
         bash
         brightnessctl
         cava
@@ -31,10 +33,9 @@
         wl-clipboard
         wlsunset
 
-        # Fonts required by Noctalia
         roboto
         inter
-        material-symbols # Icon font for UI elements
+        material-symbols
       ]);
 
     home.sessionVariables = {

@@ -14,6 +14,13 @@
     networking.hostId = settings.zfs.hostId;
     services.zfs.autoScrub.enable = true;
     services.zfs.trim.enable = true;
+    users = {
+      groups.sanoid = {};
+      users.sanoid = {
+        isSystemUser = true;
+        group = "sanoid";
+      };
+    };
     services.sanoid = {
       enable = true;
 
@@ -26,11 +33,7 @@
 
       datasets = {
         "zroot/persist" = {
-          useTemplate = [ "default"];
-          recursive = true;
-        };
-        "zroot/nix" = {
-          useTempalte = ["default"];
+          useTemplate = ["default"];
           recursive = true;
         };
       };

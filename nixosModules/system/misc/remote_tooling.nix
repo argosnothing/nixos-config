@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgsStable,
   ...
 }: let
   extraCerts = [
@@ -14,7 +15,7 @@ in {
     pkgs.opensc
     pkgs.pcsc-tools
     pkgs.p11-kit
-    (pkgs.citrix_workspace.override {inherit extraCerts;})
+    (pkgsStable.citrix_workspace.override {inherit extraCerts;})
   ];
 
   custom.persist.home = {
