@@ -6,7 +6,7 @@
   ...
 }: {
   config = (lib.mkIf config.custom.ricing.shells.shell == "noctalia-shell") {
-    ricing.shells.shell = {
+    custom.ricing.shells.shell = {
       hasShell = true;
       execCommand = "noctalia-shell";
       launcherCommand = "noctalia-shell ipc call launcher toggle";

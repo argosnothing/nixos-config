@@ -11,7 +11,7 @@ self,
     #inputs.caelestia-shell.homeManagerModules.default
  ];
   config = lib.mkIf (config.custom.ricing.shells.shell == "caelestia-shell") {
-    ricing.shells.shell = {
+    custom.ricing.shells.shell = {
       hasShell = true;
       execCommand = "caelestia-shell";
       launcherCommand = "caelestia-shell ipc call drawers toggle launcher";

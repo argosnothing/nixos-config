@@ -20,8 +20,7 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    noctalia-shell.enable = true;
-    caelestia-shell.enable = false;
+    shell = "noctalia-shell";
     home = {
       packages = with pkgs; [
         nwg-displays
