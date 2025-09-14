@@ -17,6 +17,7 @@
     ytfzf
     desktop-file-utils
     discord
+    vesktop
     nix-direnv
     nix-direnv-flakes
     direnv
@@ -36,11 +37,15 @@
       "Pictures"
       "Projects"
       "Videos"
+
+      ".var/app/com.spotify.Client"
+      ".config/spotify"
     ];
     cache.directories = [
       ".cache/nix-search-tv"
       ".cache/nvidia"
       ".cache/kitty"
+      ".cache/spotify"
     ];
   };
 

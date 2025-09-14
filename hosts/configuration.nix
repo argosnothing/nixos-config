@@ -27,7 +27,7 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
     hashedPasswordFile = config.sops.secrets."pc_password".path;
-    initialPassword = "password";
+    # initialPassword = "password";
   };
 
   # Shell configuration
@@ -35,9 +35,11 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  nix.settings.download-buffer-size = 268435456;
 
   # Core system packages
   environment.systemPackages = with pkgs; [
+    nh
     fastfetch
     sops
     hdparm

@@ -4,7 +4,6 @@
   config,
   lib,
   settings,
-  inputs,
   ...
 }: let
   system = pkgs.stdenv.hostPlatform.system;
@@ -21,7 +20,8 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    noctalia-shell.enable = true;
+    noctalia-shell.enable = false;
+    caelestia-shell.enable = true;
     home.packages = with pkgs; [
       waycorner
       nwg-displays
@@ -91,9 +91,6 @@ in {
       enable = true;
       systemd.enable = true;
       plugins = [
-        #pkgs.hyprlandPlugins.hyprspace
-        pkgs.hyprlandPlugins.hyprexpo
-        #pkgs.hyprlandPlugins.hyprsplit
       ];
       extraConfig = ''
         submap = resize
@@ -113,7 +110,9 @@ in {
       settings = {
         # variables
         "$terminal" = "kitty";
-        "$menu" = "noctalia-shell ipc call launcher toggle";
+        #"$menu" = "noctalia-shell ipc call launcher toggle";
+        #"$menu" = "caelestia shell drawers toggle launcher";
+        "$menu" = "caelestia-shell ipc call drawers toggle launcher";
         "$mainMod" = "MOD1";
         "$lockCommand" = "loginctl lock-session";
 
@@ -168,7 +167,8 @@ in {
           "exec /usr/libexec/pam_kwallet_init"
           "swayidle -w -C /usr/share/swayidle/config"
           "swww-daemon"
-          "noctalia-shell"
+          "caelestia-shell"
+          #"noctalia-shell"
           "exec waycorner"
         ];
 
@@ -276,9 +276,9 @@ in {
           touchpad.natural_scroll = true;
         };
 
-        gestures = { 
-          workspace_swipe = true;
-        };
+       #gestures = { # figure out what this is in .50
+       #  workspace_swipe = true;
+       #};
         # rules & workspace config
         windowrulev2 = [
           "opacity 0.95 0.95, onworkspace:special:specq"

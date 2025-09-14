@@ -3,7 +3,6 @@
   config,
   settings,
   lib,
-  pkgsUnstable,
   ...
 }: {
   options = {

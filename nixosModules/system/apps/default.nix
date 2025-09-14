@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstable, config, lib, ... }: {
+{ ... }: {
   imports = [
     ./utilities
     ./flatpak.nix

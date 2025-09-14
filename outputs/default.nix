@@ -1,10 +1,6 @@
 {inputs, ...}: let
   system = "x86_64-linux";
-  pkgs = import inputs.nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-  pkgsUnstable = import inputs.nixpkgs-unstable {
+  pkgs = import inputs.nixpkgs-unstable {
     inherit system;
     config.allowUnfree = true;
   };
@@ -15,6 +11,6 @@ in {
   ];
 
   _module.args = {
-    inherit pkgs pkgsUnstable;
+    inherit pkgs;
   };
 }

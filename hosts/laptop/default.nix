@@ -2,7 +2,6 @@
 {
   inputs,
   pkgs,
-  pkgsUnstable,
   ...
 }: let
   settings =
@@ -24,7 +23,7 @@ in {
   flake.nixosConfigurations = {
     "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      specialArgs = {inherit inputs settings pkgsUnstable;};
+      specialArgs = {inherit inputs settings;};
       modules = [
         ./configuration.nix
       ];
@@ -33,7 +32,7 @@ in {
   flake.homeConfigurations = {
     "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit inputs settings pkgsUnstable;};
+      extraSpecialArgs = {inherit inputs settings;};
       modules = [
         ./home.nix
       ];
