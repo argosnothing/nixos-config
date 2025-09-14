@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  pkgsUnstable,
+  ...
+}: let
   extraCerts = [
     ./secure/citrix-certs/Entrust_Root_G2.pem
     ./secure/citrix-certs/Entrust_L1K.pem
@@ -7,11 +11,11 @@
   ];
 in {
   services.pcscd.enable = true;
-  environment.systemPackages = with pkgs; [
-    opensc
-    pcsc-tools
-    p11-kit
-    (citrix_workspace.override {inherit extraCerts;})
+  environment.systemPackages = [
+    pkgs.opensc
+    pkgs.pcsc-tools
+    pkgs.p11-kit
+    (pkgs.citrix_workspace.override {inherit extraCerts;})
   ];
 
   custom.persist.home = {

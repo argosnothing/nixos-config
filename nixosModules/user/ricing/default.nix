@@ -1,3 +1,6 @@
 {...}: {
-  imports = [ ./noctalia-shell.nix  ];
+  imports = [
+    ./noctalia-shell.nix
+    ./caelestia-shell.nix
+  ];
 }
