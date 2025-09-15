@@ -102,16 +102,83 @@
         ]
       },
       "locked": {
-        "lastModified": 1757846428,
-        "narHash": "sha256-Y35fKiseUJKLPro0p2Ly0tLdOig90oGJRzzwsguxRNE=",
+        "lastModified": 1757943127,
+        "narHash": "sha256-n9t6OY5fikMuzoFeN9JtCdawOUHgsrLBswdw98U+PbU=",
         "owner": "caelestia-dots",
         "repo": "shell",
-        "rev": "15def897b20919e4e7acef58b9f56c879f12bba9",
+        "rev": "172c1a047de327708a55d9c8e2efcbc09481d048",
         "type": "github"
       },
       "original": {
         "owner": "caelestia-dots",
         "repo": "shell",
+        "type": "github"
+      }
+    },
+    "dank-shell": {
+      "inputs": {
+        "dgop": "dgop",
+        "dms-cli": "dms-cli",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": [
+          "quickshell"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757977259,
+        "narHash": "sha256-bURb5bswjLYHalBmhW0Uo12CZbsq2rBNo+yj5aXu424=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "fff4b8c8173632559a88cd8912ba0d44ddfe3005",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
+      }
+    },
+    "dgop": {
+      "inputs": {
+        "nixpkgs": [
+          "dank-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757252286,
+        "narHash": "sha256-QwWQzlxAGvIi6VAc8DQ6ONCKKwtPyaHQW1cQyGbP7Og=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "a65a02ddf8bade9c109d055e644e4bd851183bd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
+    "dms-cli": {
+      "inputs": {
+        "nixpkgs": [
+          "dank-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757296630,
+        "narHash": "sha256-3H236F5oIKkqpfnwrvZQs4Y5imKb6JCMFGDkHs8VDjQ=",
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "rev": "dac591711ab30d6b071a5cec674a3d2e04665ee1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
         "type": "github"
       }
     },
@@ -264,11 +331,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757809953,
-        "narHash": "sha256-29mlXbfAJhz9cWVrPP4STvVPDVZFCfCOmaIN5lFJa+Y=",
+        "lastModified": 1757920978,
+        "narHash": "sha256-Mv16aegXLulgyDunijP6SPFJNm8lSXb2w3Q0X+vZ9TY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "17a10049486f6698fca32097d8f52c0c895542b0",
+        "rev": "11cc5449c50e0e5b785be3dfcb88245232633eb8",
         "type": "github"
       },
       "original": {
@@ -319,11 +386,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1757836781,
-        "narHash": "sha256-1OSxFylf3orQ+UjLlrYIm7gibhDUm1heXVZC/kdJ5LA=",
+        "lastModified": 1757942412,
+        "narHash": "sha256-iDnEKwUYNOJZU/2B4bt8tfKUwN0J7RFJ7BXmf17VJOM=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "8354fa85074d42cf0743458c316cabf55c1ab553",
+        "rev": "1da07fd6a9d44a7875d2843cccab1179085edb2c",
         "type": "github"
       },
       "original": {
@@ -352,11 +419,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1757832020,
-        "narHash": "sha256-SCdus7r4IS8l3jzF8mcMFMlDvACTdmDCcsPnGUEqll0=",
+        "lastModified": 1757916394,
+        "narHash": "sha256-nSmVJLjTGwQYC+pqD7GLt7Yt6oktawAMRld6oyFwMd0=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "e6a8ad38479eb179dc7301755316f993e3e872ea",
+        "rev": "cd0d45fdb88641aa5211c81e69301e85c5dd53a2",
         "type": "github"
       },
       "original": {
@@ -417,11 +484,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1757545623,
-        "narHash": "sha256-mCxPABZ6jRjUQx3bPP4vjA68ETbPLNz9V2pk9tO7pRQ=",
+        "lastModified": 1757810152,
+        "narHash": "sha256-Vp9K5ol6h0J90jG7Rm4RWZsCB3x7v5VPx588TQ1dkfs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8cd5ce828d5d1d16feff37340171a98fc3bf6526",
+        "rev": "9a094440e02a699be5c57453a092a8baf569bdad",
         "type": "github"
       },
       "original": {
@@ -458,11 +525,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1757867525,
-        "narHash": "sha256-0IwkjD1yPjxPNURkxNUYkaP8ByPfV+tORbU8cR8u7fw=",
+        "lastModified": 1757958000,
+        "narHash": "sha256-lAhLvtw2zyXoqu1TCVvlcD15Zd3P9Z7YRxiuOTd4MJI=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "f9d7de2e3ca3b33463572c9ef4cdf6f9a464e57f",
+        "rev": "2a62a13b16a5cbdc115999ce4f866dea37e705d6",
         "type": "github"
       },
       "original": {
@@ -544,6 +611,7 @@
     "root": {
       "inputs": {
         "caelestia-shell": "caelestia-shell",
+        "dank-shell": "dank-shell",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
@@ -602,11 +670,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1757360005,
-        "narHash": "sha256-VwzdFEQCpYMU9mc7BSQGQe5wA1MuTYPJnRc9TQCTMcM=",
+        "lastModified": 1757956156,
+        "narHash": "sha256-f0W7qbsCqpi6swQ5w8H+0YrAbNwsHgCFDkNRMTJjqrE=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "834a743c11d66ea18e8c54872fbcc72ce48bc57f",
+        "rev": "0ce0103b498bb22f899ed8862d8d7f9503ed9cdb",
         "type": "github"
       },
       "original": {

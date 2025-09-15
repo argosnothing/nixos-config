@@ -64,6 +64,12 @@
       inputs.quickshell.follows = "quickshell";
     };
 
+    dank-shell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

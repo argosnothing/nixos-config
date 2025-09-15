@@ -51,5 +51,9 @@
         "xwayland-allow-grabs" = true;
       };
     };
+    custom.home.directories = [
+      ".config/gnome-shell"
+      ".local/share/applications"
+    ];
   };
 }

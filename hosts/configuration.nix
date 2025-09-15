@@ -36,6 +36,11 @@
   programs.zsh.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   nix.settings.download-buffer-size = 268435456;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   # Core system packages
   environment.systemPackages = with pkgs; [
