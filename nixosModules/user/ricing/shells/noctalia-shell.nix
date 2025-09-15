@@ -10,9 +10,9 @@
   };
 
   config = lib.mkIf config.noctalia-shell.enable {
-    ricing = {
-      hasShell = true;
+    custom.desktop-shell = {
       execCommand = "noctalia-shell";
+      launcherCommand = "noctalia-shell ipc call launcher toggle";
     };
     home.packages =
       [
