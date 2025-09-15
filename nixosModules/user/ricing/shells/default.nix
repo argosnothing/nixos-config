@@ -1,6 +1,6 @@
 {lib, ...}:let 
   inherit (lib) mkOption;
-  inherit (lib.types) nullOr enum string bool;
+  inherit (lib.types) nullOr enum str;
   in {
   imports = [
     ./noctalia-shell.nix
@@ -13,11 +13,11 @@
       description = "Add a shell to spice up compositor";
     };
     execCommand = mkOption {
-      type = string;
+      type = str;
       description = "Command that starts the Desktop Shell";
     };
     launcherCommand = mkOption {
-      type = string;
+      type = str;
       description = "Command that starts the App Launcher";
     };
   };

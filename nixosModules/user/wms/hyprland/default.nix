@@ -1,13 +1,10 @@
-# modules/hyprland.nix
 {
   pkgs,
   config,
   lib,
   settings,
   ...
-}: let
-  inherit (config.custom.ricing.shells) shell;
-in {
+}: {
   imports = [
     ./config
   ];
@@ -19,7 +16,7 @@ in {
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
-    shell = "noctalia-shell";
+    custom.desktop-shell.name = "noctalia-shell";
     home = {
       packages = with pkgs; [
         nwg-displays
@@ -101,7 +98,7 @@ in {
       '';
       settings = {
         "$terminal" = "kitty";
-        "$menu" = shell.launcherCommand;
+        "$menu" = config.custom.desktop-shell.launcherCommand;
         "$mainMod" = "MOD1";
         "$lockCommand" = "loginctl lock-session";
 
@@ -157,12 +154,9 @@ in {
             "exec /usr/libexec/pam_kwallet_init"
             "swayidle -w -C /usr/share/swayidle/config"
             "swww-daemon"
-            #"caelestia-shell"
-            #"noctalia-shell"
-            #"exec waycorner"
           ]
           ++ [
-            config.custom.ricing.shells.shell.execCommand
+            config.custom.desktop-shell.execCommand
           ];
 
         general = {

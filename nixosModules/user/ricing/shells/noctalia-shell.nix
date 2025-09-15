@@ -5,11 +5,7 @@
   config,
   ...
 }: {
-  options = {
-    noctalia-shell.enable = lib.mkEnableOption "Enable Noctalia Shell Env";
-  };
-
-  config = lib.mkIf config.noctalia-shell.enable {
+  config = lib.mkIf (config.custom.desktop-shell.name == "noctalia-shell") {
     custom.desktop-shell = {
       execCommand = "noctalia-shell";
       launcherCommand = "noctalia-shell ipc call launcher toggle";
