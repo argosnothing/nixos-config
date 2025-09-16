@@ -10,8 +10,10 @@
     inputs.nvf.homeManagerModules.default
   ];
 
+
   config =
     {
+      stylix.targets.nvf.enable = false;
       programs.nvf = {
         enable = true;
         settings = {
@@ -137,8 +139,5 @@
           enable = true;
         };
       };
-    }
-    // lib.mkIf (config.styles.stylix.enable) {
-      stylix.targets.nvf.enable = false;
     };
 }
