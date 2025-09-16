@@ -54,7 +54,10 @@
   };
 in {
   flake.nixosConfigurations =
-    mkSystem {hostname = "desktop";}
+    mkSystem {
+      hostname = "desktop";
+      wm = "gnome";
+    }
     // mkSystem {hostname = "laptop";}
     // mkSystem {hostname = "p51";}
     // mkSystem {hostname = "vm";};

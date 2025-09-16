@@ -1,7 +1,7 @@
-{lib, ...}:let 
+{lib, ...}: let
   inherit (lib) mkOption;
   inherit (lib.types) nullOr enum str listOf;
-  in {
+in {
   imports = [
     ./noctalia-shell.nix
     ./caelestia-shell.nix
@@ -10,7 +10,11 @@
   options.custom.desktop-shell = {
     name = mkOption {
       default = null;
-      type = nullOr (enum ["noctalia-shell" "caelestia-shell" "dank-shell"]);
+      type = nullOr (enum [
+        "noctalia-shell"
+        "caelestia-shell"
+        #"dank-shell" https://github.com/AvengeMedia/DankMaterialShell/issues/186#issuecomment-3275793282
+      ]);
       description = "Add a shell to spice up compositor";
     };
     execCommand = mkOption {

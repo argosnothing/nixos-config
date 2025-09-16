@@ -51,7 +51,7 @@
         "xwayland-allow-grabs" = true;
       };
     };
-    custom.home.directories = [
+    custom.persist.home.directories = [
       ".config/gnome-shell"
       ".local/share/applications"
     ];

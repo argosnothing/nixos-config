@@ -1,27 +1,27 @@
 {
-  pkgs,
   config,
   lib,
-  inputs,
-  settings,
   ...
-}:let
-  
+}: let
   hasStylix = config.styles.stylix.enable;
-in  {
+in {
   imports = [
     ../../stylix-config.nix
   ];
   config = lib.mkMerge [
     (lib.mkIf hasStylix {
-      stylix.targets.hyprland.enable = true;
-      stylix.targets.firefox = {
-        enable = true;
-        profileNames = ["default"];
+      stylix = {
+        targets = {
+          hyprland.enable = true;
+          firefox = {
+            enable = true;
+            profileNames = ["default"];
+          };
+          vscode.enable = true;
+        };
       };
-      stylix.targets.vscode.enable = true;
     })
-    
+
     (lib.mkIf (!hasStylix) {
       stylix.enable = false;
     })
