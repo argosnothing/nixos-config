@@ -23,6 +23,7 @@ in {
       ".ICAClient"
       ".config/Citrix"
       ".local/share/Citrix"
+      ".pki"
     ];
     files = [".local/share/applications/wfica.desktop"];
   };
