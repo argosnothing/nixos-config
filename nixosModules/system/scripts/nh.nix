@@ -3,7 +3,6 @@
   config,
   settings,
   lib,
-  beans,
   ...
 }: let
   rebuild = command: ''
