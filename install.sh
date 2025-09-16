@@ -2,7 +2,6 @@
 # https://raw.githubusercontent.com/iynaix/dotfiles/refs/heads/main/install.sh 
 # TY to iynaix off vimjoyer's discord for this one. I've modified it to not pull in a flake for install at the end of the script, but it's otherwise unmodified
 # and straight from their git. 
-# ok
 set -o errexit
 set -o nounset
 set -o pipefail
