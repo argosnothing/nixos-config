@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   ...
 }: {
@@ -62,8 +61,10 @@
     "$mainMod SHIFT, w, movetoworkspace, special:specw"
     "$mainMod SHIFT, e, movetoworkspace, special:spece"
     "$mainMod SHIFT, s, movetoworkspace, special:specs"
-
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
+
+    # Stuff with Groups:
+    "$mainMod, t, togglegroup"
   ];
 }

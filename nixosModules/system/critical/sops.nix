@@ -1,20 +1,26 @@
 {settings, ...}: {
-  sops.defaultSopsFile = ../../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  #sops.age.keyFile = "/home/${settings.username}/.config/sops/age/keys.txt";
-  sops.age.keyFile = "/persist/home/salivala/.config/sops/age/keys.txt";
-  sops.secrets.ssh = {
-    sopsFile = ../../../secrets/secrets.yaml;
-    path = "/home/${settings.username}/.ssh/id_ed25519";
-    owner = "${settings.username}";
-    mode = "0600";
+  sops = {
+    defaultSopsFile = ../../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/persist/home/salivala/.config/sops/age/keys.txt";
+    secrets = {
+      ssh = {
+        sopsFile = ../../../secrets/secrets.yaml;
+        path = "/home/${settings.username}/.ssh/id_ed25519";
+        owner = "${settings.username}";
+        mode = "0600";
+      };
+      example-key = {};
+      pc_password = {
+        owner = "root";
+        group = "root";
+        mode = "0400";
+        neededForUsers = true;
+      };
+      "myservice/my_subdir/my_secret" = {};
+    };
   };
-  sops.secrets.example-key = {};
-  sops.secrets.pc_password = {
-    owner = "root";
-    group = "root";
-    mode = "0400";
-    neededForUsers=true;
+  environment.shellAliases = {
+    secrets = "sops ${settings.absoluteflakedir}/secrets/secrets.yaml";
   };
-  sops.secrets."myservice/my_subdir/my_secret" = {};
 }
