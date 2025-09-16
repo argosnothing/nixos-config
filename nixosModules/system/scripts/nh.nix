@@ -9,7 +9,7 @@
     #!/bin/bash
     pushd ${settings.absoluteflakedir}
     alejandra . &>/dev/null
-    git --no-pager diff -U0 *.nix
+    git --no-pager diff *.nix
     git add .
     nh os ${command} ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname};
     gen=$( nixos-rebuild list-generations | grep True \
