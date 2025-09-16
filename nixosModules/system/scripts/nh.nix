@@ -29,8 +29,6 @@ in {
   config = lib.mkIf config.custom.system.msc.nh.enable {
     programs.nh = {
       enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 7d --keep 6";
       flake = "${settings.absoluteflakedir}";
     };
 
