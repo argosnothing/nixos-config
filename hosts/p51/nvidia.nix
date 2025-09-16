@@ -1,13 +1,11 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   # P51-specific NVIDIA Quadro M2200 Mobile configuration
   hardware.graphics.enable = true; # replaces old hardware.opengl.enable
   services.xserver.videoDrivers = ["nvidia"];
-  
+
   # Accept NVIDIA license
   nixpkgs.config.nvidia.acceptLicense = true;
-  
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;

@@ -5,10 +5,10 @@
   settings,
   ...
 }: {
-  imports = [ ../../stylix-config.nix ];
+  imports = [../../stylix-config.nix];
   config = lib.mkIf config.styles.stylix.enable {
     stylix.targets.grub.enable = false;
-    
+
     stylix.polarity = settings.polarity;
     stylix = {
       enable = true;
@@ -35,5 +35,4 @@
       };
     };
   };
-
 }

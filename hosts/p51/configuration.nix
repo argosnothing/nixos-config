@@ -14,7 +14,7 @@
 
   # P51-specific configuration
   # Using default kernel (not xanmod) for stability on older hardware
-  
+
   # P51-specific packages
   environment.systemPackages = with pkgs; [
     libinput # Touchpad support

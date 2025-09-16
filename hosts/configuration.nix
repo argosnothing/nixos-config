@@ -45,6 +45,7 @@
   # Core system packages
   environment.systemPackages = with pkgs; [
     nh
+    alejandra
     fastfetch
     sops
     hdparm

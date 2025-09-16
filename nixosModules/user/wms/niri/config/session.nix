@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Home Manager cursor configuration
   home.pointerCursor = {
     name = "Qogir";

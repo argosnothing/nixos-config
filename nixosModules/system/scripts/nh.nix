@@ -1,4 +1,23 @@
-{config, settings, lib, ...}: {
+{
+  pkgs,
+  config,
+  settings,
+  lib,
+  ...
+}: let
+  rebuild = command: ''
+    #!/bin/bash
+    pushd ${settings.absoluteflakedir}
+    alejandra . &>/dev/null
+    git diff -U0 *.nix
+    git add .
+    nh os ${command} ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname};
+    gen=$( nixos-rebuild list-generations | grep True \
+    | awk '{print "Generation:", $1, "nixpkgsV:", $3, "Kernel:", $5}')
+    git commit -m "$gen"
+    popd
+  '';
+in {
   options = {
     custom.system.msc.nh.enable = lib.mkOption {
       default = true;
@@ -15,9 +34,9 @@
       flake = "${settings.absoluteflakedir}";
     };
 
-    environment.shellAliases = {
-      rebuildsraw = "nh os switch ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname}";
-      rebuildbraw = "nh os boot ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname}";
-    };
+    environment.systemPackages = [
+      (pkgs.writeShellScriptBin "rebuilds" (rebuild "switch"))
+      (pkgs.writeShellScriptBin "rebuildb" (rebuild "boot"))
+    ];
   };
 }

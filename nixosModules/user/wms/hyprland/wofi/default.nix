@@ -1,4 +1,4 @@
-{ ... }: let
+{...}: let
 in {
   programs.wofi = {
     enable = true;

@@ -1,4 +1,10 @@
-{pkgs, lib, settings, config, ...}: {
+{
+  pkgs,
+  lib,
+  settings,
+  config,
+  ...
+}: {
   options = {
     zoxide.enable = lib.mkOption {
       default = true;

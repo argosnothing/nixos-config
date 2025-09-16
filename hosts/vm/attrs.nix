@@ -5,6 +5,12 @@ rec {
   };
   zfs = {
     hostId = "deadbeef";
-    devNodes = "/dev/disk/" + (if isvm then "by-partuuid" else "by-id");
+    devNodes =
+      "/dev/disk/"
+      + (
+        if isvm
+        then "by-partuuid"
+        else "by-id"
+      );
   };
 }

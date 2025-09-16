@@ -12,7 +12,7 @@
 
   # Laptop-specific configuration
   # Using default kernel (not xanmod) for battery life
-  
+
   # Laptop-specific packages
   environment.systemPackages = with pkgs; [
   ];

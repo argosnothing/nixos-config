@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     # System shortcuts
     "Alt+Shift+Slash".action = show-hotkey-overlay;
@@ -9,11 +7,11 @@
     # Applications
     "Alt+Return".action = spawn "kitty";
     "Alt+T".action = spawn "kitty";
-    "Alt+E".action = spawn "kitty" "-e" "yazi";  # Terminal file manager
-    "Alt+N".action = spawn "nemo";               # GUI file manager  
+    "Alt+E".action = spawn "kitty" "-e" "yazi"; # Terminal file manager
+    "Alt+N".action = spawn "nemo"; # GUI file manager
     "Alt+Space".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     "Alt+R".action = spawn "wofi" "--show" "run";
-    "Alt+Q".action.focus-workspace = "discord";  # Go to Discord workspace
+    "Alt+Q".action.focus-workspace = "discord"; # Go to Discord workspace
 
     # Window management
     "Alt+C".action = close-window;

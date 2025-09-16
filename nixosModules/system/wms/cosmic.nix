@@ -11,7 +11,7 @@
       description = "Enable COSMIC desktop environment.";
     };
   };
-  
+
   config = lib.mkIf config.wms.cosmic.enable {
     services.desktopManager.cosmic.enable = true;
     services.displayManager.cosmic-greeter.enable = true;

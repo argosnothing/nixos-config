@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [ gh ];
+  home.packages = with pkgs; [gh];
   imports = [
     ./terminal
     ./utilities

@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.niri.settings = {
     prefer-no-csd = true;
     # Named workspaces
@@ -20,7 +18,7 @@
         clip-to-geometry = true;
       }
       {
-        matches = [{ app-id = "discord"; }];
+        matches = [{app-id = "discord";}];
         open-on-workspace = "discord";
       }
     ];
@@ -28,14 +26,14 @@
     # Noctalia recommended layer rules for proper SWWW and shell integration
     layer-rules = [
       {
-        matches = [{ namespace = "^swww-daemon$"; }];
+        matches = [{namespace = "^swww-daemon$";}];
         place-within-backdrop = true;
       }
       {
-        matches = [{ namespace = "^quickshell-wallpaper$"; }];
+        matches = [{namespace = "^quickshell-wallpaper$";}];
       }
       {
-        matches = [{ namespace = "^quickshell-overview$"; }];
+        matches = [{namespace = "^quickshell-overview$";}];
         place-within-backdrop = true;
       }
     ];

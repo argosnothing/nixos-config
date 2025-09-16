@@ -1,4 +1,8 @@
-{lib, config, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   custom.persist.home.cache.directories = [
     ".cache/mozilla"
     ".config/discord/Cache"

@@ -1,4 +1,8 @@
-{pkgs, settings, ...}: {
+{
+  pkgs,
+  settings,
+  ...
+}: {
   # Fonts are nice to have
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code #keep

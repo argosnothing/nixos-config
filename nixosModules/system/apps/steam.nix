@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.steam.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
@@ -14,10 +17,10 @@
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports for Steam Local Network Game Transfers
-      
+
       # Enable gamescope session
       gamescopeSession.enable = true;
-      
+
       # Extra compatibility tools (Proton-GE, etc.)
       extraCompatPackages = with pkgs; [
         proton-ge-bin

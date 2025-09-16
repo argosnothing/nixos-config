@@ -1,4 +1,10 @@
-{pkgs, settings, lib, config, ...}: {
+{
+  pkgs,
+  settings,
+  lib,
+  config,
+  ...
+}: {
   options = {
     uefi.enable = lib.mkEnableOption "Enable UEFI firmware";
   };

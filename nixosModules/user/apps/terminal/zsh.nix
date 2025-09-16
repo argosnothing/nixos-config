@@ -6,17 +6,17 @@
   home.packages = [
     pkgs.zsh-powerlevel10k
     (pkgs.writeShellApplication
-    {
-      name = "show-tmpfs";
-      runtimeInputs = [pkgs.fd];
-      text = ''
-        sudo fd --one-file-system --base-directory / --type f --hidden \
-          --exclude "/etc/{ssh,passwd,shadow}" \
-          --exclude "*.timer" \
-          --exclude "/var/lib/NetworkManager" \
-          --exec ls -lS | sort -rn -k5 | awk '{print $5, $9}'
-      '';
-    })
+      {
+        name = "show-tmpfs";
+        runtimeInputs = [pkgs.fd];
+        text = ''
+          sudo fd --one-file-system --base-directory / --type f --hidden \
+            --exclude "/etc/{ssh,passwd,shadow}" \
+            --exclude "*.timer" \
+            --exclude "/var/lib/NetworkManager" \
+            --exec ls -lS | sort -rn -k5 | awk '{print $5, $9}'
+        '';
+      })
   ];
   programs.zsh = {
     enable = true;

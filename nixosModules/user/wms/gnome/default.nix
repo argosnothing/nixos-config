@@ -37,7 +37,7 @@
     styles.stylix.enable = false;
     dconf.settings = {
       "org/gnome/mutter" = {
-        "experimental-features" = [ "scale-monitor-framebuffer" ];
+        "experimental-features" = ["scale-monitor-framebuffer"];
       };
       "org/gnome/desktop/interface" = {
         "cursor-theme" = "Adwaita";
@@ -47,7 +47,7 @@
         "current-workspace-only" = true;
       };
       "org/gnome/mutter/wayland" = {
-        "xwayland-grab-access-rules" = [ "Wfica" ];
+        "xwayland-grab-access-rules" = ["Wfica"];
         "xwayland-allow-grabs" = true;
       };
     };

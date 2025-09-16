@@ -4,9 +4,9 @@
   lib,
   config,
   ...
-}:let
+}: let
   dankShell = inputs.dank-shell;
-in{
+in {
   config = lib.mkIf (config.custom.desktop-shell.name == "dank-shell") {
     home.packages = [
       dankShell.packages.${pkgs.system}.quickshell

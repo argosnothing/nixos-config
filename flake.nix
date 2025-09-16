@@ -4,7 +4,7 @@
       systems = import inputs.systems;
       imports = [./outputs];
       perSystem = {system, ...}: {
-        _module.args.pkgs = import inputs.nixpkgs{
+        _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;

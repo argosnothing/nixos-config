@@ -1,4 +1,9 @@
-{pkgs, settings, inputs, ...}: {
+{
+  pkgs,
+  settings,
+  inputs,
+  ...
+}: {
   imports = [];
   home.packages = with pkgs; [
     inputs.self.packages.${pkgs.system}.ns

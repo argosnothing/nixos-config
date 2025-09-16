@@ -1,7 +1,4 @@
-{
-  settings,
-  ...
-}: {
+{settings, ...}: {
   imports = [
     (./. + "/${settings.wm}.nix")
   ];

@@ -6,7 +6,10 @@
         height = 2160;
       };
       scale = 1.2;
-      position = {x = 0; y = 0;};
+      position = {
+        x = 0;
+        y = 0;
+      };
     };
     "DP-2" = {
       mode = {

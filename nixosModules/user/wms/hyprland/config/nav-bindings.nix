@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: {
+{lib, ...}: {
   options.hyprland.navBindings = lib.mkOption {
     type = lib.types.listOf lib.types.str;
     default = [];

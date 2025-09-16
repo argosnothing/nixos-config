@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./utilities
     ./flatpak.nix

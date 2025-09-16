@@ -1,4 +1,9 @@
-{config, lib, settings, ...}: let
+{
+  config,
+  lib,
+  settings,
+  ...
+}: let
   style = import ./style.nix {inherit config;};
 in {
   stylix.targets.waybar = {
@@ -137,7 +142,7 @@ in {
     Service = {
       Environment = [
         "WAYLAND_DISPLAY=wayland-1"
-        "XDG_CURRENT_DESKTOP=Hyprland"  
+        "XDG_CURRENT_DESKTOP=Hyprland"
         "XDG_SESSION_DESKTOP=Hyprland"
         "XDG_RUNTIME_DIR=/run/user/1000"
         "MOZ_ENABLE_WAYLAND=1"

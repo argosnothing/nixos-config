@@ -1,9 +1,10 @@
-{ lib, config, ... }:
-
-let
-  enabled = config.custom.persist.enable or false;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  enabled = config.custom.persist.enable or false;
+in {
   config = lib.mkIf enabled {
     custom.persist.home.directories = lib.mkAfter [
       ".config/sops"
@@ -16,4 +17,3 @@ in
     ];
   };
 }
-

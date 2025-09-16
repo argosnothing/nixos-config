@@ -1,4 +1,10 @@
-{pkgs, settings, lib, config, ...}: {
+{
+  pkgs,
+  settings,
+  lib,
+  config,
+  ...
+}: {
   options = {
     git.enable = lib.mkEnableOption "Home manager save me";
   };
