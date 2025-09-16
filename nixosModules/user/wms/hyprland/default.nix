@@ -4,7 +4,9 @@
   lib,
   settings,
   ...
-}: {
+}: let
+  hyprlandLocal = ".local/share/hyprland/";
+in {
   imports = [
     ./config
   ];
@@ -17,6 +19,7 @@
   };
   config = lib.mkIf config.wms.hyprland.enable {
     custom.desktop-shell.name = "noctalia-shell";
+    custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];
     home = {
       packages = with pkgs; [
         nwg-displays
