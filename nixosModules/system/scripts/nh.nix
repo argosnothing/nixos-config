@@ -3,13 +3,14 @@
   config,
   settings,
   lib,
+  beans,
   ...
 }: let
   rebuild = command: ''
     #!/bin/bash
     pushd ${settings.absoluteflakedir}
     alejandra . &>/dev/null
-    git --no-pager diff *.nix
+    git --no-pager diff
     git add .
     nh os ${command} ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname};
     gen=$( nixos-rebuild list-generations | grep True \
