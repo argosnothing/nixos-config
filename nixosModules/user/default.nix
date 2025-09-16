@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./apps
-    ./scripts
     ./style
     ./ricing
     ./wms

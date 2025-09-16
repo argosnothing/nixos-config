@@ -3,7 +3,7 @@
     custom.system.msc.nh.enable = lib.mkOption {
       default = true;
       type = lib.types.bool;
-      descruption = "Enables, and configures nh for the system";
+      description = "Enables, and configures nh for the system";
     };
   };
 
@@ -15,10 +15,9 @@
       flake = "${settings.absoluteflakedir}";
     };
 
-    home.shellAliases = {
-      cleanall = "nh clean all --ask";
-      rebuilds = "nh os switch --flake ${settings.absoluteflakedir}/${settings.hostname}";
-      rebuildb = "nh os boot --flake ${settings.absoluteflakedir}/${settings.hostname}";
+    environment.shellAliases = {
+      rebuildsraw = "nh os switch ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname}";
+      rebuildbraw = "nh os boot ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname}";
     };
   };
 }
