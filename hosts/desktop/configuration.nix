@@ -23,6 +23,7 @@
     xdg-utils
   ];
   custom.persist.home.directories = [".config/uhk-agent"];
+  hardware.keyboard.uhk.enable = true;
 
   services.udev.packages = with pkgs; [uhk-agent];
 }
