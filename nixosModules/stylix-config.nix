@@ -1,11 +1,4 @@
-{
-  inputs,
-  config,
-  lib,
-  pkgs,
-  settings,
-  ...
-}: {
+{lib, ...}: {
   options = {
     styles.stylix.enable = lib.mkOption {
       type = lib.types.bool;
