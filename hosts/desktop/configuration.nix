@@ -22,4 +22,6 @@
     xorg.xev
     xdg-utils
   ];
+
+  services.udev.packages = with pkgs; [uhk-agent];
 }
