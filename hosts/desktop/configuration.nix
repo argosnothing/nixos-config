@@ -17,6 +17,7 @@
   custom.persist.enable = true;
   via.enable = true;
   environment.systemPackages = with pkgs; [
+    uhk-agent
     cachix
     xorg.xev
     xdg-utils
