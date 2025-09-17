@@ -22,6 +22,7 @@
     xorg.xev
     xdg-utils
   ];
+  custom.persist.home.directories = [".config/uhk-agent"];
 
   services.udev.packages = with pkgs; [uhk-agent];
 }
