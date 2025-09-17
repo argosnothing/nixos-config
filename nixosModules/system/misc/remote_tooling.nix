@@ -1,3 +1,8 @@
+#### NOTES
+#### Horrible horrible gtk2 requirement app. Feels like it's on life support on linux
+#### Currently cannot get later versions running on this POS
+#### ~/.ICAClient/All_Regions.ini <- do: MouseSendsControlV=false
+####
 {
   pkgs,
   pkgsStable,
