@@ -44,7 +44,6 @@
           clock-show-weekday = true;
           color-scheme = "prefer-dark";
           cursor-size = 32;
-          cursor-theme = "Adwaita";
           document-font-name = "Liberation Serif  11";
           enable-animations = true;
           font-name = "Noto Sans,  10";

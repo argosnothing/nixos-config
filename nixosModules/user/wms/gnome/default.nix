@@ -39,7 +39,6 @@
         "experimental-features" = ["scale-monitor-framebuffer"];
       };
       "org/gnome/desktop/interface" = {
-        "cursor-theme" = "Adwaita";
         "icon-theme" = "Adwaita";
       };
       "org/gnome/shell/app-switcher" = {
