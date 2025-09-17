@@ -12,6 +12,7 @@
     ../nixosModules/system/critical
     ../nixosModules/system
   ];
+  stylix.homeManagerIntegration.autoImport = false;
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
     package = pkgs.nixVersions.latest;

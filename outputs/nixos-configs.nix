@@ -47,10 +47,12 @@
           home-manager = {
             useGlobalPkgs = true;
             extraSpecialArgs = {inherit inputs settings pkgsStable;};
-            users."${settings.username}".imports = [
-              inputs.stylix.homeModules.stylix
-              (../hosts + "/${settings.hostname}" + /home.nix)
-            ];
+            users."${settings.username}" = {
+              imports = [
+                inputs.stylix.homeModules.stylix
+                (../hosts + "/${settings.hostname}" + /home.nix)
+              ];
+            };
           };
         }
       ];
@@ -60,7 +62,6 @@ in {
   flake.nixosConfigurations =
     mkSystem {
       hostname = "desktop";
-      wm = "gnome";
     }
     // mkSystem {
       hostname = "laptop";
