@@ -1,6 +1,8 @@
 {settings, ...}: {
   imports = [
-    (./. + "/${settings.wm}")
+    ./cosmic
+    ./hyprland
+    ./niri
   ];
   wms.${settings.wm}.enable = true;
 }

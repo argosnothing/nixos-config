@@ -1,6 +1,8 @@
 {settings, ...}: {
   imports = [
-    (./. + "/${settings.wm}.nix")
+    ./cosmic.nix
+    ./gnome.nix
+    ./hyprland.nix
   ];
   wms."${settings.wm}".enable = true;
 }

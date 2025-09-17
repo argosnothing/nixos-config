@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options = {
@@ -12,10 +11,7 @@
     };
   };
   config = lib.mkIf config.wms.cosmic.enable {
-    home.packages = with pkgs; [
-    ];
     styles.stylix.enable = false;
-
     xdg.enable = true;
     xdg.mimeApps.enable = true;
   };

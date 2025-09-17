@@ -8,7 +8,6 @@
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
     ./config
-    ../../ricing
   ];
   options = {
     wms.niri.enable = lib.mkOption {
@@ -18,7 +17,7 @@
     };
   };
   config = lib.mkIf config.wms.niri.enable {
-    noctalia-shell.enable = true;
+    custom.desktop-shell.name = "noctalia-shell";
     programs.niri.enable = true;
     programs.niri.settings.debug = {
       wait-for-frame-completion-before-queueing = [];
