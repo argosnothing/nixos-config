@@ -57,7 +57,10 @@ in {
     mkSystem {
       hostname = "desktop";
     }
-    // mkSystem {hostname = "laptop";}
+    // mkSystem {
+      hostname = "laptop";
+      wm = "gnome";
+    }
     // mkSystem {hostname = "p51";}
     // mkSystem {hostname = "vm";};
 }
