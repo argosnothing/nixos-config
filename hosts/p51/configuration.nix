@@ -1,15 +1,9 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../configuration.nix # Import shared system configuration
-    inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./input.nix
     ./nvidia.nix
-    ../../../nixosModules/system
   ];
 
   # P51-specific configuration

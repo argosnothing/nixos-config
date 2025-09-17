@@ -34,7 +34,6 @@
       gnomeExtensions.gsconnect
       gnomeExtensions.user-themes
     ];
-    styles.stylix.enable = false;
     dconf.settings = {
       "org/gnome/mutter" = {
         "experimental-features" = ["scale-monitor-framebuffer"];

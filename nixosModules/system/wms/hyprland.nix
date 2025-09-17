@@ -12,23 +12,24 @@
     };
   };
   config = lib.mkIf config.wms.hyprland.enable {
+    styles.stylix.enable = true;
     greeters.tuigreet.wm = "Hyprland";
     greeters.tuigreet.enable = true;
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
     };
-
-    services.udisks2.enable = true;
-    services.gvfs.enable = true;
-
-    # Ensure GTK cache is built
-    programs.dconf.enable = true;
     services = {
+      udisks2.enable = true;
+      gvfs.enable = true;
+
       xserver.excludePackages = [pkgs.xterm];
       dbus.enable = true;
       gnome.gnome-keyring.enable = true;
     };
+
+    # Ensure GTK cache is built
+    programs.dconf.enable = true;
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       papirus-icon-theme

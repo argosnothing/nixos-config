@@ -5,12 +5,15 @@
   settings,
   ...
 }: {
-  imports = [../../stylix-config.nix];
+  options = {
+    styles.stylix.enable = lib.mkEnableOption "enable stylix";
+  };
   config = lib.mkIf config.styles.stylix.enable {
-    stylix.targets.grub.enable = false;
-
-    stylix.polarity = settings.polarity;
     stylix = {
+      targets.grub.enable = false;
+
+      inherit (settings) polarity;
+
       enable = true;
       autoEnable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
@@ -31,7 +34,7 @@
           name = "Noto Color Emoji";
           package = pkgs.noto-fonts-emoji-blob-bin;
         };
-        sizes = settings.fonts.sizes;
+        inherit (settings.fonts) sizes;
       };
     };
   };

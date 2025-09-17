@@ -41,6 +41,7 @@
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
+        inputs.stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -56,10 +57,10 @@ in {
   flake.nixosConfigurations =
     mkSystem {
       hostname = "desktop";
+      #wm = "gnome";
     }
     // mkSystem {
       hostname = "laptop";
-      wm = "gnome";
     }
     // mkSystem {hostname = "p51";}
     // mkSystem {hostname = "vm";};

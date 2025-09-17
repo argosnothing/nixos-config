@@ -1,15 +1,8 @@
-{
-  inputs,
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../configuration.nix # Import shared system configuration
-    inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../nixosModules/system
   ];
 
   steam.enable = true;

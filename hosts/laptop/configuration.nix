@@ -1,13 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../configuration.nix # Import shared system configuration
-    inputs.stylix.nixosModules.stylix
     ./hardware-configuration.nix
-    ../../../nixosModules/system
   ];
 
   # Laptop-specific configuration

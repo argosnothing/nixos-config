@@ -13,12 +13,13 @@
   };
 
   config = lib.mkIf config.wms.cosmic.enable {
-    services.desktopManager.cosmic.enable = true;
-    services.displayManager.cosmic-greeter.enable = true;
-    services.flatpak.enable = true;
+    services = {
+      desktopManager.cosmic.enable = true;
+      displayManager.cosmic-greeter.enable = true;
+      flatpak.enable = true;
+      dbus.enable = true;
+    };
     environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
-    styles.stylix.enable = false;
-    services.dbus.enable = true;
     programs.dconf.enable = true;
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme

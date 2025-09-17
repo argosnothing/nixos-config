@@ -19,6 +19,7 @@ in {
   };
   config = lib.mkIf config.wms.hyprland.enable {
     custom.desktop-shell.name = "noctalia-shell";
+    styles.stylix.enable = true;
     custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];
     home = {
       packages = with pkgs; [
