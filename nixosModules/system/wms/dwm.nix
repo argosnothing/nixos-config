@@ -10,9 +10,10 @@
   };
 
   config = lib.mkIf (config.custom.wm.name == "dwm") {
+    wms.dwm.enable = true;
     xdg.portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-wlr];
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
     services = {
       displayManager.ly.enable = true;
