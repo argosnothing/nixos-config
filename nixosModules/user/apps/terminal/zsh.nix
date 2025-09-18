@@ -18,6 +18,11 @@
         '';
       })
   ];
+  programs.oh-my-posh = {
+    enable = true;
+    enableZshIntegration = true;
+    useTheme = "lambda"
+  };
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
@@ -37,7 +42,7 @@
         "virtualenv"
         "vi-mode"
       ];
-      theme = "lambda";
+      #theme = "lambda";
       #custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
