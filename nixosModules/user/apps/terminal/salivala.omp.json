@@ -5,13 +5,13 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#cdd6f4",
+          "foreground": "#cba6f7",
           "style": "plain",
           "template": "λ",
           "type": "text"
         },
         {
-          "foreground": "#cdd6f4",
+          "foreground": "#cba6f7",
           "properties": {
             "style": "agnoster"
           },
