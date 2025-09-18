@@ -4,3 +4,6 @@
 [submodule "nixosModules/system/wms/sources/dwm"]
 	path = nixosModules/system/wms/sources/dwm
 	url = https://git.suckless.org/dwm
+[submodule "sources/dwm"]
+	path = sources/dwm
+	url = https://git.suckless.org/dwm
