@@ -16,7 +16,7 @@
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
   config = lib.mkIf config.systemFlatpak.enable {
-    #xdg.portal.enable = true;
+    xdg.portal.enable = true;
 
     environment.persistence."/persist" = lib.mkIf config.custom.persist.enable {
       directories = [

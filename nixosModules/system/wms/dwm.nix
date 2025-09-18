@@ -10,6 +10,10 @@
   };
 
   config = lib.mkIf (config.custom.wm.name == "dwm") {
+    xdg.portal = {
+      enable = true;
+      config.common.default = ["gtk"];
+    };
     services = {
       displayManager.ly.enable = true;
       xserver.windowManager.dwm = {
