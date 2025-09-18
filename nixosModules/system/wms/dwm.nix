@@ -12,7 +12,7 @@
   config = lib.mkIf (config.custom.wm.name == "dwm") {
     xdg.portal = {
       enable = true;
-      config.common.default = ["gtk"];
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
     services = {
       displayManager.ly.enable = true;
