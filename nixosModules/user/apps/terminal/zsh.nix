@@ -46,7 +46,7 @@
         ++ [
           {
             name = "fzf-tab";
-            srs = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+            src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
           }
         ];
     };
