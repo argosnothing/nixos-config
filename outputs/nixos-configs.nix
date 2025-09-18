@@ -62,6 +62,7 @@ in {
   flake.nixosConfigurations =
     mkSystem {
       hostname = "desktop";
+      wm = "dwm";
     }
     // mkSystem {
       hostname = "laptop";
