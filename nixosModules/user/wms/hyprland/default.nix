@@ -182,8 +182,6 @@ in {
           };
           blur = {
             enabled = true;
-            size = _;
-            passes = _;
           };
         };
 
