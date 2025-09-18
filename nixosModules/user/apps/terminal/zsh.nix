@@ -27,24 +27,26 @@
     enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "fzf-tab"
-        "git"
-        "sudo"
-        "z"
-        "direnv"
-        "history"
-        "colored-man-pages"
-        "extract"
-        "command-not-found"
-        "aliases"
-        "docker"
-        "kubectl"
-        "virtualenv"
-        "vi-mode"
-      ];
-      #theme = "lambda";
-      #custom = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      plugins =
+        [
+          "git"
+          "sudo"
+          "z"
+          "direnv"
+          "history"
+          "colored-man-pages"
+          "extract"
+          "command-not-found"
+          "aliases"
+          "docker"
+          "kubectl"
+          "virtualenv"
+          "vi-mode"
+        ]
+        ++ {
+          name = "fzf-tab";
+          srs = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+        };
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
     initContent = ''
