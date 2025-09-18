@@ -22,7 +22,7 @@
         {
           "foreground": "#B80101",
           "style": "plain",
-          "template": " <#F5F5F5>git:</>{{ .HEAD }} ",
+          "template": " <#F5F5F5></>{{ .HEAD }} ",
           "type": "git"
         }
       ],
