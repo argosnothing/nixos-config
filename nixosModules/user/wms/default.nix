@@ -9,12 +9,12 @@ in {
   imports = [
     ./cosmic
     ./hyprland
-    #./niri
+    #./niri can't be arsed figuring this one out rn.
     ./gnome
   ];
   options = {
     custom.wm.name = mkOption {
-      type = enum ["hyprland" "niri" "gnome" "cosmic"];
+      type = enum ["hyprland" "gnome" "cosmic"];
       description = "User desktop environment";
     };
   };
