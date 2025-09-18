@@ -28,6 +28,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
+        "fzf-tab"
         "git"
         "sudo"
         "z"
