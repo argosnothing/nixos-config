@@ -43,10 +43,12 @@
           "virtualenv"
           "vi-mode"
         ]
-        ++ {
-          name = "fzf-tab";
-          srs = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-        };
+        ++ [
+          {
+            name = "fzf-tab";
+            srs = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+          }
+        ];
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
     initContent = ''
