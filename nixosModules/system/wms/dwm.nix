@@ -12,7 +12,7 @@
   config = lib.mkIf (config.custom.wm.name == "dwm") {
     xdg.portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      extraPortals = [pkgs.xdg-desktop-portal-wlr];
     };
     services = {
       displayManager.ly.enable = true;
