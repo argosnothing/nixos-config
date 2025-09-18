@@ -270,10 +270,7 @@ in {
         #};
         # rules & workspace config
         windowrulev2 = [
-          "opacity 0.95 0.95, onworkspace:special:specq"
-          "opacity 0.95 0.95, onworkspace:special:specw"
-          "opacity 0.95 0.95, onworkspace:special:spece"
-          "opacity 0.95 0.95, onworkspace:special:specs"
+          "opacity 0.95 0.95, onworkspace:special"
           #"setprop , class:Wfica"
         ];
 
