@@ -11,7 +11,6 @@
 
   config = lib.mkIf (config.custom.wm.name == "dwm") {
     wms.dwm.enable = true;
-    shoulderror.true = true;
     xdg.portal = {
       enable = true;
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
