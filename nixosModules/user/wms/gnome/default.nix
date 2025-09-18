@@ -10,11 +10,12 @@
   options = {
     wms.gnome.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "Enable GNOME desktop environment.";
     };
   };
-  config = lib.mkIf config.wms.gnome.enable {
+  config = lib.mkIf (config.custom.wm.name == "gnome") {
+    wms.gnome.enable = true;
     home.packages = with pkgs; [
       gtop
       adwaita-icon-theme

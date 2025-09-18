@@ -10,7 +10,8 @@
       description = "Enable GNOME as the window manager.";
     };
   };
-  config = lib.mkIf config.wms.gnome.enable {
+  config = lib.mkIf (config.custom.wm.name == "gnome") {
+    wms.gnome.enable = true;
     services.gnome.gnome-browser-connector.enable = true;
     services.xserver = {
       enable = true;

@@ -12,7 +12,8 @@
     };
   };
 
-  config = lib.mkIf config.wms.cosmic.enable {
+  config = lib.mkIf (config.custom.wm.name == "cosmic") {
+    wms.cosmic.enable = true;
     services = {
       desktopManager.cosmic.enable = true;
       displayManager.cosmic-greeter.enable = true;

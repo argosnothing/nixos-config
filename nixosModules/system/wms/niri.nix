@@ -15,28 +15,34 @@
       description = "Enable Niri as the window manager.";
     };
   };
-  config = lib.mkIf config.wms.niri.enable {
-    # Enable the niri program through the flake's NixOS module
-    programs.niri.enable = true;
+  config = lib.mkIf (config.custom.wm.name == "niri") {
+    wms.niri.enable = true;
+    programs = {
+      # Enable the niri program through the flake's NixOS module
+      niri.enable = true;
+
+      # Enable Wayland requirements
+      xwayland.enable = true;
+
+      # Ensure GTK cache is built
+      dconf.enable = true;
+    };
 
     greeters.tuigreet.wm = "niri-session";
     greeters.tuigreet.enable = true;
-    services.xserver.excludePackages = [pkgs.xterm];
-
-    # Enable Wayland requirements
-    programs.xwayland.enable = true;
-
-    # Ensure GTK cache is built
-    programs.dconf.enable = true;
-    services.dbus = {
-      enable = true;
-      packages = with pkgs; [
-        gcr
-        gnome-settings-daemon
-        libsecret
-      ];
+    services = {
+      xserver.excludePackages = [pkgs.xterm];
+      dbus = {
+        enable = true;
+        packages = with pkgs; [
+          gcr
+          gnome-settings-daemon
+          libsecret
+        ];
+      };
+      gvfs.enable = true;
+      gnome.gnome-keyring.enable = true;
     };
-    services.gvfs.enable = true;
 
     qt.enable = true;
 
@@ -60,6 +66,5 @@
     ];
 
     security.pam.services.login.enableGnomeKeyring = true;
-    services.gnome.gnome-keyring.enable = true;
   };
 }

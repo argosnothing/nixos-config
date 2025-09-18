@@ -15,7 +15,8 @@
       description = "Enable Niri Wayland compositor.";
     };
   };
-  config = lib.mkIf config.wms.niri.enable {
+  config = lib.mkIf (config.custom.wm.name == "niri") {
+    wms.niri.enable = true;
     custom.desktop-shell.name = "noctalia-shell";
     programs.niri.enable = true;
     programs.niri.settings.debug = {

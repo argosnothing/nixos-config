@@ -11,7 +11,8 @@
       description = "Enable Hyprland as the window manager.";
     };
   };
-  config = lib.mkIf config.wms.hyprland.enable {
+  config = lib.mkIf (config.custom.wm.name == "hyprland") {
+    wms.hyprland.enable = true;
     styles.stylix.enable = true;
     greeters.tuigreet.wm = "Hyprland";
     greeters.tuigreet.enable = true;
