@@ -42,7 +42,6 @@
           clock-format = "12h";
           clock-show-seconds = true;
           clock-show-weekday = true;
-          color-scheme = "prefer-dark";
           cursor-size = 32;
           document-font-name = "Liberation Serif  11";
           enable-animations = true;

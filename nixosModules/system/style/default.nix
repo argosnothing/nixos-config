@@ -10,11 +10,9 @@
   };
   config = lib.mkIf config.styles.stylix.enable {
     stylix = {
-      targets.grub.enable = false;
-
-      inherit (settings) polarity;
-
       enable = true;
+      targets.grub.enable = false;
+      inherit (settings) polarity;
       autoEnable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
       fonts = {

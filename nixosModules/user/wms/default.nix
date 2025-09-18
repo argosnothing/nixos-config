@@ -3,7 +3,7 @@
     ./cosmic
     ./hyprland
     ./niri
-    ./gnome
+    #./gnome
   ];
   wms.${settings.wm}.enable = true;
 }

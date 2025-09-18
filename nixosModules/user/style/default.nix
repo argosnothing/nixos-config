@@ -1,6 +1,8 @@
 {
   config,
   lib,
+  pkgs,
+  settings,
   ...
 }: {
   options = {
@@ -8,6 +10,8 @@
   };
   config = lib.mkIf config.styles.stylix.enable {
     stylix = {
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
+      enable = true;
       targets = {
         hyprland.enable = true;
         firefox = {
