@@ -12,9 +12,9 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "p:pink",
+          "foreground": "p:lavender",
           "style": "plain",
-          "template": "{{.Icon}}  ",
+          "template": "<p:pink>{{.Icon}}  ",
           "type": "os"
         },
         {
