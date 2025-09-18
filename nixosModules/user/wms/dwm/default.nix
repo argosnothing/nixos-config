@@ -15,7 +15,7 @@
     };
     home.packages = with pkgs; [
       slock
-      surf
+      # surf RIP BOZO YOU WONT BE MISSED
     ];
   };
 }
