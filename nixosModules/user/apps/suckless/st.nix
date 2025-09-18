@@ -11,7 +11,7 @@
   config = lib.mkIf config.custom.apps.st.enable {
     home.packages = [
       (pkgs.st.overrideAttrs (_: {
-        src = inputs.suckless.st;
+        src = inputs.st;
         patches = [];
       }))
     ];

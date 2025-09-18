@@ -21,7 +21,7 @@
       xserver.windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
-          src = inputs.suckless.dwm;
+          src = inputs.dwm;
         };
       };
       xserver = {

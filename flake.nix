@@ -17,19 +17,17 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
     flake-compat.url = "github:edolstra/flake-compat";
-    suckless = {
-      dwm = {
-        url = ./sources/dwm;
-        flake = false;
-      };
-      dmenu = {
-        url = ./sources/dmenu;
-        flake = false;
-      };
-      st = {
-        url = ./sources/st;
-        flake = false;
-      };
+    dwm = {
+      url = ./sources/dwm;
+      flake = false;
+    };
+    dmenu = {
+      url = ./sources/dmenu;
+      flake = false;
+    };
+    st = {
+      url = ./sources/st;
+      flake = false;
     };
 
     home-manager = {

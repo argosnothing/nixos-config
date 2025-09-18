@@ -11,7 +11,7 @@
   config = lib.mkIf config.custom.apps.dmenu.enable {
     home.packages = [
       (pkgs.dmenu.overrideAttrs (_: {
-        src = inputs.suckless.dmenu;
+        src = inputs.dmenu;
         patches = [];
       }))
     ];
