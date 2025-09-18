@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   settings,
   ...
 }: {
@@ -20,7 +21,7 @@
       xserver.windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
-          src = ./sources/dwm;
+          src = inputs.dwm-src;
         };
       };
       xserver = {

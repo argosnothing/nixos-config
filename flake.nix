@@ -17,6 +17,10 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
     flake-compat.url = "github:edolstra/flake-compat";
+    dwm-src = {
+      url = ./sources/dwm;
+      flake = false;
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
