@@ -182,9 +182,8 @@ in {
           };
           blur = {
             enabled = true;
-            size = 3;
-            passes = 1;
-            vibrancy = 0.1696;
+            size = _;
+            passes = _;
           };
         };
 
