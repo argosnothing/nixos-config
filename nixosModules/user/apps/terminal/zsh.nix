@@ -21,7 +21,7 @@
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
-    useTheme = "lambda"
+    useTheme = "lambda";
   };
   programs.zsh = {
     enable = true;
