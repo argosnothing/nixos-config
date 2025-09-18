@@ -18,13 +18,8 @@
   config = lib.mkIf (config.custom.wm.name == "niri") {
     wms.niri.enable = true;
     programs = {
-      # Enable the niri program through the flake's NixOS module
       niri.enable = true;
-
-      # Enable Wayland requirements
       xwayland.enable = true;
-
-      # Ensure GTK cache is built
       dconf.enable = true;
     };
 
