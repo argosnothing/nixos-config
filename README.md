@@ -1,5 +1,8 @@
 # nixos-config
 
+Strictly single-user nixos-config. 
+
+
 **Configuration flow:**    
 -> flake.nix    
 -> hosts/default.nix    
