@@ -161,6 +161,18 @@
         "type": "github"
       }
     },
+    "dmenu": {
+      "flake": false,
+      "locked": {
+        "path": "sources/dmenu",
+        "type": "path"
+      },
+      "original": {
+        "path": "sources/dmenu",
+        "type": "path"
+      },
+      "parent": []
+    },
     "dms-cli": {
       "inputs": {
         "nixpkgs": [
@@ -182,7 +194,7 @@
         "type": "github"
       }
     },
-    "dwm-src": {
+    "dwm": {
       "flake": false,
       "locked": {
         "path": "sources/dwm",
@@ -624,7 +636,8 @@
       "inputs": {
         "caelestia-shell": "caelestia-shell",
         "dank-shell": "dank-shell",
-        "dwm-src": "dwm-src",
+        "dmenu": "dmenu",
+        "dwm": "dwm",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
@@ -638,6 +651,7 @@
         "nvf": "nvf",
         "quickshell": "quickshell",
         "sops-nix": "sops-nix",
+        "st": "st",
         "stylix": "stylix",
         "systems": "systems_4"
       }
@@ -661,6 +675,18 @@
         "repo": "sops-nix",
         "type": "github"
       }
+    },
+    "st": {
+      "flake": false,
+      "locked": {
+        "path": "sources/st",
+        "type": "path"
+      },
+      "original": {
+        "path": "sources/st",
+        "type": "path"
+      },
+      "parent": []
     },
     "stylix": {
       "inputs": {

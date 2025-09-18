@@ -11,5 +11,6 @@
     ./helix
     ./nvf
     ./git
+    ./suckless
   ];
 }
