@@ -20,7 +20,7 @@
           "type": "path"
         },
         {
-          "foreground": "",
+          "foreground": "#cba6f7",
           "style": "plain",
           "template": " {{ .HEAD }} ",
           "type": "git"
