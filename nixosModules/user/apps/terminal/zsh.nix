@@ -25,13 +25,28 @@
   };
   programs.zsh = {
     enable = true;
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      }
+    ];
     oh-my-zsh = {
       enable = true;
       plugins = [
-        {
-          name = "fzf-tab";
-          src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-        }
+        "git"
+        "sudo"
+        "z"
+        "direnv"
+        "history"
+        "colored-man-pages"
+        "extract"
+        "command-not-found"
+        "aliases"
+        "docker"
+        "kubectl"
+        "virtualenv"
+        "vi-mode"
       ];
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
