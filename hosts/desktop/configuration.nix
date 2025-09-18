@@ -10,6 +10,7 @@
   custom.persist.enable = true;
   via.enable = true;
   environment.systemPackages = with pkgs; [
+    google-chrome
     uhk-agent
     cachix
     xorg.xev
