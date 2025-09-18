@@ -25,7 +25,7 @@
   };
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     plugins = [
       {
         name = "fzf-tab";
