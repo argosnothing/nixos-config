@@ -15,7 +15,7 @@ in {
   ];
   options = {
     custom.wm.name = mkOption {
-      type = enum ["hyprland" "gnome" "cosmic"];
+      type = enum ["hyprland" "dwm" "gnome" "cosmic"];
       description = "System desktop environment(?)";
     };
   };
