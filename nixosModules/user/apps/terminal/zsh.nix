@@ -27,28 +27,12 @@
     enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins =
-        [
-          "git"
-          "sudo"
-          "z"
-          "direnv"
-          "history"
-          "colored-man-pages"
-          "extract"
-          "command-not-found"
-          "aliases"
-          "docker"
-          "kubectl"
-          "virtualenv"
-          "vi-mode"
-        ]
-        ++ [
-          {
-            name = "fzf-tab";
-            src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-          }
-        ];
+      plugins = [
+        {
+          name = "fzf-tab";
+          src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+        }
+      ];
     };
     shellAliases = import ./nixos-aliases.nix {inherit settings;};
     initContent = ''
