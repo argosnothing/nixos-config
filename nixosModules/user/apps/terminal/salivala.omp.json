@@ -18,12 +18,6 @@
           "style": "plain",
           "template": " {{ .Path }} ",
           "type": "path"
-        },
-        {
-          "foreground": "#cba6f7",
-          "style": "plain",
-          "template": " {{ .HEAD }} ",
-          "type": "git"
         }
       ],
       "type": "prompt"
