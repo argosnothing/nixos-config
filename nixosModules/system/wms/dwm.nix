@@ -9,7 +9,7 @@
     wms.dwm.enable = lib.mkEnableOption "Enable System DWM Session";
   };
 
-  config = lib.mkIf true {
+  config = lib.mkIf (config.custom.wm.name == "dwm") {
     wms.dwm.enable = true;
     shoulderror.true = true;
     xdg.portal = {

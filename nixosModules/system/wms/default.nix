@@ -12,6 +12,7 @@ in {
     ./hyprland.nix
     #./niri.nix bleh
     ./gnome.nix
+    ./dwm.nix
   ];
   options = {
     custom.wm.name = mkOption {
