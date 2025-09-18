@@ -7,4 +7,7 @@
   imports = [
     ./zoxide
   ];
+  custom.persist.directories = [
+    ".local/share/zoxide"
+  ];
 }
