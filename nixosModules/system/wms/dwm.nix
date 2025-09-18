@@ -20,7 +20,7 @@
       xserver.windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
-          src = ./sources/dwm;
+          src = ./sources;
         };
       };
       xserver = {
