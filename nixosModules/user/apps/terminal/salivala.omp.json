@@ -5,13 +5,13 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#F5F5F5",
+          "foreground": "#cdd6f4",
           "style": "plain",
           "template": "λ",
           "type": "text"
         },
         {
-          "foreground": "#B80101",
+          "foreground": "#cdd6f4",
           "properties": {
             "style": "agnoster"
           },
@@ -20,9 +20,9 @@
           "type": "path"
         },
         {
-          "foreground": "#B80101",
+          "foreground": "",
           "style": "plain",
-          "template": " <#F5F5F5></>{{ .HEAD }} ",
+          "template": " <#cdd6f4>{{ .HEAD }} ",
           "type": "git"
         }
       ],
