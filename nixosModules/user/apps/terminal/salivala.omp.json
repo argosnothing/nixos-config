@@ -14,7 +14,7 @@
         {
           "foreground": "p:lavender",
           "style": "plain",
-          "template": "<p:pink>{{.Icon}}  ",
+          "template": "<p:lavender>{{.Icon}}  ",
           "type": "os"
         },
         {
