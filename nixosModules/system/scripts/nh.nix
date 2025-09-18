@@ -7,7 +7,6 @@
 }: let
   rebuild = command: ''
     #!/bin/bash
-    set -e
     pushd ${settings.absoluteflakedir}
     alejandra . &>/dev/null
     git --no-pager diff
