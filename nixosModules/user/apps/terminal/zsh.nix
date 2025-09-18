@@ -21,6 +21,8 @@
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
+    settings = ''
+    '';
   };
   programs.zsh = {
     enable = true;
