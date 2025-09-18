@@ -182,6 +182,18 @@
         "type": "github"
       }
     },
+    "dwm-src": {
+      "flake": false,
+      "locked": {
+        "path": "sources/dwm",
+        "type": "path"
+      },
+      "original": {
+        "path": "sources/dwm",
+        "type": "path"
+      },
+      "parent": []
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -612,6 +624,7 @@
       "inputs": {
         "caelestia-shell": "caelestia-shell",
         "dank-shell": "dank-shell",
+        "dwm-src": "dwm-src",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
