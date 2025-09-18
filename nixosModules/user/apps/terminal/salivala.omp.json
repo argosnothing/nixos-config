@@ -18,12 +18,6 @@
           "type": "os"
         },
         {
-          "foreground": "p:blue",
-          "style": "plain",
-          "template": "{{ .UserName }}@{{ .HostName }} ",
-          "type": "session"
-        },
-        {
           "foreground": "p:pink",
           "properties": {
             "folder_icon": "..\ue5fe..",
