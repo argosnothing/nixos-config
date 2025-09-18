@@ -18,8 +18,9 @@
     systems.url = "github:nix-systems/default";
     flake-compat.url = "github:edolstra/flake-compat";
     dwm-src = {
-      url = ./sources/dwm;
+      url = "path:./sources/dwm?submodules=1";
       flake = false;
+      type = "git";
     };
 
     home-manager = {
