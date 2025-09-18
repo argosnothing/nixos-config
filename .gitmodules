@@ -1,3 +1,6 @@
 [submodule "media/wallpapers/walls"]
 	path = media/wallpapers/walls
 	url = https://github.com/argosnothing/walls.git
+[submodule "nixosModules/system/wms/sources/dwm"]
+	path = nixosModules/system/wms/sources/dwm
+	url = https://git.suckless.org/dwm
