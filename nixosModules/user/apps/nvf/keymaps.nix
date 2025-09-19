@@ -7,8 +7,8 @@
     programs.nvf.settings.vim.keymaps = [
       {
         key = "<C-t>";
-        mode = "n tnoremap";
-        action = ":ToggleTerm";
+        mode = "n";
+        action = ":ToggleTerm dir=%:p:h<CR>";
       }
     ];
   };
