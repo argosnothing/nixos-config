@@ -13,6 +13,10 @@
   };
   config = lib.mkIf (config.custom.wm.name == "qtile") {
     wms.qtile.enable = true;
+    xdg.portal = {
+      enable = true;
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    };
     styles.stylix.enable = true;
     custom.greeters.tuigreet = {
       enable = true;
