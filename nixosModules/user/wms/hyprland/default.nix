@@ -175,6 +175,8 @@ in {
 
         decoration = {
           rounding = 20;
+          active_opacity = 0.8;
+          inactive_opacity = 0.8;
           shadow = {
             enabled = true;
             range = 4;
@@ -270,7 +272,6 @@ in {
         #};
         # rules & workspace config
         windowrulev2 = [
-          "opacity .80 .80 class:*"
           "opacity 0.95 0.95, onworkspace:special:specq"
           "opacity 0.95 0.95, onworkspace:special:specw"
           "opacity 0.95 0.95, onworkspace:special:spece"
