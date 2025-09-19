@@ -5,6 +5,10 @@
 }: {
   imports = [
     inputs.nvf.homeManagerModules.default
+    ./languages.nix
+    ./ui.nix
+    ./visuals.nix
+    ./utility.nix
   ];
 
   config = {
@@ -106,14 +110,6 @@
     programs.nvf.settings.vim.languages.rust = {
       enable = true;
       crates.enable = true;
-    };
-
-    programs.nvf.settings.vim.utility = {
-      direnv.enable = true;
-      mkdir.enable = true;
-      nix-develop.enable = true;
-      oil-nvim.enable = true;
-      sleuth.enable = true;
     };
 
     programs.nvf.settings.vim.terminal = {
