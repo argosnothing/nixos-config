@@ -20,7 +20,7 @@
     styles.stylix.enable = true;
     custom.greeters.tuigreet = {
       enable = true;
-      run-command = "qtile";
+      run-command = "qtile start -b wayland";
     };
     services = {
       xserver.windowManager.qtile = {
