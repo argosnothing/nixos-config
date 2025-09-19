@@ -13,10 +13,11 @@ in {
     #./niri.nix bleh
     ./gnome.nix
     ./dwm.nix
+    ./qtile.nix
   ];
   options = {
     custom.wm.name = mkOption {
-      type = enum ["hyprland" "dwm" "gnome" "cosmic"];
+      type = enum ["hyprland" "dwm" "gnome" "cosmic" "qtile"];
       description = "System desktop environment(?)";
     };
   };
