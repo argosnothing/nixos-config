@@ -13,7 +13,7 @@
       {
         key = "<C-o>";
         mode = "n";
-        action = ":Oil";
+        action = ":Oil <CR>";
       }
     ];
   };
