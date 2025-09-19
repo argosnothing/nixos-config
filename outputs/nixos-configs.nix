@@ -5,11 +5,11 @@
   pkgsStable,
   ...
 }: let
-  defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
   mkSystem = {
     wm ? "hyprland",
     hostname,
   }: let
+    defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
     inherit (inputs) home-manager;
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
