@@ -10,6 +10,7 @@
     ./visuals.nix
     ./utility.nix
     ./binds.nix
+    ./keymaps.nix
   ];
 
   config = {

@@ -7,9 +7,6 @@
     programs.nvf.settings.vim.binds = {
       whichKey = {
         enable = true;
-        register = {
-          "test" = "test";
-        };
       };
       cheatsheet.enable = true;
     };
