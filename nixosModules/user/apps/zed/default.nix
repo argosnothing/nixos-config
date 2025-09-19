@@ -15,6 +15,9 @@
         vim_mode = true;
       };
     };
-    custom.persist.home.directories = [".config/zed"];
+    custom.persist.home.directories = [
+      ".config/zed"
+      ".local/share/zed"
+    ];
   };
 }
