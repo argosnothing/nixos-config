@@ -60,7 +60,7 @@
     tab_width = 2
   '';
   git.enable = true;
-  home.file.".config/fastfetch/config.jsonc" = builtins.readFile ../sources/.config/fastfetchconfig.jsonc;
+  home.file.".config/fastfetch/config.jsonc".source = ../sources/.config/fastfetchconfig.jsonc;
 
   programs.home-manager.enable = true;
 
