@@ -2,15 +2,26 @@
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
-      imports = [./outputs];
-      perSystem = {system, ...}: {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
+      perSystem = {system, ...}: let
+        pkg-cfg = {
+          allowUnfree = true;
+          allowAliases = true;
+          permittedInsecurePackaages = ["libsoup-2.74.3" "libxml2-2.13.8"];
+        };
+      in {
+        _module.args = {
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            config = pkg-cfg;
+          };
+          # Sometimes you need them more stable :shrug:
+          pkgsStable = import inputs.nixpkgs-stable {
+            inherit system;
+            config = pkg-cfg;
           };
         };
       };
+      imports = [./outputs];
     };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

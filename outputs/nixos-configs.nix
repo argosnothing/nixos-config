@@ -1,28 +1,11 @@
 {
   inputs,
   lib,
+  pkgs,
+  pkgsStable,
   ...
 }: let
   defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
-  inherit (inputs) nixpkgs nixpkgs-stable self;
-  system = "x86_64-linux";
-  cfg = {
-    allowUnfree = true;
-    allowAliases = true;
-    permittedInsecurePackages = [
-      "libsoup-2.74.3"
-      "libxml2-2.13.8"
-    ];
-  };
-  pkgs = import nixpkgs {
-    inherit system;
-    config = cfg;
-  };
-  pkgsStable = import nixpkgs-stable {
-    inherit system;
-    config = cfg;
-  };
-
   mkSystem = {
     wm ? "hyprland",
     hostname,
@@ -35,9 +18,9 @@
       else {};
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
   in {
-    ${hostname} = nixpkgs.lib.nixosSystem {
+    ${hostname} = pkgs.lib.nixosSystem {
       inherit pkgs;
-      specialArgs = {inherit inputs settings self pkgsStable;};
+      specialArgs = {inherit inputs settings pkgsStable;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
