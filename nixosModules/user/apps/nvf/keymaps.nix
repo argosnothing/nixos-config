@@ -7,6 +7,7 @@
     programs.nvf.settings.vim.keymaps = [
       {
         key = "<leader>t";
+        mode = "n";
         action = ":ToggleTerm";
       }
     ];
