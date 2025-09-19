@@ -30,6 +30,10 @@
               };
             };
 
+            language.markdown = {
+              enable = true;
+            };
+
             languages.rust = {
               enable = true;
               crates.enable = true;
