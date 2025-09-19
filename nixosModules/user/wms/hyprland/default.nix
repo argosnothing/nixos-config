@@ -175,8 +175,8 @@ in {
 
         decoration = {
           rounding = 20;
-          active_opacity = 0.8;
-          inactive_opacity = 0.8;
+          active_opacity = 0.9;
+          inactive_opacity = 0.9;
           shadow = {
             enabled = true;
             range = 4;
