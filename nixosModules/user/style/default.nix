@@ -24,15 +24,15 @@
       };
       fonts = {
         monospace = {
-          package = settings.monoFontPkg;
+          package = pkgs.${settings}.monoFontPkgName;
           name = settings.monoFont;
         };
         sansSerif = {
-          package = settings.sansFontPkg;
+          package = pkgs.${settings}.sansFontPkgName;
           name = settings.sansFont;
         };
         serif = {
-          package = settings.serifFontPkg;
+          package = pkgs.${settings}.serifFontPkg;
           name = settings.serifFont;
         };
         emoji = {
