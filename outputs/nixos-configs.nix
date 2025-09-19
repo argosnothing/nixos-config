@@ -16,11 +16,15 @@
       allowAliases = true;
       permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
     };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = pkg-config;
+    };
     pkgsStable = import nixpkgs-stable {
       inherit system;
       config = pkg-config;
     };
-    defaultSettings = import ./defaultSettings.nix {};
+    defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
       if builtins.pathExists hostAttrsPath
@@ -29,11 +33,7 @@
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
   in
     nixpkgs.lib.nixosSystem {
-      inherit system;
-      pkgs = import nixpkgs {
-        inherit system;
-        config = pkg-config;
-      };
+      inherit system pkgs;
       specialArgs = {inherit inputs settings pkgsStable;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")

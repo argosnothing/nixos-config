@@ -1,4 +1,4 @@
-{...}: let
+{pkgs, ...}: let
   defaultSettings = {
     system = "x86_64-linux";
     username = "salivala";
@@ -8,11 +8,11 @@
     flakedir = "~/${defaultSettings.homedir}";
     absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
     monoFont = "FiraCode Nerd Font";
-    monoFontPkgName = "nerd-fonts.fira-code";
+    monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";
-    serifFontPkgName = "liberation_ttf";
+    serifFontPkg = pkgs.liberation_ttf;
     sansFont = "Liberation Sans";
-    sansFontPkgName = "liberation_ttf";
+    sansFontPkg = pkgs.liberation_ttf;
     stylixTheme = "catppuccin-mocha"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
     polarity = "dark";
     battery.enable = false;
