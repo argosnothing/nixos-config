@@ -50,9 +50,9 @@
     # Core system packages
     systemPackages = with pkgs; [
       nh
+      fastfetch
       lazygit
       alejandra
-      fastfetch
       sops
       hdparm
       git
