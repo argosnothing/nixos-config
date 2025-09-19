@@ -23,8 +23,8 @@
       then import hostAttrsPath
       else {};
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
-  in {
-    ${hostname} = nixpkgs.lib.nixosSystem {
+  in
+    nixpkgs.lib.nixosSystem {
       inherit system;
       pkgs = {
         inherit system;
@@ -54,15 +54,12 @@
         }
       ];
     };
-  };
 in {
-  flake.nixosConfigurations =
-    mkSystem {
-      hostname = "desktop";
-    }
-    // mkSystem {
-      hostname = "laptop";
-    }
-    // mkSystem {hostname = "p51";}
-    // mkSystem {hostname = "vm";};
+  flake.nixosConfigurations = mapAttrs (hostname: params:
+    mkSystem (params // {inherit hostname;})) {
+    desktop = {};
+    laptop = {};
+    p51 = {};
+    vm = {};
+  };
 }
