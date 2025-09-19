@@ -20,8 +20,8 @@
             config = pkg-cfg;
           };
         };
+        imports = [./outputs];
       };
-      imports = [./outputs];
     };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
