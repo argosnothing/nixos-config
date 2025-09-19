@@ -12,7 +12,7 @@
     settings.monoFontPkg
     settings.sansFontPkg
     settings.serifFontPkg
-    nerd-fonts.symbols-onlyName
+    nerd-fonts.symbols-only
     font-awesome
     material-design-icons
   ];
