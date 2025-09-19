@@ -22,6 +22,10 @@
       if builtins.pathExists hostAttrsPath
       then import hostAttrsPath
       else {};
+    pkgsStable = import nixpkgs-stable {
+      inherit system;
+      config = pkg-config;
+    };
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
   in
     nixpkgs.lib.nixosSystem {
@@ -30,11 +34,7 @@
         inherit system;
         config = pkg-config;
       };
-      pkgsStable = import nixpkgs-stable {
-        inherit system;
-        config = pkg-config;
-      };
-      specialArgs = {inherit inputs settings;};
+      specialArgs = {inherit inputs settings pkgsStable;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
@@ -43,7 +43,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            extraSpecialArgs = {inherit inputs settings;};
+            extraSpecialArgs = {inherit inputs settings pkgsStable;};
             users."${settings.username}" = {
               imports = [
                 inputs.stylix.homeModules.stylix
