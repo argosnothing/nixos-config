@@ -12,31 +12,30 @@
             lsp = {
               enable = true;
             };
-
             languages = {
               enableTreesitter = true;
-            };
 
-            languages.nix = {
-              enable = true;
-              extraDiagnostics.enable = true;
-              format = {
+              nix = {
                 enable = true;
-                type = "alejandra";
+                extraDiagnostics.enable = true;
+                format = {
+                  enable = true;
+                  type = "alejandra";
+                };
+                lsp = {
+                  servers = "nil";
+                  enable = true;
+                };
               };
-              lsp = {
-                servers = "nil";
+
+              markdown = {
                 enable = true;
               };
-            };
 
-            language.markdown = {
-              enable = true;
-            };
-
-            languages.rust = {
-              enable = true;
-              crates.enable = true;
+              rust = {
+                enable = true;
+                crates.enable = true;
+              };
             };
           };
         };
