@@ -39,6 +39,7 @@
         "app.zen_browser.zen"
         "org.freedesktop.Platform.Compat.i386//23.08"
         "org.freedesktop.Platform.GL32.nvidia-580-76-05//1.4"
+        "org.srb2.SRB2"
       ];
 
       overrides = {
