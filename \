@@ -26,11 +26,11 @@
   in
     nixpkgs.lib.nixosSystem {
       inherit system;
-      pkgs = import nixpkgs {
+      pkgs = {
         inherit system;
         config = pkg-config;
       };
-      pkgsStable = import nixpkgs-stable {
+      pkgsStable = import nixpkgs-stable{
         inherit system;
         config = pkg-config;
       };
