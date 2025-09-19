@@ -25,7 +25,8 @@
       config = pkg-config;
     };
 
-    # Default Settings has the parent settings, hosts/attrs.nix for others
+    # Default Settings has the parent settings, hosts/xyz/attrs.nix
+    # boot.firmware needs to be set to either grub or uefi in attrs.nix
     defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
