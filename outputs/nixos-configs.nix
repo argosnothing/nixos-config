@@ -24,6 +24,8 @@
       inherit system;
       config = pkg-config;
     };
+
+    # Default Settings has the parent settings, hosts/attrs.nix for others
     defaultSettings = import ./defaultSettings.nix {inherit pkgs;};
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
@@ -55,6 +57,8 @@
       ];
     };
 in {
+  # Props to https://github.com/Michael-C-Buckley/nixos/blob/master/outputs/nixosConfigurations.nix for the
+  # For this idea.
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
     desktop = {};
