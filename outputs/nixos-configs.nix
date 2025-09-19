@@ -10,22 +10,22 @@
     hostname,
     system ? "x86_64-linux",
   }: let
+    inherit (inputs) home-manager;
     pkg-config = {
       allowUnfree = true;
       allowAliases = true;
       permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
     };
+    pkgsStable = import nixpkgs-stable {
+      inherit system;
+      config = pkg-config;
+    };
     defaultSettings = import ./defaultSettings.nix {};
-    inherit (inputs) home-manager;
     hostAttrsPath = ../hosts + "/${hostname}/attrs.nix";
     hostAttrs =
       if builtins.pathExists hostAttrsPath
       then import hostAttrsPath
       else {};
-    pkgsStable = import nixpkgs-stable {
-      inherit system;
-      config = pkg-config;
-    };
     settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
   in
     nixpkgs.lib.nixosSystem {
