@@ -30,10 +30,6 @@
         inherit system;
         config = pkg-config;
       };
-      pkgsStable = {
-        inherit system;
-        config = pkg-config;
-      };
       specialArgs = {inherit inputs settings;};
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
