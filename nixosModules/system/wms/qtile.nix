@@ -14,7 +14,7 @@
   config = lib.mkIf (config.custom.wm.name == "qtile") {
     wms.qtile.enable = true;
     styles.stylix.enable = true;
-    custom.greeters.tuirgreet = {
+    custom.greeters.tuigreet = {
       enable = true;
       run-command = "qtile";
     };
