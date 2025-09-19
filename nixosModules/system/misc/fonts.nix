@@ -9,10 +9,10 @@
     nerd-fonts.fira-mono #keep
     nerd-fonts.liberation # keep
     nerd-fonts.noto #keep
-    settings.monoFontPkg
-    settings.sansFontPkg
-    settings.serifFontPkg
-    nerd-fonts.symbols-only
+    settings.monoFontPkgName
+    settings.sansFontPkgName
+    settings.serifFontPkgName
+    nerd-fonts.symbols-onlyName
     font-awesome
     material-design-icons
   ];
