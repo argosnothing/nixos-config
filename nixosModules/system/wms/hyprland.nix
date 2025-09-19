@@ -14,8 +14,8 @@
   config = lib.mkIf (config.custom.wm.name == "hyprland") {
     wms.hyprland.enable = true;
     styles.stylix.enable = true;
-    greeters.tuigreet.wm = "Hyprland";
-    greeters.tuigreet.enable = true;
+    custom.greeters.tuigreet.run-command = "Hyprland";
+    custom.greeters.tuigreet.enable = true;
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;

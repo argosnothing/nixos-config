@@ -23,8 +23,8 @@
       dconf.enable = true;
     };
 
-    greeters.tuigreet.wm = "niri-session";
-    greeters.tuigreet.enable = true;
+    custom.greeters.tuigreet.run-command = "niri-session";
+    custom.greeters.tuigreet.enable = true;
     services = {
       xserver.excludePackages = [pkgs.xterm];
       dbus = {
