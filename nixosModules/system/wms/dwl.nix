@@ -19,7 +19,14 @@
     };
     environment.systemPackages = with pkgs; [
       wmenu
+      slurp
+      grim
       dwlb
+      (pkgs.writeShellScriptBin
+        "scrgrb"
+        ''
+          grim -g "$(slurp)"
+        '')
       (pkgs.writeShellScriptBin
         "dwlwbar"
         ''
