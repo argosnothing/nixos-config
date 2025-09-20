@@ -24,7 +24,6 @@ in {
     custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];
     home = {
       packages = with pkgs; [
-        nwg-displays
         wireplumber
         bibata-cursors
         hyprpicker
