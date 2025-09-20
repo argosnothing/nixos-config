@@ -20,11 +20,11 @@
     environment.systemPackages = with pkgs; [
       wmenu
       dwlb
-      pkgs.writeShellScriptBin
-      "dwlwbar"
-      ''
-        dwl -s 'dwlb -font "monospace:size=16"'
-      ''
+      (pkgs.writeShellScriptBin
+        "dwlwbar"
+        ''
+          dwl -s 'dwlb -font "monospace:size=16"'
+        '')
     ];
     programs.dwl = {
       enable = true;
