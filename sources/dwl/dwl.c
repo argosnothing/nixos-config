@@ -2378,6 +2378,7 @@ setfullscreen(Client *c, int fullscreen)
 		 * client positions are set by the user and cannot be recalculated */
 		resize(c, c->prev, 0);
 	}
+  wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 	arrange(c->mon);
 	printstatus();
 }
@@ -2432,6 +2433,22 @@ setmon(Client *c, Monitor *m, uint32_t newtags)
 		setfloating(c, c->isfloating);
 	}
 	focusclient(focustop(selmon), 1);
+}
+
+void
+setopacity(const Arg *arg) {
+  Client *sel = focustop(selmon);
+  if (!sel)
+    return;
+
+  sel->opacity += arg->f;
+  if (sel->opacity > 1.0)
+    sel->opacity = 1.0;
+
+  if (sel->opacity < 0.1)
+    sel->opacity = 0.1;
+
+  wlr_scene_node_for_each_buffer(&sel->scene_surface->node, scenebuffersetopacity, sel);
 }
 
 void
@@ -3145,6 +3162,7 @@ createnotifyx11(struct wl_listener *listener, void *data)
 	c->surface.xwayland = xsurface;
 	c->type = X11;
 	c->bw = client_is_unmanaged(c) ? 0 : borderpx;
+  c->opacity = default_opacity;
 
 	/* Listen to the various events it can emit */
 	LISTEN(&xsurface->events.associate, &c->associate, associatex11);
