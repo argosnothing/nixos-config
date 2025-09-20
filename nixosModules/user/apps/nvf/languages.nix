@@ -32,6 +32,13 @@
                 enable = true;
               };
 
+              clang = {
+                enable = true;
+                dap = {
+                  enable = true;
+                };
+              };
+
               rust = {
                 enable = true;
                 crates.enable = true;
