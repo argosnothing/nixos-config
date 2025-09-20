@@ -16,7 +16,6 @@
     };
   };
   config = lib.mkIf config.custom.greeters.tuigreet.enable {
-    environment.shellAliases = {qtiler = "qtile start -b wayland";};
     custom.persist.root.cache.directories = [
       "/var/cache/tuigreet/lastuser"
     ];

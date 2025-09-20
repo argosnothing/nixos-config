@@ -12,6 +12,14 @@
     };
   };
   config = lib.mkIf (config.custom.wm.name == "qtile") {
+    # aint pretty but hey, it works.
+    environment.systemPackages = [
+      (pkgs.writeShellScriptBin "qtiler"
+        ''
+          #!/bin/sh
+          qtile start -b wayland
+        '')
+    ];
     wms.qtile.enable = true;
     xdg.portal = {
       enable = true;
