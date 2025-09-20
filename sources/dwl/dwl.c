@@ -505,7 +505,8 @@ applyrules(Client *c)
 	}
 
 	c->isfloating |= client_is_float_type(c);
-  //wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
+  if (c->scene_surface)
+    wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 	setmon(c, mon, newtags);
 }
 
