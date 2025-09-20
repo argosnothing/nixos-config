@@ -20,6 +20,7 @@
       inherit system;
       config = pkg-config;
     };
+    # I hate citrix I hate citrix, etc.
     pkgsStable = import nixpkgs-stable {
       inherit system;
       config = pkg-config;
