@@ -17,7 +17,7 @@
       (pkgs.writeShellScriptBin "qtiler"
         ''
           #!/bin/sh
-          qtile start -b wayland
+          qtile start
         '')
     ];
     wms.qtile.enable = true;
@@ -33,6 +33,7 @@
     services = {
       xserver.enable = true;
       xserver.windowManager.qtile = {
+        enable = true;
         extraPackages = python3Packages:
           with python3Packages; [
             qtile-extras
