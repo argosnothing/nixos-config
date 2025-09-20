@@ -11,7 +11,7 @@
       description = "Enable Tuigreet as the greeter service.";
     };
     custom.greeters.tuigreet.run-command = lib.mkOption {
-      type = lib.types.enum ["Hyprland" "niri-session" "qtile start -b wayland"];
+      type = lib.types.enum ["Hyprland" "niri-session" "sh -c 'qtile start -b wayland'"];
       description = "Register a wm to this greeter";
     };
   };
