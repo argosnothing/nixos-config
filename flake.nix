@@ -9,6 +9,8 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
     flake-compat.url = "github:edolstra/flake-compat";
+
+    # SUCKLESS
     dwm = {
       url = ./sources/dwm;
       flake = false;
@@ -19,6 +21,11 @@
     };
     st = {
       url = ./sources/st;
+      flake = false;
+    };
+
+    dwl = {
+      url = ./sources/dwl;
       flake = false;
     };
 

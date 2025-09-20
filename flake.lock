@@ -194,6 +194,18 @@
         "type": "github"
       }
     },
+    "dwl": {
+      "flake": false,
+      "locked": {
+        "path": "sources/dwl",
+        "type": "path"
+      },
+      "original": {
+        "path": "sources/dwl",
+        "type": "path"
+      },
+      "parent": []
+    },
     "dwm": {
       "flake": false,
       "locked": {
@@ -637,6 +649,7 @@
         "caelestia-shell": "caelestia-shell",
         "dank-shell": "dank-shell",
         "dmenu": "dmenu",
+        "dwl": "dwl",
         "dwm": "dwm",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
