@@ -17,6 +17,7 @@
       enable = true;
       run-command = "dwl";
     };
+    environment.systemPackages = with pkgs; [wmenu];
     programs.dwl = {
       enable = true;
       package = pkgs.dwl.overrideAttrs (next: prev: {
