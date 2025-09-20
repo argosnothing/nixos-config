@@ -505,7 +505,7 @@ applyrules(Client *c)
 	}
 
 	c->isfloating |= client_is_float_type(c);
-  //wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
+  wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 	setmon(c, mon, newtags);
 }
 
@@ -2096,7 +2096,7 @@ pointerfocus(Client *c, struct wlr_surface *surface, double sx, double sy,
 void
 scenebuffersetopacity(struct wlr_scene_buffer *buffer, int sx, int sy, void *data) {
   Client *c = data;
-  wlr_scene_buffer_set_opacity(buffer, c->isfullscreen ? 1 : c->opacity);
+  wlr_scene_buffer_set_opacity(buffer, c->opacity);
 }
 
 void
