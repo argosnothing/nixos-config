@@ -18,8 +18,8 @@
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
     styles.stylix.enable = true;
-    displayManager.ly.enable = true;
     services = {
+      displayManager.ly.enable = true;
       xserver.enable = true;
       xserver.windowManager.qtile = {
         enable = true;
