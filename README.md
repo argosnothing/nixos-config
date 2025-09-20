@@ -1,3 +1,7 @@
 # Turtle's NixOS Config
-## Work In Progress
+## Important Files
+- [flake entrypoint](flake.nix)
+- [nixosConfigurations && HM Module](outputs/nixos-configs.nix)
+
+  
 [<img src="media/icons/purple-logo.png"/>](Logo)
