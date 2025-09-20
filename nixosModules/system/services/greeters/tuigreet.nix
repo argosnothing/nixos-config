@@ -11,11 +11,12 @@
       description = "Enable Tuigreet as the greeter service.";
     };
     custom.greeters.tuigreet.run-command = lib.mkOption {
-      type = lib.types.enum ["Hyprland" "niri-session" "sh -c 'qtile start -b wayland'"];
+      type = lib.types.enum ["Hyprland" "niri-session" "qtiler"];
       description = "Register a wm to this greeter";
     };
   };
   config = lib.mkIf config.custom.greeters.tuigreet.enable {
+    environment.shellAliases = {qtiler = "qtile start -b wayland";};
     custom.persist.root.cache.directories = [
       "/var/cache/tuigreet/lastuser"
     ];
