@@ -9,6 +9,9 @@
   };
   config = lib.mkIf (config.custom.wm.name == "dwl") {
     styles.stylix.enable = true;
+    config.custom.apps = {
+      wmenu.enable = true;
+    };
     home.packages = with pkgs; [
     ];
   };

@@ -28,6 +28,10 @@
       url = ./sources/dwl;
       flake = false;
     };
+    wmenu = {
+      url = ./sources/wmenu;
+      flake = false;
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

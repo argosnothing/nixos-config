@@ -18,7 +18,6 @@
       run-command = "dwlwbar";
     };
     environment.systemPackages = with pkgs; [
-      wmenu
       dwlb
       wl-clipboard
       grim
