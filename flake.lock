@@ -666,7 +666,8 @@
         "sops-nix": "sops-nix",
         "st": "st",
         "stylix": "stylix",
-        "systems": "systems_4"
+        "systems": "systems_4",
+        "wmenu": "wmenu"
       }
     },
     "sops-nix": {
@@ -875,6 +876,18 @@
         "repo": "base16-zed",
         "type": "github"
       }
+    },
+    "wmenu": {
+      "flake": false,
+      "locked": {
+        "path": "sources/wmenu",
+        "type": "path"
+      },
+      "original": {
+        "path": "sources/wmenu",
+        "type": "path"
+      },
+      "parent": []
     },
     "xwayland-satellite-stable": {
       "flake": false,
