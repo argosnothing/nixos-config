@@ -2095,7 +2095,7 @@ pointerfocus(Client *c, struct wlr_surface *surface, double sx, double sy,
 
 void
 scenebuffersetopacity(struct wlr_scene_buffer *buffer, int sx, int sy, void *data) {
-  Client *c = data;
+  //Client *c = data;
   //wlr_scene_buffer_set_opacity(buffer, c->opacity);
 }
 
