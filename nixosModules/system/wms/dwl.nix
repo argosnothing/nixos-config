@@ -19,9 +19,10 @@
     };
     programs.dwl = {
       enable = true;
-      package = pkgs.dwl.overrideAttrs {
+      package = pkgs.dwl.overrideAttrs (next: prev: {
         src = inputs.dwl;
-      };
+        buildInputs = prev.buildInputs ++ [pkgs.wlroots_0_19];
+      });
     };
     xdg.portal = {
       enable = true;
