@@ -12,24 +12,13 @@
     };
   };
   config = lib.mkIf (config.custom.wm.name == "qtile") {
-    # aint pretty but hey, it works.
-    environment.systemPackages = [
-      (pkgs.writeShellScriptBin "qtiler"
-        ''
-          #!/bin/sh
-          qtile start
-        '')
-    ];
     wms.qtile.enable = true;
     xdg.portal = {
       enable = true;
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
     styles.stylix.enable = true;
-    custom.greeters.tuigreet = {
-      enable = true;
-      run-command = "qtiler";
-    };
+    displayManager.ly.enable = true;
     services = {
       xserver.enable = true;
       xserver.windowManager.qtile = {
