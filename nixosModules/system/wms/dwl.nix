@@ -24,6 +24,11 @@
       grim
       slurp
       (pkgs.writeShellScriptBin
+        "snip"
+        ''
+          ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slurp}/bin/slurp)" - | wl-copy
+        '')
+      (pkgs.writeShellScriptBin
         "dwlwbar"
         ''
           dwl -s 'dwlb -font "monospace:size=16"'
