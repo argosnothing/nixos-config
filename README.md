@@ -1,6 +1,6 @@
 # Turtle's NixOS Config
 ## Important Files
-- [flake entrypoint](flake.nix)
+- [Flake entrypoint](flake.nix)
 - [nixosConfigurations && HM Module](outputs/nixos-configs.nix)
 
   
