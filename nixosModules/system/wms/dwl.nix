@@ -21,11 +21,8 @@
       wmenu
       dwlb
       wl-clipboard
-      (pkgs.writeShellScriptBin
-        "snip"
-        ''
-          ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slurp}/bin/slurp)" - | wl-copy
-        '')
+      grim
+      slurp
       (pkgs.writeShellScriptBin
         "dwlwbar"
         ''
