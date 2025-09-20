@@ -123,7 +123,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 static const char *termcmd[] = { "kitty", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
-static const char *scrgrbcmd[] = {"scrgrb", NULL};
+static const char *scrgrbcmd[] = {"snip", NULL};
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */

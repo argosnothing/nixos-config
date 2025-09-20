@@ -19,13 +19,12 @@
     };
     environment.systemPackages = with pkgs; [
       wmenu
-      slurp
-      grim
       dwlb
+      wl-clipboard
       (pkgs.writeShellScriptBin
-        "scrgrb"
+        "snip"
         ''
-          grim -g "$(slurp)"
+          ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slurp}/bin/slurp)" - | wl-copy
         '')
       (pkgs.writeShellScriptBin
         "dwlwbar"
