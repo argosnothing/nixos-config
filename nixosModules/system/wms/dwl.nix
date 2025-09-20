@@ -15,9 +15,17 @@
     styles.stylix.enable = true;
     custom.greeters.tuigreet = {
       enable = true;
-      run-command = "dwl";
+      run-command = "dwlwbar";
     };
-    environment.systemPackages = with pkgs; [wmenu];
+    environment.systemPackages = with pkgs; [
+      wmenu
+      dwlb
+      pkgs.writeShellScriptBin
+      "dwlwbar"
+      ''
+        dwl -s 'dwlb -font "monospace:size=16"'
+      ''
+    ];
     programs.dwl = {
       enable = true;
       package = pkgs.dwl.overrideAttrs (next: prev: {
