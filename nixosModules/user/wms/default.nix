@@ -12,6 +12,7 @@ in {
     #./niri can't be arsed figuring this one out rn.
     ./gnome
     ./dwm
+    ./dwl
     ./qtile
   ];
   options = {

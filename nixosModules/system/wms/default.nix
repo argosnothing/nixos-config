@@ -13,6 +13,7 @@ in {
     #./niri.nix bleh
     ./gnome.nix
     ./dwm.nix
+    ./dwl.nix
     ./qtile.nix
   ];
   options = {
