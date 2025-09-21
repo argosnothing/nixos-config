@@ -31,7 +31,7 @@
       (pkgs.writeShellScriptBin
         "dwlwbar"
         ''
-          dwl -s 'dwlb -font "monospace:size=16"'
+          dwl -s 'dwlb -font "serif:size=16"'
         '')
     ];
     programs.dwl = {
