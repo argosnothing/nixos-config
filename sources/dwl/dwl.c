@@ -2950,7 +2950,7 @@ togglescratch(const Arg *arg) {
        if (will_show) {
            if (!c->normal_parent)
                c->normal_parent = c->scene->node.parent;
-           wlr_scene_node_reparent(&c->scene->node, layers[LyrBlock]);
+           wlr_scene_node_reparent(&c->scene->node, layers[LyrFS]);
            wlr_scene_node_raise_to_top(&c->scene->node);
            c->tags = selmon->tagset[selmon->seltags];
            focusclient(c, 1);
