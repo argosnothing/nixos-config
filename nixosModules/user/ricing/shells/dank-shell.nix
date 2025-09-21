@@ -7,7 +7,7 @@
 }: let
   dankShell = inputs.dank-shell;
 in {
-  import = [
+  imports = [
     dankShell.homeModules.dankMaterialShell
   ];
   config = lib.mkIf (config.custom.desktop-shell.name == "dank-shell") {
