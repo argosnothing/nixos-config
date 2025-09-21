@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  settings,
   ...
 }: {
   options = {
@@ -13,6 +14,11 @@
       wmenu.enable = true;
     };
     home.packages = with pkgs; [
+      swaybg
+      (pkgs.writeShellScriptBin "setbg"
+        ''
+          swaybg -m stretch -i ${settings.absuluteflakedir}/media/current-wallpaper.jpg
+        '')
     ];
   };
 }
