@@ -12,7 +12,7 @@ in {
       dankShell.packages.${pkgs.system}.quickshell
       dankShell.packages.${pkgs.system}.dankMaterialShell
       dankShell.packages.${pkgs.system}.default
-      dankShell.homeModules.dankMaterialShell
+      dankShell.homeModules.dankMaterialShell.default
     ];
     custom.desktop-shell = {
       execCommand = "dms run";
