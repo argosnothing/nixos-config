@@ -25,21 +25,22 @@ in {
       grim
       slurp
       wf-recorder
+      somebar
       (pkgs.writeShellScriptBin
         "dwlb-stylix"
         ''
           dwlb \
             -font "${config.stylix.fonts.monospace.name}:size=14" \
-            -active-fg-color '${colors.base05}' \
-            -active-bg-color '${colors.base00}' \
+            -active-fg-color   '${colors.base0E}' \
+            -active-bg-color   '${colors.base00}' \
             -occupied-fg-color '${colors.base0D}' \
             -occupied-bg-color '${colors.base00}' \
-            -inactive-fg-color '${colors.base03}' \
+            -inactive-fg-color '${colors.base04}' \
             -inactive-bg-color '${colors.base00}' \
-            -urgent-fg-color '${colors.base08}' \
-            -urgent-bg-color '${colors.base00}' \
-            -middle-bg-color '${colors.base01}' \
-            -middle-bg-color-selected '${colors.base02}' \
+            -urgent-fg-color   '${colors.base08}' \
+            -urgent-bg-color   '${colors.base00}' \
+            -middle-bg-color           '${colors.base00}' \
+            -middle-bg-color-selected  '${colors.base00}' \
             "$@"
         '')
       (pkgs.writeShellScriptBin
