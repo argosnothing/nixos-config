@@ -22,6 +22,7 @@
       wl-clipboard
       grim
       slurp
+      wf-recorder
       (pkgs.writeShellScriptBin
         "snip"
         ''
