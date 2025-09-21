@@ -19,5 +19,8 @@ in {
       bind = [
       ];
     };
+    programs.dankMaterialShell = {
+      enable = true;
+    };
   };
 }
