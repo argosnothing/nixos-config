@@ -6,7 +6,7 @@
   settings,
   ...
 }: let
-  colors = config.stylix.colors;
+  colors = config.lib.stylix.colors;
 in {
   options = {
     wms.dwl.enable = lib.mkEnableOption "Enable System DWL Session";
