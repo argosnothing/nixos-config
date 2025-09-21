@@ -27,7 +27,7 @@ static const Rule rules[] = {
 	//{ "Gimp_EXAMPLE",     NULL,           0,            1,            -1, 0 }, /* Start on currently visible tags floating, not tiled */
 	//{ "firefox_EXAMPLE",  NULL,           1 << 8,       0,            -1, 0 }, /* Start on ONLY tag "9" */
   { "firefox_scratch",  NULL,             0,            1,            -1,  .scratchkey = 'w' },
-  { NULL,            "discord",           0,            1,            -1,  .scratchkey = 'q' },
+  { "discord",          NULL,           0,            1,            -1,  .scratchkey = 'q' },
   { NULL,            "terminal_scratch",  0,            1,            -1,  .scratchkey = 'e' },
   { NULL,            "spotify",           0,            1,            -1,  .scratchkey = 's' },
 };
