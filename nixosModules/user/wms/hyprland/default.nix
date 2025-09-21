@@ -10,7 +10,7 @@
 in {
   imports = [
     ./config
-    inputs.end-4-hyprland.homeManagerModules.dots-hyprland
+    inputs.end-4-hyprland.homeManagerModules.default
   ];
   options = {
     wms.hyprland.enable = lib.mkOption {
