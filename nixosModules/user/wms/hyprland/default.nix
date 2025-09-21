@@ -18,7 +18,7 @@ in {
     };
   };
   config = lib.mkIf (config.custom.wm.name == "hyprland") {
-    custom.desktop-shell.name = "dank-shell";
+    custom.desktop-shell.name = "caelestia-shell";
     wms.hyprland.enable = true;
     styles.stylix.enable = true;
     custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];
