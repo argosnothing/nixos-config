@@ -18,7 +18,7 @@ in {
     };
   };
   config = lib.mkIf (config.custom.wm.name == "hyprland") {
-    custom.desktop-shell.name = "noctalia-shell";
+    custom.desktop-shell.name = "dank-shell";
     wms.hyprland.enable = true;
     styles.stylix.enable = true;
     custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];

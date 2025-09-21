@@ -13,7 +13,7 @@ in {
       type = nullOr (enum [
         "noctalia-shell"
         "caelestia-shell"
-        #"dank-shell" https://github.com/AvengeMedia/DankMaterialShell/issues/186#issuecomment-3275793282
+        "dank-shell" #https://github.com/AvengeMedia/DankMaterialShell/issues/186#issuecomment-3275793282
       ]);
       description = "Add a shell to spice up compositor";
     };
