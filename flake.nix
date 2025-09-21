@@ -85,6 +85,10 @@
       inputs.quickshell.follows = "quickshell";
     };
 
+    end-4-hyprland = {
+      url = "github:celesrenata/end-4-flakes";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

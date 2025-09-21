@@ -3,12 +3,14 @@
   config,
   lib,
   settings,
+  inputs,
   ...
 }: let
   hyprlandLocal = ".local/share/hyprland/";
 in {
   imports = [
     ./config
+    inputs.end-4-hyprland.homeManagerModules.dots-hyprland
   ];
   options = {
     wms.hyprland.enable = lib.mkOption {
@@ -18,7 +20,7 @@ in {
     };
   };
   config = lib.mkIf (config.custom.wm.name == "hyprland") {
-    custom.desktop-shell.name = "noctalia-shell";
+    #custom.desktop-shell.name = "noctalia-shell";
     wms.hyprland.enable = true;
     styles.stylix.enable = true;
     custom.persist.home.files = ["${hyprlandLocal}/lastNag" "${hyprlandLocal}/lastVersion"];
@@ -80,6 +82,32 @@ in {
         NIXOS_OZONE_WL = "1";
       };
     };
+
+    programs.dots-hyprland = {
+      enable = true;
+      style = "illogical-impulse";
+
+      components = {
+        hyprland = true;
+        quickshell = true;
+        theming = false; # Phase 4
+        ai = false; # Phase 4
+        audio = true;
+      };
+
+      features = {
+        overview = true;
+        sidebar = false; # Phase 4
+        notifications = true;
+        mediaControls = true;
+      };
+
+      keybinds = {
+        modifier = "SUPER";
+        terminal = "foot";
+      };
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
