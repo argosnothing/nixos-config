@@ -1,6 +1,7 @@
 /*
  * See LICENSE file for copyright and license details.
  */
+#include "wayland-server-protocol.h"
 #include <getopt.h>
 #include <libinput.h>
 #include <linux/input-event-codes.h>
@@ -85,6 +86,7 @@
 enum { CurNormal, CurPressed, CurMove, CurResize }; /* cursor */
 enum { XDGShell, LayerShell, X11 }; /* client types */
 enum { LyrBg, LyrBottom, LyrTile, LyrFloat, LyrTop, LyrFS, LyrOverlay, LyrBlock, NUM_LAYERS }; /* scene layers */
+static int combo = 0;
 
 typedef union {
 	int i;
@@ -340,6 +342,8 @@ static void togglefloating(const Arg *arg);
 static void togglefullscreen(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
+static void combotag(const Arg *arg);
+static void comboview(const Arg *arg);
 static void unlocksession(struct wl_listener *listener, void *data);
 static void unmaplayersurfacenotify(struct wl_listener *listener, void *data);
 static void unmapnotify(struct wl_listener *listener, void *data);
@@ -1650,9 +1654,13 @@ keypress(struct wl_listener *listener, void *data)
 
 	/* On _press_ if there is no active screen locker,
 	 * attempt to process a compositor keybinding. */
-	if (!locked && event->state == WL_KEYBOARD_KEY_STATE_PRESSED) {
-		for (i = 0; i < nsyms; i++)
-			handled = keybinding(mods, syms[i]) || handled;
+	if (!locked) {
+    if (event->state == WL_KEYBOARD_KEY_STATE_PRESSED) {
+      for (i = 0; i < nsyms; i++)
+        handled = keybinding(mods, syms[i]) || handled;
+    } else if (event->state == WL_KEYBOARD_KEY_STATE_RELEASED) {
+      combo = 0;
+    }
 	}
 
 	if (handled && group->wlr_group->keyboard.repeat_info.delay > 0) {
@@ -2780,6 +2788,39 @@ toggletag(const Arg *arg)
 	focusclient(focustop(selmon), 1);
 	arrange(selmon);
 	printstatus();
+}
+
+void combotag(const Arg *arg)
+{
+    Client *c = focustop(selmon);
+    uint32_t newtags = arg->ui & TAGMASK;
+    if (!c || !newtags) return;
+
+    if (combo)
+        c->tags |= newtags;
+    else {
+        combo = 1;
+        c->tags = newtags;
+    }
+    focusclient(focustop(selmon), 1);
+    arrange(selmon);
+    printstatus();
+}
+
+void comboview(const Arg *arg)
+{
+    uint32_t newtags = arg->ui & TAGMASK;
+    if (!newtags || !selmon) return;
+
+    if (combo)
+        selmon->tagset[selmon->seltags] |= newtags;
+    else {
+        combo = 1;
+        selmon->tagset[selmon->seltags] = newtags;
+    }
+    focusclient(focustop(selmon), 1);
+    arrange(selmon);
+    printstatus();
 }
 
 void
