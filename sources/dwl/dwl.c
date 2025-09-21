@@ -1,12 +1,14 @@
 /*
  * See LICENSE file for copyright and license details.
  */
+#include "sys/types.h"
 #include "wayland-server-protocol.h"
 #include <getopt.h>
 #include <libinput.h>
 #include <linux/input-event-codes.h>
 #include <math.h>
 #include <signal.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -86,7 +88,12 @@
 enum { CurNormal, CurPressed, CurMove, CurResize }; /* cursor */
 enum { XDGShell, LayerShell, X11 }; /* client types */
 enum { LyrBg, LyrBottom, LyrTile, LyrFloat, LyrTop, LyrFS, LyrOverlay, LyrBlock, NUM_LAYERS }; /* scene layers */
+
+/* turtle globals */
 static int combo = 0;
+static pid_t *autostart_pids;
+static size_t autostart_len;
+//
 
 typedef union {
 	int i;
@@ -250,6 +257,7 @@ static void arrange(Monitor *m);
 static void arrangelayer(Monitor *m, struct wl_list *list,
 		struct wlr_box *usable_area, int exclusive);
 static void arrangelayers(Monitor *m);
+static void artostartexec(void);
 static void axisnotify(struct wl_listener *listener, void *data);
 static void buttonpress(struct wl_listener *listener, void *data);
 static void chvt(const Arg *arg);
@@ -480,6 +488,24 @@ applybounds(Client *c, struct wlr_box *bbox)
 }
 
 void
+autostartexec(void) {
+  const char *const *p;
+  size_t i = 0;
+  for (p = autostart; *p; autostart_len++, p++)
+    while (*++p);
+
+  autostart_pids = calloc(autostart_len, sizeof(pid_t));
+  for (p = autostart; *p; i++, p++) {
+    if ((autostart_pids[i] = fork()) == 0) {
+      setsid();
+      execvp(*p, (char *const *)p);
+      die("dwl: execvp %s:", *p);
+    }
+    while (*++p);
+  }
+}
+
+void
 applyrules(Client *c)
 {
 	/* rule matching */
@@ -706,12 +732,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
 void
 cleanup(void)
 {
+  size_t i;
 	cleanuplisteners();
 #ifdef XWAYLAND
 	wlr_xwayland_destroy(xwayland);
 	xwayland = NULL;
 #endif
 	wl_display_destroy_clients(dpy);
+
+  for (i = 0; i < autostart_len; i++) {
+    if (0 < autostart_pids[i]) {
+      kill(autostart_pids[i], SIGTERM);
+      waitpid(autostart_pids[i], NULL, 0);
+    }
+  }
+
 	if (child_pid > 0) {
 		kill(-child_pid, SIGTERM);
 		waitpid(child_pid, NULL, 0);
@@ -2265,6 +2300,7 @@ run(char *startup_cmd)
 		die("startup: backend_start");
 
 	/* Now that the socket exists and the backend is started, run the startup command */
+  autostartexec();
 	if (startup_cmd) {
 		int piperw[2];
 		if (pipe(piperw) < 0)
