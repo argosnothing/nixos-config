@@ -13,6 +13,22 @@
     custom.apps = {
       wmenu.enable = true;
     };
+    systemd.user.services.setbg = {
+      Unit = {
+        Description = "Set Wallpaper";
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStart = "setbg";
+        Environment = ["XDG_RUNTIME_DIR=%t"];
+      };
+    };
+    systemd.user.paths."setbg-on-wayland" = {
+      Unit.Description = "Run setbg when a wayland socket comes up";
+      Path.PathExistsGlob = "%t/wayland-*";
+      Install.WantedBy = ["default.target"];
+      Path.Unit = "setbg.service";
+    };
     home.packages = with pkgs; [
       swaybg
       (pkgs.writeShellScriptBin "setbg"
