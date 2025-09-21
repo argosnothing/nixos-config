@@ -931,6 +931,12 @@ commitnotify(struct wl_listener *listener, void *data)
 	}
 
 	resize(c, c->geom, (c->isfloating && !c->isfullscreen));
+  /* keep scratch above fullscreen every commit */
+  if (c->scratchkey &&
+      VISIBLEON(c, selmon) &&
+      c->scene->node.parent == layers[LyrBlock]) {
+      wlr_scene_node_raise_to_top(&c->scene->node);
+  }
 
 	/* mark a pending resize as completed */
 	if (c->resize && c->resize <= c->surface.xdg->current.configure_serial)
@@ -2944,8 +2950,7 @@ togglescratch(const Arg *arg) {
        if (will_show) {
            if (!c->normal_parent)
                c->normal_parent = c->scene->node.parent;
-           /* move above everything (incl. fullscreen) */
-           wlr_scene_node_reparent(&c->scene->node, scratch_overlay);
+           wlr_scene_node_reparent(&c->scene->node, layers[LyrBlock]);
            wlr_scene_node_raise_to_top(&c->scene->node);
            c->tags = selmon->tagset[selmon->seltags];
            focusclient(c, 1);
