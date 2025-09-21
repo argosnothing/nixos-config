@@ -23,10 +23,13 @@ static int log_level = WLR_ERROR;
 
 /* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
 static const Rule rules[] = {
-	/* app_id             title       tags mask     isfloating   monitor */
-	/* examples: */
-	{ "Gimp_EXAMPLE",     NULL,       0,            1,            -1 }, /* Start on currently visible tags floating, not tiled */
-	{ "firefox_EXAMPLE",  NULL,       1 << 8,       0,            -1 }, /* Start on ONLY tag "9" */
+	/* app_id             title             tags mask     isfloating   monitor  scratchkey*/
+	//{ "Gimp_EXAMPLE",     NULL,           0,            1,            -1, 0 }, /* Start on currently visible tags floating, not tiled */
+	//{ "firefox_EXAMPLE",  NULL,           1 << 8,       0,            -1, 0 }, /* Start on ONLY tag "9" */
+  { "firefox_scratch",  NULL,             0,            1,            -1,  .scratchkey = 'w' },
+  { NULL,            "discord",           0,            1,            -1,  .scratchkey = 'q' },
+  { NULL,            "terminal_scratch",  0,            1,            -1,  .scratchkey = 'e' },
+  { NULL,            "spotify",           0,            1,            -1,  .scratchkey = 's' },
 };
 
 /* layout(s) */
@@ -127,6 +130,11 @@ static const char *termcmd[] = { "kitty", NULL };
 static const char *menucmd[] = { "wmenu-run", "-l", "10", NULL };
 static const char *screenshotcmd[] = {"/run/current-system/sw/bin/snip", NULL };
 static const char *const autostart[] = { "setbg", NULL, NULL };
+static const char *termscratch[] = { "e", "kitty", "-T", "terminal_scratch", NULL};
+static const char *spotifyscratch[] = {"s", "spotify", NULL};
+static const char *discordscratch[] = {"q", "discord", NULL};
+static const char *firefoxscratch[] = {"w", "env", "MOZ_ENABLE_WAYLAND=1", "MOZ_APP_ID=firefox_scratch", "firefox", NULL};
+
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -134,6 +142,10 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_S,          spawn,          {.v = screenshotcmd} },
+  { MODKEY,                    XKD_KEY_e,          togglescratch,  {.v = termscratch}},
+  { MODKEY,                    XKD_KEY_w,          togglescratch,  {.v = firefoxscratch}},
+  { MODKEY,                    XKD_KEY_s,          togglescratch,  {.v = spotifyscratch}},
+  { MODKEY,                    XKD_KEY_q,          togglescratch,  {.v = discordscratch}},
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
