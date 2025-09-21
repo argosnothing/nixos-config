@@ -2938,48 +2938,43 @@ togglescratch(const Arg *arg) {
         }
     }
 
-    if (found) {
-        int will_show = !VISIBLEON(c, selmon);
+     if (found) {
+       int will_show = !VISIBLEON(c, selmon);
 
-        if (will_show) {
-            if (!c->normal_parent)
-                c->normal_parent = c->scene->node.parent;
+       if (will_show) {
+           if (!c->normal_parent)
+               c->normal_parent = c->scene->node.parent;
+           /* move above everything (incl. fullscreen) */
+           wlr_scene_node_reparent(&c->scene->node, scratch_overlay);
+           wlr_scene_node_raise_to_top(&c->scene->node);
+           c->tags = selmon->tagset[selmon->seltags];
+           focusclient(c, 1);
+       } else {
+           /* restore original parent */
+           struct wlr_scene_tree *dst = c->normal_parent ? c->normal_parent : &scene->tree;
+           wlr_scene_node_reparent(&c->scene->node, dst);
+           c->tags = 0;
+           focusclient(focustop(selmon), 1);
+       }
+       arrange(selmon);
+   } else {
+       spawnscratch(arg);
+       Client *nc;
+       wl_list_for_each(nc, &clients, link) {
+           if (nc->scratchkey == ((char**)arg->v)[0][0]) {
+               if (!nc->normal_parent)
+                   nc->normal_parent = nc->scene->node.parent;
+               wlr_scene_node_reparent(&nc->scene->node, scratch_overlay);
+               wlr_scene_node_raise_to_top(&nc->scene->node);
+               nc->tags = selmon->tagset[selmon->seltags];
+               focusclient(nc, 1);
+               arrange(selmon);
+               break;
+           }
+       }
+   }
 
-            /* draw above fullscreen: move into overlay and raise */
-            wlr_scene_node_reparent(&c->scene->node, scratch_overlay);
-            wlr_scene_node_raise_to_top(&c->scene->node);
 
-            c->tags = selmon->tagset[selmon->seltags];
-            focusclient(c, 1);
-        } else {
-            /* move back to the client’s original parent */
-            struct wlr_scene_tree *dst =
-                c->normal_parent ? c->normal_parent : &scene->tree;
-            wlr_scene_node_reparent(&c->scene->node, dst);
-            c->tags = 0;
-            focusclient(focustop(selmon), 1);
-        }
-        arrange(selmon);
-    } else {
-        spawnscratch(arg);
-
-        /* after spawning, grab the scratch and lift it */
-        Client *nc;
-        wl_list_for_each(nc, &clients, link) {
-            if (nc->scratchkey == key) {
-                if (!nc->normal_parent)
-                    nc->normal_parent = nc->scene->node.parent;
-
-                wlr_scene_node_reparent(&nc->scene->node, scratch_overlay);
-                wlr_scene_node_raise_to_top(&nc->scene->node);
-
-                nc->tags = selmon->tagset[selmon->seltags];
-                focusclient(nc, 1);
-                arrange(selmon);
-                break;
-            }
-        }
-    }
 }
 
 
