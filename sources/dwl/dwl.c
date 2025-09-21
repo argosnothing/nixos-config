@@ -321,7 +321,6 @@ static void requeststartdrag(struct wl_listener *listener, void *data);
 static void requestmonstate(struct wl_listener *listener, void *data);
 static void resize(Client *c, struct wlr_box geo, int interact);
 static void run(char *startup_cmd);
-static void scenebuffersetopacity(struct wlr_scene_buffer *buffer, int sx, int sy, void *user_data);
 static void setcursor(struct wl_listener *listener, void *data);
 static void setcursorshape(struct wl_listener *listener, void *data);
 static void setfloating(Client *c, int floating);
@@ -329,7 +328,6 @@ static void setfullscreen(Client *c, int fullscreen);
 static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setmon(Client *c, Monitor *m, uint32_t newtags);
-static void setopacity(const Arg *arg);
 static void setpsel(struct wl_listener *listener, void *data);
 static void setsel(struct wl_listener *listener, void *data);
 static void setup(void);
@@ -505,8 +503,6 @@ applyrules(Client *c)
 	}
 
 	c->isfloating |= client_is_float_type(c);
-  if (c->scene_surface)
-    wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 	setmon(c, mon, newtags);
 }
 
@@ -881,8 +877,6 @@ commitnotify(struct wl_listener *listener, void *data)
 				WLR_XDG_TOPLEVEL_WM_CAPABILITIES_FULLSCREEN);
 		if (c->decoration)
 			requestdecorationmode(&c->set_decoration_mode, c->decoration);
-    if (c->scene_surface)
-      wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 		wlr_xdg_toplevel_set_size(c->surface.xdg->toplevel, 0, 0);
 		return;
 	}
@@ -2095,12 +2089,6 @@ pointerfocus(Client *c, struct wlr_surface *surface, double sx, double sy,
 }
 
 void
-scenebuffersetopacity(struct wlr_scene_buffer *buffer, int sx, int sy, void *data) {
-  Client *c = data;
-  wlr_scene_buffer_set_opacity(buffer, 0.5);
-}
-
-void
 printstatus(void)
 {
 	Monitor *m = NULL;
@@ -2161,7 +2149,9 @@ quit(const Arg *arg)
 {
 	wl_display_terminate(dpy);
 }
-
+static void setopacity(struct wlr_scene_buffer *buf, int sx, int sy, void *data) {
+  wlr_scene_buffer_set_opacity(buf, default_opacity);
+}
 void
 rendermon(struct wl_listener *listener, void *data)
 {
@@ -2177,6 +2167,8 @@ rendermon(struct wl_listener *listener, void *data)
 	wl_list_for_each(c, &clients, link) {
 		if (c->resize && !c->isfloating && client_is_rendered_on_mon(c, m) && !client_is_stopped(c))
 			goto skip;
+
+    wlr_scene_node_for_each_buffer(&c->scene_surface->node, setopacity, c);
 	}
 
 	wlr_scene_output_commit(m->scene_output, NULL);
@@ -2379,7 +2371,6 @@ setfullscreen(Client *c, int fullscreen)
 		 * client positions are set by the user and cannot be recalculated */
 		resize(c, c->prev, 0);
 	}
-  wlr_scene_node_for_each_buffer(&c->scene_surface->node, scenebuffersetopacity, c);
 	arrange(c->mon);
 	printstatus();
 }
@@ -2436,21 +2427,6 @@ setmon(Client *c, Monitor *m, uint32_t newtags)
 	focusclient(focustop(selmon), 1);
 }
 
-void
-setopacity(const Arg *arg) {
-  Client *sel = focustop(selmon);
-  if (!sel)
-    return;
-
-  sel->opacity += arg->f;
-  if (sel->opacity > 1.0)
-    sel->opacity = 1.0;
-
-  if (sel->opacity < 0.1)
-    sel->opacity = 0.1;
-
-  wlr_scene_node_for_each_buffer(&sel->scene_surface->node, scenebuffersetopacity, sel);
-}
 
 void
 setpsel(struct wl_listener *listener, void *data)
