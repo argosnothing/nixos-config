@@ -930,23 +930,29 @@ commitnotify(struct wl_listener *listener, void *data)
 	}
 
 	resize(c, c->geom, (c->isfloating && !c->isfullscreen));
-  /* keep scratch above fullscreen every commit */
-  if (c->scratchkey) {                           // A: scratch commits
+  /* --- keep above fullscreen while resizing / committing --- */
+/* A) when THIS client is the scratch */
+if (c->scratchkey &&
+    client_surface(c)->mapped &&      /* surface is mapped */
+    c->scene) {                       /* scene exists */
     if (c->scene->node.parent != layers[LyrFS])
         wlr_scene_node_reparent(&c->scene->node, layers[LyrFS]);
     wlr_scene_node_raise_to_top(&c->scene->node);
-  }
+}
 
-  if (c->isfullscreen) {                         // B: fullscreen commits
-      Client *s;
-      wl_list_for_each(s, &clients, link) {
-          if (!s->scratchkey) continue;
-          if (!VISIBLEON(s, selmon)) continue;
-          if (s->scene->node.parent != layers[LyrFS])
-              wlr_scene_node_reparent(&s->scene->node, layers[LyrFS]);
-          wlr_scene_node_raise_to_top(&s->scene->node);
-      }
-  }
+/* B) when THIS client is fullscreen, nudge any visible scratch */
+if (c->isfullscreen) {
+    Client *s, *tmp;
+    wl_list_for_each_safe(s, tmp, &clients, link) {
+        if (!s->scratchkey) continue;
+        if (!client_surface(s)->mapped || !s->scene) continue;
+        if (!VISIBLEON(s, selmon)) continue;
+
+        if (s->scene->node.parent != layers[LyrFS])
+            wlr_scene_node_reparent(&s->scene->node, layers[LyrFS]);
+        wlr_scene_node_raise_to_top(&s->scene->node);
+    }
+}
 
 	/* mark a pending resize as completed */
 	if (c->resize && c->resize <= c->surface.xdg->current.configure_serial)
