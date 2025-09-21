@@ -29,18 +29,26 @@ in {
         "dwlb-stylix"
         ''
           dwlb \
-            -font "${config.stylix.fonts.monospace.name}:size=14" \
-            -active-fg-color '${colors.base05}' \
-            -active-bg-color '${colors.base00}' \
-            -occupied-fg-color '${colors.base0D}' \
-            -occupied-bg-color '${colors.base00}' \
-            -inactive-fg-color '${colors.base03}' \
-            -inactive-bg-color '${colors.base00}' \
-            -urgent-fg-color '${colors.base08}' \
-            -urgent-bg-color '${colors.base00}' \
-            -middle-bg-color '${colors.base01}' \
-            -middle-bg-color-selected '${colors.base02}' \
-            "$@"
+             -font "${mono}:size=14" \
+             -vertical-padding 6 \
+             \
+             # keep bar background flat
+             -active-bg-color  '${c.base00}' \
+             -occupied-bg-color '${c.base00}' \
+             -inactive-bg-color '${c.base00}' \
+             -urgent-bg-color   '${c.base00}' \
+             \
+             # accents
+             -active-fg-color   '${c.base0D}'  \  # blue for active tag
+             -occupied-fg-color '${c.base0A}'  \  # yellow for occupied
+             -inactive-fg-color '${c.base03}'  \  # subtle gray
+             -urgent-fg-color   '${c.base08}'  \  # red for urgent
+             \
+             # status (middle) background SAME as bar to remove the “block”
+             -middle-bg-color           '${c.base00}' \
+             -middle-bg-color-selected  '${c.base00}' \
+             \
+             "$@"
         '')
       (pkgs.writeShellScriptBin
         "snip"
