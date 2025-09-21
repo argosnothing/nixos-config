@@ -93,7 +93,6 @@ enum { LyrBg, LyrBottom, LyrTile, LyrFloat, LyrTop, LyrFS, LyrOverlay, LyrBlock,
 static int combo = 0;
 static pid_t *autostart_pids;
 static size_t autostart_len;
-static struct wlr_scene_tree *scratch_overlay;
 //
 
 typedef union {
@@ -932,10 +931,21 @@ commitnotify(struct wl_listener *listener, void *data)
 
 	resize(c, c->geom, (c->isfloating && !c->isfullscreen));
   /* keep scratch above fullscreen every commit */
-  if (c->scratchkey &&
-      VISIBLEON(c, selmon) &&
-      c->scene->node.parent == layers[LyrFS]) {
-      wlr_scene_node_raise_to_top(&c->scene->node);
+  if (c->scratchkey) {                           // A: scratch commits
+    if (c->scene->node.parent != layers[LyrFS])
+        wlr_scene_node_reparent(&c->scene->node, layers[LyrFS]);
+    wlr_scene_node_raise_to_top(&c->scene->node);
+  }
+
+  if (c->isfullscreen) {                         // B: fullscreen commits
+      Client *s;
+      wl_list_for_each(s, &clients, link) {
+          if (!s->scratchkey) continue;
+          if (!VISIBLEON(s, selmon)) continue;
+          if (s->scene->node.parent != layers[LyrFS])
+              wlr_scene_node_reparent(&s->scene->node, layers[LyrFS]);
+          wlr_scene_node_raise_to_top(&s->scene->node);
+      }
   }
 
 	/* mark a pending resize as completed */
@@ -2631,8 +2641,6 @@ setup(void)
 		layers[i] = wlr_scene_tree_create(&scene->tree);
 	drag_icon = wlr_scene_tree_create(&scene->tree);
 	wlr_scene_node_place_below(&drag_icon->node, &layers[LyrBlock]->node);
-  scratch_overlay = wlr_scene_tree_create(&scene->tree);
-  wlr_scene_node_raise_to_top(&scratch_overlay->node);
 
 	/* Autocreates a renderer, either Pixman, GLES2 or Vulkan for us. The user
 	 * can also specify a renderer using the WLR_RENDERER env var.
@@ -2969,7 +2977,7 @@ togglescratch(const Arg *arg) {
            if (nc->scratchkey == ((char**)arg->v)[0][0]) {
                if (!nc->normal_parent)
                    nc->normal_parent = nc->scene->node.parent;
-               wlr_scene_node_reparent(&nc->scene->node, scratch_overlay);
+               wlr_scene_node_reparent(&nc->scene->node, layers[LyrFS]);
                wlr_scene_node_raise_to_top(&nc->scene->node);
                nc->tags = selmon->tagset[selmon->seltags];
                focusclient(nc, 1);
