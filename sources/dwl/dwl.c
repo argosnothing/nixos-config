@@ -2933,11 +2933,21 @@ togglescratch(const Arg *arg) {
   }
  
  	if (found) {
+    if (c->scene)
+      wlr_scene_node_raise_to_top(&c->scene->node);
  		c->tags = VISIBLEON(c, selmon) ? 0 : selmon->tagset[selmon->seltags];
  		focusclient(c->tags == 0 ? focustop(selmon) : c, 1);
  		arrange(selmon);
  	} else{
  		spawnscratch(arg);
+    Client *nc;
+    wl_list_for_each(nc, &clients, link) {
+			if (nc->scratchkey == ((char**)arg->v)[0][0]) {
+				if (nc->scene)
+					wlr_scene_node_raise_to_top(&nc->scene->node);
+				break;
+			}
+		}
  	}
 }
 
