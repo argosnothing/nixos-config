@@ -93,6 +93,7 @@ enum { LyrBg, LyrBottom, LyrTile, LyrFloat, LyrTop, LyrFS, LyrOverlay, LyrBlock,
 static int combo = 0;
 static pid_t *autostart_pids;
 static size_t autostart_len;
+static struct wlr_scene_tree *scratch_overlay;
 //
 
 typedef union {
@@ -150,6 +151,7 @@ typedef struct {
   float opacity;
 	uint32_t resize; /* configure serial of a pending resize */
   char scratchkey;
+  struct wlr_scene_tree *normal_parent;
 } Client;
 
 typedef struct {
@@ -1888,6 +1890,7 @@ mapnotify(struct wl_listener *listener, void *data)
 
 	/* Create scene tree for this client and its border */
 	c->scene = client_surface(c)->data = wlr_scene_tree_create(layers[LyrTile]);
+  c->normal_parent = c->scene->node.parent;
 	/* Enabled later by a call to arrange() */
 	wlr_scene_node_set_enabled(&c->scene->node, client_is_unmanaged(c));
 	c->scene_surface = c->type == XDGShell
@@ -2622,6 +2625,8 @@ setup(void)
 		layers[i] = wlr_scene_tree_create(&scene->tree);
 	drag_icon = wlr_scene_tree_create(&scene->tree);
 	wlr_scene_node_place_below(&drag_icon->node, &layers[LyrBlock]->node);
+  scratch_overlay = wlr_scene_tree_create(&scene->tree);
+  wlr_scene_node_raise_to_top(&scratch_overlay->node);
 
 	/* Autocreates a renderer, either Pixman, GLES2 or Vulkan for us. The user
 	 * can also specify a renderer using the WLR_RENDERER env var.
@@ -2921,35 +2926,63 @@ togglefullscreen(const Arg *arg)
 
 void
 togglescratch(const Arg *arg) {
-  Client *c;
- 	unsigned int found = 0;
- 
- 	/* search for first window that matches the scratchkey */
- 	wl_list_for_each(c, &clients, link) {
- 		if (c->scratchkey == ((char**)arg->v)[0][0]) {
- 			found = 1;
- 			break;
- 		}
-  }
- 
- 	if (found) {
-    if (c->scene)
-      wlr_scene_node_raise_to_top(&c->scene->node);
- 		c->tags = VISIBLEON(c, selmon) ? 0 : selmon->tagset[selmon->seltags];
- 		focusclient(c->tags == 0 ? focustop(selmon) : c, 1);
- 		arrange(selmon);
- 	} else{
- 		spawnscratch(arg);
-    Client *nc;
-    wl_list_for_each(nc, &clients, link) {
-			if (nc->scratchkey == ((char**)arg->v)[0][0]) {
-				if (nc->scene)
-					wlr_scene_node_raise_to_top(&nc->scene->node);
-				break;
-			}
-		}
- 	}
+    Client *c;
+    unsigned int found = 0;
+    char key = ((char**)arg->v)[0][0];
+
+    /* search for first window that matches the scratchkey */
+    wl_list_for_each(c, &clients, link) {
+        if (c->scratchkey == key) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found) {
+        int will_show = !VISIBLEON(c, selmon);
+
+        if (will_show) {
+            if (!c->normal_parent)
+                c->normal_parent = c->scene->node.parent;
+
+            /* draw above fullscreen: move into overlay and raise */
+            wlr_scene_node_reparent(&c->scene->node, scratch_overlay);
+            wlr_scene_node_raise_to_top(&c->scene->node);
+
+            c->tags = selmon->tagset[selmon->seltags];
+            focusclient(c, 1);
+        } else {
+            /* move back to the client’s original parent */
+            struct wlr_scene_tree *dst =
+                c->normal_parent ? c->normal_parent : &scene->tree;
+            wlr_scene_node_reparent(&c->scene->node, dst);
+            c->tags = 0;
+            focusclient(focustop(selmon), 1);
+        }
+        arrange(selmon);
+    } else {
+        spawnscratch(arg);
+
+        /* after spawning, grab the scratch and lift it */
+        Client *nc;
+        wl_list_for_each(nc, &clients, link) {
+            if (nc->scratchkey == key) {
+                if (!nc->normal_parent)
+                    nc->normal_parent = nc->scene->node.parent;
+
+                wlr_scene_node_reparent(&nc->scene->node, scratch_overlay);
+                wlr_scene_node_raise_to_top(&nc->scene->node);
+
+                nc->tags = selmon->tagset[selmon->seltags];
+                focusclient(nc, 1);
+                arrange(selmon);
+                break;
+            }
+        }
+    }
 }
+
+
 
 void
 toggletag(const Arg *arg)
