@@ -934,7 +934,7 @@ commitnotify(struct wl_listener *listener, void *data)
   /* keep scratch above fullscreen every commit */
   if (c->scratchkey &&
       VISIBLEON(c, selmon) &&
-      c->scene->node.parent == layers[LyrBlock]) {
+      c->scene->node.parent == layers[LyrFS]) {
       wlr_scene_node_raise_to_top(&c->scene->node);
   }
 
