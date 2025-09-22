@@ -13,6 +13,9 @@ Big WiP but hopefully shouldn't change too much structurally.
     -  refer to [user/wms/default.nix](nixosModules/user/wms/default.nix) and [system/wms/default.nix](nixosModules/system/wms/default.nix) respectively
 -  critical components ( if i don't have these i can't boot/sys won't function ) are setup under system/critical 
 
+## Bonus Memes
+- Dwl Option is a custom version of dwl im working on with scratchpad/opacity support
+  -  maybe more in the future idk
 
 ## Important Files
 - [Flake entrypoint](flake.nix)
