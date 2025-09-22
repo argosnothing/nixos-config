@@ -69,7 +69,6 @@ in {
             pkgs.wlroots_0_19
             pkgs.libxcb
             pkgs.libxcb-wm
-            pkgs.wlr
             pkgs.xwayland-run
           ];
       });
