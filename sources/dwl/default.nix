@@ -13,6 +13,8 @@ pkgs.mkShell {
     libinput
     pixman
     xorg.libX11
+    libxcb
+    libxcb-wm
     wayland
     wayland-protocols
     wayland-scanner

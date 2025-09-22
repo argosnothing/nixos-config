@@ -63,7 +63,15 @@ in {
       enable = true;
       package = pkgs.dwl.overrideAttrs (next: prev: {
         src = inputs.dwl;
-        buildInputs = prev.buildInputs ++ [pkgs.wlroots_0_19];
+        buildInputs =
+          prev.buildInputs
+          ++ [
+            pkgs.wlroots_0_19
+            pkgs.libxcb
+            pkgs.libxcb-wm
+            pkgs.wlr
+            pkgs.xwayland-run
+          ];
       });
     };
     xdg.portal = {
