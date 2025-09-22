@@ -7,6 +7,8 @@
 }: let
   dankShell = inputs.dank-shell;
 in {
+  imports = [
+  ];
   config = lib.mkIf (config.custom.desktop-shell.name == "dank-shell") {
     home.packages = [
       dankShell.packages.${pkgs.system}.quickshell
