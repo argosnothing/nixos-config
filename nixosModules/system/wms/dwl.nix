@@ -1,3 +1,6 @@
+### MASSIVE WIP FILE DO NOT LOOK
+###
+###
 {
   pkgs,
   lib,
@@ -65,7 +68,10 @@ in {
     };
     xdg.portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-wlr
+      ];
     };
     services = {
       xserver.excludePackages = [pkgs.xterm];
