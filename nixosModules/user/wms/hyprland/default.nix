@@ -41,7 +41,6 @@ in {
         freetype
       ];
 
-      # Font configuration for better X11 app rendering
       file.".config/fontconfig/fonts.conf".text = ''
         <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -66,17 +65,12 @@ in {
         </fontconfig>
       '';
 
-      # Session variables for Hyprland
       sessionVariables = {
         XCURSOR_THEME = "Qogir";
         XCURSOR_SIZE = "24";
-
-        # Electron/Chromium Wayland configuration
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         ELECTRON_NO_ASAR = "1";
         ELECTRON_ENABLE_LOGGING = "0";
-
-        # Force Wayland for Electron apps
         NIXOS_OZONE_WL = "1";
       };
     };
@@ -117,36 +111,22 @@ in {
         env = [
           "XCURSOR_SIZE,24"
           "HYPRCURSOR_SIZE,24"
-
-          # Flatpak app discovery
           "XDG_DATA_DIRS,$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
-
-          # Electron/Chromium Wayland settings
           "ELECTRON_OZONE_PLATFORM_HINT,auto"
           "ELECTRON_NO_ASAR,1"
-
-          # Reduce Electron debug output
           "ELECTRON_ENABLE_LOGGING,0"
           "CHROMIUM_FLAGS,--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
-
-          # X11/XWayland font rendering and scaling - GNOME-style
           "GDK_SCALE,1"
           "GDK_DPI_SCALE,1"
           "QT_AUTO_SCREEN_SCALE_FACTOR,1"
           "QT_SCALE_FACTOR,1"
-
-          # Enhanced X11 font rendering (GNOME approach)
           "FREETYPE_PROPERTIES,truetype:interpreter-version=40"
           "QT_FONT_DPI,96"
           "QT_WAYLAND_FORCE_DPI,96"
-
-          # Force X11 font antialiasing like GNOME
           "QT_XFT_ANTIALIAS,1"
           "QT_XFT_HINTING,1"
           "QT_XFT_HINTSTYLE,hintslight"
           "QT_XFT_RGBA,rgb"
-
-          # XWayland scaling fixes
           "XWAYLAND_NO_GLAMOR,0"
           "_JAVA_AWT_WM_NONREPARENTING,1"
         ];
@@ -233,27 +213,6 @@ in {
           middle_click_paste = false;
         };
 
-        plugin = {
-          overview = {
-            autoScroll = true;
-            centerAligned = false;
-            affectStrut = false;
-            exitOnClick = true;
-            exitOnSwitch = true;
-          };
-          hyprexpo = {
-            columns = 3;
-            gap_size = 5;
-            skip_empty = true;
-            bg_col = "rgb(111111)";
-            workspace_method = ["center" "current"]; # [center/first] [workspace] e.g. first 1 or center m+1
-            enable_gesture = true;
-            gesture_fingers = 3;
-            gesture_distance = 300;
-            gesture_positive = true;
-          };
-        };
-
         input = {
           kb_layout = "us";
           kb_variant = "";
@@ -266,14 +225,6 @@ in {
           touchpad.natural_scroll = true;
         };
 
-        #gestures = { # figure out what this is in .50
-        #  workspace_swipe = true;
-        #};
-        # rules & workspace config
-        windowrulev2 = [
-          #"setprop , class:Wfica"
-        ];
-
         workspace = [
           "special:specq, gapsin:15, gapsout:50"
           "special:specw, gapsin:15, gapsout:50"
@@ -283,7 +234,6 @@ in {
 
         windowrule = [
           "suppressevent maximize, class:.*"
-          #"keepaspectratio, suppressevent fullscreen activate movewindow, class:Wfica"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           "float,title:.*vim.*"
         ];
@@ -302,7 +252,6 @@ in {
             "$mainMod, P, exec, hyprctl dispatch setfloating active && hyprctl dispatch resizewindowpixel exact 800 600 && hyprctl dispatch pin"
             "$mainMod, F, fullscreen"
             "$mainMod Shift, L, exec, $lockCommand"
-            # Toggle NoBinds mode (disable all mainMod keybinds)
             ", XF86Tools, submap, nobinds"
           ]
           ++ config.hyprland.navBindings;
