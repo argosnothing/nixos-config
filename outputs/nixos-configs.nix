@@ -63,7 +63,7 @@ in {
   # For this idea.
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
-    desktop = {wm = "dwl";};
+    desktop = {wm = "hyprland";};
     laptop = {};
     p51 = {};
     vm = {};
