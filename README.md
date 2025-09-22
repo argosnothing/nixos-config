@@ -2,6 +2,9 @@
 Big WiP but hopefully shouldn't change too much structurally. 
 
 # Things I do
+- Home Manager as a module.
+- Flakes with flake parts pointing to outputs/default.nix
+- Stylix, off by default, and opted in per WM option
 - Default settings for each host is stored in [defaultsettings.nix](hosts/defaultSettings.nix)
 - Desktop/Window Managers can be set in [nixos-configs.nix](outputs/nixos-configs.nix) per host.
   - ( this file also merges those default settings in with any available hosts/hostname/attrs.nix)
