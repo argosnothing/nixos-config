@@ -104,7 +104,7 @@ LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT
 LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE
 */
 static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT;
-static const double accel_speed = 0.5;
+static const double accel_speed = 0.4;
 
 /* You can choose between:
 LIBINPUT_CONFIG_TAP_MAP_LRM -- 1/2/3 finger tap maps to left/right/middle
@@ -134,7 +134,6 @@ static const char *termscratch[] = { "e", "kitty", "-T", "terminal_scratch", NUL
 static const char *spotifyscratch[] = {"s", "spotify", NULL};
 static const char *discordscratch[] = {"q", "discord", NULL};
 static const char *firefoxscratch[] = {"w", "env", "MOZ_ENABLE_WAYLAND=1", "MOZ_APP_ID=firefox_scratch", "firefox", NULL};
-
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
