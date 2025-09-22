@@ -231,6 +231,12 @@ in {
           "special:spece, gapsin:15, gapsout:50"
           "special:specs, gapsin:15, gapsout:50"
         ];
+        #  ++ if (settings.hostname == "desktop")
+        #  then [
+        #    "m[DP-1] r[1-5]"
+        #    "m[DP-2] r[6-9]"
+        #  ]
+        #  else [""];
 
         windowrule = [
           "suppressevent maximize, class:.*"
