@@ -10,7 +10,7 @@ Big WiP but hopefully shouldn't change too much structurally.
   - ( this file also merges those default settings in with any available hosts/hostname/attrs.nix)
     - which then becomes settings, that I use all over my config for stuff like flakedir/fonts/host|user/name, etc. 
   - The actual switches effect both home manager and nixos configuration
-    -  refer to [user/wms/default.nix](nixosModules/user/wms/default.nix) and [nixosModules/system/wms/default.nix](system/wms/default.nix) respectively
+    -  refer to [user/wms/default.nix](nixosModules/user/wms/default.nix) and [system/wms/default.nix](nixosModules/system/wms/default.nix) respectively
 -  critical components ( if i don't have these i can't boot/sys won't function ) are setup under system/critical 
 
 
