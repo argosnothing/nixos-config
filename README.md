@@ -1,6 +1,6 @@
 # 🐢🐢🐢🐢㊗️NixOS Config
 - Big WiP but hopefully shouldn't change too much structurally.
-- Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things i've done here. 
+- Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things I do here.  
 
 # Things I do
 - Home Manager as a module.
