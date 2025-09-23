@@ -23,7 +23,7 @@ in {
         height = 25;
 
         "modules-left" = ["ext/workspaces"];
-        "modules-center" = ["wlr/taskbar#current"];
+        "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
         "ext/workspaces" = {
@@ -42,6 +42,13 @@ in {
           "on-click-right" = "close";
           "ignore-list" = ["Wofi" "rofi"];
           "all-outputs" = false;
+        };
+
+        "dwl/window" = {
+          # app_id (from wlroots) and title together
+          format = "{app_id} {title}";
+          "max-length" = 80;
+          "hide-empty" = true; # module disappears if no window is focused
         };
 
         "wlr/taskbar#current" = {
@@ -84,44 +91,35 @@ in {
       };
 
       style = ''
-            @define-color bg      #${c.base00};
-            @define-color bg2     #${c.base01};
-            @define-color fg      #${c.base05};
-            @define-color accent  #${c.base0D};
-            @define-color red     #${c.base08};
-            @define-color yellow  #${c.base0A};
+        @define-color bg      #${c.base00};
+        @define-color bg2     #${c.base01};
+        @define-color fg      #${c.base05};
+        @define-color accent  #${c.base0D};
+        @define-color red     #${c.base08};
+        @define-color yellow  #${c.base0A};
 
-            * { border: none; min-height: 0; font-size: 12px; }
+        * { border: none; min-height: 0; font-size: 12px; }
 
-            window#waybar { background: @bg; color: @fg; }
+        window#waybar { background: @bg; color: @fg; }
 
-            #window, #taskbar, #tray, #pulseaudio, #clock {
-              padding: 0 8px; margin: 0 4px;
-              background: @bg2; border-radius: 10px;
-            }
-
-            #tags button, #workspaces button {
-              padding: 0 6px; background: transparent; color: @fg;
-            }
-            #tags button.focused, #workspaces button.focused {
-              background: alpha(@accent, 0.15);
-            }
-            #tags button.urgent, #workspaces button.urgent {
-              background: alpha(@red, 0.25);
-            }
-
-            #taskbar button:checked { background: alpha(@accent, 0.25); }
-            #pulseaudio.muted { color: @yellow; }
-
-             /* Hide everything except the focused window */
-        #taskbar.current button:not(.active) { display: none; }
-
-        /* Keep the active one visible and tidy */
-        #taskbar.current button.active {
-          padding: 0 8px;
-          border-radius: 10px;
+        #window, #taskbar, #tray, #pulseaudio, #clock {
+          padding: 0 8px; margin: 0 4px;
+          background: @bg2; border-radius: 10px;
         }
-        #taskbar.current .icon { margin-right: 6px; }
+
+        #tags button, #workspaces button {
+          padding: 0 6px; background: transparent; color: @fg;
+        }
+        #tags button.focused, #workspaces button.focused {
+          background: alpha(@accent, 0.15);
+        }
+        #tags button.urgent, #workspaces button.urgent {
+          background: alpha(@red, 0.25);
+        }
+
+        #taskbar button:checked { background: alpha(@accent, 0.25); }
+        #pulseaudio.muted { color: @yellow; }
+
       '';
     };
   };
