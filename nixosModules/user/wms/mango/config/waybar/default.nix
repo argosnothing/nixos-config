@@ -26,16 +26,16 @@ in {
           rewrite."\\s+" = " ";
         };
 
-        "wlr/taskbar" = {
-          format = "{icon}";
-          "icon-size" = 22;
-          "markup" = true;
-          "tooltip-format" = "{title}";
-          "on-click" = "activate";
-          "on-click-right" = "close";
-          "ignore-list" = ["Wofi" "rofi"];
-          "all-outputs" = false;
-        };
+        #"wlr/taskbar" = {
+        #  format = "{icon}";
+        #  "icon-size" = 22;
+        #  "markup" = true;
+        #  "tooltip-format" = "{title}";
+        #  "on-click" = "activate";
+        #  "on-click-right" = "close";
+        #  "ignore-list" = ["Wofi" "rofi"];
+        #  "all-outputs" = false;
+        #};
 
         pulseaudio = {
           "disable-scroll" = true;
