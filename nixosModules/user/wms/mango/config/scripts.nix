@@ -7,6 +7,7 @@
 }: {
   config = lib.mkIf config.wms.mango.enable {
     home.packages = with pkgs; [
+      wl-copy
       wf-recorder
       (pkgs.writeShellScriptBin
         "snip"
