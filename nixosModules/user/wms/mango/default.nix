@@ -15,6 +15,7 @@
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
     wms.mango.enable = true;
+    styles.stylix.enable = true;
     home.packages = with pkgs; [
       rofi
       swaybg
@@ -26,7 +27,8 @@
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
-        setbg && waybar
+        setbg
+        waybar
       '';
       settings = ''
         # More option see https://github.com/DreamMaoMao/mango/wiki/
