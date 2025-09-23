@@ -11,7 +11,7 @@ in ''
 
   animations=1
   layer_animations=1
-  tag_animation_direction=0
+  tag_animation_direction=1
   animation_type_open=slide
   animation_type_close=slide
   animation_fade_in=1
