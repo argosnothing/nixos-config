@@ -38,6 +38,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mango = {
+      url = "github:DreamMaoMao/mango";
+    };
+
     impermanence = {
       url = "github:nix-community/impermanence";
     };
