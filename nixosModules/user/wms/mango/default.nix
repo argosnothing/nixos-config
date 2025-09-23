@@ -37,7 +37,7 @@ in {
   config = lib.mkIf (config.custom.wm.name == "mango") {
     wms.mango.enable = true;
     styles.stylix.enable = true;
-    stylix.targets.rofi.enable = true;
+    stylix.targets.rofi.enable = false;
     services.swaync.enable = true;
     programs.rofi = {
       enable = true;
