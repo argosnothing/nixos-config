@@ -43,9 +43,9 @@ in {
       };
       theme = {
         "*" = {
-          background = l c.base00;
-          foreground = l c.base05;
-          font = "FiraCode Nerd Font 20"; # quoted
+          "background-color" = l c.base00;
+          "foreground-color" = l c.base05;
+          font = "FiraCode Nerd Font 20";
         };
 
         window = {
@@ -66,18 +66,28 @@ in {
         listview = {
           "background-color" = l c.base00;
           lines = 12;
+          border = l "0px";
+          spacing = l "6px";
         };
 
         element = {
           "background-color" = l c.base00;
           "text-color" = l c.base05;
+          border = l "0px";
           padding = l "8px 12px";
         };
-
-        "element-icon" = {size = l "1.3em";};
+        "element alternate" = {"background-color" = l c.base00;};
         "element selected" = {
           "background-color" = l c.base0E;
           "text-color" = l c.base00;
+        };
+        "element-text" = {
+          "background-color" = l c.base00;
+          "text-color" = l c.base05;
+        };
+        "element-icon" = {
+          "background-color" = l c.base00;
+          size = l "1.3em";
         };
       };
     };
