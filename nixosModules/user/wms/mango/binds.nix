@@ -65,11 +65,6 @@
   bind=SUPER+Alt,Left,tagmon,left
   bind=SUPER+Alt,Right,tagmon,right
 
-  # gaps
-  bind=ALT+SHIFT,X,incgaps,1
-  bind=ALT+SHIFT,Z,incgaps,-1
-  bind=ALT+SHIFT,R,togglegaps
-
   # adjust tile window size
   # change master fact for tile,spiral,deck,dwindle
   bind=ALT+SUPER,h,setmfact,-0.05
@@ -95,13 +90,9 @@
 
   # Mouse Button Bindings
   # NONE mode key only work in ov mode
-  mousebind=SUPER,btn_left,moveresize,curmove
+  mousebind=ALT,btn_left,moveresize,curmove
   mousebind=NONE,btn_middle,togglemaxmizescreen,0
-  mousebind=SUPER,btn_right,moveresize,curresize
+  mousebind=ALT,btn_right,moveresize,curresize
   mousebind=NONE,btn_left,toggleoverview,-1
   mousebind=NONE,btn_right,killclient,0
-
-  # Axis Bindings
-  axisbind=SUPER,UP,viewtoleft_have_client
-  axisbind=SUPER,DOWN,viewtoright_have_client
 ''
