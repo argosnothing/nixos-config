@@ -39,7 +39,7 @@
   bind=SUPER,n,switch_layout
   bind=ALT+SHIFT,Return,zoom
   bind=ALT,-,incnmaster,-1
-  bind=ALT,=,incnmaster,1
+  bind=ALT,=,incnmaster,+1
 
 
   # tag switch
