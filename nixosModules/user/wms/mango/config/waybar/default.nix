@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  c = config.lib.stylix.colors;
+  c = config.lib.stylix.colors; # <- normalized base16 colors from Stylix
 in {
   config = lib.mkIf config.wms.mango.enable {
     programs.waybar = {
@@ -16,7 +16,7 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["wlr/tags"];
+        "modules-left" = ["dwl/tags"];
         "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
