@@ -29,6 +29,7 @@ in {
     home.packages = with pkgs; [
       rofi
       pavucontrol
+      swaync
       swaybg
       (pkgs.writeShellScriptBin "setbg"
         ''
