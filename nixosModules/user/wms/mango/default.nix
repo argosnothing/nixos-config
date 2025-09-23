@@ -63,6 +63,9 @@ in {
           padding = l "10px 14px";
         };
 
+        prompt = {"text-color" = l c.base0E;};
+        "case-indicator" = {"text-color" = l c.base0E;};
+
         listview = {
           "background-color" = l c.base00;
           lines = 12;
@@ -77,10 +80,15 @@ in {
           padding = l "8px 12px";
         };
         "element alternate" = {"background-color" = l c.base00;};
+
         "element selected" = {
-          "background-color" = l c.base0E;
-          "text-color" = l c.base00;
+          "background-color" = l c.base00;
+          "text-color" = l c.base05;
+          border = l "2px";
+          "border-color" = l c.base0E;
+          "border-radius" = l "6px";
         };
+
         "element-text" = {
           "background-color" = l c.base00;
           "text-color" = l c.base05;
