@@ -39,7 +39,7 @@ in {
       autostart_sh = ''
         set +e
         setbg &
-        waybar
+        exec once waybar
       '';
       settings =
         binds
