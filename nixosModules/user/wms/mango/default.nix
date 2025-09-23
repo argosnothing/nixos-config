@@ -28,7 +28,6 @@ in {
     styles.stylix.enable = true;
     home.packages = with pkgs; [
       rofi
-      wf-recorder
       swaybg
       (pkgs.writeShellScriptBin "setbg"
         ''
