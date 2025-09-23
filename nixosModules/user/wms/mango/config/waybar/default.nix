@@ -23,15 +23,16 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["ext/workspaces" "dwl/window"];
-        "modules-center" = ["dwl/window"];
-        "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
+        modules-left = ["ext/workspaces" "dwl/window"];
+        modules-center = [];
+        modules-right = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
         "ext/workspaces" = {
           "format" = "{icon}";
-          "ignore-hidden" = true;
+          "ignore-hidden" = false;
           "on-click" = "activate";
           "sort-by-id" = true;
+          "persistent-workspaces" = {"*" = [1 2 3 4 5 6 7 8 9];};
         };
 
         "wlr/taskbar" = {
@@ -52,15 +53,6 @@ in {
 
         "dwl/window" = {
           "format" = "[{layout}]{title}";
-        };
-
-        "wlr/taskbar#current" = {
-          format = "{icon} {title}";
-          "icon-size" = 18;
-          "icon-theme" = "Papirus"; # use your theme; colored icons come from here
-          all-outputs = true;
-          on-click = "activate";
-          on-click-middle = "close";
         };
 
         pulseaudio = {
