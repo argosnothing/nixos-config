@@ -23,7 +23,7 @@ in {
         height = 25;
 
         "modules-left" = ["ext/workspaces"];
-        "modules-center" = ["dwl/window"];
+        "modules-center" = ["sway/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
         "ext/workspaces" = {
@@ -31,14 +31,6 @@ in {
           "ignore-hidden" = true;
           "on-click" = "activate";
           "sort-by-id" = true;
-        };
-
-        "dwl/window" = {
-          format = "{}";
-          "max-length" = 50;
-          rewrite = {
-            ".**" = " $0";
-          };
         };
 
         "wlr/taskbar" = {
