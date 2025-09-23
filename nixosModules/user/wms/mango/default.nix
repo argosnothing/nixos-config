@@ -41,34 +41,44 @@ in {
         icon-theme = "Papirus";
         drun-display-format = "{name}";
       };
-    theme = {
-      "*" = {
-        background = l c.base00;
-        foreground = l c.base05;
-        font = "FiraCode Nerd Font 20";  # quoted
-      };
+      theme = {
+        "*" = {
+          background = l c.base00;
+          foreground = l c.base05;
+          font = "FiraCode Nerd Font 20"; # quoted
+        };
 
-      window   = { "background-color" = l c.base00; border = l "0px"; };
-      mainbox  = { "background-color" = l c.base00; padding = l "8px"; };
+        window = {
+          "background-color" = l c.base00;
+          border = l "0px";
+        };
+        mainbox = {
+          "background-color" = l c.base00;
+          padding = l "8px";
+        };
 
-      inputbar = {
-        "background-color" = l c.base00;
-        "text-color"       = l c.base05;
-        padding            = l "10px 14px";
-      };
+        inputbar = {
+          "background-color" = l c.base00;
+          "text-color" = l c.base05;
+          padding = l "10px 14px";
+        };
 
-      listview = { "background-color" = l c.base00; lines = 12; };
+        listview = {
+          "background-color" = l c.base00;
+          lines = 12;
+        };
 
-      element = {
-        "background-color" = l c.base00;
-        "text-color"       = l c.base05;
-        padding            = l "8px 12px";
-      };
+        element = {
+          "background-color" = l c.base00;
+          "text-color" = l c.base05;
+          padding = l "8px 12px";
+        };
 
-      "element-icon"     = { size = l "1.3em"; };
-      "element selected" = {
-        "background-color" = l c.base0E;
-        "text-color"       = l c.base00;
+        "element-icon" = {size = l "1.3em";};
+        "element selected" = {
+          "background-color" = l c.base0E;
+          "text-color" = l c.base00;
+        };
       };
     };
     home.packages = with pkgs; [
