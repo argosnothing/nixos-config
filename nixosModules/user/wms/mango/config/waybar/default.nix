@@ -23,7 +23,7 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["ext/workspaces" "dwl/layout"];
+        "modules-left" = ["ext/workspaces" "dwl/window"];
         "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
@@ -51,10 +51,7 @@ in {
         };
 
         "dwl/window" = {
-          # app_id (from wlroots) and title together
-          format = "{app_id} {title}";
-          "max-length" = 80;
-          "hide-empty" = true; # module disappears if no window is focused
+          "format" = "[{layout}]{title}";
         };
 
         "wlr/taskbar#current" = {
