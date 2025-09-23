@@ -5,15 +5,15 @@
   settings,
   ...
 }: let
-  binds = ./binds.nix;
-  monitors = ./monitors.nix;
-  inputs = ./inputs.nix;
-  layouts = ./layouts.nix;
-  overview = ./overview.nix;
-  scratchpads = ./scratchpads.nix;
-  styling = ./styling.nix;
-  tags = ./tags.nix;
-  misc = ./misc.nix;
+  binds = import ./binds.nix;
+  monitors = import ./monitors.nix;
+  inputs = import ./inputs.nix;
+  layouts = import ./layouts.nix;
+  overview = import ./overview.nix;
+  scratchpads = import ./scratchpads.nix;
+  styling = import ./styling.nix;
+  tags = import ./tags.nix;
+  misc = import ./misc.nix;
 in {
   imports = [
     ./config
