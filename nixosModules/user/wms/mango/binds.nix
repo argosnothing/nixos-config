@@ -58,8 +58,6 @@
   # monitor switch
   bind=alt+shift,Left,focusmon,left
   bind=alt+shift,Right,focusmon,right
-  bind=SUPER+Alt,Left,tagmon,left
-  bind=SUPER+Alt,Right,tagmon,right
 
   # adjust tile window size
   # change master fact for tile,spiral,deck,dwindle
