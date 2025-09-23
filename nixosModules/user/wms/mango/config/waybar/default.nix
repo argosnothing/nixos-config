@@ -4,7 +4,8 @@
   lib,
   ...
 }: let
-  c = config.lib.stylix.colors; # <- normalized base16 colors from Stylix
+  c = config.lib.stylix.colors;
+  waybarCss = import ./style.nix {inherit config lib;};
 in {
   config = lib.mkIf config.wms.mango.enable {
     gtk = {
@@ -95,37 +96,7 @@ in {
         };
       };
 
-      style = ''
-        @define-color bg      #${c.base00};
-        @define-color bg2     #${c.base01};
-        @define-color fg      #${c.base05};
-        @define-color accent  #${c.base0D};
-        @define-color red     #${c.base08};
-        @define-color yellow  #${c.base0A};
-
-        * { border: none; min-height: 0; font-size: 12px; }
-
-        window#waybar { background: @bg; color: @fg; }
-
-        #window, #taskbar, #tray, #pulseaudio, #clock {
-          padding: 0 8px; margin: 0 4px;
-          background: @bg2; border-radius: 10px;
-        }
-
-        #tags button, #workspaces button {
-          padding: 0 6px; background: transparent; color: @fg;
-        }
-        #tags button.focused, #workspaces button.focused {
-          background: alpha(@accent, 0.15);
-        }
-        #tags button.urgent, #workspaces button.urgent {
-          background: alpha(@red, 0.25);
-        }
-
-        #taskbar button:checked { background: alpha(@accent, 0.25); }
-        #pulseaudio.muted { color: @yellow; }
-
-      '';
+      style = waybarCss;
     };
   };
 }
