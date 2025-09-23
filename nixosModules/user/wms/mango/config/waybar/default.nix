@@ -74,7 +74,7 @@ in {
         };
 
         "custom/notification" = {
-          format = "{icon} {text}";
+          format = " {text}";
           "return-type" = "json";
           "exec-if" = "which swaync-client";
           exec = "swaync-client -swb";
