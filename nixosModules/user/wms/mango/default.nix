@@ -11,6 +11,9 @@
   config = lib.mkIf (config.custom.wm.name == "mango") {
     wayland.windowManager.mango = {
       enable = true;
+      settings = ''
+        bind=Alt,Return,spawn,kitty
+      '';
     };
   };
 }
