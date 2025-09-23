@@ -10,7 +10,6 @@
   bind=ALT,c,killclient,
 
   # switch window focus
-  bind=SUPER,Tab,focusstack,next
   bind=ALT,Left,focusdir,left
   bind=ALT,Right,focusdir,right
   bind=ALT,Up,focusdir,up
@@ -24,7 +23,6 @@
 
   # switch window status
   bind=SUPER,g,toggleglobal,
-  bind=ALT,Tab,toggleoverview,
   bind=ALT,backslash,togglefloating,
   bind=ALT,a,togglemaxmizescreen,
   bind=ALT,f,togglefullscreen,
