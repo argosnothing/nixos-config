@@ -16,9 +16,17 @@
     wms.mango.enable = true;
     home.packages = with pkgs; [
       rofi
+      swaybg
+      (pkgs.writeShellScriptBin "setbg"
+        ''
+          swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
+        '')
     ];
     wayland.windowManager.mango = {
       enable = true;
+      autostart_sh = ''
+        setbg
+      '';
       settings = ''
         # More option see https://github.com/DreamMaoMao/mango/wiki/
 
