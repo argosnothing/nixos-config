@@ -10,7 +10,7 @@
     inputs.mango.hmModules.mango
   ];
   options = {
-    wms.mango.enable = lib.mkEnablOption "Enable Mango";
+    wms.mango.enable = lib.mkEnableOption "Enable Mango";
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
     wms.mango.enable = true;
