@@ -14,12 +14,8 @@
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
       enable = true;
       autoEnable = true;
+      stylix.targets.firefox.enable = false;
       targets = {
-        hyprland.enable = true;
-        firefox = {
-          enable = true;
-          profileNames = ["default"];
-        };
         vscode.enable = true;
       };
       fonts = {

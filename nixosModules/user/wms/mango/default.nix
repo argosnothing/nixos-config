@@ -27,7 +27,6 @@ in {
     wms.mango.enable = true;
     styles.stylix.enable = true;
     home.packages = with pkgs; [
-      surf
       rofi
       swaybg
       (pkgs.writeShellScriptBin "setbg"
