@@ -5,9 +5,13 @@
   ...
 }: let
   c = config.lib.stylix.colors;
-  waybarCss = import ./style.nix {inherit config lib;};
+  recording-widget = import ./recording-widget.nix {inherit pkgs;};
+  waybar-css = import ./style.nix {inherit config lib;};
 in {
   config = lib.mkIf config.wms.mango.enable {
+    home.packages = [
+      recording-widget
+    ];
     gtk = {
       enable = true;
       iconTheme = {
@@ -24,7 +28,7 @@ in {
         height = 25;
 
         modules-left = ["ext/workspaces" "dwl/window"];
-        modules-center = [];
+        modules-center = ["custom/recorder"];
         modules-right = [
           "clock"
           "custom/space"
@@ -43,6 +47,15 @@ in {
           "on-click" = "activate";
           "sort-by-id" = true;
           "persistent-workspaces" = {"*" = [1 2 3 4 5 6 7 8 9];};
+        };
+
+        "custom/recorder" = {
+          format = "{icon}";
+          "return-type" = "json";
+          exec = "rec-widget status";
+          "exec-on-event" = true;
+          signal = 8;
+          "on-click" = "rec-widget toggle";
         };
 
         "wlr/taskbar" = {
@@ -100,7 +113,7 @@ in {
         };
       };
 
-      style = waybarCss;
+      style = waybar-css;
     };
   };
 }
