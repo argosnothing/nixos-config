@@ -7,7 +7,7 @@ in ''
   border_radius=0
   no_radius_when_single=0
   focused_opacity=0.98
-  unfocused_opacity=0.94
+  unfocused_opacity=0.98
 
   animations=1
   layer_animations=1
