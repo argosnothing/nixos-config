@@ -17,6 +17,7 @@
   tags = import ./tags.nix;
   misc = import ./misc.nix;
   c = config.lib.stylix.colors.withHashtag;
+  l = config.lib.formats.rasi.mkLiteral;
   inherit (config.lib.formats.rasi) mkLiteral;
 in {
   imports = [
@@ -40,36 +41,34 @@ in {
         icon-theme = "Papirus";
         drun-display-format = "{name}";
       };
-      theme = let
-        l = mkLiteral;
-      in {
-        "*" = {
-          "background-color" = l c.base00;
-          "foreground-color" = l c.base05;
-          font = l "FiraCode Nerd Font 20";
-        };
+    theme = {
+      "*" = {
+        background = l c.base00;
+        foreground = l c.base05;
+        font = "FiraCode Nerd Font 20";  # quoted
+      };
 
-        window = {
-          "background-color" = l c.base00;
-          border = l "0px";
-        };
-        mainbox = {
-          "background-color" = l c.base00;
-          padding = l "8px";
-        };
-        inputbar = {
-          "background-color" = l c.base00;
-          "foreground-color" = l c.base05;
-          padding = l "10px 14px";
-        };
+      window   = { "background-color" = l c.base00; border = l "0px"; };
+      mainbox  = { "background-color" = l c.base00; padding = l "8px"; };
 
-        listview = {lines = 12;};
-        element = {padding = l "8px 12px";};
-        "element-icon" = {size = l "1.3em";};
-        "element selected" = {
-          "background-color" = l c.base0E;
-          "foreground-color" = l c.base00;
-        };
+      inputbar = {
+        "background-color" = l c.base00;
+        "text-color"       = l c.base05;
+        padding            = l "10px 14px";
+      };
+
+      listview = { "background-color" = l c.base00; lines = 12; };
+
+      element = {
+        "background-color" = l c.base00;
+        "text-color"       = l c.base05;
+        padding            = l "8px 12px";
+      };
+
+      "element-icon"     = { size = l "1.3em"; };
+      "element selected" = {
+        "background-color" = l c.base0E;
+        "text-color"       = l c.base00;
       };
     };
     home.packages = with pkgs; [
