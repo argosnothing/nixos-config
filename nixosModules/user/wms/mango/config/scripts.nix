@@ -26,6 +26,16 @@
           -f "$FILE" -y
         printf 'file://%s\n' "$FILE" | wl-copy --type text/uri-list
       '')
+      (pkgs.writeShellApplication {
+        name = "record-region-start";
+        runtimeInputs = [pkgs.wf-recorder pkgs.slurp pkgs.wl-clipboard pkgs.pulseaudio pkgs.coreutils pkgs.procps];
+        text = builtins.readFile ./record-region-start.sh;
+      })
+      (pkgs.writeShellApplication {
+        name = "record-region-stop";
+        runtimeInputs = [pkgs.wf-recorder pkgs.slurp pkgs.wl-clipboard pkgs.pulseaudio pkgs.coreutils pkgs.procps];
+        text = builtins.readFile ./record-region-stop.sh;
+      })
     ];
   };
 }
