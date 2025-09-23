@@ -34,9 +34,15 @@ in {
         };
 
         "dwl/window" = {
-          format = "{app_id} {title}";
-          "max-length" = 80;
-          icon-size = 18;
+          format = "{}";
+          max-length = 50;
+          rewrite = {
+            "(.*) - Mozilla Firefox" = " $1"; # Firefox
+            "(.*) - zsh" = " [$1]"; # zsh shell
+            "(.*) - nvim" = " $1"; # Neovim
+            "(.*) - Discord" = "ﭮ $1"; # Discord
+            "(.*) - Spotify" = " $1"; # Spotify
+          };
         };
 
         "wlr/taskbar" = {
