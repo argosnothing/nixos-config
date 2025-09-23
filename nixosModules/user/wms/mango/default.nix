@@ -27,8 +27,9 @@
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
-        setbg
-        exec waybar
+        set +e
+        setbg &
+        waybar
       '';
       settings = ''
         # More option see https://github.com/DreamMaoMao/mango/wiki/
