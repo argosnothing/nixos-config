@@ -34,7 +34,7 @@ in {
         };
 
         "dwl/window" = {
-          format = "{icon} {app_id} {title}";
+          format = "{app_id} {title}";
           "max-length" = 80;
           icon-size = 18;
           rewrite."\\s+" = " ";
