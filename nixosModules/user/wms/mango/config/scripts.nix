@@ -1,7 +1,6 @@
 ## TODO, THIS stuff should really just be at a more top level. get on it?
 {
   pkgs,
-  settings,
   lib,
   config,
   ...
@@ -12,7 +11,7 @@
       (pkgs.writeShellScriptBin
         "snip"
         ''
-          ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slup}/bin/slurp)}"
+          ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slurp}/bin/slurp)" - | wl-copy
         '')
     ];
   };
