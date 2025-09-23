@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  imports = [inputs.mango.nixosModules];
+  imports = [inputs.mango.nixosModules.mango];
   options = {
     wms.mango.enable = lib.mkOption {
       type = lib.types.bool;
