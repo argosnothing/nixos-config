@@ -51,7 +51,6 @@ in {
 
         "custom/recorder" = {
           format = "{}";
-          "return-type" = "json";
           exec = "rec-widget status";
           "exec-on-event" = true;
           signal = 8;
