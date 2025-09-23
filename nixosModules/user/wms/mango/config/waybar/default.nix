@@ -16,8 +16,8 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["dwl/tags" "dwl/window"];
-        "modules-center" = [];
+        "modules-left" = ["dwl/tags"];
+        "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
         "dwl/window" = {
