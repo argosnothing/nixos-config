@@ -7,7 +7,7 @@
 
   # exit
   bind=SUPER,m,quit
-  bind=ALT,q,killclient,
+  bind=ALT,c,killclient,
 
   # switch window focus
   bind=SUPER,Tab,focusstack,next
@@ -29,10 +29,8 @@
   bind=ALT,a,togglemaxmizescreen,
   bind=ALT,f,togglefullscreen,
   bind=ALT+SHIFT,f,togglefakefullscreen,
-  bind=SUPER,i,minimized,
   bind=SUPER,o,toggleoverlay,
   bind=SUPER+SHIFT,I,restore_minimized
-  bind=ALT,z,toggle_scratchpad
 
   # scroller layout
   bind=ALT,e,set_proportion,1.0
