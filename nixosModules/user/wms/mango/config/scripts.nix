@@ -8,7 +8,6 @@
   config = lib.mkIf config.wms.mango.enable {
     home.packages = with pkgs; [
       wl-clipboard
-      wl-copy
       slurp
       wf-recorder
       (pkgs.writeShellScriptBin
