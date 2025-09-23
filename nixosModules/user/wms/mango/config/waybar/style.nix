@@ -23,7 +23,7 @@ in ''
     margin-left: 4px;
     padding-left: 10px;
     padding-right: 6px;
-    background: ${withAlpha c.base00 "C2"}; /* ~0.76 alpha */
+    background: ${withAlpha c.base00 "C2"};
   }
 
   #workspaces button {
