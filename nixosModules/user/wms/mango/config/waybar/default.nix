@@ -27,7 +27,7 @@ in {
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
         "dwl/window" = {
-          format = "{app_id}  {title}";
+          format = "{icon} {app_id}  {title}";
           "max-length" = 80;
           rewrite."\\s+" = " ";
         };
