@@ -8,9 +8,9 @@ pkgs.writeShellScriptBin "rec-widget" ''
 
   status() {
     if [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
-      printf '{"text":"","tooltip":"Recording","class":"recording","alt":"recording","icon":"\uf04c"}\n'
+      printf '{"text":"","tooltip":"Recording","class":"recording","alt":"recording","icon":"►"}\n'
     else
-      printf '{"text":"","tooltip":"Idle","class":"idle","alt":"idle","icon":"\uf04b"}\n'
+      printf '{"text":"","tooltip":"Idle","class":"idle","alt":"idle","icon":"❚❚"}\n'
     fi
   }
 
