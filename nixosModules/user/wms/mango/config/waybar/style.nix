@@ -64,7 +64,7 @@ in ''
   #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
 
   #window {
-    background-color: ${c.base01};
+    background-color: transparent;
     color: ${c.base05};
     font-size: 14px;
     font-weight: bold;
@@ -77,5 +77,9 @@ in ''
     margin: 0;
     font-size: 14px;
     font-weight: bold;
+  }
+
+  #layout {
+    margin-left: 12px;
   }
 ''
