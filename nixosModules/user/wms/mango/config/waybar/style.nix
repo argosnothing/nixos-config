@@ -5,10 +5,6 @@ in ''
   * { font-size: 12px; }
 
   #workspaces {
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: ${c.base0E};
     margin-left: 4px;
     padding-left: 10px;
     padding-right: 6px;
@@ -67,6 +63,19 @@ in ''
   #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
   #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
 
-  #window { background-color: ${c.base01}; color: ${c.base05}; padding: 0; margin: 0; }
-  #window label { padding: 0; margin: 0; }
+  #window {
+    background-color: ${c.base01};
+    color: ${c.base05};
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+
+  #window label {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
 ''
