@@ -51,7 +51,7 @@ in ''
   focuscolor=${to0x c.base0E "ff"}
   maxmizescreencolor=${to0x c.base0D "ff"}
   urgentcolor=${to0x c.base08 "ff"}
-  scratchpadcolor=${to0x c.base0C "ff"}
+  scratchpadcolor=${to0x c.base03 "ff"}
   globalcolor=${to0x c.base03 "ff"}
   overlaycolor=${to0x c.base0F "ff"}
 ''
