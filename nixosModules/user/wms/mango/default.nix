@@ -226,15 +226,15 @@
         bind=CTRL+SUPER,Left,tagtoleft,0
         bind=CTRL+SUPER,Right,tagtoright,0
 
-        bind=Ctrl,1,view,1,0
-        bind=Ctrl,2,view,2,0
-        bind=Ctrl,3,view,3,0
-        bind=Ctrl,4,view,4,0
-        bind=Ctrl,5,view,5,0
-        bind=Ctrl,6,view,6,0
-        bind=Ctrl,7,view,7,0
-        bind=Ctrl,8,view,8,0
-        bind=Ctrl,9,view,9,0
+        bind=Ctrl,1,toggleview,1
+        bind=Ctrl,2,toggleview,2
+        bind=Ctrl,3,toggleview,3
+        bind=Ctrl,4,toggleview,4
+        bind=Ctrl,5,toggleview,5
+        bind=Ctrl,6,toggleview,6
+        bind=Ctrl,7,toggleview,7
+        bind=Ctrl,8,toggleview,8
+        bind=Ctrl,9,toggleview,9
 
         # tag: move client to the tag and focus it
         # tagsilent: move client to the tag and not focus it
