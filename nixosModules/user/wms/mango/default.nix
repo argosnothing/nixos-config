@@ -40,51 +40,37 @@ in {
         icon-theme = "Papirus";
         drun-display-format = "{name}";
       };
-
       theme = {
         "*" = {
-          background = mkLiteral c.base00;
-          foreground = mkLiteral c.base05;
-          accent = mkLiteral c.base0E;
           font = mkLiteral "FiraCode Nerd Font 20";
         };
 
         window = {
-          "background-color" = mkLiteral "@background";
+          "background-color" = mkLiteral c.base00;
           border = 0;
         };
         mainbox = {
-          "background-color" = mkLiteral "@background";
+          "background-color" = mkLiteral c.base00;
           padding = mkLiteral "8px";
         };
         inputbar = {
-          "background-color" = mkLiteral "@background";
-          "text-color" = mkLiteral "@foreground";
+          "background-color" = mkLiteral c.base00;
+          "text-color" = mkLiteral c.base05;
           padding = mkLiteral "10px 14px";
         };
-        prompt = {
-          "background-color" = mkLiteral "@background";
-          "text-color" = mkLiteral "@foreground";
-        };
-        entry = {
-          "background-color" = mkLiteral "@background";
-          "text-color" = mkLiteral "@foreground";
-        };
-
         listview = {
-          "background-color" = mkLiteral "@background";
+          "background-color" = mkLiteral c.base00;
           lines = 12;
         };
         element = {
-          "background-color" = mkLiteral "@background";
-          "text-color" = mkLiteral "@foreground";
+          "background-color" = mkLiteral c.base00;
+          "text-color" = mkLiteral c.base05;
           padding = mkLiteral "8px 12px";
         };
         "element-icon" = {size = mkLiteral "1.3em";};
-        "element-text" = {"text-color" = mkLiteral "@foreground";};
         "element selected" = {
-          "background-color" = mkLiteral "@accent";
-          "text-color" = mkLiteral "@background";
+          "background-color" = mkLiteral c.base0E;
+          "text-color" = mkLiteral c.base00;
         };
       };
     };
