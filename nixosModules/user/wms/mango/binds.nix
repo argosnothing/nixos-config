@@ -3,8 +3,8 @@
   bind=SUPER,r,reload_config
   # menu and terminal
   bind=ALT+CTRL+SHIFT,s,spawn,snip
-  bind=ALT+CTRL+v,spawn,record-region-start
-  bind=ALT+CTRL+SHIFT+v,spawn,record-region-stop
+  bind=ALT+CTRL,v,spawn,record-region-start
+  bind=ALT+CTRL+SHIFT,v,spawn,record-region-stop
   bind=Alt,space,spawn,rofi -show drun
   bind=Alt,Return,spawn,kitty
 
