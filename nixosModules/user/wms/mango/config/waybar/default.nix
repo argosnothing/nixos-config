@@ -7,10 +7,7 @@
   c = config.lib.stylix.colors; # <- normalized base16 colors from Stylix
 in {
   config = lib.mkIf config.wms.mango.enable {
-    fonts.packages = [
-      (pkgs.nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode" "NerdFontsSymbolsOnly"];})
-      pkgs.font-awesome
-    ];
+    fonts.fontconfig.enable = true;
     gtk = {
       enable = true;
       iconTheme = {
