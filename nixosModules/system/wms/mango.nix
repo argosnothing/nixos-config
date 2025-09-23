@@ -14,6 +14,7 @@
     };
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
+    environment.systemPackages = [pkgs.foot];
     wms.mango.enable = true;
     styles.stylix.enable = true;
     programs.mango.enable = true;
