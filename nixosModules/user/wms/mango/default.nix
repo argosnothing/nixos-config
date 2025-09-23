@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   inputs,
@@ -9,6 +10,7 @@
     wms.mango.enable = lib.mkEnableption "Enable Mango";
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
+    home.packages = with pkgs; [rofi];
     wayland.windowManager.mango = {
       enable = true;
       settings = ''
@@ -160,7 +162,7 @@
 
         # menu and terminal
         bind=Alt,space,spawn,rofi -show drun
-        bind=Alt,Return,spawn,foot
+        bind=Alt,Return,spawn,kitty
 
         # exit
         bind=SUPER,m,quit
