@@ -1,6 +1,5 @@
 {...}: {
   imports = [
     ./waybar
-    ./binds.nix
   ];
 }
