@@ -23,8 +23,8 @@
 
     border_radius=6
     no_radius_when_single=0
-    focused_opacity=1.0
-    unfocused_opacity=1.0
+    focused_opacity=0.95
+    unfocused_opacity=0.95
 
     # Animation Configuration(support type:zoom,slide)
     # tag_animation_direction: 0-horizontal,1-vertical
