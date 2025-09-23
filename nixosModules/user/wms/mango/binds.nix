@@ -37,6 +37,8 @@
 
   # switch layout
   bind=SUPER,n,switch_layout
+  bind=ALT+SHIFT,Return,zoom
+
 
   # tag switch
   bind=SUPER,Left,viewtoleft,0
