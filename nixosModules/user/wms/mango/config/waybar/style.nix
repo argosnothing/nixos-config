@@ -4,16 +4,12 @@
   ...
 }: let
   raw = config.lib.stylix.colors or config.stylix.base16Scheme;
-
   hasHash = s: lib.strings.hasPrefix "#" s;
-  normalize = s:
+  norm = s:
     if hasHash s
     then s
     else "#${s}";
-  c = lib.mapAttrs (_: normalize) raw;
-
-  # Append alpha to a #RRGGBB -> #RRGGBBAA (GTK CSS supports this)
-  withAlpha = color: alphaHex: "#${lib.strings.removePrefix "#" color}${alphaHex}";
+  c = lib.mapAttrs (_: norm) raw;
 in ''
   #workspaces {
     border-radius: 4px;
@@ -23,7 +19,7 @@ in ''
     margin-left: 4px;
     padding-left: 10px;
     padding-right: 6px;
-    background: ${withAlpha c.base00 "C2"};
+    background-color: ${c.base00};
   }
 
   #workspaces button {
