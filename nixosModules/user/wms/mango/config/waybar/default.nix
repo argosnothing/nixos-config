@@ -8,6 +8,10 @@
 in {
   config = lib.mkIf config.wms.mango.enable {
     fonts.fontconfig.enable = true;
+    home.packages = [
+      (pkgs.nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode" "NerdFontsSymbolsOnly"];})
+      pkgs.font-awesome
+    ];
     gtk = {
       enable = true;
       iconTheme = {
