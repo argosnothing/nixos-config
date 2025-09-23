@@ -10,7 +10,10 @@
     wms.mango.enable = lib.mkEnableption "Enable Mango";
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
-    home.packages = with pkgs; [rofi];
+    home.packages = with pkgs; [
+      rofi
+      waybar
+    ];
     wayland.windowManager.mango = {
       enable = true;
       settings = ''
