@@ -3,6 +3,7 @@
   config,
   lib,
   settings,
+  inputs,
   ...
 }: let
   binds = import ./binds.nix;
