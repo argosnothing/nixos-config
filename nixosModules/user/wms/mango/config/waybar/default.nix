@@ -9,7 +9,10 @@ in {
   config = lib.mkIf config.wms.mango.enable {
     gtk = {
       enable = true;
-      package = pkgs.papirus-icon-theme;
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = "pkgs.papirus-icon-theme";
+      };
     };
     programs.waybar = {
       enable = true;
