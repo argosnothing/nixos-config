@@ -40,37 +40,35 @@ in {
         icon-theme = "Papirus";
         drun-display-format = "{name}";
       };
-      theme = {
+      theme = let
+        l = mkLiteral;
+      in {
         "*" = {
-          font = mkLiteral "FiraCode Nerd Font 20";
+          "background-color" = l c.base00;
+          "foreground-color" = l c.base05;
+          font = l "FiraCode Nerd Font 20";
         };
 
         window = {
-          "background-color" = mkLiteral c.base00;
-          border = 0;
+          "background-color" = l c.base00;
+          border = l "0px";
         };
         mainbox = {
-          "background-color" = mkLiteral c.base00;
-          padding = mkLiteral "8px";
+          "background-color" = l c.base00;
+          padding = l "8px";
         };
         inputbar = {
-          "background-color" = mkLiteral c.base00;
-          "text-color" = mkLiteral c.base05;
-          padding = mkLiteral "10px 14px";
+          "background-color" = l c.base00;
+          "foreground-color" = l c.base05;
+          padding = l "10px 14px";
         };
-        listview = {
-          "background-color" = mkLiteral c.base00;
-          lines = 12;
-        };
-        element = {
-          "background-color" = mkLiteral c.base00;
-          "text-color" = mkLiteral c.base05;
-          padding = mkLiteral "8px 12px";
-        };
-        "element-icon" = {size = mkLiteral "1.3em";};
+
+        listview = {lines = 12;};
+        element = {padding = l "8px 12px";};
+        "element-icon" = {size = l "1.3em";};
         "element selected" = {
-          "background-color" = mkLiteral c.base0E;
-          "text-color" = mkLiteral c.base00;
+          "background-color" = l c.base0E;
+          "foreground-color" = l c.base00;
         };
       };
     };
