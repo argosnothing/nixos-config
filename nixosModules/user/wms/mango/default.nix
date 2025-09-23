@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  ...
 }: {
   imports = [inputs.mango.hmModules.mango];
   options = {
