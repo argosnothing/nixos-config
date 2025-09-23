@@ -1,4 +1,4 @@
-{...}: ''
+''
   # reload config
   bind=SUPER,r,reload_config
   # menu and terminal
