@@ -17,15 +17,7 @@
   tags = import ./tags.nix;
   misc = import ./misc.nix;
   c = config.lib.stylix.colors.withHashtag;
-  rofi-theme = ''
-    * { bg: ${c.base00}; fg: ${c.base05}; accent: ${c.base0E}; }
-    window { background-color: @bg; }
-    inputbar { background-color: @bg; padding: 6px 10px; }
-    listview { lines: 12; }
-    element { padding: 8px 12px; }
-    element selected { background-color: @accent; color: @bg; }
-    element-icon { size: 1.2em; }
-  '';
+  inherit (config.lib.formats.rasi) mkLiteral;
 in {
   imports = [
     ./config
@@ -48,7 +40,26 @@ in {
         icon-theme = "Papirus";
         drun-display-format = "{name}";
       };
-      theme = rofi-theme;
+      theme = {
+        "*" = {
+          bg = mkLiteral c.base00;
+          fg = mkLiteral c.base05;
+          accent = mkLiteral c.base0E;
+        };
+        window = {background-color = mkLiteral "@bg";};
+        inputbar = {
+          background-color = mkLiteral "@bg";
+          padding = mkLiteral "8px 12px";
+        };
+        listview = {lines = 12;};
+        element = {padding = mkLiteral "8px 12px";};
+        "element-icon" = {size = mkLiteral "1.3em";};
+        "element-text" = {text-color = mkLiteral "@fg";};
+        "element selected" = {
+          background-color = mkLiteral "@accent";
+          text-color = mkLiteral "@bg";
+        };
+      };
     };
     home.packages = with pkgs; [
       pavucontrol
