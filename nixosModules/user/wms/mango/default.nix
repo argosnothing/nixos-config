@@ -28,6 +28,7 @@ in {
     styles.stylix.enable = true;
     home.packages = with pkgs; [
       rofi
+      pavucontrol
       swaybg
       (pkgs.writeShellScriptBin "setbg"
         ''
