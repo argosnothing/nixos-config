@@ -17,7 +17,6 @@ in {
     programs.waybar = {
       enable = true;
       systemd.enable = true;
-      settings.mainBar."wlr/taskbar".icon-theme = "Papirus-Dark";
       settings.mainBar = {
         layer = "top";
         position = "top";
