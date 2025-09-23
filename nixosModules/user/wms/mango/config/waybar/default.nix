@@ -44,6 +44,11 @@ in {
           "all-outputs" = false;
         };
 
+        "dwl/layout" = {
+          format = "{}";
+          "max-length" = 20;
+        };
+
         "dwl/window" = {
           # app_id (from wlroots) and title together
           format = "{app_id} {title}";
