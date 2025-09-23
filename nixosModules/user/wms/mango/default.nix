@@ -50,7 +50,8 @@ in {
 
         window = {
           "background-color" = l c.base00;
-          border = l "0px";
+          border = l "2px";
+          "border-color" = l c.base0E;
         };
         mainbox = {
           "background-color" = l c.base00;
