@@ -28,7 +28,6 @@
       enable = true;
       autostart_sh = ''
         setbg
-        waybar
       '';
       settings = ''
         # More option see https://github.com/DreamMaoMao/mango/wiki/

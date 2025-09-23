@@ -5,7 +5,10 @@
   ...
 }: {
   config = lib.mkIf config.wms.mango.enable {
-    home.packages = with pkgs; [waybar];
+    programs.waybar = {
+      enable = true;
+      systemd.enable = true;
+    };
     home.file = {
       ".config/waybar/config.jsonc".source = ./config.jsonc;
       ".config/waybar/style.css".source = ./style.css;
