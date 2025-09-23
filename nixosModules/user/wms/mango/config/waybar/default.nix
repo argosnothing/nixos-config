@@ -50,7 +50,7 @@ in {
         };
 
         "custom/recorder" = {
-          format = "{icon}";
+          format = "{text}";
           "return-type" = "json";
           exec = "rec-widget status";
           "exec-on-event" = true;
