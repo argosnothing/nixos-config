@@ -1,21 +1,14 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  raw = config.lib.stylix.colors or config.stylix.base16Scheme;
-  hasHash = s: lib.strings.hasPrefix "#" s;
-  norm = s:
-    if hasHash s
-    then s
-    else "#${s}";
-  c = lib.mapAttrs (_: norm) raw;
+{config, ...}: let
+  c = config.lib.stylix.colors.withHashtag;
 in ''
+  #waybar { min-height: 0; padding: 0; margin: 0; }
+  * { font-size: 12px; }
+
   #workspaces {
     border-radius: 4px;
     border-width: 2px;
     border-style: solid;
-    border-color: ${c.base0A};
+    border-color: ${c.base0E};
     margin-left: 4px;
     padding-left: 10px;
     padding-right: 6px;
@@ -27,26 +20,22 @@ in ''
     background: none;
     box-shadow: inherit;
     text-shadow: inherit;
-    color: ${c.base0A};
-    padding: 1px 1px;
+    color: ${c.base0E};
+    padding: 0 1px;
     margin: 0 2px;
   }
 
-  #workspaces button.hidden {
-    color: ${c.base03};
-    background-color: transparent;
-  }
-
-  #workspaces button.visible { color: ${c.base0A}; }
-  #workspaces button:hover   { color: ${c.base09}; }
+  #workspaces button.hidden { color: ${c.base03}; background-color: transparent; }
+  #workspaces button.visible { color: ${c.base0E}; }
+  #workspaces button:hover { color: ${c.base09}; }
 
   #workspaces button.active {
-    background-color: ${c.base0A};
+    background-color: ${c.base0E};
     color: ${c.base00};
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 1px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     border-radius: 3px;
   }
 
@@ -56,16 +45,13 @@ in ''
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 1px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     border-radius: 3px;
   }
 
   #tags { background-color: transparent; }
 
-  #tags button {
-    background-color: ${c.base07};
-    color: ${c.base0E};
-  }
+  #tags button { background-color: ${c.base07}; color: ${c.base0E}; }
 
   #tags button:not(.occupied):not(.focused) {
     font-size: 0;
@@ -77,23 +63,10 @@ in ''
     background-color: transparent;
   }
 
-  #tags button.occupied {
-    background-color: ${c.base07};
-    color: ${c.base0A};
-  }
+  #tags button.occupied { background-color: ${c.base07}; color: ${c.base0B}; }
+  #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
+  #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
 
-  #tags button.focused {
-    background-color: ${c.base0E};
-    color: ${c.base00};
-  }
-
-  #tags button.urgent {
-    background: ${c.base08};
-    color: ${c.base00};
-  }
-
-  #window {
-    background-color: ${c.base0A};
-    color: ${c.base00};
-  }
+  #window { background-color: ${c.base01}; color: ${c.base05}; padding: 0; margin: 0; }
+  #window label { padding: 0; margin: 0; }
 ''
