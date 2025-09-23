@@ -60,6 +60,11 @@
     };
 
     programs.nvf.settings.vim.clipboard = {
+      providers = {
+        wl-copy = {
+          enable = true;
+        };
+      };
       enable = true;
     };
 
