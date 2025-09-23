@@ -34,10 +34,9 @@ in {
         };
 
         "dwl/window" = {
-          format = "{app_id}  {title}";
+          format = "{app_id} {icon} {title}";
           "max-length" = 80;
           icon-size = 18;
-          rewrite."\\s+" = " ";
         };
 
         "wlr/taskbar" = {
