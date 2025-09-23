@@ -60,6 +60,7 @@
     };
 
     programs.nvf.settings.vim.clipboard = {
+      registers = "unnamedplus";
       providers = {
         wl-copy = {
           enable = true;
