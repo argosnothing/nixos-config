@@ -26,10 +26,10 @@ in {
   config = lib.mkIf (config.custom.wm.name == "mango") {
     wms.mango.enable = true;
     styles.stylix.enable = true;
+    services.swaync.enable = true;
     home.packages = with pkgs; [
       rofi
       pavucontrol
-      swaync
       swaybg
       (pkgs.writeShellScriptBin "setbg"
         ''
