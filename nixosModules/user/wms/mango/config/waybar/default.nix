@@ -22,7 +22,7 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["ext/workspaces"];
+        "modules-left" = ["ext/workspaces" "dwl/layout"];
         "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
 
