@@ -49,28 +49,15 @@
   bind=CTRL+SUPER,Left,tagtoleft,0
   bind=CTRL+SUPER,Right,tagtoright,0
 
-  bind=Ctrl,1,view,1,0
-  bind=Ctrl,2,view,2,0
-  bind=Ctrl,3,view,3,0
-  bind=Ctrl,4,view,4,0
-  bind=Ctrl,5,view,5,0
-  bind=Ctrl,6,view,6,0
-  bind=Ctrl,7,view,7,0
-  bind=Ctrl,8,view,8,0
-  bind=Ctrl,9,view,9,0
-
-  # tag: move client to the tag and focus it
-  # tagsilent: move client to the tag and not focus it
-  # bind=Alt,1,tagsilent,1
-  bind=Alt,1,tag,1,0
-  bind=Alt,2,tag,2,0
-  bind=Alt,3,tag,3,0
-  bind=Alt,4,tag,4,0
-  bind=Alt,5,tag,5,0
-  bind=Alt,6,tag,6,0
-  bind=Alt,7,tag,7,0
-  bind=Alt,8,tag,8,0
-  bind=Alt,9,tag,9,0
+  bind=Alt,1,view,1,0
+  bind=Alt,2,view,2,0
+  bind=Alt,3,view,3,0
+  bind=Alt,4,view,4,0
+  bind=Alt,5,view,5,0
+  bind=Alt,6,view,6,0
+  bind=Alt,7,view,7,0
+  bind=Alt,8,view,8,0
+  bind=Alt,9,view,9,0
 
   # monitor switch
   bind=alt+shift,Left,focusmon,left
