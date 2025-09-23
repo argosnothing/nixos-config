@@ -36,7 +36,13 @@ in {
         "dwl/window" = {
           format = "{}";
           "max-length" = 50;
-          rewrite.".*" = "★ $0";
+          rewrite = {
+            "(.*) - Mozilla Firefox" = " $1"; # Firefox
+            "(.*) - zsh" = " [$1]"; # zsh shell
+            "(.*)([Nn][Vv][Ii][Mm].*)" = " $2"; # vim / nvim / NVIM
+            "(.*) - Discord" = "󰙯 $1"; # Discord
+            "(.*) - Spotify" = " $1"; # Spotify
+          };
         };
 
         "wlr/taskbar" = {
