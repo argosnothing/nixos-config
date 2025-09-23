@@ -9,6 +9,6 @@
 
 
   # SPOTIFY
-  bind=alt,s,toggle_named_scratchpad,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad,none,spotify
+  bind=alt,w,toggle_named_scratchpad,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad,none,spotify
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:firefox-scratchpad
 ''
