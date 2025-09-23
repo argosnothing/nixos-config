@@ -22,9 +22,16 @@ in {
         position = "top";
         height = 25;
 
-        "modules-left" = ["dwl/tags"];
+        "modules-left" = ["ext/workspaces"];
         "modules-center" = ["dwl/window"];
         "modules-right" = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
+
+        "ext/workspaces" = {
+          "format" = "{icon}";
+          "ignore-hidden" = true;
+          "on-click" = "activate";
+          "sort-by-id" = true;
+        };
 
         "dwl/window" = {
           format = " {app_id}  {title}";
