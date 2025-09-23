@@ -5,8 +5,8 @@
   ...
 }: {
   config = lib.mkIf config.wms.mango.enable {
+    home.packages = with pkgs; [waybar];
     programs.waybar = {
-      enable = true;
       systemd.enable = true;
     };
     home.file = {
