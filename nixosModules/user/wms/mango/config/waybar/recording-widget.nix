@@ -5,12 +5,14 @@ pkgs.writeShellScriptBin "rec-widget" ''
   pidfile="''${XDG_CACHE_HOME:-$HOME/.cache}/wf-recorder.pid"
   start_cmd="''${START_CMD:-record-region-start}"
   stop_cmd="''${STOP_CMD:-record-region-stop}"
+  play=$'\uf04b'
+  pause=$'\uf04c'
 
   status() {
     if [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
-      printf '{"text":"","tooltip":"Recording","class":"recording","alt":"recording","icon":"►"}\n'
+      printf '{"text":"%s","class":"recording","tooltip":"Recording"}\n' "$pause"
     else
-      printf '{"text":"","tooltip":"Idle","class":"idle","alt":"idle","icon":"❚❚"}\n'
+      printf '{"text":"%s","class":"idle","tooltip":"Idle"}\n' "$play"
     fi
   }
 

@@ -42,7 +42,7 @@ in {
         ];
 
         "ext/workspaces" = {
-          "format" = "{icon}";
+          "format" = "{text}";
           "ignore-hidden" = false;
           "on-click" = "activate";
           "sort-by-id" = true;
