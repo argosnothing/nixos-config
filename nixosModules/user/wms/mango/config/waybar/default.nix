@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  c = config.stylix.base16Scheme.colors;
+  c = config.lib.stylix.colors; # <- normalized base16 colors from Stylix
 in {
   config = lib.mkIf config.wms.mango.enable {
     programs.waybar = {
