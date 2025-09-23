@@ -8,21 +8,37 @@ pkgs.writeShellScriptBin "rec-widget" ''
   play=$'\uf04b'
   pause=$'\uf04c'
 
+  is_on() { [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; }
+
+  wait_on() {
+    for _ in $(seq 1 40); do
+      if is_on; then return 0; fi
+      sleep 0.05
+    done
+    return 1
+  }
+
+  wait_off() {
+    for _ in $(seq 1 40); do
+      if ! is_on; then return 0; fi
+      sleep 0.05
+    done
+    return 1
+  }
+
   status() {
-    if [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
-      printf '{"text":"%s","class":"recording","tooltip":"Recording"}\n' "$pause"
-    else
-      printf '{"text":"%s","class":"idle","tooltip":"Idle"}\n' "$play"
-    fi
+    if is_on; then printf '%s\n' "$pause"; else printf '%s\n' "$play"; fi
   }
 
   toggle() {
-    if [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
+    if is_on; then
       "''${stop_cmd}" >/dev/null 2>&1 || true
+      wait_off || true
     else
-      "''${start_cmd}" >/dev/null
+      "''${start_cmd}" >/dev/null 2>&1 || true
+      wait_on || true
     fi
-    pkill -RTMIN+8 waybar || true
+    pkill -RTMIN+8 waybar 2>/dev/null || true
   }
 
   case "''${1:-status}" in
