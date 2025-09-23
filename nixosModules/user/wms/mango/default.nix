@@ -1,8 +1,6 @@
 {
-  pkgs,
   config,
   lib,
-  settings,
   inputs,
 }: {
   imports = [inputs.mango.hmModules.mango];
