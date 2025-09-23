@@ -5,14 +5,17 @@
   inputs,
   ...
 }: {
-  imports = [inputs.mango.hmModules.mango];
+  imports = [
+    ./config
+    inputs.mango.hmModules.mango
+  ];
   options = {
     wms.mango.enable = lib.mkEnableption "Enable Mango";
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
+    wms.mango.enable = true;
     home.packages = with pkgs; [
       rofi
-      waybar
     ];
     wayland.windowManager.mango = {
       enable = true;
