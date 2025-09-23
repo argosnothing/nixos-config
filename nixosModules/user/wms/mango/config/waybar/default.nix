@@ -25,7 +25,17 @@ in {
 
         modules-left = ["ext/workspaces" "dwl/window"];
         modules-center = [];
-        modules-right = ["clock" "pulseaudio" "custom/notification" "tray" "wlr/taskbar"];
+        modules-right = [
+          "clock"
+          "custom/space"
+          "pulseaudio"
+          "custom/space"
+          "custom/notification"
+          "custom/space"
+          "tray"
+          "custom/space"
+          "wlr/taskbar"
+        ];
 
         "ext/workspaces" = {
           "format" = "{icon}";
@@ -53,6 +63,11 @@ in {
 
         "dwl/window" = {
           "format" = "[{layout}]{title}";
+        };
+
+        "custom/space" = {
+          format = "   "; # three spaces
+          interval = "once";
         };
 
         pulseaudio = {
