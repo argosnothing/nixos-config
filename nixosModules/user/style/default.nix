@@ -18,7 +18,7 @@
         hyprland.enable = true;
         firefox = {
           enable = true;
-          profileNames = ["default"];
+          profileNames = ["default" "firefox-scratchpad"];
         };
         vscode.enable = true;
       };
