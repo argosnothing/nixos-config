@@ -34,7 +34,7 @@ in {
         };
 
         "dwl/window" = {
-          format = "{}";
+          #format = "{}";
           max-length = 50;
           rewrite = {
             "(.*) - Mozilla Firefox" = " $1"; # Firefox
