@@ -8,7 +8,7 @@
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:spotify
 
 
-  # SPOTIFY
-  bind=alt,w,toggle_named_scratchpad,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad,none,spotify
+  # WEB
+  bind=alt,w,toggle_named_scratchpad,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad,none,firefox-scratchpad
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:firefox-scratchpad
 ''
