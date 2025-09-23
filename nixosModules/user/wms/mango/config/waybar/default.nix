@@ -84,8 +84,8 @@ in {
         };
 
         clock = {
-          format = "{:%a %b %d  %H:%M}";
-          "tooltip-format" = "<big>{:%Y-%m-%d}</big>";
+          format = "{:%I:%M %p  %m/%d/%Y}";
+          "tooltip-format" = "<big>{:%A, %B %d, %Y}</big>";
         };
 
         "custom/notification" = {
