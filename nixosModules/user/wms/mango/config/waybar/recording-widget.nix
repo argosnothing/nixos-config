@@ -8,10 +8,21 @@ pkgs.writeShellScriptBin "rec-widget" ''
   play=$'\uf04b'
   pause=$'\uf04c'
 
-  is_on() { [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; }
+  have_pid() { [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null; }
+  scan_pid() {
+    pgrep -u "''${USER}" -x wf-recorder | tail -n1
+  }
+  sync_pid() {
+    if have_pid; then return 0; fi
+    p="$(scan_pid || true)"
+    if [ -n "''${p:-}" ]; then printf '%s' "$p" > "$pidfile"; return 0; fi
+    return 1
+  }
+
+  is_on() { have_pid || sync_pid; }
 
   wait_on() {
-    for _ in $(seq 1 40); do
+    for _ in $(seq 1 80); do
       if is_on; then return 0; fi
       sleep 0.05
     done
@@ -19,7 +30,7 @@ pkgs.writeShellScriptBin "rec-widget" ''
   }
 
   wait_off() {
-    for _ in $(seq 1 40); do
+    for _ in $(seq 1 80); do
       if ! is_on; then return 0; fi
       sleep 0.05
     done
