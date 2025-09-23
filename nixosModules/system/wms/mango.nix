@@ -14,7 +14,10 @@
     };
   };
   config = lib.mkIf (config.custom.wm.name == "mango") {
-    environment.systemPackages = [pkgs.foot];
+    environment.systemPackages = [
+      pkgs.foot
+      pkgs.wf-recorder
+    ];
     wms.mango.enable = true;
     styles.stylix.enable = true;
     programs.mango.enable = true;
