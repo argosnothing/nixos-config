@@ -30,7 +30,7 @@ in ''
     background-color: ${c.base0E};
     color: ${c.base00};
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     box-shadow: none;
     border-bottom: 0px;
     padding-top: 1px;
