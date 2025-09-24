@@ -64,7 +64,6 @@ in ''
   }
 
   #tags button.occupied { background-color: ${c.base07}; color: ${c.base0B}; }
-  #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
   #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
 
   #window {
