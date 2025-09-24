@@ -44,14 +44,6 @@
   bind=ALT,=,incnmaster,+1
 
 
-  # tag switch
-  bind=SUPER,Left,viewtoleft,0
-  bind=CTRL,Left,viewtoleft_have_client,0
-  bind=SUPER,Right,viewtoright,0
-  bind=CTRL,Right,viewtoright_have_client,0
-  bind=CTRL+SUPER,Left,tagtoleft,0
-  bind=CTRL+SUPER,Right,tagtoright,0
-
   bind=Alt,1,view,1,0
   bind=Alt,2,view,2,0
   bind=Alt,3,view,3,0
@@ -62,32 +54,19 @@
   bind=Alt,8,view,8,0
   bind=Alt,9,view,9,0
 
+  bind=CTRL+SHIFT,1,tag,1,0
+  bind=CTRL+SHIFT,2,tag,2,0
+  bind=CTRL+SHIFT,3,tag,3,0
+  bind=CTRL+SHIFT,4,tag,4,0
+  bind=CTRL+SHIFT,5,tag,5,0
+  bind=CTRL+SHIFT,6,tag,6,0
+  bind=CTRL+SHIFT,7,tag,7,0
+  bind=CTRL+SHIFT,8,tag,8,0
+  bind=CTRL+SHIFT,9,tag,9,0
+
   # monitor switch
   bind=alt+shift,Left,focusmon,left
   bind=alt+shift,Right,focusmon,right
-
-  # adjust tile window size
-  # change master fact for tile,spiral,deck,dwindle
-  bind=ALT+SUPER,h,setmfact,-0.05
-  bind=ALT+SUPER,l,setmfact,+0.05
-  # change sub master fact for dwindle,spiral
-  bind=ALT+SUPER,k,setsmfact,-0.05
-  bind=ALT+SUPER,j,setsmfact,+0.05
-  # change scroller proportion
-  bind=ctrl+super,j,increase_proportion,0.1
-  bind=ctrl+super,k,increase_proportion,-0.1
-
-  # movewin
-  bind=CTRL+SHIFT,Up,movewin,+0,-50
-  bind=CTRL+SHIFT,Down,movewin,+0,+50
-  bind=CTRL+SHIFT,Left,movewin,-50,+0
-  bind=CTRL+SHIFT,Right,movewin,+50,+0
-
-  # resizewin
-  bind=CTRL+ALT,Up,resizewin,+0,-50
-  bind=CTRL+ALT,Down,resizewin,+0,+50
-  bind=CTRL+ALT,Left,resizewin,-50,+0
-  bind=CTRL+ALT,Right,resizewin,+50,+0
 
   # Mouse Button Bindings
   # NONE mode key only work in ov mode
