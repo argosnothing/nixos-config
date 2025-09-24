@@ -26,12 +26,15 @@ in ''
   #workspaces button:hover { color: ${c.base09}; }
 
   #workspaces button.active {
+    background-color: ${c.base0E};
     color: ${c.base00};
     margin-top: 5px;
     margin-bottom: 5px;
+    box-shadow: none;
     padding-top: 1px;
     padding-bottom: 0;
     border-radius: 3px;
+    background-image:none;
   }
 
   #workspaces button.urgent {
