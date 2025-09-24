@@ -34,7 +34,6 @@
   bind=SUPER+SHIFT,I,restore_minimized
 
   # scroller layout
-  bind=ALT,e,set_proportion,1.0
   bind=ALT,x,switch_proportion_preset,
 
   # switch layout
