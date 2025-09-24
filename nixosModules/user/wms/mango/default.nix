@@ -103,6 +103,7 @@ in {
     home.packages = with pkgs; [
       pavucontrol
       swaybg
+      xorg-xrdb
       (pkgs.writeShellScriptBin "setbg"
         ''
           swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
@@ -113,7 +114,9 @@ in {
       autostart_sh = ''
         set +e
         setbg &
-        waybar
+        waybar &
+        echo "Xft.dpi:140" | xrdb -merge
+        gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
       '';
       settings =
         binds
