@@ -14,7 +14,7 @@ in ''
   #workspaces button {
     border: none;
     background: none;
-    box-shadow: inherit;
+    box-shadow: none;
     text-shadow: inherit;
     color: ${c.base0E};
     padding: 0 1px;
