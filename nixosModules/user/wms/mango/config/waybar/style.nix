@@ -1,102 +1,90 @@
 {config, ...}: let
   c = config.lib.stylix.colors.withHashtag;
 in ''
-      #waybar { min-height: 0; padding: 0; margin: 0; }
-      * { font-size: 12px; }
+  #waybar { min-height: 0; padding: 0; margin: 0; }
+  * { font-size: 12px; }
 
-      #workspaces {
-        margin-left: 4px;
-        padding-left: 10px;
-        padding-right: 6px;
-        background-color: ${c.base00};
-      }
-
-      #workspaces button {
-        border: none;
-        background: none;
-        box-shadow: none;
-        text-shadow: inherit;
-        color: ${c.base0E};
-        padding: 0 1px;
-        margin: 0 2px;
-      }
-
-      #workspaces button.hidden { color: ${c.base03}; background-color: transparent; }
-      #workspaces button.visible { color: ${c.base0E}; }
-      #workspaces button:hover { color: ${c.base09}; }
-    #workspaces button.active {
-      background-color: ${c.base0E};
-      color: ${c.base00};
-      margin-top: 5px;
-      margin-bottom: 0;   /* remove the seam */
-      padding-top: 1px;
-      padding-bottom: 0;
-      border-radius: 3px;
-      box-shadow: none;
-      background-image: none;
-    }
-
-    #workspaces button.active > label {
-      background: transparent;   /* no inner box -> no seam */
-      color: inherit;
-      margin: 0;
-      padding: 0;
-    }
-  #workspaces button:checked,
-  #workspaces button:active,
-  #workspaces button:focus {
-    background-image: none;
-    box-shadow: none;
-    border: 0;
-    outline: 0;
+  #workspaces {
+    margin-left: 4px;
+    padding-left: 10px;
+    padding-right: 6px;
+    background-color: ${c.base00};
   }
 
-      #workspaces button.urgent {
-        background-color: ${c.base08};
-        color: ${c.base00};
-        box-shadow: none;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding-top: 1px;
-        padding-bottom: 0;
-        border-radius: 3px;
-      }
+  #workspaces button {
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: inherit;
+    color: ${c.base0E};
+    padding: 0 1px;
+    margin: 0 2px;
+  }
 
-      #tags { background-color: transparent; }
+  #workspaces button.hidden { color: ${c.base03}; background-color: transparent; }
+  #workspaces button.visible { color: ${c.base0E}; }
+  #workspaces button:hover { color: ${c.base09}; }
 
-      #tags button { background-color: ${c.base07}; color: ${c.base0E}; }
+  #workspaces button > label,
+  #workspaces button.active {
+    background-color: ${c.base0E};
+    color: ${c.base00};
+    margin-top: 5px;
+    margin-bottom: 0px;
+    box-shadow: none;
+    border-bottom: 0px;
+    padding-top: 1px;
+    padding-bottom: 0;
+    border-radius: 3px;
+    background-image:none;
+  }
 
-      #tags button:not(.occupied):not(.focused) {
-        font-size: 0;
-        min-width: 0;
-        min-height: 0;
-        margin: -17px;
-        padding: 0;
-        color: transparent;
-        background-color: transparent;
-      }
+  #workspaces button.urgent {
+    background-color: ${c.base08};
+    color: ${c.base00};
+    box-shadow: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 1px;
+    padding-bottom: 0;
+    border-radius: 3px;
+  }
 
-      #tags button.occupied { background-color: ${c.base07}; color: ${c.base0B}; }
-      #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
-      #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
+  #tags { background-color: transparent; }
 
-      #window {
-        background-color: transparent;
-        color: ${c.base05};
-        font-size: 14px;
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-      }
+  #tags button { background-color: ${c.base07}; color: ${c.base0E}; }
 
-      #window label {
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
-        font-weight: bold;
-      }
+  #tags button:not(.occupied):not(.focused) {
+    font-size: 0;
+    min-width: 0;
+    min-height: 0;
+    margin: -17px;
+    padding: 0;
+    color: transparent;
+    background-color: transparent;
+  }
 
-      #layout {
-        margin-left: 12px;
-      }
+  #tags button.occupied { background-color: ${c.base07}; color: ${c.base0B}; }
+  #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
+  #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
+
+  #window {
+    background-color: transparent;
+    color: ${c.base05};
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+
+  #window label {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  #layout {
+    margin-left: 12px;
+  }
 ''
