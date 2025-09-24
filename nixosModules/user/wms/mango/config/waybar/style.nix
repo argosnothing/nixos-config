@@ -25,6 +25,16 @@ in ''
   #workspaces button.visible { color: ${c.base0E}; }
   #workspaces button:hover { color: ${c.base09}; }
 
+  #tags button,
+  #tags button:hover,
+  #tags button:focus,
+  #tags button:active,
+  #tags button:checked,
+  #tags button.focused,
+  #workspaces button,
+  #workspaces button:hover,
+  #workspaces button:focus,
+  #workspaces button:checked,
   #workspaces button.active {
     background-color: ${c.base0E};
     color: ${c.base00};
@@ -64,6 +74,7 @@ in ''
   }
 
   #tags button.occupied { background-color: ${c.base07}; color: ${c.base0B}; }
+  #tags button.focused { background-color: ${c.base0E}; color: ${c.base00}; }
   #tags button.urgent { background: ${c.base08}; color: ${c.base00}; }
 
   #window {
