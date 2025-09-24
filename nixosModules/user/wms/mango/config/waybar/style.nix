@@ -41,6 +41,7 @@ in ''
   #workspaces button.urgent {
     background-color: ${c.base08};
     color: ${c.base00};
+    box-shadow: none;
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 1px;
