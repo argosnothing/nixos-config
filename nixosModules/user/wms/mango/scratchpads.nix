@@ -10,4 +10,8 @@
   # WEB
   bind=alt,w,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:firefox-scratchpad,overlay:1
+
+  # nemo nemo
+  windowrule=isfloating:1,width:1280,height:800,appid:nemo
+
 ''
