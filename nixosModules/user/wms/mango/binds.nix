@@ -43,15 +43,15 @@
   bind=ALT,=,incnmaster,+1
 
 
-  bind=Alt,1,view,-1,0
-  bind=Alt,2,view,-2,0
-  bind=Alt,3,view,-3,0
-  bind=Alt,4,view,-4,0
-  bind=Alt,5,view,-5,0
-  bind=Alt,6,view,-6,0
-  bind=Alt,7,view,-7,0
-  bind=Alt,8,view,-8,0
-  bind=Alt,9,view,-9,0
+  bind=Alt,1,view,1,0
+  bind=Alt,2,view,2,0
+  bind=Alt,3,view,3,0
+  bind=Alt,4,view,4,0
+  bind=Alt,5,view,5,0
+  bind=Alt,6,view,6,0
+  bind=Alt,7,view,7,0
+  bind=Alt,8,view,8,0
+  bind=Alt,9,view,9,0
 
   bind=ALT+SHIFT,1,tag,1,0
   bind=ALT+SHIFT,2,tag,2,0
