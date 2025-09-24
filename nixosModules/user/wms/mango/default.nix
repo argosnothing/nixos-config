@@ -104,7 +104,6 @@ in {
       pavucontrol
       swaybg
       xorg.xrdb
-      wshowkeys
       (pkgs.writeShellScriptBin "setbg"
         ''
           swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
