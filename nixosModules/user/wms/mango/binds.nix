@@ -36,8 +36,8 @@
   # switch layout
   bind=ALT,n,switch_layout
   bind=ALT+SHIFT,Return,zoom
-  bind=ALT,-,incnmaster,-1
-  bind=ALT,=,incnmaster,+1
+  bind=ALT,code:20,incnmaster,-1
+  bind=ALT,code:21,incnmaster,+1
 
 
   bind=Alt,1,view,1,0
