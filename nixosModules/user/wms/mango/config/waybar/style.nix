@@ -27,7 +27,6 @@ in ''
 
   #workspaces button > label,
   #workspaces button.active {
-    background-color: ${c.base0E};
     color: ${c.base00};
     margin-top: 5px;
     margin-bottom: 0px;
