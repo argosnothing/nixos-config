@@ -31,6 +31,7 @@ in ''
     margin-top: 5px;
     margin-bottom: 5px;
     box-shadow: none;
+    border-bottom: 0px;
     padding-top: 1px;
     padding-bottom: 0;
     border-radius: 3px;
