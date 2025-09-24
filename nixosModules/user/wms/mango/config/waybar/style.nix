@@ -2,7 +2,7 @@
   c = config.lib.stylix.colors.withHashtag;
 in ''
   #waybar { min-height: 0; padding: 0; margin: 0; }
-  * { font-size: 12px; }
+  * { font-size: 20px; }
 
   #workspaces {
     margin-left: 4px;
