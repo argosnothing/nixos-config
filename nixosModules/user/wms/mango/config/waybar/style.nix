@@ -23,8 +23,10 @@ in ''
 
   #workspaces button.hidden { color: ${c.base03}; background-color: transparent; }
   #workspaces button.visible { color: ${c.base0E}; }
+  #workspaces button:hover { color: ${c.base09}; }
 
   #workspaces button.active {
+    background-color: ${c.base0E};
     color: ${c.base00};
     margin-top: 5px;
     margin-bottom: 5px;
