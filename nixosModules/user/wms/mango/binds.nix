@@ -64,15 +64,15 @@
   bind=ALT+SHIFT,8,tag,8,0
   bind=ALT+SHIFT,9,tag,9,0
 
-  bind=ALT+CTRL,1,toggleview,1,0
-  bind=ALT+CTRL,2,toggleview,2,0
-  bind=ALT+CTRL,3,toggleview,3,0
-  bind=ALT+CTRL,4,toggleview,4,0
-  bind=ALT+CTRL,5,toggleview,5,0
-  bind=ALT+CTRL,6,toggleview,6,0
-  bind=ALT+CTRL,7,toggleview,7,0
-  bind=ALT+CTRL,8,toggleview,8,0
-  bind=ALT+CTRL,9,toggleview,9,0
+  bind=ALT+CTRL,1,toggletag,1,0
+  bind=ALT+CTRL,2,toggletag,2,0
+  bind=ALT+CTRL,3,toggletag,3,0
+  bind=ALT+CTRL,4,toggletag,4,0
+  bind=ALT+CTRL,5,toggletag,5,0
+  bind=ALT+CTRL,6,toggletag,6,0
+  bind=ALT+CTRL,7,toggletag,7,0
+  bind=ALT+CTRL,8,toggletag,8,0
+  bind=ALT+CTRL,9,toggletag,9,0
 
   # monitor switch
   bind=alt+shift,Left,focusmon,left
