@@ -75,7 +75,7 @@ in {
         };
 
         "dwl/window" = {
-          "format" = "[{layout}]{title}";
+          "format" = "[{layout}]{title} | {app_id}";
         };
 
         "custom/space" = {
