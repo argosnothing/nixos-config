@@ -119,7 +119,11 @@ in {
         gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
       '';
       settings =
-        binds
+        ''
+          env=QT_AUTO_SCREEN_SCALE_FACTOR,1
+          env=QT_WAYLAND_FORCE_DPI,140
+        ''
+        + binds
         + monitors
         + mango-inputs
         + layouts
