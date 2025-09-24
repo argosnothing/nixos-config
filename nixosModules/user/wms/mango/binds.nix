@@ -25,13 +25,10 @@
   bind=SUPER+SHIFT,Right,exchange_client,right
 
   # switch window status
-  bind=SUPER,g,toggleglobal,
   bind=ALT,backslash,togglefloating,
   bind=ALT,a,togglemaxmizescreen,
   bind=ALT,f,togglefullscreen,
-  bind=ALT+SHIFT,f,togglefakefullscreen,
-  bind=SUPER,o,toggleoverlay,
-  bind=SUPER+SHIFT,I,restore_minimized
+  bind=ALT,o,toggleoverlay,
 
   # scroller layout
   bind=ALT,x,switch_proportion_preset,
@@ -39,8 +36,8 @@
   # switch layout
   bind=ALT,n,switch_layout
   bind=ALT+SHIFT,Return,zoom
-  bind=ALT,_,incnmaster,-1
-  bind=ALT,+,incnmaster,+1
+  bind=ALT,-,incnmaster,-1
+  bind=ALT,=,incnmaster,+1
 
 
   bind=Alt,1,view,1,0
