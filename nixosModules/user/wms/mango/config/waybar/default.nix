@@ -12,6 +12,7 @@ in {
     home.packages = [
       recording-widget
     ];
+    stylix.targets.waybar.enable = false;
     gtk = {
       enable = true;
       iconTheme = {
