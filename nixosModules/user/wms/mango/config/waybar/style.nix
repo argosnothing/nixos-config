@@ -25,16 +25,7 @@ in ''
   #workspaces button.visible { color: ${c.base0E}; }
   #workspaces button:hover { color: ${c.base09}; }
 
-  #tags button,
-  #tags button:hover,
-  #tags button:focus,
-  #tags button:active,
-  #tags button:checked,
-  #tags button.focused,
-  #workspaces button,
-  #workspaces button:hover,
-  #workspaces button:focus,
-  #workspaces button:checked,
+  #workspaces button > label,
   #workspaces button.active {
     background-color: ${c.base0E};
     color: ${c.base00};
