@@ -26,7 +26,7 @@ in ''
   #workspaces button:hover { color: ${c.base09}; }
 
   #workspaces button.active {
-    background-color: ${c.base0E};
+    color: ${c.base00};
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 1px;
