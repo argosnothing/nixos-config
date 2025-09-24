@@ -18,4 +18,7 @@
   # nemo nemo
   windowrule=isfloating:1,width:1280,height:800,appid:nemo
 
+  # pavu
+  windowrule=isfloating:1,width:1280,height:800,appid:org.pulseaudio.pavucontrol
+
 ''
