@@ -103,7 +103,7 @@ in {
     home.packages = with pkgs; [
       pavucontrol
       swaybg
-      xorg-xrdb
+      xorg.xrdb
       (pkgs.writeShellScriptBin "setbg"
         ''
           swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
