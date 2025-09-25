@@ -17,7 +17,6 @@
     ytfzf
     desktop-file-utils
     discord
-    vesktop
     nix-direnv
     nix-direnv-flakes
     direnv
@@ -29,6 +28,15 @@
   mpv.enable = true;
   programs.bash = {
     enable = true;
+  };
+
+  programs.vesktop = {
+    enable = true;
+    settings = {
+      staticTitle = true;
+      hardwareAcceleration = false;
+      discordBranch = "stable";
+    };
   };
 
   custom.persist.home = {
