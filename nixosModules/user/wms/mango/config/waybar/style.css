@@ -5,7 +5,6 @@
   font-size: 17px;
   border: none;
   border-radius: 0;
-  /*min-height: 0;*/
   margin: 0;
   padding: 0;
 }
@@ -29,7 +28,7 @@
 }
 
 #tags button {
-  padding: 0 0.8rem; /*More horizontal padding for text */
+  padding: 0 0.8rem; 
   font-weight: normal;
 }
 
@@ -67,7 +66,6 @@
   color: @unfocused_selected_fg_color;
 }
 
-/* Optional: Add subtle transition for hover effects */
 #tags button {
   transition: all 0.2s ease-in-out;
 }
