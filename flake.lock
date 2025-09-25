@@ -403,11 +403,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758786164,
-        "narHash": "sha256-o1WyZI2T7yPywiY06Swt8AZH/ewKU1nLqDw8fw1fwPc=",
+        "lastModified": 1758810399,
+        "narHash": "sha256-bpWoE1tiFX5T1tr5EudkpW9Kk02XR+6olkoSkf3nHZU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "232454052008027c8e925979d13a951e92729781",
+        "rev": "39d26c16866260eee6d0487fe9c102ba1c1bf7b2",
         "type": "github"
       },
       "original": {
@@ -441,16 +441,16 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1758771320,
-        "narHash": "sha256-wlMILADdRKOTwgUwq93q8SYDga9lUuFdayzYsRGH7Gs=",
-        "owner": "DreamMaoMao",
-        "repo": "mango",
-        "rev": "1442d2cb2b94fd2f54cc4b534d9ea947fa3a9bfa",
+        "lastModified": 1758817536,
+        "narHash": "sha256-te8gJgFxBNVN35Bt9EwXMpBrHeFQrCyEVrSzeWc/jno=",
+        "owner": "argosnothing",
+        "repo": "mangowc",
+        "rev": "9bbc9f08974bcba41afe2e80967d8505f2317590",
         "type": "github"
       },
       "original": {
-        "owner": "DreamMaoMao",
-        "repo": "mango",
+        "owner": "argosnothing",
+        "repo": "mangowc",
         "type": "github"
       }
     },
@@ -585,11 +585,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1758427187,
-        "narHash": "sha256-pHpxZ/IyCwoTQPtFIAG2QaxuSm8jWzrzBGjwQZIttJc=",
+        "lastModified": 1758690382,
+        "narHash": "sha256-NY3kSorgqE5LMm1LqNwGne3ZLMF2/ILgLpFr1fS4X3o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
+        "rev": "e643668fd71b949c53f8626614b21ff71a07379d",
         "type": "github"
       },
       "original": {
@@ -672,11 +672,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758808260,
-        "narHash": "sha256-0RJBJIs7Dx7N22VhHsh28hhMeyDt0ciypdUOD173v7s=",
+        "lastModified": 1758814894,
+        "narHash": "sha256-poEfWAPjVrN2kJjotCqo6GOOlH+Lze//JkA4cCUl3VA=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "b38cf8ef660067b151c67eed1ab437075aa3d0b0",
+        "rev": "2a496a7831231d67a41139d2de59b7773f77df18",
         "type": "github"
       },
       "original": {
