@@ -40,6 +40,7 @@
 
     mango = {
       url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     impermanence = {
