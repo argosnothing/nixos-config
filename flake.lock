@@ -441,11 +441,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1758817536,
-        "narHash": "sha256-te8gJgFxBNVN35Bt9EwXMpBrHeFQrCyEVrSzeWc/jno=",
+        "lastModified": 1758817812,
+        "narHash": "sha256-GWMZtMHU5ricWmEYgqyGr4wSPA8vB30vCeSxtuloqwk=",
         "owner": "argosnothing",
         "repo": "mangowc",
-        "rev": "9bbc9f08974bcba41afe2e80967d8505f2317590",
+        "rev": "e19df3431df9a9cf1a531b080228c14d62ce02ed",
         "type": "github"
       },
       "original": {
