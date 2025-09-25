@@ -48,6 +48,7 @@
 
     # Core system packages
     systemPackages = with pkgs; [
+      bottom
       nh
       fastfetch
       lazygit
