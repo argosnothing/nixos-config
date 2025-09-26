@@ -39,6 +39,7 @@
           };
           notes.orgmode = {
             enable = true;
+            treesitter.enable = false;
           };
           comments.comment-nvim.enable = true;
           statusline.lualine.enable = true;
