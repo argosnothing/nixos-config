@@ -6,6 +6,7 @@
 
   # Laptop-specific configuration
   # Using default kernel (not xanmod) for battery life
+  hardware.graphics.enable = true;
 
   # Laptop-specific packages
   environment.systemPackages = with pkgs; [
