@@ -64,7 +64,7 @@ in {
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
     desktop = {wm = "mango";};
-    laptop = {};
+    laptop = {wm = "mango";};
     p51 = {};
     vm = {};
   };
