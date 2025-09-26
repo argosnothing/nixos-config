@@ -39,7 +39,7 @@
     };
 
     mango = {
-      url = "github:argosnothing/mangowc";
+      url = "github:argosnothing/mangowc/combowview_fix";
       #url = "github:argosnothing/mangowc?rev=f0f58f34e3457c005f9845e8aed9d0a2cfee6db4";
       inputs.nixpkgs.follows = "nixpkgs";
     };

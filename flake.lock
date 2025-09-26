@@ -441,15 +441,16 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1758849617,
-        "narHash": "sha256-LbuPdFgVPUZSch4YtxxC0GNSh01NjB0wB/qwkMuymf4=",
+        "lastModified": 1758892822,
+        "narHash": "sha256-XJZa498Jj7I38YTpEY52q6sY820gz7Ul9T31YBtEf/M=",
         "owner": "argosnothing",
         "repo": "mangowc",
-        "rev": "0b2b961f23c59b4db4ae74f8a1f61cd80cd46d75",
+        "rev": "f2f9ce0168f560e4b7ac7e729298b36c66f9845c",
         "type": "github"
       },
       "original": {
         "owner": "argosnothing",
+        "ref": "combowview_fix",
         "repo": "mangowc",
         "type": "github"
       }
@@ -672,11 +673,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758890012,
-        "narHash": "sha256-JCs9mdDg9AiYVa2v0NSjhKFsBSrRF2larxaVbIEz8rA=",
+        "lastModified": 1758892050,
+        "narHash": "sha256-9pk1TUtdq8x8G/ILjFwWIssBwzPWn34x/80sy4Mum4c=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "7afd0177cb56d73cfa17c14bb7bdc5b2621b2e11",
+        "rev": "5cfa66f9e8fd22170ec9e4d112bd8dc3a80a3908",
         "type": "github"
       },
       "original": {
