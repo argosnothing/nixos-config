@@ -39,7 +39,7 @@
     };
 
     mango = {
-      url = "github:argosnothing/mangowc";
+      url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
