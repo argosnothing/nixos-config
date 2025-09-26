@@ -37,6 +37,9 @@
             enable = true;
             theme = "theta";
           };
+          notes.orgmode = {
+            enable = true;
+          };
           comments.comment-nvim.enable = true;
           statusline.lualine.enable = true;
           tabline.nvimBufferline.enable = true;
