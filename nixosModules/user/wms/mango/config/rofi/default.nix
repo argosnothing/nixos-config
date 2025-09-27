@@ -1,8 +1,14 @@
-{pkgs, config, settings, lib, ...}:let
+{
+  pkgs,
+  config,
+  settings,
+  lib,
+  ...
+}: let
   c = config.lib.stylix.colors.withHashtag;
   l = config.lib.formats.rasi.mkLiteral;
   inherit (config.lib.formats.rasi) mkLiteral;
-in{
+in {
   config = lib.mkIf config.wms.mango.enable {
     programs.rofi = {
       enable = true;
@@ -72,5 +78,5 @@ in{
         };
       };
     };
-  }
+  };
 }
