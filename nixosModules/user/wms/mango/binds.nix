@@ -39,6 +39,8 @@
   bind=ALT,code:20,incnmaster,-1
   bind=ALT,code:21,incnmaster,+1
 
+  bind=Alt,p,togglefloating
+
 
   bind=Alt,1,comboview,1
   bind=Alt,2,comboview,2
