@@ -40,6 +40,7 @@
   bind=ALT,code:21,incnmaster,+1
 
   bind=Alt,p,togglefloating
+  bind=Alt,g,toggleglobal
 
 
   bind=Alt,1,comboview,1
