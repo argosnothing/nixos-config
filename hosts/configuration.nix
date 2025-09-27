@@ -14,7 +14,7 @@
   ];
   stylix.homeManagerIntegration.autoImport = false;
   # MY STUFF
-  services.pipwireConfig.enable = true;
+  services.pipewireConfig.enable = true;
   #
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
