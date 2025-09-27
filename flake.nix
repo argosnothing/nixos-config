@@ -39,7 +39,6 @@
     };
 
     mango = {
-      #url = "github:argosnothing/mangowc";
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -59,7 +58,7 @@
     };
 
     nvf = {
-      url = "github:notashelf/nvf?ref=v0.8";
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

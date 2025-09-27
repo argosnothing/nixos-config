@@ -32,6 +32,7 @@
       settings = {
         vim = {
           vimAlias = true;
+          #spellcheck.enable = true;
           autopairs.nvim-autopairs.enable = true;
           dashboard.alpha = {
             enable = true;

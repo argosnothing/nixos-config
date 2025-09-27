@@ -23,7 +23,7 @@
                   type = "alejandra";
                 };
                 lsp = {
-                  servers = "nil";
+                  server = "nil";
                   enable = true;
                 };
               };
