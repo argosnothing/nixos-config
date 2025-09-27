@@ -21,7 +21,7 @@ in {
     styles.stylix.enable = true;
     stylix.targets.rofi.enable = false;
     services.swaync.enable = true;
-    custom.desktop-shell.name = "noctalia-shell";
+    #custom.desktop-shell.name = "noctalia-shell"; # Hopefully i get this working one day?
     home.packages = with pkgs; [
       pavucontrol
       swaybg
