@@ -72,6 +72,7 @@
 
   # monitor switch
   bind=alt,code:60,focusmon,right
+  bind=alt+shift,code:60,tagmon,right,0
 
   # Mouse Button Bindings
   # NONE mode key only work in ov mode
