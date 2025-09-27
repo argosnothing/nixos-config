@@ -10,7 +10,6 @@
   tagrule=id:6,layout_name:tile
   tagrule=id:7,layout_name:tile
   tagrule=id:8,layout_name:tile
-  tagrule=id:9,layout_name:tile
 
   # layer rule
   layerrule=animation_type_open:zoom,layer_name:rofi
