@@ -441,16 +441,16 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1758967518,
-        "narHash": "sha256-h5XWDEPgd0Cgc+fE0jNWkaKfMz97oKzKKnlMCzqJk18=",
-        "owner": "DreamMaoMao",
-        "repo": "mango",
-        "rev": "d5b03d7d073c903c79a7c11ddf1297ae1531ae00",
+        "lastModified": 1759003735,
+        "narHash": "sha256-MGQVR+kaGdNSPcly+JkWUL4Ita7pAA6kLyKNh6+QE0k=",
+        "owner": "argosnothing",
+        "repo": "mangowc",
+        "rev": "b0b7f86048338b74df363dc04bf053203284ef4b",
         "type": "github"
       },
       "original": {
-        "owner": "DreamMaoMao",
-        "repo": "mango",
+        "owner": "argosnothing",
+        "repo": "mangowc",
         "type": "github"
       }
     },
@@ -463,11 +463,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753859411,
-        "narHash": "sha256-xiQGpk987dCmeF29mClveaGJNIvljmJJ9FRHVPp92HU=",
+        "lastModified": 1758702011,
+        "narHash": "sha256-bUDn7H0Kt0Z4pjgki8B6jP1HMAklN0Fh+7zwW3JTw4I=",
         "owner": "DreamMaoMao",
         "repo": "mmsg",
-        "rev": "6066d37d810bb16575c0b60e25852d1f6d50de60",
+        "rev": "55b64e3728c3a95673ff73ccd9c3865db86f4fec",
         "type": "github"
       },
       "original": {
