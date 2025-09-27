@@ -1,8 +1,15 @@
-{settings, ...}: {
+{
+  settings,
+  config,
+  ...
+}: {
   sops = {
     defaultSopsFile = ../../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
-    age.keyFile = "/persist/home/salivala/.config/sops/age/keys.txt";
+    age.keyFile =
+      if config.custom.persist.enable
+      then "/persist/home/${settings.username}/.config/sops/age/keys.txt"
+      else "/home/${settings.username}/.config/sops/age/keys.txt";
     secrets = {
       ssh = {
         sopsFile = ../../../secrets/secrets.yaml;
