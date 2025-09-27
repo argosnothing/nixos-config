@@ -13,6 +13,9 @@
     ../nixosModules/system
   ];
   stylix.homeManagerIntegration.autoImport = false;
+  # MY STUFF
+  services.pipwireConfig.enable = true;
+  #
   nix = {
     settings.experimental-features = ["nix-command" "flakes"];
     package = pkgs.nixVersions.latest;
