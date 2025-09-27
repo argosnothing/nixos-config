@@ -19,10 +19,10 @@
   bind=ALT,Down,focusdir,down
 
   # swap window
-  bind=SUPER+SHIFT,Up,exchange_client,up
-  bind=SUPER+SHIFT,Down,exchange_client,down
-  bind=SUPER+SHIFT,Left,exchange_client,left
-  bind=SUPER+SHIFT,Right,exchange_client,right
+  bind=alt+SHIFT,Up,exchange_client,up
+  bind=alt+SHIFT,Down,exchange_client,down
+  bind=alt+SHIFT,Left,exchange_client,left
+  bind=alt+SHIFT,Right,exchange_client,right
 
   # switch window status
   bind=ALT,backslash,togglefloating,
@@ -71,8 +71,6 @@
   bind=ALT+CTRL,9,toggleview,9,0
 
   # monitor switch
-  bind=alt+shift,Left,focusmon,left
-  bind=alt+shift,Right,focusmon,right
   bind=alt,code:60,focusmon,right
 
   # Mouse Button Bindings
