@@ -23,7 +23,11 @@
         font-awesome
       ];
     };
-    xdg.portal.wlr.enable = true;
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+    };
     environment.systemPackages = [
       pkgs.foot
       pkgs.wf-recorder
