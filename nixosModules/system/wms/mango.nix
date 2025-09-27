@@ -23,6 +23,7 @@
         font-awesome
       ];
     };
+    xdg.portal.wlr.enable = true;
     environment.systemPackages = [
       pkgs.foot
       pkgs.wf-recorder
