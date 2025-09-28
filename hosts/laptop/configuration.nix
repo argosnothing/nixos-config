@@ -5,8 +5,7 @@
   ];
 
   hardware.graphics.enable = true;
-
-  services.xserver = {
+  services = {
     libinput.enable = true;
     libinput.touchpad = {
       accelSpeed = "0.7";
