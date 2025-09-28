@@ -9,7 +9,6 @@
   bind=Alt,Return,spawn,kitty
 
   # exit
-  bind=SUPER,m,quit
   bind=ALT,c,killclient,
 
   # switch window focus
