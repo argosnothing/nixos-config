@@ -1,14 +1,20 @@
 {pkgs, ...}: {
   imports = [
-    ../configuration.nix # Import shared system configuration
+    ../configuration.nix
     ./hardware-configuration.nix
   ];
 
-  # Laptop-specific configuration
-  # Using default kernel (not xanmod) for battery life
   hardware.graphics.enable = true;
+  services = {
+    libinput.enable = true;
+    libinput.touchpad = {
+      accelSpeed = "0.7";
+      accelProfile = "flat";
+      naturalScrolling = true;
+      tapping = true;
+    };
+  };
 
-  # Laptop-specific packages
   environment.systemPackages = with pkgs; [
   ];
 }
