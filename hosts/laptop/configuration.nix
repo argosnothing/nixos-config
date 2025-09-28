@@ -9,7 +9,7 @@
   services.xserver = {
     libinput.enable = true;
     libinput.touchpad = {
-      accelSpeed = "0.5";
+      accelSpeed = "0.7";
       accelProfile = "flat";
       naturalScrolling = true;
       tapping = true;
