@@ -7,6 +7,7 @@
 in {
   config = lib.mkIf enabled {
     custom.persist.home.directories = lib.mkAfter [
+      ".config/yazi"
       ".config/sops"
       ".ssh"
       ".mozilla/firefox"

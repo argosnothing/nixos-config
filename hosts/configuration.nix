@@ -90,7 +90,6 @@
         desc = "Exit browsing snapshots"
       '';
     };
-    custom.persist.home.directories = ["/home/${settings.username}/.config/yazi"];
 
     # Environment variables for Electron apps
     sessionVariables = {
