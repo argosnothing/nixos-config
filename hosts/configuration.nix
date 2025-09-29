@@ -71,32 +71,32 @@
       unetbootin
     ];
 
-    programs.yazi = {
-      enable = true;
-      settings = ''
-        [[manager.prepend_keymap]]
-        on = ["z", "h"]
-        run = "plugin time-travel --args=prev"
-        desc = "Go to previous snapshot"
-
-        [[manager.prepend_keymap]]
-        on = ["z", "l"]
-        run = "plugin time-travel --args=next"
-        desc = "Go to next snapshot"
-
-        [[manager.prepend_keymap]]
-        on = ["z", "e"]
-        run = "plugin time-travel --args=exit"
-        desc = "Exit browsing snapshots"
-      '';
-    };
-
     # Environment variables for Electron apps
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
       ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
     };
+  };
+
+  programs.yazi = {
+    enable = true;
+    settings = ''
+      [[manager.prepend_keymap]]
+      on = ["z", "h"]
+      run = "plugin time-travel --args=prev"
+      desc = "Go to previous snapshot"
+
+      [[manager.prepend_keymap]]
+      on = ["z", "l"]
+      run = "plugin time-travel --args=next"
+      desc = "Go to next snapshot"
+
+      [[manager.prepend_keymap]]
+      on = ["z", "e"]
+      run = "plugin time-travel --args=exit"
+      desc = "Exit browsing snapshots"
+    '';
   };
   programs.zsh.enable = true;
 
