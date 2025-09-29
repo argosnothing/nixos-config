@@ -51,7 +51,6 @@
 
     # Core system packages
     systemPackages = with pkgs; [
-      yazi
       bottom
       nh
       fastfetch
@@ -71,6 +70,27 @@
       home-manager
       unetbootin
     ];
+
+    programs.yazi = {
+      enable = true;
+      settings = ''
+        [[manager.prepend_keymap]]
+        on = ["z", "h"]
+        run = "plugin time-travel --args=prev"
+        desc = "Go to previous snapshot"
+
+        [[manager.prepend_keymap]]
+        on = ["z", "l"]
+        run = "plugin time-travel --args=next"
+        desc = "Go to next snapshot"
+
+        [[manager.prepend_keymap]]
+        on = ["z", "e"]
+        run = "plugin time-travel --args=exit"
+        desc = "Exit browsing snapshots"
+      '';
+    };
+    custom.persist.home.directories = ["/home/${settings.username}/.config/yazi"];
 
     # Environment variables for Electron apps
     sessionVariables = {
