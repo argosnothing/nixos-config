@@ -51,6 +51,7 @@
 
     # Core system packages
     systemPackages = with pkgs; [
+      yazi
       bottom
       nh
       fastfetch
