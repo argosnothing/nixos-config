@@ -79,25 +79,6 @@
     };
   };
 
-  programs.yazi = {
-    enable = true;
-    settings = ''
-      [[manager.prepend_keymap]]
-      on = ["z", "h"]
-      run = "plugin time-travel --args=prev"
-      desc = "Go to previous snapshot"
-
-      [[manager.prepend_keymap]]
-      on = ["z", "l"]
-      run = "plugin time-travel --args=next"
-      desc = "Go to next snapshot"
-
-      [[manager.prepend_keymap]]
-      on = ["z", "e"]
-      run = "plugin time-travel --args=exit"
-      desc = "Exit browsing snapshots"
-    '';
-  };
   programs.zsh.enable = true;
 
   system.stateVersion = "25.05";
