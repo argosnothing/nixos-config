@@ -9,12 +9,7 @@
     #!/bin/bash
     pushd ${settings.absoluteflakedir}
     alejandra . &>/dev/null
-    git --no-pager diff
-    git add .
     nh os ${command} ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname};
-    gen=$( nixos-rebuild list-generations | grep True \
-    | awk '{print "Generation:", $1, "nixpkgs:", $4, "Kernel:", $5}')
-    git commit -m "$gen"
     popd
   '';
 in {
