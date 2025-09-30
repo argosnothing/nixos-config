@@ -1,0 +1,90 @@
+@import "nord.css";
+
+* {
+  font-family: FantasqueSansM Nerd Font Propo;
+  font-size: 17px;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#waybar {
+  background: @theme_bg_color;
+  color: @theme_fg_color;
+}
+#window,
+#mpris,
+#clock,
+#battery,
+#pulseaudio,
+#custom-notification,
+#tray,
+#custom-power {
+  padding: 0 0.5rem;
+}
+#tags {
+  padding-right: 0.5rem;
+}
+
+#tags button {
+  padding: 0 0.8rem; 
+  font-weight: normal;
+}
+
+#tags button:not(.occupied):not(.focused) {
+  font-size: 0;
+  min-width: 0;
+  padding: 0;
+  margin: -50px;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+}
+
+#tags button.occupied {
+  background-color: @theme_base_color;
+  color: @theme_fg_color;
+}
+
+#tags button.focused {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+  font-weight: bold;
+}
+
+#tags button.urgent {
+  background-color: @warning_color;
+  color: @theme_selected_fg_color;
+  animation: blink 1s infinite;
+}
+
+#tags button:hover {
+  background-color: @unfocused_base_color;
+  color: @unfocused_selected_fg_color;
+}
+
+#tags button {
+  transition: all 0.2s ease-in-out;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+#battery.charging {
+  color: @success_color;
+}
+
+#battery.warning:not(.charging) {
+  color: @warning_color;
+}
+
+#custom-power {
+  color: @theme_selected_fg_color;
+}
+

@@ -7,7 +7,7 @@
   inherit (lib.types) enum;
 in {
   imports = [
-    ./cosmic
+    #./cosmic
     #./gnome
     #./hyprland
     #./niri.nix bleh
