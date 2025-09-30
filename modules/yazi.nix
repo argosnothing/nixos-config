@@ -8,9 +8,17 @@
   options.custom.apps.yazi = {
     enable = lib.mkEnableOption "Enable Yazi";
   };
-  config = lib.mkIf config.options.custom.apps.yazi.enable {
-    hjem.users.${settings.username}.packages = [
-      pkgs.yazi
+  config = lib.mkIf config.custom.apps.yazi.enable {
+    hjem.users.${settings.username} = {
+      packages = [
+        pkgs.yazi
+      ];
+      files = [
+        settings.with-config "yazi"
+      ];
+    };
+    custom.persist.home.directories = [
+      ".config/yazi"
     ];
   };
 }

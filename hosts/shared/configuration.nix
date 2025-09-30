@@ -10,6 +10,7 @@
     inputs.sops-nix.nixosModules.sops
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
     ./hjem.nix
+    ../../modules
     ../../nixosModules/system/critical
     ../../nixosModules/system
   ];
