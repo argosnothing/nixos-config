@@ -4,7 +4,7 @@
   ...
 }: {
   sops = {
-    defaultSopsFile = ../../../secrets/secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile =
       if config.custom.persist.enable
@@ -12,7 +12,7 @@
       else "/home/${settings.username}/.config/sops/age/keys.txt";
     secrets = {
       ssh = {
-        sopsFile = ../../../secrets/secrets.yaml;
+        sopsFile = ../../secrets/secrets.yaml;
         path = "/home/${settings.username}/.ssh/id_ed25519";
         owner = "${settings.username}";
         mode = "0600";

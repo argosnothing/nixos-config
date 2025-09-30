@@ -7,7 +7,8 @@
 # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
 let
   cfg = config.custom.persist;
-  hmPersistCfg = config.hm.custom.persist;
+  inherit (lib) mkOption;
+  inherit (lib.types) listOf str;
   assertNoHomeDirs = paths:
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
@@ -47,15 +48,27 @@ in {
       };
 
       home = {
-        directories = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
+        directories = mkOption {
+          type = listOf str;
           default = [];
           description = "Directories to persist in home directory";
         };
-        files = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
+        files = mkOption {
+          type = listOf str;
           default = [];
           description = "Files to persist in home directory";
+        };
+        cache = {
+          directories = mkOption {
+            type = listOf str;
+            default = [];
+            description = "Directories to persist, but not to snapshot";
+          };
+          files = mkOption {
+            type = listOf str;
+            default = [];
+            description = "Files to persist, but not to snapshot";
+          };
         };
       };
     };
@@ -97,7 +110,7 @@ in {
         );
 
         users.${settings.username} = {
-          files = lib.unique (cfg.home.files ++ hmPersistCfg.home.files);
+          files = lib.unique cfg.home.files;
           directories =
             lib.unique
             (
@@ -106,7 +119,6 @@ in {
                 ".config/dconf"
               ]
               ++ cfg.home.directories
-              ++ hmPersistCfg.home.directories
             );
         };
       };
@@ -118,8 +130,8 @@ in {
         directories = lib.unique cfg.root.cache.directories;
 
         users.${settings.username} = {
-          files = lib.unique (hmPersistCfg.home.cache.files);
-          directories = lib.unique (hmPersistCfg.home.cache.directories);
+          files = lib.unique cfg.home.cache.files;
+          directories = lib.unique cfg.home.cache.directories;
         };
       };
     };

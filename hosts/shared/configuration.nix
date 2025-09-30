@@ -3,18 +3,13 @@
   pkgs,
   config,
   settings,
-  lib,
   ...
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
-    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
     ./hjem.nix
     ../../modules
-    ../../nixosModules/system/critical
-    ../../nixosModules/system
   ];
-  stylix.homeManagerIntegration.autoImport = false;
   # MY STUFF
   services.pipewireConfig.enable = true;
   #
@@ -69,7 +64,6 @@
       grimblast
       brightnessctl
       dbus
-      home-manager
       unetbootin
     ];
 
