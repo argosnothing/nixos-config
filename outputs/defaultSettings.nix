@@ -12,13 +12,13 @@
         );
     };
     system = "x86_64-linux";
-    with-config = name: "${absoluteflakedir}/.config/${name}";
+    with-config = name: ./. + "${absoluteflakedir}/.config/${name}";
     username = "salivala";
     gitEmail = "argosnothing@gmail.com";
     # firmware needs to be declared in the host explicitly.
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
-    absoluteflakedir = ./. + "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
+    absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
     monoFont = "FiraCode Nerd Font";
     monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";
