@@ -42,6 +42,7 @@
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
+        inputs.hjem.nixosModules.default
         inputs.stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
@@ -66,6 +67,6 @@ in {
     desktop = {wm = "mango";};
     laptop = {wm = "mango";};
     p51 = {};
-    vm = {};
+    vm = {wm = "gnome";};
   };
 }

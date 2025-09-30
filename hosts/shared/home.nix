@@ -6,7 +6,7 @@
 }: {
   # Shared home-manager configuration for all hosts
   imports = [
-    ../nixosModules/user
+    ../../nixosModules/user
   ];
 
   # Core packages shared across all hosts
@@ -70,7 +70,7 @@
   '';
   git.enable = true;
 
-  home.file.".config/fastfetch/config.jsonc".source = ../sources/.config/fastfetchconfig.jsonc;
+  home.file.".config/fastfetch/config.jsonc".source = ../../sources/.config/fastfetchconfig.jsonc;
 
   home.shellAliases = {
     # https://github.com/Michael-C-Buckley/nixos/blob/1b09e5ae6c6431be61be8403c5774a47dbb2bbea/flake/user/files/.config/shells/aliases.sh#L42

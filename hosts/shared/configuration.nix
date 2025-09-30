@@ -10,8 +10,8 @@
     inputs.sops-nix.nixosModules.sops
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
     ./hjem.nix
-    ../nixosModules/system/critical
-    ../nixosModules/system
+    ../../nixosModules/system/critical
+    ../../nixosModules/system
   ];
   stylix.homeManagerIntegration.autoImport = false;
   # MY STUFF

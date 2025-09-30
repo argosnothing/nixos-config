@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../configuration.nix
+    ../shared/configuration.nix
     ./hardware-configuration.nix
     ../../nixosModules/system
   ];
