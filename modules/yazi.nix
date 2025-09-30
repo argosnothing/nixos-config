@@ -13,9 +13,9 @@
       packages = [
         pkgs.yazi
       ];
-      files = [
-        settings.with-config "yazi"
-      ];
+      files = {
+        "./yazi".source = settings.with-config "yazi";
+      };
     };
     custom.persist.home.directories = [
       ".config/yazi"

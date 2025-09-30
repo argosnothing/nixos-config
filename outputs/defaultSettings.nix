@@ -18,7 +18,7 @@
     # firmware needs to be declared in the host explicitly.
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
-    absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
+    absoluteflakedir = ./. + "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
     monoFont = "FiraCode Nerd Font";
     monoFontPkg = pkgs.nerd-fonts.fira-code;
     serifFont = "Liberation Serif";
