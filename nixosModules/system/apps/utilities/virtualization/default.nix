@@ -7,4 +7,5 @@
   users.users."${settings.username}".extraGroups = ["libvirtd" "kvm"];
 
   custom.persist.root.directories = ["/var/lib/libvirt"];
+  custom.persist.root.cache.directories = ["/var/cache/libvirt"]
 }
