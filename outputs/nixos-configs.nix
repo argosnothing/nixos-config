@@ -67,6 +67,6 @@ in {
     desktop = {wm = "mango";};
     laptop = {wm = "mango";};
     p51 = {};
-    vm = {wm = "gnome";};
+    vm = {wm = "mango";};
   };
 }

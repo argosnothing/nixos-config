@@ -5,4 +5,5 @@
     ../../nixosModules/system
   ];
   zfs.enable = true;
+  custom.apps.yazi.enable = true;
 }
