@@ -44,19 +44,6 @@
         inputs.impermanence.nixosModules.impermanence
         inputs.hjem.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            extraSpecialArgs = {inherit inputs settings pkgsStable;};
-            users."${settings.username}" = {
-              imports = [
-                inputs.stylix.homeModules.stylix
-                (../hosts + "/${settings.hostname}" + /home.nix)
-              ];
-            };
-          };
-        }
       ];
     };
 in {

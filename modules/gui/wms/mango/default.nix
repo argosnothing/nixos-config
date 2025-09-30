@@ -40,7 +40,6 @@
       pkgs.font-awesome
     ];
     wms.mango.enable = true;
-    styles.stylix.enable = true;
     programs.mango.enable = true;
   };
 }

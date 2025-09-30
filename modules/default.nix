@@ -4,7 +4,6 @@
     ./apps
     ./misc
     ./services
-    ./wms
     ./scripts
     ./style
     ./critical

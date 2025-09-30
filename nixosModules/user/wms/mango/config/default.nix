@@ -1,6 +1,6 @@
-{config, ...}:let
+{config, ...}: let
   mango-settings = import ./settins {inherit config;};
-in{
+in {
   imports = [
     ./waybar
     ./rofi
