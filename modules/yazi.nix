@@ -13,8 +13,8 @@
       packages = [
         pkgs.yazi
       ];
-      files = {
-        "./yazi".source = settings.with-config "yazi";
+      xdg.config.files = {
+        "yazi/keymap.toml".source = ../.config/yazi/keymap.toml;
       };
     };
     custom.persist.home.directories = [

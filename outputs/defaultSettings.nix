@@ -12,7 +12,6 @@
         );
     };
     system = "x86_64-linux";
-    with-config = name: ./. + "${absoluteflakedir}/.config/${name}";
     username = "salivala";
     gitEmail = "argosnothing@gmail.com";
     # firmware needs to be declared in the host explicitly.
