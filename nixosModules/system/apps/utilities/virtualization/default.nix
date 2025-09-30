@@ -5,4 +5,6 @@
     enable = true;
   };
   users.users."${settings.username}".extraGroups = ["libvirtd" "kvm"];
+
+  custom.persist.root.directores = [".var/lib/libvirt"];
 }
