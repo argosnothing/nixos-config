@@ -10,13 +10,13 @@
     ./config
   ];
   options = {
-    my.gui.wms.mango.enable = lib.mkOption {
+    my.modules.gui.wms.mango.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable Mango WC as the window managerk";
     };
   };
-  config = lib.mkIf (config.my.gui.wms.name == "mango") {
+  config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
     fonts = {
       fontconfig.enable = true;
       packages = with pkgs; [
