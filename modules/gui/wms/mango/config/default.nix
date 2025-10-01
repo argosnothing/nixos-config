@@ -14,13 +14,13 @@ in {
   config = lib.mkIf config.wms.mango.enable {
     hjem.users.${settings.username} = {
       files = {
-        "mango/config.conf".text =
+        ".config/mango/config.conf".text =
           mango-settings
           + ''
             env=QT_AUTO_SCREEN_SCALE_FACTOR,1
             env=QT_WAYLAND_FORCE_DPI,140
           '';
-        "mango/autostart.sh".text = ''
+        ".config/mango/autostart.sh".text = ''
           set +e
           setbg &
           waybar &
