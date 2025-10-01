@@ -47,10 +47,12 @@
       "Projects"
       "Videos"
 
+      ".local/share/nvf"
       ".var/app/com.spotify.Client"
       ".config/spotify"
     ];
     cache.directories = [
+      ".cache/nvf"
       ".cache/nix-search-tv"
       ".cache/nvidia"
       ".cache/kitty"

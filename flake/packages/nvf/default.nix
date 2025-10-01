@@ -12,19 +12,6 @@
   ];
 
   config = {
-    stylix.targets.nvf.enable = false;
-    custom = {
-      persist = {
-        home = {
-          cache.directories = [
-            ".cache/nvf"
-          ];
-          directories = [
-            ".local/share/nvf"
-          ];
-        };
-      };
-    };
     programs.nvf = {
       enable = true;
       settings = {
