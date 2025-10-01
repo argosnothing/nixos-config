@@ -20,6 +20,10 @@
     style = {
       stylix.enable = true;
     };
+    shell = {
+      kitty.enable = true;
+      yazi.enable = true;
+    };
     gui = {
       firefox.enable = true;
       flatpak.enable = true;
