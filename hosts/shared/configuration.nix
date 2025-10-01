@@ -14,7 +14,7 @@
   services.pipewireConfig.enable = true;
   #
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    settings.experimental-features = ["nix-command" "pipe-operators" "flakes"];
     package = pkgs.nixVersions.latest;
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     settings.download-buffer-size = 268435456;
