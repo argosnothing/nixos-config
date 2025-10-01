@@ -7,8 +7,8 @@
   mango-settings = import ./settings {inherit config;};
 in {
   imports = [
-    ./waybar
-    ./rofi
+    #./waybar
+    #./rofi
     ./scripts.nix
   ];
 
