@@ -1,10 +1,8 @@
 {
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
-    inputs.nvf.homeManagerModules.default
     ./languages.nix
     ./ui.nix
     ./visuals.nix
