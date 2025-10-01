@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./virtualization
+    #./virtualization
     ./misc.nix
   ];
 }
