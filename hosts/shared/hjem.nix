@@ -23,6 +23,7 @@
       mpv
       bash
       vesktop
+      inputs.self.packages.${pkgs.system}.nvf
       inputs.self.packages.${pkgs.system}.ns
     ];
     files = {
