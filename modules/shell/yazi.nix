@@ -14,7 +14,7 @@
         pkgs.yazi
       ];
       xdg.config.files = {
-        "yazi/keymap.toml".source = ../.config/yazi/keymap.toml;
+        "yazi/keymap.toml".source = .config/yazi/keymap.toml;
       };
     };
     my.persist.home.directories = [
