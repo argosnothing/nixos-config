@@ -12,7 +12,7 @@
   in {
     packages = {
       ns = pkgs.callPackage ../flake/packages/ns.nix {};
-      ncf = mkNvf [];
+      nvf = mkNvf [];
     };
   };
 }
