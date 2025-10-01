@@ -2,8 +2,8 @@
   imports = [
     ./misc
     ./services
-    ./scripts
     ./style
+    ./shell
     ./gui
     ./critical
     ./impermanence
