@@ -4,8 +4,8 @@
   config,
   ...
 }: {
-  options = {
-    systemFlatpak.enable = lib.mkOption {
+  options.my.modules.gui = {
+    flatpak.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "System Flatpak support.";
@@ -15,10 +15,10 @@
   imports = [
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
-  config = lib.mkIf config.systemFlatpak.enable {
+  config = lib.mkIf config.my.modules.gui.flatpak.enable {
     xdg.portal.enable = true;
 
-    environment.persistence."/persist" = lib.mkIf config.custom.persist.enable {
+    environment.persistence."/persist" = lib.mkIf config.my.persist.enable {
       directories = [
         "/var/lib/flatpak"
       ];

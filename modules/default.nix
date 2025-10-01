@@ -1,7 +1,5 @@
 {...}: {
   imports = [
-    ./yazi.nix
-    ./apps
     ./misc
     ./services
     ./scripts

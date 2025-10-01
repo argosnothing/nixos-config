@@ -10,9 +10,21 @@
     ./hjem.nix
     ../../modules
   ];
-  # MY STUFF
-  services.pipewireConfig.enable = true;
-  #
+
+  # My Shared Modules
+  my.modules = {
+    services = {
+      pipewire.enable = true;
+      gnome-keyring.enable = true;
+    };
+    gui = {
+      firefox.enable = true;
+      flatpak.enable = true;
+      steam.enable = true;
+      via.enable = true;
+    };
+  };
+
   nix = {
     settings.experimental-features = ["nix-command" "pipe-operators" "flakes"];
     package = pkgs.nixVersions.latest;
@@ -29,7 +41,6 @@
     networkmanager.enable = true;
     nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
   };
-  styles.stylix.enable = true;
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";

@@ -40,7 +40,7 @@
       ".config/fastfetch/config.jsonc".source = ../../sources/.config/fastfetchconfig.jsonc;
     };
   };
-  custom.persist.home = {
+  my.persist.home = {
     directories = [
       "Downloads"
       "Pictures"

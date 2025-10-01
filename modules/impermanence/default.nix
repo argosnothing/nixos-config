@@ -6,14 +6,14 @@
 }:
 # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
 let
-  cfg = config.custom.persist;
+  cfg = config.my.persist;
   inherit (lib) mkOption;
   inherit (lib.types) listOf str;
   assertNoHomeDirs = paths:
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
   imports = [./persist.nix];
-  options.custom = {
+  options.my = {
     persist = {
       enable =
         lib.mkEnableOption "Impermanence";
@@ -74,7 +74,7 @@ in {
     };
   };
 
-  config = lib.mkIf config.custom.persist.enable {
+  config = lib.mkIf config.my.persist.enable {
     security.sudo.extraConfig = "Defaults lecture=never";
 
     fileSystems."/" = lib.mkForce {

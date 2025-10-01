@@ -3,10 +3,11 @@
   pkgs,
   lib,
   config,
+  settings,
   ...
 }: {
-  config = lib.mkIf config.wms.mango.enable {
-    home.packages = with pkgs; [
+  config = lib.mkIf config.my.modules.gui.wms.mango.enable {
+    hjem.users.${settings.username}.packages = with pkgs; [
       wl-clipboard
       slurp
       wf-recorder

@@ -16,7 +16,7 @@
     font-awesome
     material-design-icons
   ];
-  custom.persist.home = {
+  my.persist.home = {
     directories = [".cache/fontconfig"];
   };
 }

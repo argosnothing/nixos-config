@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  options = {
+  options.my.modules.gui = {
     via = {
       enable = lib.mkOption {
         type = lib.types.bool;
@@ -13,7 +13,7 @@
       };
     };
   };
-  config = lib.mkIf config.via.enable {
+  config = lib.mkIf config.my.modules.gui.via.enable {
     environment.systemPackages = with pkgs; [via];
     services.udev.extraRules = ''
       # Vial keyboard support - Telink Wireless Gaming Keyboard (Vid: 0x320F, Pid: 0x5088)

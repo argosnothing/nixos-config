@@ -7,7 +7,7 @@
   inherit (lib.types) listOf str;
 in {
   imports = [./persist.nix];
-  options.custom = {
+  options.my = {
     persist = {
       home = {
         directories = mkOption {

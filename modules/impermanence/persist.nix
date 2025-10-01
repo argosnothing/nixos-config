@@ -3,10 +3,10 @@
   config,
   ...
 }: let
-  enabled = config.custom.persist.enable or false;
+  enabled = config.my.persist.enable or false;
 in {
   config = lib.mkIf enabled {
-    custom.persist.home.directories = lib.mkAfter [
+    my.persist.home.directories = lib.mkAfter [
       ".config/yazi"
       ".config/sops"
       ".ssh"

@@ -6,5 +6,5 @@
     ./sops.nix
   ];
 
-  "${settings.boot.firmware}".enable = true;
+  my.modules.critical."${settings.boot.firmware}".enable = true;
 }

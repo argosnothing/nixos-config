@@ -8,7 +8,7 @@
   ggrab = pkgs.writeShellScriptBin "ggrab" (builtins.readFile ./ggrab.sh);
 in {
   imports = [./nh.nix];
-  options.scripts.enable = lib.mkOption {
+  options.my.modules.shell.scripts.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
     description = "Enable custom shell scripts.";

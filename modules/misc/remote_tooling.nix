@@ -23,7 +23,7 @@ in {
     (pkgsStable.citrix_workspace.override {inherit extraCerts;})
   ];
 
-  custom.persist.home = {
+  my.persist.home = {
     directories = [
       ".ICAClient"
       ".config/Citrix"

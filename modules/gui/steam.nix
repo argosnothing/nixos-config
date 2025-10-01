@@ -4,13 +4,13 @@
   pkgs,
   ...
 }: {
-  options.steam.enable = lib.mkOption {
+  options.my.modules.gui.steam.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
     description = "Enable Steam with gamescope support and gaming optimizations.";
   };
 
-  config = lib.mkIf config.steam.enable {
+  config = lib.mkIf config.my.modules.gui.steam.enable {
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -22,7 +22,7 @@
       ];
     };
 
-    custom.persist.home.directories = [
+    my.persist.home.directories = [
       ".local/share/Steam"
       ".steam"
       ".local/share/lutris"
