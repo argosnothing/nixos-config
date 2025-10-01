@@ -11,10 +11,9 @@ in {
     #./rofi
     #./scripts.nix
   ];
-
   config = lib.mkIf config.wms.mango.enable {
     hjem.users.${settings.username} = {
-      xdg.config.files = {
+      files = {
         "mango/config.conf".text =
           mango-settings
           + ''
