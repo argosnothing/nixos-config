@@ -17,6 +17,7 @@
     };
   };
   config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
+    my.modules.gui.wms.mango.enable = true;
     fonts = {
       fontconfig.enable = true;
       packages = with pkgs; [
@@ -39,8 +40,6 @@
       pkgs.nerd-fonts.symbols-only
       pkgs.font-awesome
     ];
-    wms.mango.enable = true;
-    styles.stylix.enable = true;
     programs.mango.enable = true;
   };
 }
