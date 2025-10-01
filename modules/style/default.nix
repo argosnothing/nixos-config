@@ -8,7 +8,7 @@
   options = {
     my.modules.style.stylix.enable = lib.mkEnableOption "enable stylix";
   };
-  config = lib.mkIf config.my.style.stylix.enable {
+  config = lib.mkIf config.my.modules.style.stylix.enable {
     stylix = {
       enable = true;
       targets.grub.enable = false;
