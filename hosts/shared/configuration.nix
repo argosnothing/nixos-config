@@ -17,6 +17,9 @@
       pipewire.enable = true;
       gnome-keyring.enable = true;
     };
+    style = {
+      stylix.enable = true;
+    };
     gui = {
       firefox.enable = true;
       flatpak.enable = true;
