@@ -14,7 +14,7 @@ in {
     description = "Enable custom shell scripts.";
   };
 
-  config = lib.mkIf config.scripts.enable {
+  config = lib.mkIf config.my.modules.shell.scripts.enable {
     environment.systemPackages = [
       gget
       ggrab
