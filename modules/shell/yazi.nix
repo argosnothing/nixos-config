@@ -8,7 +8,7 @@
   options.my.modules.shell.yazi = {
     enable = lib.mkEnableOption "Enable Yazi";
   };
-  config = lib.mkIf config.my.shell.yazi.enable {
+  config = lib.mkIf config.my.modules.shell.yazi.enable {
     hjem.users.${settings.username} = {
       packages = [
         pkgs.yazi
