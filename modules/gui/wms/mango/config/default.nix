@@ -9,7 +9,7 @@ in {
   imports = [
     #./waybar
     #./rofi
-    ./scripts.nix
+    #./scripts.nix
   ];
 
   config = lib.mkIf config.wms.mango.enable {
