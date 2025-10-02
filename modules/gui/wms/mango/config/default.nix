@@ -1,4 +1,5 @@
 {
+  pkgs,
   settings,
   config,
   lib,
@@ -13,6 +14,15 @@ in {
   ];
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     hjem.users.${settings.username} = {
+      packages = with pkgs; [
+        pavucontrol
+        swaybg
+        xorg.xrdb
+        (pkgs.writeShellScriptBin "setbg"
+          ''
+            swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
+          '')
+      ];
       files = {
         ".config/mango/config.conf".text =
           mango-settings
