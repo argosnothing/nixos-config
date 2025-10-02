@@ -9,7 +9,6 @@
   inherit (config.nixpkgs.hostPlatform) system;
 in {
   hjem.linker = inputs.hjem.packages.${system}.smfh;
-  hjem.extraModules = [inputs.hjem-run.hjemModules.default];
   hjem.users.${settings.username} = {
     enable = true;
     user = settings.username;
