@@ -3,7 +3,7 @@
 in {
   imports = [
     ./waybar
-    ./rofi
-    ./scripts.nix
+    #./rofi
+    #/scripts.nix
   ];
 }
