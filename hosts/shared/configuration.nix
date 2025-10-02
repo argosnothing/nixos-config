@@ -23,6 +23,7 @@
     shell = {
       fish.enable = true;
       kitty.enable = true;
+      starship.enable = true;
       yazi.enable = true;
       git.enable = true;
     };

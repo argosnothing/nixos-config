@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  settings,
-  ...
-}: let
+{config, ...}: let
   c = config.lib.stylix.colors.withHashtag;
   # https://raw.githubusercontent.com/Murzchnvok/rofi-collection/refs/heads/master/murz/murz.rasi
 in ''

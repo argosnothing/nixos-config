@@ -5,5 +5,6 @@ _: {
     ./kitty.nix
     ./yazi.nix
     ./fish.nix
+    ./starship.nix
   ];
 }
