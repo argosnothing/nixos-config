@@ -35,11 +35,7 @@
     };
   };
   hjem.users.${settings.username}.rum = {
-    misc = {
-      gtk = {
-        enable = true;
-      };
-    };
+    programs.fish.enable = true;
   };
 
   nix = {
