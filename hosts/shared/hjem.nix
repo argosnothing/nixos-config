@@ -4,10 +4,13 @@
   inputs,
   lib,
   ...
-}: {
+}:let 
+  system = "x86_64-linux"; # idfc at this point
+in{
   hjem.users.${settings.username} = {
     enable = true;
     user = settings.username;
+    linker = inputs.hjem.packages.${system}.smfh;
     directory = "/home/${settings.username}";
     packages = with pkgs; [
       jq
