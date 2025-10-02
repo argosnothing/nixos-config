@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    ../configuration.nix
+    ../shared/configuration.nix
     ./hardware-configuration.nix
   ];
+  my.modules.critical.zfs.enable = true;
+  my.persist.enable = true;
 
   hardware.graphics.enable = true;
   services = {

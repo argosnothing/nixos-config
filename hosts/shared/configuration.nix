@@ -23,6 +23,7 @@
     shell = {
       kitty.enable = true;
       yazi.enable = true;
+      git.enable = true;
     };
     gui = {
       firefox.enable = true;

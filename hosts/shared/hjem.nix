@@ -2,12 +2,12 @@
   pkgs,
   settings,
   inputs,
-config,
+  config,
   lib,
   ...
-}:let 
+}: let
   inherit (config.nixpkgs.hostPlatform) system;
-in{
+in {
   hjem.linker = inputs.hjem.packages.${system}.smfh;
   hjem.users.${settings.username} = {
     enable = true;
