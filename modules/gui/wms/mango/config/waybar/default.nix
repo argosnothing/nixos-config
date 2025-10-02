@@ -5,16 +5,15 @@
   lib,
   ...
 }: let
-  c = config.lib.stylix.colors;
   recording-widget = import ./recording-widget.nix {inherit pkgs;};
   waybar-css = import ./style.nix {inherit config lib;};
 in {
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
-    packages = [
-      recording-widget
-      pkgs.waybar
-    ];
     hjem.users.${settings.username} = {
+      packages = [
+        recording-widget
+        pkgs.waybar
+      ];
       ".config/waybar/style.css".text = waybar-css;
       ".config/waybar/config.jsonc" = {
         generator = lib.generators.toJSON {};
