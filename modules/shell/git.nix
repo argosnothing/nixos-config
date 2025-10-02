@@ -30,7 +30,7 @@
             HostName = "github.com";
             User = "git";
             IdentityFile = "/run/secrets/ssh";
-            ItentitiesOnly = "yes";
+            IdentitiesOnly = "yes";
           };
         };
       };
