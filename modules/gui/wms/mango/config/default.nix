@@ -16,6 +16,7 @@ in {
     hjem.users.${settings.username} = {
       packages = with pkgs; [
         pavucontrol
+        swaynotificationcenter
         swaybg
         xorg.xrdb
         waybar
