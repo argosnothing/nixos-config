@@ -4,5 +4,6 @@ _: {
     ./git.nix
     ./kitty.nix
     ./yazi.nix
+    ./fish.nix
   ];
 }
