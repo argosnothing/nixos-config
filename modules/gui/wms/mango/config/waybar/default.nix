@@ -9,7 +9,7 @@
   recording-widget = import ./recording-widget.nix {inherit pkgs;};
   waybar-css = import ./style.nix {inherit config lib;};
 in {
-  config = lib.mkIf config.my.gui.wms.mango.enable {
+  config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     home.packages = [
       recording-widget
       pkgs.waybar
