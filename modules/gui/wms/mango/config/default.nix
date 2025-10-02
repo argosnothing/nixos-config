@@ -31,7 +31,7 @@ in {
             env=QT_WAYLAND_FORCE_DPI,140
           '';
         ".config/mango/autostart.sh".text = ''
-          set +e
+          #set +e
           setbg &
           waybar &
           echo "Xft.dpi:140" | xrdb -merge
