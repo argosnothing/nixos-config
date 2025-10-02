@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    inputs.hjem-rum.hjemModules.default
     ./hjem.nix
     ../../modules
   ];
@@ -31,6 +32,13 @@
       flatpak.enable = true;
       steam.enable = true;
       via.enable = true;
+    };
+  };
+  hjem.users.${settings.username}.rum = {
+    misc = {
+      gtk = {
+        enable = true;
+      };
     };
   };
 
