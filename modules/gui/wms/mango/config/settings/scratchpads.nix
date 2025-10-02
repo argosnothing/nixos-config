@@ -1,18 +1,18 @@
 ''
   # DISCORD
-  bind=SUPER,q,toggle_named_scratchpad,vesktop,none,vesktop
+  bind=ALT,q,toggle_named_scratchpad,vesktop,none,vesktop
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:vesktop,isoverlay:1
 
   # SPOTIFY
-  bind=SUPER,s,toggle_named_scratchpad,spotify,none,spotify
+  bind=ALT,s,toggle_named_scratchpad,spotify,none,spotify
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:spotify,isoverlay:1
 
   # WEB
-  bind=SUPER,w,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad
+  bind=ALT,w,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:firefox-scratchpad,overlay:1
 
   # KITTY
-  bind=SUPER,e,toggle_named_scratchpad,kitty-scratchpad,none,kitty --app-id kitty-scratchpad
+  bind=ALT,e,toggle_named_scratchpad,kitty-scratchpad,none,kitty --app-id kitty-scratchpad
   windowrule=isnamedscratchpad:1,width:1280,height:800,appid:kitty-scratchpad,overlay:1
 
   # nemo nemo

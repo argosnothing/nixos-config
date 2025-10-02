@@ -3,7 +3,6 @@
   settings,
   inputs,
   config,
-  lib,
   ...
 }: let
   inherit (config.nixpkgs.hostPlatform) system;
@@ -42,7 +41,6 @@ in {
         insert_final_newline = true
         tab_width = 2
       '';
-      ".config/fastfetch/config.jsonc".source = ../../sources/.config/fastfetchconfig.jsonc;
     };
   };
   my.persist.home = {

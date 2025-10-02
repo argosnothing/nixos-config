@@ -9,8 +9,8 @@
 in {
   imports = [
     ./waybar
-    #./rofi
-    #./scripts.nix
+    ./rofi
+    ./scripts.nix
   ];
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     hjem.users.${settings.username} = {
