@@ -3,8 +3,13 @@
     ../shared/configuration.nix
     ./hardware-configuration.nix
   ];
-  my.modules.critical.zfs.enable = true;
-  my.persist.enable = true;
+  my = {
+    modules = {
+      critical.zfs.enable = true;
+      misc.citrix.enable = true;
+    };
+    persist.enable = true;
+  };
 
   hardware.graphics.enable = true;
   services = {
