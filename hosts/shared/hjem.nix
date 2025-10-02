@@ -7,6 +7,7 @@
 }: {
   hjem.users.${settings.username} = {
     enable = true;
+    user = settings.username;
     directory = "/home/${settings.username}";
     packages = with pkgs; [
       jq
@@ -46,7 +47,6 @@
       "Pictures"
       "Projects"
       "Videos"
-
       ".local/share/nvf"
       ".var/app/com.spotify.Client"
       ".config/spotify"
