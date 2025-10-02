@@ -1,4 +1,6 @@
 ''
+  exec=setbg
+  exec=waybar
   # Misc
   no_border_when_single=0
   focus_cross_monitor=1
