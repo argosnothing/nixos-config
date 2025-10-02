@@ -21,6 +21,7 @@
       stylix.enable = true;
     };
     shell = {
+      fish.enable = true;
       kitty.enable = true;
       yazi.enable = true;
       git.enable = true;
@@ -60,7 +61,7 @@
       extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
       hashedPasswordFile = config.sops.secrets."pc_password".path;
     };
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.fish;
   };
   environment = {
     # Shell configuration
