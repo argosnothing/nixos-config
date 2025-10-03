@@ -1,7 +1,7 @@
 {config, ...}: let
   c = config.lib.stylix.colors.withHashtag;
 in ''
-  #waybar { min-height: 0; padding: 0; margin: 0; background-color: ${c.base00}; }
+  #waybar { min-height: 0; padding: 0; margin: 0; background-color: ${c.base00}; color: ${c.base05}; }
   * { font-size: 20px; }
 
   #workspaces {
