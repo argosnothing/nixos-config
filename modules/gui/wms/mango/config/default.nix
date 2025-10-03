@@ -22,7 +22,7 @@ in {
         waybar
         (pkgs.writeShellScriptBin "setbg"
           ''
-            swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.jpg
+            swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.png
           '')
       ];
       files = {
