@@ -1,3 +1,4 @@
+## TODO: Move stylix stuff to a stylix.nix. This should simply be a file for bundling modules.
 {
   pkgs,
   config,
@@ -7,6 +8,9 @@
 }: let
   c = config.lib.stylix.colors.withHashtag;
 in {
+  imports = [
+    ./gowall.nix
+  ];
   options = {
     my.modules.style.stylix.enable = lib.mkEnableOption "enable stylix";
   };

@@ -9,12 +9,14 @@
     modules = {
       critical.zfs.enable = true;
       misc.citrix.enable = true;
+      style = {
+        gowall.enable = true;
+      };
     };
     persist.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    gowall
     uhk-agent
     cachix
     xorg.xev
