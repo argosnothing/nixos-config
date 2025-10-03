@@ -66,6 +66,9 @@
     };
     defaultUserShell = pkgs.fish;
   };
+  my.persist.root.directories = [
+    "/etc/NetworkManager/system-connections"
+  ];
   environment = {
     # Shell configuration
     shells = with pkgs; [zsh];
