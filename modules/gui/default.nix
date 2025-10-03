@@ -6,5 +6,6 @@
     ./flatpak.nix
     ./steam.nix
     ./via.nix
+    ./gtk.nix
   ];
 }

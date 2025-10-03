@@ -92,13 +92,13 @@ in {
       font = {
         package = mkOption {
           type = package;
-          default = config.my.modules.fonts.sarif.package;
+          default = config.my.modules.fonts.serif.package;
           description = "Package providing the font";
         };
 
         name = mkOption {
           type = str;
-          default = config.my.modules.fonts.sarif.name;
+          default = config.my.modules.fonts.serif.name;
           description = "The family name of the font within the package.";
         };
 
@@ -112,7 +112,7 @@ in {
       theme = {
         package = mkOption {
           type = package;
-          default = pkgs.tela-dynamic-icon-theme.override {colors = gtkCfg.accents;};
+          default = pkgs.tela-icon-theme;
           description = "Package providing the theme.";
         };
 
@@ -250,7 +250,7 @@ in {
                 icon-theme = "Tela-${gtkCfg.defaultAccent}-dark";
               };
             }
-            config.my.modules.gui.gtk.dconf.settings
+            config.my.modules.gui.dconf.settings
           ];
         }
       ];
