@@ -19,6 +19,7 @@
 - [Iynaix](https://github.com/iynaix/dotfiles)
 - [Saygo](https://github.com/saygo-png/nixos)
 - [Tony, BTW](https://www.tonybtw.com/)
+- [Emzy]()
 
   
 [<img src="media/icons/purple-logo.png"/>](Logo)
