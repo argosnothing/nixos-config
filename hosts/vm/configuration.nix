@@ -1,8 +1,8 @@
 {...}: {
   imports = [
-    ../configuration.nix
+    ../shared/configuration.nix
     ./hardware-configuration.nix
-    ../../nixosModules/system
   ];
-  zfs.enable = true;
+  my.modules.critical.zfs.enable = true;
+  my.persist.enable = true;
 }

@@ -42,20 +42,8 @@
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
+        inputs.hjem.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            extraSpecialArgs = {inherit inputs settings pkgsStable;};
-            users."${settings.username}" = {
-              imports = [
-                inputs.stylix.homeModules.stylix
-                (../hosts + "/${settings.hostname}" + /home.nix)
-              ];
-            };
-          };
-        }
       ];
     };
 in {
@@ -66,6 +54,6 @@ in {
     desktop = {wm = "mango";};
     laptop = {wm = "mango";};
     p51 = {};
-    vm = {};
+    vm = {wm = "mango";};
   };
 }

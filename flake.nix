@@ -10,51 +10,13 @@
     systems.url = "github:nix-systems/default";
     flake-compat.url = "github:edolstra/flake-compat";
 
-    # SUCKLESS
-    dwm = {
-      url = ./sources/dwm;
-      flake = false;
-    };
-    dmenu = {
-      url = ./sources/dmenu;
-      flake = false;
-    };
-    st = {
-      url = ./sources/st;
-      flake = false;
-    };
-
-    dwl = {
-      url = ./sources/dwl;
-      flake = false;
-    };
-    wmenu = {
-      url = ./sources/wmenu;
-      flake = false;
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hjem = {
       url = "github:/feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hjem-rum = {
-      url = "github:snugnug/hjem-rum";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        hjem.follows = "hjem";
-      };
-    };
-
     mango = {
       url = "github:DreamMaoMao/mango";
-      #url = "github:argosnothing/mangowc";
-
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -72,13 +34,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
+    std = {
+      url = "github:chessai/nix-std";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
+    nvf = {
+      url = "github:notashelf/nvf";
+      #url = "github:notashelf/nvf?ref=b7571df4d6e9ac08506a738ddceeec0b141751b0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,18 +51,6 @@
 
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
-    };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
-    };
-
-    dank-shell = {
-      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
     };

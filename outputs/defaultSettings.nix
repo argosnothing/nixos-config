@@ -12,8 +12,6 @@
         );
     };
     system = "x86_64-linux";
-    home = "/home/${username}";
-    flake-path = "${home}/nixos-config";
     username = "salivala";
     gitEmail = "argosnothing@gmail.com";
     # firmware needs to be declared in the host explicitly.

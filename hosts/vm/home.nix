@@ -4,7 +4,9 @@
   inputs,
   ...
 }: {
-  imports = [];
+  imports = [
+    ../shared/home.nix
+  ];
   home.packages = with pkgs; [
     inputs.self.packages.${pkgs.system}.ns
   ];
