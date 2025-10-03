@@ -1,28 +1,23 @@
-# 🐢🐢🐢🐢㊗️NixOS Config
-- Big WiP but hopefully shouldn't change too much structurally.
+# △ NixOS Config △
 - Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things I do here.  
 
 # Things I do
-- Home Manager as a module.
+- Hopefully straightforward use of [Hjem](https://github.com/feel-co/hjem).
 - Flakes with flake parts pointing to outputs/default.nix
 - Impermanence in system and home. Per module persistance so wm switches don't pollute user space.
-- Sops dependent install process, bring your own keys, secrets
-- Stylix, off by default, and opted in per WM option
-- Default settings for each host is stored in [defaultsettings.nix](outputs/defaultSettings.nix)
-- Desktop/Window Managers can be set in [nixos-configs.nix](outputs/nixos-configs.nix) per host.
-  - ( this file also merges those default settings in with any available hosts/hostname/attrs.nix)
-    - which then becomes settings, that I use all over my config for stuff like flakedir/fonts/host|user/name, etc. 
-  - The actual switches effect both home manager and nixos configuration
-    -  refer to [user/wms/default.nix](nixosModules/user/wms/default.nix) and [system/wms/default.nix](nixosModules/system/wms/default.nix) respectively
--  critical components ( if i don't have these i can't boot/sys won't function ) are setup under system/critical 
-
-## Bonus Memes
-- Dwl Option is a custom version of dwl im working on with scratchpad/opacity support
-  -  maybe more in the future idk
+- Sops dependent install process, bring your own keys, secrets.
+- Coupled user/system modules, inspired by [saygo's](https://github.com/saygo-png/nixos) configuration.
+- Some code here, such as the gtk module, and impermanence module is --stolen-- borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
 
 ## Important Files
 - [Flake entrypoint](flake.nix)
 - [NixosConfigurations & HM Module](outputs/nixos-configs.nix)
 
+# Credits
+- (Jet)[https://github.com/Michael-C-Buckley/home-config]
+- (Iynaix)[https://github.com/iynaix/dotfiles]
+- (Saygo)[https://github.com/saygo-png/nixos]
+
+All for collectively dragging me kicking and screaming over multiple finishlines.
   
 [<img src="media/icons/purple-logo.png"/>](Logo)
