@@ -1,0 +1,19 @@
+scheme: "Occult"
+author: "Salivala"
+base00: "0A0E1A" # Void Blue (background)
+base01: "1F2430" # Deep gray-blue
+base02: "2B2F3B" # Mid-dark neutral
+base03: "4B4F5B" # Dim text / comments
+base04: "7E808A" # Neutral gray
+base05: "C9C9C9" # Default foreground
+base06: "E3E3E3" # Light foreground
+base07: "F8F8F8" # White
+
+base08: "7A1E23" # Blood Moon Red
+base09: "A68A3A" # Tarnished Gold
+base0A: "D0A84B" # Brighter Gold
+base0B: "1F4030" # Specter Green
+base0C: "3B8B6C" # Brighter Green-Cyan
+base0D: "3B1F4A" # Eldritch Violet
+base0E: "6C3F75" # Bright Violet / Magenta
+base0F: "8E2E44" # Dark Red-Violet

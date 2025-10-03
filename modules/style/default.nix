@@ -34,7 +34,8 @@ in {
       targets.grub.enable = false;
       inherit (settings) polarity;
       autoEnable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
+      #base16Scheme = "${pkgs.base16-schemes}/share/themes/${settings.stylixTheme}.yaml";
+      base16Scheme = ./occult.yaml;
       fonts = {
         monospace = {
           package = settings.monoFontPkg;
