@@ -14,10 +14,11 @@
 - [NixosConfigurations & HM Module](outputs/nixos-configs.nix)
 
 # Credits
-- (Jet)[https://github.com/Michael-C-Buckley/home-config]
-- (Iynaix)[https://github.com/iynaix/dotfiles]
-- (Saygo)[https://github.com/saygo-png/nixos]
+ For collectively dragging me, kicking and screaming, across multiple finish lines
+- [Jet](https://github.com/Michael-C-Buckley/home-config)
+- [Iynaix](https://github.com/iynaix/dotfiles)
+- [Saygo](https://github.com/saygo-png/nixos)
+- [Tony, BTW](https://www.tonybtw.com/)
 
-All for collectively dragging me kicking and screaming over multiple finishlines.
   
 [<img src="media/icons/purple-logo.png"/>](Logo)
