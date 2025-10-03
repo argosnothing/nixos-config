@@ -7,5 +7,7 @@
     ./gui
     ./critical
     ./impermanence
+
+    ./fonts.nix
   ];
 }

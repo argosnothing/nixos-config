@@ -3,10 +3,12 @@
   pkgs,
   config,
   settings,
+  lib,
   ...
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    (lib.mkAliasOptionModule ["hj"] ["hjem" "users" settings.username])
     ./hjem.nix
     ../../modules
   ];

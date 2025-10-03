@@ -22,11 +22,11 @@
     projects.project-nvim.enable = true;
     telescope.enable = true;
     navigation.harpoon.enable = true;
-    #theme = {
-    #  enable = true;
-    #  name = "catppuccin";
-    #  style = "mocha";
-    #};
+    theme = {
+      enable = true;
+      name = "catppuccin";
+      style = "mocha";
+    };
     extraPackages = [pkgs.vimPlugins.direnv-vim];
   };
 
