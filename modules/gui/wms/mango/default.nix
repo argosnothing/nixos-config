@@ -18,6 +18,7 @@
   };
   config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
     my.modules.gui.wms.mango.enable = true;
+    my.modules.gui.gtk.enable = true;
     fonts = {
       fontconfig.enable = true;
       packages = with pkgs; [

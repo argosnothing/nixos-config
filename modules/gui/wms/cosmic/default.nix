@@ -6,7 +6,8 @@
   ...
 }: {
   options.my.modules.gui.wms.cosmic.enable = lib.mkEnableOption "Enable Cosmic";
-  config = lib.mkIf config.my.modules.gui.wms.cosmic.enable {
+  config = lib.mkIf (config.my.modules.gui.wms.name == "cosmic") {
+    my.modules.gui.gtk.enable = false;
     services = {
       desktopManager = {
         cosmic = {

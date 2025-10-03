@@ -43,6 +43,11 @@ in {
               "on-click" = "activate";
               "sort-by-id" = true;
               "persistent-workspaces" = {"*" = [1 2 3 4 5 6 7 8 9];};
+              "format-icons" = {
+                "7" = "";
+                "8" = "";
+                "9" = "";
+              };
             };
 
             "custom/recorder" = {

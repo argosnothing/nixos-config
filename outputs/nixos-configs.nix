@@ -54,6 +54,6 @@ in {
     desktop = {wm = "mango";};
     laptop = {wm = "mango";};
     p51 = {};
-    vm = {wm = "cosmic";};
+    vm = {wm = "mango";};
   };
 }
