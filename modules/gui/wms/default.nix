@@ -9,7 +9,7 @@ in {
   imports =
     [./greeters]
     ++ [
-      #./cosmic
+      ./cosmic
       #./gnome
       #./hyprland
       #./niri.nix bleh
