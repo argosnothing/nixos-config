@@ -14,6 +14,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gowall
     uhk-agent
     cachix
     xorg.xev
