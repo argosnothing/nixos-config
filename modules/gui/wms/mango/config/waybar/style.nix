@@ -1,7 +1,7 @@
 {config, ...}: let
   c = config.lib.stylix.colors.withHashtag;
 in ''
-  #waybar { min-height: 0; padding: 0; margin: 0; background-color: ${c.base00}; color: ${c.base05}; }
+  #waybar {  padding: 0; margin: 0; background-color: ${c.base00}; color: ${c.base05}; }
   * { font-size: 20px; font-family: "FiraCode Nerd Font Propo";}
 
   #workspaces {
@@ -25,20 +25,11 @@ in ''
   #workspaces button.visible { color: ${c.base0E}; }
   #workspaces button:hover { color: ${c.base09}; }
 
-  #workspaces button {
-  }
   #workspaces button > label,
   #workspaces button.active {
     background-color: ${c.base0E};
     color: ${c.base00};
-    margin-top: 5px;
-    margin-bottom: 5px;
-    box-shadow: none;
-    border-bottom: 0px;
-    padding-top: 1px;
-    padding-bottom: 0;
     border-radius: 0px;
-    background-image:none;
   }
 
   #workspaces button.urgent {

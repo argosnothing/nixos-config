@@ -36,7 +36,6 @@ in {
               "custom/space"
               "tray"
               "custom/space"
-              "wlr/taskbar"
             ];
 
             "ext/workspaces" = {
@@ -46,10 +45,11 @@ in {
               "sort-by-id" = true;
               "persistent-workspaces" = [1 2 3 4 5 6 7 8 9];
               "format-icons" = {
-                "6" = "";
-                "7" = "";
-                "8" = "";
-                "9" = "";
+                "5" = "q";
+                "6" = "w";
+                "7" = "e";
+                "8" = "s";
+                "9" = "`";
               };
             };
 
@@ -59,17 +59,6 @@ in {
               "exec-on-event" = true;
               signal = 8;
               "on-click" = "rec-widget toggle";
-            };
-
-            "wlr/taskbar" = {
-              format = "{icon}";
-              "icon-size" = 22;
-              "markup" = true;
-              "tooltip-format" = "{title}";
-              "on-click" = "activate";
-              "on-click-right" = "close";
-              "ignore-list" = ["Wofi" "rofi"];
-              "all-outputs" = false;
             };
 
             "dwl/layout" = {

@@ -50,21 +50,21 @@
   bind=ALT,2,comboview,2
   bind=ALT,3,comboview,3
   bind=ALT,4,comboview,4
-  bind=ALT,5,comboview,5
-  bind=ALT,6,comboview,6
-  bind=ALT,7,comboview,7
-  bind=ALT,8,comboview,8
-  bind=ALT,9,comboview,9
+  bind=ALT,q,toggleview,5
+  bind=ALT,w,toggleview,6
+  bind=ALT,e,toggleview,7
+  bind=ALT,s,toggleview,8
+  bind=ALT,`,toggleview,9
 
   bind=ALT+SHIFT,1,tag,1,0
   bind=ALT+SHIFT,2,tag,2,0
   bind=ALT+SHIFT,3,tag,3,0
   bind=ALT+SHIFT,4,tag,4,0
-  bind=ALT+SHIFT,5,tag,5,0
-  bind=ALT+SHIFT,6,tag,6,0
-  bind=ALT+SHIFT,7,tag,7,0
-  bind=ALT+SHIFT,8,tag,8,0
-  bind=ALT+SHIFT,9,tag,9,0
+  bind=ALT+q,5,tag,5,0
+  bind=ALT+w,6,tag,6,0
+  bind=ALT+e,7,tag,7,0
+  bind=ALT+s,8,tag,8,0
+  bind=ALT+`,9,tag,9,0
 
   bind=ALT+CTRL,1,toggleview,1,0
   bind=ALT+CTRL,2,toggleview,2,0
