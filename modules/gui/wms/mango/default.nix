@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  inherit (config.my.modules) gui;
+  mango-session = "/etc/wayland-sessions/mango.desktop";
 in {
   imports = [
     inputs.mango.nixosModules.mango
@@ -20,9 +20,20 @@ in {
     };
   };
   config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
-    gui.wms.mango.enable = true;
-    gui.wms.greeters.tuigreet.enable = true;
-    gui.gtk.enable = true;
+    my = {
+      modules = {
+        gui = {
+          wms = {
+            mango.enable = true;
+            greeters.tuigreet = {
+              enable = true;
+              command = "mango";
+            };
+          };
+          gtk.enable = true;
+        };
+      };
+    };
     fonts = {
       fontconfig.enable = true;
       packages = with pkgs; [
