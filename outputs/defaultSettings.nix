@@ -18,12 +18,6 @@
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
     absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
-    monoFont = "FiraCode Nerd Font";
-    monoFontPkg = pkgs.nerd-fonts.fira-code;
-    serifFont = "Liberation Serif";
-    serifFontPkg = pkgs.liberation_ttf;
-    sansFont = "Liberation Sans";
-    sansFontPkg = pkgs.liberation_ttf;
     stylixTheme = "catppuccin-mocha"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
     polarity = "dark";
     battery.enable = false;

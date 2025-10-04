@@ -2,7 +2,7 @@
   c = config.lib.stylix.colors.withHashtag;
 in ''
   #waybar { min-height: 0; padding: 0; margin: 0; background-color: ${c.base00}; color: ${c.base05}; }
-  * { font-size: 20px; }
+  * { font-size: 20px; font-family: "FiraCode Nerd Font Propo";}
 
   #workspaces {
     margin-left: 4px;
@@ -26,8 +26,6 @@ in ''
   #workspaces button:hover { color: ${c.base09}; }
 
   #workspaces button {
-    padding-right: 10px;
-    padding-left: 10px;
   }
   #workspaces button > label,
   #workspaces button.active {

@@ -1,10 +1,12 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: let
   inherit (lib) mkOption;
   inherit (lib.types) str package;
+  inherit (config.my.modules.fonts) mono sans serif;
 in {
   options.my.modules.fonts = {
     mono = {
@@ -22,26 +24,53 @@ in {
     sans = {
       name = mkOption {
         description = "Name of Sans Font";
-        default = "Liberation Sans";
+        default = "Noto Sans";
         type = str;
       };
       package = mkOption {
         description = "Package of Sans Font";
-        default = pkgs.liberation_ttf;
+        default = pkgs.noto-fonts;
         type = package;
       };
     };
     serif = {
       name = mkOption {
         description = "Name of Serif Font";
-        default = "Liberation Serif";
+        default = "Noto Serif";
         type = str;
       };
       package = mkOption {
         description = "Package of Serif Font";
-        default = pkgs.liberation_ttf;
+        default = pkgs.noto-fonts;
         type = package;
       };
+    };
+  };
+  config = {
+    my.modules.fonts.serif = {
+      name = "Alegreya Serif";
+      package = pkgs.google-fonts;
+    };
+    fonts.packages = with pkgs; [
+      nerd-fonts.fira-code
+      nerd-fonts.fira-mono
+      mono.package
+      sans.package
+      serif.package
+      nerd-fonts.noto
+      nerd-fonts.symbols-only
+      font-awesome
+      material-design-icons
+    ];
+    fonts.fontconfig = {
+      defaultFonts = {
+        monospace = [mono.name];
+        sansSerif = [sans.name];
+        serif = [serif.name];
+      };
+    };
+    my.persist.home = {
+      directories = [".cache/fontconfig"];
     };
   };
 }

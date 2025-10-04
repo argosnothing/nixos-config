@@ -105,7 +105,7 @@ in {
 
         size = mkOption {
           type = number;
-          default = 10;
+          default = 17;
           description = "The size of the font.";
         };
       };
@@ -119,7 +119,7 @@ in {
 
         name = mkOption {
           type = str;
-          default = "Tokyonight-Dark-Compact";
+          default = "Tokyonight-Dark-Standard";
           description = "The name of the theme within the package.";
         };
       };
@@ -129,7 +129,7 @@ in {
           type = package;
           default = pkgs.tokyo-night-gtk.override {
             colorVariants = ["dark"];
-            sizeVariants = ["compact"];
+            sizeVariants = ["standard"];
             themeVariants = ["all"];
           };
           description = "Package providing the icon theme.";
@@ -181,7 +181,7 @@ in {
     gtkSharedSettings = {
       gtk-theme-name = gtkCfg.theme.name;
       gtk-icon-theme-name = gtkCfg.iconTheme.name;
-      gtk-font-name = "${gtkCfg.font.name} 10";
+      gtk-font-name = "${gtkCfg.font.name} 17";
     };
     toGtk2File = key: value: let
       value' =
@@ -247,7 +247,7 @@ in {
                   color-scheme = "prefer-dark";
                   cursor-theme = gtkCfg.cursor.name;
                   cursor-size = gvariant.mkUint32 gtkCfg.cursor.size;
-                  font-name = "${gtkCfg.font.name} 10";
+                  font-name = "${gtkCfg.font.name} 14";
                   gtk-theme = "Tokyonight-Dark-Compact";
                   icon-theme = "Tela-${gtkCfg.defaultAccent}-dark";
                 };

@@ -23,9 +23,11 @@ in {
             position = "top";
             height = 25;
 
-            modules-left = ["ext/workspaces" "dwl/window"];
-            modules-center = ["custom/recorder"];
+            modules-left = ["ext/workspaces"];
+            modules-center = ["dwl/window"];
             modules-right = [
+              "custom/recorder"
+              "custom/space"
               "clock"
               "custom/space"
               "pulseaudio"
@@ -42,8 +44,9 @@ in {
               "ignore-hidden" = false;
               "on-click" = "activate";
               "sort-by-id" = true;
-              "persistent-workspaces" = {"*" = [1 2 3 4 5 6 7 8 9];};
+              "persistent-workspaces" = [1 2 3 4 5 6 7 8 9];
               "format-icons" = {
+                "6" = "";
                 "7" = "";
                 "8" = "";
                 "9" = "";
