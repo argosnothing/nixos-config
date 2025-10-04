@@ -5,6 +5,7 @@
   config,
   ...
 }: let
+  ## CREDIT: https://github.com/Michael-C-Buckley/nixos/blob/e7408829a38a5ab6edea4d20785782e45ac44f63/flake/nixos/modules/system/mime.nix#L26
   browserMimes = [
     "x-scheme-handler/http"
     "x-scheme-handler/https"
