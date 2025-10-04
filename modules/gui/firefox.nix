@@ -21,6 +21,12 @@
         };
       };
     };
+    environment = {
+      sessionVariables = {
+        DEFAULT_BROWSER = lib.getExe pkgs.firefox;
+        BROWSER = lib.getExe pkgs.firefox;
+      };
+    };
     xdg.mime.defaultApplications = {
       "text/html" = "firefox.desktop";
       "x-scheme-handler/http" = "firefox.desktop";
