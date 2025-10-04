@@ -510,6 +510,21 @@
         "type": "github"
       }
     },
+    "occult-theme": {
+      "locked": {
+        "lastModified": 1759592033,
+        "narHash": "sha256-G3+chLROuPdQVdhnoc82lovz1LYR+aXCgAXi3p8K80A=",
+        "owner": "argosnothing",
+        "repo": "occult-theme",
+        "rev": "00e80baa01ccc5ebcbd2bce2b8f6047500bab45c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "argosnothing",
+        "repo": "occult-theme",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -543,6 +558,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
+        "occult-theme": "occult-theme",
         "quickshell": "quickshell",
         "sops-nix": "sops-nix",
         "std": "std",

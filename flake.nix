@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    occult-theme.url = "github:/argosnothing/occult-theme";
+
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";

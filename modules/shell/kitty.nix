@@ -36,6 +36,7 @@ in {
           # os specific tweaks (Gnome window decoration for wayland)
           linux_display_server x11
 
+
           # font size management
           map ctrl+shift+backspace change_font_size all 0
 

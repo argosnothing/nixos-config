@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  occult-theme,
+  ...
+}: let
+  inherit (occult-theme.themes) occult;
+in {
   imports = [
     ./languages.nix
     ./ui.nix
@@ -10,7 +16,6 @@
 
   vim = {
     vimAlias = true;
-    #spellcheck.enable = true;
     autopairs.nvim-autopairs.enable = true;
     dashboard.alpha = {
       enable = true;
@@ -24,8 +29,9 @@
     navigation.harpoon.enable = true;
     theme = {
       enable = true;
-      name = "catppuccin";
-      style = "mocha";
+      style = "dark";
+      name = "base16";
+      base16-colors = occult;
     };
     extraPackages = [pkgs.vimPlugins.direnv-vim];
   };

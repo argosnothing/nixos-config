@@ -12,6 +12,9 @@
       style = {
         gowall.enable = true;
       };
+      shell = {
+        spotify-player.enable = true;
+      };
     };
     persist.enable = true;
   };
