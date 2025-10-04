@@ -1,5 +1,6 @@
 # △ NixOS Config △
-- Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things I do here.  
+- Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things I do here.
+- If you are one of those mentioned in the credits here and don't want to be mentioned, just let me know.
 
 # Things I do
 - Hopefully straightforward use of [Hjem](https://github.com/feel-co/hjem).
@@ -19,7 +20,7 @@
 - [Iynaix](https://github.com/iynaix/dotfiles)
 - [Saygo](https://github.com/saygo-png/nixos)
 - [Tony, BTW](https://www.tonybtw.com/)
-- [Emzy]()
+- [Emzy](https://github.com/emzywastaken/dotfiles)
 
   
 [<img src="media/icons/purple-logo.png"/>](Logo)
