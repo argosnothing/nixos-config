@@ -4,9 +4,7 @@
   lib,
   inputs,
   ...
-}: let
-  mango-session = "/etc/wayland-sessions/mango.desktop";
-in {
+}: {
   imports = [
     inputs.mango.nixosModules.mango
     ./service.nix
@@ -26,7 +24,7 @@ in {
           wms = {
             mango.enable = true;
             greeters.tuigreet = {
-              enable = true;
+              enable = false;
               command = "mango";
             };
           };
@@ -47,14 +45,17 @@ in {
       enable = true;
       xdgOpenUsePortal = true;
       wlr.enable = true;
-      config.common.default = ["wlr" "gtk"];
       extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
         xdg-desktop-portal
       ];
+      config.mango = {
+        default = "gtk; gnome";
+      };
     };
     environment.systemPackages = [
-      pkgs.foot
+      pkgs.glib
       pkgs.wf-recorder
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.fira-code

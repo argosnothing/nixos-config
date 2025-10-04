@@ -4,7 +4,26 @@
   lib,
   config,
   ...
-}: {
+}: let
+  browserMimes = [
+    "x-scheme-handler/http"
+    "x-scheme-handler/https"
+    "text/html"
+    "application/x-extension-htm"
+    "application/x-extension-html"
+    "application/x-extension-shtml"
+    "application/xhtml+xml"
+    "application/x-extension-xhtml"
+    "application/x-extension-xht"
+  ];
+
+  createBrowserList = browsers:
+    lib.listToAttrs (map (mimeType: {
+        name = mimeType;
+        value = browsers;
+      })
+      browserMimes);
+in {
   options = {
     my.modules.gui.firefox = {
       enable = lib.mkEnableOption "My firefox";
@@ -27,12 +46,12 @@
         BROWSER = lib.getExe pkgs.firefox;
       };
     };
-    xdg.mime.defaultApplications = {
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/about" = "firefox.desktop";
-      "x-scheme-handler/unknown" = "firefox.desktop";
+    xdg.mime = {
+      enable = true;
+      defaultApplications = createBrowserList ["firefox.desktop"];
+      addedAssociations = createBrowserList [
+        "firefox.desktop"
+      ];
     };
   };
 }

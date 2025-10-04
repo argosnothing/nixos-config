@@ -35,7 +35,9 @@ in {
         ".config/mango/autostart.sh" = {
           executable = true;
           text = ''
-            #set +e
+            set +e
+            dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
+            swaync &
             setbg &
             waybar &
             echo "Xft.dpi:140" | xrdb -merge
