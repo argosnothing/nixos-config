@@ -18,7 +18,7 @@
           function show-base16
                   for i in (seq 0 15)
                       set idx (printf "%X" $i)
-                      set var BASE0$idx
+                      set var base0$idx
                       set val (printenv $var)
                       if test -n "$val"
                           set r (math "0x"(string sub -s 2 -l 2 $val))

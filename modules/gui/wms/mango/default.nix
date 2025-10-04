@@ -4,9 +4,12 @@
   lib,
   inputs,
   ...
-}: {
+}: let
+  inherit (config.my.modules) gui;
+in {
   imports = [
     inputs.mango.nixosModules.mango
+    ./service.nix
     ./config
   ];
   options = {
@@ -17,8 +20,9 @@
     };
   };
   config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
-    my.modules.gui.wms.mango.enable = true;
-    my.modules.gui.gtk.enable = true;
+    gui.wms.mango.enable = true;
+    gui.wms.greeters.tuigreet.enable = true;
+    gui.gtk.enable = true;
     fonts = {
       fontconfig.enable = true;
       packages = with pkgs; [
@@ -32,7 +36,10 @@
       enable = true;
       xdgOpenUsePortal = true;
       wlr.enable = true;
-      extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal
+      ];
     };
     environment.systemPackages = [
       pkgs.foot

@@ -512,11 +512,11 @@
     },
     "occult-theme": {
       "locked": {
-        "lastModified": 1759592033,
-        "narHash": "sha256-G3+chLROuPdQVdhnoc82lovz1LYR+aXCgAXi3p8K80A=",
+        "lastModified": 1759595878,
+        "narHash": "sha256-qtG1dMFia7AezlivCmiqCjNayZMz0XdfvZk3Po28tQk=",
         "owner": "argosnothing",
         "repo": "occult-theme",
-        "rev": "00e80baa01ccc5ebcbd2bce2b8f6047500bab45c",
+        "rev": "a1540d6265210de11516573cb74dd53256b9b80e",
         "type": "github"
       },
       "original": {
