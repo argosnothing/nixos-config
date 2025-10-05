@@ -11,7 +11,7 @@
   mango-package = inputs.mango.packages.${system}.default;
 in {
   config = mkIf mango.enable {
-    # CREDIT: 
+    # CREDIT:
     # https://github.com/iynaix/dotfiles/blob/a494fec53ac1441ea78a9014564eb24f4724a285/modules/gui/mango/default.nix#L4
     systemd.user.targets.mango-session = {
       unitConfig = {

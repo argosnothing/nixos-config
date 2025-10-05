@@ -37,6 +37,11 @@
     };
   };
 
+  ## IDFK what is doing it but idc at this point
+  systemd.settings.Manager = {
+    "DefaultTimeoutStopSec" = "10s";
+  };
+
   nix = {
     settings.experimental-features = ["nix-command" "pipe-operators" "flakes"];
     package = pkgs.nixVersions.latest;

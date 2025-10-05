@@ -41,6 +41,10 @@
         font-awesome
       ];
     };
+    environment.sessionVariables = {
+      XDG_SESSION_TYPE = "wayland";
+      XDG_CURRENT_DESKTOP = "wlroots";
+    };
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;
@@ -50,12 +54,16 @@
         xdg-desktop-portal-gtk
         xdg-desktop-portal
       ];
+      config.common = {
+        default = ["gnome"];
+      };
       config.mango = {
-        default = "gtk; gnome";
+        default = "gnome";
       };
     };
     environment.systemPackages = [
       pkgs.glib
+      pkgs.xdg-utils
       pkgs.wf-recorder
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.fira-code

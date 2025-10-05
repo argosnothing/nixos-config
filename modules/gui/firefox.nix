@@ -31,7 +31,22 @@ in {
     };
   };
   config = lib.mkIf config.my.modules.gui.firefox.enable {
-    hjem.users.${settings.username} = {
+    hj.files = {
+      ".local/share/applications/firefox.desktop".text = ''
+        [Desktop Entry]
+        Name=Firefox (URL)
+        Type=Application
+        Exec=firefox %u
+        Terminal=false
+        Categories=Network;WebBrowser;
+        MimeType=x-scheme-handler/http;x-scheme-handler/https;
+        NoDisplay=false
+      '';
+      ".config/mimeapps.list".text = ''
+        [Default Applications]
+        x-scheme-handler/http=firefox.desktop
+        x-scheme-handler/https=firefox.desktop
+      '';
     };
     programs.firefox = {
       enable = true;
