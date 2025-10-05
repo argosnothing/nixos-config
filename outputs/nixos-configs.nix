@@ -38,7 +38,9 @@
   in
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
-      specialArgs = {inherit inputs settings pkgsStable;};
+      specialArgs = {
+        inherit inputs settings pkgsStable;
+      };
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence

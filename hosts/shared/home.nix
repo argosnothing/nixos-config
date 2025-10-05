@@ -10,7 +10,6 @@
   ...
 }: let
   inherit (config.nixpkgs.hostPlatform) system;
-  inherit (inputs.nixosModules) home-manager;
 in {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -18,8 +17,19 @@ in {
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
   ];
   home-manager = {
-    useGlobakPkgs = true;
+    useGlobalPkgs = true;
     useUserPackages = true;
+    overwriteBackup = true;
+    users.${settings.username} = {
+      pkgs,
+      lib,
+      config,
+      settings,
+      ...
+    }: {
+      home.stateVersion = "25.05";
+      programs.home-manager.enable = true;
+    };
   };
   hjem.linker = inputs.hjem.packages.${system}.smfh;
   hjem.users.${settings.username} = {
