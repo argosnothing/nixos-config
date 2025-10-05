@@ -11,7 +11,6 @@ in {
   config = mkIf config.my.modules.gui.discord.enable {
     hm = _: {
       programs = {
-        discord.enable = true;
         vesktop.enable = true;
       };
     };

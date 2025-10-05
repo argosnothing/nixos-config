@@ -12,7 +12,7 @@
   inherit (config.nixpkgs.hostPlatform) system;
 in {
   imports = [
-    inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
     (lib.mkAliasOptionModule ["hj"] ["hjem" "users" settings.username])
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
   ];
@@ -32,7 +32,7 @@ in {
     };
   };
   hm = _: {
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       jq
       wev
       fzf
