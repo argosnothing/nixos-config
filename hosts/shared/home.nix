@@ -20,18 +20,30 @@ in {
     useGlobalPkgs = true;
     useUserPackages = true;
     overwriteBackup = true;
-    users.${settings.username} = {
-      pkgs,
-      lib,
-      config,
-      settings,
-      ...
-    }: {
+    users.${settings.username} = {...}: {
       home.stateVersion = "25.05";
       programs.home-manager.enable = true;
     };
   };
   hm = _: {
+    my.persist.home = {
+      directories = [
+        "Downloads"
+        "Pictures"
+        "Projects"
+        "Videos"
+        ".local/share/nvf"
+        ".var/app/com.spotify.Client"
+        ".config/spotify"
+      ];
+      cache.directories = [
+        ".cache/nvf"
+        ".cache/nix-search-tv"
+        ".cache/nvidia"
+        ".cache/kitty"
+        ".cache/spotify"
+      ];
+    };
     home.packages = with pkgs; [
       jq
       wev
@@ -48,6 +60,10 @@ in {
       inputs.self.packages.${pkgs.system}.nvf
       inputs.self.packages.${pkgs.system}.ns
     ];
+    gtk = {
+      enable = true;
+      colorScheme = "dark";
+    };
   };
   hjem.linker = inputs.hjem.packages.${system}.smfh;
   hjem.users.${settings.username} = {
@@ -68,23 +84,5 @@ in {
         tab_width = 2
       '';
     };
-  };
-  my.persist.home = {
-    directories = [
-      "Downloads"
-      "Pictures"
-      "Projects"
-      "Videos"
-      ".local/share/nvf"
-      ".var/app/com.spotify.Client"
-      ".config/spotify"
-    ];
-    cache.directories = [
-      ".cache/nvf"
-      ".cache/nix-search-tv"
-      ".cache/nvidia"
-      ".cache/kitty"
-      ".cache/spotify"
-    ];
   };
 }

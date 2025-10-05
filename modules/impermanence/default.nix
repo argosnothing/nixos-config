@@ -7,11 +7,14 @@
 # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
 let
   cfg = config.my.persist;
+  hmCfg = config.hm.my.persist;
   inherit (lib) mkOption;
   inherit (lib.types) listOf str;
   assertNoHomeDirs = paths:
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
+  # HM
+
   imports = [./persist.nix];
   options.my = {
     persist = {
@@ -75,6 +78,39 @@ in {
   };
 
   config = lib.mkIf config.my.persist.enable {
+    hm = {lib, ...}: let
+      inherit (lib) mkOption;
+      inherit (lib.types) listOf str;
+    in {
+      options.my = {
+        persist = {
+          home = {
+            directories = mkOption {
+              type = listOf str;
+              default = [];
+              description = "Directories to persist in home directory";
+            };
+            files = mkOption {
+              type = listOf str;
+              default = [];
+              description = "Files to persist in home directory";
+            };
+            cache = {
+              directories = mkOption {
+                type = listOf str;
+                default = [];
+                description = "Directories to persist, but not to snapshot";
+              };
+              files = mkOption {
+                type = listOf str;
+                default = [];
+                description = "Files to persist, but not to snapshot";
+              };
+            };
+          };
+        };
+      };
+    };
     security.sudo.extraConfig = "Defaults lecture=never";
 
     fileSystems."/" = lib.mkForce {
@@ -110,7 +146,7 @@ in {
         );
 
         users.${settings.username} = {
-          files = lib.unique cfg.home.files;
+          files = lib.unique (cfg.home.files ++ hmCfg.home.files);
           directories =
             lib.unique
             (
@@ -119,6 +155,7 @@ in {
                 ".config/dconf"
               ]
               ++ cfg.home.directories
+              ++ hmCfg.home.directories
             );
         };
       };
@@ -130,8 +167,8 @@ in {
         directories = lib.unique cfg.root.cache.directories;
 
         users.${settings.username} = {
-          files = lib.unique cfg.home.cache.files;
-          directories = lib.unique cfg.home.cache.directories;
+          files = lib.unique (cfg.home.cache.files ++ hmCfg.home.cache.files);
+          directories = lib.unique (cfg.home.cache.directories ++ hmCfg.home.cache.directories);
         };
       };
     };

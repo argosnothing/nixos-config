@@ -10,10 +10,6 @@ in {
       ".config/yazi"
       ".config/sops"
       ".ssh"
-      ".mozilla/firefox"
-      ".config/discord"
-      ".config/vesktop"
-      ".config/Vencord"
       "nixos-config"
     ];
   };

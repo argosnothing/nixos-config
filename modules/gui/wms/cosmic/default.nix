@@ -19,7 +19,6 @@
       };
     };
     my = {
-      modules.gui.gtk.enable = false;
       persist.root = {
         directories = [
           # "/var/lib/cosmic-greeter"

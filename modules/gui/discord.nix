@@ -11,8 +11,18 @@ in {
   config = mkIf config.my.modules.gui.discord.enable {
     hm = _: {
       programs = {
-        vesktop.enable = true;
+        vesktop = {
+          enable = true;
+          settings = {
+            hardwareAcceleration = false;
+          };
+        };
       };
+      my.persist.home.directories = [
+        ".config/discord"
+        ".config/vencord"
+        ".config/vesktop"
+      ];
     };
   };
 }

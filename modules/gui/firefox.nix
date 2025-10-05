@@ -1,31 +1,50 @@
 {
-  pkgs,
-  settings,
   lib,
   config,
+  pkgs,
   ...
-}: let
-in {
+}: {
   options = {
     my.modules.gui.firefox = {
       enable = lib.mkEnableOption "My firefox";
     };
   };
   config = lib.mkIf config.my.modules.gui.firefox.enable {
-    hm = {pkgs, ...}: {
-      programs.firefox = {
-        enable = true;
-        policies = {
-          SecurityDevices = {
-            "OpenSC PKCS#11 Module" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
-          };
+    programs.firefox = {
+      enable = true;
+      policies = {
+        SecurityDevices = {
+          "OpenSC PKCS#11 Module" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
         };
       };
     };
-    environment = {
-      sessionVariables = {
-        DEFAULT_BROWSER = lib.getExe pkgs.firefox;
-        BROWSER = lib.getExe pkgs.firefox;
+    hm = _: {
+      programs.firefox = {
+        enable = true;
+        profiles.default.extensions.force = true;
+      };
+      stylix.targets.firefox = {
+        enable = true;
+        profileNames = ["default"];
+        colorTheme.enable = true;
+      };
+      my.persist.home = {
+        directories = [
+          ".mozilla"
+        ];
+        cache.directories = [
+          ".cache/mozzila"
+        ];
+      };
+      xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "text/html" = "librewolf.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
+          "x-scheme-handler/about" = "firefox.desktop";
+          "x-scheme-handler/unknown" = "firefox.desktop";
+        };
       };
     };
   };

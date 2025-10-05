@@ -21,10 +21,15 @@ in {
     environment.sessionVariables = occult;
     stylix = {
       enable = true;
+      autoEnable = true;
       targets.grub.enable = false;
       inherit (settings) polarity;
-      autoEnable = true;
       base16Scheme = occult;
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+        size = 32;
+      };
       fonts = {
         monospace = mono;
         sansSerif = sans;

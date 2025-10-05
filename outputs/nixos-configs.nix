@@ -42,10 +42,10 @@
         inherit inputs settings pkgsStable;
       };
       modules = [
-        (../hosts + "/${hostname}/configuration.nix")
         inputs.impermanence.nixosModules.impermanence
         inputs.hjem.nixosModules.default
         inputs.stylix.nixosModules.stylix
+        (../hosts + "/${hostname}/configuration.nix")
       ];
     };
 in {
@@ -53,7 +53,7 @@ in {
   # For this idea.
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
-    desktop = {wm = "cosmic";};
+    desktop = {wm = "mango";};
     laptop = {wm = "mango";};
     p51 = {};
     vm = {wm = "mango";};
