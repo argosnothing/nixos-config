@@ -7,7 +7,6 @@
 }: {
   options.my.modules.gui.wms.cosmic.enable = lib.mkEnableOption "Enable Cosmic";
   config = lib.mkIf (config.my.modules.gui.wms.name == "cosmic") {
-    my.modules.gui.gtk.enable = false;
     services = {
       desktopManager = {
         cosmic = {
@@ -19,14 +18,27 @@
         cosmic-greeter.enable = true;
       };
     };
-    my.persist.home = {
-      directories = [
-        ".config/cosmic"
-      ];
-      cache.directories = [
-        ".cache/cosmic"
-        ".local/share/cosmic"
-      ];
+    my = {
+      modules.gui.gtk.enable = false;
+      persist.root = {
+        directories = [
+          # "/var/lib/cosmic-greeter"
+        ];
+      };
+      persist.home = {
+        directories = [
+          ".config/cosmic"
+          ".config/cosmic-initial-setup-done"
+        ];
+        cache.directories = [
+          ".cache/cosmic"
+          ".cache/cosmic-settings"
+          ".local/share/cosmic"
+          ".local/state/cosmic"
+          ".local/state/pop-launcher"
+          ".local/state/cosmic-comp"
+        ];
+      };
     };
   };
 }
