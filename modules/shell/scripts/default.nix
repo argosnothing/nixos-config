@@ -16,6 +16,7 @@ in {
 
   config = lib.mkIf config.my.modules.shell.scripts.enable {
     environment.systemPackages = [
+      (import ./show-tmpfs.nix {inherit pkgs;})
       gget
       ggrab
     ];
