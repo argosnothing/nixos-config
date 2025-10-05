@@ -31,18 +31,13 @@ in {
       programs.home-manager.enable = true;
     };
   };
-  hjem.linker = inputs.hjem.packages.${system}.smfh;
-  hjem.users.${settings.username} = {
-    enable = true;
-    user = settings.username;
-    directory = "/home/${settings.username}";
+  hm = _: {
     packages = with pkgs; [
       jq
       wev
       fzf
       ytfzf
       desktop-file-utils
-      discord
       nix-direnv
       nix-direnv-flakes
       direnv
@@ -50,9 +45,16 @@ in {
       bolt-launcher
       mpv
       bash
-      vesktop
       inputs.self.packages.${pkgs.system}.nvf
       inputs.self.packages.${pkgs.system}.ns
+    ];
+  };
+  hjem.linker = inputs.hjem.packages.${system}.smfh;
+  hjem.users.${settings.username} = {
+    enable = true;
+    user = settings.username;
+    directory = "/home/${settings.username}";
+    packages = with pkgs; [
     ];
     files = {
       ".editorconfig".text = ''
