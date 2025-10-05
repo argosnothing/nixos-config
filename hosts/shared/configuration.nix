@@ -32,7 +32,7 @@
       firefox.enable = true;
       flatpak.enable = true;
       steam.enable = true;
-      discord.enable = true;
+      discord.enable = false; # fuckhead
       via.enable = true;
     };
   };
