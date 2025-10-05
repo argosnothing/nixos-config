@@ -8,5 +8,6 @@
     ./steam.nix
     ./via.nix
     ./discord.nix
+    ./nemo.nix
   ];
 }

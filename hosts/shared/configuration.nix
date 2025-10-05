@@ -34,6 +34,7 @@
       steam.enable = true;
       discord.enable = true;
       via.enable = true;
+      nemo.enable = true;
     };
   };
 
