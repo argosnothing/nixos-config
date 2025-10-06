@@ -10,6 +10,7 @@ in {
   };
   config = mkIf config.my.modules.gui.discord.enable {
     hm = _: {
+      stylix.targets.vesktop.enable = false;
       programs = {
         vesktop = {
           enable = true;

@@ -1,6 +1,10 @@
-{config, lib, ...}:let
+{
+  config,
+  lib,
+  ...
+}: let
   inherit (lib) mkEnableOption mkIf;
-in{
+in {
   options.my.modules.gui.nemo = {
     enable = mkEnableOption "Enable Nemo File Manager";
   };

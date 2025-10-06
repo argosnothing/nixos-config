@@ -7,7 +7,6 @@
   inputs,
   ...
 }: let
-  c = config.lib.stylix.colors.withHashtag;
   inherit (config.my.modules.fonts) mono sans serif;
   inherit (inputs.occult-theme.themes) occult;
 in {
@@ -25,11 +24,6 @@ in {
       targets.grub.enable = false;
       inherit (settings) polarity;
       base16Scheme = occult;
-      cursor = {
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
-        size = 32;
-      };
       fonts = {
         monospace = mono;
         sansSerif = sans;
