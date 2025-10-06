@@ -513,22 +513,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1759580034,
-        "narHash": "sha256-YWo57PL7mGZU7D4WeKFMiW4ex/O6ZolUS6UNBHTZfkI=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3bcc93c5f7a4b30335d31f21e2f1281cba68c318",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1758690382,
@@ -620,11 +604,11 @@
     },
     "occult-theme": {
       "locked": {
-        "lastModified": 1759597596,
-        "narHash": "sha256-Wt32s407T0iGVmTaAe4r7HeB+Nf9RXCM4czQl+QV2p8=",
+        "lastModified": 1759774563,
+        "narHash": "sha256-5U6QN+FYuOVRHkR1NSRJp9Oyr65QNdMP6HVsJhfUFfM=",
         "owner": "argosnothing",
         "repo": "occult-theme",
-        "rev": "3ad230feface07321ef1c6406d2a9b62c8be24f5",
+        "rev": "437929a1a32244f9a7caddde57e162e6d60a71d3",
         "type": "github"
       },
       "original": {
@@ -664,7 +648,6 @@
         "nix-flatpak": "nix-flatpak",
         "nixos-grub-themes": "nixos-grub-themes",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable",
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
         "occult-theme": "occult-theme",

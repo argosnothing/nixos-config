@@ -5,7 +5,6 @@
 ####
 {
   pkgs,
-  pkgsStable,
   config,
   lib,
   ...

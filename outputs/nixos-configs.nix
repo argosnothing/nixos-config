@@ -4,24 +4,18 @@
   ...
 }: let
   inherit (builtins) mapAttrs;
-  inherit (inputs) self nixpkgs nixpkgs-stable;
+  inherit (inputs) nixpkgs;
   mkSystem = {
     wm ? "hyprland",
     hostname,
     system ? "x86_64-linux",
   }: let
-    inherit (inputs) home-manager;
     pkg-config = {
       allowUnfree = true;
       allowAliases = true;
       permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
     };
     pkgs = import nixpkgs {
-      inherit system;
-      config = pkg-config;
-    };
-    # I hate citrix I hate citrix, etc.
-    pkgsStable = import nixpkgs-stable {
       inherit system;
       config = pkg-config;
     };
@@ -39,7 +33,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       specialArgs = {
-        inherit inputs settings pkgsStable;
+        inherit inputs settings;
       };
       modules = [
         inputs.impermanence.nixosModules.impermanence
