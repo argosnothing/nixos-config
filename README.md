@@ -3,12 +3,11 @@
 - If you are one of those mentioned in the credits here and don't want to be mentioned, just let me know.
 
 # Things I do
-- Hopefully straightforward use of [Hjem](https://github.com/feel-co/hjem).
 - Flakes with flake parts pointing to outputs/default.nix
 - Impermanence in system and home. Per module persistance so wm switches don't pollute user space.
 - Sops dependent install process, bring your own keys, secrets.
 - Coupled user/system modules, inspired by [saygo's](https://github.com/saygo-png/nixos) configuration.
-- Some code here, such as the gtk module, and impermanence module is --stolen-- borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
+- Some code here, such as the impermanence module is --stolen-- borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
 
 ## Important Files
 - [Flake entrypoint](flake.nix)
@@ -22,5 +21,7 @@
 - [Tony, BTW](https://www.tonybtw.com/)
 - [Emzy](https://github.com/emzywastaken/dotfiles)
 
+## Notes
+I had briefly moved over to hjem, but have since decided it'd be best to stay on home manager for the time being. I will likely continue to use hjem in parts of my config as a simple file linker, with occasional use of its generator.
   
 [<img src="media/icons/purple-logo.png"/>](Logo)
