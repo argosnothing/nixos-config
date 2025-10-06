@@ -18,6 +18,11 @@
           success_symbol = "[λ](bold green) ";
           error_symbol = "[λ](bold red) ";
         };
+        directory = {
+          truncation_length = 3;
+          truncate_to_repo = false;
+          truncation_symbol = ".../";
+        };
       };
     };
   };

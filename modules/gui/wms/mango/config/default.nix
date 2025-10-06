@@ -14,7 +14,19 @@ in {
     ./scripts.nix
   ];
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
+    environment.sessionVariables.GTK_USE_PORTAL = "1";
     hm = {pkgs, ...}: {
+      services.swaync.enable = true;
+      xdg.portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        config.common.default = ["gtk"];
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-wlr
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal
+        ];
+      };
       home.packages = with pkgs; [
         pavucontrol
         swaynotificationcenter
