@@ -26,7 +26,7 @@ in {
       pkgs.opensc
       pkgs.pcsc-tools
       pkgs.p11-kit
-      (pkgsStable.citrix_workspace.override {inherit extraCerts;})
+      (pkgs.citrix_workspace.override {inherit extraCerts;})
     ];
 
     my.persist.home = {
