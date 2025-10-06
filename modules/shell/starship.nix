@@ -9,6 +9,16 @@
   config = lib.mkIf config.my.modules.shell.starship.enable {
     programs.starship = {
       enable = true;
+      settings = {
+        add_newline = false;
+        line_break = {
+          disabled = true;
+        };
+        character = {
+          success_symbol = "[λ](bold green) ";
+          error_symbol = "[λ](bold red) ";
+        };
+      };
     };
   };
 }
