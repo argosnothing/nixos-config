@@ -2,9 +2,7 @@
   config,
   lib,
   ...
-}: let
-  c = config.lib.stylix.colors.withHashtag;
-in {
+}: {
   options.my.modules.shell.kitty = {
     enable = lib.mkEnableOption "Kitty";
   };

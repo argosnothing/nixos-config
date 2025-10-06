@@ -4,8 +4,7 @@
   lib,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf generators;
-  inherit (generators) toYAML;
+  inherit (lib) mkEnableOption mkIf;
 in {
   options.my.modules.style.gowall = {
     enable = mkEnableOption "Go wall!";
