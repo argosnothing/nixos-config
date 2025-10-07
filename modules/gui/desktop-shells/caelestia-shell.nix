@@ -8,8 +8,8 @@
   imports = [
     #inputs.caelestia-shell.homeManagerModules.default
   ];
-  config = lib.mkIf (config.custom.desktop-shell.name == "caelestia-shell") {
-    custom.desktop-shell = {
+  config = lib.mkIf (config.my.modules.gui.desktop-shells.name == "caelestia-shell") {
+    my.modules.gui.desktop-shells = {
       execCommand = "caelestia-shell";
       launcherCommand = "caelestia-shell ipc call drawers toggle launcher";
     };
@@ -40,9 +40,11 @@
     #    };
     #  };
     #};
-    custom.persist.home = {
-      directories = [".config/caelestia"];
-      cache.directories = [".cache/caelestia"];
+    hm = _: {
+      my.persist.home = {
+        directories = [".config/caelestia"];
+        cache.directories = [".cache/caelestia"];
+      };
     };
   };
 }

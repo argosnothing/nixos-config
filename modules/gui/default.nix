@@ -2,6 +2,7 @@
   imports = [
     ./virtualization
     ./wms
+    ./desktop-shells
 
     ./firefox.nix
     ./librewolf.nix

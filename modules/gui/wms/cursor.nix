@@ -9,36 +9,38 @@
   inherit (lib) mkIf mkEnableOption mkOption mkDefault;
   inherit (lib.types) package str int;
 in {
-  _hm = _: {
-    options.my.modules.gui.wms.cursor = {
-      enable = mkEnableOption "Enable Explicit Cursor Management";
-      package = mkOption {
-        type = package;
-        default = pkgs.simp1e-cursors;
-        description = "Package providing the cursor theme.";
-      };
-      name = mkOption {
-        type = str;
-        default = "Simp1e-Tokyo-Night";
-        description = "The cursor name within the package.";
-      };
-
-      size = mkOption {
-        type = int;
-        default = 28;
-        description = "The cursor size.";
-      };
+  options.my.modules.gui.wms.cursor = {
+    enable = mkEnableOption "Enable Explicit Cursor Management";
+    package = mkOption {
+      type = package;
+      default = pkgs.simp1e-cursors;
+      description = "Package providing the cursor theme.";
     };
-    config = mkIf config.my.modules.gui.wms.cursor.enable {
-      hm = _: {
-        home.pointerCursor = {
-          enable = true;
-          gtk.enable = true;
-          x11.enable = true;
-          inherit (config.my.modules.gui.wms.cursor) name;
-          inherit (config.my.modules.gui.wms.cursor) package;
-          inherit (config.my.modules.gui.wms.cursor) size;
-        };
+    name = mkOption {
+      type = str;
+      default = "Simp1e-Tokyo-Night";
+      description = "The cursor name within the package.";
+    };
+
+    size = mkOption {
+      type = int;
+      default = 28;
+      description = "The cursor size.";
+    };
+  };
+  config = mkIf config.my.modules.gui.wms.cursor.enable {
+    environment.sessionVariables = {
+      XCURSOR_THEME = config.my.modules.gui.wms.cursor.name;
+      XCURSOR_SIZE = config.my.modules.gui.wms.cursor.size;
+    };
+    hm = _: {
+      home.pointerCursor = {
+        enable = true;
+        gtk.enable = true;
+        x11.enable = true;
+        inherit (config.my.modules.gui.wms.cursor) name;
+        inherit (config.my.modules.gui.wms.cursor) package;
+        inherit (config.my.modules.gui.wms.cursor) size;
       };
     };
   };

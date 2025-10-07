@@ -14,10 +14,11 @@ in {
   ];
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     environment.sessionVariables.GTK_USE_PORTAL = "1";
+    my.modules.gui.wms.cursor = {
+      enable = true;
+    };
+    my.modules.gui.desktop-shells.name = "noctalia-shell";
     hm = {pkgs, ...}: {
-      my.modules.gui.wms.cursor = {
-        enable = true;
-      };
       services.swaync.enable = true;
       xdg.portal = {
         enable = true;

@@ -105,6 +105,8 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
       ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
+      EDITOR = "vim";
+      VISUAL = "vim";
     };
   };
 

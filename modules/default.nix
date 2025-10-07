@@ -9,5 +9,6 @@
     ./impermanence
 
     ./fonts.nix
+    ./monitors.nix
   ];
 }

@@ -23,8 +23,8 @@ in {
             position = "top";
             height = 25;
 
-            modules-left = ["ext/workspaces"];
-            modules-center = ["dwl/window"];
+            modules-left = ["ext/workspaces" "dwl/window"];
+            modules-center = [];
             modules-right = [
               "custom/recorder"
               "custom/space"
@@ -60,7 +60,7 @@ in {
             };
 
             "dwl/window" = {
-              "format" = "[{layout}]{title} | {app_id}";
+              "format" = "[{layout}]{title} {app_id}";
             };
 
             "custom/space" = {

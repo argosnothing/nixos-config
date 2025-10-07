@@ -2,11 +2,13 @@
   c = config.lib.stylix.colors;
   to0x = hex: alpha: "0x${hex}${alpha}";
 in ''
-  blur=0
+  blur=1
   shadows=0
   border_radius=0
   no_radius_when_single=0
 
+  focused_opacity=0.85
+  unfocused_opacity=0.80
   animations=1
   layer_animations=1
   tag_animation_direction=1

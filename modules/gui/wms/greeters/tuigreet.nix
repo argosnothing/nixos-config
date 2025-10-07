@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
 in {
   options = {
     my.modules.gui.wms.greeters.tuigreet.enable = lib.mkOption {

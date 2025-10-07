@@ -13,6 +13,7 @@
         shellIntegration.enableFishIntegration = true;
         settings = {
           enable_audio_bell = false;
+          font_size = 14;
         };
       };
     };

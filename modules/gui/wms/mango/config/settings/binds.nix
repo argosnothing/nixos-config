@@ -5,7 +5,7 @@
   bind=ALT+CTRL+SHIFT,s,spawn,snip
   bind=ALT+CTRL,v,spawn,record-region-start
   bind=ALT+CTRL+SHIFT,v,spawn,record-region-stop
-  bind=ALT,space,spawn,rofi -show drun
+  bind=ALT,space,spawn,rofi -show drun -show-icons
   bind=ALT,Return,spawn,kitty
 
   # exit
