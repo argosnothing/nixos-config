@@ -7,8 +7,16 @@
   inherit (lib) mkIf;
 in {
   config = mkIf niri.enable {
-    programs.niri.settings.window-rules = {
-      matches = [
+    hm = _: {
+      programs.niri.settings.window-rules = [
+        {
+          matches = [
+            {
+              is-floating = false;
+            }
+          ];
+          tiled-state = true;
+        }
       ];
     };
   };

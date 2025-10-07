@@ -4,5 +4,6 @@ _: {
     ./binds.nix
     ./startup.nix
     ./window-rules.nix
+    ./misc.nix
   ];
 }
