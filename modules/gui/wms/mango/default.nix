@@ -26,8 +26,8 @@
           wms = {
             mango.enable = true;
             greeters.tuigreet = {
-              enable = false;
-              command = "mango";
+              enable = true;
+              command = "dbus-run-session mango";
             };
           };
         };

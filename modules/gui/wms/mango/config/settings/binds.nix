@@ -50,31 +50,31 @@
   bind=ALT,2,comboview,2
   bind=ALT,3,comboview,3
   bind=ALT,4,comboview,4
-  bind=ALT,q,toggleview,5
-  bind=ALT,w,toggleview,6
-  bind=ALT,e,toggleview,7
-  bind=ALT,s,toggleview,8
-  bind=ALT,code:49,toggleview,9
+  bind=ALT,5,comboview,5
+  bind=ALT,6,comboview,6
+  bind=ALT,7,comboview,7
+  bind=ALT,8,comboview,8
+  bind=ALT,9,comboview,9
 
   bind=ALT+SHIFT,1,tag,1,0
   bind=ALT+SHIFT,2,tag,2,0
   bind=ALT+SHIFT,3,tag,3,0
   bind=ALT+SHIFT,4,tag,4,0
-  bind=ALT+SHIFT,q,tag,5,0
-  bind=ALT+SHIFT,w,tag,6,0
-  bind=ALT+SHIFT,e,tag,7,0
-  bind=ALT+SHIFT,s,tag,8,0
-  bind=ALT+SHIFT,code:49,tag,9,0
+  bind=ALT+SHIFT,5,tag,5,0
+  bind=ALT+SHIFT,6,tag,6,0
+  bind=ALT+SHIFT,7,tag,7,0
+  bind=ALT+SHIFT,8,tag,8,0
+  bind=ALT+SHIFT,9,tag,9,0
 
   bind=ALT+CTRL,1,toggleview,1,0
   bind=ALT+CTRL,2,toggleview,2,0
   bind=ALT+CTRL,3,toggleview,3,0
   bind=ALT+CTRL,4,toggleview,4,0
-  bind=ALT+CTRL,q,comboview,5,0
-  bind=ALT+CTRL,w,comboview,6,0
-  bind=ALT+CTRL,e,comboview,7,0
-  bind=ALT+CTRL,s,comboview,8,0
-  bind=ALT+CTRL,code:49,comboview,9,0
+  bind=ALT+CTRL,5,toggleview,5,0
+  bind=ALT+CTRL,6,toggleview,6,0
+  bind=ALT+CTRL,7,toggleview,7,0
+  bind=ALT+CTRL,8,toggleview,8,0
+  bind=ALT+CTRL,9,toggleview,9,0
 
   # monitor switch
   bind=ALT,code:60,focusmon,right

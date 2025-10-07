@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   settings,
   config,
   lib,
@@ -16,6 +15,9 @@ in {
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     environment.sessionVariables.GTK_USE_PORTAL = "1";
     hm = {pkgs, ...}: {
+      my.modules.gui.wms.cursor = {
+        enable = true;
+      };
       services.swaync.enable = true;
       xdg.portal = {
         enable = true;

@@ -14,7 +14,6 @@ let
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
   # HM
-
   imports = [./persist.nix];
   options.my = {
     persist = {

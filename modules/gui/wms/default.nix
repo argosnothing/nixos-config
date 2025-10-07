@@ -7,7 +7,10 @@
   inherit (lib.types) enum;
 in {
   imports =
-    [./greeters]
+    [
+      ./greeters
+      ./cursor.nix
+    ]
     ++ [
       ./cosmic
       #./gnome

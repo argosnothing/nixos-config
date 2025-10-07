@@ -24,11 +24,19 @@
     hm = _: {
       programs.firefox = {
         enable = true;
+        profiles = {
+          "default" = {};
+          "firefox-scratchpad" = {
+            id = 1;
+            isDefault = false;
+          };
+        };
         profiles.default.extensions.force = true;
+        profiles.firefox-scratchpad.extensions.force = true;
       };
       stylix.targets.firefox = {
         enable = true;
-        profileNames = ["default"];
+        profileNames = ["default" "firefox-scratchpad"];
         colorTheme.enable = true;
       };
       my.persist.home = {

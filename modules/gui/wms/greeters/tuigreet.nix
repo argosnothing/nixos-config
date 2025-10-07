@@ -26,7 +26,7 @@ in {
       useTextGreeter = true;
       settings = {
         default_session = {
-          command = "${tuigreet} --user-menu -t -r";
+          command = "${tuigreet} --user-menu -t -r --cmd '${config.my.modules.gui.wms.greeters.tuigreet.command}'";
           user = "greeter";
         };
       };

@@ -29,8 +29,8 @@
       git.enable = true;
     };
     gui = {
-      firefox.enable = false;
-      librewolf.enable = true;
+      firefox.enable = true;
+      librewolf.enable = false;
       flatpak.enable = true;
       steam.enable = true;
       discord.enable = true;
