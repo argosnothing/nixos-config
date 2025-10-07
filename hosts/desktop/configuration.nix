@@ -27,8 +27,8 @@
             x = 0;
             y = 0;
           };
-          scale = "1";
-          refresh = "144";
+          scale = 1.0;
+          refresh = 144.0;
         }
         {
           name = "DP-2";
@@ -40,8 +40,8 @@
             x = 3840;
             y = 288;
           };
-          scale = "1";
-          refresh = "60";
+          scale = 1.0;
+          refresh = 60.0;
         }
       ];
     };

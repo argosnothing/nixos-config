@@ -22,6 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri.url = "github:sodiboo/niri-flake";
+
     occult-theme.url = "github:/argosnothing/occult-theme";
 
     mango = {

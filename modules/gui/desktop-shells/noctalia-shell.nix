@@ -38,10 +38,10 @@
 
       home.sessionVariables = {
         FONTCONFIG_FILE = "${pkgs.makeFontsConf {
-          fontDirectories = [
+          fontDirectories = with config.my.modules.fonts; [
+            sans.package
+            serif.package
             pkgs.material-symbols
-            pkgs.roboto
-            pkgs.inter
           ];
         }}";
       };

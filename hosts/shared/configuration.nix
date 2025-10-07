@@ -44,10 +44,20 @@
   };
 
   nix = {
-    settings.experimental-features = ["nix-command" "pipe-operators" "flakes"];
+    settings = {
+      trusted-users = ["${settings.username}"];
+      experimental-features = ["nix-command" "pipe-operators" "flakes"];
+      download-buffer-size = 268435456;
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "niri.cachix.org-1:T+M3pBd3DkFdBvA+SviyNv0glk+rPZsAocRAGYMddww="
+      ];
+    };
     package = pkgs.nixVersions.latest;
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-    settings.download-buffer-size = 268435456;
     gc = {
       automatic = true;
       dates = "weekly";

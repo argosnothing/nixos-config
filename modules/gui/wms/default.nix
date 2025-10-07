@@ -15,7 +15,7 @@ in {
       ./cosmic
       #./gnome
       #./hyprland
-      ./niri.nix
+      ./niri
       #./gnome
       #./dwm
       ./mango
@@ -24,7 +24,7 @@ in {
     ];
   options = {
     my.modules.gui.wms.name = mkOption {
-      type = enum ["hyprland" "dwm" "dwl" "gnome" "cosmic" "qtile" "mango"];
+      type = enum ["hyprland" "dwm" "dwl" "niri" "gnome" "cosmic" "qtile" "mango"];
       description = "System desktop environment(?)";
     };
   };

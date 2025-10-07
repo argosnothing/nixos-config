@@ -9,7 +9,7 @@
       "monitorrule="
       m.name
       ",0.55,1,tile,0,"
-      m.scale
+      (toString m.scale)
       ","
       (toString m.position.x)
       ","
@@ -19,7 +19,7 @@
       ","
       (toString m.dimensions.height)
       ","
-      m.refresh
+      (toString m.refresh)
     ];
 in ''
   ${concatStringsSep "\n" (map monitor-to-rule config.my.modules.monitors)}

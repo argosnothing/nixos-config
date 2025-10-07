@@ -1,5 +1,5 @@
 {lib, ...}: let
-  inherit (lib.types) listOf submodule attrsOf str int bool;
+  inherit (lib.types) listOf submodule attrsOf str int bool float;
   inherit (lib) mkOption mkEnableOption;
 in {
   options.my.modules.monitors = mkOption {
@@ -49,14 +49,14 @@ in {
 
         scale = mkOption {
           description = "scale of a monitor (use 1, 1.25, etc.)";
-          type = str;
-          default = "1";
+          type = float;
+          default = 1.0;
         };
 
         refresh = mkOption {
           description = "refresh rate of monitor";
-          type = str;
-          default = "60";
+          type = float;
+          default = 60.0;
         };
       };
     });
