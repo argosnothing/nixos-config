@@ -25,6 +25,7 @@ in {
         gui = {
           wms = {
             niri.enable = true;
+            cursor.enable = true;
             greeters.tuigreet = {
               enable = true;
               command = "niri-session";

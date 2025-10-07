@@ -17,6 +17,22 @@ in {
           ];
           tiled-state = true;
         }
+        {
+          matches = [
+            {
+              app-id = "Wfica";
+            }
+          ];
+          block-out-from = "screen-capture";
+        }
+        {
+          matches = [
+            {
+              app-id = "kitty";
+            }
+          ];
+          opacity = 0.95;
+        }
       ];
     };
   };

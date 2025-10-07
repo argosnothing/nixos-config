@@ -12,7 +12,7 @@
       settings = {
         add_newline = false;
         line_break = {
-          disabled = true;
+          disabled = false;
         };
         character = {
           success_symbol = "[λ](bold green) ";
