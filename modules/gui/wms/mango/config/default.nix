@@ -10,7 +10,6 @@ in {
   imports = [
     ./waybar
     ./rofi
-    ./scripts.nix
   ];
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
     environment.sessionVariables.GTK_USE_PORTAL = "1";

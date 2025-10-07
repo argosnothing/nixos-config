@@ -3,11 +3,36 @@
   lib,
   config,
   ...
-}: {
+}: let
+  c = config.lib.stylix.colors.withHashtag;
+in {
   config = lib.mkIf (config.my.modules.gui.desktop-shells.name == "noctalia-shell") {
     my.modules.gui.desktop-shells = {
       execCommand = "noctalia-shell";
       launcherCommand = "noctalia-shell ipc call launcher toggle";
+    };
+    hj = {
+      files = {
+        ".config/noctalia/colors.json" = {
+          generator = lib.generators.toJSON {};
+          value = {
+            mError = "${c.base08}";
+            mOnError = "${c.base00}";
+            mPrimary = "${c.base0F}";
+            mOnPrimary = "${c.base00}";
+            mSecondary = "${c.base0E}";
+            mOnSecondary = "${c.base00}";
+            mTertiary = "${c.base0C}";
+            mOnTertiary = "${c.base00}";
+            mSurface = "${c.base00}";
+            mOnSurface = "${c.base05}";
+            mSurfaceVariant = "${c.base01}";
+            mOnSurfaceVariant = "${c.base04}";
+            mOutline = "${c.base03}";
+            mShadow = "#000000";
+          };
+        };
+      };
     };
     hm = {pkgs, ...}: {
       home.packages =
