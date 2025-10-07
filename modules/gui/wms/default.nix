@@ -15,7 +15,7 @@ in {
       ./cosmic
       #./gnome
       #./hyprland
-      #./niri.nix bleh
+      ./niri.nix
       #./gnome
       #./dwm
       ./mango
