@@ -7,7 +7,10 @@
   gget = pkgs.writeShellScriptBin "gget" (builtins.readFile ./gget.sh);
   ggrab = pkgs.writeShellScriptBin "ggrab" (builtins.readFile ./ggrab.sh);
 in {
-  imports = [./nh.nix];
+  imports = [
+    ./scripts.nix
+    ./nh.nix
+  ];
   options.my.modules.shell.scripts.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;

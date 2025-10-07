@@ -27,7 +27,7 @@ in {
             niri.enable = true;
             greeters.tuigreet = {
               enable = true;
-              command = "dbus-run-session niri";
+              command = "niri-session";
             };
           };
           desktop-shells.name = "noctalia-shell";
