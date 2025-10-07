@@ -10,7 +10,7 @@ in {
   config = mkIf niri.enable {
     hm = _: {
       programs.niri.settings.spawn-at-startup = [
-          {argv = ["${desktop-shells.execCommand}"];}
+        {argv = ["${desktop-shells.execCommand}"];}
       ];
     };
   };
