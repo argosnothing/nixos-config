@@ -1,6 +1,10 @@
-{config, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   binds = import ./binds.nix;
-  monitors = import ./monitors.nix;
+  monitors = import ./monitors.nix {inherit config lib;};
   mango-inputs = import ./inputs.nix;
   layouts = import ./layouts.nix;
   overview = import ./overview.nix;

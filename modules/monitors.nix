@@ -14,27 +14,35 @@ in {
           description = "Name Identifier of a monitor";
         };
 
-        width = mkOption {
-          type = int;
-          example = 1920;
-          description = "Width of the monitor";
-        };
+        dimensions = mkOption {
+          type = submodule {
+            options = {
+              width = mkOption {
+                type = int;
+                example = 1920;
+                description = "Width of the monitor";
+              };
 
-        height = mkOption {
-          type = int;
-          example = 1080;
-          description = "Height of the monitor";
+              height = mkOption {
+                type = int;
+                example = 1080;
+                description = "Height of the monitor";
+              };
+            };
+          };
         };
 
         position = mkOption {
           type = submodule {
-            x = mkOption {
-              type = int;
-              description = "x-position of monitor";
-            };
-            y = mkOption {
-              type = int;
-              description = "y-position of monitor";
+            options = {
+              x = mkOption {
+                type = int;
+                description = "x-position of monitor";
+              };
+              y = mkOption {
+                type = int;
+                description = "y-position of monitor";
+              };
             };
           };
         };

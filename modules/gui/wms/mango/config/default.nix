@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  mango-settings = import ./settings {inherit config;};
+  mango-settings = import ./settings {inherit config lib;};
 in {
   imports = [
     ./waybar

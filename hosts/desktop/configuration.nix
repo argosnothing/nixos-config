@@ -15,6 +15,35 @@
       shell = {
         spotify-player.enable = true;
       };
+      monitors = [
+        {
+          name = "DP-1";
+          is-primary = true;
+          dimensions = {
+            width = 3840;
+            height = 2160;
+          };
+          position = {
+            x = 0;
+            y = 0;
+          };
+          scale = "1";
+          refresh = "144";
+        }
+        {
+          name = "DP-2";
+          dimensions = {
+            width = 1920;
+            height = 1080;
+          };
+          position = {
+            x = 3840;
+            y = 288;
+          };
+          scale = "1";
+          refresh = "60";
+        }
+      ];
     };
     persist.enable = true;
   };
