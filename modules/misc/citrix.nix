@@ -14,7 +14,7 @@
     ./secure/citrix-certs/Entrust_L1K.pem
     ./secure/citrix-certs/dod-pki-bundle.pem
     ./secure/citrix-certs/DoD_PKE_CA_chain.pem
-    ./secure/citrix-certs/Iden.crt
+    ./secure/citrix-certs/Iden.pem
   ];
 in {
   options.my.modules.misc.citrix = {
