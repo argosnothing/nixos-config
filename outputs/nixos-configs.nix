@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (builtins) mapAttrs;
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs self;
   mkSystem = {
     wm ? "hyprland",
     hostname,
@@ -33,7 +33,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       specialArgs = {
-        inherit inputs settings;
+        inherit inputs settings self;
       };
       modules = [
         inputs.impermanence.nixosModules.impermanence

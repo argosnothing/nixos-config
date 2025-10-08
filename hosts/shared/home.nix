@@ -3,6 +3,7 @@
 ## (skill issue)
 {
   pkgs,
+  self,
   settings,
   inputs,
   lib,
@@ -20,6 +21,7 @@ in {
     useGlobalPkgs = true;
     useUserPackages = true;
     overwriteBackup = true;
+    extraSpecialArgs = {inherit self;};
     users.${settings.username} = {...}: {
       home.stateVersion = "25.05";
       programs.home-manager.enable = true;
