@@ -10,8 +10,15 @@ in {
   config = mkIf niri.enable {
     hm = _: {
       programs.niri.settings.layout = {
-        focus-ring = mkForce {
-          active = c.base0E;
+        focus-ring = {
+          active = mkForce {
+            color = c.base0E;
+          };
+        };
+        border = {
+          active = mkForce {
+            color = c.base0E;
+          };
         };
       };
     };

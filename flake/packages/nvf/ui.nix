@@ -1,7 +1,19 @@
 _: {
   vim.ui = {
     borders.enable = true;
-    colorizer.enable = true;
+    colorizer = {
+      enable = true;
+      setupOpts = {
+        filetypes = {
+          "*" = {
+            AARRGGBB = true;
+            RGB = true;
+            RRGGBB = true;
+            RRGGBBAA = true;
+          };
+        };
+      };
+    };
     illuminate.enable = true;
     fastaction.enable = true;
     smartcolumn = {
