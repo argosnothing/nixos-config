@@ -4,13 +4,13 @@
   ...
 }: let
   inherit (config.my.modules.gui.wms) niri;
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkDefault;
 in {
   config = mkIf niri.enable {
     hm = _: let
       inherit (config.my.modules.gui) desktop-shells;
     in {
-      programs.niri.settings.binds = {
+      programs.niri.settings.binds = mkDefault {
         "Mod+Return".action.spawn = "kitty";
         "Mod+space".action.spawn = lib.splitString " " desktop-shells.launcherCommand;
         "XF86AudioRaiseVolume"."allow-when-locked" = true;
@@ -145,7 +145,10 @@ in {
         "Mod+BracketLeft".action.consume-or-expel-window-left = [];
         "Mod+BracketRight".action.consume-or-expel-window-right = [];
 
-        "Mod+Comma".action.consume-window-into-column = [];
+        "Mod+Comma" = lib.mkDefault {
+          action.consume-window-into-column = [];
+        };
+
         "Mod+Period".action.expel-window-from-column = [];
 
         "Mod+R".action.switch-preset-column-width = [];
@@ -166,7 +169,9 @@ in {
         "Mod+Shift+Minus".action.set-window-height = "-10%";
         "Mod+Shift+Equal".action.set-window-height = "+10%";
 
-        "Mod+V".action.toggle-window-floating = [];
+        "Mod+V".action = mkDefault {
+          toggle-window-floating = [];
+        };
         "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [];
 
         "Mod+W".action.toggle-column-tabbed-display = [];

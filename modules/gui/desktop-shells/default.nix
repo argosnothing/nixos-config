@@ -5,7 +5,7 @@ in {
   imports = [
     ./noctalia-shell.nix
     #./caelestia-shell.nix
-    #./dank-shell.nix
+    ./dank-shell.nix
   ];
   options.my.modules.gui.desktop-shells = {
     name = mkOption {
@@ -13,7 +13,7 @@ in {
       type = nullOr (enum [
         "noctalia-shell"
         #"caelestia-shell"
-        #"dank-shell" #https://github.com/AvengeMedia/DankMaterialShell/issues/186#issuecomment-3275793282
+        "dank-shell" #https://github.com/AvengeMedia/DankMaterialShell/issues/186#issuecomment-3275793282
       ]);
       description = "Add a shell to spice up compositor";
     };

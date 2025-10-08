@@ -12,6 +12,11 @@
     programs.fish = {
       enable = true;
     };
+    hm = _: {
+      my.persist.home.cache.directories = [
+        ".cache/fish"
+      ];
+    };
     hjem.users.${settings.username} = {
       files = {
         ".config/fish/conf.d/show-base16.fish".text = ''
