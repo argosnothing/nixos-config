@@ -20,12 +20,14 @@ in {
               width = mkOption {
                 type = int;
                 example = 1920;
+                default = 1920;
                 description = "Width of the monitor";
               };
 
               height = mkOption {
                 type = int;
                 example = 1080;
+                default = 1080;
                 description = "Height of the monitor";
               };
             };
@@ -37,10 +39,12 @@ in {
             options = {
               x = mkOption {
                 type = int;
+                default = 0;
                 description = "x-position of monitor";
               };
               y = mkOption {
                 type = int;
+                default = 0;
                 description = "y-position of monitor";
               };
             };

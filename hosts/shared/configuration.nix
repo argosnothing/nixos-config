@@ -32,7 +32,6 @@
       firefox.enable = true;
       librewolf.enable = false;
       flatpak.enable = true;
-      steam.enable = true;
       discord.enable = true;
       via.enable = true;
     };

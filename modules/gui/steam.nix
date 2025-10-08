@@ -6,7 +6,7 @@
 }: {
   options.my.modules.gui.steam.enable = lib.mkOption {
     type = lib.types.bool;
-    default = true;
+    default = false;
     description = "Enable Steam with gamescope support and gaming optimizations.";
   };
 
