@@ -1,25 +1,39 @@
 {
-  pkgs,
   inputs,
   lib,
   config,
   ...
 }: let
+  inherit (lib) mkIf;
+  inherit (config.my.modules.gui.wms) niri;
+  is-dank = config.my.modules.gui.desktop-shells.name == "dank-shell";
   dankShell = inputs.dank-shell;
 in {
   imports = [
   ];
-  config = lib.mkIf (config.my.modules.gui.desktop-shells.name == "dank-shell") {
+  config = lib.mkIf is-dank {
     hm = {pkgs, ...}: {
+      my.persist.home.directories = [
+        ".config/DankMaterialShell"
+        ".local/state/DankMaterialShell"
+      ];
+      imports = [
+        dankShell.homeModules.dankMaterialShell.default
+        dankShell.homeModules.dankMaterialShell.niri
+      ];
+      programs.dankMaterialShell = {
+        enable = true;
+      };
+      programs.dankMaterialShell.niri = mkIf niri.enable {
+        enableSpawn = true;
+      };
       home.packages = [
-        dankShell.packages.${pkgs.system}.quickshell
         dankShell.packages.${pkgs.system}.dankMaterialShell
-        dankShell.packages.${pkgs.system}.default
       ];
     };
     my.modules.gui.desktop-shells = {
       execCommand = "dms run";
-      launcherCommand = "dmps ipc call spotlight toggle";
+      launcherCommand = "dms ipc call spotlight toggle";
       bind = [
       ];
     };

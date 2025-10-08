@@ -7,5 +7,6 @@ _: {
     ./fish.nix
     ./starship.nix
     ./spotify-player.nix
+    ./fetch.nix
   ];
 }

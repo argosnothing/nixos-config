@@ -93,7 +93,6 @@
     systemPackages = with pkgs; [
       bottom
       nh
-      fastfetch
       lazygit
       alejandra
       sops
