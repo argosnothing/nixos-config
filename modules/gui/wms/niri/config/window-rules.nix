@@ -12,6 +12,20 @@ in {
         {
           matches = [
             {
+              title = "Kando Menu";
+            }
+          ];
+          open-floating = true;
+          border = {
+            enable = false;
+          };
+          shadow = {
+            enable = false;
+          };
+        }
+        {
+          matches = [
+            {
               is-floating = false;
             }
           ];

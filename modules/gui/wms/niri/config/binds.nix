@@ -13,6 +13,7 @@ in {
       programs.niri.settings.binds = mkDefault {
         "Mod+Return".action.spawn = "kitty";
         "Mod+space".action.spawn = lib.splitString " " desktop-shells.launcherCommand;
+        "Mod+Slash".action.show-hotkey-overlay = [];
         "XF86AudioRaiseVolume"."allow-when-locked" = true;
         "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
 
@@ -49,14 +50,19 @@ in {
         "Mod+Q".repeat = false;
         "Mod+Q".action.close-window = [];
 
-        "Mod+Left".action.focus-column-left = [];
         "Mod+Down".action.focus-window-down = [];
         "Mod+Up".action.focus-window-up = [];
-        "Mod+Right".action.focus-column-right = [];
+
+        "Mod+Left".action.focus-column-left = [];
         "Mod+H".action.focus-column-left = [];
+        "Mod+A".action.focus-column-left = [];
+
         "Mod+J".action.focus-window-down = [];
         "Mod+K".action.focus-window-up = [];
+
         "Mod+L".action.focus-column-right = [];
+        "Mod+D".action.focus-column-right = [];
+        "Mod+Right".action.focus-column-right = [];
 
         "Mod+Ctrl+Left".action.move-column-left = [];
         "Mod+Ctrl+Down".action.move-window-down = [];
@@ -73,30 +79,43 @@ in {
         "Mod+Ctrl+End".action.move-column-to-last = [];
 
         "Mod+Shift+Left".action.focus-monitor-left = [];
+        "Mod+Shift+H".action.focus-monitor-left = [];
+        "Mod+Shift+A".action.focus-monitor-left = [];
+
         "Mod+Shift+Down".action.focus-monitor-down = [];
         "Mod+Shift+Up".action.focus-monitor-up = [];
+
         "Mod+Shift+Right".action.focus-monitor-right = [];
-        "Mod+Shift+H".action.focus-monitor-left = [];
+        "Mod+Shift+L".action.focus-monitor-right = [];
+        "Mod+Shift+D".action.focus-monitor-right = [];
+
         "Mod+Shift+J".action.focus-monitor-down = [];
         "Mod+Shift+K".action.focus-monitor-up = [];
-        "Mod+Shift+L".action.focus-monitor-right = [];
 
         "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = [];
+        "Mod+Shift+Ctrl+H".action.move-column-to-monitor-left = [];
+        "Mod+Shift+Ctrl+A".action.move-column-to-monitor-left = [];
+
         "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = [];
         "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = [];
-        "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = [];
-        "Mod+Shift+Ctrl+H".action.move-column-to-monitor-left = [];
         "Mod+Shift+Ctrl+J".action.move-column-to-monitor-down = [];
         "Mod+Shift+Ctrl+K".action.move-column-to-monitor-up = [];
-        "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = [];
 
+        "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = [];
+        "Mod+Shift+Ctrl+D".action.move-column-to-monitor-right = [];
+        "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = [];
+
+        "Mod+S".action.focus-workspace-down = [];
         "Mod+Page_Down".action.focus-workspace-down = [];
-        "Mod+Page_Up".action.focus-workspace-up = [];
         "Mod+U".action.focus-workspace-down = [];
+
+        "Mod+Page_Up".action.focus-workspace-up = [];
         "Mod+I".action.focus-workspace-up = [];
+        "Mod+W".action.focus-workspace-up = [];
 
         "Mod+Ctrl+Page_Down".action.move-column-to-workspace-down = [];
         "Mod+Ctrl+Page_Up".action.move-column-to-workspace-up = [];
+
         "Mod+Ctrl+U".action.move-column-to-workspace-down = [];
         "Mod+Ctrl+I".action.move-column-to-workspace-up = [];
 
@@ -174,7 +193,7 @@ in {
         };
         "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [];
 
-        "Mod+W".action.toggle-column-tabbed-display = [];
+        "Mod+X".action.toggle-column-tabbed-display = [];
 
         "Print".action.screenshot = [];
         "Ctrl+Print".action.screenshot-screen = [];

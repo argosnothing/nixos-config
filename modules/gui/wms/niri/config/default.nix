@@ -5,5 +5,6 @@ _: {
     ./startup.nix
     ./window-rules.nix
     ./misc.nix
+    ./appearance.nix
   ];
 }

@@ -21,6 +21,7 @@ in {
     enable = lib.mkEnableOption "Enable citrix and certs + smartcard stuff";
   };
   config = lib.mkIf config.my.modules.misc.citrix.enable {
+    security.pki.certificateFiles = extraCerts;
     services.pcscd.enable = true;
     environment.systemPackages = [
       pkgs.opensc
