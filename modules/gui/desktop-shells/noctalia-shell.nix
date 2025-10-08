@@ -42,7 +42,6 @@ in {
         ]
         ++ (with pkgs; [
           kdePackages.qt5compat
-          bash
           brightnessctl
           cava
           cliphist

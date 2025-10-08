@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./virtualization
     ./wms
     ./desktop-shells
 

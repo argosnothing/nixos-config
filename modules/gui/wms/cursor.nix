@@ -33,7 +33,8 @@ in {
       XCURSOR_THEME = config.my.modules.gui.wms.cursor.name;
       XCURSOR_SIZE = config.my.modules.gui.wms.cursor.size;
     };
-    hm = _: {
+    hm = {pkgs, ...}: {
+      home.packages = [pkgs.dconf];
       home.pointerCursor = {
         enable = true;
         gtk.enable = true;

@@ -9,9 +9,7 @@
   is-dank = config.my.modules.gui.desktop-shells.name == "dank-shell";
   dankShell = inputs.dank-shell;
 in {
-  imports = [
-  ];
-  config = lib.mkIf is-dank {
+  config = mkIf is-dank {
     hm = {pkgs, ...}: {
       my.persist.home.directories = [
         ".config/DankMaterialShell"

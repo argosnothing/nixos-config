@@ -31,15 +31,10 @@
     gui = {
       firefox.enable = true;
       librewolf.enable = false;
-      flatpak.enable = true;
+      flatpak.enable = false;
       discord.enable = true;
       via.enable = true;
     };
-  };
-
-  ## IDFK what is doing it but idc at this point
-  systemd.settings.Manager = {
-    "DefaultTimeoutStopSec" = "10s";
   };
 
   nix = {

@@ -8,10 +8,10 @@
   inherit (config.my.modules.gui) desktop-shells;
 in {
   config = mkIf niri.enable {
-    hm = _: {
-      programs.niri.settings.spawn-at-startup = [
-        {argv = ["${desktop-shells.execCommand}"];}
-      ];
-    };
+    #hm = _: {
+    #  programs.niri.settings.spawn-at-startup = [
+    #    {argv = ["${desktop-shells.execCommand}"];}
+    #  ];
+    #};
   };
 }
