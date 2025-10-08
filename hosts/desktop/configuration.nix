@@ -9,6 +9,9 @@
     modules = {
       critical.zfs.enable = true;
       misc.citrix.enable = true;
+      gui = {
+        steam.enable = true;
+      };
       style = {
         gowall.enable = true;
       };
