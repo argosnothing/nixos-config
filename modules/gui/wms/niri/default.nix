@@ -52,6 +52,7 @@ in {
     hm = _: {
       programs.niri.settings = {
         input = {
+          focus-follows-mouse.enable = false;
           mod-key = "Alt";
           mod-key-nested = "Super";
           mouse = {

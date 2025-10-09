@@ -65,13 +65,17 @@ in {
         "Mod+Right".action.focus-column-right = [];
 
         "Mod+Ctrl+Left".action.move-column-left = [];
+        "Mod+Ctrl+H".action.move-column-left = [];
+        "Mod+Ctrl+A".action.move-column-left = [];
+
+        "Mod+Ctrl+Right".action.move-column-right = [];
+        "Mod+Ctrl+L".action.move-column-right = [];
+        "Mod+Ctrl+D".action.move-column-right = [];
+
         "Mod+Ctrl+Down".action.move-window-down = [];
         "Mod+Ctrl+Up".action.move-window-up = [];
-        "Mod+Ctrl+Right".action.move-column-right = [];
-        "Mod+Ctrl+H".action.move-column-left = [];
         "Mod+Ctrl+J".action.move-window-down = [];
         "Mod+Ctrl+K".action.move-window-up = [];
-        "Mod+Ctrl+L".action.move-column-right = [];
 
         "Mod+Home".action.focus-column-first = [];
         "Mod+End".action.focus-column-last = [];
@@ -114,10 +118,13 @@ in {
         "Mod+W".action.focus-workspace-up = [];
 
         "Mod+Ctrl+Page_Down".action.move-column-to-workspace-down = [];
+        "Mod+Ctrl+S".action.move-column-to-workspace-down = [];
+
         "Mod+Ctrl+Page_Up".action.move-column-to-workspace-up = [];
 
         "Mod+Ctrl+U".action.move-column-to-workspace-down = [];
         "Mod+Ctrl+I".action.move-column-to-workspace-up = [];
+        "Mod+Ctrl+W".action.move-column-to-workspace-up = [];
 
         "Mod+WheelScrollDown"."cooldown-ms" = 150;
         "Mod+WheelScrollDown".action.focus-workspace-down = [];

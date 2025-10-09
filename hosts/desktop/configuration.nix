@@ -11,6 +11,7 @@
       misc.citrix.enable = true;
       gui = {
         steam.enable = true;
+        nemo.enable = true;
       };
       style = {
         gowall.enable = true;

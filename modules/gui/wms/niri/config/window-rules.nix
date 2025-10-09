@@ -37,6 +37,8 @@ in {
               app-id = "Wfica";
             }
           ];
+          open-fullscreen = false;
+          open-maximized = true;
           block-out-from = "screen-capture";
         }
         {
