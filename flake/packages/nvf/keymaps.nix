@@ -10,5 +10,11 @@ _: {
       mode = "n";
       action = ":Oil <CR>";
     }
+    {
+      key = "<C-p>";
+      mode = "n";
+      silent = true;
+      action = ":harpoon:list:prev<CR>";
+    }
   ];
 }
