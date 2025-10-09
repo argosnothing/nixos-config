@@ -2,11 +2,13 @@
   imports = [
     ../shared/configuration.nix
     ./hardware-configuration.nix
+    ./input.nix
   ];
   my = {
     modules = {
       critical.zfs.enable = true;
-      misc.citrix.enable = true;
+      misc.citrix.enable = false;
+      fonts.size = 11;
       monitors = [
         {
           name = "eDP-1";

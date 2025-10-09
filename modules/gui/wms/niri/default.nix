@@ -58,6 +58,9 @@ in {
             accel-speed = 0.3;
             accel-profile = "flat";
           };
+          touchpad = {
+            dwt = true;
+          };
         };
       };
     };
