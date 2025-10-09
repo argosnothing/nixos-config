@@ -53,9 +53,22 @@ in {
     };
   };
   config = {
-    my.modules.fonts.serif = {
-      name = "Alegreya Serif";
-      package = pkgs.google-fonts;
+    my = {
+      modules = {
+        fonts = {
+          serif = {
+            name = "Alegreya Serif";
+            package = pkgs.google-fonts;
+          };
+          mono = {
+            name = "Cascadia Code";
+            package = pkgs.cascadia-code;
+          };
+        };
+      };
+      persist.home = {
+        directories = [".cache/fontconfig"];
+      };
     };
     fonts.packages = with pkgs; [
       nerd-fonts.fira-code
@@ -74,9 +87,6 @@ in {
         sansSerif = [sans.name];
         serif = [serif.name];
       };
-    };
-    my.persist.home = {
-      directories = [".cache/fontconfig"];
     };
   };
 }

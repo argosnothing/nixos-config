@@ -1,5 +1,5 @@
 {lib, ...}: let
-  inherit (lib.types) listOf submodule attrsOf str int bool float;
+  inherit (lib.types) listOf submodule str int float;
   inherit (lib) mkOption mkEnableOption;
 in {
   options.my.modules.monitors = mkOption {
