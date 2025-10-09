@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (builtins) mapAttrs;
-  inherit (inputs) nixpkgs self;
+  inherit (inputs) nixpkgs nixpkgs-stable self;
   mkSystem = {
     wm ? "hyprland",
     hostname,
@@ -16,6 +16,10 @@
       permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
     };
     pkgs = import nixpkgs {
+      inherit system;
+      config = pkg-config;
+    };
+    pkgs-stable = import nixpkgs-stable {
       inherit system;
       config = pkg-config;
     };
@@ -33,7 +37,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       specialArgs = {
-        inherit inputs settings self;
+        inherit inputs settings pkgs-stable self;
       };
       modules = [
         inputs.impermanence.nixosModules.impermanence

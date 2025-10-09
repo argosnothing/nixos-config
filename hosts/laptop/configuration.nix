@@ -7,7 +7,7 @@
   my = {
     modules = {
       critical.zfs.enable = true;
-      misc.citrix.enable = false;
+      misc.citrix.enable = true;
       fonts.size = 11;
       monitors = [
         {
