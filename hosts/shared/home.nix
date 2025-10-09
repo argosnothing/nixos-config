@@ -67,6 +67,7 @@ in {
       colorScheme = "dark";
     };
   };
+  hj.systemd.enable = false;
   hjem.linker = inputs.hjem.packages.${system}.smfh;
   hjem.users.${settings.username} = {
     enable = true;

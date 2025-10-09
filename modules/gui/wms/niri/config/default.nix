@@ -6,5 +6,6 @@ _: {
     ./window-rules.nix
     ./misc.nix
     ./appearance.nix
+    ./animations.nix
   ];
 }
