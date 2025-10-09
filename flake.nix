@@ -51,7 +51,6 @@
 
     nvf = {
       url = "github:notashelf/nvf";
-      #url = "github:notashelf/nvf?ref=b7571df4d6e9ac08506a738ddceeec0b141751b0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
