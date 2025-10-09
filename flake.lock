@@ -79,11 +79,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759951389,
-        "narHash": "sha256-46MeipBL7Q1ezJC8XYM6m5A8d2Qanxm+qS/VvDQiwcQ=",
+        "lastModified": 1759969901,
+        "narHash": "sha256-4R2m4zd0lof+9fqL5MFf7Eew4Bpxzotjhq5gPm0RXzE=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "3909ce3350606b33b25be4174b7ee962736be20d",
+        "rev": "3fb5d5c4f3143b4f41632302f7158fc8a85367bf",
         "type": "github"
       },
       "original": {
@@ -652,6 +652,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable_2": {
+      "locked": {
+        "lastModified": 1759735786,
+        "narHash": "sha256-a0+h02lyP2KwSNrZz4wLJTu9ikujNsTWIC874Bv7IJ0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "20c4598c84a671783f741e02bf05cbfaf4907cff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1759381078,
@@ -805,6 +821,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixos-grub-themes": "nixos-grub-themes",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-stable": "nixpkgs-stable_2",
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
         "occult-theme": "occult-theme",

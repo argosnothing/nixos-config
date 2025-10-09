@@ -27,8 +27,10 @@
     };
     persist.enable = true;
   };
-
-  hardware.graphics.enable = true;
+  hardware = {
+    graphics.enable = true;
+    bluetooth.enable = true;
+  };
   services = {
     libinput.enable = true;
     libinput.touchpad = {
