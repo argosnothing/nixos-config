@@ -4,11 +4,17 @@
   config,
   ...
 }: let
+  inherit (lib.types) int;
   inherit (lib) mkOption;
   inherit (lib.types) str package;
   inherit (config.my.modules.fonts) mono sans serif;
 in {
   options.my.modules.fonts = {
+    size = mkOption {
+      type = int;
+      default = 14;
+      description = "Static font size preference";
+    };
     mono = {
       name = mkOption {
         description = "Name of Mono Font";

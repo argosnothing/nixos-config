@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  inherit (config.my.modules.fonts) size;
+in {
   options.my.modules.shell.kitty = {
     enable = lib.mkEnableOption "Kitty";
   };
@@ -13,7 +15,8 @@
         shellIntegration.enableFishIntegration = true;
         settings = {
           enable_audio_bell = false;
-          font_size = 14;
+          font_size = size;
+          window_margin_width = 10;
         };
       };
     };
