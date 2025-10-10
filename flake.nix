@@ -23,6 +23,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zwift.url = "github:netbrain/zwift";
+
     niri.url = "github:sodiboo/niri-flake";
 
     occult-theme.url = "github:/argosnothing/occult-theme";

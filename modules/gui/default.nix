@@ -3,6 +3,8 @@
     ./wms
     ./desktop-shells
 
+    ./zwift.nix
+
     ./firefox.nix
     ./librewolf.nix
     ./chrome.nix
