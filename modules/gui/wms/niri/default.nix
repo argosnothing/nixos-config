@@ -53,6 +53,7 @@ in {
       programs.niri.settings = {
         input = {
           focus-follows-mouse.enable = false;
+          warp-mouse-to-focus.enable = true;
           mod-key = "Alt";
           mod-key-nested = "Super";
           mouse = {

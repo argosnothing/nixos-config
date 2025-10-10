@@ -80,27 +80,31 @@
     "/etc/NetworkManager/system-connections"
   ];
   environment = {
-    # Shell configuration
     shells = with pkgs; [zsh];
 
-    # Core system packages
     systemPackages = with pkgs; [
+      # criticals
+      sops
+      dbus
+      hdparm
+
+      # must haves
       bottom
       nh
       lazygit
       alejandra
-      sops
-      hdparm
       git
-      gitkraken
       unzip
       openssl
       usbutils
+
+      # audios
       pipewire
       grimblast
+      playerctl
+
+      # others
       brightnessctl
-      dbus
-      unetbootin
     ];
 
     # Environment variables for Electron apps
