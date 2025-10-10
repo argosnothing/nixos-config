@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../shared/configuration.nix # Import shared system configuration
+    ../shared/configuration.nix
     ./hardware-configuration.nix
     ./nvidia.nix
   ];
@@ -12,6 +12,7 @@
       gui = {
         steam.enable = true;
         nemo.enable = true;
+        virtualization.enable = true;
       };
       style = {
         gowall.enable = true;
