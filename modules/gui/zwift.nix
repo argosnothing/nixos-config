@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   lib,
   inputs,
@@ -13,6 +12,22 @@ in {
     enable = mkEnableOption "Enable Zwift";
   };
   config = mkIf enable {
+    my = {
+      persist = {
+        root = {
+          directories = [
+            "/var/lib/zwift"
+            "/opt/wine-devel"
+          ];
+          cache.directories = [
+            "/var/tmp"
+          ];
+        };
+        home.directories = [
+          ".local/share/containers"
+        ];
+      };
+    };
     programs.zwift = {
       # Enable the Zwift module and install required dependencies
       enable = true;
@@ -27,9 +42,9 @@ in {
       # Container tool to run Zwift (e.g., "podman" or "docker")
       containerTool = "podman";
       # Zwift account username (email address)
-      zwiftUsername = "user@example.com";
+      zwiftUsername = config.sops.secrets."zwift_credentials/email".path;
       # Zwift account password
-      zwiftPassword = "xxxx";
+      zwiftPassword = config.sops.secrets."zwift_credentials/password".path;
       # Directory to store Zwift workout files
       zwiftWorkoutDir = "/var/lib/zwift/workouts";
       # Directory to store Zwift activity files

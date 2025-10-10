@@ -24,6 +24,8 @@
         mode = "0400";
         neededForUsers = true;
       };
+      "zwift_credentials/email" = {};
+      "zwift_credentials/password" = {};
       "myservice/my_subdir/my_secret" = {};
     };
   };

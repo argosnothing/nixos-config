@@ -13,6 +13,7 @@
         steam.enable = true;
         nemo.enable = true;
         virtualization.enable = true;
+        zwift.enable = true;
       };
       style = {
         gowall.enable = true;

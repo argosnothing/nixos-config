@@ -700,6 +700,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1734435836,
+        "narHash": "sha256-kMBQ5PRiFLagltK0sH+08aiNt3zGERC2297iB6vrvlU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4989a246d7a390a859852baddb1013f825435cee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia-shell": {
       "inputs": {
         "nixpkgs": [
@@ -829,7 +845,8 @@
         "sops-nix": "sops-nix",
         "std": "std",
         "stylix": "stylix",
-        "systems": "systems_5"
+        "systems": "systems_5",
+        "zwift": "zwift"
       }
     },
     "rust-overlay": {
@@ -1151,6 +1168,24 @@
       "original": {
         "owner": "Supreeeme",
         "repo": "xwayland-satellite",
+        "type": "github"
+      }
+    },
+    "zwift": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1759994360,
+        "narHash": "sha256-cLDEO64sxGCwVfxq96YJktBvMKAHcVYheWJ2RFXjw2Y=",
+        "owner": "netbrain",
+        "repo": "zwift",
+        "rev": "387c9d715cd32cba36d8125b721f79d7c0a26472",
+        "type": "github"
+      },
+      "original": {
+        "owner": "netbrain",
+        "repo": "zwift",
         "type": "github"
       }
     }
