@@ -12,9 +12,13 @@ in {
   };
   config = mkIf enable {
     virtualisation.libvirtd.enable = true;
+    my.persist.root.directories = [
+      "/var/lib/libvirt"
+    ];
     programs.virt-manager = {
       enable = true;
     };
-    users.users."${settings.username}".extraGroups = ["libvirtd" "kvm"];
+    users.users.qemu-libvirtd.extraGroups = ["render"];
+    users.users."${settings.username}".extraGroups = ["libvirtd" "kvm" "render"];
   };
 }

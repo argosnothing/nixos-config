@@ -12,8 +12,8 @@
           name = "Virtual-1";
           is-primary = true;
           dimensions = {
-            width = 1920;
-            height = 1080;
+            width = 500;
+            height = 500;
           };
           position = {
             x = 0;
