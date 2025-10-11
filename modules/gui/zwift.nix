@@ -28,6 +28,20 @@ in {
         ];
       };
     };
+
+    services.xserver = {
+      enable = true;
+      videoDrivers = ["nvidia"]; #nvidia suffices for those with newer gfx cards.
+    };
+    hardware = {
+      graphics.enable32Bit = true;
+      nvidia-container-toolkit.enable = true;
+    };
+    virtualisation = {
+      podman = {
+        enable = true;
+      };
+    };
     programs.zwift = {
       # Enable the Zwift module and install required dependencies
       enable = true;

@@ -4,7 +4,8 @@
   settings,
   config,
   ...
-}: {
+}: let
+in {
   options.my.modules.shell.yazi = {
     enable = lib.mkEnableOption "Enable Yazi";
   };
@@ -14,11 +15,14 @@
         pkgs.yazi
       ];
       xdg.config.files = {
-        "yazi/keymap.toml".source = .config/yazi/keymap.toml;
+        "yazi/keymap.toml" = {
+          source = .config/yazi/keymap.toml;
+        };
       };
     };
     my.persist.home.directories = [
       ".config/yazi"
+      ".local/state/yazi"
     ];
   };
 }

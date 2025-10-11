@@ -20,6 +20,7 @@
       };
       shell = {
         spotify-player.enable = true;
+        yazi.enable = true;
       };
       monitors = [
         {
@@ -62,6 +63,7 @@
   ];
   my.persist.home.directories = [".config/uhk-agent"];
   hardware.keyboard.uhk.enable = true;
+  hardware.bluetooth.enable = true;
 
   services.udev.packages = with pkgs; [uhk-agent];
 }

@@ -1176,15 +1176,15 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1759994360,
-        "narHash": "sha256-cLDEO64sxGCwVfxq96YJktBvMKAHcVYheWJ2RFXjw2Y=",
-        "owner": "netbrain",
+        "lastModified": 1760147566,
+        "narHash": "sha256-LIFjqcDuWYcrYVELKSTwWBBCES6qQnBgD4JkOgHcdg0=",
+        "owner": "argosnothing",
         "repo": "zwift",
-        "rev": "387c9d715cd32cba36d8125b721f79d7c0a26472",
+        "rev": "ef147a993b122c1813026232cf4140c863040f10",
         "type": "github"
       },
       "original": {
-        "owner": "netbrain",
+        "owner": "argosnothing",
         "repo": "zwift",
         "type": "github"
       }
