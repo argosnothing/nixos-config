@@ -8,6 +8,9 @@
     ./firefox.nix
     ./librewolf.nix
     ./chrome.nix
+    ./floorp.nix
+
+    ./audacity.nix
 
     ./virtualization
 

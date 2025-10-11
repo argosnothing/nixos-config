@@ -4,7 +4,7 @@ _: {
       enable = true;
       settings = {
         logo = {
-          source = "${self}/media/icons/crescent.svg";
+          source = "${self}/media/icons/NixOS";
         };
       };
     };

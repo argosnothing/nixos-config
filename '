@@ -1,0 +1,16 @@
+{
+  config,
+  settings,
+  lib,
+  ...
+}: let
+  inherit (lib) mkIf mkEnableOption;
+  inherit (config.my.modules.gui.audacity) enable;
+in {
+  options.my.modules.gui.audacity = {
+    enable = mkEnableOption "Google Chrome";
+  };
+  config = mkIf enable {
+
+  };
+}

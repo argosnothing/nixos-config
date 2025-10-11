@@ -14,6 +14,7 @@
         nemo.enable = true;
         virtualization.enable = true;
         zwift.enable = true;
+        audacity.enable = true;
       };
       style = {
         gowall.enable = true;
