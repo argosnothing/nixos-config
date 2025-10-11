@@ -13,19 +13,13 @@ in {
     ]
     ++ [
       ./cosmic
-      #./gnome
-      #./hyprland
       ./niri
-      #./gnome
-      #./dwm
       ./mango
-      #./dwl
-      #./qtile
     ];
   options = {
     my.modules.gui.wms.name = mkOption {
-      type = enum ["hyprland" "dwm" "dwl" "niri" "gnome" "cosmic" "qtile" "mango"];
-      description = "System desktop environment(?)";
+      type = enum ["niri" "cosmic" "mango"];
+      description = "Winder Manager/Desktop Environment Choice";
     };
   };
   config = {
