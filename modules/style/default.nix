@@ -26,7 +26,8 @@ in {
       inherit (settings) polarity;
       base16Scheme = occult;
       icons = {
-        package = pkgs.tela-icon-theme;
+        enable = true;
+        package = config.my.modules.icons.package;
       };
       fonts = {
         monospace = mono;

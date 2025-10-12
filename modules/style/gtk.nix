@@ -6,8 +6,9 @@
   inherit (lib) mkOption mkIf;
   inherit (lib.types) bool;
   inherit (config.my.modules.style.gtk) enable;
+  icon-theme = config.my.modules.icons;
 in {
-  options.my.modules.style.gtk.enable = {
+  options.my.modules.style.gtk = {
     enable = mkOption {
       type = bool;
       default = true;
@@ -18,8 +19,8 @@ in {
   config = mkIf enable {
     hm = _: {
       gtk = {
-        icon-theme.package = config.my.modules.icons.package;
-        icon-theme.name = config.my.modules.icons.name;
+        iconTheme.package = icon-theme.package;
+        iconTheme.name = icon-theme.name;
       };
     };
   };
