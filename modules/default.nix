@@ -10,6 +10,7 @@
 
     ./cachix.nix
     ./fonts.nix
+    ./icons.nix
     ./monitors.nix
   ];
 }

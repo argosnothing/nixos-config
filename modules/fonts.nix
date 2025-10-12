@@ -79,7 +79,6 @@ in {
       nerd-fonts.noto
       nerd-fonts.symbols-only
       font-awesome
-      material-design-icons
     ];
     fonts.fontconfig = {
       defaultFonts = {

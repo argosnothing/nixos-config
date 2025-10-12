@@ -12,6 +12,7 @@
 in {
   imports = [
     ./gowall.nix
+    ./gtk.nix
   ];
   options = {
     my.modules.style.stylix.enable = lib.mkEnableOption "enable stylix";
@@ -24,6 +25,9 @@ in {
       targets.grub.enable = false;
       inherit (settings) polarity;
       base16Scheme = occult;
+      icons = {
+        package = pkgs.tela-icon-theme;
+      };
       fonts = {
         monospace = mono;
         sansSerif = sans;

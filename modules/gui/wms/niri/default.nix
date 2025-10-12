@@ -31,7 +31,7 @@ in {
               command = "niri-session";
             };
           };
-          desktop-shells.name = "dank-shell";
+          desktop-shells.name = "noctalia-shell";
         };
       };
     };
