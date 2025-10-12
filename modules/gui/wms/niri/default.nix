@@ -62,6 +62,7 @@ in {
           };
           touchpad = {
             dwt = true;
+            scroll-factor = 0.5;
           };
         };
       };

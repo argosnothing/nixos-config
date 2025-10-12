@@ -11,6 +11,9 @@
         citrix.enable = true;
         battery.enable = true;
       };
+      shell = {
+        spotify-player.enable = true;
+      };
       fonts.size = 11;
       monitors = [
         {
