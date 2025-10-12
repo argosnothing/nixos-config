@@ -6,6 +6,7 @@ _: {
     };
     languages = {
       enableTreesitter = true;
+      enableFormat = true;
 
       nix = {
         enable = true;
