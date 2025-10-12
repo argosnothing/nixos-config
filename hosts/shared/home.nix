@@ -55,7 +55,6 @@ in {
       nix-direnv
       nix-direnv-flakes
       direnv
-      spotify
       bolt-launcher
       mpv
       bash
