@@ -12,6 +12,14 @@ in {
         {
           matches = [
             {
+              is-floating = false;
+            }
+          ];
+          tiled-state = true;
+        }
+        {
+          matches = [
+            {
               title = "Kando Menu";
             }
           ];
@@ -22,14 +30,6 @@ in {
           shadow = {
             enable = false;
           };
-        }
-        {
-          matches = [
-            {
-              is-floating = false;
-            }
-          ];
-          tiled-state = true;
         }
         {
           matches = [
