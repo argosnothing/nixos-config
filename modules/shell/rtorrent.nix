@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  ...
 }: let
   inherit (lib) mkEnableOption mkIf;
   inherit (config.my.modules.shell.rtorrent) enable;
@@ -9,8 +10,10 @@ in {
     enable = mkEnableOption "Enable Rtorrent";
   };
   config = mkIf enable {
-    programs.rtorrent.enable = {
-      enable = true;
+    hm = _: {
+      programs.rtorrent = {
+        enable = true;
+      };
     };
   };
 }
