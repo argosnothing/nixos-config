@@ -100,6 +100,7 @@
 
       # audios
       pipewire
+      pamix
       grimblast
       playerctl
 
