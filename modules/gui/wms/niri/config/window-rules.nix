@@ -7,8 +7,20 @@
   inherit (lib) mkIf;
 in {
   config = mkIf niri.enable {
-    hm = _: {
+    hm = _: let
+      radius = 15.0;
+    in {
       programs.niri.settings.window-rules = [
+        {
+          matches = [];
+          geometry-corner-radius = {
+            top-left = radius;
+            top-right = radius;
+            bottom-left = radius;
+            bottom-right = radius;
+          };
+          clip-to-geometry = true;
+        }
         {
           matches = [
             {
