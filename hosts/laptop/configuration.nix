@@ -13,6 +13,7 @@
       };
       shell = {
         spotify-player.enable = true;
+        rtorrent.enable = true;
       };
       fonts.size = 11;
       monitors = [
