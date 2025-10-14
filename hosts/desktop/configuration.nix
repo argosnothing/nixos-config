@@ -9,6 +9,7 @@
     modules = {
       critical.zfs.enable = true;
       misc.citrix.enable = true;
+      fonts.size = 11;
       gui = {
         steam.enable = true;
         nemo.enable = true;
@@ -35,7 +36,7 @@
             x = 0;
             y = 0;
           };
-          scale = 1.0;
+          scale = 1.2;
           refresh = 144.0;
         }
         {

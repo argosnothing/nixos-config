@@ -12,7 +12,7 @@ in {
   options.my.modules.fonts = {
     size = mkOption {
       type = int;
-      default = 14;
+      default = 11;
       description = "Static font size preference";
     };
     mono = {
