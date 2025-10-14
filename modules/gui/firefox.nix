@@ -44,7 +44,7 @@
           ".mozilla"
         ];
         cache.directories = [
-          ".cache/mozzila"
+          ".cache/mozilla"
         ];
       };
       xdg.mimeApps = {

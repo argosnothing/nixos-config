@@ -31,6 +31,7 @@ in {
     my.persist.home = {
       directories = [
         "Downloads"
+        "Games"
         "Pictures"
         "Projects"
         "Videos"
