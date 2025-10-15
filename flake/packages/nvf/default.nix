@@ -1,9 +1,7 @@
 {
   pkgs,
-  occult-theme,
   ...
 }: let
-  inherit (occult-theme.themes) occult;
 in {
   imports = [
     ./languages.nix
@@ -12,6 +10,7 @@ in {
     ./utility.nix
     ./binds.nix
     ./keymaps.nix
+    ./themes.nix
   ];
 
   vim = {
@@ -27,12 +26,6 @@ in {
     projects.project-nvim.enable = true;
     telescope.enable = true;
     navigation.harpoon.enable = true;
-    theme = {
-      enable = true;
-      style = "dark";
-      name = "base16";
-      base16-colors = occult;
-    };
     extraPackages = [pkgs.vimPlugins.direnv-vim];
   };
 
