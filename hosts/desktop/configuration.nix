@@ -37,7 +37,7 @@
             y = 0;
           };
           scale = 1.2;
-          refresh = 144.0;
+          refresh = 143.851;
         }
         {
           name = "DP-2";
@@ -46,8 +46,8 @@
             height = 1080;
           };
           position = {
-            x = 3840;
-            y = 288;
+            x = 3202;
+            y = 402;
           };
           scale = 1.0;
           refresh = 60.0;
