@@ -23,8 +23,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #zwift.url = "github:netbrain/zwift";
-    zwift.url = "github:argosnothing/zwift";
+    zwift.url = "github:netbrain/zwift";
+    #zwift.url = "github:argosnothing/zwift";
 
     niri.url = "github:sodiboo/niri-flake";
 

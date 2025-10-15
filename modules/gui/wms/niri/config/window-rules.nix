@@ -43,16 +43,16 @@ in {
             enable = false;
           };
         }
-        #{
-        #  matches = [
-        #    {
-        #      app-id = "Wfica";
-        #    }
-        #  ];
-        #  open-fullscreen = false;
-        #  open-maximized = true;
-        #  block-out-from = "screen-capture";
-        #}
+        {
+          matches = [
+            {
+              app-id = "Wfica";
+            }
+          ];
+          open-fullscreen = false;
+          open-maximized = true;
+          block-out-from = "screen-capture";
+        }
         {
           matches = [
             {
