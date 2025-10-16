@@ -1,6 +1,7 @@
 {
-  settings,
   config,
+  username,
+  flakedir,
   ...
 }: {
   sops = {
@@ -8,13 +9,13 @@
     defaultSopsFormat = "yaml";
     age.keyFile =
       if config.my.persist.enable
-      then "/persist/home/${settings.username}/.config/sops/age/keys.txt"
-      else "/home/${settings.username}/.config/sops/age/keys.txt";
+      then "/persist/home/${username}/.config/sops/age/keys.txt"
+      else "/home/${username}/.config/sops/age/keys.txt";
     secrets = {
       ssh = {
         sopsFile = ../../secrets/secrets.yaml;
-        path = "/home/${settings.username}/.ssh/id_ed25519";
-        owner = "${settings.username}";
+        path = "/home/${username}/.ssh/id_ed25519";
+        owner = "${username}";
         mode = "0600";
       };
       example-key = {};
@@ -30,6 +31,6 @@
     };
   };
   environment.shellAliases = {
-    secrets = "sops ${settings.absoluteflakedir}/secrets/secrets.yaml";
+    secrets = "sops ${flakedir}/secrets/secrets.yaml";
   };
 }

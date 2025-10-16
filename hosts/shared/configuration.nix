@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   config,
-  settings,
+  username,
+  hostname,
   ...
 }: {
   imports = [
@@ -13,6 +14,8 @@
 
   # My Shared Modules
   my.modules = {
+    critical = {
+    };
     services = {
       pipewire.enable = true;
       gnome-keyring.enable = true;
@@ -38,7 +41,7 @@
 
   nix = {
     settings = {
-      trusted-users = ["${settings.username}"];
+      trusted-users = ["${username}"];
       experimental-features = ["nix-command" "pipe-operators" "flakes"];
       download-buffer-size = 268435456;
       substituters = [
@@ -58,7 +61,7 @@
     };
   };
   networking = {
-    hostName = settings.hostname;
+    hostName = hostname;
     networkmanager.enable = true;
     nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
   };

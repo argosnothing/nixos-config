@@ -7,6 +7,8 @@
   inherit (inputs) nixpkgs nixpkgs-stable self;
   mkSystem = {
     hostname,
+    username ? "salivala",
+    firmware ? "uefi",
     system ? "x86_64-linux",
   }: let
     pkg-config = {
@@ -22,6 +24,7 @@
       inherit system;
       config = pkg-config;
     };
+    flakedir = "/home/${username}/nixos-config";
 
     # Default Settings has the parent settings, hosts/xyz/attrs.nix
     # boot.firmware needs to be set to either grub or uefi in attrs.nix
@@ -36,7 +39,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       specialArgs = {
-        inherit inputs settings pkgs-stable self;
+        inherit inputs settings pkgs-stable flakedir self hostname firmware username;
       };
       modules = [
         inputs.impermanence.nixosModules.impermanence
@@ -51,7 +54,7 @@ in {
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
     desktop = {};
-    laptop = {};
+    laptop = {firmware = "bios";};
     p51 = {};
     vm = {};
   };

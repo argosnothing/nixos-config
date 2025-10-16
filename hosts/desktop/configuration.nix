@@ -7,7 +7,9 @@
 
   my = {
     modules = {
-      critical.zfs.enable = true;
+      critical = {
+        zfs.enable = true;
+      };
       misc.citrix.enable = true;
       fonts.size = 11;
       gui = {

@@ -2,6 +2,8 @@
 {
   inputs,
   pkgs,
+  username,
+  hostname,
   ...
 }: let
   settings =
@@ -21,7 +23,7 @@
     };
 in {
   flake.nixosConfigurations = {
-    "${settings.hostname}" = inputs.nixpkgs.lib.nixosSystem {
+    "${hostname}" = inputs.nixpkgs.lib.nixosSystem {
       inherit pkgs;
       specialArgs = {inherit inputs settings;};
       modules = [
@@ -30,7 +32,7 @@ in {
     };
   };
   flake.homeConfigurations = {
-    "${settings.username}@${settings.hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
+    "${username}@${hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs settings;};
       modules = [

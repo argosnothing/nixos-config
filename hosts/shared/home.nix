@@ -5,12 +5,12 @@
   pkgs,
   self,
   inputs,
+  username,
   lib,
   config,
   ...
 }: let
   inherit (config.nixpkgs.hostPlatform) system;
-  username = config.my.modules.critical.user.name;
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
