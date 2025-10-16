@@ -28,6 +28,11 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    oxwm = {
+      url = "github:tonybanters/oxwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     occult-theme.url = "github:/argosnothing/occult-theme";
 
     mango = {

@@ -15,10 +15,11 @@ in {
       ./cosmic
       ./niri
       ./mango
+      ./oxwm
     ];
   options = {
     my.modules.gui.wms.name = mkOption {
-      type = enum ["niri" "cosmic" "mango"];
+      type = enum ["niri" "cosmic" "oxwm" "mango"];
       description = "Winder Manager/Desktop Environment Choice";
     };
   };
