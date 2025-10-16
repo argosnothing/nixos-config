@@ -6,7 +6,7 @@
   inherit (lib) mkIf;
   inherit (config.my.modules) monitors;
   inherit (config.my.modules.gui.wms) niri;
-  backdrop-color = config.lib.stylix.colors.withHashtag.base00;
+  backdrop-color = config.lib.stylix.colors.withHashtag.base02;
 in {
   config = mkIf niri.enable {
     hm = _: {

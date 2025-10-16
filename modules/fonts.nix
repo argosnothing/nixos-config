@@ -6,14 +6,37 @@
 }: let
   inherit (lib.types) int;
   inherit (lib) mkOption;
-  inherit (lib.types) str package;
-  inherit (config.my.modules.fonts) mono sans serif;
+  inherit (lib.types) str package submodule;
+  inherit (config.my.modules.fonts) mono sans serif size;
 in {
   options.my.modules.fonts = {
     size = mkOption {
       type = int;
       default = 11;
       description = "Static font size preference";
+    };
+    sizes = mkOption {
+      default = {};
+      type = submodule {
+        options = {
+          applications = mkOption {
+            type = int;
+            default = size;
+          };
+          terminal = mkOption {
+            type = int;
+            default = size;
+          };
+          desktop = mkOption {
+            type = int;
+            default = size;
+          };
+          popups = mkOption {
+            type = int;
+            default = size;
+          };
+        };
+      };
     };
     mono = {
       name = mkOption {

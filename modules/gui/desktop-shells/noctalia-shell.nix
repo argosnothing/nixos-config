@@ -4,6 +4,8 @@
   config,
   ...
 }: let
+  inherit (lib) mkIf;
+  inherit (config.my.modules.style.theme) custom;
   c = config.lib.stylix.colors.withHashtag;
 in {
   config = lib.mkIf (config.my.modules.gui.desktop-shells.name == "noctalia-shell") {
@@ -12,7 +14,7 @@ in {
       launcherCommand = "noctalia-shell ipc call launcher toggle";
     };
     hj = {
-      files = {
+      files = mkIf custom.enable {
         ".config/noctalia/colors.json" = {
           generator = lib.generators.toJSON {};
           value = {
