@@ -7,7 +7,6 @@
 }: {
   imports = [
     inputs.mango.nixosModules.mango
-    {programs.mango.enable = true;}
     ./service.nix
     ./config
   ];
@@ -20,6 +19,7 @@
   };
   config = lib.mkIf (config.my.modules.gui.wms.name == "mango") {
     programs.mango.enable = true;
+    programs.wshowkeys.enable = true;
     my = {
       modules = {
         gui = {
@@ -32,15 +32,6 @@
           };
         };
       };
-    };
-    fonts = {
-      fontconfig.enable = true;
-      packages = with pkgs; [
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.fira-code
-        nerd-fonts.symbols-only
-        font-awesome
-      ];
     };
     xdg.portal = {
       enable = true;
@@ -57,10 +48,6 @@
       pkgs.glib
       pkgs.xdg-utils
       pkgs.wf-recorder
-      pkgs.nerd-fonts.jetbrains-mono
-      pkgs.nerd-fonts.fira-code
-      pkgs.nerd-fonts.symbols-only
-      pkgs.font-awesome
     ];
   };
 }

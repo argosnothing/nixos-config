@@ -48,7 +48,7 @@ in ''
 
   rootcolor=${to0x c.base00 "ff"}
   bordercolor=${to0x c.base03 "ff"}
-  focuscolor=${to0x c.base0E "ff"}
+  focuscolor=${to0x c.base05 "ff"}
   maxmizescreencolor=${to0x c.base0D "ff"}
   urgentcolor=${to0x c.base08 "ff"}
   scratchpadcolor=${to0x c.base0E "ff"}

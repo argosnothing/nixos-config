@@ -80,11 +80,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760542596,
-        "narHash": "sha256-MKOboKb/E8meniifQDe3rsz1ZbOaL8ovtg4pBSLAVyI=",
+        "lastModified": 1760622904,
+        "narHash": "sha256-8rHjquhYnsragJK1H8DD0zXW6qAOxLC77qi+YHj5gL8=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "c772331554fc21409fa8b3052e2cee8c26bcf677",
+        "rev": "7a27537632d5a2b0e424d5a0e72dca9c20a49618",
         "type": "github"
       },
       "original": {
@@ -355,11 +355,11 @@
         "smfh": "smfh"
       },
       "locked": {
-        "lastModified": 1760525948,
-        "narHash": "sha256-8U6lLJ++uxXwEO2aojxWrgfgBDQb1yZIm8bDY5iPf0Q=",
+        "lastModified": 1760544125,
+        "narHash": "sha256-w6IMYLpRNQQxWrL7sIvTPQGnhHI+56uV8VurZzxFh2o=",
         "owner": "feel-co",
         "repo": "hjem",
-        "rev": "cdb9acdb1431b1d4eeea12796af62c8cd575da84",
+        "rev": "0ec765703303e5a74101ba44996473768faedaa7",
         "type": "github"
       },
       "original": {
@@ -413,11 +413,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1760541988,
-        "narHash": "sha256-JU5jc+T66AV5TuNTl2GoDQnmKb8Vnc/uYH3UcWUddyE=",
+        "lastModified": 1760577711,
+        "narHash": "sha256-h2SdU3Zr1siSSdJgnsI6PQo++Ovcp0dD+0uGi9NRh6Y=",
         "owner": "DreamMaoMao",
         "repo": "mango",
-        "rev": "3547e567cb5e1f0c53df1c64ddc540d16beac8d1",
+        "rev": "e7e7a86b8c28ae9220817e5b0ba71c7431d8561e",
         "type": "github"
       },
       "original": {
@@ -496,11 +496,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1760529168,
-        "narHash": "sha256-ZYtMroQXu6VBQkLb5UyuxxtvqUCttPrbfzMy+XLERFU=",
+        "lastModified": 1760575912,
+        "narHash": "sha256-8VNgyBHMJ2paTzWX5EAemGBNB0pCiA6NKJFPZHuzjhY=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "645aadf4f84988c9f1aa0d49b30702e52d00b656",
+        "rev": "55d6c441e21c9cd8396d4db03c696c1259d0f62e",
         "type": "github"
       },
       "original": {
@@ -578,11 +578,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1760284886,
-        "narHash": "sha256-TK9Kr0BYBQ/1P5kAsnNQhmWWKgmZXwUQr4ZMjCzWf2c=",
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cf3f5c4def3c7b5f1fc012b3d839575dbe552d43",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
         "type": "github"
       },
       "original": {
@@ -671,11 +671,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1760284886,
-        "narHash": "sha256-TK9Kr0BYBQ/1P5kAsnNQhmWWKgmZXwUQr4ZMjCzWf2c=",
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cf3f5c4def3c7b5f1fc012b3d839575dbe552d43",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
         "type": "github"
       },
       "original": {
@@ -728,11 +728,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1760528467,
-        "narHash": "sha256-qCX8/sdZqOzIbA19EWTNiKAJ/jjE8VZ6HZ3W7ZCIj7k=",
+        "lastModified": 1760620031,
+        "narHash": "sha256-685ylW9qHaTUaxzIjdCXXNcRODUyt3g8i6u83pPXX+Y=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "7343d2403a591af40b113d5ec34e8cd8bb4bfb52",
+        "rev": "838491ba33f7c2afb9e03e26ef757fb572fd6310",
         "type": "github"
       },
       "original": {
@@ -1177,11 +1177,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1760449631,
-        "narHash": "sha256-rzZoY9CVL62SDpmbvVSTI/CGcwODZfM3ceSNtuLdYAA=",
+        "lastModified": 1760621857,
+        "narHash": "sha256-CchDx/SqFkdZxtJkJWqm9AQJh74JyZpfDQio/E7ZG9s=",
         "owner": "netbrain",
         "repo": "zwift",
-        "rev": "df054df587067d67bdecace7e195c85f82e8d290",
+        "rev": "4a58e73c9279d99d3d817037706ab708759f57d3",
         "type": "github"
       },
       "original": {

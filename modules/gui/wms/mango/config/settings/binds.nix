@@ -12,26 +12,29 @@
   bind=ALT,c,killclient,
 
   # switch window focus
-  bind=ALT,j,focusstack,next
-  bind=ALT,k,focusstack,prev
   bind=ALT,Left,focusdir,left
   bind=ALT,Right,focusdir,right
   bind=ALT,Up,focusdir,up
   bind=ALT,Down,focusdir,down
 
+  bind=ALT,h,focusdir,left
+  bind=ALT,l,focusdir,right
+  bind=ALT,k,focusdir,up
+  bind=ALT,j,focusdir,down
+
   # swap window
-  bind=ALT+SHIFT,j,exchange_stack_client,next
-  bind=ALT+SHIFT,k,exchange_stack_client,prev
-  bind=ALT+SHIFT,Up,exchange_client,up
-  bind=ALT+SHIFT,Down,exchange_client,down
-  bind=ALT+SHIFT,Left,exchange_client,left
-  bind=ALT+SHIFT,Right,exchange_client,right
+  # bind=ALT+SHIFT,j,exchange_stack_client,next
+  # bind=ALT+SHIFT,k,exchange_stack_client,prev
+  bind=ALT+CTRL,k,exchange_client,up
+  bind=ALT+CTRL,j,exchange_client,down
+  bind=ALT+CTRL,h,exchange_client,left
+  bind=ALT+CTRL,l,exchange_client,right
 
   # switch window status
   bind=ALT,backslash,togglefloating,
   bind=ALT,a,togglemaxmizescreen,
   bind=ALT,f,togglefullscreen,
-  bind=ALT,o,toggleoverlay,
+  bind=ALT,o,toggleoverview,
 
   # scroller layout
   bind=ALT,x,switch_proportion_preset,
