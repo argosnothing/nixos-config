@@ -80,11 +80,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760622904,
-        "narHash": "sha256-8rHjquhYnsragJK1H8DD0zXW6qAOxLC77qi+YHj5gL8=",
+        "lastModified": 1760652441,
+        "narHash": "sha256-ceWBHPvfR0JD6GFcDmQerd2WAlxnJcZTomL+pXxnhLM=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "7a27537632d5a2b0e424d5a0e72dca9c20a49618",
+        "rev": "87a919bbdea934b1fecd1ca9f58490db04edd804",
         "type": "github"
       },
       "original": {
@@ -375,11 +375,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760500983,
-        "narHash": "sha256-zfY4F4CpeUjTGgecIJZ+M7vFpwLc0Gm9epM/iMQd4w8=",
+        "lastModified": 1760641408,
+        "narHash": "sha256-Y086n2U0kN9HjOo+UScwQDS27gKMiIlT6vDehvlmdAg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c53e65ec92f38d30e3c14f8d628ab55d462947aa",
+        "rev": "847669dabf374d32a072bdab3f08cae7296ac011",
         "type": "github"
       },
       "original": {
@@ -728,11 +728,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1760620031,
-        "narHash": "sha256-685ylW9qHaTUaxzIjdCXXNcRODUyt3g8i6u83pPXX+Y=",
+        "lastModified": 1760647048,
+        "narHash": "sha256-ENOF/M1Dju0Ckb1v5WhvGoMB+c8FLJQvMossrvpo6SM=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "838491ba33f7c2afb9e03e26ef757fb572fd6310",
+        "rev": "65450fa15619ea79b585f395cfbf4fe81e79b75c",
         "type": "github"
       },
       "original": {
@@ -805,6 +805,26 @@
         "type": "github"
       }
     },
+    "oxwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760651203,
+        "narHash": "sha256-30G2nRa/sOL1hkG+bIieqcjulmr24cAJsOWkDQLcTGY=",
+        "owner": "tonybanters",
+        "repo": "oxwm",
+        "rev": "62256254468699c4143d7af19164887a7d18ccbc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tonybanters",
+        "repo": "oxwm",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -842,6 +862,7 @@
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
         "occult-theme": "occult-theme",
+        "oxwm": "oxwm",
         "quickshell": "quickshell",
         "sops-nix": "sops-nix",
         "std": "std",

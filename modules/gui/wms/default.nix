@@ -1,8 +1,4 @@
-{
-  settings,
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkOption;
   inherit (lib.types) enum;
 in {
@@ -22,8 +18,5 @@ in {
       type = enum ["niri" "cosmic" "oxwm" "mango"];
       description = "Winder Manager/Desktop Environment Choice";
     };
-  };
-  config = {
-    my.modules.gui.wms.name = settings.wm;
   };
 }

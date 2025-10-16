@@ -6,7 +6,6 @@
   inherit (builtins) mapAttrs;
   inherit (inputs) nixpkgs nixpkgs-stable self;
   mkSystem = {
-    wm ? "hyprland",
     hostname,
     system ? "x86_64-linux",
   }: let
@@ -32,7 +31,7 @@
       if builtins.pathExists hostAttrsPath
       then import hostAttrsPath
       else {};
-    settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit wm hostname;};
+    settings = (lib.recursiveUpdate defaultSettings hostAttrs) // {inherit hostname;};
   in
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
@@ -51,9 +50,9 @@ in {
   # For this idea.
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
-    desktop = {wm = "niri";};
-    laptop = {wm = "niri";};
+    desktop = {};
+    laptop = {};
     p51 = {};
-    vm = {wm = "niri";};
+    vm = {};
   };
 }

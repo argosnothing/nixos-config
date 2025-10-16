@@ -4,25 +4,25 @@
 {
   pkgs,
   self,
-  settings,
   inputs,
   lib,
   config,
   ...
 }: let
   inherit (config.nixpkgs.hostPlatform) system;
+  username = config.my.modules.critical.user.name;
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    (lib.mkAliasOptionModule ["hj"] ["hjem" "users" settings.username])
-    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" settings.username])
+    (lib.mkAliasOptionModule ["hj"] ["hjem" "users" username])
+    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" username])
   ];
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     overwriteBackup = true;
     extraSpecialArgs = {inherit self;};
-    users.${settings.username} = {...}: {
+    users.${username} = _: {
       home.stateVersion = "25.05";
       programs.home-manager.enable = true;
     };
@@ -69,12 +69,10 @@ in {
   };
   hj.systemd.enable = false;
   hjem.linker = inputs.hjem.packages.${system}.smfh;
-  hjem.users.${settings.username} = {
+  hjem.users.${username} = {
     enable = true;
-    user = settings.username;
-    directory = "/home/${settings.username}";
-    packages = with pkgs; [
-    ];
+    user = username;
+    directory = "/home/${username}";
     files = {
       ".editorconfig".text = ''
         root = true

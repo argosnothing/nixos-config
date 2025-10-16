@@ -3,7 +3,6 @@
   pkgs,
   config,
   settings,
-  lib,
   ...
 }: {
   imports = [
@@ -67,15 +66,6 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users = {
-    users.root.initialPassword = "password";
-    users."${settings.username}" = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
-      hashedPasswordFile = config.sops.secrets."pc_password".path;
-    };
-    defaultUserShell = pkgs.fish;
-  };
   my.persist.root.directories = [
     "/etc/NetworkManager/system-connections"
   ];

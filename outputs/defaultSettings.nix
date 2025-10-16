@@ -18,17 +18,7 @@
     homedir = "nixos-config";
     flakedir = "~/${defaultSettings.homedir}";
     absoluteflakedir = "/home/${defaultSettings.username}/${defaultSettings.homedir}/";
-    stylixTheme = "catppuccin-mocha"; # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
-    polarity = "dark";
     battery.enable = false;
-    fonts = {
-      sizes = {
-        applications = 12;
-        terminal = 10;
-        desktop = 10;
-        popups = 10;
-      };
-    };
   };
 in
   defaultSettings
