@@ -59,6 +59,7 @@ in {
       bolt-launcher
       mpv
       bash
+      vulkan-tools
       inputs.self.packages.${pkgs.system}.nvf
       inputs.self.packages.${pkgs.system}.ns
     ];
