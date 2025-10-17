@@ -12,10 +12,18 @@ in {
         {
           matches = [
             {
-              namespace = "^wallpaper$";
+              namespace = "^quickshell-wallpaper$";
             }
           ];
           place-within-backdrop = true;
+        }
+        {
+          matches = [
+            {
+              namespace = "^quickshell-overview$";
+            }
+          ];
+          opacity = 0.0;
         }
       ];
     };
