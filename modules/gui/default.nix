@@ -19,5 +19,7 @@
     ./via.nix
     ./discord.nix
     ./nemo.nix
+
+    ./zed.nix
   ];
 }
