@@ -12,10 +12,6 @@
         );
     };
     system = "x86_64-linux";
-    gitEmail = "argosnothing@gmail.com";
-    # firmware needs to be declared in the host explicitly.
-    homedir = "nixos-config";
-    flakedir = "~/${defaultSettings.homedir}";
     battery.enable = false;
   };
 in

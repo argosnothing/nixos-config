@@ -65,7 +65,16 @@ in {
       xwayland-satellite
     ];
     hm = {
+      ### TODO: Move this stuff out
       programs.niri.settings = {
+        layout = {
+          background-color = "transparent";
+        };
+        overview = {
+          workspace-shadow = {
+            enable = false;
+          };
+        };
         input = {
           focus-follows-mouse.enable = false;
           warp-mouse-to-focus.enable = false;
