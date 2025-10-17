@@ -1,8 +1,7 @@
 {
-  pkgs,
   config,
-  settings,
   lib,
+  username,
   ...
 }: {
   options.my.modules.shell.fish = {
@@ -17,7 +16,7 @@
         ".cache/fish"
       ];
     };
-    hjem.users.${settings.username} = {
+    hjem.users.${username} = {
       files = {
         ".config/fish/conf.d/show-base16.fish".text = ''
                     function show-base16

@@ -1,16 +1,15 @@
 {
   pkgs,
   lib,
-  settings,
   config,
+  username,
   ...
-}: let
-in {
+}: {
   options.my.modules.shell.yazi = {
     enable = lib.mkEnableOption "Enable Yazi";
   };
   config = lib.mkIf config.my.modules.shell.yazi.enable {
-    hjem.users.${settings.username} = {
+    hjem.users.${username} = {
       packages = [
         pkgs.yazi
       ];

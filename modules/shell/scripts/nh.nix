@@ -1,15 +1,16 @@
 {
   pkgs,
   config,
-  settings,
   lib,
+  flakedir,
+  hostname,
   ...
 }: let
   rebuild = command: ''
     #!/bin/bash
-    pushd ${settings.absoluteflakedir}
+    pushd ${flakedir}
     alejandra . &>/dev/null
-    nh os ${command} ${settings.absoluteflakedir}/#nixosConfigurations.${settings.hostname};
+    nh os ${command} ${flakedir}/#nixosConfigurations.${hostname};
     popd
   '';
 in {
@@ -24,12 +25,13 @@ in {
   config = lib.mkIf config.my.modules.shell.scripts.nh.enable {
     programs.nh = {
       enable = true;
-      flake = "${settings.absoluteflakedir}";
+      flake = "${flakedir}";
     };
 
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "rebuilds" (rebuild "switch"))
       (pkgs.writeShellScriptBin "rebuildb" (rebuild "boot"))
+      (pkgs.writeShellScriptBin "rebuildt" (rebuild "test"))
     ];
   };
 }

@@ -1,6 +1,6 @@
 {
-  settings,
   config,
+  username,
   lib,
   ...
 }: let
@@ -19,6 +19,6 @@ in {
       enable = true;
     };
     users.users.qemu-libvirtd.extraGroups = ["render"];
-    users.users."${settings.username}".extraGroups = ["libvirtd" "kvm" "render"];
+    users.users."${username}".extraGroups = ["libvirtd" "kvm" "render"];
   };
 }

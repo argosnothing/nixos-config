@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  settings,
+  username,
   ...
 }:
 # Refrence https://github.com/iynaix/dotfiles/blob/32e43c330cca0b52f584d0007fe64746994233b0/nixos/impermanence.nix
@@ -144,7 +144,7 @@ in {
           ++ cfg.root.directories
         );
 
-        users.${settings.username} = {
+        users.${username} = {
           files = lib.unique (cfg.home.files ++ hmCfg.home.files);
           directories =
             lib.unique
@@ -165,7 +165,7 @@ in {
         files = lib.unique (["/etc/machine-id"] ++ cfg.root.cache.files);
         directories = lib.unique cfg.root.cache.directories;
 
-        users.${settings.username} = {
+        users.${username} = {
           files = lib.unique (cfg.home.cache.files ++ hmCfg.home.cache.files);
           directories = lib.unique (cfg.home.cache.directories ++ hmCfg.home.cache.directories);
         };

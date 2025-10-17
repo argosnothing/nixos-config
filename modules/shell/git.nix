@@ -1,6 +1,6 @@
 {
-  pkgs,
-  settings,
+  username,
+  gitemail,
   lib,
   config,
   ...
@@ -9,14 +9,14 @@
     my.modules.shell.git.enable = lib.mkEnableOption "Home manager save me";
   };
   config = lib.mkIf config.my.modules.shell.git.enable {
-    hjem.users.${settings.username} = {
+    hjem.users.${username} = {
       files = {
         ".gitconfig" = {
           generator = lib.generators.toINI {};
           value = {
             user = {
-              name = settings.username;
-              email = settings.gitEmail;
+              name = username;
+              email = gitemail;
             };
             core = {
               editor = "vim";

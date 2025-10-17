@@ -25,6 +25,7 @@
       config = pkg-config;
     };
     flakedir = "/home/${username}/nixos-config";
+    gitemail = "argosnothing@gmail.com";
 
     # Default Settings has the parent settings, hosts/xyz/attrs.nix
     # boot.firmware needs to be set to either grub or uefi in attrs.nix
@@ -39,7 +40,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       specialArgs = {
-        inherit inputs settings pkgs-stable flakedir self hostname firmware username;
+        inherit inputs settings pkgs-stable self flakedir gitemail hostname firmware username;
       };
       modules = [
         inputs.impermanence.nixosModules.impermanence
