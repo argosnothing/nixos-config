@@ -29,6 +29,10 @@ in {
     };
   };
   config = mkIf config.my.modules.gui.wms.cursor.enable {
+    my.modules.gui.wms.cursor = {
+      name = "BreezeX-RosePine-Linux";
+      package = pkgs.rose-pine-cursor;
+    };
     environment.sessionVariables = {
       XCURSOR_THEME = config.my.modules.gui.wms.cursor.name;
       XCURSOR_SIZE = config.my.modules.gui.wms.cursor.size;

@@ -4,6 +4,7 @@
       systems = ["x86_64-linux"];
       imports = [
         inputs.home-manager.flakeModules.home-manager
+        ./flake/packages/zed.nix
         ./outputs
       ];
     };
