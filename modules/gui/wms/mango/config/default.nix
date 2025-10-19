@@ -3,6 +3,7 @@
   settings,
   config,
   lib,
+  flakedir,
   ...
 }: let
   mango-settings = import ./settings {inherit config lib;};
@@ -37,7 +38,7 @@ in {
         waybar
         (pkgs.writeShellScriptBin "setbg"
           ''
-            swaybg -m stretch -i ${settings.absoluteflakedir}/media/current-wallpaper.png
+            swaybg -m stretch -i ${flakedir}/media/current-wallpaper.png
           '')
       ];
       imports = [

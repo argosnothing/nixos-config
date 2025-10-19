@@ -2,6 +2,7 @@
   pkgs,
   settings,
   config,
+  username,
   lib,
   ...
 }: let
@@ -9,7 +10,7 @@
   waybar-css = import ./style.nix {inherit config lib;};
 in {
   config = lib.mkIf config.my.modules.gui.wms.mango.enable {
-    hjem.users.${settings.username} = {
+    hjem.users.${username} = {
       packages = [
         recording-widget
         pkgs.waybar
