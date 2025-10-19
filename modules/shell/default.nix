@@ -9,5 +9,6 @@ _: {
     ./starship.nix
     ./spotify-player.nix
     ./fetch.nix
+    ./zellij.nix
   ];
 }

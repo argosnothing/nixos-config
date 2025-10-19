@@ -28,6 +28,7 @@
       starship.enable = true;
       yazi.enable = true;
       git.enable = true;
+      zellij.enable = true;
     };
     gui = {
       firefox.enable = true;
@@ -44,7 +45,6 @@
       experimental-features = ["nix-command" "pipe-operators" "flakes"];
       download-buffer-size = 268435456;
       substituters = [
-        "https://cache.nixos.org/"
         "https://cache.nixos.org/"
       ];
       trusted-public-keys = [

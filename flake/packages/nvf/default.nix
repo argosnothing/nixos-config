@@ -17,6 +17,7 @@ in {
       enable = true;
       theme = "theta";
     };
+    debugger.nvim-dap.ui.enable = true;
     comments.comment-nvim.enable = true;
     statusline.lualine.enable = true;
     tabline.nvimBufferline.enable = true;
