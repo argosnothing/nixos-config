@@ -18,6 +18,9 @@ in {
           font_size = size;
           window_margin_width = 10;
         };
+        #extraConfig = ''
+        #  clear_all_shortcuts yes
+        #'';
       };
     };
   };
