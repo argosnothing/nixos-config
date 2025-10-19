@@ -13,7 +13,7 @@
       misc.citrix.enable = true;
       fonts.size = 11;
       gui = {
-        wms.name = "niri";
+        wms.name = "xfce";
         steam.enable = true;
         nemo.enable = true;
         virtualization.enable = true;
