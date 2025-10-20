@@ -13,10 +13,11 @@ in {
       ./mango
       ./oxwm
       ./xfce
+      ./lxqt
     ];
   options = {
     my.modules.gui.wms.name = mkOption {
-      type = enum ["niri" "cosmic" "oxwm" "mango" "xfce"];
+      type = enum ["niri" "cosmic" "oxwm" "mango" "xfce" "lxqt"];
       description = "Winder Manager/Desktop Environment Choice";
     };
   };
