@@ -34,6 +34,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    winboat = {
+      url = "github:TibixDev/winboat";
+    };
+
     occult-theme.url = "github:/argosnothing/occult-theme";
 
     mango = {

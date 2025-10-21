@@ -10,6 +10,8 @@
     ./chrome.nix
     ./floorp.nix
 
+    ./winboat.nix
+
     ./audacity.nix
 
     ./virtualization
