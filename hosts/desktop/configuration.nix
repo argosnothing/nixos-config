@@ -11,6 +11,11 @@
         zfs.enable = true;
       };
       misc.citrix.enable = true;
+      style.theme = {
+        polarity = "dark";
+        theme = "rose-pine";
+        style = "moon";
+      };
       fonts.size = 11;
       gui = {
         wms.name = "niri";

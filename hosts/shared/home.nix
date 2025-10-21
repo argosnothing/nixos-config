@@ -63,10 +63,6 @@ in {
       inputs.self.packages.${pkgs.system}.nvf
       inputs.self.packages.${pkgs.system}.ns
     ];
-    gtk = {
-      enable = true;
-      colorScheme = "dark";
-    };
   };
   hj.systemd.enable = false;
   hjem.linker = inputs.hjem.packages.${system}.smfh;
