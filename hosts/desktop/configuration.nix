@@ -24,6 +24,7 @@
         virtualization.enable = true;
         zwift.enable = true;
         audacity.enable = true;
+        zed.enable = true;
       };
       style = {
         gowall.enable = true;
