@@ -7,6 +7,7 @@
     persist.enable = true;
     modules = {
       critical.zfs.enable = true;
+      gui.wms.name = "xfce";
       monitors = [
         {
           name = "Virtual-1";

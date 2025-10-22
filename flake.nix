@@ -1,18 +1,19 @@
 {
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux"];
-      imports = [
-        inputs.home-manager.flakeModules.home-manager
-        ./flake/packages/zed.nix
-        ./outputs
-      ];
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
+
     flake-compat.url = "github:edolstra/flake-compat";
+    import-tree.url = "github:vic/import-tree";
+    flake-file = {
+      url = "github:vic/flake-file";
+    };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     hjem = {
       url = "github:/feel-co/hjem";
@@ -25,7 +26,6 @@
     };
 
     zwift.url = "github:netbrain/zwift";
-    #zwift.url = "github:argosnothing/zwift";
 
     niri.url = "github:sodiboo/niri-flake";
 
@@ -84,10 +84,6 @@
       inputs.quickshell.follows = "quickshell";
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
 
     nixos-grub-themes = {
       url = "github:jeslie0/nixos-grub-themes";
