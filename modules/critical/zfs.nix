@@ -1,6 +1,6 @@
 {config, ...}: {
   flake.modules.nixos.critical = let
-    inherit (config) settings;
+    inherit (config.flake) settings;
   in {
     boot = {
       supportedFilesystems = ["zfs"];
