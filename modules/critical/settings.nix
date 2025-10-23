@@ -16,4 +16,9 @@ in {
     };
     isVm = lib.mkEnableOption "Is the host a VM";
   };
+  config = {
+    flake.modules.nixos.lazy = {
+      options.lazy.beans = lib.mkEnableOption "ok";
+    };
+  };
 }

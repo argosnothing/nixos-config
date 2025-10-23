@@ -4,6 +4,7 @@
       user
       home
       critical
+      lazy
     ];
     config.impermanence.enable = true;
   };
