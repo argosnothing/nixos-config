@@ -1,15 +1,17 @@
 {
   config,
-  username,
-  flakedir,
+  self,
   ...
 }: {
-  flake.modules.nixos.critical = {
+  flake.modules.nixos.critical = let
+    inherit (config.flake.settings) username;
+    inherit (config.flake.settings) persist;
+    in{
     sops = {
       defaultSopsFile = ../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
       age.keyFile =
-        if config.my.persist.enable
+        if persist.enable
         then "/persist/home/${username}/.config/sops/age/keys.txt"
         else "/home/${username}/.config/sops/age/keys.txt";
       secrets = {
@@ -32,7 +34,7 @@
       };
     };
     environment.shellAliases = {
-      secrets = "sops ${flakedir}/secrets/secrets.yaml";
+      secrets = "sops ${self}/secrets/secrets.yaml";
     };
   };
 }

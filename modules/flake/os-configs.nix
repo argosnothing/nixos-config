@@ -1,16 +1,13 @@
-{ inputs, ... }:
-let
-  inherit (inputs.self.lib.mk-os)
+{inputs, ...}: let
+  inherit
+    (inputs.self.lib.mk-os)
     linux
     linux-arm
     ;
 
   flake.nixosConfigurations = {
-    mordor = linux "vm";
+    vm = linux "vm";
   };
-
-in
-{
+in {
   inherit flake;
 }
-
