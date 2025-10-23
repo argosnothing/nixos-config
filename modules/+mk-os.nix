@@ -1,7 +1,6 @@
 {
   inputs,
-  config,
-  lib,
+lib,
   ...
 }: let
   flake.lib.mk-os = {
@@ -18,13 +17,13 @@
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-      inputs.self.modules.nixos.${cls}
-      # config.flake.modules.nixos.${name}
-      # {
-      #   networking.hostName = lib.mkDefault name;
-      #   nixpkgs.hostPlatform = lib.mkDefault system;
-      #   system.stateVersion = "25.05";
-      # }
+        inputs.self.modules.nixos.${cls}
+        inputs.self.modules.nixos.${name}
+        {
+          networking.hostName = lib.mkDefault name;
+          nixpkgs.hostPlatform = lib.mkDefault system;
+          system.stateVersion = "25.05";
+        }
       ];
     };
 in {
