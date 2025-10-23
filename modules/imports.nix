@@ -4,6 +4,5 @@
 
   ];
   flake.modules.nixos.imports = [
-    inputs.sops-nix.nixosModules.sops
   ];
 }
