@@ -1,7 +1,5 @@
-{config, ...}: {
-  flake.modules.nixos.vm = {
-    imports = with (config.flake.modules.nixos); [
-      critical
-    ];
-  };
+{inputs, ...}: {
+  flake.modules.nixos.vm.imports = with inputs.self.modules.nixos; [
+    critical
+  ];
 }

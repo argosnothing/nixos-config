@@ -2,7 +2,6 @@
   inherit
     (inputs.self.lib.mk-os)
     linux
-    linux-arm
     ;
 
   flake.nixosConfigurations = {
