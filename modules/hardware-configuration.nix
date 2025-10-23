@@ -5,7 +5,7 @@
   config,
   lib,
   pkgs,
-#modulesPath,
+  #modulesPath,
   ...
 }: {
   flake.modules.nixos.vm = {

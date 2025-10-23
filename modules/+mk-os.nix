@@ -1,6 +1,6 @@
 {
   inputs,
-lib,
+  lib,
   ...
 }: let
   flake.lib.mk-os = {

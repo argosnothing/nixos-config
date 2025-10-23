@@ -13,7 +13,7 @@
           else "by-id"
         );
     };
-    networking.hostId = settings.hostId;
+    networking.hostId = settings.networking.hostId;
     services = {
       zfs.autoScrub.enable = true;
       zfs.trim.enable = true;
