@@ -7,7 +7,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
 
-    flake-compat.url = "github:edolstra/flake-compat";
     import-tree.url = "github:vic/import-tree";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

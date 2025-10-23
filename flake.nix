@@ -21,9 +21,6 @@
       };
       url = "github:AvengeMedia/DankMaterialShell";
     };
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-    };
     flake-file = {
       url = "github:vic/flake-file";
     };
