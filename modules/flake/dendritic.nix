@@ -9,6 +9,9 @@
 
     flake-compat.url = "github:edolstra/flake-compat";
     import-tree.url = "github:vic/import-tree";
+    treefmt-nix = {
+      url = "github:numtide/treefmt.nix";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
