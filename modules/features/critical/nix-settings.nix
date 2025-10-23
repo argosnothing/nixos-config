@@ -1,5 +1,8 @@
-{
-  flake.modules.nixos.critical = {
+## doing it this why should mean fuck all but whatever why not
+let
+  flake.modules.nixos = {inherit nix-settings;};
+
+  nix-settings = {
     pkgs,
     inputs,
     ...
@@ -25,4 +28,6 @@
       };
     };
   };
+in {
+  inherit flake;
 }
