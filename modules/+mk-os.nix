@@ -18,8 +18,8 @@
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-      #config.flake.modules.nixos.${cls}
-      #config.flake.modules.nixos.${name}
+      inputs.self.modules.nixos.${cls}
+      # config.flake.modules.nixos.${name}
       # {
       #   networking.hostName = lib.mkDefault name;
       #   nixpkgs.hostPlatform = lib.mkDefault system;
