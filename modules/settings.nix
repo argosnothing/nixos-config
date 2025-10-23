@@ -1,13 +1,13 @@
 {lib, ...}: let
-  # inherit (lib) mkOption mkEnableOption;
-  # inherit (lib.types) str;
+    inherit (lib) mkOption mkEnableOption;
+    inherit (lib.types) str;
 in {
-  #options.flake.settings = {
-  #  username = mkOption {
-  #    description = "It's me!";
-  #    type = str;
-  #    default = "salivala";
-  #  };
-  #  persist.enable = mkEnableOption "Enable Impermanence";
-  #};
+   options.flake.settings = {
+     username = mkOption {
+       description = "It's me!";
+       type = str;
+       default = "salivala";
+     };
+     persist.enable = mkEnableOption "Enable Impermanence";
+   };
 }
