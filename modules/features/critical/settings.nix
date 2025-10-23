@@ -1,6 +1,6 @@
 {lib, ...}: let
-  inherit (lib) mkOption mkEnableOption;
-  inherit (lib.types) str;
+  # inherit (lib) mkOption mkEnableOption;
+  # inherit (lib.types) str;
 in {
   #options.flake.settings = {
   #  username = mkOption {
