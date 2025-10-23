@@ -4,7 +4,7 @@
   flakedir,
   ...
 }: {
-  flake.modules.critical = {
+  flake.modules.nixos.critical = {
     sops = {
       defaultSopsFile = ../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";

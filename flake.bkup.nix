@@ -1,4 +1,7 @@
 {
+  nixConfig = {
+    allow-import-from-derivation = true;
+  };
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
