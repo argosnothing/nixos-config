@@ -11,7 +11,7 @@ in {
   config = mkIf niri.enable {
     hm = _: let
       strut-size = 0;
-      border-size = 1;
+      border-size = 2;
     in {
       programs.niri.settings.layout = {
         gaps = 0;
