@@ -1,28 +1,18 @@
-# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
-# Use `nix run .#write-flake` to regenerate it.
 {
+  description = "Turtles Strange Nix Configuration";
 
-  outputs = inputs: import ./outputs.nix inputs;
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;}
+    (inputs.import-tree ./modules);
 
   inputs = {
-    flake-file = {
-      url = "github:vic/flake-file";
-    };
     flake-parts = {
-      inputs = {
-        nixpkgs-lib = {
-          follows = "nixpkgs";
-        };
-      };
       url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree = {
       url = "github:vic/import-tree";
@@ -34,19 +24,11 @@
       url = "github:NixOS/nixpkgs/nixos-25.05";
     };
     sops-nix = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     systems = {
       url = "github:nix-systems/default";
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-    };
   };
-
 }

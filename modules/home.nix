@@ -1,3 +1,4 @@
+## Configure Anything that has to do with home stuff here.
 {
   lib,
   inputs,

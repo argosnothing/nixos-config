@@ -1,8 +1,5 @@
 {inputs, ...}: let
-  inherit
-    (inputs.self.lib.mk-os)
-    linux
-    ;
+  inherit (inputs.self.lib.mk-os) linux;
 
   flake.nixosConfigurations = {
     vm = linux "vm";

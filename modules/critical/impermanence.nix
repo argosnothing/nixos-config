@@ -6,7 +6,7 @@
     }: let
       inherit (lib) mkEnableOption;
     in {
-      options.impermanence = {
+      options.my.persist = {
           enable = mkEnableOption "Enable Impermanence";
       };
     };

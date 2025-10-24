@@ -1,14 +1,9 @@
-{inputs, self, ...}: {
-  flake-file.inputs = {
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-  flake.modules.nixos.critical = {
-    config,
-    ...
-  }: {
+{
+  inputs,
+  self,
+  ...
+}: {
+  flake.modules.nixos.critical = {config, ...}: {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];

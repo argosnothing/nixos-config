@@ -5,13 +5,10 @@
 }: let
   flake.lib.mk-os = {
     inherit mkNixos;
-    inherit wsl linux linux-arm;
+    inherit linux;
   };
 
-  wsl = mkNixos "x86_64-linux" "wsl";
-
   linux = mkNixos "x86_64-linux" "nixos";
-  linux-arm = mkNixos "aarch64-linux" "nixos";
 
   mkNixos = system: cls: name:
     inputs.nixpkgs.lib.nixosSystem {
