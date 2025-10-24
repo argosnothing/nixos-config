@@ -8,7 +8,7 @@
 in {
   config = mkIf niri.enable {
     hm = _: let
-      radius = 15.0;
+      radius = 0.0;
     in {
       programs.niri.settings.window-rules = [
         {
@@ -19,7 +19,9 @@ in {
             bottom-left = radius;
             bottom-right = radius;
           };
+          opacity = 0.95;
           clip-to-geometry = true;
+          draw-border-with-background = false;
         }
         {
           matches = [
@@ -43,16 +45,16 @@ in {
             enable = false;
           };
         }
-        # {
-        #   matches = [
-        #     {
-        #       app-id = "Wfica";
-        #     }
-        #   ];
-        #   open-fullscreen = false;
-        #   open-maximized = true;
-        #   block-out-from = "screen-capture";
-        # }
+        {
+          matches = [
+            {
+              app-id = "Wfica";
+            }
+          ];
+          open-fullscreen = false;
+          open-maximized = true;
+          block-out-from = "screen-capture";
+        }
         {
           matches = [
             {

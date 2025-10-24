@@ -60,33 +60,38 @@ in {
     };
     programs.niri = {
       enable = true;
+      package = pkgs.niri-unstable;
     };
     environment.systemPackages = with pkgs; [
       xwayland-satellite
     ];
-    hm = {
-      ### TODO: Move this stuff out
-      programs.niri.settings = {
-        layout = {
-          background-color = "transparent";
-        };
-        overview = {
-          workspace-shadow = {
-            enable = false;
-          };
-        };
-        input = {
-          focus-follows-mouse.enable = false;
-          warp-mouse-to-focus.enable = false;
-          mod-key = "Alt";
-          mod-key-nested = "Super";
-          mouse = {
-            accel-speed = 0.3;
-            accel-profile = "flat";
-          };
-          touchpad = {
-            dwt = true;
-            scroll-factor = 0.5;
+    hm = {pkgs, ...}: {
+      programs = {
+        niri = {
+          package = pkgs.niri-unstable;
+          settings = {
+            layout = {
+              background-color = "transparent";
+            };
+            overview = {
+              workspace-shadow = {
+                enable = false;
+              };
+            };
+            input = {
+              focus-follows-mouse.enable = false;
+              warp-mouse-to-focus.enable = false;
+              mod-key = "Alt";
+              mod-key-nested = "Super";
+              mouse = {
+                accel-speed = 0.3;
+                accel-profile = "flat";
+              };
+              touchpad = {
+                dwt = true;
+                scroll-factor = 0.5;
+              };
+            };
           };
         };
       };

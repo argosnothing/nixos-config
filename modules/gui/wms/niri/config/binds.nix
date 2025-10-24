@@ -5,11 +5,14 @@
 }: let
   inherit (config.my.modules.gui.wms) niri;
   inherit (lib) mkIf mkDefault;
+  inherit (config.my.modules.gui) desktop-shells;
 in {
   config = mkIf niri.enable {
-    hm = _: let
-      inherit (config.my.modules.gui) desktop-shells;
-    in {
+    hm = {
+      lib,
+      config,
+      ...
+    }: {
       programs.niri.settings.binds = mkDefault {
         "Mod+Return".action.spawn = "kitty";
         "Mod+space".action.spawn = lib.splitString " " desktop-shells.launcherCommand;
@@ -181,7 +184,7 @@ in {
         "Mod+Shift+R".action.switch-preset-window-height = [];
         "Mod+Ctrl+R".action.reset-window-height = [];
 
-        "Mod+F".action.maximize-column = [];
+        "Mod+F".action = config.lib.niri.actions.maximize-window-to-edges;
         "Mod+Shift+F".action.fullscreen-window = [];
 
         "Mod+Ctrl+F".action.expand-column-to-available-width = [];

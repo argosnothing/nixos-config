@@ -19,6 +19,7 @@
     pkgs = import nixpkgs {
       inherit system;
       config = pkg-config;
+      overlays = [inputs.niri.overlays.niri];
     };
     pkgs-stable = import nixpkgs-stable {
       inherit system;

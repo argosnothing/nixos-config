@@ -9,15 +9,27 @@
   c = config.lib.stylix.colors.withHashtag;
 in {
   config = mkIf niri.enable {
-    hm = _: {
+    hm = _: let
+      strut-size = 0;
+      border-size = 1;
+    in {
       programs.niri.settings.layout = {
-        gaps = 9;
+        gaps = 0;
+        struts = {
+          left = strut-size;
+          right = strut-size;
+          top = strut-size;
+          bottom = strut-size;
+        };
         focus-ring = {
+          enable = false;
           active = mkIf custom.enable (mkForce {
             color = c.base0E;
           });
         };
         border = {
+          enable = true;
+          width = border-size;
           active = mkIf custom.enable (mkForce {
             color = c.base0E;
           });
