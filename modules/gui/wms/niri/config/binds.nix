@@ -171,8 +171,8 @@ in {
         "Mod+Ctrl+8".action.move-column-to-workspace = 8;
         "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-        "Mod+BracketLeft".action.consume-or-expel-window-left = [];
-        "Mod+BracketRight".action.consume-or-expel-window-right = [];
+        "Mod+Shift+Comma".action.consume-or-expel-window-left = [];
+        "Mod+Shift+Period".action.consume-or-expel-window-right = [];
 
         "Mod+Comma" = lib.mkDefault {
           action.consume-window-into-column = [];
