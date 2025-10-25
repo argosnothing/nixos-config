@@ -1,13 +1,13 @@
-{config, ...}: {
-  flake.modules.nixos.niri = {
-    inputs,
-    pkgs,
-    ...
-  }: let
+{
+  config,
+  inputs,
+  ...
+}: {
+  flake.modules.nixos.niri = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos.niri; [];
     home-modules = [
       {
-        hm.imports = config.flake.modules.homeManager.niri;
+        hm.imports = [config.flake.modules.homeManager.niri];
       }
     ];
   in {

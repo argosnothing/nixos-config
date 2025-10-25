@@ -5,6 +5,7 @@
       base
       impermanence
       uefi
+      niri
     ];
   };
 in {
