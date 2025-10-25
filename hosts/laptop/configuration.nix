@@ -7,6 +7,9 @@
   my = {
     modules = {
       critical.zfs.enable = true;
+      gui = {
+        wms.name = "niri";
+      };
       misc = {
         citrix.enable = true;
         battery.enable = true;

@@ -56,7 +56,7 @@ in {
   flake.nixosConfigurations = mapAttrs (hostname: params:
     mkSystem (params // {inherit hostname;})) {
     desktop = {};
-    laptop = {firmware = "bios";};
+    laptop = {firmware = "grub";};
     p51 = {};
     vm = {};
   };
