@@ -4,7 +4,7 @@
   flake.settings = {
     username = "salivala";
   };
-  flake.modules.nixos.base = let
+  flake.modules.nixos.base = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos; [
       options
       user
@@ -16,10 +16,13 @@
         hm.imports = with config.flake.modules.homeManager; [
           options
         ];
-        hm.home.packages = with config.flake.packages; [ nvf ];
+        hm.home.packages = with config.flake.packages.${pkgs.system}; [
+          nvf
+          zeditor
+        ];
       }
     ];
-    in{
+  in {
     imports = nixos-modules ++ home-modules;
   };
 }

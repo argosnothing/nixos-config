@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  ...
 }: let
   inherit (config.flake.modules) nvf;
 in {

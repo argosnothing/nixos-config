@@ -1,15 +1,5 @@
-{pkgs, ...}: {
-  flake.modules.nvf.default = {
-    imports = [
-      ./languages.nix
-      ./ui.nix
-      ./visuals.nix
-      ./utility.nix
-      ./binds.nix
-      ./keymaps.nix
-      ./themes.nix
-    ];
-
+{
+  flake.modules.nvf.default = {pkgs, ...}: {
     vim = {
       vimAlias = true;
       autopairs.nvim-autopairs.enable = true;

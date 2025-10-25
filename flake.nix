@@ -37,5 +37,10 @@
     systems = {
       url = "github:nix-systems/default";
     };
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri.url = "github:sodiboo/niri-flake";
   };
 }

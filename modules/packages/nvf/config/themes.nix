@@ -1,19 +1,14 @@
 {
-  pkgs,
-  occult-theme,
-  ...
-}: let
-  inherit (occult-theme.themes) occult;
-  createTheme = name: package: {
-    inherit package;
-    setup = "require('${name}').setup {}";
-  };
-  # For simple Vim colorschemes
-  basicTheme = package: {
-    inherit package;
-  };
-in {
-  flake.modules.nvf.default = {
+  flake.modules.nvf.default = {pkgs, ...}: let
+    createTheme = name: package: {
+      inherit package;
+      setup = "require('${name}').setup {}";
+    };
+    # For simple Vim colorschemes
+    basicTheme = package: {
+      inherit package;
+    };
+  in {
     vim = {
       theme = {
         enable = true;
