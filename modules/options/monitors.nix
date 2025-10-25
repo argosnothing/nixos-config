@@ -3,7 +3,7 @@
   inherit (lib) mkOption mkEnableOption;
 in {
   flake.modules.nixos.options = {
-    options.my.modules.monitors = mkOption {
+    options.my.monitors = mkOption {
       description = "List of monitors to manage";
       default = [{}];
       type = listOf (submodule {

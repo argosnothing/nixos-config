@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.niri = {config, ...}: let
-    inherit (config.my.modules) monitors;
+    inherit (config.my) monitors;
   in {
     hm = _: {
       programs.niri.settings.outputs = builtins.listToAttrs (map (monitor: {

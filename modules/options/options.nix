@@ -1,3 +1,4 @@
+## Options for the system. 
 {lib, ...}: let
   inherit (lib) mkOption mkEnableOption;
   inherit (lib.types) listOf str;
