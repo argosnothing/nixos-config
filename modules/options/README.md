@@ -1,0 +1,2 @@
+# Options
+Don't let the name fool you, there are several files here that not only provide options, but utilize those options in the same file. This is mainly just to make it easier to see exactly how many of the options end up getting used, rather that having to search around for some other file that draws on them. The majority of these options and configs will be at the system level, but there are several that operate at the home level. 
