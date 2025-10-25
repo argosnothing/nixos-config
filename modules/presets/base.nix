@@ -3,12 +3,17 @@
 {config, ...}: {
   flake.modules.nixos.base = let
     nixos-modules = with config.flake.modules.nixos; [
+      options
       user
-      fonts
       critical
       home
     ];
-    home-modules = with config.flake.homeModules; [
+    home-modules = [
+      {
+        home-manager.users.${config.flake.settings.username}.imports = with config.flake.modules.homeManager; [
+          options
+        ];
+      }
     ];
     in{
     imports = nixos-modules ++ home-modules;

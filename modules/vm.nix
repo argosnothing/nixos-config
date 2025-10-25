@@ -1,9 +1,10 @@
-{inputs, ...}: let
+{config, ...}: let
+  flake.settings.username = "salivala";
   flake.modules.nixos.vm = {
-    imports = with inputs.self.modules.nixos; [
+    imports = with config.flake.modules.nixos; [
       base
+      impermanence
     ];
-    config.my.persist.enable = true;
   };
 in {
   inherit flake;

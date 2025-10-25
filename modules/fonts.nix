@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.fonts = {
+  flake.modules.nixos.options = {
     pkgs,
     lib,
     config,
@@ -8,9 +8,9 @@
     inherit (lib.types) int;
     inherit (lib) mkOption;
     inherit (lib.types) str package submodule;
-    inherit (config.my.modules.fonts) mono sans serif size;
+    inherit (config.my.fonts) mono sans serif size;
   in {
-    options.my.modules.fonts = {
+    options.my.fonts = {
       size = mkOption {
         type = int;
         default = 11;
@@ -77,23 +77,21 @@
       };
     };
     config = {
-      my = {
-        modules = {
-          fonts = {
-            serif = {
-              name = "Alegreya Serif";
-              package = pkgs.google-fonts;
-            };
-            mono = {
-              name = "Cascadia Code";
-              package = pkgs.cascadia-code;
-            };
-          };
-        };
-        persist.home = {
-          directories = [".cache/fontconfig"];
-        };
-      };
+     #my = {
+     #  persist.home = {
+     #    directories = [".cache/fontconfig"];
+     #  };
+     #  fonts = {
+     #    serif = {
+     #      name = "Alegreya Serif";
+     #      package = pkgs.google-fonts;
+     #    };
+     #    mono = {
+     #      name = "Cascadia Code";
+     #      package = pkgs.cascadia-code;
+     #    };
+     #  };
+     #};
       fonts.packages = with pkgs; [
         nerd-fonts.fira-code
         nerd-fonts.fira-mono

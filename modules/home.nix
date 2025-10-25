@@ -2,13 +2,15 @@
 {
   lib,
   inputs,
+  config,
   ...
-}: {
+}:let inherit (config) flake; in {
+  flake.homeModules = config.flake.modules.homeManager;
   flake.modules.nixos = {
     home = {config, ...}: {
       imports = [
         inputs.home-manager.nixosModules.home-manager
-        (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" config.user.name])
+        (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" flake.settings.username])
       ];
       config = {
         home-manager = {
@@ -16,7 +18,7 @@
           useUserPackages = true;
           overwriteBackup = true;
           #extraSpecialArgs = {inherit self;};
-          users.${config.user.name} = _: {
+          users.${flake.settings.username} = _: {
             home.stateVersion = "25.05";
             programs.home-manager.enable = true;
           };

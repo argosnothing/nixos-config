@@ -1,4 +1,6 @@
-{
+{config, ...}: let
+  inherit (config.flake.settings) username;
+in {
   flake.modules.nixos = {
     user = {
       config,
@@ -12,7 +14,7 @@
       options.user = {
         name = mkOption {
           type = str;
-          default = "salivala";
+          default = username;
         };
       };
       config = {
