@@ -11,7 +11,7 @@
       defaultSopsFile = ../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
       age.keyFile =
-        if config.impermanence.enable
+        if config.my.persist.enable
         then "/persist/home/${config.user.name}/.config/sops/age/keys.txt"
         else "/home/${config.user.name}/.config/sops/age/keys.txt";
       secrets = {

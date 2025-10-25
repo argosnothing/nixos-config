@@ -3,7 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       base
     ];
-    config.impermanence.enable = true;
+    config.my.persist.enable = true;
   };
 in {
   inherit flake;
