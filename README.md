@@ -1,9 +1,9 @@
-# △ NixOS Config △
-- Not meant to be plugin for other people due to sops integration with login, although my hope is others can refer to this who are trying to get started with some of the things I do here.
+# △ NixOS Config : DENDRITIC △
+- Dendritic config based around import-tree and flake parts, with an emphasis on blurring the lines between home and system.
 - If you are one of those mentioned in the credits here and don't want to be mentioned, just let me know.
 
 # Things I do
-- Flakes with flake parts pointing to outputs/default.nix
+- Dendritic pattern with modules folder being evaluated at flake level.
 - Impermanence in system and home. Per module persistance so wm switches don't pollute user space.
 - Sops dependent install process, bring your own keys, secrets.
 - Coupled user/system modules, inspired by [saygo's](https://github.com/saygo-png/nixos) configuration.
