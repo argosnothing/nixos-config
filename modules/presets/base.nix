@@ -13,9 +13,10 @@
     ];
     home-modules = [
       {
-        home-manager.users.${config.flake.settings.username}.imports = with config.flake.modules.homeManager; [
+        hm.imports = with config.flake.modules.homeManager; [
           options
         ];
+        hm.home.packages = with config.flake.packages; [ nvf ];
       }
     ];
     in{
