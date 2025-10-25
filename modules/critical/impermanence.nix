@@ -10,7 +10,7 @@ in {
     cfg = config.my.persist;
     hmCfg = config.hm.my.persist;
   in {
-    # my.persist.enable = true;
+    my.persist.enable = true;
     imports = [
       inputs.impermanence.nixosModules.impermanence
     ];

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.critical = {
+  flake.modules.nixos.uefi = {
     boot = {
       loader = {
         grub.enable = false;

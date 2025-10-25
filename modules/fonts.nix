@@ -77,21 +77,21 @@
       };
     };
     config = {
-     #my = {
-     #  persist.home = {
-     #    directories = [".cache/fontconfig"];
-     #  };
-     #  fonts = {
-     #    serif = {
-     #      name = "Alegreya Serif";
-     #      package = pkgs.google-fonts;
-     #    };
-     #    mono = {
-     #      name = "Cascadia Code";
-     #      package = pkgs.cascadia-code;
-     #    };
-     #  };
-     #};
+      my = {
+        persist.home = {
+          directories = [".cache/fontconfig"];
+        };
+        fonts = {
+          serif = {
+            name = "Alegreya Serif";
+            package = pkgs.google-fonts;
+          };
+          mono = {
+            name = "Cascadia Code";
+            package = pkgs.cascadia-code;
+          };
+        };
+      };
       fonts.packages = with pkgs; [
         nerd-fonts.fira-code
         nerd-fonts.fira-mono

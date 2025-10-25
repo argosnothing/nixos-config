@@ -1,6 +1,9 @@
 # This is a base preset, that defines the things i need to have for a functional nixos system.
 # Not counting for wms
 {config, ...}: {
+  flake.settings = {
+    username = "salivala";
+  };
   flake.modules.nixos.base = let
     nixos-modules = with config.flake.modules.nixos; [
       options

@@ -21,7 +21,7 @@ in {
         programs.fish.enable = true;
         users = {
           users.root.initialPassword = "password";
-          users.${config.user.name} = {
+          users.${username} = {
             isNormalUser = true;
             extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
             hashedPasswordFile = config.sops.secrets."pc_password".path;
