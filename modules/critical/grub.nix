@@ -1,7 +1,6 @@
-{
+{inputs, ...}:{
   flake.modules.nixos.grub = {
     pkgs,
-    inputs,
     ...
   }: {
     boot = {
