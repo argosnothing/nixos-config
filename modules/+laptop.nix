@@ -8,8 +8,8 @@
       #
       work
       # WMS
-      #niri
-      xfce
+      niri
+      #xfce
       # Apps
       firefox
 
