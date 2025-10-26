@@ -10,12 +10,14 @@
       # WMS
       niri
       #xfce
+
       # Apps
       firefox
 
       base
       impermanence
       grub
+      battery
     ];
     my = {
       is-vm = false;

@@ -7,9 +7,11 @@
       niri
       #xfce
 
+      #apps
       kitty
       discord
       work
+      steam
       firefox
     ];
     my = {
