@@ -6,6 +6,9 @@
   flake.modules.nixos.niri = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos; [
       wm
+      cursor
+      icons
+      stylix
       noctalia-shell
     ];
     home-modules = [

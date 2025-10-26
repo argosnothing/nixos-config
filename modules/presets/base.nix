@@ -10,6 +10,11 @@
       user
       critical
       home
+
+      kitty
+      fish
+      nh
+      misc-scripts
     ];
     home-modules = [
       {

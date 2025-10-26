@@ -18,13 +18,11 @@
         config.flake.modules.nixos.${cls}
         config.flake.modules.nixos.${name}
         {
+          my.hostname = name;
           networking.hostName = lib.mkDefault name;
           nixpkgs.hostPlatform = lib.mkDefault system;
           system.stateVersion = "25.05";
         }
-       #inputs.home-manager.nixosModules.home-manager {
-       #  imports = [config.flake.homeManager.vm];
-       #}
       ];
     };
 in {

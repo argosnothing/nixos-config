@@ -1,4 +1,4 @@
-## Options for the system. 
+## Options for the system.
 {lib, ...}: let
   inherit (lib) mkOption mkEnableOption;
   inherit (lib.types) listOf str;
@@ -33,6 +33,7 @@ in {
   };
   flake.modules.nixos.options = {
     options.my = {
+      hostname = mkOption {type = str;};
       persist = {
         enable = mkEnableOption "Enable Impermanence";
         root = {

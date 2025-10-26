@@ -6,6 +6,8 @@
       impermanence
       uefi
       niri
+
+      firefox
     ];
     my = {
       monitors = [

@@ -3,7 +3,7 @@
     inherit (lib) types mkOption mkEnableOption;
     inherit (types) str listOf;
   in {
-    options.my.modules.gui.desktop-shells = {
+    options.my.desktop-shells = {
       enable = mkEnableOption "Expose desktop shells option for wms to use.";
       execCommand = mkOption {
         type = str;
