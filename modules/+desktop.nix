@@ -13,6 +13,7 @@
       work
       steam
       firefox
+      nemo
     ];
     my = {
       fonts.size = 11;
