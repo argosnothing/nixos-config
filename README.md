@@ -25,4 +25,3 @@
 ## Notes
 I had briefly moved over to hjem, but have since decided it'd be best to stay on home manager for the time being. I will likely continue to use hjem in parts of my config as a simple file linker, with occasional use of its generator.
   
-[<img src="media/icons/purple-logo.png"/>](Logo)
