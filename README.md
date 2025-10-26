@@ -8,7 +8,7 @@
 - Impermanence in system and home. Per module persistance so wm switches don't pollute user space.
 - Sops dependent install process, bring your own keys, secrets.
 - Coupled user/system modules, inspired by [saygo's](https://github.com/saygo-png/nixos) configuration.
-- Some code here, such as the impermanence module is --stolen-- borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
+- Some code here, such as the impermanence module is ~~stolen~~ borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
 
 ## Important Files
 - [Flake entrypoint](flake.nix)
