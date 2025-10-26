@@ -69,6 +69,26 @@ in {
           inputs.self.packages.${pkgs.system}.ns
         ];
       };
+
+      hj.systemd.enable = false;
+      hjem.linker = inputs.hjem.packages.${pkgs.system}.smfh;
+      hjem.users.${flake.settings.username} = {
+        enable = true;
+        user = flake.settings.username;
+        directory = "/home/${flake.settings.username}";
+        files = {
+          ".editorconfig".text = ''
+            root = true
+
+            [*]
+            charset = utf-8
+            end_of_line = lf
+            indent_style = space
+            insert_final_newline = true
+            tab_width = 2
+          '';
+        };
+      };
     };
   };
 }

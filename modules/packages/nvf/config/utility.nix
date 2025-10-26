@@ -1,5 +1,5 @@
 {
-  flake.modules.nvf.modules = {
+  flake.modules.nvf.default = {
     vim.utility = {
       direnv.enable = true;
       mkdir.enable = true;

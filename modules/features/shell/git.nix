@@ -1,11 +1,7 @@
-{
-  flake.modules.nixos.git = {
-    lib,
-    flake,
-    ...
-  }: let
-    inherit (flake.settings) username gitemail;
-  in {
+{config, ...}: let
+  inherit (config.flake.settings) username gitemail;
+in {
+  flake.modules.nixos.git = {lib, ...}: {
     hjem.users.${username} = {
       files = {
         ".gitconfig" = {
@@ -35,8 +31,6 @@
     programs.git = {
       enable = true;
       # TODO: module for this?
-      # userName = settings.username;
-      # userEmail = settings.gitEmail;
     };
   };
 }

@@ -16,6 +16,8 @@
       fish
       nh
       misc-scripts
+      starship
+      git
     ];
     home-modules = [
       {

@@ -19,6 +19,7 @@ in {
     };
     gitemail = mkOption {
       description = "git email";
+      default = "argosnothing@gmail.com";
       type = str;
     };
     networking.hostId = mkOption {

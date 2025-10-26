@@ -10,7 +10,7 @@
           vesktop = {
             enable = true;
             settings = {
-              hardwareAcceleration = false;
+              hardwareAcceleration = true;
             };
           };
         };

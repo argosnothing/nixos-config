@@ -21,6 +21,10 @@
           my.hostname = name;
           networking.hostName = lib.mkDefault name;
           nixpkgs.hostPlatform = lib.mkDefault system;
+          nixpkgs.config = {
+            allowUnfree = true;
+            showAliases = true;
+          };
           system.stateVersion = "25.05";
         }
       ];
