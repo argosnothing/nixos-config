@@ -10,7 +10,7 @@
     icon-name = config.my.modules.icons.name;
     icon-package = config.my.icons.package;
   in {
-    options.my.modules.icons = {
+    options.my.icons = {
       package = mkOption {
         description = "Set Icon Pack";
         type = package;
