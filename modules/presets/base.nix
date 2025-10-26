@@ -11,6 +11,7 @@
       critical
       home
 
+      discord
       kitty
       fish
       nh
