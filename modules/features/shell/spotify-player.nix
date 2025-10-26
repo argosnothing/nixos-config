@@ -1,13 +1,6 @@
 {
-  config,
-  lib,
-  ...
-}: {
-  options.my.modules.shell.spotify-player = {
-    enable = lib.mkEnableOption "Enable Terminal Spotify";
-  };
-  config = lib.mkIf config.my.modules.shell.spotify-player.enable {
-    hm = _: {
+  flake.modules.nixos.spotify-player = {
+    hm = {
       programs.spotify-player = {
         enable = true;
         keymaps = [

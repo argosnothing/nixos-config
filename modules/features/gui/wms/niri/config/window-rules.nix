@@ -2,7 +2,7 @@
   flake.modules.homeManager.niri = let
     radius = 0.0;
   in {
-    hm.programs.niri.settings.window-rules = [
+    programs.niri.settings.window-rules = [
       {
         matches = [];
         geometry-corner-radius = {

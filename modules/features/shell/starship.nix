@@ -1,12 +1,5 @@
 {
-  lib,
-  config,
-  ...
-}: {
-  options.my.modules.shell.starship = {
-    enable = lib.mkEnableOption "Starship is fun!";
-  };
-  config = lib.mkIf config.my.modules.shell.starship.enable {
+  flake.modules.nixos.starship = {
     programs.starship = {
       enable = true;
       settings = {

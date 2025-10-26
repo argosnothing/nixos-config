@@ -1,10 +1,11 @@
 {
   flake.modules.nixos.wm = {lib, ...}: let
     inherit (lib) types mkOption mkEnableOption;
-    inherit (types) str listOf;
+    inherit (types) str listOf nullOr;
   in {
     options.my.desktop-shells = {
       enable = mkEnableOption "Expose desktop shells option for wms to use.";
+      name = mkOption { type = nullOr str; };
       execCommand = mkOption {
         type = str;
         description = "Command that starts the Desktop Shell";

@@ -1,26 +1,36 @@
-{
+{inputs, ...}: {
+  flake.modules.nixos.options = {lib, ...}: let
+    inherit (lib) mkEnableOption;
+  in {
+    # This is a guard in the case i remove the stylix input in the future. 
+    options.my = {
+      stylix = {
+        enable = mkEnableOption "Enable Stylix";
+      };
+    };
+  };
   flake.modules.nixos.stylix = {
     config,
-    inputs,
     pkgs,
     ...
   }: let
     inherit (config.my.fonts) mono sans serif sizes;
-    inherit (config.my.style) theme polarity style custom;
+    inherit (config.my.theme) name polarity style custom;
     style-modifier =
       if style != null
       then "-${style}"
       else "";
     base16Scheme =
       if custom.enable
-      then inputs.occult-theme.themes.${custom.theme}
-      else "${pkgs.base16-schemes}/share/themes/${theme}${style-modifier}.yaml";
+      then inputs.occult-theme.themes.${custom.name}
+      else "${pkgs.base16-schemes}/share/themes/${name}${style-modifier}.yaml";
   in {
     imports = [inputs.stylix.nixosModules.stylix];
     environment.sessionVariables =
       if custom.enable
       then base16Scheme
       else {};
+    my.stylix.enable = true;
     stylix = {
       enable = true;
       autoEnable = true;
@@ -29,7 +39,7 @@
       inherit base16Scheme;
       icons = {
         enable = true;
-        inherit (config.my.modules.icons) package;
+        inherit (config.my.icons) package;
       };
       fonts = {
         monospace = mono;

@@ -4,7 +4,7 @@
     lib,
     ...
   }: let
-    inherit (config.my.style.theme) custom;
+    inherit (config.my.theme) custom;
     inherit (lib) mkIf mkForce;
     c = config.lib.stylix.colors.withHashtag;
   in {

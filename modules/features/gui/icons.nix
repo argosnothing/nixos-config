@@ -1,5 +1,5 @@
 {
-  flake.modules.icons = {
+  flake.modules.nixos.icons = {
     pkgs,
     config,
     lib,

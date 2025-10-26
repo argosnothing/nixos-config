@@ -45,9 +45,9 @@
           enable = true;
           gtk.enable = true;
           x11.enable = true;
-          inherit (config.cursor) name;
-          inherit (config.cursor) package;
-          inherit (config.cursor) size;
+          inherit (config.my.cursor) name;
+          inherit (config.my.cursor) package;
+          inherit (config.my.cursor) size;
         };
       };
     };

@@ -1,16 +1,17 @@
-{
+{config, ...}: let
+    inherit (config.flake.settings) flakedir;
+in {
   flake.modules.nixos.nh = {
     pkgs,
-    flake,
     config,
     ...
   }: let
-    inherit (flake.settings) flakedir;
+    inherit (config.my) hostname;
     rebuild = command: ''
       #!/bin/bash
       pushd ${flakedir}
       alejandra . &>/dev/null
-      nh os ${command} ${flakedir}/#nixosConfigurations.${config.my.hostname};
+      nh os ${command} ${flakedir}/#nixosConfigurations.${hostname};
       popd
     '';
   in {

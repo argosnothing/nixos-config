@@ -1,11 +1,11 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   flake.modules.nixos.noctalia-shell = {config, ...}: {
-    my.modules.gui.desktop-shells = {
-      execCommand = "noctalia-shell";
-      launcherCommand = "noctalia-shell ipc call launcher toggle";
+    my = {
+      desktop-shells = {
+        execCommand = "noctalia-shell";
+        launcherCommand = "noctalia-shell ipc call launcher toggle";
+        name = "noctalia-shell";
+      };
     };
     hm = {pkgs, ...}: {
       home.packages =

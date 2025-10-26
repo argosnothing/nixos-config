@@ -1,15 +1,6 @@
 {
-  pkgs,
-  lib,
-  config,
-  username,
-  ...
-}: {
-  options.my.modules.shell.yazi = {
-    enable = lib.mkEnableOption "Enable Yazi";
-  };
-  config = lib.mkIf config.my.modules.shell.yazi.enable {
-    hjem.users.${username} = {
+  flake.modules.nixos.yazi = {pkgs, ...}: {
+    hj = {
       packages = [
         pkgs.yazi
       ];

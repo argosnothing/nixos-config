@@ -1,15 +1,5 @@
 {
-  lib,
-  config,
-  ...
-}: let
-  inherit (config.my.modules.shell) zellij;
-  inherit (lib) mkEnableOption mkIf;
-in {
-  options.my.modules.shell.zellij = {
-    enable = mkEnableOption "Enable Zellij";
-  };
-  config = mkIf zellij.enable {
+  flake.modules.nixos.zellij = {
     my.persist.home = {
       directories = [
         ".config/zellij"

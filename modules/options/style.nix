@@ -7,7 +7,7 @@
     inherit (lib) mkOption types mkEnableOption;
     inherit (types) submodule enum str nullOr;
   in {
-    my.modules.style.theme = mkOption {
+    options.my.theme = mkOption {
       default = {};
       type = submodule {
         options = {
@@ -16,7 +16,7 @@
             type = submodule {
               options = {
                 enable = mkEnableOption "Enable Custom Theme";
-                theme = mkOption {
+                name = mkOption {
                   type = enum ["occult"];
                   default = "occult";
                 };
@@ -27,7 +27,7 @@
             type = enum ["light" "dark"];
             default = "dark";
           };
-          theme = mkOption {
+          name = mkOption {
             type = str;
             default = "rose-pine";
           };
