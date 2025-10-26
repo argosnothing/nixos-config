@@ -1,4 +1,4 @@
-{config, ...}: let
+{config, ...}: {
   flake.settings.isVm = true;
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
@@ -29,6 +29,4 @@
       ];
     };
   };
-in {
-  inherit flake;
 }
