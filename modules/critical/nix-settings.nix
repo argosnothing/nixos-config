@@ -1,9 +1,5 @@
-{
-  flake.modules.nixos.critical = {
-    pkgs,
-    inputs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.critical = {pkgs, ...}: {
     nix = {
       settings = {
         trusted-users = ["root" "@wheel"];
