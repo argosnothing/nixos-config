@@ -1,11 +1,9 @@
-{inputs, ...}: let
-  inherit (inputs.self.lib.mk-os) linux;
-
+{config, ...}: let
+  inherit (config.flake.lib.mk-os) linux;
+in {
   flake.nixosConfigurations = {
     vm = linux "vm";
     laptop = linux "laptop";
     desktop = linux "desktop";
   };
-in {
-  inherit flake;
 }
