@@ -1,5 +1,0 @@
-_: {
-  imports = [
-    ./tuigreet.nix
-  ];
-}

@@ -1,5 +1,0 @@
-{
-  boot = {
-    firmware = "grub";
-  };
-}
