@@ -1,6 +1,5 @@
- let
-  flake.modules.nixos = {inherit nix-settings;};
-  nix-settings = {
+{
+  flake.modules.nixos.critical = {
     pkgs,
     inputs,
     ...
@@ -17,8 +16,8 @@
           "niri.cachix.org-1:T+M3pBd3DkFdBvA+SviyNv0glk+rPZsAocRAGYMddww="
         ];
       };
-      #package = pkgs.nixVersions.latest;
-      #nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+      package = pkgs.nixVersions.latest;
+      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       gc = {
         automatic = true;
         dates = "weekly";
@@ -26,6 +25,4 @@
       };
     };
   };
-in {
-  inherit flake;
 }
