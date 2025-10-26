@@ -6,7 +6,11 @@
 }: let
   pkgs-stable = inputs.nixpkgs-stable {
     inherit system;
-    config = config.flake.lib.pkg-config;
+    config = {
+      allowUnfree = true;
+      allowAliases = true;
+      permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
+    };
   };
 in {
   flake.modules.nixos.work = {pkgs, ...}: let
