@@ -2,7 +2,6 @@
   flake.modules.nixos.desktop = {
     config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {

@@ -1,8 +1,20 @@
-
 {config, ...}: let
   flake.modules.nixos.laptop = {
+    hardware = {
+      graphics.enable = true;
+      bluetooth.enable = true;
+    };
+    services = {
+      libinput.enable = true;
+      libinput.touchpad = {
+        accelSpeed = "0.7";
+        accelProfile = "flat";
+        naturalScrolling = true;
+        tapping = true;
+      };
+    };
     imports = with config.flake.modules.nixos; [
-      # 
+      #
       work
       # WMS
       #niri
