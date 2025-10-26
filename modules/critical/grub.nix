@@ -1,8 +1,5 @@
-{inputs, ...}:{
-  flake.modules.nixos.grub = {
-    pkgs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.grub = {pkgs, ...}: {
     boot = {
       plymouth.enable = true;
       loader = {

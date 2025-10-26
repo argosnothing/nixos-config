@@ -2,7 +2,7 @@
   flake.modules.nixos.options = {lib, ...}: let
     inherit (lib) mkEnableOption;
   in {
-    # This is a guard in the case i remove the stylix input in the future. 
+    # This is a guard in the case i remove the stylix input in the future.
     options.my = {
       stylix = {
         enable = mkEnableOption "Enable Stylix";

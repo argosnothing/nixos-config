@@ -9,7 +9,7 @@
     ];
     sops = let
       secrets-location = "${self}/.secrets/secrets.yaml";
-      in{
+    in {
       defaultSopsFile = secrets-location;
       defaultSopsFormat = "yaml";
       age.keyFile =

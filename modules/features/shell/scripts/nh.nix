@@ -1,5 +1,5 @@
 {config, ...}: let
-    inherit (config.flake.settings) flakedir;
+  inherit (config.flake.settings) flakedir;
 in {
   flake.modules.nixos.nh = {
     pkgs,

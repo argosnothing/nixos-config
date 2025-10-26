@@ -5,7 +5,7 @@
   in {
     options.my.desktop-shells = {
       enable = mkEnableOption "Expose desktop shells option for wms to use.";
-      name = mkOption { type = nullOr str; };
+      name = mkOption {type = nullOr str;};
       execCommand = mkOption {
         type = str;
         description = "Command that starts the Desktop Shell";
