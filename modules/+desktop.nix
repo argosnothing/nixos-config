@@ -1,5 +1,4 @@
 {config, ...}: {
-  flake.settings.isVm = false;
   flake.modules.nixos.deskop = {
     imports = with config.flake.modules.nixos; [
       base
@@ -15,6 +14,7 @@
     ];
     my = {
       fonts.size = 11;
+      is-vm = false;
       monitors = [
         {
           name = "DP-1";

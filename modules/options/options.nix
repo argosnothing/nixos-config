@@ -34,6 +34,7 @@ in {
   flake.modules.nixos.options = {
     options.my = {
       hostname = mkOption {type = str;};
+      is-vm = mkEnableOption "Is this a vm";
       persist = {
         enable = mkEnableOption "Enable Impermanence";
         root = {

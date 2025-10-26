@@ -1,5 +1,4 @@
-{config, ...}: {
-  flake.settings.isVm = true;
+{config, ...}: let
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
       base
@@ -11,6 +10,7 @@
       firefox
     ];
     my = {
+      is-vm = true;
       monitors = [
         {
           name = "Virtual-1";
@@ -29,4 +29,6 @@
       ];
     };
   };
+in {
+  inherit flake;
 }

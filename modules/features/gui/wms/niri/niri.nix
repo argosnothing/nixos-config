@@ -8,6 +8,7 @@
       wm
       cursor
       icons
+      gtk
       stylix
       noctalia-shell
     ];

@@ -1,6 +1,10 @@
-{lib, config, ...}: let
+{
+  lib,
+  config,
+  ...
+}: let
   inherit (lib) mkOption;
-  inherit (lib.types) str bool;
+  inherit (lib.types) str;
 in {
   # These are flake level options that NEED to be set by either a preset or a host.
   options.flake.settings = {
@@ -21,10 +25,6 @@ in {
       description = "Host Id";
       type = str;
       default = "AB12CD34";
-    };
-    isvm = mkOption {
-      description = "Important for zfs";
-      type = bool;
     };
   };
 }

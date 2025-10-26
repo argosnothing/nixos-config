@@ -1,6 +1,5 @@
 
 {config, ...}: let
-  flake.settings.isVm = false;
   flake.modules.nixos.laptop = {
     imports = with config.flake.modules.nixos; [
       # 
@@ -16,6 +15,7 @@
       grub
     ];
     my = {
+      is-vm = false;
       monitors = [
         {
           name = "Virtual-1";
