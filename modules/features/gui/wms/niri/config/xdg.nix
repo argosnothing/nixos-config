@@ -1,20 +1,5 @@
 {
-  config,
-  inputs,
-  ...
-}: {
-  flake.modules.nixos.niri = {pkgs, ...}: let
-    nixos-modules = with config.flake.modules.nixos.niri; [];
-    home-modules = [
-      {
-        hm.imports = [config.flake.modules.homeManager.niri];
-      }
-    ];
-  in {
-    imports =
-      [inputs.niri.nixosModules.niri]
-      ++ nixos-modules
-      ++ home-modules;
+  flake.modules.nixos.niri = {pkgs, ...}: {
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;
@@ -38,11 +23,5 @@
         xdg-desktop-portal
       ];
     };
-    programs.niri = {
-      enable = true;
-    };
-    environment.systemPackages = with pkgs; [
-      xwayland-satellite
-    ];
   };
 }

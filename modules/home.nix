@@ -4,13 +4,15 @@
   inputs,
   config,
   ...
-}:let inherit (config) flake; in {
+}: let
+  inherit (config) flake;
+in {
   flake.modules.nixos = {
     home = {config, ...}: {
       imports = [
         inputs.home-manager.nixosModules.home-manager
         (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" flake.settings.username])
-      #(lib.mkAliasOptionModule ["hj"] ["hjem" "users" flake.settings.username])
+        (lib.mkAliasOptionModule ["hj"] ["hjem" "users" flake.settings.username])
       ];
       config = {
         home-manager = {
