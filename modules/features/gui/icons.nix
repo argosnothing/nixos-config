@@ -7,7 +7,7 @@
   }: let
     inherit (lib) mkOption;
     inherit (lib.types) str package;
-    icon-name = config.my.modules.icons.name;
+    icon-name = config.my.icons.name;
     icon-package = config.my.icons.package;
   in {
     options.my.icons = {
@@ -28,7 +28,7 @@
         XDG_ICON_THEME = icon-name;
       };
       environment.systemPackages = [
-        config.my.modules.icons.package
+        config.my.icons.package
       ];
     };
   };
