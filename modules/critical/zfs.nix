@@ -1,14 +1,14 @@
-{config, ...}: {
-  flake.modules.nixos.critical = let
-    inherit (config.flake) settings;
-  in {
+{config, ...}: let
+  inherit (config.flake) settings;
+in {
+  flake.modules.nixos.critical = {config, ...}: {
     boot = {
       supportedFilesystems = ["zfs"];
       initrd.supportedFilesystems = ["zfs"];
       zfs.devNodes =
         "/dev/disk/"
         + (
-          if settings.isVm
+          if config.my.is-vm
           then "by-partuuid"
           else "by-id"
         );
