@@ -1,9 +1,15 @@
 {
-  flake.modules.nixos.work = {
-    pkgs,
-    pkgs-stable,
-    ...
-  }: let
+  inputs,
+  system,
+  config,
+  ...
+}: let
+  pkgs-stable = inputs.nixpkgs-stable {
+    inherit system;
+    config = config.flake.lib.pkg-config;
+  };
+in {
+  flake.modules.nixos.work = {pkgs, ...}: let
     extraCerts = [
       ./secure/citrix-certs/Entrust_Root_G2.pem
       ./secure/citrix-certs/Entrust_L1K.pem
