@@ -4,8 +4,8 @@
       base
       impermanence
       uefi
-      #niri
-      xfce
+      niri
+      #xfce
 
       firefox
     ];
