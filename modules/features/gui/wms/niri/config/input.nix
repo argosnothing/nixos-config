@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.niri = {
+  flake.modules.homeManager.niri = {
     programs.niri.settings.input = {
       focus-follows-mouse.enable = false;
       warp-mouse-to-focus.enable = false;

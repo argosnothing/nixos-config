@@ -1,9 +1,8 @@
 {
   inputs,
-  config,
   ...
 }: {
-  flake.modules.nixos.wm.noctalia-shell = {
+  flake.modules.nixos.noctalia-shell = {config, ...}: {
     my.modules.gui.desktop-shells = {
       execCommand = "noctalia-shell";
       launcherCommand = "noctalia-shell ipc call launcher toggle";
@@ -12,7 +11,7 @@
       home.packages =
         [
           inputs.noctalia-shell.packages.${pkgs.system}.default
-          inputs.quickshell.packages.${pkgs.system}.default
+          #inputs.quickshell.packages.${pkgs.system}.default
         ]
         ++ (with pkgs; [
           kdePackages.qt5compat
@@ -36,7 +35,7 @@
 
       home.sessionVariables = {
         FONTCONFIG_FILE = "${pkgs.makeFontsConf {
-          fontDirectories = with config.my.modules.fonts; [
+          fontDirectories = with config.my.fonts; [
             sans.package
             serif.package
             pkgs.material-symbols

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri.programs.niri.layout = {
-    background-color = "transparent";
-  };
+ #flake.modules.homeManager.niri.programs.niri.layout = {
+ #  background-color = "transparent";
+ #};
 }

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.wm = {lib}: let
+  flake.modules.nixos.wm = {lib, ...}: let
     inherit (lib) types mkOption mkEnableOption;
     inherit (types) str listOf;
   in {

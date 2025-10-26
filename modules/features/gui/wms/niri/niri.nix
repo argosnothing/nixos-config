@@ -6,7 +6,7 @@
   flake.modules.nixos.niri = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos; [
       wm
-      wm.noctalia-shell
+      noctalia-shell
     ];
     home-modules = [
       {
@@ -14,6 +14,7 @@
       }
     ];
   in {
+    nixpkgs.overlays = [inputs.niri.overlays.niri];
     imports =
       [inputs.niri.nixosModules.niri]
       ++ nixos-modules

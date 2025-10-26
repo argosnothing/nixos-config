@@ -11,6 +11,7 @@ in {
     home = {config, ...}: {
       imports = [
         inputs.home-manager.nixosModules.home-manager
+        inputs.hjem.nixosModules.default
         (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" flake.settings.username])
         (lib.mkAliasOptionModule ["hj"] ["hjem" "users" flake.settings.username])
       ];
