@@ -12,7 +12,7 @@
 
 ## Important Files
 - [Flake entrypoint](flake.nix)
-- [nixosConfigurations.host entry point](modules/os-configs.nix)
+- [nixosConfigurations.nix](modules/nixosConfigurations.nix)
 
 # Credits
  For collectively dragging me, kicking and screaming, across multiple finish lines
