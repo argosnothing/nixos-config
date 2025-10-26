@@ -7,8 +7,10 @@
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];
-    sops = {
-      defaultSopsFile = ../../secrets/secrets.yaml;
+    sops = let
+      secrets-location = "${self}/.secrets/secrets.yaml";
+      in{
+      defaultSopsFile = secrets-location;
       defaultSopsFormat = "yaml";
       age.keyFile =
         if config.my.persist.enable
@@ -16,7 +18,7 @@
         else "/home/${config.user.name}/.config/sops/age/keys.txt";
       secrets = {
         ssh = {
-          sopsFile = ../../secrets/secrets.yaml;
+          sopsFile = secrets-location;
           path = "/home/${config.user.name}/.ssh/id_ed25519";
           owner = "${config.user.name}";
           mode = "0600";
