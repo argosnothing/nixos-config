@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.misc-scripts = {pkgs, ...}: {
-    environment.systemPacakges = [
+    environment.systemPackages = [
       (pkgs.writeShellScriptBin "systest" ''
         set -euo pipefail
         if [ $# -lt 1 ]; then
