@@ -1,7 +1,7 @@
 {
-  flake.modules.nixos.niri = {lib, ...}: let 
+  flake.modules.nixos.niri = {lib, ...}: let
     inherit (lib) mkAfter;
-    in{
+  in {
     my.sessions = mkAfter [
       {
         manage = "window";

@@ -11,7 +11,6 @@
       home.packages =
         [
           inputs.noctalia-shell.packages.${pkgs.system}.default
-          #inputs.quickshell.packages.${pkgs.system}.default
         ]
         ++ (with pkgs; [
           kdePackages.qt5compat
