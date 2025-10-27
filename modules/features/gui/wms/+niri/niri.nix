@@ -6,6 +6,7 @@
   flake.modules.nixos.niri = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos; [
       wm
+      sddm
       cursor
       icons
       gtk

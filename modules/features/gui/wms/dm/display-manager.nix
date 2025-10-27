@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.display-manager = {lib, config, ...}: let
+  flake.modules.nixos.display-manager = {
+    lib,
+    config,
+    ...
+  }: let
     inherit (lib) types;
     inherit (builtins) map;
     inherit (config.my) sessions;
@@ -7,11 +11,16 @@
     options = {
     };
     config = {
-      services.xserver.displayManager.session = map (session: {
-        inherit (session) manage;
-        inherit (session) name;
-        inherit (session) start;
-      } sessions);
+      services.xserver.displayManager = {
+        enable = true;
+        session = map (session:
+          {
+            inherit (session) manage;
+            inherit (session) name;
+            inherit (session) start;
+          }
+          sessions);
+      };
     };
   };
 }
