@@ -2,7 +2,7 @@
 {
   flake.modules.nixos.options = {lib, ...}: let
     inherit (lib) types mkOption;
-    inherit (types) listOf str submodule;
+    inherit (types) enum listOf str submodule;
   in {
     options = {
       my.sessions = mkOption {
@@ -10,10 +10,11 @@
         default = [{}];
         type = listOf (submodule {
           options = {
+            manage = enum ["desktop" "window"];
             name = mkOption {
               type = str;
             };
-            startup-command = mkOption {
+            start = mkOption {
               description = "startup command for the session";
               type = str;
             };
