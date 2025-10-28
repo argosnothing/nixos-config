@@ -24,6 +24,7 @@
 
         markdown = {
           enable = true;
+          extensions.markview-nvim.enable = true;
         };
 
         clang = {

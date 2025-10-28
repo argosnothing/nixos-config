@@ -19,8 +19,8 @@
 - [Jet](https://github.com/Michael-C-Buckley/home-config)
 - [Iynaix](https://github.com/iynaix/dotfiles)
 - [Saygo](https://github.com/saygo-png/nixos)
-- [Tony, BTW](https://www.tonybtw.com/)
 - [Emzy](https://github.com/emzywastaken/dotfiles)
+- [Tony, BTW](https://www.tonybtw.com/)
 
 ## Notes
 I had briefly moved over to hjem, but have since decided it'd be best to stay on home manager for the time being. I will likely continue to use hjem in parts of my config as a simple file linker, with occasional use of its generator.
