@@ -15,6 +15,8 @@
       steam
       firefox
       nemo
+      spotify-player
+      zellij
     ];
     my = {
       fonts.size = 11;
