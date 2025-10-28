@@ -5,25 +5,25 @@
 * Other important modules
   * `modules.nixos.grub`
   * `modules.nixos.uefi`
-#### features
+### features
 * Top level dir of general features, apps, window managers, shell utilities, etc.
-## hardware
+### hardware
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
-## options
+### options
 * Options that the rest of the system can expect to always be present. `modules.nixos.options` and `flake.settings` for flake level options
-## packages
+### packages
 * Derivations that I need to build as part of my system configuration.
-## presets
+### presets
 * Module bundles that act as system presets.
   * `modules.nixos.base`
     * Critically important stuff that each host should at least have
-## utility
+### utility
 * This is mostly just house keeping stuff, and meta related things like helper libraries.
-## +hostname
+### +hostname
 * Where `modules.nixos.hostname` is declared and imports are added. 
-## README.md
+### README.md
 * You're reading it. 
-## home.nix
+### home.nix
 * Not exactly what you might think, this does not live in home manager, but simply configures it and some other things. 
-## nixosConfigurations.nix
+### nixosConfigurations.nix
 * The system configurations for this flake. Every host will have an entry here. 
