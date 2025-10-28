@@ -1,5 +1,5 @@
 # △ NixOS Config : DENDRITIC △
-- Non-dendritic configuration now lives on the #legacy branch.
+- Non-dendritic configuration now lives on the [legacy](https://github.com/argosnothing/nixos-config/tree/legacy) branch. 
 - Dendritic config based around import-tree and flake parts, with an emphasis on blurring the lines between home and system.
 - If you are one of those mentioned in the credits here and don't want to be mentioned, just let me know.
 
