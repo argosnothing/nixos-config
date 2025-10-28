@@ -36,8 +36,8 @@
       autoEnable = true;
       targets.grub.enable = false;
       inherit polarity;
-      #inherit base16Scheme;
-      base16Scheme = ./themes/thorn/dark-cold.yaml;
+      inherit base16Scheme;
+      #base16Scheme = ./themes/thorn/dark-cold.yaml;
       icons = {
         enable = true;
         inherit (config.my.icons) package;
