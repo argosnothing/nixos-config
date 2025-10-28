@@ -18,6 +18,7 @@
       spotify-player
       spicetify
       zellij
+      audacity
     ];
     my = {
       fonts.size = 11;

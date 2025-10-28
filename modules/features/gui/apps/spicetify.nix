@@ -1,11 +1,8 @@
-{
-  flake.modules.nixos.spicetify = {inputs, pkgs, ...}:{
-    hm = {
-      imports = [ inputs.spicetify-nix.homeManagerModules.default];
+{inputs, ...}: {
+  flake.modules.nixos.spicetify = {
+    imports = [inputs.spicetify-nix.nixosModules.default];
+    programs.spicetify = {
+      enable = true;
     };
-    programs.spicetify = 
-      let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-      in {enable = true; theme = spicePkgs.themes.catpuccin;};
   };
 }
