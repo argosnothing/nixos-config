@@ -1,11 +1,11 @@
 # Modules
 
-## critical
+#### critical
 * Important Utilities that need to be included in my configs, most tend to be under `modules.nixos.critical`
 * Other important modules
   * `modules.nixos.grub`
   * `modules.nixos.uefi`
-## features
+#### features
 * Top level dir of general features, apps, window managers, shell utilities, etc.
 ## hardware
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
