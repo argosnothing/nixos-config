@@ -11,6 +11,7 @@
       kitty
       discord
       work
+      zwift
       steam
       firefox
       nemo

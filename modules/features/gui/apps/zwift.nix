@@ -1,9 +1,5 @@
-{
-  flake.modules.nixos.zwift = {
-    config,
-    inputs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.zwift = {config, ...}: {
     imports = [inputs.zwift.nixosModules.zwift];
     my = {
       persist = {

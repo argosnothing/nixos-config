@@ -1,10 +1,6 @@
 {
   flake.modules.nixos.xfce = {
     services = {
-      displayManager = {
-        ly.enable = true;
-        defaultSession = "xfce";
-      };
       xserver = {
         enable = true;
         desktopManager = {
