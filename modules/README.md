@@ -1,6 +1,6 @@
 # Modules
 
-#### critical
+### critical
 * Important Utilities that need to be included in my configs, most tend to be under `modules.nixos.critical`
 * Other important modules
   * `modules.nixos.grub`
