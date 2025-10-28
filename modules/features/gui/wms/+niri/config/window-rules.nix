@@ -26,6 +26,15 @@
       {
         matches = [
           {
+            title = "RuneLite";
+          }
+        ];
+        open-floating = true;
+        opacity = 1.0;
+      }
+      {
+        matches = [
+          {
             title = "Kando Menu";
           }
         ];

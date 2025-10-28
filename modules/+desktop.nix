@@ -19,6 +19,7 @@
       spicetify
       zellij
       audacity
+      flatpak
     ];
     my = {
       fonts.size = 11;

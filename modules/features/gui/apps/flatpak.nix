@@ -1,20 +1,14 @@
-{
+{inputs, ...}: {
   flake.modules.nixos.flatpak = {
-    inputs,
-    lib,
-    config,
-    ...
-  }: {
     imports = [
       inputs.nix-flatpak.nixosModules.nix-flatpak
     ];
     xdg.portal.enable = true;
-
-    environment.persistence."/persist" = lib.mkIf config.my.persist.enable {
-      directories = [
-        "/var/lib/flatpak"
-      ];
-    };
+    my.persist.root.directories = ["/var/lib/flatpkak"];
+    my.persist.home.directories = [
+      ".local/share/bolt-launcher"
+      ".config/bolt-launcher"
+    ];
 
     services.flatpak = {
       enable = true;
