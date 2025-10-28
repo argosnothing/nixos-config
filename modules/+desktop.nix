@@ -16,6 +16,7 @@
       firefox
       nemo
       spotify-player
+      spicetify
       zellij
     ];
     my = {
