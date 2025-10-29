@@ -31,6 +31,7 @@
       };
     };
     config = {
+      environment.systemPackages = [config.my.cursor.package];
       my.cursor = {
         name = "BreezeX-RosePine-Linux";
         package = pkgs.rose-pine-cursor;
