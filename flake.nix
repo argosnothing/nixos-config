@@ -50,18 +50,19 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     occult-theme.url = "github:/argosnothing/occult-theme";
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    silent-sddm = {
+      url = "github:/uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-grub-themes = {
       url = "github:jeslie0/nixos-grub-themes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nix-flatpak = {
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
