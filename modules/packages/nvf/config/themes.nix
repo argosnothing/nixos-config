@@ -1,19 +1,24 @@
 {config, ...}: let
   inherit (config.flake) packages;
 in {
-  flake.modules.nvf.themes = {pkgs, ...}: let
+  flake.modules.nvf.default = {pkgs, ...}: let
     inherit (pkgs) vimPlugins;
   in {
     vim = {
-      extraPlugins = {
-        ayu = {
-          package = vimPlugins.neovim-ayu;
-          setup = ''
-            require('ayu').setup{}
-            vim.cmd.colorscheme("ayu")
-          '';
-        };
+      theme = {
+        enable = true;
+        name = "rose-pine";
+        style = "main";
       };
+      #extraPlugins = {
+      #  ayu = {
+      #    package = vimPlugins.neovim-ayu;
+      #    setup = ''
+      #      require('rose-pine').setup{}
+      #      vim.cmd.colorscheme("rose-pine")
+      #    '';
+      #  };
+      #};
       lazy.plugins = {
         # Custom packages I added and overlaid
         "kanso-nvim".package = packages.${pkgs.system}.kanso-nvim;

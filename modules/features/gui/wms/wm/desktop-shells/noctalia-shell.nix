@@ -7,6 +7,24 @@
         name = "noctalia-shell";
       };
     };
+    #hj.files.".config/noctalia/colors.json".text = ''
+    #  {
+    #    "mError": "#FF5B61",
+    #    "mOnError": "#152326",
+    #    "mOnPrimary": "#152326",
+    #    "mOnSecondary": "#152326",
+    #    "mOnSurface": "#DBD0C6",
+    #    "mOnSurfaceVariant": "#91A4AD",
+    #    "mOnTertiary": "#DBD0C6",
+    #    "mOutline": "#568270",
+    #    "mPrimary": "#A7CBEA",
+    #    "mSecondary": "#9DC6A9",
+    #    "mShadow": "#152326",
+    #    "mSurface": "#152326",
+    #    "mSurfaceVariant": "#38524F",
+    #    "mTertiary": "#D59CCE"
+    #  }
+    #'';
     hm = {pkgs, ...}: {
       home.packages =
         [
