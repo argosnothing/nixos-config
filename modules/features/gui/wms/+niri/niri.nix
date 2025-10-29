@@ -19,6 +19,10 @@
       }
     ];
   in {
+    my.icons = {
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine";
+    };
     nixpkgs.overlays = [inputs.niri.overlays.niri];
     imports =
       [inputs.niri.nixosModules.niri]
