@@ -11,6 +11,8 @@
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
 ### options
 * Options that the rest of the system can expect to always be present. `modules.nixos.options` and `flake.settings` for flake level options
+### overlays
+* I still don't really understand these. `flake.overlays.default`
 ### packages
 * Derivations that I need to build as part of my system configuration.
 ### presets
