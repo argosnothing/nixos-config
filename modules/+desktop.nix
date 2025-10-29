@@ -20,6 +20,7 @@
       zellij
       audacity
       flatpak
+      via
     ];
     my = {
       fonts.size = 11;
