@@ -33,7 +33,7 @@
     my.stylix.enable = true;
     stylix = {
       enable = true;
-      autoEnable = false;
+      autoEnable = true;
       targets.grub.enable = false;
       inherit polarity;
       inherit base16Scheme;
