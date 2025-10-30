@@ -7,7 +7,8 @@
     imports = with config.flake.modules.nixos; [
       #
       # WMS
-      niri
+      #niri
+      oxwm
       #xfce
 
       # Apps
