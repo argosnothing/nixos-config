@@ -7,9 +7,8 @@
     imports = with config.flake.modules.nixos; [
       #
       # WMS
-      #niri
-      xfce
-      stylix
+      niri
+      #xfce
 
       # Apps
       firefox
@@ -23,11 +22,11 @@
       is-vm = false;
       monitors = [
         {
-          name = "Virtual-1";
+          name = "eDP-1";
           is-primary = true;
           dimensions = {
-            width = 500;
-            height = 500;
+            width = 1920;
+            height = 1080;
           };
           position = {
             x = 0;
