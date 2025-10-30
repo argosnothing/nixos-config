@@ -14,12 +14,13 @@ in {
       stylix
     ];
   in {
+    imports =
+      [inputs.oxwm.nixosModules.default]
+      ++ nixos-modules;
     services.xserver = {
       enable = true;
       windowManager.oxwm.enable = true;
     };
-    imports =
-      [inputs.oxwm.nixosModules.default]
-      ++ nixos-modules;
+    my.persist.home.directories = [".config/oxwm"];
   };
 }
