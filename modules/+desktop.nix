@@ -1,5 +1,6 @@
 {config, ...}: {
-  flake.modules.nixos.desktop = {
+  flake.modules.nixos.desktop = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [transmission_4];
     imports = with config.flake.modules.nixos; [
       base
       impermanence
@@ -21,6 +22,8 @@
       audacity
       flatpak
       via
+      plex
+      mullvad
     ];
     my = {
       fonts.size = 11;
