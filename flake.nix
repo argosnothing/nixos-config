@@ -48,7 +48,7 @@
     niri.url = "github:sodiboo/niri-flake";
     oxwm = {
       url = "github:tonybanters/oxwm";
-      inputs.nixpkgs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";

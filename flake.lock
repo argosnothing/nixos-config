@@ -581,18 +581,19 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "quickshell": "quickshell",
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1761824384,
-        "narHash": "sha256-gD7FMput033n27r1n0LofkhKGX1zbgcj3UhiLW6qTX8=",
-        "owner": "Michael-C-Buckley",
+        "lastModified": 1761850732,
+        "narHash": "sha256-GJPyhX/2VmkkQa/EOMCSTUnSgXibOOQBGoS7eCQYgHI=",
+        "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "6034b981843e4227d188dc95f742732e73b74e9e",
+        "rev": "691b2e3a7d95ce0b09c019ee4cd60b407b954c43",
         "type": "github"
       },
       "original": {
-        "owner": "Michael-C-Buckley",
+        "owner": "noctalia-dev",
         "repo": "noctalia-shell",
         "type": "github"
       }
@@ -661,6 +662,47 @@
         "type": "github"
       }
     },
+    "oxwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761768650,
+        "narHash": "sha256-VM3zgKbo0rTHO0bdlbAYOkHU23gNECpijXnXRYDsTJg=",
+        "owner": "tonybanters",
+        "repo": "oxwm",
+        "rev": "de3b6a6b900d2f2c792f69a5f24b91a74ed97dd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tonybanters",
+        "repo": "oxwm",
+        "type": "github"
+      }
+    },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "noctalia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761821581,
+        "narHash": "sha256-nLuc6jA7z+H/6bHPEBSOYPbz7RtvNCZiTKmYItJuBmM=",
+        "ref": "refs/heads/master",
+        "rev": "db1777c20b936a86528c1095cbcb1ebd92801402",
+        "revCount": 699,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -677,6 +719,7 @@
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
         "occult-theme": "occult-theme",
+        "oxwm": "oxwm",
         "silent-sddm": "silent-sddm",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
