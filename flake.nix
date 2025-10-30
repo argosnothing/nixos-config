@@ -46,8 +46,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    #noctalia-shell = {
+    #  url = "github:noctalia-dev/noctalia-shell";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:Michael-C-Buckley/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     occult-theme.url = "github:/argosnothing/occult-theme";

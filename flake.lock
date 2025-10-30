@@ -581,19 +581,18 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "quickshell": "quickshell",
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1761445338,
-        "narHash": "sha256-B3LvmwFT903ehmWDqpdtURUVMMwIopsMSSHVNQkI3iU=",
-        "owner": "noctalia-dev",
+        "lastModified": 1761824384,
+        "narHash": "sha256-gD7FMput033n27r1n0LofkhKGX1zbgcj3UhiLW6qTX8=",
+        "owner": "Michael-C-Buckley",
         "repo": "noctalia-shell",
-        "rev": "c5acc77fc91faebfe8138fd1db5f5d253e4b05fa",
+        "rev": "6034b981843e4227d188dc95f742732e73b74e9e",
         "type": "github"
       },
       "original": {
-        "owner": "noctalia-dev",
+        "owner": "Michael-C-Buckley",
         "repo": "noctalia-shell",
         "type": "github"
       }
@@ -660,27 +659,6 @@
         "owner": "argosnothing",
         "repo": "occult-theme",
         "type": "github"
-      }
-    },
-    "quickshell": {
-      "inputs": {
-        "nixpkgs": [
-          "noctalia-shell",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1753595452,
-        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
-        "ref": "refs/heads/master",
-        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
-        "revCount": 665,
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       }
     },
     "root": {
