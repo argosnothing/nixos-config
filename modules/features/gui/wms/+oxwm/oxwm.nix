@@ -5,7 +5,7 @@
 }: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.oxwm = let
+  flake.modules.nixos.oxwm = {pkgs, ...}: let
     nixos-modules = with flake.modules.nixos; [
       ly
       cursor
@@ -14,8 +14,13 @@ in {
       stylix
     ];
   in {
+    environment.systemPackages = with pkgs; [
+      dmenu
+    ];
     imports =
-      [inputs.oxwm.nixosModules.default]
+      [
+        inputs.oxwm.nixosModules.default
+      ]
       ++ nixos-modules;
     services.xserver = {
       enable = true;
