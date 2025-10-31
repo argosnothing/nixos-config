@@ -2,9 +2,6 @@
   flake.modules.nixos.desktop = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [transmission_4];
     imports = with config.flake.modules.nixos; [
-      base
-      impermanence
-      uefi
       niri
       kitty
       discord
@@ -21,6 +18,11 @@
       via
       plex
       mullvad
+
+
+      uefi
+      base
+      impermanence
     ];
     my = {
       fonts.size = 11;
