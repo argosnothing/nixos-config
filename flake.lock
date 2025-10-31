@@ -1094,11 +1094,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1760621857,
-        "narHash": "sha256-CchDx/SqFkdZxtJkJWqm9AQJh74JyZpfDQio/E7ZG9s=",
+        "lastModified": 1761608711,
+        "narHash": "sha256-VdSgvucFRwIpTtGfS8Mvl2VQqjG16lumkfkADKT7RpY=",
         "owner": "netbrain",
         "repo": "zwift",
-        "rev": "4a58e73c9279d99d3d817037706ab708759f57d3",
+        "rev": "7185a1d1ecf99da807c5a234fc66adbf7b8e4c92",
         "type": "github"
       },
       "original": {

@@ -1,5 +1,8 @@
 {config, ...}: {
   flake.modules.nixos.desktop = {pkgs, ...}: {
+    hardware = {
+      bluetooth.enable = true;
+    };
     environment.systemPackages = with pkgs; [transmission_4-gtk];
     imports = with config.flake.modules.nixos; [
       niri
