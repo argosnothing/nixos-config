@@ -47,7 +47,8 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     oxwm = {
-      url = "github:tonybanters/oxwm";
+      #url = "github:tonybanters/oxwm";
+      url = "github:argosnothing/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-shell = {

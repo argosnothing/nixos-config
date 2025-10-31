@@ -14,10 +14,12 @@
       # Apps
       firefox
 
+
       base
       impermanence
       grub
       battery
+      touchpad
     ];
     my = {
       is-vm = false;

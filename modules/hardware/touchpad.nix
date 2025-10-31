@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.laptop = {pkgs, ...}: {
+  flake.modules.nixos.touchpad = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       libinput
     ];
