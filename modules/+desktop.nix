@@ -6,9 +6,6 @@
       impermanence
       uefi
       niri
-      #xfce
-
-      #apps
       kitty
       discord
       work

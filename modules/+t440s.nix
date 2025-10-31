@@ -5,15 +5,8 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #
-      # WMS
-      #niri
       oxwm
-      #xfce
-
-      # Apps
       firefox
-
       base
       impermanence
       grub

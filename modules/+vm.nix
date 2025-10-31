@@ -5,8 +5,6 @@
       impermanence
       uefi
       niri
-      #xfce
-
       firefox
     ];
     my = {
