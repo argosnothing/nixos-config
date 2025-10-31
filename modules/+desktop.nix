@@ -1,6 +1,6 @@
 {config, ...}: {
   flake.modules.nixos.desktop = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [transmission_4];
+    environment.systemPackages = with pkgs; [transmission_4-gtk];
     imports = with config.flake.modules.nixos; [
       niri
       kitty
