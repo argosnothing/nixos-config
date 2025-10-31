@@ -52,6 +52,7 @@
             app-id = "Wfica";
           }
         ];
+        opacity = .99;
         open-fullscreen = false;
         open-maximized = true;
         block-out-from = "screen-capture";

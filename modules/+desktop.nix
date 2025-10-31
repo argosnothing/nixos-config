@@ -19,7 +19,6 @@
       plex
       mullvad
 
-
       uefi
       base
       impermanence

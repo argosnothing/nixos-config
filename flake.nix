@@ -71,7 +71,6 @@
     nix-flatpak = {
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
-
     zwift.url = "github:netbrain/zwift";
   };
 }
