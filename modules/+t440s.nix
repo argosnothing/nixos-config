@@ -5,8 +5,9 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #oxwm
       niri
+      zellij
+      spicetify
       firefox
       base
       impermanence
