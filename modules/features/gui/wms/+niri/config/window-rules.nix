@@ -11,7 +11,7 @@
           bottom-left = radius;
           bottom-right = radius;
         };
-        opacity = 0.95;
+        opacity = 0.99;
         clip-to-geometry = true;
         draw-border-with-background = false;
       }
@@ -63,7 +63,6 @@
             app-id = "kitty";
           }
         ];
-        opacity = 0.95;
       }
     ];
   };

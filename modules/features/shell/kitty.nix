@@ -2,7 +2,7 @@
   flake.modules.nixos.kitty = {config, ...}: let
     inherit (config.my.fonts) size;
   in {
-    hm = _: {
+    hm = {
       programs.kitty = {
         enable = true;
         shellIntegration.enableFishIntegration = true;

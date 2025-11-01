@@ -5,7 +5,8 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      oxwm
+      #oxwm
+      niri
       firefox
       base
       impermanence
