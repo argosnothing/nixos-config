@@ -19,7 +19,9 @@ in {
       nh
       misc-scripts
       starship
+
       git
+      rust
     ];
     home-modules = [
       {
