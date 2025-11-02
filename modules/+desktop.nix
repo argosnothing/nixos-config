@@ -21,7 +21,6 @@
       via
       plex
       mullvad
-      vscode
 
       uefi
       base
