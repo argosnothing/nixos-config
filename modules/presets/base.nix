@@ -28,7 +28,7 @@ in {
         ];
         hm.home.packages = with flake.packages.${pkgs.system}; [
           nvf
-          zeditor
+          #zeditor
         ];
       }
     ];

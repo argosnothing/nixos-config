@@ -9,7 +9,7 @@
       kitty
       discord
       work
-      zwift
+      #zwift - broke
       steam
       firefox
       nemo
@@ -21,6 +21,7 @@
       via
       plex
       mullvad
+      vscode
 
       uefi
       base
