@@ -62,7 +62,10 @@
 
       my.persist.home = {
         directories = [".config/noctalia"];
-        cache.directories = [".cache/noctalia"];
+        cache.directories = [
+          ".cache/noctalia"
+          ".cache/quickshell"
+        ];
       };
     };
   };

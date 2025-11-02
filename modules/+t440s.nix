@@ -9,6 +9,8 @@
       zellij
       spicetify
       firefox
+      work
+
       base
       impermanence
       grub
