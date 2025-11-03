@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."themes/rose-pine" = {pkgs, ...}: {
+  flake.modules.nixos.rose-pine = {pkgs, ...}: {
     my = {
       theme = {
         name = "rose-pine";
@@ -19,7 +19,7 @@
     in {
       gtk = {
         enable = true;
-        theme.name = "rose-pine";
+        theme.name = mkForce "rose-pine";
         theme.package = mkForce pkgs.rose-pine-gtk-theme;
       };
     };

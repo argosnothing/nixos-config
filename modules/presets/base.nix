@@ -19,6 +19,7 @@ in {
       nh
       misc-scripts
       starship
+      zed
 
       git
       rust
@@ -30,7 +31,6 @@ in {
         ];
         hm.home.packages = with flake.packages.${pkgs.system}; [
           nvf
-          #zeditor
         ];
       }
     ];

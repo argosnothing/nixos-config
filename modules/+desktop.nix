@@ -21,7 +21,7 @@
       via
       plex
       mullvad
-      nixos."themes/oxocarbon"
+      rose-pine
 
       uefi
       base
