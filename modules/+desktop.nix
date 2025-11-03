@@ -21,6 +21,7 @@
       via
       plex
       mullvad
+      nixos."themes/oxocarbon"
 
       uefi
       base
