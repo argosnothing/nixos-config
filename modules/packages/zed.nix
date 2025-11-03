@@ -12,6 +12,8 @@
       alejandra
       black
       gofumpt
+      lldb
+      gdb
 
       # Build tools
       python3
