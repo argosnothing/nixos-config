@@ -29,7 +29,6 @@
           };
           name = mkOption {
             type = str;
-            default = "rose-pine";
           };
           style = mkOption {
             type = nullOr str;

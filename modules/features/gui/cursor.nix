@@ -32,10 +32,6 @@
     };
     config = {
       environment.systemPackages = [config.my.cursor.package];
-      my.cursor = {
-        name = "BreezeX-RosePine-Linux";
-        package = pkgs.rose-pine-cursor;
-      };
       environment.sessionVariables = {
         XCURSOR_THEME = config.my.cursor.name;
         XCURSOR_SIZE = config.my.cursor.size;
