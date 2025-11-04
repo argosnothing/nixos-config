@@ -60,6 +60,11 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      #url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:argosnothing/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     silent-sddm = {
       url = "github:/uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
