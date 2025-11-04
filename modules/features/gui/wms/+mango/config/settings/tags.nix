@@ -1,1 +1,1 @@
-''''
+{flake.modules.nixos.mango = {};}
