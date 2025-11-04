@@ -4,7 +4,7 @@
       inputs.dms.nixosModules.greeter
     ];
     my.persist.root.directories = [
-      "var/lib/dmsgreeter"
+      "/var/lib/dmsgreeter"
     ];
     programs.dankMaterialShell.greeter = {
       enable = true;
