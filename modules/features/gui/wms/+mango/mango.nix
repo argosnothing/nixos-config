@@ -20,6 +20,9 @@
       ]
       ++ nixos-modules;
     programs.mango.enable = true;
+    my.persist.home.directories = [
+      ".config/DankMaterialShell"
+    ];
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;

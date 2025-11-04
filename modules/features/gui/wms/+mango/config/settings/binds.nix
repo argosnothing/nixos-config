@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.mango = {lib, ...}: {
+  flake.modules.nixos.mango = {lib, config, ...}: {
     my.wm.mango.settings = lib.mkAfter [
       ''
         # reload config
@@ -8,7 +8,7 @@
         bind=ALT+CTRL+SHIFT,s,spawn,snip
         bind=ALT+CTRL,v,spawn,record-region-start
         bind=ALT+CTRL+SHIFT,v,spawn,record-region-stop
-        bind=ALT,space,spawn,rofi -show drun -show-icons
+        bind=ALT,space,spawn,${config.my.desktop-shells.launcherCommand}
         bind=ALT,Return,spawn,kitty
 
         # exit

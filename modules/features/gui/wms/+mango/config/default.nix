@@ -24,9 +24,7 @@
         autostart_sh = ''
           set +e
           dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
-          swaync &
-          setbg &
-          waybar &
+          ${config.my.desktop-shells.execCommand}
           echo "Xft.dpi:140" | xrdb -merge
           gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
           # cursor size
