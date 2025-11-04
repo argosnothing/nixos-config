@@ -6,7 +6,7 @@
     };
     imports = with config.flake.modules.nixos; [
       work
-      niri
+      mango
       rose-pine
       firefox
       base
