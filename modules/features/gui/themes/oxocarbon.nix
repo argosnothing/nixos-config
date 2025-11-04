@@ -31,26 +31,26 @@
       };
     };
     hj.files.".config/noctalia/colors.json".text = ''
-          {
-      mPrimary          =${colors.base0D};
-      mSecondary        =${colors.base0B};
-      mTertiary         =${colors.base0E};
-      mError            =${colors.base08};
+      {
+        "mPrimary": "${colors.base0D}",
+        "mSecondary": "${colors.base0B}",
+        "mTertiary": "${colors.base0E}",
+        "mError": "${colors.base08}",
 
-      mOnPrimary        =${colors.base00};
-      mOnSecondary      =${colors.base00};
-      mOnTertiary       =${colors.base00};
-      mOnError          =${colors.base00};
+        "mOnPrimary": "${colors.base00}",
+        "mOnSecondary": "${colors.base00}",
+        "mOnTertiary": "${colors.base00}",
+        "mOnError": "${colors.base00}",
 
-      mSurface          =${colors.base00};
-      mOnSurface        =${colors.base05};
+        "mSurface": "${colors.base00}",
+        "mOnSurface": "${colors.base05}",
 
-      mSurfaceVariant   =${colors.base02};
-      mOnSurfaceVariant =${colors.base06};
-      mOutline          =${colors.base03};
+        "mSurfaceVariant": "${colors.base02}",
+        "mOnSurfaceVariant": "${colors.base06}",
+        "mOutline": "${colors.base03}",
 
-      mShadow           =${colors.base00};
-          }
+        "mShadow": "${colors.base00}"
+      }
     '';
     hm = {
       stylix.targets = {

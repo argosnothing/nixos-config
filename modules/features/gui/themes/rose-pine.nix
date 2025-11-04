@@ -1,8 +1,17 @@
 {
-  flake.modules.nixos.rose-pine = {pkgs, ...}: {
+  flake.modules.nixos.rose-pine = {
+    pkgs,
+    config,
+    ...
+  }: let
+    inherit (config.my.theme) polarity;
+  in {
     my = {
       theme = {
-        name = "rose-pine";
+        name =
+          if polarity == "dark"
+          then "rose-pine"
+          else "rose-pine-dawn";
       };
       cursor = {
         name = "BreezeX-RosePine-Linux";
