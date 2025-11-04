@@ -60,10 +60,23 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dms = {
       #url = "github:AvengeMedia/DankMaterialShell";
       url = "github:argosnothing/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        dgop.follows = "dgop";
+        dms-cli.follows = "dms-cli";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     silent-sddm = {
       url = "github:/uiriansan/SilentSDDM";
