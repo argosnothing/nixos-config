@@ -6,7 +6,7 @@
     services.libinput = {
       enable = true;
       touchpad = {
-        accelSpeed = "-0.6";
+        accelSpeed = ".55";
         accelProfile = "flat";
         naturalScrolling = false;
         tapping = true;

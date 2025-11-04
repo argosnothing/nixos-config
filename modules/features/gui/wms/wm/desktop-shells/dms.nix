@@ -2,10 +2,21 @@
   flake.modules.nixos.dms = {
     imports = [
     ];
-    my.desktop-shells = {
-      name = "dms";
-      execCommand = "dms run";
-      launcherCommand = "dms ipc call spotlight toggle";
+    my = {
+      persist = {
+        home.cache.directories = [
+          ".cache/DankMaterialShell"
+        ];
+        home.directories = [
+          ".config/DankMaterialShell"
+          ".local/state/DankMaterialShell"
+        ];
+      };
+      desktop-shells = {
+        name = "dms";
+        execCommand = "dms run";
+        launcherCommand = "dms ipc call spotlight toggle";
+      };
     };
     hm = {
       imports = [
