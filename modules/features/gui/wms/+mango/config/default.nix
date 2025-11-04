@@ -2,11 +2,11 @@
   flake.modules.nixos.mango = {config, ...}: let
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
   in {
-    imports = [
-      inputs.mango.hmModules.mango
-    ];
     environment.sessionVariables.GTK_USE_PORTAL = "1";
     hm = {pkgs, ...}: {
+      imports = [
+        inputs.mango.hmModules.mango
+      ];
       services.swaync.enable = true;
       xdg.portal = {
         enable = true;
