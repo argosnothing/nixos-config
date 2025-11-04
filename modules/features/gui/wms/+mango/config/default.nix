@@ -18,13 +18,6 @@
           xdg-desktop-portal
         ];
       };
-      home.packages = with pkgs; [
-        pavucontrol
-        swaynotificationcenter
-        swaybg
-        xorg.xrdb
-        waybar
-      ];
       wayland.windowManager.mango = {
         enable = true;
         settings = mango-settings;
