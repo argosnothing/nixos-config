@@ -5,7 +5,8 @@
     };
     environment.systemPackages = with pkgs; [transmission_4-gtk];
     imports = with config.flake.modules.nixos; [
-      niri
+      #niri
+      mango
       kitty
       discord
       work
