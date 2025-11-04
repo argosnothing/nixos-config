@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.mango = {lib, config, ...}: {
+  flake.modules.nixos.mango = {
+    lib,
+    config,
+    ...
+  }: {
     my.wm.mango.settings = lib.mkAfter [
       ''
         # reload config
