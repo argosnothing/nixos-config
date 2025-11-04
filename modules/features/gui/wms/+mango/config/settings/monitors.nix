@@ -25,7 +25,7 @@
   in {
     my.wm.mango.settings = lib.mkAfter [
       ''
-        ${concatStringsSep "\n" (map monitor-to-rule config.my.modules.monitors)}
+        ${concatStringsSep "\n" (map monitor-to-rule config.my.monitors)}
       ''
     ];
   };
