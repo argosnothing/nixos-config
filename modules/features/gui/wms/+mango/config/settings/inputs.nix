@@ -4,7 +4,7 @@
       ''
         # keyboard
         repeat_rate=25
-        repeat_delay=600
+        repeat_delay=400
         numlockon=1
         xkb_rules_layout=us
 
@@ -24,7 +24,7 @@
         # need relogin to make it apply
         mouse_natural_scrolling=0
         accel_profile=0
-        accel_speed=0.55
+        accel_speed=-0.55
       ''
     ];
   };
