@@ -7,6 +7,7 @@
     imports = with config.flake.modules.nixos; [
       work
       niri
+      rose-pine
       firefox
       base
       impermanence
