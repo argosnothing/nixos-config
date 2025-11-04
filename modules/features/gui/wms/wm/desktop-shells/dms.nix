@@ -4,7 +4,7 @@
     ];
     hm = {
       imports = [
-        inputs.dms.homeModules.DankMaterialShell.default
+        inputs.dms.homeModules.dankMaterialShell.default
       ];
       programs.dankMaterialShell = {
         enable = true;
