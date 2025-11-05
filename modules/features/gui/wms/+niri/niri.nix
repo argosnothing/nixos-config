@@ -11,7 +11,6 @@
       icons
       gtk
       stylix
-      noctalia-shell
     ];
     home-modules = [
       {

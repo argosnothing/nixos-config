@@ -12,6 +12,14 @@
       {
         matches = [
           {
+            namespace = "^quickshell$";
+          }
+        ];
+        place-within-backdrop = true;
+      }
+      {
+        matches = [
+          {
             namespace = "^quickshell-overview$";
           }
         ];

@@ -6,6 +6,8 @@
     };
     imports = with config.flake.modules.nixos; [
       niri
+      dms
+      #mango
       #xfce
       zellij
       spicetify
