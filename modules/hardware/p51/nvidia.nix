@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.p51 = {config, ...}: {
+  flake.modules.nixos.none = {config, ...}: {
     # P51-specific NVIDIA Quadro M2200 Mobile configuration
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = ["nvidia"];
