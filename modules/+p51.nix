@@ -5,11 +5,12 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #niri
-      xfce
+      niri
+      #xfce
       zellij
       spicetify
       firefox
+      rose-pine
 
       base
       impermanence
