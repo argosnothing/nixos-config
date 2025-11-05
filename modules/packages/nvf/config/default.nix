@@ -20,6 +20,9 @@
     vim.terminal = {
       toggleterm = {
         enable = true;
+        setupOpts = {
+          open_mapping = "[[<M-t>]]";
+        };
       };
     };
 

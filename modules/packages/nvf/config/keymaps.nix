@@ -4,7 +4,12 @@
       {
         key = "<C-t>";
         mode = "n";
-        action = ":ToggleTerm dir=%:p:h<CR>";
+        action = ":ToggleTerm dir=%:p:h direction=float <CR>";
+      }
+      {
+        key = "<Esc> <Esc>";
+        mode = "t";
+        action = "exit <CR>";
       }
       {
         key = "<C-o>";
