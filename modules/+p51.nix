@@ -5,7 +5,8 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      niri
+      #niri
+      xfce
       zellij
       spicetify
       firefox
