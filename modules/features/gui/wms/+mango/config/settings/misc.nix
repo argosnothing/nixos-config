@@ -16,6 +16,14 @@
         snap_distance=30
         cursor_size=24
         drag_tile_to_tile=1
+        env=DISPLAY,:11
+        # fcitx5 im
+        env=GTK_IM_MODULE,fcitx
+        env=QT_IM_MODULE,fcitx
+        env=SDL_IM_MODULE,fcitx
+        env=XMODIFIERS,@im=fcitx
+        env=GLFW_IM_MODULE,ibus
+        env=QT_QPA_PLATFORM,Wayland;xcb
       ''
     ];
   };

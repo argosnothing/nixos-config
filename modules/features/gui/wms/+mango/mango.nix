@@ -35,6 +35,7 @@
       pkgs.glib
       pkgs.xdg-utils
       pkgs.wf-recorder
+      pkgs.xwayland-satellite
     ];
   };
 }

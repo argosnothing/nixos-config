@@ -3,7 +3,10 @@
     hardware = {
       bluetooth.enable = true;
     };
-    environment.systemPackages = with pkgs; [transmission_4-gtk];
+    environment.systemPackages = with pkgs; [
+      transmission_4-gtk
+      wdisplays
+    ];
     imports = with config.flake.modules.nixos; [
       niri
       #mango

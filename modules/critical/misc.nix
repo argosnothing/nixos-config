@@ -46,11 +46,11 @@
         brightnessctl
       ];
 
-      # Environment variables for Electron apps
       sessionVariables = {
+        #WAYLAND_DISPLAY = "wayland-0";
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
-        NIXOS_OZONE_WL = "1"; # Enable Wayland for Electron apps
-        ELECTRON_ENABLE_LOGGING = "0"; # Reduce verbose output
+        NIXOS_OZONE_WL = "1";
+        ELECTRON_ENABLE_LOGGING = "0";
         EDITOR = "vim";
         VISUAL = "vim";
       };

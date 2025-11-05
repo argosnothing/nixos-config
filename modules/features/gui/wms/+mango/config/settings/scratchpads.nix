@@ -2,8 +2,8 @@
   flake.modules.nixos.mango = {lib, ...}: {
     my.wm.mango.settings = lib.mkAfter [
       ''
-          # DISCORD
-          # Niri has kinda made me realize i don't need this stuff
+        # DISCORD
+        # Niri has kinda made me realize i don't need this stuff
         #bind=ALT,q,toggle_named_scratchpad,vesktop,none,vesktop
         #windowrule=isnamedscratchpad:1,width:1280,height:800,appid:vesktop,isoverlay:1
 
