@@ -9,6 +9,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       niri
+      noctalia-shell
       #mango
       kitty
       discord
