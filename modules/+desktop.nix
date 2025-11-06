@@ -9,12 +9,10 @@
     ];
     imports = with config.flake.modules.nixos; [
       niri
-      noctalia-shell
-      #mango
+      dms
       kitty
       discord
       work
-      #zwift - broke
       steam
       firefox
       nemo
@@ -27,7 +25,6 @@
       plex
       mullvad
       rose-pine
-
       uefi
       base
       impermanence
