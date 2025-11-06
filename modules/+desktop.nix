@@ -30,6 +30,7 @@
       impermanence
     ];
     my = {
+      theme.polarity = "dark";
       fonts.size = 11;
       is-vm = false;
       monitors = [

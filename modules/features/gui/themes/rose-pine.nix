@@ -5,11 +5,12 @@
     ...
   }: let
     inherit (config.my.theme) polarity;
+    is-dark = polarity == "dark";
   in {
     my = {
       theme = {
         name =
-          if polarity == "dark"
+          if is-dark
           then "rose-pine"
           else "rose-pine-dawn";
       };
@@ -28,7 +29,10 @@
     in {
       gtk = {
         enable = true;
-        theme.name = mkForce "rose-pine";
+        theme.name =
+          if is-dark
+          then mkForce "rose-pine"
+          else mkForce "rose-pine-dawn";
         theme.package = mkForce pkgs.rose-pine-gtk-theme;
       };
     };
