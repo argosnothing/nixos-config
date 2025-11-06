@@ -6,8 +6,6 @@
   flake.modules.nixos.mango = {pkgs, ...}: let
     nixos-modules = with config.flake.modules.nixos; [
       wm
-      dms-greeter
-      dms
       cursor
       icons
       gtk
