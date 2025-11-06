@@ -7,7 +7,6 @@
     nixos-modules = with config.flake.modules.nixos; [
       wm
       nemo
-      sddm
       cursor
       icons
       gtk

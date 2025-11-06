@@ -5,12 +5,12 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #niri
-      mango
+      niri
       dms
       sddm
-      work
       rose-pine
+
+      work
       firefox
       base
       impermanence
