@@ -28,7 +28,7 @@ in {
         hm.imports = with flake.modules.homeManager; [
           options
         ];
-        hm.home.packages = with flake.packages.${pkgs.system}; [
+        hm.home.packages = with flake.packages.${pkgs.stdenv.hostPlatform.system}; [
           nvf
         ];
       }

@@ -13,11 +13,12 @@ in {
     config,
     ...
   }: let
+    inherit (pkgs.stdenv.hostPlatform) system;
     bg = pkgs.fetchurl {
       url = "https://raw.githubusercontent.com/argosnothing/nixos-config/refs/heads/main/.media/wallpapers/current.jpg";
       hash = "sha256-QnMmuiwZsIBK4lvBESVI8UFbXJgJy+mrWbXaGim8BBc=";
     };
-    sddm-theme = inputs.silent-sddm.packages.${pkgs.system}.default.override {
+    sddm-theme = inputs.silent-sddm.packages.${system}.default.override {
       theme = "rei";
       extraBackgrounds = [bg];
       theme-overrides = {

@@ -59,19 +59,18 @@ in {
           ytfzf
           desktop-file-utils
           nix-direnv
-          nix-direnv-flakes
           direnv
           bolt-launcher
           mpv
           bash
           vulkan-tools
-          inputs.self.packages.${pkgs.system}.nvf
-          inputs.self.packages.${pkgs.system}.ns
+          inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
+          inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
         ];
       };
 
       hj.systemd.enable = false;
-      hjem.linker = inputs.hjem.packages.${pkgs.system}.smfh;
+      hjem.linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
       hjem.users.${flake.settings.username} = {
         enable = true;
         user = flake.settings.username;

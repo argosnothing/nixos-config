@@ -28,7 +28,7 @@
     hm = {pkgs, ...}: {
       home.packages =
         [
-          inputs.noctalia-shell.packages.${pkgs.system}.default
+          inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default
         ]
         ++ (with pkgs; [
           kdePackages.qt5compat

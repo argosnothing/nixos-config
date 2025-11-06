@@ -1,5 +1,7 @@
 {inputs, ...}: {
-  flake.modules.nixos.grub = {pkgs, ...}: {
+  flake.modules.nixos.grub = {pkgs, ...}: let
+    inherit (pkgs.stdenv.hostPlatform) system;
+  in {
     boot = {
       plymouth.enable = true;
       loader = {
@@ -8,7 +10,7 @@
           efiSupport = true;
           devices = ["nodev"];
         };
-        grub.theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
+        grub.theme = inputs.nixos-grub-themes.packages.${system}.nixos;
         efi.canTouchEfiVariables = true;
       };
       consoleLogLevel = 3;
