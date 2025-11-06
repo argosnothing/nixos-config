@@ -22,7 +22,6 @@ in {
       zed
 
       git
-      rust
     ];
     home-modules = [
       {

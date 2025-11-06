@@ -5,8 +5,9 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
+      niri
+      dms
       work
-      mango
       rose-pine
       firefox
       base
