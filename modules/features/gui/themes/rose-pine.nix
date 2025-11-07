@@ -31,11 +31,11 @@
     in
       lib.mkMerge [
         {
-          gtk = {
-            enable = true;
-            theme.name = mkForce theme-name;
-            theme.package = mkForce pkgs.rose-pine-gtk-theme;
-          };
+          #gtk = {
+          #  enable = true;
+          #  theme.name = mkForce theme-name;
+          #  theme.package = mkForce pkgs.rose-pine-gtk-theme;
+          #};
         }
         (lib.mkIf (config.programs.vesktop.enable or false) (let
           rose-pine-discord = pkgs.fetchFromGitHub {
@@ -49,6 +49,13 @@
         in {
           home.file.".config/vesktop/themes/${css-file}".source = "${rose-pine-discord}/dist/${css-file}";
         }))
+        (lib.mkIf (config.programs.firefox.enable or false) {
+          stylix.targets.firefox = {
+            profileNames = ["default"];
+            enable = true;
+            colorTheme.enable = true;
+          };
+        })
       ];
   };
 }
