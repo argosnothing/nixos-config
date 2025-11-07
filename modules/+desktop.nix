@@ -10,6 +10,7 @@
     imports = with config.flake.modules.nixos; [
       niri
       dms
+      sddm
       kitty
       discord
       work
