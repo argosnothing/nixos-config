@@ -1,5 +1,11 @@
-{
+{config, ...}: let
+  inherit (config) flake;
+in {
   flake.modules.nixos.xfce = {
+    imports = with flake.modules.nixos; [
+      cursor
+      stylix
+    ];
     services = {
       xserver = {
         enable = true;
