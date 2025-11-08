@@ -31,11 +31,11 @@
     in
       lib.mkMerge [
         {
-          #gtk = {
-          #  enable = true;
-          #  theme.name = mkForce theme-name;
-          #  theme.package = mkForce pkgs.rose-pine-gtk-theme;
-          #};
+          gtk = {
+            enable = true;
+            theme.name = mkForce theme-name;
+            theme.package = mkForce pkgs.rose-pine-gtk-theme;
+          };
         }
         (lib.mkIf (config.programs.vesktop.enable or false) (let
           rose-pine-discord = pkgs.fetchFromGitHub {
