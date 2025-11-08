@@ -8,26 +8,24 @@
       wdisplays
     ];
     imports = with config.flake.modules.nixos; [
+      # WM/Display manager of choice...
       niri
       dms
+
+      # Bundles
+      base
+      gui-apps
+
       sddm
-      kitty
-      discord
       work
-      steam
-      firefox
-      nemo
-      spotify-player
-      spicetify
       zellij
-      audacity
-      flatpak
       via
       plex
       mullvad
       rose-pine
+
+      # Critical other modules
       uefi
-      base
       impermanence
     ];
     my = {
