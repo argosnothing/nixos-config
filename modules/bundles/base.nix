@@ -19,8 +19,6 @@ in {
       nh
       misc-scripts
       starship
-      zed
-
       git
     ];
     home-modules = [

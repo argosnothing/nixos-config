@@ -7,6 +7,12 @@
   * `modules.nixos.uefi`
 ### features
 * Top level dir of general features, apps, window managers, shell utilities, etc.
+  * Window Managers/Desktops I support
+    * Niri `modules.nixos.niri`
+    * Mango `modules.nixos.mango`
+    * oxwm `modules.nixos.oxwm`
+    * Xfce `modules.nixos.xfce`
+
 ### hardware
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
 ### options
@@ -15,7 +21,7 @@
 * I still don't really understand these. `flake.overlays.default`
 ### packages
 * Derivations that I need to build as part of my system configuration.
-### presets
+### bundles
 * Module bundles that act as system presets.
   * `modules.nixos.base`
     * Critically important stuff that each host should at least have
