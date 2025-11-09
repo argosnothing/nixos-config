@@ -8,7 +8,7 @@ in {
       package = pkgs.mullvad-vpn;
     };
     my.persist.root.directories = [
-      /etc/mullvad-vpn
+      "/etc/mullvad-vpn"
     ];
   };
 }
