@@ -2,15 +2,18 @@
   flake.modules.nixos.rose-pine = {
     pkgs,
     config,
+    lib,
     ...
   }: let
     inherit (config.my.theme) polarity;
+    inherit (lib) mkForce;
     is-dark = polarity == "dark";
     theme-name =
       if is-dark
       then "rose-pine"
       else "rose-pine-dawn";
   in {
+    stylix.autoEnable = mkForce true;
     my = {
       theme = {
         name = theme-name;

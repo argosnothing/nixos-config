@@ -23,7 +23,7 @@
       plex
       mullvad
       transmission
-      rose-pine
+      #rose-pine
 
       # Critical other modules
       uefi
