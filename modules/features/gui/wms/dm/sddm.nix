@@ -7,7 +7,7 @@
 }: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.sddm = {
+  flake.modules.nixos.sddm-silent = {
     pkgs,
     lib,
     config,

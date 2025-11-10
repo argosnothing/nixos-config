@@ -15,7 +15,7 @@
       base
       gui-apps
 
-      sddm
+      sddm-silent
       work
       zellij
       via
