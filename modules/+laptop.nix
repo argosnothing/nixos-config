@@ -7,11 +7,12 @@
     imports = with config.flake.modules.nixos; [
       niri
       dms
-      sddm
+      sddm-silent
       rose-pine
 
       work
       base
+      gui-apps
       impermanence
       grub
       battery
