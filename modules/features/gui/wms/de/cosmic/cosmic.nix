@@ -1,7 +1,17 @@
 {
   flake.modules.nixos.cosmic = {
-    services.desktopManager.cosmic = {
-      enable = true;
+    my.persist = {
+      home.directories = [
+        ".config/cosmic"
+      ];
+    };
+    services = {
+      displayManager.cosmic-greeter = {
+        enable = true;
+      };
+      desktopManager.cosmic = {
+        enable = true;
+      };
     };
   };
 }
