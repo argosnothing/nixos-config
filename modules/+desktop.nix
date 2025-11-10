@@ -11,6 +11,7 @@
       niri
       dms
       sddm-silent
+      rose-pine
 
       # Bundles
       base
@@ -22,7 +23,6 @@
       plex
       mullvad
       transmission
-      #rose-pine
 
       # Critical other modules
       uefi
