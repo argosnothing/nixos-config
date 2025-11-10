@@ -10,7 +10,6 @@
       cursor
       icons
       gtk
-      stylix
     ];
     home-modules = [
       {

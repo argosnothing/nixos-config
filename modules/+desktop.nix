@@ -8,10 +8,9 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
-      cosmic
-      #niri
-      #dms
-      #sddm-silent
+      niri
+      dms
+      sddm-silent
 
       # Bundles
       base
