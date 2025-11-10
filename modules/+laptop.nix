@@ -11,7 +11,6 @@
       rose-pine
 
       work
-      firefox
       base
       impermanence
       grub
