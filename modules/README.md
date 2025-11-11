@@ -2,6 +2,7 @@
 
 ### critical
 * Important Utilities that need to be included in my configs, most tend to be under `modules.nixos.critical`
+* Hosts will not need to import the critical module, this is handled through the `modules.nixos.base` bundle under the bundles directory
 * Other important modules
   * `modules.nixos.grub`
   * `modules.nixos.uefi`
@@ -25,7 +26,7 @@
 ### bundles
 * Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not pollute my host module imports.
   * `modules.nixos.base`
-    * Critically important stuff that each host should at least have
+    * Critically important stuff that each host should at least have (where `modules.nixos.critical` is imported)
   * `modules.nixos.niri-bundle`
     * Niri bundle of my current fav niri setup
 ### utility
