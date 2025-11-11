@@ -56,10 +56,10 @@
         bind=ALT,g,toggleglobal
 
 
-        bind=ALT,1,comboview_spawn_on_empty,firefox,1
-        bind=ALT,2,comboview_spawn_on_empty,vesktop, 2
-        bind=ALT,3,comboview_spawn_on_empty,kitty,3
-        bind=ALT,4,comboview_spawn_on_empty,kitty,4
+        bind=ALT,1,comboview,1
+        bind=ALT,2,comboview,2
+        bind=ALT,3,comboview,3
+        bind=ALT,4,comboview,4
         bind=ALT,5,comboview,5
         bind=ALT,6,comboview,6
         bind=ALT,7,comboview,7
