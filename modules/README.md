@@ -2,7 +2,7 @@
 
 ### critical
 * Important Utilities that need to be included in my configs, most tend to be under `modules.nixos.critical`
-* Hosts will not need to import the critical module, this is handled through the `modules.nixos.base` bundle under the bundles directory
+* Hosts will not need to import the critical module directly, this is handled through the `modules.nixos.base` bundle under the bundles directory
 * Other important modules
   * `modules.nixos.grub`
   * `modules.nixos.uefi`
