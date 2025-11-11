@@ -9,7 +9,6 @@
       cursor
       icons
       gtk
-      stylix
     ];
   in {
     imports =
