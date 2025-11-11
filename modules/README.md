@@ -12,6 +12,7 @@
     * Mango `modules.nixos.mango`
     * oxwm `modules.nixos.oxwm`
     * Xfce `modules.nixos.xfce`
+    * Cosmic `modules.nixos.cosmic`
 
 ### hardware
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
@@ -22,9 +23,11 @@
 ### packages
 * Derivations that I need to build as part of my system configuration.
 ### bundles
-* Module bundles that act as system presets.
+* Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not polute my host module imports.
   * `modules.nixos.base`
     * Critically important stuff that each host should at least have
+  * `modules.nixos.niri-bundle`
+    * Niri bundle of my current fav niri setup
 ### utility
 * This is mostly just house keeping stuff, and meta related things like helper libraries.
 ### +hostname
