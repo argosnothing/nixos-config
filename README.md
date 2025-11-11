@@ -15,6 +15,10 @@
 * [nixosConfigurations.nix](modules/nixosConfigurations.nix)
   * [+mk-os.nix](modules/utility/+mk-os.nix) (Implementation for linux host create func)
 
+### Meta
+* My aspiration is that this repo will be beginner friendly enough to be used as an educational tool for learning to create your own config. If there is anywhere you feel could be explained in more detail feel free to message me, and I will work towards incorporating it in a README.md file in the appropriate directory. 
+* My config makes heavy use of README.md, and I try to have every directory contain its own readme with more granular descriptions of its purpose and modules.
+
 ### Notes, implementation details.
 * `home-manager.users.username` has been aliased to `hm`. hjems user has been similarly aliased to `hj`
 * Themes are handled as standalone modules, currently rose-pine is the only one i've really configured.
