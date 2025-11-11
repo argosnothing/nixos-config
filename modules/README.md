@@ -23,7 +23,7 @@
 ### packages
 * Derivations that I need to build as part of my system configuration.
 ### bundles
-* Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not polute my host module imports.
+* Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not pollute my host module imports.
   * `modules.nixos.base`
     * Critically important stuff that each host should at least have
   * `modules.nixos.niri-bundle`
