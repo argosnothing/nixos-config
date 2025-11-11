@@ -38,7 +38,7 @@
 
     vim.treesitter = {
       enable = true;
-      context.enable = true;
+      context.enable = false;
       fold = true;
     };
 
