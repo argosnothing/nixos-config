@@ -1,5 +1,11 @@
 # Modules
 
+### bundles
+* Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not pollute my host module imports.
+  * `modules.nixos.base`
+    * Critically important stuff that each host should at least have (where `modules.nixos.critical` is imported)
+  * `modules.nixos.niri-bundle`
+    * Niri bundle of my current fav niri setup
 ### critical
 * Important Utilities that need to be included in my configs, most tend to be under `modules.nixos.critical`
 * Hosts will not need to import the critical module directly, this is handled through the `modules.nixos.base` bundle under the bundles directory
@@ -14,7 +20,6 @@
     * oxwm `modules.nixos.oxwm`
     * Xfce `modules.nixos.xfce`
     * Cosmic `modules.nixos.cosmic`
-
 ### hardware
 * Location for host specific utilities, these tend to be defined by `modules.nixos.hostname`
 ### options
@@ -23,12 +28,6 @@
 * I still don't really understand these. `flake.overlays.default`
 ### packages
 * Derivations that I need to build as part of my system configuration.
-### bundles
-* Module bundles that act as system presets, or simply extended configuration on top of a window manager so it does not pollute my host module imports.
-  * `modules.nixos.base`
-    * Critically important stuff that each host should at least have (where `modules.nixos.critical` is imported)
-  * `modules.nixos.niri-bundle`
-    * Niri bundle of my current fav niri setup
 ### utility
 * This is mostly just house keeping stuff, and meta related things like helper libraries.
 ### +hostname
