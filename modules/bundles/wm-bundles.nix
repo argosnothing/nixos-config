@@ -9,4 +9,12 @@ in {
       rose-pine
     ];
   };
+  flake.modules.nixos.mango-bundle = {
+    imports = with flake.modules.nixos; [
+      mango
+      dms
+      sddm-silent
+      rose-pine
+    ];
+  };
 }

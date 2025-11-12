@@ -5,11 +5,7 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #niri-bundle
-      mango
-      dms
-      sddm-silent
-      rose-pine
+      niri-bundle
       work
       base
       gui-apps
