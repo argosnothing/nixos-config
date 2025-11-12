@@ -8,10 +8,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
-      niri
-      dms
-      sddm-silent
-      rose-pine
+      niri-bundle
 
       # Bundles
       base
@@ -23,6 +20,7 @@
       plex
       mullvad
       transmission
+      krita
 
       # Critical other modules
       uefi
