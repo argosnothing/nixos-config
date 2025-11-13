@@ -16,6 +16,7 @@
 
       work
       zellij
+      yazi
       via
       plex
       mullvad
