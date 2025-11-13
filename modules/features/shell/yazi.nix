@@ -1,8 +1,12 @@
 {
   flake.modules.nixos.yazi = {pkgs, ...}: {
+    hm = {
+      programs.yazi = {
+        enable = true;
+      };
+    };
     hj = {
       packages = [
-        pkgs.yazi
       ];
       xdg.config.files = {
         #"yazi/keymap.toml" = {
