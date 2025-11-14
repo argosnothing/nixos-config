@@ -40,6 +40,7 @@
         # switch window status
         bind=ALT,backslash,togglefloating,
         bind=ALT,f,togglefullscreen,
+        #bind=Alt,f,set_proportion,1.0
         bind=ALT,o,toggleoverlay,
 
         # scroller layout

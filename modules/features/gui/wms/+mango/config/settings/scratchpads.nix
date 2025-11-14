@@ -24,7 +24,6 @@
 
         ## pavu
         windowrule=isfloating:1,width:1280,height:800,appid:org.pulseaudio.pavucontrol
-
         #windowrule=isfloating:0,appid:Wfica
       ''
     ];

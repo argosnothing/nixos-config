@@ -46,19 +46,19 @@
           scale = 1.2;
           refresh = 143.851;
         }
-        {
-          name = "DP-2";
-          dimensions = {
-            width = 1920;
-            height = 1080;
-          };
-          position = {
-            x = 3202;
-            y = 402;
-          };
-          scale = 1.0;
-          refresh = 60.0;
-        }
+        #{
+        #  name = "DP-2";
+        #  dimensions = {
+        #    width = 1920;
+        #    height = 1080;
+        #  };
+        #  position = {
+        #    x = 3202;
+        #    y = 402;
+        #  };
+        #  scale = 1.0;
+        #  refresh = 60.0;
+        #}
       ];
     };
   };

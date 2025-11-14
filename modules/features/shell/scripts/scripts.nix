@@ -21,6 +21,9 @@
             -f "$FILE" -y
           printf 'file://%s\n' "$FILE" | wl-copy --type text/uri-list
         '')
+        (pkgs.writeShellScriptBin "record-region-gif" ''
+
+        '')
       ];
     };
   };
