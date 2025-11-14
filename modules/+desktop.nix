@@ -13,10 +13,9 @@
       # Bundles
       base
       gui-apps
+      shell-apps
 
       work
-      zellij
-      yazi
       via
       plex
       mullvad
