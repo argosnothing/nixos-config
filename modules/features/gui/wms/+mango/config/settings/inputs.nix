@@ -23,7 +23,7 @@
         # mouse
         # need relogin to make it apply
         mouse_natural_scrolling=0
-        #accel_profile=0
+        accel_profile=0
         #accel_speed=-0.55
       ''
     ];

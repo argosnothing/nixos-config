@@ -39,9 +39,8 @@
 
         # switch window status
         bind=ALT,backslash,togglefloating,
-        #bind=ALT,a,togglemaxmizescreen,
-        bind=ALT,f,togglemaximizescreen,
-        #bind=ALT,o,toggleoverview,
+        bind=ALT,f,togglefullscreen,
+        bind=ALT,o,toggleoverlay,
 
         # scroller layout
         bind=ALT,r,switch_proportion_preset,

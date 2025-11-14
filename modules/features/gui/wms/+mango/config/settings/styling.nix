@@ -35,12 +35,13 @@
         animation_curve_close=0.40,0.00,0.20,1.00
 
         scroller_status=1
-        scroller_default_proportion=0.80
+        scroller_default_proportion=0.50
         scroller_focus_center=0
         scroller_prefer_center=0
         edge_scroller_pointer_focus=1
+        scroller_structs=0
         scroller_default_proportion_single=1.00
-        scroller_proportion_preset=0.5,0.8,1.0
+        scroller_proportion_preset=0.3333,0.5,1.0
 
         new_is_master=0
         default_mfact=0.55
