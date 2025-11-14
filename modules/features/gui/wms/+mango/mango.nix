@@ -27,7 +27,7 @@ in{
     my.session.exec-command = "${pkgs.dbus}/bin/dbus-run-session niri";
     programs.mango.enable = true;
     hj.files = {
-      ".config/autostart.sh".text = ''
+      ".config/mango/autostart.sh".text = ''
         set +e
         dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
         dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS >/dev/null 2>&1 &
@@ -35,7 +35,7 @@ in{
          ${config.my.desktop-shells.execCommand} &
          ${lib.getExe pkgs.xwayland-satellite} :11 &
       '';
-      ".config/config.conf".text = mango-settings;
+      ".config/mango/config.conf".text = mango-settings;
     };
     xdg.portal = {
       enable = true;
