@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.mango = {config, ...}: let
+  flake.modules.nixos.disabled = {config, ...}: let
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
   in {
     environment.sessionVariables.GTK_USE_PORTAL = "1";
