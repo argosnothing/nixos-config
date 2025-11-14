@@ -16,7 +16,7 @@
         inputs.mango.nixosModules.mango
       ]
       ++ nixos-modules;
-    my.session.exec-command = "dbus-run-session mango";
+    my.session.exec-command = "${pkgs.dbus}/bin/dbus-run-session niri";
     programs.mango.enable = true;
     xdg.portal = {
       enable = true;
