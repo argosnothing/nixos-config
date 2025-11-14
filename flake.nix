@@ -57,7 +57,8 @@
     };
     occult-theme.url = "github:/argosnothing/occult-theme";
     mango = {
-      url = "github:tonybanters/mangowc";
+      #url = "github:tonybanters/mangowc";
+      url = "github:argosnothing/mangowc/425";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

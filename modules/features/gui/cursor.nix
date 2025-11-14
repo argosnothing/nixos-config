@@ -10,9 +10,14 @@
     ...
   }: let
     inherit (lib) types mkOption mkEnableOption;
-    inherit (types) package str int;
+    inherit (types) package str int float;
   in {
     options.my.cursor = {
+      speed = mkOption {
+        description = "The cursor speed offset from base as 1 = base";
+        default = 1.0;
+        type = float;
+      };
       enable = mkEnableOption "Enable Explicit Cursor Management";
       package = mkOption {
         type = package;

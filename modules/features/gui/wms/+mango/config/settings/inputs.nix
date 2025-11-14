@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.mango = {lib, ...}: {
+  flake.modules.nixos.mango = {
+    lib,
+    config,
+    ...
+  }: {
     my.wm.mango.settings = lib.mkAfter [
       ''
         # keyboard
@@ -24,7 +28,7 @@
         # need relogin to make it apply
         mouse_natural_scrolling=0
         accel_profile=0
-        #accel_speed=-0.55
+        accel_speed=${lib.strings.floatToString config.my.cursor.speed}
       ''
     ];
   };

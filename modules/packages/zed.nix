@@ -7,6 +7,7 @@
       nixd
       pyright
       gopls
+      clang-tools
 
       # Formatters
       alejandra

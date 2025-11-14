@@ -8,7 +8,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
-      niri-bundle
+      mango-bundle
 
       # Bundles
       base
@@ -22,12 +22,14 @@
       mullvad
       transmission
       krita
+      zed
 
       # Critical other modules
       uefi
       impermanence
     ];
     my = {
+      cursor.speed = -0.35;
       theme.polarity = "dark";
       fonts.size = 11;
       is-vm = false;
