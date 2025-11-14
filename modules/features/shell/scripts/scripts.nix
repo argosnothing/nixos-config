@@ -22,7 +22,24 @@
           printf 'file://%s\n' "$FILE" | wl-copy --type text/uri-list
         '')
         (pkgs.writeShellScriptBin "record-region-gif" ''
+          TMP_GIF="$(mktemp --suffix=.gif)"
+          TMP_PALETTE="$(mktemp --suffix=.png)"
 
+          record-region
+
+          MP4_FILE="$(wl-paste --type text/uri-list | sed 's|file://||')"
+
+          ${pkgs.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" \
+            -vf "fps=15,scale=800:-1:flags=lanczos,palettegen=stats_mode=full" \
+            -y "$TMP_PALETTE"
+
+          ${pkgs.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" -i "$TMP_PALETTE" \
+            -lavfi "fps=15,scale=800:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=none" \
+            -loop 0 -y "$TMP_GIF"
+
+          rm -f "$TMP_PALETTE"
+
+          printf 'file://%s\n' "$TMP_GIF" | wl-copy --type text/uri-list
         '')
       ];
     };
