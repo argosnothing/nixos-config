@@ -58,7 +58,8 @@
     occult-theme.url = "github:/argosnothing/occult-theme";
     mango = {
       #url = "github:tonybanters/mangowc";
-      url = "github:argosnothing/mangowc/425";
+      #url = "github:argosnothing/mangowc/425";
+      url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
