@@ -93,23 +93,20 @@
         "dgop": [
           "dgop"
         ],
-        "dms-cli": [
-          "dms-cli"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1762466519,
-        "narHash": "sha256-C57fJ7p+V9nhhigx+dSncsuDqSlE0uMSdnc0UFrP8J8=",
-        "owner": "argosnothing",
+        "lastModified": 1763082098,
+        "narHash": "sha256-9pMzW/hRDFzRPChdav/+j6teiOFh6W/YU5ZrRHeze/Y=",
+        "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "30789f231ef7b45bdb3b4a8050c7011fac1d98b6",
+        "rev": "0545e6bcdabb43db8d88fbf474ee868cf1ad596d",
         "type": "github"
       },
       "original": {
-        "owner": "argosnothing",
+        "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
         "type": "github"
       }

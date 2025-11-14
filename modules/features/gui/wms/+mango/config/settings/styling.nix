@@ -13,13 +13,14 @@
         blur=1
         shadows=0
         border_radius=0
-        no_radius_when_single=0
+        no_radius_when_single=1
+        no_border_when_single=1
 
-        focused_opacity=1
-        unfocused_opacity=1
-        animations=0
+        focused_opacity=0.98
+        unfocused_opacity=0.98
+        animations=1
         layer_animations=1
-        tag_animation_direction=1
+        tag_animation_direction=0
         animation_type_open=slide
         animation_type_close=slide
         animation_fade_in=1
@@ -44,7 +45,7 @@
         new_is_master=0
         default_mfact=0.55
         default_master=1
-        smartgaps=0
+        smartgaps=1
 
         gappih=5
         gappiv=5

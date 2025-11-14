@@ -5,7 +5,7 @@
         # layout support:
         # horizontal:tile,scroller,grid,monocle,spiral,dwindle
         # vertical:vertical_tile,vertical_scroller,vertical_grid,vertical_monocle,vertical_spiral,vertical_dwindle
-        tagrule=id:1,layout_name:tile
+        tagrule=id:1,layout_name:scroller
         tagrule=id:2,layout_name:tile
         tagrule=id:3,layout_name:tile
         tagrule=id:4,layout_name:tile

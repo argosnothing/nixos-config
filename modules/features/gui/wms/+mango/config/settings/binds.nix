@@ -7,16 +7,16 @@
     my.wm.mango.settings = lib.mkAfter [
       ''
         # reload config
-        bind=ALT,r,reload_config
+        bind=ALT+SHIFT,r,reload_config
         # menu and terminal
         bind=ALT+CTRL+SHIFT,s,spawn,snip
-        bind=ALT+CTRL,v,spawn,record-region-start
-        bind=ALT+CTRL+SHIFT,v,spawn,record-region-stop
+        #bind=ALT+CTRL,v,spawn,record-region-start
+        #bind=ALT+CTRL+SHIFT,v,spawn,record-region-stop
         bind=ALT,space,spawn,${config.my.desktop-shells.launcherCommand}
         bind=ALT,Return,spawn,kitty
 
         # exit
-        bind=ALT,c,killclient,
+        bind=ALT,q,killclient,
 
         # switch window focus
         bind=ALT,Left,focusdir,left
@@ -39,15 +39,14 @@
 
         # switch window status
         bind=ALT,backslash,togglefloating,
-        bind=ALT,a,togglemaxmizescreen,
-        bind=ALT,f,togglefullscreen,
-        bind=ALT,o,toggleoverview,
+        #bind=ALT,a,togglemaxmizescreen,
+        bind=ALT,f,togglemaximizescreen,
+        #bind=ALT,o,toggleoverview,
 
         # scroller layout
-        bind=ALT,x,switch_proportion_preset,
+        bind=ALT,r,switch_proportion_preset,
 
         # switch layout
-        bind=ALT,n,switch_layout
         bind=ALT+SHIFT,Return,zoom
         bind=ALT,code:20,incnmaster,-1
         bind=ALT,code:21,incnmaster,+1
@@ -55,6 +54,8 @@
         bind=ALT,p,togglefloating
         bind=ALT,g,toggleglobal
 
+        bind=Alt,u,viewtoright
+        bind=Alt,i,viewtoleft
 
         bind=ALT,1,comboview,1
         bind=ALT,2,comboview,2
