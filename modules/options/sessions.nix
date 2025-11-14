@@ -4,9 +4,22 @@
 {
   flake.modules.nixos.options = {lib, ...}: let
     inherit (lib) types mkOption;
-    inherit (types) enum listOf str submodule;
+    inherit (types) enum listOf str submodule package nullOr;
   in {
     options = {
+      my.session = mkOption {
+        type = submodule {
+          options = {
+            name = mkOption {
+              type = str;
+            };
+            exec-command = mkOption {
+              type = str;
+            };
+          };
+        };
+      };
+      # If I ever want to support simultaneous sessions in the future.
       my.sessions = mkOption {
         description = "Registered desktop and window manager info";
         default = [{}];
@@ -19,6 +32,10 @@
             start = mkOption {
               description = "startup command for the session";
               type = str;
+            };
+            package = mkOption {
+              description = "session package";
+              type = nullOr package;
             };
           };
         });

@@ -13,7 +13,7 @@ in {
     imports = with flake.modules.nixos; [
       mango
       dms
-      sddm-silent
+      greetd
       rose-pine
     ];
   };
