@@ -9,9 +9,7 @@
       settings = {
         default_session = {
           command = ''
-             ${pkgs.tuigreet}/bin/tuigreet
-            # --time \
-            # --cmd "${config.my.session.exec-command}"
+            ${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd "sh -c '${config.my.session.exec-command}'"
           '';
         };
         user = "greeter";
