@@ -4,10 +4,11 @@
   ...
 }: let
   inherit (config) flake;
-in {
-  flake.modules.nixos.mango = {config, ...}: {
+in{
+  flake.modules.nixos.mango = {
     pkgs,
     lib,
+    config,
     ...
   }: let
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
