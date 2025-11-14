@@ -14,7 +14,6 @@ in {
       flatpak
       spotify-player
       spicetify
-      element-desktop
     ];
   in {
     imports = nixos-modules;
