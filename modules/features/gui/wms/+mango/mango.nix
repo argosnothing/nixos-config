@@ -2,14 +2,16 @@
   inputs,
   config,
   ...
-}: {
-  flake.modules.nixos.mango = {
+}: let
+  inherit (config) flake;
+in {
+  flake.modules.nixos.mango = {config, ...}: {
     pkgs,
     lib,
     ...
   }: let
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
-    nixos-modules = with config.flake.modules.nixos; [
+    nixos-modules = with flake.modules.nixos; [
       wm
       cursor
       icons
