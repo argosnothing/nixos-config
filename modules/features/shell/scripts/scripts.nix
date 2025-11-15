@@ -1,20 +1,31 @@
-{
-  flake.modules.nixos.misc-scripts = {
-    hm = {pkgs, ...}: {
-      home.packages = with pkgs; [
-        wl-clipboard
+{inputs, ...}: let
+  inherit (inputs) nixpkgs-stable;
+in {
+  flake.modules.nixos.misc-scripts = {pkgs, ...}: let
+    pkgs-stable = import nixpkgs-stable {
+      inherit (pkgs) system;
+      config = {
+        allowUnfree = true;
+        allowAliases = true;
+        permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
+      };
+    };
+  in {
+    hm = {
+      home.packages = with pkgs-stable; [
+        pkgs.wl-clipboard
         slurp
         wf-recorder
         (pkgs.writeShellScriptBin
           "snip"
           ''
-            ${pkgs.grim}/bin/grim -l 0 -g "$(${pkgs.slurp}/bin/slurp)" - | wl-copy
+            ${pkgs-stable.grim}/bin/grim -l 0 -g "$(${pkgs-stable.slurp}/bin/slurp)" - | wl-copy
           '')
         (pkgs.writeShellScriptBin "record-region" ''
           FILE="$(mktemp --suffix=.mp4)"
           SRC="$(${pkgs.pulseaudio}/bin/pactl get-default-sink).monitor"
-          ${pkgs.wf-recorder}/bin/wf-recorder \
-            -g "$(${pkgs.slurp}/bin/slurp)" \
+          ${pkgs-stable.wf-recorder}/bin/wf-recorder \
+            -g "$(${pkgs-stable.slurp}/bin/slurp)" \
             --audio="$SRC" \
             --audio-backend=pipewire \
             -C aac \
@@ -29,11 +40,11 @@
 
           MP4_FILE="$(wl-paste --type text/uri-list | sed 's|file://||')"
 
-          ${pkgs.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" \
+          ${pkgs-stable.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" \
             -vf "fps=15,scale=800:-1:flags=lanczos,palettegen=stats_mode=full" \
             -y "$TMP_PALETTE"
 
-          ${pkgs.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" -i "$TMP_PALETTE" \
+          ${pkgs-stable.ffmpeg}/bin/ffmpeg -i "$MP4_FILE" -i "$TMP_PALETTE" \
             -lavfi "fps=15,scale=800:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=none" \
             -loop 0 -y "$TMP_GIF"
 
