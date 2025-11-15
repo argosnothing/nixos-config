@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   flake.lib.mk-pkgs-stable = pkgs:
     import inputs.nixpkgs-stable {
       inherit (pkgs) system;

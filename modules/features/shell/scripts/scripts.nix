@@ -1,15 +1,8 @@
-{inputs, ...}: let
-  inherit (inputs) nixpkgs-stable;
+{config, ...}: let
+  inherit (config.flake.lib) mk-pkgs-stable;
 in {
   flake.modules.nixos.misc-scripts = {pkgs, ...}: let
-    pkgs-stable = import nixpkgs-stable {
-      inherit (pkgs) system;
-      config = {
-        allowUnfree = true;
-        allowAliases = true;
-        permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
-      };
-    };
+    pkgs-stable = mk-pkgs-stable pkgs;
   in {
     hm = {
       home.packages = with pkgs-stable; [

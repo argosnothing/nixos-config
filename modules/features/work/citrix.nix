@@ -1,15 +1,8 @@
-{inputs, ...}: let
-  inherit (inputs) nixpkgs-stable;
+{config, ...}: let
+  inherit (config.flake.lib) mk-pkgs-stable;
 in {
   flake.modules.nixos.work = {pkgs, ...}: let
-    pkgs-stable = import nixpkgs-stable {
-      inherit (pkgs) system;
-      config = {
-        allowUnfree = true;
-        allowAliases = true;
-        permittedInsecurePackages = ["libsoup-2.74.3" "libxml2-2.13.8"];
-      };
-    };
+    pkgs-stable = mk-pkgs-stable pkgs;
     extraCerts = [
       ./secure/citrix-certs/Entrust_Root_G2.pem
       ./secure/citrix-certs/Entrust_L1K.pem
