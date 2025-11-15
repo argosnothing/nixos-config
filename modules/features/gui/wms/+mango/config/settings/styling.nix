@@ -48,10 +48,6 @@
         default_master=1
         smartgaps=1
 
-        gappih=5
-        gappiv=5
-        gapoh=10
-        gapov=10
         scratchpad_width_ratio=0.8
         scratchpad_height_ratio=0.9
         borderpx=3
