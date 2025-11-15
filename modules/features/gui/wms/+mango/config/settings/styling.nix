@@ -12,7 +12,7 @@
       ''
         blur=1
         shadows=0
-        border_radius=0
+        border_radius=6
         no_radius_when_single=1
         no_border_when_single=1
 
@@ -34,15 +34,6 @@
         animation_curve_open=0.46,1.0,0.29,1.0
         animation_curve_close=0.40,0.00,0.20,1.00
 
-        scroller_status=1
-        scroller_default_proportion=0.50
-        scroller_focus_center=0
-        scroller_prefer_center=0
-        edge_scroller_pointer_focus=1
-        scroller_structs=0
-        scroller_default_proportion_single=1.00
-        scroller_proportion_preset=0.3333,0.5,1.0
-
         new_is_master=0
         default_mfact=0.55
         default_master=1
@@ -50,16 +41,16 @@
 
         scratchpad_width_ratio=0.8
         scratchpad_height_ratio=0.9
-        borderpx=3
 
+        borderpx=3
         rootcolor=${to0x c.base00 "ff"}
         bordercolor=${to0x c.base03 "ff"}
-        focuscolor=${to0x c.base05 "ff"}
-        maxmizescreencolor=${to0x c.base0D "ff"}
+        focuscolor=${to0x c.base0D "ff"}
+        maxmizescreencolor=${to0x c.base05 "ff"}
         urgentcolor=${to0x c.base08 "ff"}
-        scratchpadcolor=${to0x c.base0E "ff"}
-        globalcolor=${to0x c.base03 "ff"}
-        overlaycolor=${to0x c.base0F "ff"}
+        scratchpadcolor=${to0x c.base0C "ff"}
+        globalcolor=${to0x c.base0E "ff"}
+        overlaycolor=${to0x c.base0A "ff"}
       ''
     ];
   };
