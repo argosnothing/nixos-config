@@ -56,6 +56,8 @@
 
         bind=Alt,u,viewtoright
         bind=Alt,i,viewtoleft
+        bind=Alt+Ctrl,u,tagtoright
+        bind=Alt+Ctrl,i,tagtoleft
 
         bind=ALT,1,comboview,1
         bind=ALT,2,comboview,2
