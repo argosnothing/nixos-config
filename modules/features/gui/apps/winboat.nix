@@ -1,11 +1,8 @@
-{
-  flake.modules.nixos.winboat = {
-    pkgs,
-    inputs,
-    flake,
-    ...
-  }: {
-    users.users.${flake.settings.username} = {
+{config, ...}: let
+  inherit (config.flake) settings;
+in {
+  flake.modules.nixos.winboat = {pkgs, ...}: {
+    users.users.${settings.username} = {
       extraGroups = ["docker"];
     };
     virtualisation = {
@@ -28,7 +25,7 @@
       "Windows"
     ];
     environment.systemPackages = [
-      inputs.winboat.winboat
+      pkgs.winboat
       pkgs.freerdp
     ];
   };

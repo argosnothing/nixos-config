@@ -16,31 +16,22 @@
         "Mod+Slash".action.show-hotkey-overlay = [];
         "XF86AudioRaiseVolume"."allow-when-locked" = true;
         "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
-
         "XF86AudioLowerVolume"."allow-when-locked" = true;
         "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
-
         "XF86AudioMute"."allow-when-locked" = true;
         "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
-
         "XF86AudioMicMute"."allow-when-locked" = true;
         "XF86AudioMicMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
-
         "XF86AudioPlay"."allow-when-locked" = true;
         "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
-
         "XF86AudioStop"."allow-when-locked" = true;
         "XF86AudioStop".action.spawn = ["playerctl" "stop"];
-
         "XF86AudioPrev"."allow-when-locked" = true;
         "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
-
         "XF86AudioNext"."allow-when-locked" = true;
         "XF86AudioNext".action.spawn = ["playerctl" "next"];
-
         "XF86MonBrightnessUp"."allow-when-locked" = true;
         "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "--class=backlight" "set" "+10%"];
-
         "XF86MonBrightnessDown"."allow-when-locked" = true;
         "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "--class=backlight" "set" "10%-"];
 

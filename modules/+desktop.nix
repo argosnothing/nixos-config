@@ -22,6 +22,7 @@
       transmission
       krita
       zed
+      winboat
 
       # Critical other modules
       uefi
