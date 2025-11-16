@@ -4,7 +4,7 @@
       {
         matches = [
           {
-            namespace = "^quickshell-wallpaper$";
+            namespace = "^noctalia-wallpaper*";
           }
         ];
         place-within-backdrop = true;
@@ -20,7 +20,7 @@
       {
         matches = [
           {
-            namespace = "^quickshell-overview$";
+            namespace = "^noctalia-overview$";
           }
         ];
         opacity = 0.0;

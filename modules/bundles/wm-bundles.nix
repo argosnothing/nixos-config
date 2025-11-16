@@ -4,7 +4,7 @@ in {
   flake.modules.nixos.niri-bundle = {
     imports = with flake.modules.nixos; [
       niri
-      dms
+      noctalia-shell
       sddm-silent
       rose-pine
     ];

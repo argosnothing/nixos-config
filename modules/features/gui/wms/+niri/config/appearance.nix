@@ -9,11 +9,11 @@
     c = config.lib.stylix.colors.withHashtag;
   in {
     hm = let
-      strut-size = 0;
+      strut-size = 3;
       border-size = 2;
     in {
       programs.niri.settings.layout = {
-        gaps = 0;
+        gaps = 4;
         struts = {
           left = strut-size;
           right = strut-size;
