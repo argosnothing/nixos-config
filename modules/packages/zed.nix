@@ -8,6 +8,7 @@
       pyright
       gopls
       clang-tools
+      rust-analyzer
 
       # Formatters
       alejandra

@@ -3,8 +3,8 @@
     programs.niri.settings.input = {
       focus-follows-mouse.enable = false;
       warp-mouse-to-focus.enable = false;
-      mod-key = "Alt";
-      mod-key-nested = "Super";
+      mod-key = "Super";
+      mod-key-nested = "Alt";
       mouse = {
         accel-speed = 0.3;
         accel-profile = "flat";
