@@ -23,6 +23,7 @@
       krita
       zed
       winboat
+      vscode
 
       # Critical other modules
       uefi
