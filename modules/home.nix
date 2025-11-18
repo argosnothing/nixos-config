@@ -26,6 +26,7 @@ in {
       };
       my.persist.home.directories = lib.mkAfter [
         ".local/share/direnv"
+        ".local/share/keyrings"
         ".config/yazi"
         ".config/sops"
         ".ssh"
