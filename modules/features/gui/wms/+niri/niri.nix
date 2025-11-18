@@ -21,6 +21,7 @@
       package = pkgs.rose-pine-icon-theme;
       name = "rose-pine";
     };
+    my.cursor.enable = true;
     nixpkgs.overlays = [inputs.niri.overlays.niri];
     imports =
       [inputs.niri.nixosModules.niri]

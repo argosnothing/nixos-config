@@ -9,7 +9,7 @@
     config,
     ...
   }: let
-    inherit (lib) types mkOption mkEnableOption;
+    inherit (lib) types mkOption mkEnableOption mkIf;
     inherit (types) package str int float;
   in {
     options.my.cursor = {
@@ -35,7 +35,7 @@
         description = "The cursor size.";
       };
     };
-    config = {
+    config = mkIf config.my.cursor.enable {
       environment.systemPackages = [config.my.cursor.package];
       environment.sessionVariables = {
         XCURSOR_THEME = config.my.cursor.name;

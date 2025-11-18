@@ -25,6 +25,7 @@ in {
       ]
       ++ nixos-modules;
     my.session.exec-command = "${pkgs.dbus}/bin/dbus-run-session mango";
+    my.cursor.enable = true;
     programs.mango.enable = true;
     hj.files = {
       ".config/mango/autostart.sh" = {
