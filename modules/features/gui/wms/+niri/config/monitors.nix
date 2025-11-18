@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.niri = {config, ...}: let
+  flake.modules.nixos.disabled = {config, ...}: let
     inherit (config.my) monitors;
   in {
     hm = _: {

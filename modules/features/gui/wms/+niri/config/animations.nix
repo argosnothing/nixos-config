@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri = {
+  flake.modules.homeManager.disabled = {
     programs.niri.settings.animations = {};
   };
 }

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.niri = {
+  flake.modules.nixos.disabled = {
     config,
     lib,
     ...

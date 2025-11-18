@@ -1,0 +1,11 @@
+{
+  flake.modules.nixos.niri = {lib, ...}: {
+    my.wm.niri.settings = lib.mkAfter [
+      ''
+        layout {
+          background-color: transparent
+        }
+      ''
+    ];
+  };
+}

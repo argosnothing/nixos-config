@@ -39,10 +39,10 @@
       inherit polarity;
       inherit base16Scheme;
       #base16Scheme = ./themes/thorn/dark-cold.yaml;
-      icons = {
-        enable = true;
-        inherit (config.my.icons) package;
-      };
+      #icons = {
+      #  enable = true;
+      #  inherit (config.my.icons) package;
+      #};
       fonts = {
         monospace = mono;
         sansSerif = sans;

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri = let
+  flake.modules.homeManager.disabled = let
     radius = 15.0;
   in {
     programs.niri.settings.window-rules = [

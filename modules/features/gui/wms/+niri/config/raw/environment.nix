@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.disabled = {
+  flake.modules.nixos.niri = {
     config,
     lib,
     ...
@@ -8,8 +8,12 @@
     inherit (config.my) monitors;
     max-scale = builtins.foldl' max 1.0 (map (m: m.scale) monitors);
   in {
-    hm.programs.niri.settings.environment = {
-      QT_SCALE_FACTOR = toString max-scale;
-    };
+    my.wm.niri.settings = lib.mkAfter [
+      ''
+        environment {
+          QT_SCALE_FACTOR "${toString max-scale}"
+        }
+      ''
+    ];
   };
 }
