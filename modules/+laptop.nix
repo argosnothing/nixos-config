@@ -9,6 +9,7 @@
       work
       base
       gui-apps
+      vscode
       shell-apps
       impermanence
       grub
