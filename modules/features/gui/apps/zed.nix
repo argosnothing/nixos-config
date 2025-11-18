@@ -10,6 +10,8 @@ in {
     ];
     environment.systemPackages = with pkgs; [
       zed-editor
+      nixd
+      nil
     ];
     programs.nix-ld.enable = true;
     #hm = {

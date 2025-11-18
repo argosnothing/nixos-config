@@ -73,10 +73,8 @@
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
-      #url = "github:argosnothing/DankMaterialShell";
       inputs = {
         dgop.follows = "dgop";
-        dms-cli.follows = "dms-cli";
         nixpkgs.follows = "nixpkgs";
       };
     };
