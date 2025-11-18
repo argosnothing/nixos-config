@@ -1,4 +1,0 @@
-{
-  flake.modules.homeManager.niri = {
-  };
-}

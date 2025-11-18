@@ -1,18 +1,24 @@
 {
-  flake.modules.homeManager.disabled = {
-    programs.niri.settings.input = {
-      focus-follows-mouse.enable = false;
-      warp-mouse-to-focus.enable = false;
-      mod-key = "Super";
-      mod-key-nested = "Super";
-      mouse = {
-        accel-speed = 0.3;
-        accel-profile = "flat";
-      };
-      touchpad = {
-        dwt = true;
-        scroll-factor = 0.5;
-      };
-    };
+  flake.modules.nixos.niri = {lib, ...}: {
+    my.wm.niri.settings = lib.mkAfter [
+      ''
+        input {
+          mod-key "Super"
+
+          keyboard {
+          }
+
+          mouse {
+            accel-speed 0.3
+            accel-profile "flat"
+          }
+
+          touchpad {
+            dwt
+            scroll-factor 0.5
+          }
+        }
+      ''
+    ];
   };
 }

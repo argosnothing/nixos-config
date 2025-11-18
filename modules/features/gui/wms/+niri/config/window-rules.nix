@@ -1,69 +1,46 @@
 {
-  flake.modules.homeManager.disabled = let
+  flake.modules.nixos.niri = {lib, ...}: let
     radius = 15.0;
   in {
-    programs.niri.settings.window-rules = [
-      {
-        matches = [];
-        geometry-corner-radius = {
-          top-left = radius;
-          top-right = radius;
-          bottom-left = radius;
-          bottom-right = radius;
-        };
-        opacity = 0.99;
-        clip-to-geometry = true;
-        draw-border-with-background = false;
-      }
-      {
-        matches = [
-          {
-            is-floating = false;
+    my.wm.niri.settings = lib.mkAfter [
+      ''
+        window-rule {
+          geometry-corner-radius ${toString radius}
+          opacity 0.99
+          clip-to-geometry true
+          draw-border-with-background false
+        }
+
+        window-rule {
+          match is-floating=false
+          tiled-state true
+        }
+
+        window-rule {
+          match title="RuneLite"
+          open-floating true
+          opacity 1.0
+        }
+
+        window-rule {
+          match title="Kando Menu"
+          open-floating true
+          border {
+            off
           }
-        ];
-        tiled-state = true;
-      }
-      {
-        matches = [
-          {
-            title = "RuneLite";
+          shadow {
+            off
           }
-        ];
-        open-floating = true;
-        opacity = 1.0;
-      }
-      {
-        matches = [
-          {
-            title = "Kando Menu";
-          }
-        ];
-        open-floating = true;
-        border = {
-          enable = false;
-        };
-        shadow = {
-          enable = false;
-        };
-      }
-      {
-        matches = [
-          {
-            app-id = "Wfica";
-          }
-        ];
-        opacity = .99;
-        open-fullscreen = false;
-        open-maximized = true;
-        block-out-from = "screen-capture";
-      }
-      {
-        matches = [
-          {
-            app-id = "kitty";
-          }
-        ];
-      }
+        }
+
+        window-rule {
+          match app-id="Wfica"
+          opacity 0.99
+          open-fullscreen false
+          open-maximized true
+          block-out-from "screen-capture"
+        }
+      ''
     ];
   };
 }

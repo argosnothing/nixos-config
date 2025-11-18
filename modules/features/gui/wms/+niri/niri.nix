@@ -2,19 +2,21 @@
   config,
   inputs,
   ...
-}: {
-  flake.modules.nixos.niri = {pkgs, ...}: let
-    nixos-modules = with config.flake.modules.nixos; [
+}: let
+  inherit (config) flake;
+in {
+  flake.modules.nixos.niri = {
+    pkgs,
+    config,
+    ...
+  }: let
+    niri-settings = builtins.concatStringsSep "\n" config.my.wm.niri.settings;
+    nixos-modules = with flake.modules.nixos; [
       wm
       nemo
       cursor
       icons
       gtk
-    ];
-    home-modules = [
-      {
-        hm.imports = [config.flake.modules.homeManager.niri];
-      }
     ];
   in {
     my.icons = {
@@ -25,8 +27,7 @@
     nixpkgs.overlays = [inputs.niri.overlays.niri];
     imports =
       [inputs.niri.nixosModules.niri]
-      ++ nixos-modules
-      ++ home-modules;
+      ++ nixos-modules;
     programs.niri = {
       enable = true;
       package = pkgs.niri-unstable;
@@ -34,11 +35,10 @@
     environment.systemPackages = with pkgs; [
       xwayland-satellite
     ];
-  };
-  flake.modules.homeManager.niri = {pkgs, ...}: {
-    programs = {
-      niri = {
+    hm = {
+      programs.niri = {
         package = pkgs.niri-unstable;
+        config = niri-settings;
       };
     };
   };

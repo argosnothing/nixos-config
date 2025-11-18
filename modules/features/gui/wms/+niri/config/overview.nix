@@ -3,7 +3,9 @@
     my.wm.niri.settings = lib.mkAfter [
       ''
         overview {
-          workspace-shadow off
+          workspace-shadow {
+            off
+          }
         }
       ''
     ];

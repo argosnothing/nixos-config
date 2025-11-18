@@ -1,22 +1,20 @@
 {
-  flake.modules.nixos.disabled = {config, ...}: let
+  flake.modules.nixos.niri = {
+    config,
+    lib,
+    ...
+  }: let
     inherit (config.my) monitors;
+    monitorConfigs =
+      map (monitor: ''
+        output "${monitor.name}" {
+          scale ${toString monitor.scale}
+          mode "${toString monitor.dimensions.width}x${toString monitor.dimensions.height}@${toString monitor.refresh}"
+          position x=${toString monitor.position.x} y=${toString monitor.position.y}
+        }
+      '')
+      monitors;
   in {
-    hm = _: {
-      programs.niri.settings.outputs = builtins.listToAttrs (map (monitor: {
-          name = "${monitor.name}";
-          value = {
-            inherit (monitor) scale;
-            mode = {
-              inherit (monitor) refresh;
-              inherit (monitor.dimensions) width height;
-            };
-            position = {
-              inherit (monitor.position) x y;
-            };
-          };
-        })
-        monitors);
-    };
+    my.wm.niri.settings = lib.mkAfter monitorConfigs;
   };
 }
