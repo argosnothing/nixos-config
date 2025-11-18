@@ -8,7 +8,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
-      plasma
+      niri-bundle
 
       # Bundles
       base
