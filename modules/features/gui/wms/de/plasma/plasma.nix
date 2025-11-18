@@ -4,7 +4,6 @@ in {
   flake.modules.nixos.plasma = {
     imports = with flake.modules.nixos; [
       cursor
-      stylix
     ];
 
     services = {
