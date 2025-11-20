@@ -15,6 +15,8 @@
 
           touchpad {
             dwt
+            tap
+            natural-scroll
             scroll-factor 0.5
           }
         }
