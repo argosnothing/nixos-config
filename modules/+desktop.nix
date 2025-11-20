@@ -14,7 +14,6 @@
       base
       gui-apps
       shell-apps
-      ventoy
 
       work
       via
