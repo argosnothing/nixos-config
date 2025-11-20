@@ -3,9 +3,8 @@
 in {
   flake.modules.nixos.xfce = {
     imports = with flake.modules.nixos; [
-      cursor
-      stylix
     ];
+    my.cursor.enable = false;
     services = {
       xserver = {
         enable = true;
