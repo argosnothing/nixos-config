@@ -1,10 +1,5 @@
 {
-  flake.modules.nixos.niri = {
-    config,
-    lib,
-    ...
-  }: let
-    c = config.lib.stylix.colors.withHashtag;
+  flake.modules.nixos.niri = {lib, ...}: let
     strut-size = 3;
     border-size = 2;
   in {
@@ -23,7 +18,6 @@
           }
           border {
             width ${toString border-size}
-            active-color "${c.base0E}"
           }
           background-color "transparent"
         }

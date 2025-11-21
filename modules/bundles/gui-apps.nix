@@ -4,9 +4,7 @@
 in {
   flake.modules.nixos.gui-apps = {pkgs, ...}: let
     nixos-modules = with flake.modules.nixos; [
-      stylix
       discord
-      kitty
       firefox
       steam
       nemo

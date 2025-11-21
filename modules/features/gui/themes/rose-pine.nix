@@ -13,7 +13,6 @@
       then "rose-pine"
       else "rose-pine-dawn";
   in {
-    stylix.autoEnable = mkForce true;
     my = {
       theme = {
         name = theme-name;
@@ -53,12 +52,7 @@
           home.file.".config/vesktop/themes/${css-file}".source = "${rose-pine-discord}/dist/${css-file}";
         }))
         (lib.mkIf (config.programs.firefox.enable or false) {
-          stylix.targets.firefox = {
-            profileNames = ["default"];
-            enable = true;
-            colorTheme.enable = true;
-          };
-        })
+          })
       ];
   };
 }

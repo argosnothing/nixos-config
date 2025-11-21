@@ -27,9 +27,6 @@
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/nixos-25.05";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
-    };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     sops-nix = {
       url = "github:Mic92/sops-nix";

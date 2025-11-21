@@ -1,8 +1,6 @@
 {
   flake.modules.nixos.discord = {lib, ...}: {
-    #my.modules = lib.mkAfter ["discord"];
     hm = {
-      stylix.targets.vesktop.enable = false;
       programs = {
         vesktop = {
           enable = true;
