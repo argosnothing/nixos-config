@@ -2,12 +2,9 @@
   flake.modules.nixos.rose-pine = {
     pkgs,
     config,
-    lib,
     ...
   }: let
     inherit (config.my.theme) polarity;
-    inherit (config.my) theme;
-    inherit (lib) mkForce;
     is-dark = polarity == "dark";
     theme-name =
       if is-dark
@@ -53,8 +50,6 @@
         in {
           home.file.".config/vesktop/themes/${css-file}".source = "${rose-pine-discord}/dist/${css-file}";
         }))
-        (lib.mkIf (config.programs.firefox.enable or false) {
-          })
       ];
   };
 }
