@@ -23,7 +23,6 @@
       krita
       zed
       vscode
-      spicetify
 
       # Critical other modules
       uefi

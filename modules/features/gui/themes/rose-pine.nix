@@ -6,6 +6,7 @@
     ...
   }: let
     inherit (config.my.theme) polarity;
+    inherit (config.my) theme;
     inherit (lib) mkForce;
     is-dark = polarity == "dark";
     theme-name =
@@ -15,6 +16,7 @@
   in {
     my = {
       theme = {
+        accent = "#c4a7e7";
         name = theme-name;
       };
       cursor = {
