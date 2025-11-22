@@ -17,8 +17,8 @@
         name = theme-name;
       };
       cursor = {
-        name = "BreezeX-RosePine-Linux";
-        package = pkgs.rose-pine-cursor;
+        name = "";
+        package = pkgs.catppuccin-cursors.latteMauve;
       };
     };
 
@@ -44,14 +44,20 @@
           };
         }
         (lib.mkIf (config.programs.vesktop.enable or false) (let
+          catppuccin-discord = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "discord";
+            rev = "main";
+            hash = "sha256-oyVZxdr4UacRMOCDdjSl2B/X5ySYTOD5iCOq0MLSxD4=";
+          };
           theme-base = "auto-theme";
           css-file = "${theme-base}.css";
           theme-type =
             if polarity == "dark"
-            then "latte"
-            else "frappe";
+            then "frappe"
+            else "latte";
         in {
-          home.file.".config/vesktop/themes/${css-file}".source = "${pkgs.catppuccin-discord}/themes/${theme-type}.theme.css";
+          home.file.".config/vesktop/themes/${css-file}".source = "${catppuccin-discord}/themes/${theme-type}.theme.css";
         }))
       ];
   };

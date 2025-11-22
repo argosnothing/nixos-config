@@ -17,7 +17,7 @@
       touchpad
     ];
     my = {
-      theme.polarity = "light";
+      theme.polarity = "dark";
       cursor.speed = 0.30;
       is-vm = false;
       monitors = [

@@ -8,8 +8,8 @@ in {
     vim = {
       theme = {
         enable = true;
-        name = "catppuccin";
-        style = "auto";
+        name = "rose-pine";
+        style = "main";
       };
       #extraPlugins = {
       #  ayu = {
