@@ -2,6 +2,8 @@
   flake.modules.nixos.gtk = {config, ...}: let
     icon-theme = config.my.icons;
   in {
+    hj.files = {
+    };
     hm = {lib, ...}: let
       inherit (lib) mkForce;
     in {

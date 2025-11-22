@@ -33,6 +33,11 @@
       lib.mkMerge [
         {
           gtk = {
+            gtk2 = {
+              enable = true;
+              theme.name = mkForce theme-name;
+              theme.package = mkForce pkgs.rose-pine-gtk-theme;
+            };
             enable = true;
             theme.name = mkForce theme-name;
             theme.package = mkForce pkgs.rose-pine-gtk-theme;
