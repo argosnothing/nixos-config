@@ -18,9 +18,11 @@ in {
     ];
     services = {
       xserver = {
-        enable = true;
         desktopManager = {
-          xfce.enable = true;
+          xfce = {
+            enable = true;
+            enableWaylandSession = true;
+          };
         };
       };
     };
