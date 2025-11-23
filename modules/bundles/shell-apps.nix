@@ -5,7 +5,6 @@ in {
   flake.modules.nixos.shell-apps = {pkgs, ...}: let
     nixos-modules = with flake.modules.nixos; [
       copilot-cli
-      zellij
       yazi
     ];
   in {

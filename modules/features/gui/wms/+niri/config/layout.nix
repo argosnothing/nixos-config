@@ -19,8 +19,9 @@
             bottom ${toString strut-size}
           }
           focus-ring {
-            off
+            on
             active-color "${theme.accent}"
+            width 2
           }
           border {
             width ${toString border-size}

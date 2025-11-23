@@ -9,6 +9,8 @@
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
       niri-bundle
+      #labwc-bundle
+      #xfce-bundle
 
       # Bundles
       base
@@ -30,7 +32,7 @@
     ];
     my = {
       cursor.speed = -0.35;
-      theme.polarity = "dark";
+      theme.polarity = "light";
       fonts.size = 11;
       is-vm = false;
       monitors = [

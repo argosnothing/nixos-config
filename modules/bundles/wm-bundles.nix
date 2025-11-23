@@ -6,7 +6,8 @@ in {
       niri
       noctalia-shell
       sddm-silent
-      rose-pine
+      #rose-pine
+      catppuccin
     ];
   };
   flake.modules.nixos.mango-bundle = {
@@ -15,6 +16,21 @@ in {
       dms
       greetd
       rose-pine
+    ];
+  };
+  flake.modules.nixos.labwc-bundle = {
+    imports = with flake.modules.nixos; [
+      labwc
+      dms
+      sddm-silent
+      catppuccin
+    ];
+  };
+  flake.modules.nixos.xfce-bundle = {
+    imports = with flake.modules.nixos; [
+      xfce
+      sddm-silent
+      catppuccin
     ];
   };
 }

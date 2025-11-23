@@ -50,6 +50,7 @@
     };
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
+      #url = "github:argosnothing/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     occult-theme.url = "github:/argosnothing/occult-theme";

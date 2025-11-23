@@ -17,7 +17,7 @@
         name = theme-name;
       };
       cursor = {
-        name = "";
+        name = "catppuccin-latte-mauve-cursors";
         package = pkgs.catppuccin-cursors.latteMauve;
       };
     };
