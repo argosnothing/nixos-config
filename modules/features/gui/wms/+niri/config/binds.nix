@@ -2,6 +2,7 @@
   flake.modules.nixos.niri = {
     config,
     lib,
+    pkgs,
     ...
   }: let
     inherit (config.my) desktop-shells;
@@ -11,6 +12,7 @@
       ''
         binds {
           Mod+Return { spawn "kitty"; }
+          Mod+Shift+G { spawn "kitty" "-T" "pamix" "${lib.getExe pkgs.pamix}"; }
           Mod+space { spawn ${launcherArgs}; }
           Mod+Slash { show-hotkey-overlay; }
           Mod+O repeat=false { toggle-overview; }

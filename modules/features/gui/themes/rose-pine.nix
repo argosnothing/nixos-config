@@ -1,7 +1,8 @@
-{
+{inputs, ...}: {
   flake.modules.nixos.rose-pine = {
     pkgs,
     config,
+    lib,
     ...
   }: let
     inherit (config.my.theme) polarity;

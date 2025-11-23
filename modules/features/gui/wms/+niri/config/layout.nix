@@ -11,7 +11,7 @@
     my.wm.niri.settings = lib.mkAfter [
       ''
         layout {
-          gaps ${toString 4}
+          gaps ${toString 7}
           struts {
             left ${toString strut-size}
             right ${toString strut-size}
@@ -26,6 +26,7 @@
           border {
             width ${toString border-size}
             active-color "${theme.accent}"
+            inactive-color "${theme.inactive}"
           }
           background-color "transparent"
         }

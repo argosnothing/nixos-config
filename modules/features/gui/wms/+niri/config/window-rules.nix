@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.niri = {lib, ...}: let
-    radius = 15.0;
+    radius = 0.0;
   in {
     my.wm.niri.settings = lib.mkAfter [
       ''
@@ -12,8 +12,9 @@
         }
 
         window-rule {
-          match is-floating=false
-          tiled-state true
+          match app-id="kitty"
+          exclude title="^pamix$"
+          opacity 0.95
         }
 
         window-rule {
@@ -23,14 +24,17 @@
         }
 
         window-rule {
-          match title="Kando Menu"
+          match title="pamix"
+          opacity 0.99
           open-floating true
-          border {
-            off
-          }
-          shadow {
-            off
-          }
+          tiled-state false
+        }
+
+        window-rule {
+          match app-id="nemo"
+          opacity 0.99
+          open-floating true
+          tiled-state false
         }
 
         window-rule {
@@ -40,6 +44,7 @@
           open-maximized true
           block-out-from "screen-capture"
         }
+
       ''
     ];
   };

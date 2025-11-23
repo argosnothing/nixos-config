@@ -27,6 +27,10 @@
             type = str;
             default = "#ffffff";
           };
+          inactive = mkOption {
+            type = str;
+            default = "#ffffff";
+          };
           polarity = mkOption {
             type = enum ["light" "dark"];
             default = "dark";
