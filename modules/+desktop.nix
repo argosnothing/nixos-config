@@ -23,8 +23,8 @@
       mullvad
       transmission
       krita
-      zed
       vscode
+      uhk
 
       # Critical other modules
       uefi
