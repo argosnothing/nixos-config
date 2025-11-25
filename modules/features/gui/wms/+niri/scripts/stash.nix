@@ -1,3 +1,4 @@
+## CREDIT: https://github.com/YaLTeR/niri/discussions/329#discussioncomment-13378697
 {
   flake.modules.nixos.niri = {
     pkgs,
