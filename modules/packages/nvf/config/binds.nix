@@ -2,14 +2,10 @@
   flake.modules.nvf.default = {
     vim.keymaps = [
       {
+        mode = "n";
         key = "<leader>lf";
-        mode = ["n"];
-        lua = true;
-        action = ''
-          require('conform').format({
-            lsp_format = "fallback"
-          })
-        '';
+        action = ":lua vim.lsp.buf.format()<CR>";
+        silent = true;
       }
     ];
     vim.binds = {

@@ -6,18 +6,18 @@
         enable = true;
       };
       languages = {
-        enableTreesitter = true;
-        enableFormat = true;
-
         nix = {
           enable = true;
-          extraDiagnostics.enable = true;
+          extraDiagnostics = {
+            enable = true;
+            types = ["deadnix" "statix"];
+          };
           format = {
             enable = true;
-            type = ["alejandra"];
+            type = "alejandra";
           };
           lsp = {
-            servers = ["nil"];
+            servers = ["nil" "nixd"];
             enable = true;
           };
         };
