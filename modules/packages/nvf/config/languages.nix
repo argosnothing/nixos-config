@@ -14,10 +14,10 @@
           extraDiagnostics.enable = true;
           format = {
             enable = true;
-            type = "alejandra";
+            type = ["alejandra"];
           };
           lsp = {
-            server = "nil";
+            servers = ["nil"];
             enable = true;
           };
         };
@@ -39,7 +39,7 @@
           dap = {
             enable = true;
           };
-          crates.enable = true;
+          extensions.crates-nvim.enable = true;
         };
       };
     };
