@@ -16,7 +16,7 @@
           Mod+space { spawn ${launcherArgs}; }
           Mod+Slash { show-hotkey-overlay; }
           Mod+O repeat=false { toggle-overview; }
-          Mod+Shift+Q repeat=false { close-window; }
+          Mod+Escape repeat=false { close-window; }
 
           Mod+P            { spawn "niri-stash" "s-term"; }
           Mod+Q            { spawn "niri-stash" "s-vesktop"; }
@@ -169,8 +169,6 @@
           Ctrl+Print { screenshot-screen; }
           Alt+Print { screenshot-window; }
           Mod+Ctrl+Shift+S { spawn "snip"; }
-
-          Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
           Mod+Shift+E { quit; }
           Ctrl+Alt+Delete { quit; }
