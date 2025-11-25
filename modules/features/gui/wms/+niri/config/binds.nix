@@ -16,7 +16,12 @@
           Mod+space { spawn ${launcherArgs}; }
           Mod+Slash { show-hotkey-overlay; }
           Mod+O repeat=false { toggle-overview; }
-          Mod+Q repeat=false { close-window; }
+          Mod+Shift+Q repeat=false { close-window; }
+
+          Mod+P            { spawn "niri-stash" "s-term"; }
+          Mod+Q            { spawn "niri-stash" "s-vesktop"; }
+          Mod+E            { spawn "niri-stash" "s-firefox"; }
+          Mod+G            { spawn "niri-stash" "s-spotify"; }
 
           Mod+Down { focus-window-down; }
           Mod+Up { focus-window-up; }
