@@ -6,7 +6,9 @@
   }: {
     my.wm.niri.settings = lib.mkAfter [
       ''
-        workspace "stash"
+        workspace "stash" {
+            open-on-output "DP-1"
+        }
         window-rule {
           match title="s-"
           open-on-workspace "stash"
