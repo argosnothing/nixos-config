@@ -458,15 +458,15 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1763778960,
-        "narHash": "sha256-8VAzjVrEeG1pqA7n3rZgm0pZAmAVjOFwuWq3OVe8sos=",
-        "owner": "notashelf",
+        "lastModified": 1763160537,
+        "narHash": "sha256-BoWjsFOZGbhdYCU4riIQIW4o3c81d4mW5SWdmPqJUno=",
+        "owner": "michael-c-buckley",
         "repo": "nvf",
-        "rev": "f8dc16a29f56d60ef7a8f2cf79a80b1ae441d452",
+        "rev": "7432090a2e1d8cb39e04ca28057873d4d4ed610d",
         "type": "github"
       },
       "original": {
-        "owner": "notashelf",
+        "owner": "michael-c-buckley",
         "ref": "v0.8",
         "repo": "nvf",
         "type": "github"

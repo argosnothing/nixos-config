@@ -2,6 +2,12 @@
   flake.modules.nvf.default = {
     vim.keymaps = [
       {
+        mode = "n";
+        key = "<leader>lf";
+        action = ":lua vim.lsp.buf.format()<CR>";
+        silent = true;
+      }
+      {
         key = "<C-t>";
         mode = "n";
         action = ":ToggleTerm dir=%:p:h direction=float <CR>";
