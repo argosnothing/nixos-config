@@ -7,7 +7,6 @@ in {
       copilot-cli
       yazi
       helix
-      tmux
     ];
   in {
     imports = nixos-modules;

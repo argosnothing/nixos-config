@@ -13,8 +13,8 @@ in {
   flake.modules.nixos.mango-bundle = {
     imports = with flake.modules.nixos; [
       mango
-      dms
-      greetd
+      noctalia-shell
+      sddm-silent
       rose-pine
     ];
   };

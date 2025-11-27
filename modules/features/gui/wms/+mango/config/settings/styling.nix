@@ -1,12 +1,6 @@
 {
-  flake.modules.nixos.mango = {
-    config,
-    lib,
-    ...
-  }: let
-    c = config.lib.stylix.colors;
+  flake.modules.nixos.mango = {lib, ...}: let
     inherit (lib) mkAfter;
-    to0x = hex: alpha: "0x${hex}${alpha}";
   in {
     my.wm.mango.settings = mkAfter [
       ''
@@ -43,14 +37,6 @@
         scratchpad_height_ratio=0.9
 
         borderpx=3
-        rootcolor=${to0x c.base00 "ff"}
-        bordercolor=${to0x c.base03 "ff"}
-        focuscolor=${to0x c.base0D "ff"}
-        maxmizescreencolor=${to0x c.base05 "ff"}
-        urgentcolor=${to0x c.base08 "ff"}
-        scratchpadcolor=${to0x c.base0C "ff"}
-        globalcolor=${to0x c.base0E "ff"}
-        overlaycolor=${to0x c.base0A "ff"}
       ''
     ];
   };
