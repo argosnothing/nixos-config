@@ -6,6 +6,8 @@ in {
     nixos-modules = with flake.modules.nixos; [
       copilot-cli
       yazi
+      helix
+      tmux
     ];
   in {
     imports = nixos-modules;
