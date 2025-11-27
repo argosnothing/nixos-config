@@ -1,0 +1,51 @@
+-- TokyoNight XMobar Config
+Config {
+   -- Appearance
+     font            = "JetBrainsMono Nerd Font Mono Bold 16"
+   , additionalFonts = [ "JetBrainsMono Nerd Font Mono 18" ]
+   , bgColor         = "#1a1b26"
+   , fgColor         = "#a9b1d6"
+   , position        = TopSize C 100 35
+   , border          = BottomB
+   , borderColor     = "#444b6a"
+   , borderWidth     = 2
+
+   -- Layout
+   , sepChar         = "%"
+   , alignSep        = "}{"
+   , template        = " %XMonadLog% }{ %cpu% <fc=#444b6a>│</fc> %memory% <fc=#444b6a>│</fc> %battery% <fc=#444b6a>│</fc> %date% "
+
+   -- Plugins
+   , commands        =
+        [ Run XMonadLog
+        , Run Cpu
+            [ "-t", "<fc=#7aa2f7> CPU:</fc> <total>%"
+            , "-L", "30"
+            , "-H", "70"
+            , "-l", "#9ece6a"
+            , "-n", "#e0af68"
+            , "-h", "#f7768e"
+            ] 10
+        , Run Memory
+            [ "-t", "<fc=#7aa2f7>󰍛 MEM:</fc> <usedratio>%"
+            , "-L", "30"
+            , "-H", "70"
+            , "-l", "#9ece6a"
+            , "-n", "#e0af68"
+            , "-h", "#f7768e"
+            ] 10
+        , Run Battery
+            [ "-t", "<fc=#7aa2f7>󱐋 BAT:</fc> <acstatus>"
+            , "-L", "20"
+            , "-H", "80"
+            , "-l", "#f7768e"
+            , "-n", "#e0af68"
+            , "-h", "#9ece6a"
+            , "--"
+            , "-o", "<left>% (<timeleft>)"
+            , "-O", "<fc=#e0af68>Charging</fc> <left>%"
+            , "-i", "<fc=#9ece6a>Charged</fc>"
+            ] 50
+        , Run Date "<fc=#ad8ee6> %a %b %_d %H:%M</fc>" "date" 10
+        ]
+   }
