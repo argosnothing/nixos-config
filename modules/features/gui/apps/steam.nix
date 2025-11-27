@@ -18,6 +18,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
+      steam-devices-udev-rules
       gamescope
       gamemode
       mangohud

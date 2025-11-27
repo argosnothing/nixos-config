@@ -1,5 +1,9 @@
-{
+{config, ...}: let
+  inherit (config) flake;
+in {
   flake.modules.nixos.xmonad = {pkgs, ...}: {
+    imports = with flake.modules.nixos; [cursor];
+    environment.systemPackages = with pkgs; [st];
     hj = {
       packages = with pkgs; [
         haskell-language-server
@@ -10,6 +14,7 @@
         ".config/xmobar/xmobarrc".source = ./xmobarrc;
       };
     };
+    xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal];
     services = {
       picom.enable = true;
       displayManager = {

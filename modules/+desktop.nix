@@ -5,6 +5,7 @@
     };
     environment.systemPackages = with pkgs; [
       wdisplays
+      wpa_supplicant
     ];
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
