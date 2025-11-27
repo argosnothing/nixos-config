@@ -1,4 +1,3 @@
-
 # Basic Vim options common to all instances
 {
   flake.modules.nvf.default = {
