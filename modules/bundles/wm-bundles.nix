@@ -13,7 +13,7 @@ in {
       mango
       dms
       greetd
-      rose-pine
+      catppuccin
     ];
     labwc-bundle.imports = with flake.modules.nixos; [
       labwc

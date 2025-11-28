@@ -8,8 +8,8 @@
         windowrule=isnamedscratchpad:1,width:1280,height:800,appid:vesktop,isoverlay:1
 
         ## SPOTIFY
-        ##bind=ALT+CTRL,s,toggle_named_scratchpad,spotify,none,spotify
-        ##windowrule=isnamedscratchpad:1,width:1280,height:800,appid:spotify,isoverlay:1
+        bind=SUPER,g,toggle_named_scratchpad,spotify,none,spotify
+        windowrule=isnamedscratchpad:1,width:1280,height:800,appid:spotify,isoverlay:1
 
         ## WEB
         bind=SUPER,e,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad

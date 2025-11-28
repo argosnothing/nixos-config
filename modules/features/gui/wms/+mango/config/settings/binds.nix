@@ -52,7 +52,7 @@
         bind=SUPER,code:21,incnmaster,+1
 
         bind=SUPER,p,togglefloating
-        bind=SUPER,g,toggleglobal
+        #bind=SUPER,g,toggleglobal
 
         bind=SUPER,u,viewtoright
         bind=SUPER,i,viewtoleft
