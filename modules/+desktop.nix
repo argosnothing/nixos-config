@@ -10,6 +10,7 @@
     imports = with config.flake.modules.nixos; [
       # WM/Display manager of choice...
       niri-bundle
+      #mango-bundle
       #labwc-bundle
       #xfce-bundle
 

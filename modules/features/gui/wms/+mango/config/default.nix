@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   flake.modules.nixos.disabled = {config, ...}: let
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
   in {
@@ -8,9 +8,6 @@
       lib,
       ...
     }: {
-      imports = [
-        inputs.mango.hmModules.mango
-      ];
       services.swaync.enable = true;
       xdg.portal = {
         enable = true;

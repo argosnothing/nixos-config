@@ -12,7 +12,7 @@
         ##windowrule=isnamedscratchpad:1,width:1280,height:800,appid:spotify,isoverlay:1
 
         ## WEB
-        bind=SUPER+e,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad
+        bind=SUPER,e,toggle_named_scratchpad,firefox-scratchpad,none,firefox --name=firefox-scratchpad --no-remote -P firefox-scratchpad
         windowrule=isnamedscratchpad:1,width:1280,height:800,appid:firefox-scratchpad,overlay:1
 
         ## KITTY

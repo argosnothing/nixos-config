@@ -11,7 +11,7 @@ in {
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
-      noctalia-shell
+      dms
       greetd
       rose-pine
     ];
