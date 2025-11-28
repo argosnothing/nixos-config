@@ -8,14 +8,8 @@
       wpa_supplicant
     ];
     imports = with config.flake.modules.nixos; [
-      # WM/Display manager of choice...
-      niri-bundle
-      #mango-bundle
-      #labwc-bundle
-      #xfce-bundle
-
-      # Bundles
       base
+      niri-bundle
       gui-apps
       shell-apps
 
