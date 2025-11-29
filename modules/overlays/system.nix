@@ -1,5 +1,7 @@
 {
   flake.nixpkgs.overlays = [
-    (final: _: {inherit (final.stdenv.hostPlatform) system;})
+    (_: super: {
+      inherit (super.stdenv.hostPlatform) system;
+    })
   ];
 }

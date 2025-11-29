@@ -20,10 +20,17 @@
         {
           my.hostname = name;
           networking.hostName = lib.mkDefault name;
-          nixpkgs.hostPlatform = lib.mkDefault system;
-          nixpkgs.config = {
-            allowUnfree = true;
-            showAliases = true;
+          nixpkgs = {
+            hostPlatform = lib.mkDefault system;
+            overlays = [
+              (_: super: {
+                inherit (super.stdenv.hostPlatform) system;
+              })
+            ];
+            config = {
+              allowUnfree = true;
+              showAliases = true;
+            };
           };
           system.stateVersion = "25.05";
         }
