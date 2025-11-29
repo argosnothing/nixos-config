@@ -18,6 +18,7 @@ in {
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        backupFileExtension = "backup";
         overwriteBackup = true;
         users.${flake.settings.username} = _: {
           home.stateVersion = "25.05";
