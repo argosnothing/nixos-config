@@ -26,7 +26,7 @@
 
       # Critical other modules
       uefi
-      impermanence
+      #impermanence
     ];
     my = {
       cursor.speed = -0.35;

@@ -9,13 +9,12 @@
     inherit linux;
   };
 
-  linux = mkNixos "x86_64-linux" "nixos";
+  linux = mkNixos "x86_64-linux";
 
-  mkNixos = system: cls: name:
+  mkNixos = system: name:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        config.flake.modules.nixos.${cls}
         config.flake.modules.nixos.${name}
         {
           my.hostname = name;

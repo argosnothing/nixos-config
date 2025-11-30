@@ -1,6 +1,6 @@
-{
+{inputs, ...}: {
   flake.modules.nixos.base = {pkgs, ...}: {
-    enviornment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       jq
       wev
       fzf
