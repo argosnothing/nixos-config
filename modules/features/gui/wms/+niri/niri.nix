@@ -35,6 +35,6 @@ in {
     environment.systemPackages = with pkgs; [
       xwayland-satellite
     ];
-    hj.files.".config/niri/config.kdl" = niri-settings;
+    hj.files.".config/niri/config.kdl".text = niri-settings;
   };
 }

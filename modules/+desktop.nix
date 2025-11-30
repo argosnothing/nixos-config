@@ -9,7 +9,8 @@
     ];
     imports = with config.flake.modules.nixos; [
       base
-      plasma
+      #plasma
+      niri-bundle
       gui-apps
       shell-apps
       work
