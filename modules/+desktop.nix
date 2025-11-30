@@ -9,12 +9,9 @@
     ];
     imports = with config.flake.modules.nixos; [
       base
-      #niri-bundle
       plasma
-      #mango-bundle
       gui-apps
       shell-apps
-
       work
       via
       plex
@@ -23,10 +20,7 @@
       krita
       vscode
       uhk
-
-      # Critical other modules
       uefi
-      #impermanence
     ];
     my = {
       cursor.speed = -0.35;

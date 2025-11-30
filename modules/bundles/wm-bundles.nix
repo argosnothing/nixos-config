@@ -7,24 +7,20 @@ in {
       noctalia-shell
       sddm-silent
       #rose-pine
-      catppuccin
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
       dms
       greetd
-      catppuccin
     ];
     labwc-bundle.imports = with flake.modules.nixos; [
       labwc
       dms
       sddm-silent
-      catppuccin
     ];
     xfce-bundle.imports = with flake.modules.nixos; [
       xfce
       sddm-silent
-      catppuccin
     ];
   };
 }
