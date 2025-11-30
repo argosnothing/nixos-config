@@ -19,6 +19,7 @@
       transmission
       krita
       vscode
+      virtualization
       uhk
       uefi
     ];

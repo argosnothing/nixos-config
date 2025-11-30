@@ -35,11 +35,6 @@ in {
     environment.systemPackages = with pkgs; [
       xwayland-satellite
     ];
-    hm = {
-      programs.niri = {
-        package = pkgs.niri-unstable;
-        config = niri-settings;
-      };
-    };
+    hj.files.".config/niri/config.kdl" = niri-settings;
   };
 }
