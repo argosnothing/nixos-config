@@ -1,10 +1,6 @@
 {
   flake.modules.nixos.yazi = {pkgs, ...}: {
-    hm = {
-      programs.yazi = {
-        enable = true;
-      };
-    };
+    environment.systemPackages = with pkgs; [yazi];
     hj = {
       packages = [
       ];

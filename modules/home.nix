@@ -9,22 +9,10 @@
 in {
   flake.modules.nixos.home = {pkgs, ...}: {
     imports = [
-      inputs.home-manager.nixosModules.home-manager
       inputs.hjem.nixosModules.default
-      (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" flake.settings.username])
       (lib.mkAliasOptionModule ["hj"] ["hjem" "users" flake.settings.username])
     ];
     config = {
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backup";
-        overwriteBackup = true;
-        users.${flake.settings.username} = _: {
-          home.stateVersion = "25.05";
-          programs.home-manager.enable = true;
-        };
-      };
       my.persist.home.directories = lib.mkAfter [
         ".local/share/direnv"
         ".local/share/keyrings"
@@ -33,43 +21,6 @@ in {
         ".ssh"
         "nixos-config"
       ];
-
-      hm = {
-        my.persist.home = {
-          directories = [
-            "Downloads"
-            "Games"
-            "Pictures"
-            "Projects"
-            "Videos"
-            ".local/share/nvf"
-            ".var/app/com.spotify.Client"
-            ".config/spotify"
-          ];
-          cache.directories = [
-            ".cache/nvf"
-            ".cache/nix-search-tv"
-            ".cache/nvidia"
-            ".cache/kitty"
-            ".cache/spotify"
-          ];
-        };
-        home.packages = with pkgs; [
-          jq
-          wev
-          fzf
-          ytfzf
-          desktop-file-utils
-          nix-direnv
-          direnv
-          bolt-launcher
-          mpv
-          bash
-          vulkan-tools
-          inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
-          inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
-        ];
-      };
 
       hj.systemd.enable = false;
       hjem.linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;

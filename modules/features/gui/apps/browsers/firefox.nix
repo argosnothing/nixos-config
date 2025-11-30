@@ -11,37 +11,5 @@
         };
       };
     };
-    hm = {
-      programs.firefox = {
-        enable = true;
-        profiles = {
-          "default" = {};
-          "firefox-scratchpad" = {
-            id = 1;
-            isDefault = false;
-          };
-        };
-        profiles.default.extensions.force = true;
-        profiles.firefox-scratchpad.extensions.force = true;
-      };
-      my.persist.home = {
-        directories = [
-          ".mozilla"
-        ];
-        cache.directories = [
-          ".cache/mozilla"
-        ];
-      };
-      xdg.mimeApps = {
-        enable = true;
-        defaultApplications = {
-          "text/html" = "firefox.desktop";
-          "x-scheme-handler/http" = "firefox.desktop";
-          "x-scheme-handler/https" = "firefox.desktop";
-          "x-scheme-handler/about" = "firefox.desktop";
-          "x-scheme-handler/unknown" = "firefox.desktop";
-        };
-      };
-    };
   };
 }

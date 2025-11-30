@@ -21,17 +21,7 @@ in {
       starship
       git
     ];
-    home-modules = [
-      {
-        hm.imports = with flake.modules.homeManager; [
-          options
-        ];
-        hm.home.packages = with flake.packages.${pkgs.stdenv.hostPlatform.system}; [
-          nvf
-        ];
-      }
-    ];
   in {
-    imports = nixos-modules ++ home-modules;
+    imports = nixos-modules;
   };
 }

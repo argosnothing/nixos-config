@@ -5,32 +5,6 @@
   assertNoHomeDirs = paths:
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
-  flake.modules.homeManager.options = {
-    options.my.persist.home = {
-      directories = mkOption {
-        type = listOf str;
-        default = [];
-        description = "Directories to persist in home directory";
-      };
-      files = mkOption {
-        type = listOf str;
-        default = [];
-        description = "Files to persist in home directory";
-      };
-      cache = {
-        directories = mkOption {
-          type = listOf str;
-          default = [];
-          description = "Directories to persist, but not to snapshot";
-        };
-        files = mkOption {
-          type = listOf str;
-          default = [];
-          description = "Files to persist, but not to snapshot";
-        };
-      };
-    };
-  };
   flake.modules.nixos.options = {
     options.my = {
       hostname = mkOption {type = str;};

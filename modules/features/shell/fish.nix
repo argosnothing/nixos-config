@@ -3,11 +3,9 @@
     programs.fish = {
       enable = true;
     };
-    hm = {
-      my.persist.home.cache.directories = [
-        ".cache/fish"
-      ];
-    };
+    my.persist.home.cache.directories = [
+      ".cache/fish"
+    ];
     hj = {
       files = {
         ".config/fish/conf.d/show-base16.fish".text = ''

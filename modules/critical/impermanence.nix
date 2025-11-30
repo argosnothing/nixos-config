@@ -8,7 +8,6 @@
 in {
   flake.modules.nixos.impermanence = {config, ...}: let
     cfg = config.my.persist;
-    hmCfg = config.hm.my.persist;
   in {
     my.persist.enable = true;
     imports = [
@@ -49,7 +48,7 @@ in {
         );
 
         users.${username} = {
-          files = lib.unique (cfg.home.files ++ hmCfg.home.files);
+          files = lib.unique cfg.home.files;
           directories =
             lib.unique
             (
@@ -58,7 +57,6 @@ in {
                 ".config/dconf"
               ]
               ++ cfg.home.directories
-              ++ hmCfg.home.directories
             );
         };
       };
@@ -70,8 +68,8 @@ in {
         directories = lib.unique cfg.root.cache.directories;
 
         users.${username} = {
-          files = lib.unique (cfg.home.cache.files ++ hmCfg.home.cache.files);
-          directories = lib.unique (cfg.home.cache.directories ++ hmCfg.home.cache.directories);
+          files = lib.unique cfg.home.cache.files;
+          directories = lib.unique cfg.home.cache.directories;
         };
       };
     };

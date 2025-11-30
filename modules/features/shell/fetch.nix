@@ -1,9 +1,5 @@
 {
-  flake.modules.nixos.base = {
-    hm = {
-      programs.fastfetch = {
-        enable = true;
-      };
-    };
+  flake.modules.nixos.base = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [fastfetch];
   };
 }

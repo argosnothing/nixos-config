@@ -41,17 +41,6 @@
         XCURSOR_THEME = config.my.cursor.name;
         XCURSOR_SIZE = config.my.cursor.size;
       };
-      hm = {pkgs, ...}: {
-        home.packages = [pkgs.dconf];
-        home.pointerCursor = {
-          enable = true;
-          gtk.enable = true;
-          x11.enable = true;
-          inherit (config.my.cursor) name;
-          inherit (config.my.cursor) package;
-          inherit (config.my.cursor) size;
-        };
-      };
     };
   };
 }
