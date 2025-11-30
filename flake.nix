@@ -13,6 +13,11 @@
       url = "github:/feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
+    };
     import-tree = {
       url = "github:vic/import-tree";
     };

@@ -28,10 +28,11 @@
     selectedTheme = themeConfig.${themeName} or themeConfig."catppuccin";
   in {
     imports = [inputs.spicetify-nix.nixosModules.default];
+    environment.systemPackages = with pkgs; [spicetify-cli];
     programs.spicetify = {
       enable = true;
-      theme = selectedTheme.theme;
-      colorScheme = selectedTheme.colorScheme;
+      #theme = selectedTheme.theme;
+      #colorScheme = selectedTheme.colorScheme;
     };
   };
 }

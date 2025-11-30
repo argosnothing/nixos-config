@@ -20,13 +20,10 @@
           }
           focus-ring {
             on
-            active-color "${theme.accent}"
             width 2
           }
           border {
             width ${toString border-size}
-            active-color "${theme.accent}"
-            inactive-color "${theme.inactive}"
           }
           background-color "transparent"
         }

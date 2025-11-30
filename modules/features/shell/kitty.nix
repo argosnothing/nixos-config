@@ -18,7 +18,7 @@
 
         shell ${lib.getExe pkgs.fish}
 
-        window_margin_width 10
+        window_margin_width 5
         clear_all_shortcuts yes
         map ctrl+shift+equal change_font_size all +2.0
         map ctrl+shift+plus change_font_size all +2.0

@@ -22,23 +22,29 @@ in {
         "nixos-config"
       ];
 
-      hj.systemd.enable = false;
-      hjem.linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
-      hjem.users.${flake.settings.username} = {
-        enable = true;
-        user = flake.settings.username;
-        directory = "/home/${flake.settings.username}";
-        files = {
-          ".editorconfig".text = ''
-            root = true
+      #hj.systemd.enable = false;
+      hjem = {
+        extraModules = [
+          inputs.hjem-rum.hjemModules.default
+        ];
+        clobberByDefault = true;
+        linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
+        users.${flake.settings.username} = {
+          enable = true;
+          user = flake.settings.username;
+          directory = "/home/${flake.settings.username}";
+          files = {
+            ".editorconfig".text = ''
+              root = true
 
-            [*]
-            charset = utf-8
-            end_of_line = lf
-            indent_style = space
-            insert_final_newline = true
-            tab_width = 2
-          '';
+              [*]
+              charset = utf-8
+              end_of_line = lf
+              indent_style = space
+              insert_final_newline = true
+              tab_width = 2
+            '';
+          };
         };
       };
     };
