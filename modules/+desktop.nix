@@ -8,7 +8,6 @@
       wpa_supplicant
     ];
     imports = with config.flake.modules.nixos; [
-      base
       niri-bundle
       gui-apps
       shell-apps
