@@ -23,6 +23,7 @@
       work
       impermanence
       uefi
+      legacy-zfs
     ];
     my = {
       cursor.speed = -0.35;

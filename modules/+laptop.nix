@@ -7,14 +7,16 @@
     imports = with config.flake.modules.nixos; [
       niri-bundle
       work
-      base
       gui-apps
       vscode
       shell-apps
-      impermanence
-      grub
       battery
       touchpad
+
+      # don't touch this
+      uefi
+      zfs
+      impermanence
     ];
     my = {
       theme.polarity = "dark";
