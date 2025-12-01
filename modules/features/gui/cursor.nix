@@ -37,7 +37,7 @@
     };
     config = mkIf config.my.cursor.enable {
       environment.systemPackages = [config.my.cursor.package];
-      environment.sessionVariables = {
+      environment.variables = {
         XCURSOR_THEME = config.my.cursor.name;
         XCURSOR_SIZE = config.my.cursor.size;
       };
