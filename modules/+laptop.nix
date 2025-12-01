@@ -6,9 +6,9 @@
     };
     imports = with config.flake.modules.nixos; [
       niri-bundle
-      work
+      #work
       gui-apps
-      vscode
+      #vscode
       shell-apps
       battery
       touchpad
