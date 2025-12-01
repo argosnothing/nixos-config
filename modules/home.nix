@@ -22,7 +22,6 @@ in {
         "nixos-config"
       ];
 
-      #hj.systemd.enable = false;
       hjem = {
         extraModules = [
           inputs.hjem-rum.hjemModules.default
