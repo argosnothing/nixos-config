@@ -2,7 +2,7 @@
 {config, ...}: let
   inherit (config.flake) settings;
 in {
-  flake.modules.nixos.base = {config, ...}: {
+  flake.modules.nixos.zfs = {config, ...}: {
     boot = {
       supportedFilesystems = ["zfs"];
       initrd.supportedFilesystems = ["zfs"];
