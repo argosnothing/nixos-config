@@ -20,6 +20,10 @@ in {
         ".config/sops"
         ".ssh"
         "nixos-config"
+        "Downloads"
+        "Videos"
+        "Pictures"
+        "Projects"
       ];
 
       hjem = {

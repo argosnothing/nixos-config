@@ -29,6 +29,7 @@
   in {
     imports = [inputs.spicetify-nix.nixosModules.default];
     environment.systemPackages = with pkgs; [spicetify-cli];
+    my.persist.home.directories = [".config/spotify"];
     programs.spicetify = {
       enable = true;
       #theme = selectedTheme.theme;

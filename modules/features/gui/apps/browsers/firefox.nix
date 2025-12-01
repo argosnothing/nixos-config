@@ -1,5 +1,9 @@
 {
   flake.modules.nixos.firefox = {pkgs, ...}: {
+    programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
     my.persist.home.directories = [".mozilla"];
     programs.firefox = {
       enable = true;

@@ -12,7 +12,6 @@
       niri-bundle
       gui-apps
       shell-apps
-      work
       via
       plex
       mullvad
@@ -21,7 +20,7 @@
       vscode
       virtualization
       uhk
-
+      work
       impermanence
       uefi
     ];

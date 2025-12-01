@@ -49,6 +49,7 @@
       cache.directories = [
         ".cache/noctalia"
         ".cache/quickshell"
+        ".cache/wal"
       ];
     };
   };
