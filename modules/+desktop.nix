@@ -21,6 +21,8 @@
       vscode
       virtualization
       uhk
+
+      impermanence
       uefi
     ];
     my = {

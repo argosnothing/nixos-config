@@ -1,5 +1,6 @@
 {
   flake.modules.nixos.firefox = {pkgs, ...}: {
+    my.persist.home.directories = [".mozilla"];
     programs.firefox = {
       enable = true;
       preferences = {
