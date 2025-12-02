@@ -5,6 +5,7 @@ in {
     niri-bundle.imports = with flake.modules.nixos; [
       niri
       noctalia-shell
+      cosmic-greeter
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango

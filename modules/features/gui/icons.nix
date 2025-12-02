@@ -23,7 +23,7 @@
       };
     };
     config = {
-      environment.sessionVariables = {
+      environment.variables = {
         QS_ICON_THEME = icon-name;
         XDG_ICON_THEME = icon-name;
       };

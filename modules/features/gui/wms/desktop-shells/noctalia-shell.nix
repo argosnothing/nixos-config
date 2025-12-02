@@ -35,7 +35,7 @@
         material-symbols
       ]);
 
-    environment.sessionVariables = {
+    environment.variables = {
       FONTCONFIG_FILE = "${pkgs.makeFontsConf {
         fontDirectories = with config.my.fonts; [
           sans.package
