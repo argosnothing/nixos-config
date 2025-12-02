@@ -9,7 +9,6 @@ in {
       steam
       nemo
       audacity
-      flatpak
       spotify-player
       spicetify
     ];

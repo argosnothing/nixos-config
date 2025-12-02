@@ -10,7 +10,7 @@
       ''
         cursor {
           xcursor-theme "${cursor.name}"
-          xcursor-size ${cursor.size}
+          xcursor-size ${toString cursor.size}
         }
       ''
     ];

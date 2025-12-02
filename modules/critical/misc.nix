@@ -46,7 +46,7 @@
         brightnessctl
       ];
 
-      sessionVariables = {
+      variables = {
         #WAYLAND_DISPLAY = "wayland-0";
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         NIXOS_OZONE_WL = "1";

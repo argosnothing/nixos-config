@@ -5,8 +5,6 @@ in {
     niri-bundle.imports = with flake.modules.nixos; [
       niri
       noctalia-shell
-      sddm-silent
-      #rose-pine
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
