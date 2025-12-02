@@ -8,7 +8,7 @@
       niri-bundle
       work
       gui-apps
-      #vscode
+      vscode
       shell-apps
       battery
       touchpad

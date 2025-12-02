@@ -36,6 +36,9 @@ in {
         package = pkgs.rose-pine-icon-theme;
         name = "rose-pine";
       };
+      cursor = {
+        name = "Simp1e-Dark";
+      };
       cursor.enable = true;
       persist.home.directories = [".config/niri"];
     };

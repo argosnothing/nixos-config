@@ -10,7 +10,6 @@
     inherit (config.my) fonts;
   in {
     environment.systemPackages = with pkgs; [
-      rose-pine-cursor
       lxappearance
       nwg-look
       pkgs.pywal
