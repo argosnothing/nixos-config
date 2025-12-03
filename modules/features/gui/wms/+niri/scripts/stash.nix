@@ -10,14 +10,6 @@
         workspace "stash" {
             open-on-output "DP-1"
         }
-        window-rule {
-          match title="s-"
-          open-on-workspace "stash"
-          open-floating true
-          default-floating-position x=16 y=0 relative-to="left"
-          default-column-width  { fixed 920; }
-          default-window-height { fixed 920; } // ~80% of 1080
-        }
       ''
     ];
     environment.systemPackages = [

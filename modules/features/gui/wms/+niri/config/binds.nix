@@ -19,7 +19,7 @@
           Mod+Escape repeat=false { close-window; }
 
           Mod+P            { spawn "niri-scratchpad" "1"; }
-          Mod+Q            { spawn "niri-scratchpad" "2"; }
+          Mod+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "2"; }
           Mod+E            { spawn "niri-scratchpad" "3"; }
           Mod+G            { spawn "niri-scratchpad" "4"; }
 
