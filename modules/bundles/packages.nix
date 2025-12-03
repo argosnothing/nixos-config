@@ -1,5 +1,8 @@
 {inputs, ...}: {
   flake.modules.nixos.base = {pkgs, ...}: {
+    my.persist.home.directories = [
+      ".local/share/bolt-launcher"
+    ];
     environment.systemPackages = with pkgs; [
       jq
       wev
