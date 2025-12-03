@@ -11,20 +11,9 @@ in {
         name = "oxocarbon";
         style = "dark";
       };
-      #extraPlugins = {
-      #  ayu = {
-      #    package = vimPlugins.neovim-ayu;
-      #    setup = ''
-      #      require('rose-pine').setup{}
-      #      vim.cmd.colorscheme("rose-pine")
-      #    '';
-      #  };
-      #};
       lazy.plugins = {
-        # Custom packages I added and overlaid
         "kanso-nvim".package = packages.${system}.kanso-nvim;
         "thorn-nvim".package = packages.${system}.thorn-nvim;
-        # Nixpkgs items
         everforest.package = vimPlugins.everforest;
         "lackluster.nvim".package = vimPlugins.lackluster-nvim;
         "kanagawa.nvim".package = vimPlugins.kanagawa-nvim;

@@ -9,8 +9,8 @@ in {
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
-      dms
-      greetd
+      noctalia-shell
+      cosmic-greeter
     ];
     labwc-bundle.imports = with flake.modules.nixos; [
       labwc

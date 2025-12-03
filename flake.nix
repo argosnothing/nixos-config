@@ -43,6 +43,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     oxwm = {
       url = "github:argosnothing/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";

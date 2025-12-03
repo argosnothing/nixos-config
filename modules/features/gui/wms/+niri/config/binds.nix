@@ -18,10 +18,10 @@
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
 
-          Mod+P            { spawn "niri-stash" "s-term"; }
-          Mod+Q            { spawn "niri-stash" "s-vesktop"; }
-          Mod+E            { spawn "niri-stash" "s-firefox"; }
-          Mod+G            { spawn "niri-stash" "s-spotify"; }
+          Mod+P            { spawn "niri-scratchpad" "1"; }
+          Mod+Q            { spawn "niri-scratchpad" "2"; }
+          Mod+E            { spawn "niri-scratchpad" "3"; }
+          Mod+G            { spawn "niri-scratchpad" "4"; }
 
           Mod+Down { focus-window-down; }
           Mod+Up { focus-window-up; }
