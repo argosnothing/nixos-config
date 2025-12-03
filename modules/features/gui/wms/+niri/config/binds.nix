@@ -18,10 +18,14 @@
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
 
-          Mod+P            { spawn "niri-scratchpad" "create" "1"; }
-          Mod+Q            { spawn "niri-scratchpad" "create" "2"; }
-          Mod+E            { spawn "niri-scratchpad" "create" "3"; }
-          Mod+G            { spawn "niri-scratchpad" "create" "4"; }
+          Mod+P            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+          Mod+Q            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
+          Mod+E            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
+          Mod+G            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
+          Alt+P            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+          Alt+Q            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
+          Alt+E            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
+          Alt+G            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
 
           Mod+Ctrl+P            { spawn "niri-scratchpad" "delete" "1"; }
           Mod+Ctrl+Q            { spawn "niri-scratchpad" "delete" "2"; }
