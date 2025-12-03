@@ -18,10 +18,15 @@
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
 
-          Mod+P            { spawn "niri-scratchpad" "1"; }
-          Mod+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "2"; }
-          Mod+E            { spawn "niri-scratchpad" "3"; }
-          Mod+G            { spawn "niri-scratchpad" "4"; }
+          Mod+P            { spawn "niri-scratchpad" "create" "1"; }
+          Mod+Q            { spawn "niri-scratchpad" "create" "2"; }
+          Mod+E            { spawn "niri-scratchpad" "create" "3"; }
+          Mod+G            { spawn "niri-scratchpad" "create" "4"; }
+
+          Mod+Ctrl+P            { spawn "niri-scratchpad" "delete" "1"; }
+          Mod+Ctrl+Q            { spawn "niri-scratchpad" "delete" "2"; }
+          Mod+Ctrl+E            { spawn "niri-scratchpad" "delete" "3"; }
+          Mod+Ctrl+G            { spawn "niri-scratchpad" "delete" "4"; }
 
           Mod+Down { focus-window-down; }
           Mod+Up { focus-window-up; }
