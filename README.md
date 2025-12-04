@@ -6,6 +6,7 @@
 # Things I do
 * Dendritic pattern with modules folder being evaluated at flake level.
 * Impermanence in system and home. Per module persistance so wm switches don't pollute user space.
+* Hjem only
 * Sops dependent install process, bring your own keys, secrets.
 * Coupled user/system modules, inspired by [saygo's](https://github.com/saygo-png/nixos) configuration.
 * Some code here, such as the impermanence module is ~~stolen~~ borrowed from [iynaix's](https://github.com/iynaix/dotfiles) config
@@ -21,8 +22,8 @@
 * My config makes heavy use of README.md, and I try to have every directory contain its own readme with more granular descriptions of its purpose and modules.
 
 ### Notes, implementation details.
-* `home-manager.users.username` has been aliased to `hm`. hjems user has been similarly aliased to `hj`
-* Themes are handled as standalone modules, currently rose-pine is the only one i've really configured.
+* hjem user module is aliased to `hj`
+* Themes are currently largely handled `imperatively` through matugen ( using noctalia-shell )
 
 # Credits
  For collectively dragging me, kicking and screaming, across multiple finish lines
