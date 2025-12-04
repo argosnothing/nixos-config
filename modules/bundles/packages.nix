@@ -6,6 +6,7 @@
     environment.systemPackages = with pkgs; [
       jq
       wev
+      wget
       fzf
       ytfzf
       desktop-file-utils

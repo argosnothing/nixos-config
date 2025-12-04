@@ -11,6 +11,7 @@ in {
       audacity
       spotify-player
       spicetify
+      gajim
     ];
   in {
     imports = nixos-modules;
