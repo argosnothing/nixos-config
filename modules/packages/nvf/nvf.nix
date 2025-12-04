@@ -1,3 +1,5 @@
+# Jet Thievery
+# https://github.com/Michael-C-Buckley/nixos/blob/master/modules/packages/nvf/outputs.nix
 {
   config,
   inputs,
