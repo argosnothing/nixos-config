@@ -17,6 +17,7 @@
 
 ### Meta
 * My aspiration is that this repo will be beginner friendly enough to be used as an educational tool for learning to create your own config. If there is anywhere you feel could be explained in more detail feel free to message me, and I will work towards incorporating it in a README.md file in the appropriate directory. 
+  * I also have a [starter config](https://github.com/argosnothing/nixos-kickstart) that has a similar structure if you want to start from scratch with stuff like dendritic and zfs.
 * My config makes heavy use of README.md, and I try to have every directory contain its own readme with more granular descriptions of its purpose and modules.
 
 ### Notes, implementation details.
