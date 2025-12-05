@@ -20,6 +20,10 @@
       virtualization
       uhk
       work
+
+      toys
+
+
       impermanence
       uefi
       legacy-zfs
