@@ -1,12 +1,7 @@
 {
-  flake.modules.nixos.gnome-keyring = {pkgs, ...}: {
-    services.gnome-keyring = {
+  flake.modules.nixos.gnome-keyring = {
+    services.gnome.gnome-keyring = {
       enable = true;
-      components = [
-        "pkcs11"
-        "secrets"
-        "ssh"
-      ];
     };
     my.persist.home.directories = [".local/share/keyrings"];
   };

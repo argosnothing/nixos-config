@@ -4,7 +4,6 @@
       ".local/share/bolt-launcher"
     ];
     environment.systemPackages = with pkgs; [
-      discord
       jq
       wev
       wget
