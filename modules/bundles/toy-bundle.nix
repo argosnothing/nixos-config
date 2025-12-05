@@ -3,6 +3,8 @@
     environment.systemPackages = with pkgs; [
       pipes
       cbonsai
+      cmatrix
+      clock-rs
     ];
   };
 }

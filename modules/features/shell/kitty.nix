@@ -18,6 +18,8 @@
         shell ${lib.getExe pkgs.fish}
         window_margin_width 5
         enabled_layouts splits:split_axis=horizontal
+        map ctrl+shift+w close_window
+        map ctrl+shift+q close_window
         map ctrl+shift+j neighboring_window down
         map ctrl+shift+k neighboring_window up
         map ctrl+shift+h neighboring_window left
