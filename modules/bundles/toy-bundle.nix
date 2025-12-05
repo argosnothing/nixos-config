@@ -6,6 +6,11 @@
       cmatrix
       clock-rs
       aalib
+      asciiquarium
+      wayneko
+      ninvaders
+      nethack
+      moon-buggy
     ];
   };
 }
