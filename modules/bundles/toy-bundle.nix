@@ -5,6 +5,7 @@
       cbonsai
       cmatrix
       clock-rs
+      aalib
     ];
   };
 }
