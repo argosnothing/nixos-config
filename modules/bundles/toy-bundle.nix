@@ -11,6 +11,8 @@
       ninvaders
       nethack
       moon-buggy
+      sl
+      bb
     ];
   };
 }
