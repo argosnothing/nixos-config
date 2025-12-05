@@ -12,8 +12,7 @@ in {
       user
       critical
       home
-
-      discord
+      gnome-keyring
       kitty
       fish
       nh
