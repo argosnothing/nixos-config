@@ -18,31 +18,31 @@
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
 
-         //Alt+P            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
-         //Alt+Q            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
-         //Alt+E            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
-         //Alt+G            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
-         //Mod+P            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
-         //Mod+Q            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
-         //Mod+E            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
-         //Mod+G            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
-         //Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "1"; }
-         //Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "2"; }
-         //Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "3"; }
-         //Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "4"; }
+         Alt+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+         Alt+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
+         Alt+G            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
+         Alt+P            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
+         Mod+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+         Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
+         Mod+G            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
+         Mod+P            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
+         Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1"; }
+         Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2"; }
+         Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "3"; }
+         Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "4"; }
 
-         Alt+P            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "1" "--as-float"; }
-         Alt+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "2" "--as-float"; }
-         Alt+E            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "3" "--as-float"; }
-         Alt+G            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "4" "--as-float"; }
-         Mod+P            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "1" "--as-float"; }
-         Mod+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "2" "--as-float"; }
-         Mod+E            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "3" "--as-float"; }
-         Mod+G            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "4" "--as-float"; }
-         Mod+Ctrl+P       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "1"; }
-         Mod+Ctrl+Q       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "2"; }
-         Mod+Ctrl+E       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "3"; }
-         Mod+Ctrl+G       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "4"; }
+          //Alt+P            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "1" "--as-float"; }
+          //Alt+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "2" "--as-float"; }
+          //Alt+E            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "3" "--as-float"; }
+          //Alt+G            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "4" "--as-float"; }
+          //Mod+Q            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "1" "--as-float"; }
+          //Mod+E            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "2" "--as-float"; }
+          //Mod+G            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "3" "--as-float"; }
+          //Mod+P            { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "create" "4" "--as-float"; }
+          //Mod+Ctrl+Q       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "1"; }
+          //Mod+Ctrl+E       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "2"; }
+          //Mod+Ctrl+G       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "3"; }
+          //Mod+Ctrl+P       { spawn "/home/salivala/Projects/niri-scratchpad/target/debug/niri-scratchpad" "delete" "4"; }
 
           Mod+Down { focus-window-down; }
           Mod+Up { focus-window-up; }

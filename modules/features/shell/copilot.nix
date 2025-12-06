@@ -5,6 +5,7 @@
       home.directories = [
         ".copilot"
         ".config/configstore"
+        ".config/github-copilot"
       ];
     };
   };

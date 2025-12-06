@@ -9,7 +9,7 @@
     startupCommands = optionals (desktop-shells.name != "dank-shell") [
       ''
         spawn-at-startup "${desktop-shells.execCommand}"
-        spawn-at-startup "sh -c 'niri-scratchpad daemon'"
+        spawn-sh-at-startup "niri-scratchpad daemon"
       ''
     ];
   in {

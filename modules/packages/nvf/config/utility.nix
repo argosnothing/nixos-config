@@ -7,5 +7,9 @@
       oil-nvim.enable = true;
       sleuth.enable = true;
     };
+    vim.assistant.copilot = {
+      enable = true;
+      cmp.enable = true;
+    };
   };
 }
