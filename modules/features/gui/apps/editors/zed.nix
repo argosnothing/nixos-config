@@ -8,15 +8,6 @@ in {
       ".config/zed"
       ".local/share/zed"
     ];
-    environment.systemPackages = with pkgs; [
-      zed-editor
-      nixd
-      nil
-    ];
-    programs.nix-ld.enable = true;
-    #hm = {
-    #  home.packages = with flake.packages.${system}; [zeditor];
-    #  stylix.targets.zed.enable = false;
-    #};
+    hj.packages = with flake.packages.${system}; [zeditor];
   };
 }
