@@ -8,6 +8,7 @@ in {
       ".config/zed"
       ".local/share/zed"
     ];
+    programs.nix-ld.enable = true;
     hj.packages = with flake.packages.${system}; [zeditor];
   };
 }

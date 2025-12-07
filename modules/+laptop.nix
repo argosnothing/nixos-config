@@ -8,7 +8,10 @@
       niri-bundle
       work
       gui-apps
+
       vscode
+      zed
+
       shell-apps
       battery
       touchpad
