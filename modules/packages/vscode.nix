@@ -20,6 +20,7 @@
       delve
       go-tools
       golangci-lint
+      vscode-extensions.vadimcn.vscode-lldb
     ];
   in {
     packages.vscode = pkgs.symlinkJoin {

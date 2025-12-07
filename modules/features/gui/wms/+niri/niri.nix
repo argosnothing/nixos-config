@@ -25,7 +25,7 @@ in {
       ++ nixos-modules;
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      package = inputs.my-niri.packages.${pkgs.system}.default;
     };
     environment.systemPackages = with pkgs; [
       xwayland-satellite

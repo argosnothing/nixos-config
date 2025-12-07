@@ -15,14 +15,15 @@
       plex
       mullvad
       transmission
+
       krita
       vscode
+      zed
+
       virtualization
       uhk
       work
-
       toys
-
       impermanence
       uefi
       legacy-zfs
