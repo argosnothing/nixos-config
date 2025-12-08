@@ -9,9 +9,6 @@
       ''
         workspace "stash" {
             open-on-output "DP-1"
-            layout {
-              hidden true
-            }
         }
       ''
     ];

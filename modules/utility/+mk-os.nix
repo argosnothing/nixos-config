@@ -16,6 +16,7 @@
       inherit system;
       modules = [
         config.flake.modules.nixos.base
+        config.flake.modules.nixos.cursor
         config.flake.modules.nixos.${name}
         {
           my.hostname = name;

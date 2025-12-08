@@ -9,6 +9,7 @@ in {
     options.my = {
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
+      is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
       persist = {
         enable = mkEnableOption "Enable Impermanence";
         root = {

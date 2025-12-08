@@ -6,9 +6,11 @@
     environment.systemPackages = with pkgs; [
       wdisplays
       wpa_supplicant
+      waybar
     ];
     imports = with config.flake.modules.nixos; [
       niri-bundle
+
       gui-apps
       shell-apps
       via

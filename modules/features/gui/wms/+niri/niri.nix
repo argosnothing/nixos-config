@@ -14,7 +14,6 @@ in {
     nixos-modules = with flake.modules.nixos; [
       wm
       nemo
-      cursor
       icons
       gtk
     ];
@@ -25,7 +24,8 @@ in {
       ++ nixos-modules;
     programs.niri = {
       enable = true;
-      package = inputs.my-niri.packages.${pkgs.system}.default;
+      package = pkgs.niri-unstable;
+      #package = inputs.my-niri.packages.${pkgs.system}.default;
     };
     environment.systemPackages = with pkgs; [
       xwayland-satellite
