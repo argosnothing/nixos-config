@@ -5,6 +5,10 @@
       enableSSHSupport = true;
     };
     my.persist.home.directories = [".mozilla"];
+    my.persist.home.cache.directories = [".cache/mozilla"];
+    environment.systemPackages = with pkgs; [
+      firefoxpwa
+    ];
     programs.firefox = {
       enable = true;
       preferences = {
