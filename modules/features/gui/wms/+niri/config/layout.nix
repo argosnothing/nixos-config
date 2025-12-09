@@ -11,6 +11,7 @@
     my.wm.niri.settings = lib.mkAfter [
       ''
         layout {
+          always-center-single-column
           gaps ${toString 7}
           struts {
             left ${toString strut-size}
