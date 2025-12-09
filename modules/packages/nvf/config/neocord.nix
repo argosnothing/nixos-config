@@ -3,7 +3,9 @@
     vim.presence = {
       neocord = {
         enable = true;
-        enable_line_number = true;
+        setupOpts = {
+          enable_line_number = true;
+        };
       };
     };
   };
