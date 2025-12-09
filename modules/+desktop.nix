@@ -21,6 +21,7 @@
       krita
       vscode
       zed
+      chromium
 
       virtualization
       uhk
