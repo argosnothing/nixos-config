@@ -44,7 +44,7 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces";
-    niri-scratchpad.url = "github:argosnothing/niri-scratchpad/1.0";
+    niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     oxwm = {
       url = "github:argosnothing/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
