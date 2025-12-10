@@ -55,7 +55,8 @@
     };
     occult-theme.url = "github:/argosnothing/occult-theme";
     mango = {
-      url = "github:DreamMaoMao/mango";
+      #url = "github:DreamMaoMao/mango";
+      url = "github:argosnothing/mangowc/380";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dgop = {

@@ -14,7 +14,6 @@ in {
     mango-settings = builtins.concatStringsSep "\n" config.my.wm.mango.settings;
     nixos-modules = with flake.modules.nixos; [
       wm
-      cursor
       icons
       gtk
     ];

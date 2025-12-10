@@ -2,6 +2,7 @@
   flake.modules.nixos.mango = {lib, ...}: {
     my.wm.mango.settings = lib.mkAfter [
       ''
+        exec-once=~/.config/mango/autostart.sh
         # Misc
         focus_cross_monitor=1
         axis_bind_apply_timeout=100
