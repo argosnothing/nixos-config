@@ -11,6 +11,7 @@
     ];
     programs.firefox = {
       enable = true;
+      nativeMessagingHosts.packages = [pkgs.firefoxpwa];
       preferences = {
         "widget.use-xdg-desktop-portal.open-uri" = 1;
       };
