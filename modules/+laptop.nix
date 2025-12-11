@@ -11,6 +11,7 @@
 
       vscode
       zed
+      krita
 
       shell-apps
       battery
