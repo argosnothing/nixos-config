@@ -9,8 +9,8 @@
       waybar
     ];
     imports = with config.flake.modules.nixos; [
-      #niri-bundle
-      hyprland-bundle
+      niri-bundle
+      #hyprland-bundle
 
       gui-apps
       shell-apps
