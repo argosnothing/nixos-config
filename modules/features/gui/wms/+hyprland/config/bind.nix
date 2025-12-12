@@ -2,16 +2,14 @@
   flake.modules.nixos.hyprland = {lib, ...}: {
     my.wm.hyprland.settings = lib.mkAfter [
       ''
-        $mainMod = SUPER # Sets "Windows" key as main modifier
+        $mainMod = SUPER
 
         bind = $mainMod, Return, exec, $terminal
         bind = $mainMod, Escape, killactive,
-        #bind = $mainMod, M, exit,
+        bind = $mainMod SHIFT, E, exit,
         bind = $mainMod, E, exec, $fileManager
         bind = $mainMod, V, togglefloating,
         bind = $mainMod, Space, exec, $menu
-        bind = $mainMod, P, pseudo, # dwindle
-        bind = $mainMod, J, togglesplit, # dwindle
 
         bind = $mainMod, left, movefocus, l
         bind = $mainMod, right, movefocus, r

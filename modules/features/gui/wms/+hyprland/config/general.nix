@@ -3,8 +3,8 @@
     my.wm.hyprland.settings = lib.mkAfter [
       ''
         general {
-          gaps_in = 5
-          gaps_out = 20
+          gaps_in = 1
+          gaps_out = 2
 
           border_size = 2
 

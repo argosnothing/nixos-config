@@ -9,7 +9,7 @@
     my.wm.hyprland.settings = lib.mkAfter [
       ''
         $terminal = kitty
-        $fileManager = dolphin
+        $fileManager = nemo
         $menu = ${desktop-shells.launcherCommand}
       ''
     ];
