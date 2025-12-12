@@ -4,7 +4,7 @@
       ''
         $mainMod = SUPER # Sets "Windows" key as main modifier
 
-        bind = $mainMod, Q, exec, $terminal
+        bind = $mainMod, Return, exec, $terminal
         bind = $mainMod, Escape, killactive,
         #bind = $mainMod, M, exit,
         bind = $mainMod, E, exec, $fileManager
