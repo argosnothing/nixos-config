@@ -46,7 +46,7 @@
     my-niri.url = "github:argosnothing/niri/hidden-workspaces";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     oxwm = {
-      url = "github:argosnothing/oxwm";
+      url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-shell = {

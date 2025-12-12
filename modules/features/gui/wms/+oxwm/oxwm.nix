@@ -8,10 +8,8 @@ in {
   flake.modules.nixos.oxwm = {pkgs, ...}: let
     nixos-modules = with flake.modules.nixos; [
       ly
-      cursor
       icons
       gtk
-      stylix
     ];
   in {
     environment.systemPackages = with pkgs; [
