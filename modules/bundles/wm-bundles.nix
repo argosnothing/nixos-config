@@ -7,6 +7,11 @@ in {
       noctalia-shell
       cosmic-greeter
     ];
+    hyprland-bundle.imports = with flake.modules.nixos; [
+      hyprland
+      noctalia-shell
+      cosmic-greeter
+    ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
       noctalia-shell

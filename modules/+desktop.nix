@@ -17,7 +17,6 @@
       plex
       mullvad
       transmission
-      emacs
 
       krita
       vscode
