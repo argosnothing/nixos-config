@@ -14,7 +14,7 @@
         window-rule {
           match app-id="kitty"
           exclude title="^pamix$"
-          opacity 0.95
+          opacity 1.0
         }
 
         window-rule {
