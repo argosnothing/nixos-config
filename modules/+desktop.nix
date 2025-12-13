@@ -21,7 +21,7 @@
       krita
       vscode
       zed
-      cursor-editor
+      code-cursor
 
       virtualization
       uhk
