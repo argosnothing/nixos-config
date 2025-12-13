@@ -6,14 +6,6 @@ in {
     inherit (pkgs.stdenv.hostPlatform) system;
   in {
     vim = {
-      extraPlugins = {
-        Jumppack = {
-          package = vimPlugins.vim-jetpack;
-          setup = ''
-            require('Jumppack').setup{}
-          '';
-        };
-      };
     };
   };
 }

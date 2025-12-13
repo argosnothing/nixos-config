@@ -13,6 +13,7 @@
       moon-buggy
       sl
       bb
+      cowsay
     ];
   };
 }

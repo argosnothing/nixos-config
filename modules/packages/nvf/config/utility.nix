@@ -6,6 +6,7 @@
       nix-develop.enable = true;
       oil-nvim.enable = true;
       sleuth.enable = true;
+      snacks.enable = true;
     };
     vim.assistant.copilot = {
       enable = true;

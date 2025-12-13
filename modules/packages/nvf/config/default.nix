@@ -13,7 +13,6 @@
       tabline.nvimBufferline.enable = true;
       projects.project-nvim.enable = true;
       telescope.enable = true;
-      navigation.harpoon.enable = true;
       extraPackages = [pkgs.vimPlugins.direnv-vim];
     };
 
