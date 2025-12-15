@@ -17,7 +17,7 @@
           Mod+Slash { show-hotkey-overlay; }
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
-          //Mod+0 { toggle-workspace-visibility "stash"; }
+          Mod+0 { toggle-workspace-visibility "stash"; }
 
          Alt+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
          Alt+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
