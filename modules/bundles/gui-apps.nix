@@ -12,6 +12,7 @@ in {
       spotify-player
       spicetify
       gajim
+      obsidian
     ];
   in {
     imports = nixos-modules;
