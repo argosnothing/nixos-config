@@ -1,5 +1,6 @@
-{
+{inputs, ...}: {
   flake.modules.nixos.emacs = {pkgs, ...}: {
+    nixpkgs.overlays = [inputs.nix-doom-emacs-unstraightened.overlays.default];
     environment.systemPackages = with pkgs;
       [
         git
@@ -10,14 +11,12 @@
         emacsPackages.direnv
         rust-analyzer
         lldb
+        nixd
       ]
       ++ [
         (pkgs.emacsWithDoom {
           doomDir = ./doom;
           doomLocalDir = "~/.local/share/nix-doom";
-          extraPackages = with pkgs; [
-            nixd
-          ];
         })
       ];
     my.persist = {

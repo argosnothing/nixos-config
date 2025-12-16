@@ -79,6 +79,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
 (setq dap-auto-configure-mode t)
 (after! eglot
   ;; Always use nixd for Nix buffers
@@ -89,3 +90,32 @@
 
 (when (fboundp 'nix-ts-mode)
   (add-hook 'nix-ts-mode-hook #'eglot-ensure))
+
+(require 'comint)
+
+(defmacro define-qat-command (name program)
+  `(defun ,name ()
+     ,(format "Run `%s` in kitty's quick-access terminal." program)
+     (interactive)
+     (start-process
+      ,(symbol-name name) nil
+      "kitten" "quick-access-terminal"
+      "bash" "-lc" ,program)))
+
+(define-qat-command rebuilds "rebuilds")
+(define-qat-command rebuildb "rebuildb")
+
+(use-package savehist
+  :demand t
+  :config
+  (savehist-mode))
+
+(use-package saveplace
+  :defer 3
+  :init
+  (save-place-mode 1)
+  :custom
+  (save-place-ignore-files-regexp
+   "\\(?:COMMIT_EDITMSG\\|hg-editor-[[:alnum:]]+\\.txt\\|elpa\\|svn-commit\\.tmp\\|bzr_log\\.[[:alnum:]]+\\)$")
+  (save-place-file (concat user-emacs-directory ".my-saved-places"))
+  (save-place-forget-unreadable-files t))
