@@ -7,16 +7,17 @@
       wdisplays
       wpa_supplicant
       waybar
+      nixd
     ];
     imports = with config.flake.modules.nixos; [
       niri-bundle
-
       gui-apps
       shell-apps
       via
       plex
       mullvad
       transmission
+      emacs
 
       krita
       vscode

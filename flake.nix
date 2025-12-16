@@ -55,7 +55,6 @@
     };
     occult-theme.url = "github:/argosnothing/occult-theme";
     mango = {
-      #url = "github:DreamMaoMao/mango";
       url = "github:argosnothing/mangowc/380";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -81,6 +80,7 @@
     nix-flatpak = {
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     zwift.url = "github:netbrain/zwift";
   };
 }
