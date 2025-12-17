@@ -18,6 +18,13 @@
         }
 
         window-rule {
+          match app-id="kitty_floating"
+          opacity 0.8
+          open-floating true
+          baba-is-float true
+        }
+
+        window-rule {
           match title="RuneLite"
           open-floating true
           opacity 1.0
