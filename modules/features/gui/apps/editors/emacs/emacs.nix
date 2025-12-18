@@ -20,16 +20,31 @@
         })
       ];
     my.persist = {
-      home.directories = [
-        ".config/emacs"
-        ".config/doom"
-        ".local/share/nix-doom"
-        ".emacs.d"
-      ];
+      home = {
+        cache.files = [
+          ".cache/doom/recentf"
+          ".cache/doom/desktop"
+          ".cache/doom/savehist"
+          ".cache/doom/saveplace"
+          ".cache/doom/treemacs-persist"
+        ];
+        cache.directories = [
+          ".cache/doom/nix/projectile"
+          ".cache/doom/nix/eln"
+          ".cache/doom/autosave"
+          ".cache/doom/org"
+          ".cache/doom/backup"
+        ];
+        directories = [
+          ".config/emacs"
+          ".config/doom"
+          ".local/share/nix-doom"
+          ".emacs.d"
+        ];
+      };
     };
     services.emacs = {
       enable = true;
-      package = pkgs.emacs-gtk;
     };
   };
 }

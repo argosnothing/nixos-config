@@ -23,6 +23,10 @@
           owner = "${config.user.name}";
           mode = "0600";
         };
+        github_token = {
+          mode = "0400";
+          owner = "${config.user.name}";
+        };
         example-key = {};
         pc_password = {
           owner = "root";
