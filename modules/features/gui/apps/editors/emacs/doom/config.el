@@ -40,18 +40,6 @@
 (define-qat-command rebuildb "rebuildb")
 (define-qat-command record-region "record-region")
 
-(after! desktop
-  (setq desktop-dirname doom-cache-dir
-        desktop-path (list desktop-dirname)
-        desktop-base-file-name "desktop"
-        desktop-base-lock-name "desktop.lock"
-        desktop-load-locked-desktop t
-        desktop-save 'if-exists
-        desktop-files-not-to-save
-        "\\(\\.gz\\|\\.zip\\|\\.tar\\|\\.elc\\|\\.git/\\|/ssh:\\|/sudo:\\)"))
-
-(desktop-save-mode 1)
-(add-hook 'kill-emacs-hook #'desktop-save-in-desktop-dir)
 (defun qat--run-cmd (cmd &optional dir)
  (let* ((default-directory (or dir default-directory))
         (pname (format "qat-%d" (abs (random)))))

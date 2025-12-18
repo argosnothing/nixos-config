@@ -6,6 +6,10 @@
         ".copilot"
         ".config/configstore"
         ".config/github-copilot"
+        ".config/copilot-chat"
+      ];
+      home.cache.directories = [
+        ".cache/copilot-chat"
       ];
     };
   };

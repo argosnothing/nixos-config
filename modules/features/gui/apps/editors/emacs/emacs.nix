@@ -22,10 +22,6 @@
     my.persist = {
       home = {
         cache.files = [
-          ".cache/doom/recentf"
-          ".cache/doom/desktop"
-          ".cache/doom/savehist"
-          ".cache/doom/saveplace"
           ".cache/doom/treemacs-persist"
         ];
         cache.directories = [
