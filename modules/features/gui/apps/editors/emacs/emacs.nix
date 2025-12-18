@@ -12,6 +12,7 @@
         rust-analyzer
         lldb
         nixd
+        nil
       ]
       ++ [
         (pkgs.emacsWithDoom {
