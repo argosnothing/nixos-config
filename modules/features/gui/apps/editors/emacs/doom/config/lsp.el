@@ -1,25 +1,21 @@
-;;; ~/.doom.d/lsp.el -*- lexical-binding: t; -*-
-
+;;; lsp.el -*- lexical-binding: t; -*-
 (use-package! lsp-mode
   :commands (lsp lsp-deferred)
   :init
-  (setq lsp-auto-configure t
-        lsp-completion-provider :capf
-        lsp-enable-snippet t
-        lsp-enable-symbol-highlighting t
-        lsp-enable-links t
-        lsp-semantic-tokens-enable t
+  (setq lsp-inlay-hint-enable t
         lsp-lens-enable t
-        lsp-inlay-hint-enable t
-        lsp-eldoc-enable-hover t
+        lsp-semantic-tokens-enable t
+        lsp-eldoc-enable-hover nil
         lsp-eldoc-render-all t
         lsp-signature-auto-activate t
-        lsp-signature-render-documentation t
-        lsp-headerline-breadcrumb-enable t
-        lsp-modeline-code-actions-enable t
-        lsp-modeline-diagnostics-enable t)
+        lsp-signature-render-documentation t)
   :config
-  (add-hook 'lsp-mode-hook #'lsp-inlay-hints-mode))
+  (add-hook 'lsp-managed-mode-hook
+            (lambda ()
+              (when (and (derived-mode-p 'rustic-mode 'rust-mode)
+                         (lsp-feature? "textDocument/inlayHint"))
+                (lsp-inlay-hints-mode 1)
+                ))))
 
 (use-package! lsp-ui
   :after lsp-mode
@@ -29,71 +25,59 @@
         lsp-ui-doc-delay 0.15
         lsp-ui-doc-show-with-cursor t
         lsp-ui-sideline-enable t
-        lsp-ui-sideline-show-hover t
+        lsp-ui-sideline-show-hover nil
         lsp-ui-sideline-show-code-actions t
         lsp-ui-sideline-show-diagnostics t
         lsp-ui-peek-enable t)
   :config
-  (add-hook 'lsp-mode-hook #'lsp-ui-mode))
-
-(use-package! dap-mode
-  :after lsp-mode
-  :commands (dap-debug dap-debug-edit-template)
-  :init
-  (setq dap-auto-configure-mode t
-        dap-auto-configure-features '(sessions locals controls tooltip))
-  :config
-  (dap-auto-configure-mode 1)
-  (dap-ui-mode 1)
-  (dap-tooltip-mode 1)
-  (require 'dap-lldb)
-  (require 'dap-codelldb))
+  (add-hook 'lsp-managed-mode-hook
+            (lambda ()
+              (when (derived-mode-p 'rustic-mode 'rust-mode 'nix-mode)
+                (lsp-ui-mode 1)))))
 
 (use-package! lsp-rust
-  :after (lsp-mode rust-mode)
+  :after lsp-mode
   :init
   (setq lsp-rust-server 'rust-analyzer
         lsp-rust-analyzer-server-display-inlay-hints t
         lsp-rust-analyzer-display-parameter-hints t
-        lsp-rust-analyzer-display-chaining-hints t
+        lsp-rust-analyzer-display-chaining-hints nil
         lsp-rust-analyzer-display-closure-return-type-hints t
-        lsp-rust-analyzer-display-lifetime-elision-hints-enable "always"
-        lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names t
+        lsp-rust-analyzer-display-lifetime-elision-hints-enable "never"
+        lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil
         lsp-rust-analyzer-display-reborrow-hints "always"
         lsp-rust-analyzer-display-expression-adjustment-hints "always"
-        lsp-rust-analyzer-display-binding-mode-hints t
-        lsp-rust-analyzer-display-closure-capture-hints t
-        lsp-rust-analyzer-proc-macro-enable t
-        lsp-rust-analyzer-lens-enable t)
+        lsp-rust-analyzer-display-binding-mode-hints nil
+        lsp-rust-analyzer-display-closure-capture-hints t)
   :config
-  (add-hook 'rust-mode-hook #'lsp-deferred))
+  (lsp-register-custom-settings
+   '(("rust-analyzer.inlayHints.parameterHints.enable" nil t))))
 
-(use-package! nix-mode
-  :defer t)
+(use-package! rustic
+  :hook (rustic-mode-local-vars . lsp-deferred))
+(use-package! lsp-ui
+  :hook(lsp-mode . lsp-ui-mode))
+
+(after! nix-mode
+  (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix")))
 
 (after! lsp-mode
-  (require 'lsp-client)
-
-  (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix"))
-
   (lsp-register-client
    (make-lsp-client
     :new-connection (lsp-stdio-connection (lambda () (list "nixd")))
     :activation-fn (lsp-activate-on "nix")
+    :priority 2
     :server-id 'nixd
-    :major-modes '(nix-mode)))
+    :major-modes '(nix-mode)
+    :initialized-fn
+    (lambda (workspace)
+      (let ((caps (lsp--workspace-server-capabilities workspace)))
+        (when (hash-table-p caps)
+          (puthash :documentFormattingProvider :json-false caps)
+          (puthash :documentRangeFormattingProvider :json-false caps)))))))
+(setq-hook! 'nix-mode-hook
+  lsp-enabled-clients '(nixd))
+(after! lsp-ui
+  (add-hook 'nix-mode-hook #'lsp-ui-mode))
 
-  (lsp-register-client
-   (make-lsp-client
-    :new-connection (lsp-stdio-connection (lambda () (list "nil")))
-    :activation-fn (lsp-activate-on "nix")
-    :server-id 'nil
-    :major-modes '(nix-mode)))
-
-  (add-hook! 'nix-mode-hook
-    (defun +nix-lsp-start-both ()
-      (setq-local lsp-enabled-clients '(nixd nil))
-      (lsp-deferred))))
-
-(add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
-(message "loaded lsp.el")
+(add-hook 'nix-mode-hook #'lsp-deferred)

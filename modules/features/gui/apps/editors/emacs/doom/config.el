@@ -50,13 +50,12 @@
                    "kitty" "--class" "kitty_floating"
                    "bash" "-lc" cmd)))
 
-(defun qat--flake-root (&optional start)
-  (let ((dir (file-name-as-directory (expand-file-name (or start default-directory)))))
-    (or (locate-dominating-file dir "flake.nix")
-        (user-error "Couldn't find flake.nix above %s" dir))))
+(advice-add 'copilot--infer-indentation-offset :around
+            (lambda (orig-fn &rest args)
+              (ignore-errors (apply orig-fn args))))
 
 
-(defun flake-update (x)
-  (interactive (list (read-string "nix flake update arg: " (thing-at-point 'symbol t))))
-  (qat--run-cmd (format "nix flake update %s" x) (qat--flake-root)))
+(after! company
+  (setq company-backends '(company-capf)))
+
 (load! "config/default")

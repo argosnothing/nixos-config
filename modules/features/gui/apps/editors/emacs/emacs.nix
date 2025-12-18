@@ -18,6 +18,7 @@
         (pkgs.emacsWithDoom {
           doomDir = ./doom;
           doomLocalDir = "~/.local/share/nix-doom";
+          extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
         })
       ];
     my.persist = {
