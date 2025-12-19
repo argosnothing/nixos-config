@@ -18,6 +18,7 @@
           Mod+O repeat=false { toggle-overview; }
           Mod+Escape repeat=false { close-window; }
           Mod+0 { toggle-workspace-visibility "stash"; }
+          Mod+Shift+0 { toggle-workspace-visibility "work"; }
 
          Alt+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
          Alt+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
@@ -206,6 +207,7 @@
           XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
           XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
         }
+
       ''
     ];
   };

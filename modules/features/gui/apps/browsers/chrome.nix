@@ -1,7 +1,7 @@
 {
-  flake.modules.nixos.chrome = {
-    hm = {
-      programs.google-chrome.enable = true;
-    };
+  flake.modules.nixos.chrome = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      google-chrome
+    ];
   };
 }

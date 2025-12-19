@@ -6,7 +6,7 @@
     my.persist = {
       home = {
         cache.files = [
-          ".cache/doom/treemacs-persist"
+          ".cache/doom/lsp-session"
         ];
         cache.directories = [
           ".cache/doom/nix/projectile"

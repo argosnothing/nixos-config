@@ -11,6 +11,10 @@
             open-on-output "DP-1"
             hidden true
         }
+        workspace "work" {
+            open-on-output "DP-1"
+            hidden true
+        }
       ''
     ];
     environment.systemPackages = [
