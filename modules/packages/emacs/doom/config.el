@@ -1,4 +1,4 @@
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-dark+)
 
 (setq doom-font (font-spec :family "Cascadia Code" :size 16 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Cascadia Code" :size 16))

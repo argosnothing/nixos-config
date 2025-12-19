@@ -58,3 +58,7 @@
 ;; remap xref-find-definitions(M-.) and xref-find-references(M-?) to lsp-ui-peek
 (define-key lsp-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
 (define-key lsp-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+
+(after! lsp-ui
+  (map! "M-." #'lsp-ui-peek-find-definitions
+        "M-?" #'lsp-ui-peek-find-references))

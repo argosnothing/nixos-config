@@ -24,6 +24,7 @@
       lldb
       nixd
       nil
+      alejandra
       cascadia-code
     ];
 
