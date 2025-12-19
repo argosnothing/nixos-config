@@ -24,7 +24,7 @@
     emacsDoom = pkgs'.emacsWithDoom {
       doomDir = ./doom;
       doomLocalDir = "~/.local/share/nix-doom";
-      extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
+      #extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
     };
   in {
     packages.emacs-doom-wrapped = pkgs'.symlinkJoin {
