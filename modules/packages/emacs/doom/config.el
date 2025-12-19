@@ -1,5 +1,3 @@
-;;(setq doom-theme 'doom-tomorrow-night)
-;;(setq doom-theme 'doom-tomorrow-day)
 (setq doom-theme 'doom-one)
 
 (setq doom-font (font-spec :family "Cascadia Code" :size 16 :weight 'regular)

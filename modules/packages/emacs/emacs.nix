@@ -24,6 +24,7 @@
       lldb
       nixd
       nil
+      cascadia-code
     ];
 
     emacsDoom = pkgs'.emacsWithDoom {

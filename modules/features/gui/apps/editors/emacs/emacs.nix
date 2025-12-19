@@ -1,6 +1,5 @@
 {inputs, ...}: {
   flake.modules.nixos.emacs = {pkgs, ...}: {
-    nixpkgs.overlays = [inputs.nix-doom-emacs-unstraightened.overlays.default];
     environment.systemPackages = [
       inputs.self.packages.${pkgs.system}.emacs
     ];

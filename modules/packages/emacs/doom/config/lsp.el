@@ -32,7 +32,7 @@
   :config
   (add-hook 'lsp-managed-mode-hook
             (lambda ()
-              (when (derived-mode-p 'rustic-mode 'rust-mode 'nix-mode)
+              (when (derived-mode-p 'rustic-mode 'rust-mode)
                 (lsp-ui-mode 1)))))
 
 (use-package! lsp-rust
@@ -55,29 +55,6 @@
 (use-package! lsp-ui
   :hook(lsp-mode . lsp-ui-mode))
 
-(after! nix-mode
-  (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix")))
-
-(after! lsp-mode
-  (lsp-register-client
-   (make-lsp-client
-    :new-connection (lsp-stdio-connection (lambda () (list "nixd")))
-    :activation-fn (lsp-activate-on "nix")
-    :priority 2
-    :server-id 'nixd
-    :major-modes '(nix-mode)
-    :initialized-fn
-    (lambda (workspace)
-      (let ((caps (lsp--workspace-server-capabilities workspace)))
-        (when (hash-table-p caps)
-          (puthash :documentFormattingProvider :json-false caps)
-          (puthash :documentRangeFormattingProvider :json-false caps)))))))
-(setq-hook! 'nix-mode-hook
-  lsp-enabled-clients '(nixd))
-(after! lsp-ui
-  (add-hook 'nix-mode-hook #'lsp-ui-mode))
-
-(add-hook 'nix-mode-hook #'lsp-deferred)
 ;; remap xref-find-definitions(M-.) and xref-find-references(M-?) to lsp-ui-peek
 (define-key lsp-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
 (define-key lsp-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
