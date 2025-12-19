@@ -6,3 +6,4 @@
 (package! copilot)
 (package! copilot-chat)
 (package! mcp)
+(package! vertico-posframe)

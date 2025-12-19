@@ -5,15 +5,20 @@
     ];
     my.persist = {
       home = {
-        cache.files = [
-          ".cache/doom/lsp-session"
-        ];
+        ##################################
+        # cache.files = [                #
+        #   ".cache/doom/lsp-session"    #
+        # ];                             #
+        # cache.directories = [          #
+        #   ".cache/doom/nix/projectile" #
+        #   ".cache/doom/nix/eln"        #
+        #   ".cache/doom/autosave"       #
+        #   ".cache/doom/org"            #
+        #   ".cache/doom/backup"         #
+        # ];                             #
+        ##################################
         cache.directories = [
-          ".cache/doom/nix/projectile"
-          ".cache/doom/nix/eln"
-          ".cache/doom/autosave"
-          ".cache/doom/org"
-          ".cache/doom/backup"
+          ".cache/doom"
         ];
         directories = [
           ".config/emacs"

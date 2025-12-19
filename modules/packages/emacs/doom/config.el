@@ -57,3 +57,6 @@
   (setq company-backends '(company-capf)))
 
 (load! "config/default")
+(global-set-key (kbd "M-SPC") 'avy-goto-word-0)
+(vertico-posframe-mode 1)
+(setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)

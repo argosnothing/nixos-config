@@ -15,6 +15,7 @@
       bolt-launcher
       mpv
       bash
+      tree
       vulkan-tools
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
