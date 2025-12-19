@@ -1,14 +1,8 @@
-{inputs, ...}: {
-  perSystem = {
-    pkgs,
-    lib,
-    ...
-  }: let
-    system = pkgs.stdenv.hostPlatform.system;
-
-    allowUnfreeNames = [
-      "copilot-language-server"
-    ];
+{ inputs, ... }:
+{
+  perSystem = { system, lib, ... }:
+  let
+    allowUnfreeNames = [ "copilot-language-server" ];
 
     pkgs' = import inputs.nixpkgs {
       inherit system;
@@ -17,34 +11,32 @@
         inputs.nix-doom-emacs-unstraightened.overlays.default
       ];
 
-      config.allowUnfreePredicate = pkg:
-        lib.elem (lib.getName pkg) allowUnfreeNames;
+      config = {
+        allowUnfreePredicate = pkg:
+          lib.elem (lib.getName pkg) allowUnfreeNames;
+
+        # TEMP sanity switch: uncomment to confirm unfree is the blocker
+        # allowUnfree = true;
+      };
     };
 
     emacsInputs = with pkgs'; [
-      git
-      ripgrep
-      coreutils
-      fd
-      clang
+      git ripgrep coreutils fd clang
       emacsPackages.direnv
-      rust-analyzer
-      lldb
-      nixd
-      nil
+      rust-analyzer lldb
+      nixd nil
     ];
 
     emacsDoom = pkgs'.emacsWithDoom {
       doomDir = ./doom;
       doomLocalDir = "~/.local/share/nix-doom";
-      extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
+      extraPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
     };
   in {
     packages.emacs-doom-wrapped = pkgs'.symlinkJoin {
       name = "emacs-doom-wrapped";
-      paths = [emacsDoom];
-
-      nativeBuildInputs = [pkgs'.makeWrapper];
+      paths = [ emacsDoom ];
+      nativeBuildInputs = [ pkgs'.makeWrapper ];
 
       postBuild = ''
         wrapProgram $out/bin/emacs \
