@@ -49,7 +49,7 @@
   in {
     packages.emacs = wrapped;
 
-    apps.emacs-doom-wrapped = {
+    apps.emacs = {
       type = "app";
       program = "${wrapped}/bin/emacs";
     };
