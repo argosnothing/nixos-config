@@ -18,6 +18,7 @@
       coreutils
       fd
       clang
+      emacs
       emacsPackages.direnv
       rust-analyzer
       lldb
@@ -47,6 +48,7 @@
     };
   in {
     packages.emacs = wrapped;
+
     apps.emacs-doom-wrapped = {
       type = "app";
       program = "${wrapped}/bin/emacs";
