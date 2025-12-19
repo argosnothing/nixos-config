@@ -1,26 +1,9 @@
 {inputs, ...}: {
   flake.modules.nixos.emacs = {pkgs, ...}: {
     nixpkgs.overlays = [inputs.nix-doom-emacs-unstraightened.overlays.default];
-    environment.systemPackages = with pkgs;
-      [
-        git
-        ripgrep
-        coreutils
-        fd
-        clang
-        emacsPackages.direnv
-        rust-analyzer
-        lldb
-        nixd
-        nil
-      ]
-      ++ [
-        (pkgs.emacsWithDoom {
-          doomDir = ./doom;
-          doomLocalDir = "~/.local/share/nix-doom";
-          extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
-        })
-      ];
+    environment.systemPackages = [
+      inputs.self.packages.${pkgs.system}.emacs
+    ];
     my.persist = {
       home = {
         cache.files = [
@@ -40,9 +23,6 @@
           ".emacs.d"
         ];
       };
-    };
-    services.emacs = {
-      enable = true;
     };
   };
 }

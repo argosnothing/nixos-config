@@ -1,2 +1,0 @@
-(load! "mcp")
-(load! "lsp")

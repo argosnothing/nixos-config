@@ -1,8 +1,0 @@
-(package! direnv)
-(package! elcord)
-(package! nerd-icons-dired)
-(package! company-box)
-(package! el-fetch)
-(package! copilot)
-(package! copilot-chat)
-(package! mcp)

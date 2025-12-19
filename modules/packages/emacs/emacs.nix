@@ -1,10 +1,14 @@
 {inputs, ...}: {
-  perSystem = {system, ...}: let
+  perSystem = {
+    system,
+    pkgs,
+    lib,
+    self',
+    ...
+  }: let
     pkgs' = import inputs.nixpkgs {
       inherit system;
-      overlays = [
-        inputs.nix-doom-emacs-unstraightened.overlays.default
-      ];
+      overlays = [inputs.nix-doom-emacs-unstraightened.overlays.default];
       config.allowUnfree = true;
     };
 
@@ -24,15 +28,13 @@
     emacsDoom = pkgs'.emacsWithDoom {
       doomDir = ./doom;
       doomLocalDir = "~/.local/share/nix-doom";
-      #extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
+      extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
     };
-  in {
-    packages.emacs-doom-wrapped = pkgs'.symlinkJoin {
-      name = "emacs-doom-wrapped";
+
+    wrapped = pkgs'.symlinkJoin {
+      name = "emacs";
       paths = [emacsDoom];
-
       nativeBuildInputs = [pkgs'.makeWrapper];
-
       postBuild = ''
         wrapProgram $out/bin/emacs \
           --prefix PATH : ${pkgs'.lib.makeBinPath emacsInputs}
@@ -42,6 +44,12 @@
             --prefix PATH : ${pkgs'.lib.makeBinPath emacsInputs}
         fi
       '';
+    };
+  in {
+    packages.emacs = wrapped;
+    apps.emacs-doom-wrapped = {
+      type = "app";
+      program = "${wrapped}/bin/emacs";
     };
   };
 }
