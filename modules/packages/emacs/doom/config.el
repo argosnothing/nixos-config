@@ -50,9 +50,9 @@
                    "kitty" "--class" "kitty_floating"
                    "bash" "-lc" cmd)))
 
-(advice-add 'copilot--infer-indentation-offset :around
-            (lambda (orig-fn &rest args)
-              (ignore-errors (apply orig-fn args))))
+;;(advice-add 'copilot--infer-indentation-offset :around
+;;           (lambda (orig-fn &rest args)
+;;            (ignore-errors (apply orig-fn args))))
 
 
 (after! company
