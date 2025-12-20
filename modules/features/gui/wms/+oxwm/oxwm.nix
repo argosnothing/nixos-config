@@ -14,12 +14,9 @@ in {
   in {
     environment.systemPackages = with pkgs; [
       dmenu
+      oxwm
     ];
-    imports =
-      [
-        inputs.oxwm.nixosModules.default
-      ]
-      ++ nixos-modules;
+    imports = nixos-modules;
     services.xserver = {
       enable = true;
       windowManager.oxwm.enable = true;

@@ -21,6 +21,7 @@
       emacs
       emacsPackages.direnv
       rust-analyzer
+      rustfmt
       lldb
       nixd
       nil

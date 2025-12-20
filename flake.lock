@@ -352,7 +352,7 @@
       },
       "locked": {
         "lastModified": 1766070261,
-        "narHash": "sha256-+PtJcem1sDfh6H53Mmrj0ky8gg56yAPMctEJJp3LNaI=",
+        "narHash": "sha256-Pdi5ldk5cVAddhaoBPQb5tVP7WI16ujrm7d4rSEPNTE=",
         "owner": "argosnothing",
         "repo": "niri",
         "rev": "d82fcbca5391a3ac89f124846f169c1df0228b34",
@@ -768,26 +768,6 @@
         "type": "github"
       }
     },
-    "oxwm": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1765975153,
-        "narHash": "sha256-se4KPJG6ZBjhg6LKuXvOgF3PFH/5R9lvKNLux84NvIk=",
-        "owner": "tonybanters",
-        "repo": "oxwm",
-        "rev": "fa421d25482d8db53e2aaa2efaa1aa15f96e8733",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tonybanters",
-        "repo": "oxwm",
-        "type": "github"
-      }
-    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -831,7 +811,6 @@
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
         "occult-theme": "occult-theme",
-        "oxwm": "oxwm",
         "silent-sddm": "silent-sddm",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",

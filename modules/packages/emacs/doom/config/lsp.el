@@ -55,10 +55,25 @@
 (use-package! lsp-ui
   :hook(lsp-mode . lsp-ui-mode))
 
-;; remap xref-find-definitions(M-.) and xref-find-references(M-?) to lsp-ui-peek
-(define-key lsp-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-(define-key lsp-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
-
+(defun my-xref-peek-bindings ()
+  ;; Please, XREF please just fuck off.
+  (when (boundp 'lsp-mode-map)
+    (define-key lsp-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+    (define-key lsp-mode-map [remap xref-find-references]  #'lsp-ui-peek-find-references))
+  (when (boundp 'xref--xref-buffer-mode-map)
+    (define-key xref--xref-buffer-mode-map [remap xref-goto-xref] #'ignore)
+    (define-key xref--xref-buffer-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+    (define-key xref--xref-buffer-mode-map [remap xref-find-references]  #'lsp-ui-peek-find-references))
+  (global-set-key [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (global-set-key [remap xref-find-references]  #'lsp-ui-peek-find-references)
+  (when (fboundp 'lsp-ui-peek-find-definitions)
+    (global-set-key (kbd "M-.") #'lsp-ui-peek-find-definitions))
+  (when (fboundp 'lsp-ui-peek-find-references)
+    (global-set-key (kbd "M-?") #'lsp-ui-peek-find-references)))
+(after! xref
+  (my-xref-peek-bindings))
 (after! lsp-ui
-  (map! "M-." #'lsp-ui-peek-find-definitions
-        "M-?" #'lsp-ui-peek-find-references))
+  (my-xref-peek-bindings))
+(add-hook 'doom-after-init-hook #'my-xref-peek-bindings)
+(after! lsp-mode
+  (add-hook 'lsp-mode-hook #'my-xref-peek-bindings))
