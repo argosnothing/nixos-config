@@ -6,12 +6,14 @@
     };
     imports = with config.flake.modules.nixos; [
       niri-bundle
+      #cosmic
       work
       gui-apps
 
       vscode
       zed
       krita
+      emacs
 
       shell-apps
       battery
