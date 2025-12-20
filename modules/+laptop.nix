@@ -5,8 +5,9 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      niri-bundle
+      #niri-bundle
       #cosmic
+      gnome
       work
       gui-apps
 
