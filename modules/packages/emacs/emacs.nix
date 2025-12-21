@@ -27,12 +27,17 @@
       nil
       alejandra
       cascadia-code
+      pandoc
     ];
 
     emacsDoom = pkgs'.emacsWithDoom {
       doomDir = ./doom;
       doomLocalDir = "~/.local/share/nix-doom";
-      extraPackages = epkgs: [epkgs.treesit-grammars.with-all-grammars];
+      extraPackages = epkgs: [
+        epkgs.treesit-grammars.with-all-grammars
+        epkgs.pandoc
+        epkgs.pandoc-mode
+      ];
     };
 
     wrapped = pkgs'.symlinkJoin {

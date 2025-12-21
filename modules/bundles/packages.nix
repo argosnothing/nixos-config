@@ -4,6 +4,7 @@
       ".local/share/bolt-launcher"
     ];
     environment.systemPackages = with pkgs; [
+      plan9port
       jq
       wev
       wget

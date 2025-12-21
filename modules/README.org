@@ -1,0 +1,101 @@
+* Modules
+:PROPERTIES:
+:CUSTOM_ID: modules
+:END:
+*** bundles
+:PROPERTIES:
+:CUSTOM_ID: bundles
+:END:
+- Module bundles that act as system presets, or simply extended
+  configuration on top of a window manager so it does not pollute my
+  host module imports.
+  - =modules.nixos.base=
+    - Critically important stuff that each host should at least have
+      (where =modules.nixos.critical= is imported)
+  - =modules.nixos.niri-bundle=
+    - Niri bundle of my current fav niri setup
+
+*** critical
+:PROPERTIES:
+:CUSTOM_ID: critical
+:END:
+- Important Utilities that need to be included in my configs, most tend
+  to be under =modules.nixos.critical=
+- Hosts will not need to import the critical module directly, this is
+  handled through the =modules.nixos.base= bundle under the bundles
+  directory
+- Other important modules
+  - =modules.nixos.grub=
+  - =modules.nixos.uefi=
+
+*** features
+:PROPERTIES:
+:CUSTOM_ID: features
+:END:
+- Top level dir of general features, apps, window managers, shell
+  utilities, etc.
+  - Window Managers/Desktops I support
+    - Niri =modules.nixos.niri=
+    - Mango =modules.nixos.mango=
+    - oxwm =modules.nixos.oxwm=
+    - Xfce =modules.nixos.xfce=
+    - Cosmic =modules.nixos.cosmic=
+
+*** hardware
+:PROPERTIES:
+:CUSTOM_ID: hardware
+:END:
+- Location for host specific utilities, these tend to be defined by
+  =modules.nixos.hostname=
+
+*** options
+:PROPERTIES:
+:CUSTOM_ID: options
+:END:
+- Options that the rest of the system can expect to always be present.
+  =modules.nixos.options= and =flake.settings= for flake level options
+
+*** overlays
+:PROPERTIES:
+:CUSTOM_ID: overlays
+:END:
+- I still don't really understand these. =flake.overlays.default=
+
+*** packages
+:PROPERTIES:
+:CUSTOM_ID: packages
+:END:
+- Derivations that I need to build as part of my system configuration.
+
+*** utility
+:PROPERTIES:
+:CUSTOM_ID: utility
+:END:
+- This is mostly just house keeping stuff, and meta related things like
+  helper libraries.
+
+*** +hostname
+:PROPERTIES:
+:CUSTOM_ID: hostname
+:END:
+- Where =modules.nixos.hostname= is declared and imports are added.
+
+*** README.md
+:PROPERTIES:
+:CUSTOM_ID: readmemd
+:END:
+- You're reading it.
+
+*** home.nix
+:PROPERTIES:
+:CUSTOM_ID: homenix
+:END:
+- Not exactly what you might think, this does not live in home manager,
+  but simply configures it and some other things.
+
+*** nixosConfigurations.nix
+:PROPERTIES:
+:CUSTOM_ID: nixosconfigurationsnix
+:END:
+- The system configurations for this flake. Every host will have an
+  entry here.

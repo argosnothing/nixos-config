@@ -7,3 +7,5 @@
 (package! copilot-chat)
 (package! mcp)
 (package! vertico-posframe)
+(package! pandoc)
+(package! pandoc-mode)
