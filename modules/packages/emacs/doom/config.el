@@ -5,16 +5,6 @@
 (setq display-line-numbers-type `relative)
 (setq org-directory "~/org/")
 (setq dap-auto-configure-mode t)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (after! eglot                                         ;;
-;;   (add-to-list 'eglot-server-programs                 ;;
-;;                '((nix-mode nix-ts-mode) . ("nixd")))) ;;
-;; (after! nix-mode                                      ;;
-;;   (add-hook 'nix-mode-hook #'eglot-ensure))           ;;
-;;  ;;
-;; (when (fboundp 'nix-ts-mode)                          ;;
-;;   (add-hook 'nix-ts-mode-hook #'eglot-ensure))        ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'comint)
 
 (use-package! elcord

@@ -24,7 +24,6 @@ in {
     ];
     xfce-bundle.imports = with flake.modules.nixos; [
       xfce
-      sddm-silent
     ];
   };
 }

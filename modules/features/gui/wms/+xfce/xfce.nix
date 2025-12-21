@@ -3,7 +3,6 @@
 in {
   flake.modules.nixos.xfce = {pkgs, ...}: {
     imports = with flake.modules.nixos; [
-      cursor
     ];
     my.cursor.enable = false;
     xdg.portal = {
@@ -18,10 +17,13 @@ in {
     ];
     services = {
       xserver = {
+        enable = true;
+        displayManager = {
+          lightdm.enable = true;
+        };
         desktopManager = {
           xfce = {
             enable = true;
-            enableWaylandSession = true;
           };
         };
       };
