@@ -19,7 +19,8 @@ in {
       xserver = {
         enable = true;
         displayManager = {
-          lightdm.enable = true;
+          gdm.enable = true;
+          defaultSession = "xfce";
         };
         desktopManager = {
           xfce = {
