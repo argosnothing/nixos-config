@@ -48,4 +48,11 @@
 
 (load! "config/default")
 (global-set-key (kbd "M-SPC") 'avy-goto-word-0)
+(map! "C-o" nil)
+(map! "C-o" #'dirvish-dwim)
+(after! evil
+  (map! :n "C-o" #'dirvish-dwim
+        :m "C-o" #'dirvish-dwim
+        :i "C-o" #'dirvish-dwim))
+
 (vertico-posframe-mode 1)
