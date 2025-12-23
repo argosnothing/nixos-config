@@ -14,15 +14,17 @@ in {
     environment.systemPackages = with pkgs; [
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-docklike-plugin
+      xorg.xinit
     ];
     services = {
+      displayManager = {
+        gdm.enable = true;
+        defaultSession = "xfce";
+      };
       xserver = {
         enable = true;
-        displayManager = {
-          gdm.enable = true;
-          defaultSession = "xfce";
-        };
         desktopManager = {
+          xterm.enable = false;
           xfce = {
             enable = true;
           };

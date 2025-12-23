@@ -5,6 +5,7 @@
   flake.modules.nixos.p51 = {
     config,
     lib,
+    pkgs,
     modulesPath,
     ...
   }: {
@@ -12,20 +13,34 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-    boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "rtsx_pci_sdmmc"];
+    boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel"];
+    boot.kernelParams = [
+      "i915.modeset=1"
+      "nvidia-drm.modeset=1"
+    ];
     boot.extraModulePackages = [];
 
     fileSystems."/" = {
-      device = "tmpfs";
-      fsType = "tmpfs";
+      device = "zroot/root";
+      fsType = "zfs";
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/CD9E-66F6";
+      device = "/dev/disk/by-uuid/793E-E4ED";
       fsType = "vfat";
       options = ["fmask=0022" "dmask=0022"];
+    };
+
+    fileSystems."/nix" = {
+      device = "zroot/nix";
+      fsType = "zfs";
+    };
+
+    fileSystems."/tmp" = {
+      device = "zroot/tmp";
+      fsType = "zfs";
     };
 
     fileSystems."/cache" = {
@@ -38,247 +53,17 @@
       fsType = "zfs";
     };
 
-    fileSystems."/nix" = {
-      device = "zroot/nix";
-      fsType = "zfs";
-    };
-
-    fileSystems."/var/lib/nixos" = {
-      device = "/persist/var/lib/nixos";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/var/log" = {
-      device = "/persist/var/log";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/etc/NetworkManager/system-connections" = {
-      device = "/persist/etc/NetworkManager/system-connections";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/dconf" = {
-      device = "/persist/home/salivala/.cache/dconf";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/fish" = {
-      device = "/cache/home/salivala/.cache/fish";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/fontconfig" = {
-      device = "/persist/home/salivala/.cache/fontconfig";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/kitty" = {
-      device = "/cache/home/salivala/.cache/kitty";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/mozilla" = {
-      device = "/cache/home/salivala/.cache/mozilla";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/nix-search-tv" = {
-      device = "/cache/home/salivala/.cache/nix-search-tv";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/nvf" = {
-      device = "/cache/home/salivala/.cache/nvf";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cargo" = {
-      device = "/persist/home/salivala/.cargo";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/zellij" = {
-      device = "/cache/home/salivala/.cache/zellij";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/spotify" = {
-      device = "/cache/home/salivala/.cache/spotify";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/discord" = {
-      device = "/persist/home/salivala/.config/discord";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.cache/nvidia" = {
-      device = "/cache/home/salivala/.cache/nvidia";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/vesktop" = {
-      device = "/persist/home/salivala/.config/vesktop";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/sops" = {
-      device = "/persist/home/salivala/.config/sops";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/dconf" = {
-      device = "/persist/home/salivala/.config/dconf";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/xfce4" = {
-      device = "/persist/home/salivala/.config/xfce4";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/vencord" = {
-      device = "/persist/home/salivala/.config/vencord";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/spotify" = {
-      device = "/persist/home/salivala/.config/spotify";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/yazi" = {
-      device = "/persist/home/salivala/.config/yazi";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/zed" = {
-      device = "/persist/home/salivala/.config/zed";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.config/zellij" = {
-      device = "/persist/home/salivala/.config/zellij";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.local/share/direnv" = {
-      device = "/persist/home/salivala/.local/share/direnv";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.local/share/nvf" = {
-      device = "/persist/home/salivala/.local/share/nvf";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.rustup" = {
-      device = "/persist/home/salivala/.rustup";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.var/app/com.spotify.Client" = {
-      device = "/persist/home/salivala/.var/app/com.spotify.Client";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.local/share/zed" = {
-      device = "/persist/home/salivala/.local/share/zed";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.mozilla" = {
-      device = "/persist/home/salivala/.mozilla";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/.ssh" = {
-      device = "/persist/home/salivala/.ssh";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/Downloads" = {
-      device = "/persist/home/salivala/Downloads";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/Games" = {
-      device = "/persist/home/salivala/Games";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/Pictures" = {
-      device = "/persist/home/salivala/Pictures";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/Projects" = {
-      device = "/persist/home/salivala/Projects";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/Videos" = {
-      device = "/persist/home/salivala/Videos";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/home/salivala/nixos-config" = {
-      device = "/persist/home/salivala/nixos-config";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/var/lib/systemd/coredump" = {
-      device = "/persist/var/lib/systemd/coredump";
-      fsType = "none";
-      options = ["bind"];
-    };
-
-    fileSystems."/tmp" = {
-      device = "zroot/tmp";
-      fsType = "zfs";
-    };
-
     swapDevices = [
-      {device = "/dev/disk/by-uuid/8e8f8b05-511d-4fbd-b9ee-333aaaebf75e";}
+      {device = "/dev/disk/by-uuid/4973d08e-4b0c-4bb5-8db9-97a5611eb702";}
     ];
+
+    # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+    # (the default) this is the recommended approach. When using systemd-networkd it's
+    # still possible to use this option, but it's recommended to use it in conjunction
+    # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+    networking.useDHCP = lib.mkDefault true;
+    # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
+    # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
