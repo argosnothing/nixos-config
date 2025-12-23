@@ -1,6 +1,5 @@
-{config, ...}: let
-  inherit (config.flake.lib) mk-pkgs-stable;
-in {
+{inputs, ...}:
+{
   flake.modules.nixos.work = {pkgs, ...}: let
     pkgs =
       import (builtins.fetchTarball {
@@ -15,8 +14,6 @@ in {
           ];
         };
       };
-    citrix_workspace_overlay = pkgs.citrix_workspace;
-    pkgs-stable = mk-pkgs-stable pkgs;
     extraCerts = [
       ./secure/citrix-certs/Entrust_Root_G2.pem
       ./secure/citrix-certs/Entrust_L1K.pem
@@ -31,7 +28,7 @@ in {
       pkgs.opensc
       pkgs.pcsc-tools
       pkgs.p11-kit
-      (citrix_workspace_overlay.override {inherit extraCerts;})
+      (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}..override {inherit extraCerts;})
     ];
 
     my.persist.home = {
