@@ -1,6 +1,7 @@
 {inputs, ...}: {
   flake.modules.nixos.emacs = {pkgs, ...}: {
     environment.systemPackages = [
+      inputs.self.packages.${pkgs.system}.emacs
       pkgs.emacs
       pkgs.fd
     ];

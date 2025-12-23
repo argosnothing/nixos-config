@@ -49,7 +49,6 @@
           opacity 1.00
           open-fullscreen false
           open-maximized true
-          block-out-from "screen-capture"
         }
 
         window-rule {
@@ -57,6 +56,12 @@
           opacity 1.00
           open-fullscreen false
           open-maximized true
+        }
+
+        window-rule {
+          match app-id="Zed"
+          opacity 1.00
+          default-column-width {}
         }
 
       ''
