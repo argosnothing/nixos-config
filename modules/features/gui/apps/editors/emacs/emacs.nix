@@ -1,24 +1,14 @@
 {inputs, ...}: {
   flake.modules.nixos.emacs = {pkgs, ...}: {
     environment.systemPackages = [
-      inputs.self.packages.${pkgs.system}.emacs
+      pkgs.emacs
+      pkgs.fd
     ];
     my.persist = {
       home = {
-        ##################################
-        # cache.files = [                #
-        #   ".cache/doom/lsp-session"    #
-        # ];                             #
-        # cache.directories = [          #
-        #   ".cache/doom/nix/projectile" #
-        #   ".cache/doom/nix/eln"        #
-        #   ".cache/doom/autosave"       #
-        #   ".cache/doom/org"            #
-        #   ".cache/doom/backup"         #
-        # ];                             #
-        ##################################
         cache.directories = [
           ".cache/doom"
+          "temacs"
         ];
         directories = [
           ".config/emacs"
