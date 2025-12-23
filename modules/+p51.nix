@@ -5,19 +5,16 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      niri
-      dms
-      work
-      zellij
+      xfce-bundle
       spicetify
+      work
       firefox
-      rose-pine
-
-      base
       impermanence
+      emacs
       grub
       battery
       touchpad
+      legacy-zfs
     ];
     my = {
       is-vm = false;
