@@ -11,7 +11,6 @@
     };
     hjem = {
       url = "github:/feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     hjem-rum = {
       url = "github:snugnug/hjem-rum";
@@ -39,7 +38,7 @@
       url = "github:nix-systems/default";
     };
     nvf = {
-      url = "github:michael-c-buckley/nvf/v0.8";
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
@@ -53,17 +52,6 @@
     mango = {
       url = "github:argosnothing/mangowc/380";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs = {
-        dgop.follows = "dgop";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
     silent-sddm = {
       url = "github:/uiriansan/SilentSDDM";

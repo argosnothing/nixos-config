@@ -1,5 +1,12 @@
-{inputs, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: let
+  inherit (config.flake.lib) mk-pkgs-stable;
+in {
   flake.modules.nixos.work = {pkgs, ...}: let
+    pkgs-stable = mk-pkgs-stable pkgs;
     extraCerts = [
       ./secure/citrix-certs/Entrust_Root_G2.pem
       ./secure/citrix-certs/Entrust_L1K.pem
@@ -14,7 +21,9 @@
       pkgs.opensc
       pkgs.pcsc-tools
       pkgs.p11-kit
-      (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.citrix-workspace.override {inherit extraCerts;})
+      # Once again... I have failed.
+      #(inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.citrix-workspace.override {inherit extraCerts;})
+      (pkgs-stable.citrix_workspace.override {inherit extraCerts;})
     ];
 
     my.persist.home = {
