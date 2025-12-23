@@ -46,10 +46,17 @@
 
         window-rule {
           match app-id="Wfica"
-          opacity 0.99
+          opacity 1.00
           open-fullscreen false
           open-maximized true
           block-out-from "screen-capture"
+        }
+
+        window-rule {
+          match app-id="Emacs"
+          opacity 1.00
+          open-fullscreen false
+          open-maximized true
         }
 
       ''

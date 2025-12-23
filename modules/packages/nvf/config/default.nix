@@ -42,9 +42,8 @@
     };
 
     vim = {
-      autocomplete.blink-cmp = {
+      autocomplete.nvim-cmp = {
         enable = true;
-        friendly-snippets.enable = true;
       };
       runner.run-nvim = {
         enable = true;
