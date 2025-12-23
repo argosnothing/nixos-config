@@ -1,7 +1,9 @@
-{ inputs, config, ... }:
 {
-  perSystem = { system, ... }:
-  let
+  inputs,
+  config,
+  ...
+}: {
+  perSystem = {system, ...}: let
     pkgs = import inputs.nixpkgs {
       inherit system;
       overlays = [
@@ -11,8 +13,7 @@
         allowUnfree = true;
       };
     };
-  in
-  {
+  in {
     packages.citrix-workspace = pkgs.citrix_workspace;
   };
 }
