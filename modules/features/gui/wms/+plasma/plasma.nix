@@ -1,9 +1,10 @@
 {config, ...}: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.plasma = {
-    imports = with flake.modules.nixos; [
-      cursor
+  flake.modules.nixos.plasma = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      inotify-tools
+      ocs-url
     ];
     services = {
       displayManager = {

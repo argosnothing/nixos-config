@@ -12,6 +12,7 @@ in {
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
       persist = {
         enable = mkEnableOption "Enable Impermanence";
+        keep-user-override = mkEnableOption "Ignore all home level persists and simply persist ~";
         root = {
           directories = lib.mkOption {
             type = lib.types.listOf lib.types.str;

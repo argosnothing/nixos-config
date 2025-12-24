@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (package! direnv)
 (package! elcord)
 (package! nerd-icons-dired)

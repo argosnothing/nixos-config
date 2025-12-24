@@ -10,7 +10,9 @@
       nixd
     ];
     imports = with config.flake.modules.nixos; [
-      niri-bundle
+      #niri-bundle
+      #xfce-bundle
+      plasma
       gui-apps
       shell-apps
       via
@@ -33,6 +35,7 @@
       legacy-zfs
     ];
     my = {
+      persist.keep-user-override = true;
       cursor.speed = -0.35;
       theme.polarity = "dark";
       fonts.size = 11;

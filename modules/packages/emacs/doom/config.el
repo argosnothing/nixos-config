@@ -1,6 +1,8 @@
-(setq doom-theme 'doom-dark+)
+;; -*- lexical-binding: t; -*-
+;;(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-ir-black)
 
-(setq doom-font (font-spec :family "Cascadia Code" :size 16 :weight 'regular)
+(setq doom-font (font-spec :family "Cascadia Code" :size 19 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Cascadia Code" :size 16))
 (setq display-line-numbers-type `relative)
 (setq org-directory "~/org/")
@@ -49,10 +51,10 @@
 (load! "config/default")
 (global-set-key (kbd "M-SPC") 'avy-goto-word-0)
 (map! "C-o" nil)
-(map! "C-o" #'dirvish-dwim)
+(map! "C-o" #'dirvish)
 (after! evil
-  (map! :n "C-o" #'dirvish-dwim
-        :m "C-o" #'dirvish-dwim
-        :i "C-o" #'dirvish-dwim))
+  (map! :n "C-o" #'dirvish
+        :m "C-o" #'dirvish
+        :i "C-o" #'dirvish))
 
 (vertico-posframe-mode 1)

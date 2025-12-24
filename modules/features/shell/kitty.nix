@@ -11,7 +11,7 @@
     my.persist.home.directories = [".config/kitty"];
     hj.files.".config/kitty/kitty.conf" = {
       text = ''
-        include ~/.config/kitty/current-theme.conf
+        include ~/.config/kitty/themes/noctalia.conf
         shell_integration no-rc
         enable_audio_bell no
         font_size ${toString size}

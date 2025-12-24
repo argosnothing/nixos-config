@@ -36,8 +36,7 @@ in {
     environment.persistence = {
       "/persist" = {
         hideMounts = false;
-        files =
-          lib.unique cfg.root.files;
+        files = lib.unique cfg.root.files;
         directories = lib.unique (
           [
             "/var/log" # systemd journal is stored in /var/log/journal
@@ -47,18 +46,22 @@ in {
           ++ cfg.root.directories
         );
 
-        users.${username} = {
-          files = lib.unique cfg.home.files;
-          directories =
-            lib.unique
-            (
+        users.${username} =
+          if cfg.keep-user-override
+          then {
+            files = [];
+            directories = ["."];
+          }
+          else {
+            files = lib.unique cfg.home.files;
+            directories = lib.unique (
               [
                 ".cache/dconf"
                 ".config/dconf"
               ]
               ++ cfg.home.directories
             );
-        };
+          };
       };
 
       # Cache are files that should be persisted, but not backed up
@@ -67,10 +70,16 @@ in {
         files = lib.unique (["/etc/machine-id"] ++ cfg.root.cache.files);
         directories = lib.unique cfg.root.cache.directories;
 
-        users.${username} = {
-          files = lib.unique cfg.home.cache.files;
-          directories = lib.unique cfg.home.cache.directories;
-        };
+        users.${username} =
+          if cfg.keep-user-override
+          then {
+            files = [];
+            directories = [".cache"];
+          }
+          else {
+            files = lib.unique cfg.home.cache.files;
+            directories = lib.unique cfg.home.cache.directories;
+          };
       };
     };
   };
