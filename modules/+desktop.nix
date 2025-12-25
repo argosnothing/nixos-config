@@ -17,7 +17,8 @@
       plex
       mullvad
       transmission
-      #temacs
+
+      #temacs // when i'm feeling adventurous
       emacs
 
       krita
