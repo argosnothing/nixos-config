@@ -27,6 +27,7 @@
       alejandra
       cascadia-code
       pandoc
+      #mu ;; One day we shall ascend.
     ];
 
     emacsDoom = pkgs'.emacsWithDoom {
@@ -36,6 +37,7 @@
         epkgs.treesit-grammars.with-all-grammars
         epkgs.pandoc
         epkgs.pandoc-mode
+        #epkgs.mu4e ;; One day we shall ascend.
       ];
     };
 

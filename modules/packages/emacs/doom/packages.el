@@ -10,3 +10,5 @@
 (package! vertico-posframe)
 (package! pandoc)
 (package! pandoc-mode)
+(package! spotify)
+;;(package! mbsync) One day we shall ascend.
