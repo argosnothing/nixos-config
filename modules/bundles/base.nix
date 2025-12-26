@@ -17,7 +17,7 @@ in {
       fish
       nh
       misc-scripts
-      #starship
+      starship
       git
     ];
   in {
