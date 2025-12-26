@@ -46,7 +46,6 @@
 (after! company
   (setq company-backends '(company-capf)))
 
-(load! "config/default")
 (global-set-key (kbd "M-SPC") 'avy-goto-word-0)
 (map! "C-o" nil)
 (map! "C-o" #'dirvish)
@@ -56,3 +55,5 @@
         :i "C-o" #'dirvish))
 
 (vertico-posframe-mode 1)
+
+(load! "config/default")
