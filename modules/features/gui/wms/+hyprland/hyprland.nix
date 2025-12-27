@@ -19,7 +19,17 @@ in {
     ];
   in {
     imports = nixos-modules;
-    my.cursor.enable = true;
+
+    my = {
+      icons = {
+        package = pkgs.rose-pine-icon-theme;
+        name = "rose-pine";
+      };
+      cursor = {
+        enable = true;
+        name = "Simp1e-Dark";
+      };
+    };
     my.persist.home = {
       directories = [
         ".config/hypr"

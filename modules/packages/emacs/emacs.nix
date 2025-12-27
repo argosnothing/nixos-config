@@ -18,7 +18,6 @@
       coreutils
       fd
       clang
-      emacs
       emacsPackages.direnv
       rust-analyzer
       lldb
@@ -33,6 +32,7 @@
     emacsDoom = pkgs'.emacsWithDoom {
       doomDir = ./doom;
       doomLocalDir = "~/.local/share/nix-doom";
+      emacs = pkgs'.emacs-pgtk;
       extraPackages = epkgs: [
         epkgs.treesit-grammars.with-all-grammars
         epkgs.pandoc

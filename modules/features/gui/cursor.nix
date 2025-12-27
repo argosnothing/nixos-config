@@ -9,7 +9,8 @@
     config,
     ...
   }: let
-    inherit (lib) types mkOption mkEnableOption mkIf;
+    inherit (lib) types mkOption mkEnableOption mkIf gvariant;
+    inherit (gvariant) mkInt32;
     inherit (types) package str int float;
   in {
     options.my.cursor = {
@@ -37,6 +38,23 @@
     };
     config = mkIf config.my.cursor.enable {
       environment.systemPackages = [config.my.cursor.package];
+      environment.variables = {
+        XCURSOR_THEME = config.my.cursor.name;
+        XCURSOR_SIZE = builtins.toString config.my.cursor.size;
+      };
+
+      programs.dconf.enable = true;
+
+      programs.dconf.profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/interface" = {
+              cursor-theme = config.my.cursor.name;
+              cursor-size = mkInt32 config.my.cursor.size;
+            };
+          };
+        }
+      ];
     };
   };
 }

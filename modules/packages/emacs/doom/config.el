@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-(setq doom-font (font-spec :family "Cascadia Code" :size 19 :weight 'regular)
+(setq doom-font (font-spec :family "Cascadia Code" :size 15 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Cascadia Code" :size 16))
 (setq display-line-numbers-type `relative)
 (setq org-directory "~/org/")

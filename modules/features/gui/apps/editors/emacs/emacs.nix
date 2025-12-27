@@ -2,7 +2,6 @@
   flake.modules.nixos.emacs = {pkgs, ...}: {
     environment.systemPackages = [
       inputs.self.packages.${pkgs.system}.emacs
-      pkgs.emacs
       pkgs.fd
     ];
     my.persist = {
@@ -14,6 +13,7 @@
         directories = [
           ".config/emacs"
           ".config/doom"
+          "org"
           ".local/share/nix-doom"
           ".emacs.d"
         ];
