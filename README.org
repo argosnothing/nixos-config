@@ -1,5 +1,5 @@
-#+ATTR_HTML: :width: 300px
-[[file:.media/icons/NixOS.svg]]
+#+ATTR_HTML: :width 300
+[[file:.media/icons/niri-icon.png]]
 * △ NixOS Config △
 :PROPERTIES:
 :CUSTOM_ID: -nixos-config-
