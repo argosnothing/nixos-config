@@ -1,4 +1,3 @@
-[[file:.media/icons/NixOS.svg]]
 * △ NixOS Config △
 :PROPERTIES:
 :CUSTOM_ID: -nixos-config-
