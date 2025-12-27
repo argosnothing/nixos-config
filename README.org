@@ -1,3 +1,4 @@
+[[file:.media/icons/NixOS.svg]]
 * △ NixOS Config △
 :PROPERTIES:
 :CUSTOM_ID: -nixos-config-
@@ -9,7 +10,6 @@
   emphasis on blurring the lines between home and system.
 - If you are one of those mentioned in the credits here and don't want
   to be mentioned, just let me know.
-[[file:.media/icons/niri-icon.png]]
 * Things I do
 :PROPERTIES:
 :CUSTOM_ID: things-i-do
