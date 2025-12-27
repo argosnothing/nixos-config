@@ -1,3 +1,4 @@
+#+ATTR_HTML: :width: 300px
 [[file:.media/icons/NixOS.svg]]
 * △ NixOS Config △
 :PROPERTIES:
