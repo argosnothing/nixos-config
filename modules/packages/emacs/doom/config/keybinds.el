@@ -6,6 +6,7 @@
 (require 'dirvish)
 (require 'doom)
 (require 'magit)
+(require 'vterm)
 (eval-when-compile
   (declare-function map! "doom-keybinds"))
 
@@ -16,6 +17,9 @@
 (map! :leader
       :desc "Magit"
       "o g" #'magit)
+(map! :leader
+      :desc "Magit"
+      "v t" #'vterm)
 (after! evil
   (map! :n "C-o" #'dirvish
         :m "C-o" #'dirvish

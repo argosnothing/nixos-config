@@ -9,8 +9,9 @@
   (defvar global-hl-line-modes))
 
 (setq doom-theme 'doom-ir-black)
+;;(setq doom-theme 'doom-badger)
 (setq global-hl-line-modes nil)
-;;(add-to-list 'custom-theme-load-path (expand-file-name "~/.config/doom/themes"))
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.config/doom/themes"))
 ;;(load-theme 'noctalia t)
 ;;
 ;;; theme.el ends here
