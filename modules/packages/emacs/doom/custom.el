@@ -10,7 +10,9 @@
      "2f6f50aff67ea4ef6455fb69b92c41abcebeaa82349081cf76e0a59fa25bff3e" default))
  '(package-selected-packages
    '(dap-mode direnv fira-code-mode flycheck-rust neotree vs-dark-theme
-     vscode-dark-plus-theme)))
+     vscode-dark-plus-theme))
+ '(safe-local-variable-directories
+   '("~/org/")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
