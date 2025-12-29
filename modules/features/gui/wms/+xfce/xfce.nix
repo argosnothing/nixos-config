@@ -12,6 +12,8 @@ in {
       ];
     };
     environment.systemPackages = with pkgs; [
+      chicago95
+      ocs-url
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-docklike-plugin
       xorg.xinit
