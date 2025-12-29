@@ -1,5 +1,8 @@
 {
-  flake.modules.nixos.spotify-player = {
+  flake.modules.nixos.spotify-player = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      spotify-player
+    ];
     my.persist = {
       home = {
         directories = [

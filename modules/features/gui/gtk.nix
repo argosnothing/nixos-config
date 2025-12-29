@@ -43,7 +43,7 @@
         xft-hinting = 1;
         xft-hintstyle = "hintslight";
         xft-rgba = "rgb";
-        application-prefer-dark-theme = true;
+        application-prefer-dark-theme = theme.polarity == "dark";
       };
       enable = true;
       packages = [
