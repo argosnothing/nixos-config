@@ -11,6 +11,7 @@
       fd
       ripgrep
       git
+      rust-analyzer
     ];
 
     temacs = emacsPkgs.emacsWithPackages (epkgs:

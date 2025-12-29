@@ -18,8 +18,9 @@
       mullvad
       transmission
 
-      #temacs // when i'm feeling adventurous
-      emacs
+      #emacs # unstraightened doom config
+      #temacs # tony config
+      memacs # my own abomination
 
       krita
       vscode
