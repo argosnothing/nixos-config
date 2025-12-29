@@ -5,14 +5,15 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      xfce-bundle
+      #xfce-bundle
+      niri-bundle
       work
       gui-apps
 
       vscode
       zed
       krita
-      emacs
+      temacs
 
       shell-apps
       battery
