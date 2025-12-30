@@ -13,6 +13,8 @@
       ripgrep
       git
       rust-analyzer
+      gnutls
+      cacert
     ];
 
     memacs = emacsPkgs.emacsWithPackages (epkgs:
@@ -53,7 +55,10 @@
       '';
     };
   in {
-    my.persist.home.directories = ["memacs"];
+    my.persist.home.directories = [
+      "memacs"
+      "org"
+    ];
     environment.systemPackages = [emacsWrapped];
   };
 }

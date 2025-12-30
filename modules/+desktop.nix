@@ -18,8 +18,6 @@
       mullvad
       transmission
 
-      #emacs # unstraightened doom config
-      #temacs # tony config
       memacs # my own abomination
 
       krita

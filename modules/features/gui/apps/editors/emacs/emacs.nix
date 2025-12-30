@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.emacs = {pkgs, ...}: {
+  flake.modules.nixos.doom-emacs = {pkgs, ...}: {
     environment.systemPackages = [
       inputs.self.packages.${pkgs.system}.emacs
       pkgs.fd
