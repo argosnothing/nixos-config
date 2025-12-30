@@ -15,12 +15,15 @@
       rust-analyzer
       gnutls
       cacert
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.symbols-only
     ];
 
     memacs = emacsPkgs.emacsWithPackages (epkgs:
       with epkgs; [
         use-package
         vterm
+        kind-icon
       ]);
 
     emacsWrapped = pkgs.symlinkJoin {
