@@ -33,33 +33,12 @@
 
       postBuild = ''
         wrapProgram $out/bin/emacs \
-          --prefix PATH : ${lib.makeBinPath runtimeTools} \
-          --run '
-            BASE_HOME="$HOME"
-            if [ "$(basename "$BASE_HOME")" = "memacs" ]; then
-              BASE_HOME="$(dirname "$BASE_HOME")"
-            fi
-
-            MEMACS="$BASE_HOME/memacs"
-
-            mkdir -p \
-              "$MEMACS/.emacs.d" \
-              "$MEMACS/.config" \
-              "$MEMACS/.cache" \
-              "$MEMACS/.local/share" \
-              "$MEMACS/.local/state"
-
-            export HOME="$MEMACS"
-            export XDG_CONFIG_HOME="$MEMACS/.config"
-            export XDG_CACHE_HOME="$MEMACS/.cache"
-            export XDG_DATA_HOME="$MEMACS/.local/share"
-            export XDG_STATE_HOME="$MEMACS/.local/state"
-          '
+          --prefix PATH : ${lib.makeBinPath runtimeTools}
       '';
     };
   in {
     my.persist.home.directories = [
-      "memacs"
+      ".emacs.d"
       "org"
     ];
     environment.systemPackages = [emacsWrapped];
