@@ -17,14 +17,10 @@
       plex
       mullvad
       transmission
-
-      #temacs // when i'm feeling adventurous
-      emacs
-
+      memacs # my own abomination
       krita
       vscode
       zed
-
       virtualization
       uhk
       work
