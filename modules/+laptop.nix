@@ -13,7 +13,7 @@
       vscode
       zed
       krita
-      temacs
+      memacs
 
       shell-apps
       battery
