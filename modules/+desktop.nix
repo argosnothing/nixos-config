@@ -17,7 +17,6 @@
       plex
       mullvad
       transmission
-      chrome
       memacs # my own abomination
       krita
       vscode

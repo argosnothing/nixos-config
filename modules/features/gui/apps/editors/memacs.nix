@@ -17,6 +17,8 @@
       cacert
       nerd-fonts.caskaydia-cove
       nerd-fonts.symbols-only
+      copilot-language-server
+      graphviz
     ];
 
     memacs = emacsPkgs.emacsWithPackages (epkgs:
@@ -24,6 +26,9 @@
         use-package
         vterm
         kind-icon
+        (treesit-grammars.with-grammars (g: [
+          g.tree-sitter-rust
+        ]))
       ]);
 
     emacsWrapped = pkgs.symlinkJoin {
