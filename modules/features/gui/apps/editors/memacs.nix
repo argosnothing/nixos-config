@@ -19,6 +19,7 @@
       nerd-fonts.symbols-only
       copilot-language-server
       graphviz
+      nixd
     ];
 
     memacs = emacsPkgs.emacsWithPackages (epkgs:
