@@ -15,11 +15,9 @@ in {
       plugin-pkgs = inputs.hyprland-plugins.packages.${pkgs.system};
       plugin-dir = pkgs.symlinkJoin {
         name = "hyprland-plugins";
-        paths = with plugin-pkgs;
-          [
-            hyprexpo
-          ]
-          ++ [inputs.hyprsplit.packages.${pkgs.system}.hyprsplit];
+        paths = [
+          inputs.hyprsplit.packages.${pkgs.system}.hyprsplit
+        ];
       };
       hyprland-settings = builtins.concatStringsSep "\n" config.my.wm.hyprland.settings;
       nixos-modules = with flake.modules.nixos; [

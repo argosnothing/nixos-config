@@ -3,6 +3,7 @@
     my.wm.hyprland.settings = lib.mkAfter [
       ''
         input {
+            special_fallthrough = true
             kb_layout = us
             kb_variant =
             kb_model =

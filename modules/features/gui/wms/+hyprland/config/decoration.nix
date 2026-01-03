@@ -5,10 +5,11 @@
         decoration {
             rounding = 0
             rounding_power = 2
+            dim_special = 0.1
 
-            # Change transparency of focused and unfocused windows
-            active_opacity = 1.0
-            inactive_opacity = 1.0
+            active_opacity = 0.90
+            inactive_opacity = 0.88
+            fullscreen_opacity = 1.0
 
             shadow {
                 enabled = true
@@ -17,13 +18,17 @@
                 color = rgba(1a1a1aee)
             }
 
-            # https://wiki.hypr.land/Configuring/Variables/#blur
             blur {
                 enabled = true
-                size = 3
-                passes = 1
-
-                vibrancy = 0.1696
+                size = 7
+                passes = 2
+                noise = 0.1
+                xray = false
+                popups_ignorealpha = 0.45
+                ignore_opacity=true
+                contrast = 0.95
+                brightness = 0.90
+                vibrancy = 1.0
             }
         }
       ''
