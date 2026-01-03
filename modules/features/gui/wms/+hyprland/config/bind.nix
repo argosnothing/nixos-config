@@ -6,29 +6,43 @@
 
         bind = $mainMod, Return, exec, $terminal
         bind = $mainMod, Escape, killactive,
-        bind = $mainMod SHIFT, E, exit,
+        #bind = $mainMod SHIFT, E, exit,
         bind = $mainMod, E, exec, $fileManager
         bind = $mainMod, V, togglefloating,
         bind = $mainMod, Space, exec, $menu
         bind = SUPER, F, fullscreen, 1
+        bind = SUPER SHIFT, F, fullscreen, 2
+        bind = SUPER SHIFT, S, exec, snip
 
 
         bind = $mainMod, left, movefocus, l
         bind = $mainMod, right, movefocus, r
         bind = $mainMod, up, movefocus, u
         bind = $mainMod, down, movefocus, d
-
         bind = $mainMod, h, movefocus, l
         bind = $mainMod, l, movefocus, r
         bind = $mainMod, k, movefocus, u
         bind = $mainMod, j, movefocus, d
 
+        bind = SUPER CTRL, A, movewindow, l
+        bind = SUPER CTRL, D, movewindow, r
+        bind = SUPER CTRL, H, movewindow, l
+        bind = SUPER CTRL, L, movewindow, r
+        bind = SUPER CTRL, K, movewindow, u
+        bind = SUPER CTRL, J, movewindow, d
+
+        bind = SUPER SHIFT, H, focusmonitor, l
+        bind = SUPER SHIFT, L, focusmonitor, r
+        bind = SUPER CTRL SHIFT, H, movewindow, mon:l
+        bind = SUPER CTRL SHIFT, L, movewindow, mon:r
+
+
         bind = $mainMod, Q, togglespecialworkspace, q
-        bind = $mainMod SHIFT, Q, movetoworkspace, special:q
+        bind = $mainMod CTRL, Q, movetoworkspace, special:q
         bind = $mainMod, E, togglespecialworkspace, e
-        bind = $mainMod SHIFT, E, movetoworkspace, special:e
+        bind = $mainMod CTRL, E, movetoworkspace, special:e
         bind = $mainMod, G, togglespecialworkspace, g
-        bind = $mainMod SHIFT, G, movetoworkspace, special:g
+        bind = $mainMod CTRL, G, movetoworkspace, special:g
 
         bind = $mainMod, mouse_down, workspace, e+1
         bind = $mainMod, mouse_up, workspace, e-1

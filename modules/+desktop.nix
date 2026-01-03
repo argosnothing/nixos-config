@@ -55,7 +55,7 @@
             height = 1080;
           };
           position = {
-            x = 3202;
+            x = 3200;
             y = 402;
           };
           scale = 1.0;
