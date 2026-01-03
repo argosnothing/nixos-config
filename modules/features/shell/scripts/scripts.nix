@@ -44,6 +44,47 @@ in {
 
         printf 'file://%s\n' "$TMP_GIF" | wl-copy --type text/uri-list
       '')
+
+      (
+        pkgs.writeShellScriptBin "zcd"
+        ''
+          set -euo pipefail
+
+          DATASET="zroot/persist"
+          MOUNT="/mnt/zfs-snap"
+
+          command -v fzf >/dev/null || {
+              echo "fzf not found"
+              exit 1
+          }
+
+          SNAP="$(
+              zfs list -t snapshot -o name -s creation \
+              | grep "^''${DATASET}@" \
+              | sed "s|^''${DATASET}@||" \
+              | fzf --prompt="ZFS snapshot > "
+          )"
+
+          [ -z "$SNAP" ] && exit 0
+
+          sudo mkdir -p "$MOUNT"
+
+          if mountpoint -q "$MOUNT"; then
+              sudo umount "$MOUNT"
+          fi
+
+          sudo mount -t zfs "''${DATASET}@''${SNAP}" "$MOUNT"
+
+          cleanup() {
+              sudo umount "$MOUNT"
+          }
+          trap cleanup EXIT
+
+          cd "$MOUNT"
+          exec "$SHELL"
+
+        ''
+      )
     ];
   };
 }

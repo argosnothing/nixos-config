@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.modules.nixos.dms = {
+  flake.modules.nixos.dms = {pkgs, ...}: {
+    programs.dms-shell = {
+      enable = true;
+      package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
     my = {
       persist = {
         home.cache.directories = [
@@ -14,15 +18,6 @@
         name = "dms";
         execCommand = "dms run";
         launcherCommand = "dms ipc call spotlight toggle";
-      };
-    };
-    hm = {
-      imports = [
-        inputs.dms.homeModules.dankMaterialShell.default
-      ];
-      programs.dankMaterialShell = {
-        enable = true;
-        enableSystemd = true;
       };
     };
   };

@@ -10,28 +10,27 @@
       nixd
     ];
     imports = with config.flake.modules.nixos; [
-      niri-bundle
+      hyprland-bundle
       gui-apps
       shell-apps
       via
       plex
       mullvad
       transmission
-      memacs # my own abomination
+      memacs
       krita
       vscode
       zed
       virtualization
       uhk
       work
-      toys
       impermanence
       uefi
       legacy-zfs
     ];
     my = {
       cursor.speed = -0.35;
-      theme.polarity = "dark";
+      theme.polarity = "light";
       fonts.size = 11;
       is-vm = false;
       monitors = [

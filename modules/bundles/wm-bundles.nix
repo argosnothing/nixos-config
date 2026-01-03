@@ -10,11 +10,11 @@ in {
     hyprland-bundle.imports = with flake.modules.nixos; [
       hyprland
       noctalia-shell
-      cosmic-greeter
+      sddm-silent
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
-      noctalia-shell
+      dms
       cosmic-greeter
     ];
     labwc-bundle.imports = with flake.modules.nixos; [

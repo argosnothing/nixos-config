@@ -1,10 +1,10 @@
-# My own, barebones emacs.
 {
   flake.modules.nixos.memacs = {
     pkgs,
     lib,
     ...
   }: let
+    #emacsBase = pkgs.emacs;
     emacsBase = pkgs.emacs-pgtk;
     emacsPkgs = pkgs.emacsPackagesFor emacsBase;
 
@@ -20,6 +20,7 @@
       copilot-language-server
       graphviz
       nixd
+      multimarkdown
     ];
 
     memacs = emacsPkgs.emacsWithPackages (epkgs:

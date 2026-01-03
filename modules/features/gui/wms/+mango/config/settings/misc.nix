@@ -2,6 +2,7 @@
   flake.modules.nixos.mango = {lib, ...}: {
     my.wm.mango.settings = lib.mkAfter [
       ''
+        source=~/.config/mango/noctalia.conf
         exec-once=~/.config/mango/autostart.sh
         # Misc
         focus_cross_monitor=1

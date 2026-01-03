@@ -17,6 +17,8 @@ in {
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-docklike-plugin
       xorg.xinit
+      xdotool
+      wmctrl
     ];
     services = {
       displayManager = {
