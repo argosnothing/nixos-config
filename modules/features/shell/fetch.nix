@@ -1,3 +1,4 @@
+# https://gitlab.com/Errium/nixorcism/-/blob/main/modules/packages/cli/fastfetch.nix?ref_type=heads#L25
 {
   flake.modules.nixos.base = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [fastfetch];
