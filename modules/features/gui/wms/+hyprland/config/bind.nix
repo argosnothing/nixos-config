@@ -19,6 +19,8 @@
         bind = $mainMod, right, movefocus, r
         bind = $mainMod, up, movefocus, u
         bind = $mainMod, down, movefocus, d
+        bind = $mainMod, d, movefocus, r
+        bind = $mainMod, a, movefocus, l
         bind = $mainMod, h, movefocus, l
         bind = $mainMod, l, movefocus, r
         bind = $mainMod, k, movefocus, u
@@ -35,7 +37,6 @@
         bind = SUPER SHIFT, L, focusmonitor, r
         bind = SUPER CTRL SHIFT, H, movewindow, mon:l
         bind = SUPER CTRL SHIFT, L, movewindow, mon:r
-
 
         bind = $mainMod, Q, togglespecialworkspace, q
         bind = $mainMod CTRL, Q, movetoworkspace, special:q
