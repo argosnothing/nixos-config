@@ -25,8 +25,6 @@
     packages.zeditor = pkgs.symlinkJoin {
       name = "zeditor";
       paths = [pkgs.zed-editor];
-      #paths = [inputs.zed.packages.${pkgs.system}.default];
-      #paths = [inputs.zed.packages.${pkgs.system}.zed-editor-preview-bin];
       buildInputs = zedInputs;
       nativeBuildInputs = [pkgs.makeWrapper];
       postBuild = ''

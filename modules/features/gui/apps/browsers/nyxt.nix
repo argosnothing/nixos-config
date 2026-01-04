@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.chrome = {pkgs, ...}: {
+  flake.modules.nixos.nyxt = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       nyxt
     ];

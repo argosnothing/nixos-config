@@ -45,6 +45,24 @@
         bind = $mainMod, G, togglespecialworkspace, g
         bind = $mainMod CTRL, G, movetoworkspace, special:g
 
+        bind = $mainMod, F1, togglespecialworkspace, f1
+        bind = $mainMod CTRL, F1, movetoworkspace, special:f1
+
+        bind = $mainMod, F2, togglespecialworkspace, f2
+        bind = $mainMod CTRL, F2, movetoworkspace, special:f2
+
+        bind = $mainMod, F3, togglespecialworkspace, f3
+        bind = $mainMod CTRL, F3, movetoworkspace, special:f3
+
+        bind = $mainMod, F4, togglespecialworkspace, f4
+        bind = $mainMod CTRL, F4, movetoworkspace, special:f4
+
+        bind = $mainMod, F5, togglespecialworkspace, f5
+        bind = $mainMod CTRL, F5, movetoworkspace, special:f5
+
+        bind = $mainMod, F6, togglespecialworkspace, f6
+        bind = $mainMod CTRL, F6, movetoworkspace, special:f6
+
         bind = $mainMod, mouse_down, workspace, e+1
         bind = $mainMod, mouse_up, workspace, e-1
 

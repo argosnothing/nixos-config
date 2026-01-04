@@ -15,6 +15,8 @@
       ".local/share/Steam"
       ".steam"
       ".local/share/lutris"
+      "Games"
+      ".config/heroic"
     ];
 
     environment.systemPackages = with pkgs; [

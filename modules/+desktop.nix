@@ -10,7 +10,10 @@
       nixd
     ];
     imports = with config.flake.modules.nixos; [
+      # WM
       hyprland-bundle
+
+      # Apps
       gui-apps
       shell-apps
       via
@@ -24,6 +27,8 @@
       virtualization
       uhk
       work
+
+      # Meta
       impermanence
       uefi
       legacy-zfs
