@@ -27,6 +27,7 @@
       virtualization
       uhk
       work
+      kdenlive
 
       # Meta
       impermanence
