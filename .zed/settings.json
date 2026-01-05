@@ -14,7 +14,7 @@
           "expr": "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }",
         },
         "formatting": {
-          "command": ["nixfmt"],
+          "command": ["alejandra"],
         },
         "options": {
           "desktop": {
@@ -22,6 +22,17 @@
           },
         },
       },
+    },
+  },
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "alejandra",
+          "arguments": [],
+        },
+      },
+      "format_on_save": "on",
     },
   },
 }

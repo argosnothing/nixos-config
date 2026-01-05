@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}: let
+{config, ...}: let
   inherit (config.flake.lib) mk-pkgs-stable;
 in {
   flake.modules.nixos.work = {pkgs, ...}: let
@@ -25,7 +21,6 @@ in {
       #(inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.citrix-workspace.override {inherit extraCerts;})
       (pkgs-stable.citrix_workspace.override {inherit extraCerts;})
     ];
-
     my.persist.home = {
       directories = [
         ".ICAClient"
