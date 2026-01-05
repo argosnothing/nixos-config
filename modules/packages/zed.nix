@@ -1,6 +1,6 @@
 # https://github.com/Michael-C-Buckley/nixos/blob/57b0063c530b68db614f234984554cf3acc485bf/packages/zed.nix#L20
 # Just a simple way to put some tools in the Zed path
-{inputs, ...}: {
+{
   perSystem = {pkgs, ...}: let
     zedInputs = with pkgs; [
       nil

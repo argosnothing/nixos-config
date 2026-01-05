@@ -1,0 +1,16 @@
+{
+  "nixpkgs": {
+    "expr": "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }"
+  },
+  "formatting": {
+    "command": ["alejandra"]
+  },
+  "options": {
+    "nixos": {
+      "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.desktop.options"
+    }
+  },
+  "diagnostic": {
+    "suppress": ["sema-escaping-with"]
+  }
+}

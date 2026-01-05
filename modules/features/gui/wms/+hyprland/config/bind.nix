@@ -35,6 +35,8 @@
 
         bind = SUPER SHIFT, H, focusmonitor, l
         bind = SUPER SHIFT, L, focusmonitor, r
+        bind = SUPER SHIFT, A, focusmonitor, l
+        bind = SUPER SHIFT, D, focusmonitor, r
         bind = SUPER CTRL SHIFT, H, movewindow, mon:l
         bind = SUPER CTRL SHIFT, L, movewindow, mon:r
 
