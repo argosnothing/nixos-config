@@ -8,6 +8,7 @@
       wpa_supplicant
       waybar
       nixd
+      rofi
     ];
     imports = with config.flake.modules.nixos; [
       # WM
