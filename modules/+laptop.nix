@@ -1,5 +1,8 @@
-{config, ...}: let
+{config, ...}: {
   flake.modules.nixos.laptop = {
+    hj.files = with config.flake.lib;
+      (move ".config/zed/settings.json")
+      // (move ".config/zed/keymap.json");
     hardware = {
       graphics.enable = true;
       bluetooth.enable = true;
@@ -46,6 +49,4 @@
       ];
     };
   };
-in {
-  inherit flake;
 }

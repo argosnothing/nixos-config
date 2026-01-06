@@ -1,0 +1,48 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Disable space's default forward movement to use it as leader
+      "space": null,
+      
+      // Space as leader for navigation
+      "space d": "editor::GoToDefinition",
+      "space D": "editor::GoToTypeDefinition",
+      "space i": "editor::GoToImplementation",
+      "space r": "editor::FindAllReferences",
+      "space h": "editor::Hover",
+      "space s": "project_symbols::Toggle",
+      "space a": "editor::ToggleCodeActions",
+      "space e": "diagnostics::Deploy",
+      "space p": "file_finder::Toggle",
+      "space b": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      // Move selection down when file finder opens to skip "Create"
+      "down": "menu::SelectNext",
+      "up": "menu::SelectPrev"
+    }
+  }
+]

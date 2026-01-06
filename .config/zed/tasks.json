@@ -1,0 +1,10 @@
+[
+  {
+    "label": "lazygit",
+    "command": "sh -c 'lazygit; exit'",
+    "use_new_terminal": true,
+    "hide": "always",
+    "reveal": "always",
+    "reveal_target": "center",
+  },
+]

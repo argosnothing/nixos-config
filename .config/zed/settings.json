@@ -1,0 +1,48 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "file_finder": {
+    "skip_focus_for_active_in_search": false,
+  },
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": true,
+    },
+    "shell": {
+      "program": "fish",
+    },
+  },
+  "toolbar": {
+    "code_actions": false,
+    "selections_menu": true,
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5",
+    },
+    "model_parameters": [],
+  },
+  "buffer_font_weight": 400.0,
+  "buffer_line_height": "standard",
+  "buffer_font_family": "Cascadia Code",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15.0,
+  "theme": {
+    "mode": "dark",
+    "light": "VSCode Light+",
+    "dark": "Kanagawa",
+  },
+}

@@ -1,0 +1,54 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space": null,
+      "space space": "file_finder::Toggle",
+      "space f": "workspace::Open",
+      "space d": "editor::GoToDefinition",
+      "space D": "editor::GoToTypeDefinition",
+      "space i": "editor::GoToImplementation",
+      "space r": "editor::FindAllReferences",
+      "space h": "editor::Hover",
+      "space s": "project_symbols::Toggle",
+      "space a": "editor::ToggleCodeActions",
+      "space e": "diagnostics::Deploy",
+      "space q": "pane::CloseActiveItem",
+      "space tab": "tab_switcher::Toggle",
+      "space c r": "debugger::Rerun",
+      "space g": [
+        "task::Spawn",
+        {
+          "task_name": "lazygit",
+        },
+      ],
+      "space t": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Editor && mode == full && vim_mode == normal",
+    "bindings": {
+      "g space": null,
+      "space enter": "editor::OpenExcerpts",
+    },
+  },
+]
