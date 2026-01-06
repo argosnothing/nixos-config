@@ -10,7 +10,7 @@ in {
     hyprland-bundle.imports = with flake.modules.nixos; [
       hyprland
       noctalia-shell
-      sddm-silent
+      ly
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango

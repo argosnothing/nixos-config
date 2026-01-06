@@ -7,8 +7,8 @@
             rounding_power = 2
             dim_special = 0.1
 
-            active_opacity = 0.98
-            inactive_opacity = 0.90
+            active_opacity = 0.94
+            inactive_opacity = 0.88
             fullscreen_opacity = 1.0
 
             shadow {

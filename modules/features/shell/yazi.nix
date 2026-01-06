@@ -9,6 +9,15 @@
         #  source = .config/yazi/keymap.toml;
         #};
       };
+      xdg.config.files."mimeapps.list".text = ''
+        [Default Applications]
+        inode/directory=yazi.desktop
+        x-directory/normal=yazi.desktop
+
+        [Added Associations]
+        inode/directory=yazi.desktop
+        x-directory/normal=yazi.desktop
+      '';
     };
     my.persist.home.directories = [
       ".config/yazi"
