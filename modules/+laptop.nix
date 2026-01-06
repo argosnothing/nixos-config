@@ -2,7 +2,8 @@
   flake.modules.nixos.laptop = {
     hj.files = with config.flake.lib;
       (move ".config/zed/settings.json")
-      // (move ".config/zed/keymap.json");
+      // (move ".config/zed/keymap.json")
+      // (move ".config/zed/tasks.json");
     hardware = {
       graphics.enable = true;
       bluetooth.enable = true;
