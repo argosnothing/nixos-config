@@ -1,5 +1,8 @@
 {config, ...}: {
-  flake.modules.nixos.laptop = {
+  flake.modules.nixos.laptop = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      wdisplays
+    ];
     hj.files = with config.flake.lib;
       (move ".config/zed/settings.json")
       // (move ".config/zed/keymap.json")
@@ -34,15 +37,29 @@
       is-vm = false;
       monitors = [
         {
-          name = "Virtual-1";
+          name = "HDMI-A-1";
           is-primary = true;
           dimensions = {
-            width = 500;
-            height = 500;
+            width = 3840;
+            height = 2160;
           };
           position = {
-            x = 0;
-            y = 0;
+            x = 3587;
+            y = 2586;
+          };
+          scale = 1.2;
+          refresh = 60.0;
+        }
+        {
+          name = "eDP-1";
+          is-primary = true;
+          dimensions = {
+            width = 1920;
+            height = 1080;
+          };
+          position = {
+            x = 4258;
+            y = 4386;
           };
           scale = 1.0;
           refresh = 60.0;
