@@ -3,7 +3,7 @@
     my.wm.hyprland.settings = lib.mkAfter [
       ''
         decoration {
-            rounding = 0
+            rounding = 8
             rounding_power = 2
             dim_special = 0.1
 

@@ -2,18 +2,55 @@
   flake.modules.nixos.noctalia-shell = {
     config,
     pkgs,
+    lib,
     ...
-  }: {
+  }: let
+    noctalia-shell = inputs.noctalia-shell.packages.${pkgs.system}.default;
+  in {
     my = {
       desktop-shells = {
-        execCommand = "noctalia-shell";
+        execCommand = "noctalia-ipc";
         launcherCommand = "noctalia-shell ipc call launcher toggle";
         name = "noctalia-shell";
       };
     };
     environment.systemPackages =
       [
-        inputs.noctalia-shell.packages.${pkgs.system}.default
+        noctalia-shell
+        ### Credit, Iynaix
+        (pkgs.writeShellApplication {
+          name = "noctalia-ipc";
+          runtimeInputs = with pkgs; [
+            killall
+            jq
+          ];
+          text = ''
+            RAW_OUTPUT=$(noctalia-shell list --all --json 2>/dev/null)
+
+            # invalid json, no instances running, so start noctalia-shell
+            if [[ ! "$RAW_OUTPUT" == "["* ]]; then
+              ${lib.getExe noctalia-shell}
+              exit
+            fi
+
+            NOCTALIA_PATH=$(noctalia-shell list --all --json | jq -r '.[] | .config_path | sub("/share/noctalia-shell/shell.qml$"; "")')
+
+            # using dev version, don't kill the shell
+            if [[ "$NOCTALIA_PATH" =~ "_dirty" ]]; then
+              "$NOCTALIA_PATH/bin/noctalia-shell" ipc call "$@"
+              exit
+            fi
+
+            # different instance, kill previous instances
+            if [[ ! "$NOCTALIA_PATH" =~ "${noctalia-shell}" ]]; then
+              killall .quickshell-wrapper
+              ${lib.getExe noctalia-shell}
+              sleep 2
+            fi
+
+            ${lib.getExe noctalia-shell} ipc call "$@"
+          '';
+        })
       ]
       ++ (with pkgs; [
         kdePackages.qt5compat

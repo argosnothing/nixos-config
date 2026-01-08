@@ -37,7 +37,7 @@
     ];
     my = {
       cursor.speed = -0.35;
-      theme.polarity = "light";
+      theme.polarity = "dark";
       fonts.size = 11;
       is-vm = false;
       monitors = [
