@@ -3,5 +3,8 @@
     environment.systemPackages = with pkgs; [
       google-chrome
     ];
+    my.persist.home.directories = [
+      ".config/google-chrome"
+    ];
   };
 }

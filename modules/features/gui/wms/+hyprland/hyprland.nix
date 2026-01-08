@@ -18,6 +18,9 @@ in {
         paths = [
           inputs.hyprsplit.packages.${pkgs.system}.hyprsplit
         ];
+        # ++ (with plugin-pkgs; [ // lol this buggy as heck
+        #   hyprscrolling
+        # ]);
       };
       hyprland-settings = builtins.concatStringsSep "\n" config.my.wm.hyprland.settings;
       nixos-modules = with flake.modules.nixos; [

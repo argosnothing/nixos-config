@@ -40,7 +40,7 @@
       environment.systemPackages = [config.my.cursor.package];
       environment.variables = {
         XCURSOR_THEME = config.my.cursor.name;
-        XCURSOR_SIZE = builtins.toString config.my.cursor.size;
+        XCURSOR_SIZE = toString config.my.cursor.size;
       };
 
       programs.dconf.enable = true;

@@ -14,7 +14,7 @@ in {
     ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
-      dms
+      noctalia-shell
       cosmic-greeter
     ];
     labwc-bundle.imports = with flake.modules.nixos; [

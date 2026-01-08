@@ -29,6 +29,7 @@
       uhk
       work
       kdenlive
+      chrome
 
       # Meta
       impermanence

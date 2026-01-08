@@ -1,39 +1,11 @@
 {inputs, ...}: {
-  flake.modules.nixos.spicetify = {
-    pkgs,
-    config,
-    ...
-  }: let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    themeName = config.my.theme.name;
-    themeConfig = {
-      "rose-pine" = {
-        theme = spicePkgs.themes.ziro;
-        colorScheme = "rose-pine-moon";
-      };
-      "rose-pine-dawn" = {
-        theme = spicePkgs.themes.ziro;
-        colorScheme = "rose-pine-dawn";
-      };
-      "catppuccin" = {
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "mocha";
-      };
-      "catppuccin-latte" = {
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "latte";
-      };
-    };
-    selectedTheme = themeConfig.${themeName} or themeConfig."catppuccin";
-  in {
+  flake.modules.nixos.spicetify = {pkgs, ...}: {
     imports = [inputs.spicetify-nix.nixosModules.default];
     environment.systemPackages = with pkgs; [spicetify-cli];
     my.persist.home.directories = [".config/spotify"];
     my.persist.home.cache.directories = [".cache/spotify"];
     programs.spicetify = {
       enable = true;
-      #theme = selectedTheme.theme;
-      #colorScheme = selectedTheme.colorScheme;
     };
   };
 }

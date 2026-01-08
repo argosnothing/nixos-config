@@ -6,6 +6,10 @@
             hyprsplit {
                 num_workspaces = 9
             }
+            hyprscrolling {
+              column_width = 0.7
+              fullscreen_on_one_column = false
+            }
         }
 
         bind = SUPER, 1, split:workspace, 1
@@ -17,6 +21,8 @@
         bind = SUPER, 7, split:workspace, 7
         bind = SUPER, 8, split:workspace, 8
         bind = SUPER, 9, split:workspace, 9
+
+        bind = SUPER, r, layoutmsg, colresize +conf
 
         bind = SUPER CTRL, 1, split:movetoworkspacesilent, 1
         bind = SUPER CTRL, 2, split:movetoworkspacesilent, 2

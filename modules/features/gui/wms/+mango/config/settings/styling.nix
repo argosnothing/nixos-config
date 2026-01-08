@@ -6,7 +6,7 @@
       ''
         blur=1
         shadows=0
-        border_radius=0
+        border_radius=8
         no_radius_when_single=1
         no_border_when_single=1
 

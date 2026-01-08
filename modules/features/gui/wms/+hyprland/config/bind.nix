@@ -12,8 +12,14 @@
         bind = $mainMod, Space, exec, $menu
         bind = SUPER, F, fullscreen, 1
         bind = SUPER SHIFT, F, fullscreen, 2
-        bind = SUPER SHIFT, S, exec, snip
+        bind = SUPER CTRL SHIFT, S, exec, snip
 
+        # bind = $mainMod, period, layoutmsg, move +col
+        # bind = $mainMod, comma, layoutmsg, move -col
+        # bind = $mainMod CTRL, period, layoutmsg, movewindowto r
+        # bind = $mainMod CTRL, comma, layoutmsg, movewindowto l
+        # bind = $mainMod CTRL, up, layoutmsg, movewindowto u
+        # bind = $mainMod CTRL, down, layoutmsg, movewindowto d
 
         bind = $mainMod, left, movefocus, l
         bind = $mainMod, right, movefocus, r
