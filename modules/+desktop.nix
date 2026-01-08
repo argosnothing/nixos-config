@@ -12,7 +12,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM
-      niri-bundle
+      hyprland-bundle
 
       # Apps
       gui-apps

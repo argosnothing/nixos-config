@@ -30,21 +30,6 @@
       postBuild = ''
         wrapProgram $out/bin/zeditor \
         --prefix PATH : ${pkgs.lib.makeBinPath zedInputs} \
-
-        #### Awful workaround I have to do because zeditor wont work with niri and nvidia
-        --unset WAYLAND_DISPLAY \
-        --set GDK_BACKEND x11 \
-
-        if [ -d $out/share/applications ]; then
-          rm -rf $out/share/applications
-          mkdir -p $out/share/applications
-          cp -r ${pkgs.zed-editor}/share/applications/*.desktop $out/share/applications/
-          chmod -R +w $out/share/applications
-          for desktop in $out/share/applications/*.desktop; do
-            substituteInPlace $desktop \
-              --replace "Exec=zeditor" "Exec=env WAYLAND_DISPLAY= GDK_BACKEND=x11 zeditor"
-          done
-        fi
       '';
     };
   };
