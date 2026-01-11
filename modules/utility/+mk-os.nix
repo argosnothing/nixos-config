@@ -17,6 +17,7 @@
     inputs.nixpkgs-wsl.lib.nixosSystem {
       inherit system;
       modules = [
+        config.flake.modules.nixos.cursor
         inputs.nixos-wsl.nixosModules.default
         config.flake.modules.nixos.${name}
         {
