@@ -1,4 +1,4 @@
-
+## WITNESS MY SIN
 {config, ...}: {
   flake.modules.nixos.windows = {pkgs, ...}: {
     hardware = {
@@ -14,10 +14,10 @@
       lazygit
     ];
     imports = with config.flake.modules.nixos; [
-      options
       memacs
       nh
       nix-settings
+      base
     ];
   };
 }
