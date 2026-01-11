@@ -1,7 +1,13 @@
 {config, ...}: let
-  inherit (config.flake.settings) username gitemail;
+  inherit (config.flake.settings) gitemail;
 in {
-  flake.modules.nixos.git = {lib, ...}: {
+  flake.modules.nixos.git = {
+    config,
+    lib,
+    ...
+  }: let
+    username = config.user.name;
+  in {
     hjem.users.${username} = {
       files = {
         ".gitconfig" = {

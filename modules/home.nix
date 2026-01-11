@@ -7,10 +7,16 @@
 }: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.home = {pkgs, ...}: {
+  flake.modules.nixos.home = {
+    config,
+    pkgs,
+    ...
+  }: let
+    username = config.user.name;
+  in {
     imports = [
       inputs.hjem.nixosModules.default
-      (lib.mkAliasOptionModule ["hj"] ["hjem" "users" flake.settings.username])
+      (lib.mkAliasOptionModule ["hj"] ["hjem" "users" username])
     ];
     config = {
       my.persist.home.directories = lib.mkAfter [
@@ -32,10 +38,10 @@ in {
         ];
         clobberByDefault = true;
         linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
-        users.${flake.settings.username} = {
+        users.${username} = {
           enable = true;
-          user = flake.settings.username;
-          directory = "/home/${flake.settings.username}";
+          user = username;
+          directory = "/home/${username}";
           files = {
             ".editorconfig".text = ''
               root = true

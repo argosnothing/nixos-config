@@ -1,8 +1,7 @@
-{config, ...}: let
-  inherit (config) flake;
-  inherit (flake.settings) username;
-in {
-  flake.modules.nixos.virtualization = {
+{config, ...}: {
+  flake.modules.nixos.virtualization = {config, ...}: let
+    username = config.user.name;
+  in {
     virtualisation.libvirtd.enable = true;
     my.persist.root.directories = [
       "/var/lib/libvirt"

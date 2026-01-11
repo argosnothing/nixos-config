@@ -3,11 +3,10 @@
   lib,
   config,
   ...
-}: let
-  inherit (config.flake.settings) username;
-in {
+}: {
   flake.modules.nixos.impermanence = {config, ...}: let
     cfg = config.my.persist;
+    username = config.user.name;
   in {
     my.persist.enable = true;
     imports = [
