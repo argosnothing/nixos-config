@@ -30,6 +30,7 @@
       uefi
       zfs
       impermanence
+      nix-settings
     ];
     my = {
       theme.polarity = "dark";

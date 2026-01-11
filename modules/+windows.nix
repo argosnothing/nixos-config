@@ -10,11 +10,14 @@
       waybar
       nixd
       rofi
+      git
       lazygit
     ];
     imports = with config.flake.modules.nixos; [
       options
       memacs
+      nh
+      nix-settings
     ];
   };
 }

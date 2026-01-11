@@ -35,6 +35,7 @@
       impermanence
       uefi
       legacy-zfs
+      nix-settings
     ];
     my = {
       cursor.speed = -0.35;

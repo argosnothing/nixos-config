@@ -7,17 +7,18 @@ in {
     ...
   }: let
     inherit (config.my) hostname;
+    actualFlakedir = if hostname == "nixos" then "/home/nixos/nixos-config" else flakedir;
     rebuild = command: ''
       #!/bin/bash
-      pushd ${flakedir}
+      pushd ${actualFlakedir}
       alejandra . &>/dev/null
-      nh os ${command} ${flakedir}/#nixosConfigurations.${hostname};
+      nh os ${command} ${actualFlakedir}/#nixosConfigurations.${hostname};
       popd
     '';
   in {
     programs.nh = {
       enable = true;
-      flake = "${flakedir}";
+      flake = "${actualFlakedir}";
     };
 
     environment.systemPackages = [
