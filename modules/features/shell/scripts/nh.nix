@@ -7,8 +7,14 @@ in {
     ...
   }: let
     inherit (config.my) hostname;
-    actualFlakedir = if hostname == "nixos" then "/home/nixos/nixos-config" else flakedir;
-    actualHostname = if hostname == "nixos" then "wsl" else hostname;
+    actualFlakedir =
+      if hostname == "nixos"
+      then "/home/nixos/nixos-config"
+      else flakedir;
+    actualHostname =
+      if hostname == "nixos"
+      then "wsl"
+      else hostname;
     rebuild = command: ''
       #!/bin/bash
       pushd ${actualFlakedir}
