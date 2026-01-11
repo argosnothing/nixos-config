@@ -63,6 +63,12 @@
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/nixos-25.05";
     };
+    nixos-wsl = {
+      url = "github:nix-community/nixos-wsl/release-25.05";
+    };
+    nixpkgs-wsl = {
+      url = "github:NixOS/nixpkgs/nixos-25.05";
+    };
     systems = {
       url = "github:nix-systems/default";
     };
