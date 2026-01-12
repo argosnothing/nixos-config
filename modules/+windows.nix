@@ -14,10 +14,10 @@
       lazygit
     ];
     imports = with config.flake.modules.nixos; [
-      memacs
       nh
       nix-settings
-      base
+      options
+      misc
     ];
 
     my = {

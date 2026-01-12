@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.critical = {
+  flake.modules.nixos.pipewire = {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

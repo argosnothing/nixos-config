@@ -9,6 +9,8 @@ in {
   flake.modules.nixos.base = {pkgs, ...}: let
     nixos-modules = with flake.modules.nixos; [
       options
+      networking
+      keyd
       user
       critical
       home
@@ -16,6 +18,7 @@ in {
       kitty
       fish
       nh
+      misc
       misc-scripts
       starship
       git

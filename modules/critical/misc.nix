@@ -1,18 +1,9 @@
 {
-  flake.modules.nixos.critical = {
+  flake.modules.nixos.misc = {
     config,
     pkgs,
     ...
   }: {
-    networking = {
-      hostName = config.my.hostname;
-      networkmanager.enable = true;
-      nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
-    };
-
-    time.timeZone = "America/New_York";
-    i18n.defaultLocale = "en_US.UTF-8";
-
     my.persist.root.directories = [
       "/etc/NetworkManager/system-connections"
     ];
@@ -47,7 +38,6 @@
       ];
 
       variables = {
-        #WAYLAND_DISPLAY = "wayland-0";
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         NIXOS_OZONE_WL = "1";
         ELECTRON_ENABLE_LOGGING = "0";

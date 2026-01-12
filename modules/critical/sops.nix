@@ -3,7 +3,7 @@
   self,
   ...
 }: {
-  flake.modules.nixos.critical = {config, ...}: {
+  flake.modules.nixos.sops = {config, ...}: {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.critical = {
+  flake.modules.nixos.keyd = {
     services.keyd = {
       enable = true;
       keyboards.default = {
