@@ -14,7 +14,7 @@
           };
           format = {
             enable = true;
-            type = "alejandra";
+            type = ["alejandra"];
           };
           lsp = {
             servers = ["nil" "nixd"];
@@ -27,9 +27,6 @@
           extraDiagnostics.enable = true;
           format.enable = true;
           lsp = {
-            enable = true;
-          };
-          treesitter = {
             enable = true;
           };
         };

@@ -4,8 +4,8 @@
     lib,
     ...
   }: let
-    #emacsBase = pkgs.emacs;
-    emacsBase = pkgs.emacs-pgtk;
+    emacsBase = pkgs.emacs;
+    # emacsBase = pkgs.emacs-pgtk;
     emacsPkgs = pkgs.emacsPackagesFor emacsBase;
 
     runtimeTools = with pkgs; [

@@ -1,6 +1,6 @@
 {
-  flake.modules.nvf.default = {pkgs, ...}: {
-    vim = {
+  flake.modules.nvf.default = {
+    config.vim = {
       vimAlias = true;
       autopairs.nvim-autopairs.enable = true;
       dashboard.alpha = {
@@ -13,38 +13,30 @@
       tabline.nvimBufferline.enable = true;
       projects.project-nvim.enable = true;
       telescope.enable = true;
-      extraPackages = [pkgs.vimPlugins.direnv-vim];
-    };
 
-    vim.terminal = {
-      toggleterm = {
-        enable = true;
-        setupOpts = {
-          open_mapping = "[[<M-t>]]";
-        };
-      };
-    };
-
-    vim.clipboard = {
-      registers = "unnamedplus";
-      providers = {
-        wl-copy = {
+      terminal = {
+        toggleterm = {
           enable = true;
+          setupOpts = {
+            open_mapping = "[[<M-t>]]";
+          };
         };
       };
-      enable = true;
-    };
 
-    vim.treesitter = {
-      enable = true;
-      context.enable = false;
-      fold = true;
-    };
+      clipboard = {
+        registers = "unnamedplus";
+        providers = {
+          wl-copy = {
+            enable = true;
+          };
+        };
+        enable = true;
+      };
 
-    vim = {
       autocomplete.nvim-cmp = {
         enable = true;
       };
+
       runner.run-nvim = {
         enable = true;
       };
