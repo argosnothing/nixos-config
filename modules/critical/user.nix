@@ -1,5 +1,5 @@
 {config, ...}: let
-  inherit (config.flake.settings) username;
+  # inherit (config.flake.settings) username;
 in {
   flake.modules.nixos = {
     user = {
@@ -10,22 +10,19 @@ in {
     }: let
       inherit (lib) types mkOption;
       inherit (types) str;
-      actualUsername =
-        if config.my.hostname == "nixos"
-        then "nixos"
-        else username;
+      inherit (config.my) username;
     in {
       options.user = {
         name = mkOption {
           type = str;
-          default = actualUsername;
+          default = username;
         };
       };
       config = {
         programs.fish.enable = true;
         users = {
           users.root.initialPassword = "password";
-          users.${actualUsername} = {
+          users.${username} = {
             isNormalUser = true;
             extraGroups = ["networkmanager" "wheel" "input" "plugdev" "dialout" "seat"];
             hashedPasswordFile = config.sops.secrets."pc_password".path;

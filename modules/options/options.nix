@@ -7,6 +7,10 @@
 in {
   flake.modules.nixos.options = {
     options.my = {
+      username = mkOption {
+        description = "It's me!";
+        type = str;
+      };
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";

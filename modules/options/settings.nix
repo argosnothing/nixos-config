@@ -8,10 +8,6 @@
 in {
   # These are flake level options that NEED to be set by either a preset or a host.
   options.flake.settings = {
-    username = mkOption {
-      description = "It's me!";
-      type = str;
-    };
     flakedir = mkOption {
       description = "Absolute path to where flake is, don't change.";
       type = str;

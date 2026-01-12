@@ -9,6 +9,8 @@
     ];
     environment.systemPackages = with pkgs; [
       rust-analyzer
+      nixd
+      nil
     ];
 
     wsl.enable = true;
