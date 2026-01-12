@@ -19,7 +19,6 @@
     environment.sessionVariables = {
       XDG_RUNTIME_DIR = "/mnt/wslg/runtime-dir";
       WAYLAND_DISPLAY = "wayland-0";
-      DBUS_SESSION_BUS_ADDRESS = "unix:path=/mnt/wslg/runtime-dir/bus";
     };
   };
 }

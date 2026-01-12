@@ -10,18 +10,14 @@ in {
     nixos-modules = with flake.modules.nixos; [
       options
       networking
+      sops
       keyd
       user
       critical
       home
       gnome-keyring
-      kitty
-      fish
-      nh
       misc
-      misc-scripts
-      starship
-      git
+      packages
     ];
   in {
     imports = nixos-modules;

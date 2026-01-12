@@ -14,7 +14,11 @@
       lazygit
     ];
     imports = with config.flake.modules.nixos; [
-      nh
+      packages
+      sops
+      user
+      home
+      shell-apps
       nix-settings
       options
       misc

@@ -7,6 +7,12 @@ in {
       copilot-cli
       yazi
       helix
+      kitty
+      fish
+      nh
+      git
+      misc-scripts
+      starship
     ];
   in {
     imports = nixos-modules;
