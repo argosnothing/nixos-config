@@ -27,6 +27,7 @@
       "/share/gsettings-schemas"
     ];
 
+    hj.rum.environment.hideWarning = true;
     hj.rum.misc.gtk = {
       settings = {
         theme-name = "adw-gtk3";
