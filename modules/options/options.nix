@@ -10,6 +10,7 @@ in {
       username = mkOption {
         description = "It's me!";
         type = str;
+        default = "salivala";
       };
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";

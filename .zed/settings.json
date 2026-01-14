@@ -17,8 +17,8 @@
           "command": ["alejandra"],
         },
         "options": {
-          "desktop": {
-            "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.desktop.options",
+          "wsl": {
+            "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.wsl.options",
           },
         },
       },
@@ -26,6 +26,7 @@
   },
   "languages": {
     "Nix": {
+      "language_servers": ["nixd"],
       "formatter": {
         "external": {
           "command": "alejandra",
