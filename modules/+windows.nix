@@ -14,6 +14,8 @@
       lazygit
     ];
     imports = with config.flake.modules.nixos; [
+      memacs
+
       packages
       sops
       user
