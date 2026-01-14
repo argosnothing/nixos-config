@@ -12,7 +12,6 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      #xfce-bundle
       niri-bundle
       work
       gui-apps
@@ -20,7 +19,6 @@
       vscode
       zed
       krita
-      memacs
 
       shell-apps
       battery
@@ -30,7 +28,6 @@
       uefi
       zfs
       impermanence
-      nix-settings
     ];
     my = {
       theme.polarity = "dark";
