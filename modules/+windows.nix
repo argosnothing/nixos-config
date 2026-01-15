@@ -25,7 +25,6 @@
       options
       misc
     ];
-
     my = {
       username = "nixos";
       cursor.speed = -0.35;

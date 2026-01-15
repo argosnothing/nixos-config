@@ -13,6 +13,7 @@ in {
       git
       misc-scripts
       starship
+      fetch
     ];
   in {
     imports = nixos-modules;
