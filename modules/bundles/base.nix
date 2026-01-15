@@ -10,9 +10,9 @@ in {
       sops
       keyd
       user
-      critical
       home
       gnome-keyring
+      nix-settings
       misc
       packages
     ];

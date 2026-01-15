@@ -1,31 +1,28 @@
-{config, ...}: let
-  inherit (config.flake.settings) flakedir;
-in {
+{
   flake.modules.nixos.nh = {
     pkgs,
     config,
     ...
   }: let
     inherit (config.my) hostname;
-    actualFlakedir =
-      if hostname == "nixos"
-      then "/home/nixos/nixos-config"
-      else flakedir;
+    inherit (config.my) username;
+    flakedir = "/home/${username}/nixos-config";
+
     actualHostname =
       if hostname == "nixos"
       then "wsl"
       else hostname;
     rebuild = command: ''
       #!/bin/bash
-      pushd ${actualFlakedir}
+      pushd ${flakedir}
       alejandra . &>/dev/null
-      nh os ${command} ${actualFlakedir}/#nixosConfigurations.${actualHostname};
+      nh os ${command} ${flakedir}/#nixosConfigurations.${actualHostname};
       popd
     '';
   in {
     programs.nh = {
       enable = true;
-      flake = "${actualFlakedir}";
+      flake = "${flakedir}";
     };
 
     environment.systemPackages = [

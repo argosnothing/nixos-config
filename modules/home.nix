@@ -2,11 +2,8 @@
 {
   lib,
   inputs,
-  config,
   ...
-}: let
-  inherit (config) flake;
-in {
+}: {
   flake.modules.nixos.home = {
     config,
     pkgs,
