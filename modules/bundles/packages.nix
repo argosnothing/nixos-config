@@ -1,10 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.packages = {pkgs, ...}: {
-    my.persist.home.directories = [
-      ".local/share/bolt-launcher"
-    ];
     environment.systemPackages = with pkgs; [
-      plan9port
       jq
       wev
       wget
@@ -13,7 +9,6 @@
       desktop-file-utils
       nix-direnv
       direnv
-      bolt-launcher
       mpv
       bash
       tree
