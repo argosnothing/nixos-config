@@ -255,6 +255,7 @@ fi
     fi
 
     username="$(whoami)"
+
     echo "Staging age key into target /persist before install (for sops-nix)..."
     source_age_key="${HOME}/.config/sops/age/keys.txt"
     target_age_key="/mnt/persist/home/$username/.config/sops/age/keys.txt"
@@ -262,7 +263,6 @@ fi
     if [[ -f "$source_age_key" ]]; then
         sudo install -d -m700 "$(dirname "$target_age_key")"
         sudo install -m600 "$source_age_key" "$target_age_key"
-        # avoid assuming group exists; chown user only
         sudo chown -R "$username" "/mnt/persist/home/$username/.config/sops"
     else
         echo "WARNING: Could not locate $source_age_key; sops secrets may fail during install."
@@ -275,7 +275,12 @@ fi
     echo "Copying configuration to installed system..."
     sudo mkdir -p "/mnt/persist/home/$username/nixos-config"
     sudo cp -a "$HOME/nixos-config/." "/mnt/persist/home/$username/nixos-config/"
-    sudo chown -R "$username" "/mnt/persist/home/$username/nixos-config"
+
+    if sudo chroot /mnt /bin/sh -c "id -u '$username' >/dev/null 2>&1"; then
+        sudo chroot /mnt /bin/sh -c "grp=\$(id -gn '$username' 2>/dev/null || echo users); chown -R '$username':\"\$grp\" /persist/home/'$username' || chown -R '$username' /persist/home/'$username'"
+    else
+        sudo chown -R "$username" "/mnt/persist/home/$username"
+    fi
 
     echo "Installation complete. It is now safe to reboot."
     exit 0

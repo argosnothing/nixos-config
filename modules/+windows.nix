@@ -4,6 +4,7 @@
     hardware = {
       bluetooth.enable = true;
     };
+    programs.nix-ld.enable = true;
     environment.systemPackages = with pkgs; [
       wdisplays
       wpa_supplicant
