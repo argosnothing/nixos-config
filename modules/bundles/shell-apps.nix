@@ -12,6 +12,7 @@ in {
       fish
       nh
       git
+      stow
       misc-scripts
       starship
       fetch
