@@ -5,6 +5,7 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
+      plasma
       firefox
       impermanence
       grub
