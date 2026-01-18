@@ -8,70 +8,72 @@
     user = config.my.username;
     home = "/home/${user}";
 
-    repo = "${home}/nix-config";
+    repo = "${home}/nixos-config";
     stowRoot = "${repo}/.stow";
-    pkg = "${stowRoot}/.whitelist";
+
+    pkgsList = config.my.stow.directories or [];
+    pkgsFile = pkgs.writeText "stow-packages" (lib.concatStringsSep "\n" pkgsList + "\n");
 
     runuser = "${pkgs.util-linux}/bin/runuser";
     stow = "${pkgs.stow}/bin/stow";
-    find = "${pkgs.findutils}/bin/find";
-    sed = "${pkgs.gnused}/bin/sed";
-    ln = "${pkgs.coreutils}/bin/ln";
     mkdir = "${pkgs.coreutils}/bin/mkdir";
+    sort = "${pkgs.coreutils}/bin/sort";
+    comm = "${pkgs.coreutils}/bin/comm";
+    cat = "${pkgs.coreutils}/bin/cat";
+    mktemp = "${pkgs.coreutils}/bin/mktemp";
     rm = "${pkgs.coreutils}/bin/rm";
-    dirname = "${pkgs.coreutils}/bin/dirname";
+    awk = "${pkgs.gawk}/bin/awk";
 
-    entries =
-      (config.my.stow.directories or [])
-      ++ (config.my.stow.files or []);
-
-    whitelistText =
-      lib.concatStringsSep "\n" entries + "\n";
-
-    whitelistFile = pkgs.writeText "stow-whitelist" whitelistText;
-
-    script = pkgs.writeShellScript "stow-whitelist" ''
+    script = pkgs.writeShellScript "apply-stow-packages" ''
       set -euo pipefail
 
-      STOW_ROOT=${lib.escapeShellArg stowRoot}
-      WHITELIST=${lib.escapeShellArg whitelistFile}
-      PKG=${lib.escapeShellArg pkg}
-      TARGET=${lib.escapeShellArg home}
+      HOME=${lib.escapeShellArg home}
+      ROOT=${lib.escapeShellArg stowRoot}
+      LIST=${lib.escapeShellArg pkgsFile}
+      STATE="$ROOT/.stow-packages.state"
 
-      [ -d "$STOW_ROOT" ] || exit 0
-      [ -f "$WHITELIST" ] || exit 0
+      [ -d "$ROOT" ] || exit 0
+      ${mkdir} -p -- "$ROOT"
 
-      ${rm} -rf -- "$PKG"
-      ${mkdir} -p -- "$PKG"
+      cur="$(${mktemp})"
+      prev="$(${mktemp})"
+      drop="$(${mktemp})"
 
-      while IFS= read -r line; do
-        line="$(${sed} -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' <<<"$line")"
-        [ -z "$line" ] && continue
-        case "$line" in \#*) continue ;; esac
+      ${awk} '
+        { gsub(/^[ \t]+|[ \t]+$/, "", $0) }
+        $0 == "" { next }
+        $0 ~ /^#/ { next }
+        { print }
+      ' "$LIST" | ${sort} -u > "$cur"
 
-        src="$STOW_ROOT/$line"
+      if [ -f "$STATE" ]; then
+        ${cat} -- "$STATE" | ${sort} -u > "$prev"
+      else
+        : > "$prev"
+      fi
 
-        if [ -d "$src" ]; then
-          prefix="$STOW_ROOT/"
-          while IFS= read -r -d $'\0' f; do
-            rel="''${f#"$prefix"}"
-            ${mkdir} -p -- "$PKG/$(${dirname} -- "$rel")"
-            ${ln} -sfn -- "$f" "$PKG/$rel"
-          done < <(${find} "$src" -type f -print0)
-        elif [ -f "$src" ]; then
-          ${mkdir} -p -- "$PKG/$(${dirname} -- "$line")"
-          ${ln} -sfn -- "$src" "$PKG/$line"
-        fi
-      done < "$WHITELIST"
+      ${comm} -23 "$prev" "$cur" > "$drop"
 
-      cd "$STOW_ROOT"
-      ${stow} --no-folding -R -d "$STOW_ROOT" -t "$TARGET" ".whitelist"
+      cd "$ROOT"
+
+      while IFS= read -r pkg; do
+        [ -z "$pkg" ] && continue
+        ${stow} --no-folding -D -d "$ROOT" -t "$HOME" "$pkg" || true
+      done < "$drop"
+
+      while IFS= read -r pkg; do
+        [ -z "$pkg" ] && continue
+        [ -d "$ROOT/$pkg" ] || continue
+        ${stow} --no-folding -R -d "$ROOT" -t "$HOME" "$pkg"
+      done < "$cur"
+
+      ${cat} -- "$cur" > "$STATE"
+      ${rm} -f -- "$cur" "$prev" "$drop"
     '';
   in {
     config = {
       environment.systemPackages = [pkgs.stow];
-
-      system.activationScripts.stowWhitelist = {
+      system.activationScripts.stowPackages = {
         supportsDryActivation = true;
         text = ''
           ${runuser} -u ${lib.escapeShellArg user} -- \
