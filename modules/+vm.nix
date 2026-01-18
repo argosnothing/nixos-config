@@ -1,7 +1,8 @@
-{config, ...}: let
+{config, ...}: {
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
       xfce
+      shell-apps
       zfs
       impermanence
       uefi
@@ -26,6 +27,4 @@
       ];
     };
   };
-in {
-  inherit flake;
 }
