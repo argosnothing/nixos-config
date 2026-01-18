@@ -9,7 +9,7 @@
     boot = {
       initrd.availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "usb_storage" "sd_mod" "virtio_blk" "hv_vmbus" "hv_storvsc"];
       initrd.kernelModules = [];
-      kernelModules = ["kvm-amd"];
+      kernelModules = ["kvm-amd" "hv_drm"];
       extraModulePackages = [];
     };
 
