@@ -7,7 +7,7 @@
       (modulesPath + "/profiles/qemu-guest.nix")
     ];
     boot = {
-      initrd.availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "usb_storage" "sd_mod" "virtio_blk"];
+      initrd.availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "usb_storage" "sd_mod" "virtio_blk" "hv_vmbus" "hv_storvsc"];
       initrd.kernelModules = [];
       kernelModules = ["kvm-amd"];
       extraModulePackages = [];
