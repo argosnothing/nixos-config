@@ -1,7 +1,7 @@
 {config, ...}: let
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
-      hyprland-bundle
+      xfce
       zfs
       impermanence
       uefi
