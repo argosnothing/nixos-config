@@ -18,7 +18,10 @@ in {
       build-iso
     ];
   in {
-    # environment.systemPackages = move-script .config/scripts;
+    environment.systemPackages = move-script {
+      inherit pkgs;
+      targetPath = ".config/scripts";
+    };
     imports = nixos-modules;
   };
 }
