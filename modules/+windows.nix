@@ -28,6 +28,9 @@
     ];
     my = {
       username = "nixos";
+      stow.files = [
+        "test.nix"
+      ];
       cursor.speed = -0.35;
       monitors = [
         {
