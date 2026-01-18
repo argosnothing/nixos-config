@@ -1,11 +1,10 @@
 {config, ...}: let
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
-      base
+      hyprland-bundle
+      zfs
       impermanence
       uefi
-      niri
-      firefox
     ];
     my = {
       is-vm = true;

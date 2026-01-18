@@ -15,37 +15,6 @@
     boot.kernelParams = ["nvidida-drm.fbdev=1" "NVreg_EnableGpuFirmware=0"];
     boot.extraModulePackages = [];
 
-    fileSystems."/" = {
-      device = "zroot/root";
-      fsType = "zfs";
-    };
-
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/4D6E-2774";
-      fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
-    };
-
-    fileSystems."/nix" = {
-      device = "zroot/nix";
-      fsType = "zfs";
-    };
-
-    fileSystems."/tmp" = {
-      device = "zroot/tmp";
-      fsType = "zfs";
-    };
-
-    fileSystems."/cache" = {
-      device = "zroot/cache";
-      fsType = "zfs";
-    };
-
-    fileSystems."/persist" = {
-      device = "zroot/persist";
-      fsType = "zfs";
-    };
-
     swapDevices = [
       {device = "/dev/disk/by-uuid/82467bcb-68f7-4666-b90e-7283f5041f89";}
     ];

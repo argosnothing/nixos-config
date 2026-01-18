@@ -14,6 +14,7 @@ in {
       misc-scripts
       starship
       fetch
+      build-iso
     ];
   in {
     imports = nixos-modules;
