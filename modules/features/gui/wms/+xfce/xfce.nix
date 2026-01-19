@@ -37,7 +37,7 @@ in {
       };
     };
     my.quantum.directories = [
-      "xfce4"
+      ".config/xfce4"
     ];
   };
 }
