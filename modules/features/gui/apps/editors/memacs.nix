@@ -20,6 +20,7 @@
       copilot-language-server
       graphviz
       nixd
+      nil
       multimarkdown
     ];
 
