@@ -1,3 +1,4 @@
+### cursed, please ignore this horrible breach of sanity
 {
   flake.modules.nixos.build-iso = {
     config,

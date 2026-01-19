@@ -3,6 +3,7 @@
     imports = with config.flake.modules.nixos; [
       xfce-bundle
       shell-apps
+      firefox
       zfs
       memacs
       impermanence
