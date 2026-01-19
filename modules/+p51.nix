@@ -5,16 +5,14 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
+      memacs
       xfce-bundle
-      spicetify
-      work
       firefox
       impermanence
-      emacs
       grub
       battery
       touchpad
-      legacy-zfs
+      zfs
     ];
     my = {
       is-vm = false;

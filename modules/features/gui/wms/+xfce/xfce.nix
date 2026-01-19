@@ -36,7 +36,7 @@ in {
         };
       };
     };
-    my.persist.home.directories = [
+    my.quantum.directories = [
       ".config/xfce4"
     ];
   };

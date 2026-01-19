@@ -15,6 +15,21 @@ in {
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
+      quantum = {
+        enable = mkEnableOption "Enable Stow";
+        directories = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [];
+          apply = assertNoHomeDirs;
+          description = "Directories to persist in root filesystem";
+        };
+        files = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [];
+          apply = assertNoHomeDirs;
+          description = "Files to persist in root filesystem";
+        };
+      };
       persist = {
         enable = mkEnableOption "Enable Impermanence";
         keep-user-override = mkEnableOption "Ignore all home level persists and simply persist ~";
