@@ -15,6 +15,7 @@
     user = config.my.username;
     home = "/home/${user}";
 
+    host = config.my.hostname;
     repo = "${home}/nixos-config";
     stowRoot = "${repo}/.stow";
 
@@ -37,7 +38,7 @@
       HOME=${lib.escapeShellArg home}
       ROOT=${lib.escapeShellArg stowRoot}
       LIST=${lib.escapeShellArg pkgsFile}
-      STATE="$ROOT/.stow-packages.state"
+      STATE="$ROOT/.stow-packages.state.${lib.escapeShellArg host}"
 
       [ -d "$ROOT" ] || exit 0
       ${mkdir} -p -- "$ROOT"
