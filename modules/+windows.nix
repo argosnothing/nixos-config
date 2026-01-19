@@ -27,6 +27,9 @@
       misc
     ];
     my = {
+      stow.directories = [
+        "example"
+      ];
       username = "nixos";
       cursor.speed = -0.35;
       monitors = [

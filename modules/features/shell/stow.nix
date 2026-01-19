@@ -1,3 +1,10 @@
+# Stow abomination.
+# Similar to persist, but for stow packages.
+# some modules might opt to do configuration through stow versus symlinking from store.
+# Could be for any reason, maybe i want a new nvim config that i want to continuously work on
+# this lets me do stuff like my.stow.directories = ["nvim"]; and it'll take from the .stow folder
+# in my flake for that directory and stow it out.
+# If im doing persistance ill still need to persist the target directory so it doesn't get deleted
 {
   flake.modules.nixos.stow = {
     pkgs,
