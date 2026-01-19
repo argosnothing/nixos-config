@@ -63,11 +63,12 @@
     <property name="plugin-10" type="string" value="actions"/>
     <property name="plugin-1" type="string" value="whiskermenu">
       <property name="recent" type="array">
+        <value type="string" value="kitty.desktop"/>
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="org.xfce.ristretto.desktop"/>
         <value type="string" value="org.xfce.mousepad.desktop"/>
         <value type="string" value="xfce4-file-manager.desktop"/>
         <value type="string" value="xfce-display-settings.desktop"/>
-        <value type="string" value="kitty.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
       </property>
       <property name="profile-shape" type="int" value="1"/>
