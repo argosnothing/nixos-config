@@ -4,6 +4,53 @@
 configs:
 - level: 0
   monitors:
+  - id: "219c758276014cf095bbaa65c548f7934ea6afe1"
+    display_name: "Virtual-1"
+    geometry:
+      x: 0
+      y: 0
+      width: 1024
+      height: 768
+  icons:
+    "trash:///":
+      row: 2
+      col: 0
+    "/home/salivala":
+      row: 0
+      col: 0
+    "1980-01-01-00-00-00-00":
+      row: 3
+      col: 0
+      last_seen: 1768789170028208
+    "/home/salivala/Pictures":
+      row: 1
+      col: 1
+      last_seen: 1768789170033214
+    "/home/salivala/Downloads":
+      row: 2
+      col: 1
+      last_seen: 1768789170033766
+    "/home/salivala/org":
+      row: 4
+      col: 0
+      last_seen: 1768789170029342
+    "/home/salivala/Projects":
+      row: 0
+      col: 1
+      last_seen: 1768789170032656
+    "/":
+      row: 1
+      col: 0
+    "/home/salivala/Videos":
+      row: 6
+      col: 0
+      last_seen: 1768789170032052
+    "/home/salivala/nixos-config":
+      row: 5
+      col: 0
+      last_seen: 1768789170031143
+- level: 0
+  monitors:
   - id: "ba806913ebabc36ae3563f4d7e26eaadf1dff489"
     display_name: "LG Display 0x0590 (eDP-1)"
     geometry:
@@ -11,37 +58,4 @@ configs:
       y: 0
       width: 1920
       height: 1080
-  icons:
-    "trash:///":
-      row: 2
-      col: 0
-    "/home/salivala/Downloads":
-      row: 7
-      col: 0
-      last_seen: 1768770217828469
-    "/home/salivala":
-      row: 0
-      col: 0
-    "/home/salivala/Pictures":
-      row: 6
-      col: 0
-      last_seen: 1768770217827655
-    "/home/salivala/org":
-      row: 8
-      col: 0
-      last_seen: 1768770429234027
-    "/home/salivala/Projects":
-      row: 5
-      col: 0
-      last_seen: 1768770217826869
-    "/":
-      row: 1
-      col: 0
-    "/home/salivala/Videos":
-      row: 4
-      col: 0
-      last_seen: 1768770217826031
-    "/home/salivala/nixos-config":
-      row: 3
-      col: 0
-      last_seen: 1768770217824759
+  icons: {}

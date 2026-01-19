@@ -16,6 +16,7 @@
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
+        <value type="int" value="11"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
@@ -41,6 +42,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="networkmanager applet"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (69%)"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (66%)"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (63%)"/>
@@ -61,8 +63,12 @@
     <property name="plugin-10" type="string" value="actions"/>
     <property name="plugin-1" type="string" value="whiskermenu">
       <property name="recent" type="array">
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="xfce-display-settings.desktop"/>
+        <value type="string" value="kitty.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
       </property>
     </property>
+    <property name="plugin-11" type="string" value="power-manager-plugin"/>
   </property>
 </channel>
