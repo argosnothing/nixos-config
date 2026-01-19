@@ -5,7 +5,8 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      plasma
+      memacs
+      xfce-bundle
       firefox
       impermanence
       grub

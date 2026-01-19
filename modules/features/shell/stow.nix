@@ -89,6 +89,17 @@
             ${lib.escapeShellArg script}
         '';
       };
+      systemd.services.stow-packages = {
+        description = "Re-stow whitelisted packages into home";
+        wantedBy = ["multi-user.target"];
+        after = ["local-fs.target" "systemd-user-session.service"];
+        serviceConfig = {
+          Type = "oneshot";
+          User = user;
+          Environment = ["HOME=${home}"];
+          ExecStart = script;
+        };
+      };
     };
   };
 }

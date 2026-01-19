@@ -36,8 +36,8 @@ in {
         };
       };
     };
-    my.persist.home.directories = [
-      ".config/xfce4"
+    my.stow.directories = [
+      "xfce4"
     ];
   };
 }
