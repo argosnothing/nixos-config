@@ -34,7 +34,7 @@
       # Meta
       impermanence
       uefi
-      legacy-zfs
+      zfs
       nix-settings
     ];
     my = {
