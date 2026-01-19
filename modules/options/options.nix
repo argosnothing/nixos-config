@@ -15,7 +15,7 @@ in {
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
-      stow = {
+      quantum = {
         enable = mkEnableOption "Enable Stow";
         directories = lib.mkOption {
           type = lib.types.listOf lib.types.str;
