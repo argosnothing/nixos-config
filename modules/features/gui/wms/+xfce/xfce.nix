@@ -36,7 +36,7 @@ in {
         };
       };
     };
-    my.stow.directories = [
+    my.quantum.directories = [
       "xfce4"
     ];
   };
