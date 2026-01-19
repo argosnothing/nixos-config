@@ -1,7 +1,7 @@
 {config, ...}: {
   flake.modules.nixos.vm = {
     imports = with config.flake.modules.nixos; [
-      xfce4-bundle
+      xfce-bundle
       shell-apps
       zfs
       memacs
