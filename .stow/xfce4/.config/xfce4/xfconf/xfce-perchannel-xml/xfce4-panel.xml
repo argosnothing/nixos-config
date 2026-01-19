@@ -59,6 +59,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “blackbox” active: blackbox (66%)"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (63%)"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (62%)"/>
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (58%)"/>
