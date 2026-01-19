@@ -64,6 +64,8 @@
     <property name="plugin-1" type="string" value="whiskermenu">
       <property name="recent" type="array">
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
         <value type="string" value="xfce-display-settings.desktop"/>
         <value type="string" value="kitty.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>

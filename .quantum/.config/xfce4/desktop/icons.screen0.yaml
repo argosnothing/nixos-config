@@ -4,6 +4,16 @@
 configs:
 - level: 0
   monitors:
+  - id: "ba806913ebabc36ae3563f4d7e26eaadf1dff489"
+    display_name: "LG Display 0x0590 (eDP-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+  icons: {}
+- level: 0
+  monitors:
   - id: "219c758276014cf095bbaa65c548f7934ea6afe1"
     display_name: "Virtual-1"
     geometry:
@@ -15,21 +25,21 @@ configs:
     "trash:///":
       row: 2
       col: 0
-    "/home/salivala":
-      row: 0
-      col: 0
-    "1980-01-01-00-00-00-00":
-      row: 3
-      col: 0
-      last_seen: 1768789170028208
-    "/home/salivala/Pictures":
-      row: 1
-      col: 1
-      last_seen: 1768789170033214
     "/home/salivala/Downloads":
       row: 2
       col: 1
       last_seen: 1768789170033766
+    "1980-01-01-00-00-00-00":
+      row: 3
+      col: 0
+      last_seen: 1768789170028208
+    "/home/salivala":
+      row: 0
+      col: 0
+    "/home/salivala/Pictures":
+      row: 1
+      col: 1
+      last_seen: 1768789170033214
     "/home/salivala/org":
       row: 4
       col: 0
@@ -49,13 +59,3 @@ configs:
       row: 5
       col: 0
       last_seen: 1768789170031143
-- level: 0
-  monitors:
-  - id: "ba806913ebabc36ae3563f4d7e26eaadf1dff489"
-    display_name: "LG Display 0x0590 (eDP-1)"
-    geometry:
-      x: 0
-      y: 0
-      width: 1920
-      height: 1080
-  icons: {}
