@@ -12,7 +12,7 @@ in {
       fish
       nh
       git
-      stow
+      quantum
       misc-scripts
       starship
       fetch
