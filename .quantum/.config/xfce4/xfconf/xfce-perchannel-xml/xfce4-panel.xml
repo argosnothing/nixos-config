@@ -9,8 +9,8 @@
       <property name="position" type="string" value="p=8;x=960;y=1066"/>
       <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="16"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="icon-size" type="uint" value="28"/>
+      <property name="size" type="uint" value="34"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="2"/>
@@ -70,6 +70,8 @@
         <value type="string" value="kitty.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
       </property>
+      <property name="profile-shape" type="int" value="1"/>
+      <property name="button-icon" type="string" value="/home/salivala/nixos-config/.media/icons/NixOS.svg"/>
     </property>
     <property name="plugin-11" type="string" value="power-manager-plugin"/>
   </property>
