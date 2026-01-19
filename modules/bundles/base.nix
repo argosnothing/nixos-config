@@ -14,6 +14,7 @@ in {
       gnome-keyring
       nix-settings
       misc
+      shell-apps
       packages
     ];
   in {
