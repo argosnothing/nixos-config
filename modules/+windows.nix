@@ -27,8 +27,8 @@
       misc
     ];
     my = {
-      stow.directories = [
-        "example"
+      quantum.files = [
+        ".config/test.nix"
       ];
       username = "nixos";
       cursor.speed = -0.35;
