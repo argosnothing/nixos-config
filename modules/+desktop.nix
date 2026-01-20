@@ -16,26 +16,13 @@
 
       # Apps
       gui-apps
-      shell-apps
-      via
-      plex
-      mullvad
-      transmission
-      memacs
-      krita
-      vscode
-      zed
-      virtualization
+      firefox
       uhk
-      work
-      kdenlive
-      chrome
 
       # Meta
       impermanence
       uefi
       zfs
-      nix-settings
     ];
     my = {
       cursor.speed = -0.35;
