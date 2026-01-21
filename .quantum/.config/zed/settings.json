@@ -43,6 +43,6 @@
   "theme": {
     "mode": "dark",
     "light": "Oxocarbon Dark (IBM Carbon)",
-    "dark": "Ayu Mirage",
+    "dark": "VSCode Dark Modern",
   },
 }
