@@ -5,8 +5,10 @@ in {
     inherit (pkgs.stdenv.hostPlatform) system;
   in {
     my.persist.home.directories = [
-      ".config/zed"
       ".local/share/zed"
+    ];
+    my.quantum.directories = [
+      ".config/zed"
     ];
     programs.nix-ld.enable = true;
     hj.packages = with flake.packages.${system}; [zeditor];

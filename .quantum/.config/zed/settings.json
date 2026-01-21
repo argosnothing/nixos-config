@@ -42,7 +42,7 @@
   "buffer_font_size": 15.0,
   "theme": {
     "mode": "dark",
-    "light": "VSCode Light+",
-    "dark": "Kanagawa",
+    "light": "Oxocarbon Dark (IBM Carbon)",
+    "dark": "Ayu Mirage",
   },
 }

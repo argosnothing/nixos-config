@@ -1,12 +1,8 @@
+### "Do as I say, not as I do."
 ### Quantum is persistence, but for things I want to sync across machines
 ### Only meant for certain folders I know won't contain secrets
 {
-  flake.modules.nixos.quantum = {
-    pkgs,
-    lib,
-    config,
-    ...
-  }: let
+  flake.modules.nixos.quantum = {config, ...}: let
     user = config.my.username;
     home = "/home/${user}";
 

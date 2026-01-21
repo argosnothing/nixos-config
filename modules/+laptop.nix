@@ -3,24 +3,19 @@
     environment.systemPackages = with pkgs; [
       wdisplays
     ];
-    hj.files = with config.flake.lib;
-      (move ".config/zed/settings.json")
-      // (move ".config/zed/keymap.json")
-      // (move ".config/zed/tasks.json");
     hardware = {
       graphics.enable = true;
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
       niri-bundle
-      work
       gui-apps
 
       vscode
       zed
+      work
       krita
 
-      shell-apps
       battery
       touchpad
 
