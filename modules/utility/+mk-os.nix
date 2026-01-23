@@ -60,6 +60,9 @@
             config = {
               allowUnfree = true;
               showAliases = true;
+              permittedInsecurePackages = [
+                "libsoup-2.74.3"
+              ];
             };
           };
           system.stateVersion = "25.05";

@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.niri = {lib, ...}: let
-    radius = 15.0;
+    radius = 0.0;
   in {
     my.wm.niri.settings = lib.mkAfter [
       ''
