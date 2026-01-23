@@ -2,7 +2,6 @@
   inherit (config.flake.lib) mk-pkgs-stable;
 in {
   flake.modules.nixos.work = {pkgs, ...}: let
-    pkgs-stable = mk-pkgs-stable pkgs;
     extraCerts = [
       ./secure/citrix-certs/Entrust_Root_G2.pem
       ./secure/citrix-certs/Entrust_L1K.pem

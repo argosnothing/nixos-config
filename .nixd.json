@@ -7,7 +7,7 @@
   },
   "options": {
     "nixos": {
-      "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.wsl.options"
+      "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.laptop.options"
     }
   },
   "diagnostic": {
