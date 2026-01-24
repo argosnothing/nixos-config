@@ -18,6 +18,7 @@
       gui-apps
       microsoft-edge
       firefox
+      chrome
       memacs
       work
       uhk

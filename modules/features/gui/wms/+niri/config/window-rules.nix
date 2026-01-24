@@ -35,6 +35,7 @@
           opacity 0.99
           open-floating true
           tiled-state false
+          open-on-workspace "stash"
         }
 
         window-rule {
