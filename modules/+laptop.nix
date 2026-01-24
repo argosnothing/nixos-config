@@ -15,6 +15,7 @@
       zed
       work
       krita
+      chrome
 
       battery
       touchpad

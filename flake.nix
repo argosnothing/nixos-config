@@ -24,6 +24,12 @@
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zwift.url = "github:netbrain/zwift";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     ### Window Managers
     mango = {
       url = "github:DreamMaoMao/mango";
