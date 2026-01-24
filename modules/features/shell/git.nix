@@ -18,7 +18,7 @@ in {
               email = gitemail;
             };
             core = {
-              editor = "vim";
+              editor = "hx";
             };
           };
         };

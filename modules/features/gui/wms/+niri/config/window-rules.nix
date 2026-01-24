@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.niri = {lib, ...}: let
-    radius = 15.0;
+    radius = 0.0;
   in {
     my.wm.niri.settings = lib.mkAfter [
       ''
@@ -35,6 +35,7 @@
           opacity 0.99
           open-floating true
           tiled-state false
+          open-on-workspace "stash"
         }
 
         window-rule {

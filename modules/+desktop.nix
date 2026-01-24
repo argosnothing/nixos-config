@@ -12,11 +12,15 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM
-      hyprland-bundle
+      niri-bundle
 
       # Apps
       gui-apps
+      microsoft-edge
       firefox
+      chrome
+      memacs
+      work
       uhk
 
       # Meta

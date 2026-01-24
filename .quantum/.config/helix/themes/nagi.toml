@@ -1,0 +1,68 @@
+# inherits = "fleet_dark"
+# CREDIT FOR THIS THEME goes TO: https://github.com/Abhra00
+
+"attribute" = { fg = "#92e2f2" }
+"type" = { fg = "#95b7e6" }
+"type.builtin" = { fg = "#d5d7d8" }
+"constructor" = { fg = "#9ec1f3" }
+
+"constant" = { fg = "#d282d9" }
+"constant.builtin" = { fg = "#92e2f2" }
+"constant.builtin.character" = { fg = "#de89e5" }
+"constant.builtin.numeric" = { fg = "#98eeff" }
+
+"string" = { fg = "#d282d9" }
+"string.regexp" = { fg = "#92e2f2" }
+
+"comment" = { fg = "#566466" }
+
+"variable" = { fg = "#e2e5e6" }
+"label" = { fg = "#98eeff" }
+
+"punctuation" = { fg = "#92e2f2" }
+
+"keyword" = { fg = "#95b7e6" }
+"keyword.control.exception" = { fg = "#98eeff" }
+"keyword.operator" = { fg = "#92e2f2" }
+"keyword.function" = { fg = "#92e2f2" }
+
+"operator" = { fg = "#9ec1f3" }
+
+"function" = { fg = "#f38c61" }
+"function.builtin" = { fg = "#ff9366" }
+"function.method" = { fg = "#92e2f2" }
+"function.macro" = { fg = "#92e2f2" }
+
+"tag" = { fg = "#e2e5e6" }
+"namespace" = { fg = "#d5d7d8" }
+
+"diff.plus" = { fg = "#a6d98d", bg = "#1c2021" }
+"diff.minus" = { fg = "#d95762", bg = "#1c2021" }
+"diff.delta" = { fg = "#95b7e6", bg = "#2c3334" }
+
+"ui.background" = { fg = "#e2e5e6", bg = "#101314" }
+"ui.separator" = "#1c2021"
+"ui.selection" = { bg = "#2c3334" }
+"ui.text" = { fg = "#e2e5e6" }
+
+"ui.cursor" = { fg = "#101314", bg = "#eef1f2" }
+"ui.cursor.normal" = { fg = "#eef1f2", bg = "#101314" }
+
+"ui.linenr" = { fg = "#414c4d", bg = "#101314" }
+"ui.linenr.selected" = { fg = "#d5d7d8" }
+
+"ui.statusline" = { fg = "#e2e5e6", bg = "#1c2021" }
+"ui.statusline.inactive" = { fg = "#566466" }
+"ui.statusline.normal" = { fg = "#e2e5e6", bg = "#1c2021" }
+"ui.statusline.insert" = { fg = "#101314", bg = "#f38c61" }
+
+"ui.popup" = { fg = "#e2e5e6", bg = "#1c2021" }
+"ui.window" = { fg = "#e2e5e6", bg = "#1c2021" }
+"ui.menu" = { fg = "#e2e5e6", bg = "#1c2021" }
+"ui.menu.selected" = { fg = "#e2e5e6", bg = "#3a4344" }
+
+"diagnostic.error" = { fg = "#e2e5e6", bg = "#1c2021", underline = { color = "#d95762", style = "curl" } }
+"diagnostic.warning" = { fg = "#e2e5e6", bg = "#1c2021", underline = { color = "#cdb852", style = "curl" } }
+
+"error" = { fg = "#e2e5e6", bg = "#1c2021" }
+"warning" = { fg = "#e2e5e6", bg = "#1c2021" }

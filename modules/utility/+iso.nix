@@ -7,7 +7,6 @@
   inherit (config) flake;
 in {
   flake.modules.nixos.iso = {
-    config,
     pkgs,
     lib,
     ...

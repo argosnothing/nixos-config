@@ -1,0 +1,16 @@
+[[language]]
+auto-format = true
+name = "nix"
+
+[language-server.nixd]
+args = ["--semantic-tokens=true"]
+command = "nixd"
+
+[language-server.nixd.config.nixd.formatting]
+command = ["alejandra"]
+
+[language-server.nixd.config.nixd.nixpkgs]
+expr = "import (builtins.getFlake (toString /home/salivala/nixos-config)).inputs.nixpkgs { }"
+
+[language-server.nixd.config.nixd.options.nixos]
+expr = "(builtins.getFlake (toString /home/salivala/nixos-config)).nixosConfigurations.desktop.options"

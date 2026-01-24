@@ -5,6 +5,9 @@
       config = {
         allowUnfree = true;
         allowAliases = true;
+        permittedInsecurePackages = [
+          "libsoup-2.74.3"
+        ];
       };
     };
 }

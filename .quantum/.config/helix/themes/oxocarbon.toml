@@ -1,0 +1,51 @@
+# inherits = "fleet_dark"
+
+"attribute" = { fg = "#82cfff" }
+"type" = { fg = "#78a9ff" }
+"type.builtin" = { fg = "#dde1e6" }
+"constructor" = { fg = "#78a9ff" }
+"constant" = { fg = "#be95ff" }
+"constant.builtin" = { fg = "#08bdba" }
+"constant.builtin.character" = { fg = "#be95ff" }
+"constant.builtin.numeric" = { fg = "#82cfff" }
+"string" = { fg = "#be95ff" }
+"string.regexp" = { fg = "#08bdba" }
+"comment" = { fg = "#525252" }
+"variable" = { fg = "#dde1e6" }
+"label" = { fg = "#82cfff" }
+"punctuation" = { fg = "#3ddbd9" }
+"keyword" = { fg = "#78a9ff" }
+"keyword.control.exception" = { fg = "#82cfff" }
+"keyword.operator" = { fg = "#3ddbd9" }
+"keyword.function" = { fg = "#3ddbd9" }
+"operator" = { fg = "#78a9ff" }
+"function" = { fg = "#ff7eb6" }
+"function.builtin" = { fg = "#ff7eb6" }
+"function.method" = { fg = "#08bdba" }
+"function.macro" = { fg = "#08bdba" }
+"tag" = { fg = "#dde1e6" }
+"namespace" = { fg = "#dde1e6" }
+"diff.plus" = { fg = "#42be65", bg = "#393939" }
+"diff.minus" = { fg = "#78a9ff", bg = "#393939" }
+"diff.delta" = { fg = "#dde1e6", bg = "#262626" }
+
+"ui.background" = { fg= "#ffffff", bg = "#161616"}
+"ui.separator" = "#161616"
+"ui.selection" = { bg = "#393939"}
+"ui.text" = { fg = "#ffffff" }
+"ui.cursor" = { fg = "#161616", bg = "#dde1e6" }
+"ui.cursor.normal" = { fg = "#dde1e6", bg = "#161616" }
+"ui.linenr" = { fg = "#525252", bg = "#161616" }
+"ui.linenr.selected" = { fg = "#dde1e6" }
+"ui.statusline" = { fg = "#ffffff", bg = "#161616" }
+"ui.statusline.inactive" = { fg = "#525252"}
+"ui.statusline.normal" = { fg = "#ffffff", bg = "#161616" }
+"ui.statusline.insert" = { fg = "#ffffff", bg = "#ff7eb6" }
+"ui.popup" = { fg = "#ffffff", bg = "#262626" }
+"ui.window" = { fg = "#ffffff", bg = "#262626" }
+"ui.menu" = { fg = "#ffffff", bg = "#262626" }
+"ui.menu.selected" = { fg = "#ffffff", bg = "#525252" }
+"diagnostic.error" = { fg = "#b3b3b3", bg = "#262626", underline = { color = "#ff0000", style = "curl"} }
+"diagnostic.warning" = { fg = "#b3b3b3", bg = "#262626", underline = { color = "#ff6f00", style = "curl"} }
+"error" = { fg = "#ffffff", bg = "#262626" }
+"warning" = { fg = "#ffffff", bg = "#262626" }

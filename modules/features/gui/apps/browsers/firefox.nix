@@ -5,7 +5,7 @@
       enableSSHSupport = true;
     };
     my.persist.home.directories = [
-      ".mozilla"
+      ".config/mozilla"
       ".local/share/firefoxpwa"
     ];
     my.persist.home.cache.directories = [".cache/mozilla"];
