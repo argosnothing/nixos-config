@@ -15,7 +15,7 @@
       zed
       work
       krita
-      chrome
+      zen-browser
 
       battery
       touchpad
