@@ -18,7 +18,7 @@
       gui-apps
       microsoft-edge
       firefox
-      chrome
+      zen-browser
       memacs
       work
       uhk
@@ -38,15 +38,15 @@
           name = "DP-1";
           is-primary = true;
           dimensions = {
-            width = 3840;
-            height = 2160;
+            width = 2560;
+            height = 1440;
           };
           position = {
             x = 0;
             y = 0;
           };
-          scale = 1.2;
-          refresh = 143.851;
+          scale = 1.0;
+          refresh = 180.001;
         }
         {
           name = "DP-2";
@@ -55,8 +55,8 @@
             height = 1080;
           };
           position = {
-            x = 3200;
-            y = 402;
+            x = 2560;
+            y = 205;
           };
           scale = 1.0;
           refresh = 60.0;

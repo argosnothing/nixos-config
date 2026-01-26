@@ -1,5 +1,9 @@
 {
   flake.modules.nixos.gnome = {pkgs, ...}: {
+    my.cursor = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
     my.persist = {
       home.files = [
         ".config/gnome-official-setup-done"

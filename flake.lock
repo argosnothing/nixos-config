@@ -801,11 +801,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1769216228,
-        "narHash": "sha256-/A3UQ1X8V3l7mrXTZExXVCc7mutQGdUBgSNIdKxkUuA=",
+        "lastModified": 1769226081,
+        "narHash": "sha256-7PcL550Cod1tAwzgEDDKg+5AdB71PSrCMC7a7J/tNrc=",
         "owner": "argosnothing",
         "repo": "niri",
-        "rev": "8c972b8ab359bcd429654614042bee44fa2c0b72",
+        "rev": "7410e1fbfbf776c9d9e8664ee2cfd1f14f7032eb",
         "type": "github"
       },
       "original": {
