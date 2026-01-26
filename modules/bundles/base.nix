@@ -4,6 +4,7 @@
   inherit (config) flake;
 in {
   flake.modules.nixos.base = {pkgs, ...}: let
+    username = "salivala";
     nixos-modules = with flake.modules.nixos; [
       options
       networking
@@ -15,10 +16,15 @@ in {
       nix-settings
       misc
       shell-apps
+      quantum
       packages
     ];
   in {
     imports = nixos-modules;
-    config.my.username = "salivala";
+    config.quantum = {
+      quantum-dir = "/home/${username}/nixos-config/.quantum";
+      inherit username;
+    };
+    config.my.username = username;
   };
 }

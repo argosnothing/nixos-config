@@ -4,7 +4,7 @@
       helix
       nixd
     ];
-    my.quantum.directories = [
+    quantum.directories = [
       ".config/helix"
     ];
   };

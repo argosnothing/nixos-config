@@ -28,6 +28,9 @@
       uefi
       zfs
     ];
+    quantum.entangle = {
+      "wowza" = "banana/wowza";
+    };
     my = {
       cursor.speed = -0.35;
       theme.polarity = "dark";

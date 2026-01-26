@@ -44,6 +44,7 @@
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        inputs.quantum.nixosModules.default
         config.flake.modules.nixos.base
         config.flake.modules.nixos.cursor
         config.flake.modules.nixos.${name}

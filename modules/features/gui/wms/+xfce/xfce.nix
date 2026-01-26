@@ -2,8 +2,6 @@
   inherit (config) flake;
 in {
   flake.modules.nixos.xfce = {pkgs, ...}: {
-    imports = with flake.modules.nixos; [
-    ];
     my.cursor.enable = false;
     xdg.portal = {
       enable = true;

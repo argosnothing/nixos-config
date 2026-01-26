@@ -12,7 +12,6 @@ in {
       fish
       nh
       git
-      quantum
       misc-scripts
       starship
       fetch
