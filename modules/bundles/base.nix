@@ -16,7 +16,6 @@ in {
       nix-settings
       misc
       shell-apps
-      quantum
       packages
     ];
   in {

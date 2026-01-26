@@ -29,7 +29,7 @@
       zfs
     ];
     quantum.entangle = {
-      "wowza" = "banana/wowza";
+      "2/beans" = "beans";
     };
     my = {
       cursor.speed = -0.35;

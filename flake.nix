@@ -94,7 +94,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     quantum = {
-      url = "github:argosnothing/nixos-quantum";
+      url = "github:argosnothing/nixos-quantum/develop";
     };
     ### Containerization
     nix-flatpak = {
