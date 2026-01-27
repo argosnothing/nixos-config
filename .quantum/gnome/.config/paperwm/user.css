@@ -1,0 +1,84 @@
+/*
+Users may override the default PaperWM styles to suit their preferences.
+Added custom styling in this `user.css` file.
+
+`Disable` and then `enable` PaperWM extension to apply these styles 
+(users do NOT need to logout / login).
+
+DEFAULT STYLES ARE PROVIDED BELOW FOR REFERENCE:
+/*
+
+/*
+.background-clear {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.topbar-transparent-background {
+    background-color: rgba(0, 0, 0, 0.35);
+    box-shadow: none;
+}
+
+.space-workspace-indicator {
+    padding: 0 10px 0 0;
+    background-color: transparent;
+    border-image: none;
+    background-image: none;
+    border: none;
+}
+
+.space-focus-mode-icon {
+    icon-size: 16px;
+    padding: 0 18px 0 18px;
+    margin-left: 3px;
+    background-color: transparent;
+}
+
+.open-position-icon {
+    icon-size: 22px;
+    padding: 0;
+    background-color: transparent;
+}
+
+.focus-button-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.take-window-hint {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.workspace-icon-button {
+    -st-icon-style: symbolic;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.workspace-icon-button StIcon {
+    icon-size: 16px;
+}
+
+.paperwm-minimap-selection {
+    border-radius: 8px;
+}
+
+.paperwm-clone-shade {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 7px 7px 0px 0px;
+}
+
+.paperwm-window-position-bar-backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.paperwm-window-position-bar {
+    border: 0;
+    border-radius: 1px;
+}
+
+*/

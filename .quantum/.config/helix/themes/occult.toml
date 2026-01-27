@@ -1,0 +1,70 @@
+# inherits = "fleet_dark"
+# BASE-16 OCCULT
+
+"attribute" = { fg = "#62DACD" }
+"type" = { fg = "#579DD8" }
+"type.builtin" = { fg = "#6A6A82" }
+"constructor" = { fg = "#579DD8" }
+
+"constant" = { fg = "#8F61D8" }
+"constant.builtin" = { fg = "#62DACD" }
+"constant.builtin.character" = { fg = "#D860AC" }
+"constant.builtin.numeric" = { fg = "#D99158" }
+
+"string" = { fg = "#6ab27d" }
+"string.regexp" = { fg = "#62DACD" }
+
+"comment" = { fg = "#4C4C63" }
+
+"variable" = { fg = "#F2E6C2" }
+"label" = { fg = "#D99158" }
+
+"punctuation" = { fg = "#62DACD" }
+
+"keyword" = { fg = "#579DD8" }
+"keyword.control.exception" = { fg = "#D99158" }
+"keyword.operator" = { fg = "#62DACD" }
+"keyword.function" = { fg = "#62DACD" }
+
+"operator" = { fg = "#579DD8" }
+
+"function" = { fg = "#D9B56D" }
+"function.builtin" = { fg = "#D99158" }
+"function.method" = { fg = "#62DACD" }
+"function.macro" = { fg = "#62DACD" }
+
+"tag" = { fg = "#F2E6C2" }
+"namespace" = { fg = "#6A6A82" }
+
+"diff.plus" = { fg = "#6ab27d", bg = "#1E1E2A" }
+"diff.minus" = { fg = "#D94141", bg = "#1E1E2A" }
+"diff.delta" = { fg = "#579DD8", bg = "#2B2B3A" }
+
+"ui.background" = { fg = "#F2E6C2", bg = "#14141E" }
+"ui.separator" = "#1E1E2A"
+"ui.selection" = { bg = "#2B2B3A" }
+"ui.text" = { fg = "#F2E6C2" }
+
+"ui.cursor" = { fg = "#14141E", bg = "#FEF2CC" }
+"ui.cursor.normal" = { fg = "#FEF2CC", bg = "#14141E" }
+
+"ui.linenr" = { fg = "#4C4C63", bg = "#14141E" }
+"ui.linenr.selected" = { fg = "#6A6A82" }
+
+"ui.statusline" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"ui.statusline.inactive" = { fg = "#4C4C63" }
+"ui.statusline.normal" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"ui.statusline.insert" = { fg = "#14141E", bg = "#D9B56D" }
+
+"ui.popup" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"ui.window" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"ui.menu" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"ui.menu.selected" = { fg = "#F2E6C2", bg = "#2B2B3A" }
+
+"diagnostic.error" = { fg = "#F2E6C2", bg = "#1E1E2A", underline = { color = "#D94141", style = "curl" } }
+"diagnostic.warning" = { fg = "#F2E6C2", bg = "#1E1E2A", underline = { color = "#D9B56D", style = "curl" } }
+
+"error" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+"warning" = { fg = "#F2E6C2", bg = "#1E1E2A" }
+
+

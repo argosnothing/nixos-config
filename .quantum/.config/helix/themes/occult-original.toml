@@ -1,0 +1,69 @@
+# inherits = "fleet_dark"
+# BASE-16 OCCULT-ORIGINAL
+
+"attribute" = { fg = "#95B3B0" }
+"type" = { fg = "#6270A8" }
+"type.builtin" = { fg = "#6A6A82" }
+"constructor" = { fg = "#6270A8" }
+
+"constant" = { fg = "#9A7398" }
+"constant.builtin" = { fg = "#95B3B0" }
+"constant.builtin.character" = { fg = "#B86C6A" }
+"constant.builtin.numeric" = { fg = "#E08A66" }
+
+"string" = { fg = "#8BAA82" }
+"string.regexp" = { fg = "#95B3B0" }
+
+"comment" = { fg = "#4C4C63" }
+
+"variable" = { fg = "#E4DED2" }
+"label" = { fg = "#E08A66" }
+
+"punctuation" = { fg = "#95B3B0" }
+
+"keyword" = { fg = "#6270A8" }
+"keyword.control.exception" = { fg = "#E08A66" }
+"keyword.operator" = { fg = "#95B3B0" }
+"keyword.function" = { fg = "#95B3B0" }
+
+"operator" = { fg = "#6270A8" }
+
+"function" = { fg = "#E6C27A" }
+"function.builtin" = { fg = "#E08A66" }
+"function.method" = { fg = "#95B3B0" }
+"function.macro" = { fg = "#95B3B0" }
+
+"tag" = { fg = "#E4DED2" }
+"namespace" = { fg = "#6A6A82" }
+
+"diff.plus" = { fg = "#8BAA82", bg = "#1E1E2A" }
+"diff.minus" = { fg = "#C25B5B", bg = "#1E1E2A" }
+"diff.delta" = { fg = "#6270A8", bg = "#2B2B3A" }
+
+"ui.background" = { fg = "#E4DED2", bg = "#14141E" }
+"ui.separator" = "#1E1E2A"
+"ui.selection" = { bg = "#2B2B3A" }
+"ui.text" = { fg = "#E4DED2" }
+
+"ui.cursor" = { fg = "#14141E", bg = "#FFF8F2" }
+"ui.cursor.normal" = { fg = "#FFF8F2", bg = "#14141E" }
+
+"ui.linenr" = { fg = "#4C4C63", bg = "#14141E" }
+"ui.linenr.selected" = { fg = "#6A6A82" }
+
+"ui.statusline" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"ui.statusline.inactive" = { fg = "#4C4C63" }
+"ui.statusline.normal" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"ui.statusline.insert" = { fg = "#14141E", bg = "#E6C27A" }
+
+"ui.popup" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"ui.window" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"ui.menu" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"ui.menu.selected" = { fg = "#E4DED2", bg = "#2B2B3A" }
+
+"diagnostic.error" = { fg = "#E4DED2", bg = "#1E1E2A", underline = { color = "#C25B5B", style = "curl" } }
+"diagnostic.warning" = { fg = "#E4DED2", bg = "#1E1E2A", underline = { color = "#E6C27A", style = "curl" } }
+
+"error" = { fg = "#E4DED2", bg = "#1E1E2A" }
+"warning" = { fg = "#E4DED2", bg = "#1E1E2A" }
+
