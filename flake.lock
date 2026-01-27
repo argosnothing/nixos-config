@@ -1397,11 +1397,11 @@
     },
     "quantum": {
       "locked": {
-        "lastModified": 1769471341,
-        "narHash": "sha256-wg7AJOaYHY5TusjgJxnKraCVyHFX2CcyTUz8m6jOGeg=",
+        "lastModified": 1769481467,
+        "narHash": "sha256-aEbn4Use+idw3h27vFulfsdH0vwr4bnWEh7PSPvEfj4=",
         "owner": "argosnothing",
         "repo": "nixos-quantum",
-        "rev": "a5f57139fab62c2bff034ceb64a577a3515b4748",
+        "rev": "1ecb43b8627309df5fe1443b0f57da89e312231c",
         "type": "github"
       },
       "original": {

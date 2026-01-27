@@ -29,9 +29,6 @@
       uefi
       zfs
     ];
-    quantum.entangle-files = {
-      "2/beans" = "beans";
-    };
     my = {
       cursor.speed = -0.35;
       theme.polarity = "dark";

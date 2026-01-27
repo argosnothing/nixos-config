@@ -1,5 +1,15 @@
 {
   flake.modules.nixos.gnome = {pkgs, ...}: {
+    programs.dconf.enable = true;
+    programs.dconf.profiles.user.databases = [
+      {
+        settings = {
+          "org/gnome/desktop/interface" = {
+            enable-animations = false;
+          };
+        };
+      }
+    ];
     my.cursor = {
       enable = true;
       package = pkgs.adwaita-icon-theme;
@@ -13,6 +23,10 @@
     my.persist = {
       home.directories = [
         ".local/share/gnome-shell"
+      ];
+      home.cache.directories = [".cache/thumbnails"];
+      home.files = [
+        ".config/monitors.xml"
       ];
     };
     services = {
