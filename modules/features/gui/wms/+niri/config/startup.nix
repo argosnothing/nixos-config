@@ -4,12 +4,17 @@
     lib,
     ...
   }: let
-    inherit (lib.lists) optionals;
     inherit (config.my) desktop-shells;
-    startupCommands = optionals (desktop-shells.name != "dank-shell") [
+    scratchpad-command = ''
+      spawn-sh-at-startup "niri-scratchpad daemon"
+    '';
+    desktop-shell-command = ''
+      spawn-at-startup "${desktop-shells.execCommand}"
+    '';
+    startupCommands = [
       ''
-        spawn-at-startup "${desktop-shells.execCommand}"
-        spawn-sh-at-startup "niri-scratchpad daemon"
+        "${lib.optionalString (desktop-shells.name != "dank-shell") desktop-shell-command}"
+        "${lib.optionalString config.my.wm.niri.use-scratchpads scratchpad-command}"
       ''
     ];
   in {

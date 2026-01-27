@@ -14,6 +14,9 @@
         name = "noctalia-shell";
       };
     };
+    quantum.entangle-folders = {
+      "niri/.config/noctalia/colorschemes/OccultUmbral" = ".config/noctalia/colorschemes/OccultUmbral";
+    };
     environment.systemPackages =
       [
         noctalia-shell

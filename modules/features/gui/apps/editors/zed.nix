@@ -7,7 +7,7 @@ in {
     my.persist.home.directories = [
       ".local/share/zed"
     ];
-    my.quantum.directories = [
+    quantum.directories = [
       ".config/zed"
     ];
     programs.nix-ld.enable = true;

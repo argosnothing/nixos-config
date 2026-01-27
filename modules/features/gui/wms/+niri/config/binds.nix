@@ -7,6 +7,16 @@
   }: let
     inherit (config.my) desktop-shells;
     launcherArgs = lib.concatMapStringsSep " " (arg: ''"${arg}"'') (lib.splitString " " desktop-shells.launcherCommand);
+    scratchpad-section = ''
+      Mod+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+      Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
+      Mod+G            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
+      Mod+P            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
+      Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1"; }
+      Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2"; }
+      Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "3"; }
+      Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "4"; }
+    '';
   in {
     my.wm.niri.settings = lib.mkAfter [
       ''
@@ -20,14 +30,7 @@
           Mod+0 { toggle-workspace-visibility "stash"; }
           Mod+Shift+0 { toggle-workspace-visibility "work"; }
 
-          Mod+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
-          Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
-          Mod+G            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
-          Mod+P            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
-          Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1"; }
-          Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2"; }
-          Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "3"; }
-          Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "4"; }
+          "${lib.optionalString config.my.wm.niri.use-scratchpads scratchpad-section}"
 
           Mod+Down { focus-window-down; }
           Mod+Up { focus-window-up; }

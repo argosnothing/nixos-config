@@ -24,8 +24,10 @@ in {
       ++ nixos-modules;
     programs.niri = {
       enable = true;
-      #package = pkgs.niri-unstable;
-      package = inputs.my-niri.packages.${pkgs.system}.default;
+      package =
+        if config.my.wm.niri.use-scratchpads
+        then inputs.my-niri.packages.${pkgs.system}.default
+        else pkgs.niri-unstable;
     };
     environment.systemPackages = with pkgs; [
       xwayland-satellite
