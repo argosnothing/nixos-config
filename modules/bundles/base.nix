@@ -6,6 +6,7 @@ in {
   flake.modules.nixos.base = {pkgs, ...}: let
     username = "salivala";
     nixos-modules = with flake.modules.nixos; [
+      dconf
       options
       networking
       sops

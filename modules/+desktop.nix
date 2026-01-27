@@ -12,7 +12,8 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM
-      niri-bundle
+      # niri-bundle
+      gnome
 
       # Apps
       gui-apps
@@ -28,7 +29,7 @@
       uefi
       zfs
     ];
-    quantum.entangle = {
+    quantum.entangle-files = {
       "2/beans" = "beans";
     };
     my = {
