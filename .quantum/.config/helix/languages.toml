@@ -14,3 +14,9 @@ expr = "import (builtins.getFlake (toString /home/salivala/nixos-config)).inputs
 
 [language-server.nixd.config.nixd.options.nixos]
 expr = "(builtins.getFlake (toString /home/salivala/nixos-config)).nixosConfigurations.desktop.options"
+
+[language-server.nil]
+command = "nil"
+
+[language-server.nil.config.nil.formatting]
+command = ["alejandra"]

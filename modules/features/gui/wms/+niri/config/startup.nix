@@ -12,10 +12,8 @@
       spawn-at-startup "${desktop-shells.execCommand}"
     '';
     startupCommands = [
-      ''
-        "${lib.optionalString (desktop-shells.name != "dank-shell") desktop-shell-command}"
-        "${lib.optionalString config.my.wm.niri.use-scratchpads scratchpad-command}"
-      ''
+      (lib.optionalString (desktop-shells.name != "dank-shell") desktop-shell-command)
+      (lib.optionalString config.my.wm.niri.use-scratchpads scratchpad-command)
     ];
   in {
     my.wm.niri.settings = lib.mkAfter startupCommands;
