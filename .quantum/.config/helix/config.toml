@@ -3,6 +3,7 @@ theme = "noctalia"
 [editor]
 line-number = "relative"
 mouse = false
+editor-config = false
 
 [editor.cursor-shape]
 insert = "bar"

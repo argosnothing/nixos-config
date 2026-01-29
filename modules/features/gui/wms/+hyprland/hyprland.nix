@@ -29,6 +29,7 @@ in {
       imports = nixos-modules;
       environment.sessionVariables = {HYPR_PLUGIN_DIR = plugin-dir;};
       my = {
+        session.name = "hyprland";
         icons = {
           package = pkgs.rose-pine-icon-theme;
           name = "rose-pine";

@@ -20,3 +20,75 @@ command = "nil"
 
 [language-server.nil.config.nil.formatting]
 command = ["alejandra"]
+
+[[language]]
+name = "javascript"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "typescript"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "tsx"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "jsx"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "python"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "rust"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "go"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "c"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "java"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "json"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "yaml"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "toml"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "html"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "css"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "scss"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "markdown"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "bash"
+indent = { tab-width = 2, unit = "  " }
