@@ -15,7 +15,7 @@
       };
     };
     quantum.entangle-folders = {
-      "niri/.config/noctalia/colorschemes/OccultUmbral" = ".config/noctalia/colorschemes/OccultUmbral";
+      "niri/.config/noctalia/colorschemes/Occult Umbral" = ".config/noctalia/colorschemes/Occult Umbral";
     };
     environment.systemPackages =
       [

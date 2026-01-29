@@ -1,0 +1,67 @@
+# OCCULT CELESTIAL - Light Theme
+
+"attribute" = { fg = "#6270A8" }
+"type" = { fg = "#6270A8" }
+"type.builtin" = { fg = "#6A6A82" }
+"constructor" = { fg = "#6270A8" }
+
+"constant" = { fg = "#9A7398" }
+"constant.builtin" = { fg = "#6270A8" }
+"constant.builtin.character" = { fg = "#9A7398" }
+"constant.builtin.numeric" = { fg = "#E6C27A" }
+
+"string" = { fg = "#95B3B0" }
+"string.regexp" = { fg = "#6270A8" }
+
+"comment" = { fg = "#6A6A82" }
+
+"variable" = { fg = "#2B2B3A" }
+"label" = { fg = "#E6C27A" }
+
+"punctuation" = { fg = "#6270A8" }
+
+"keyword" = { fg = "#6270A8" }
+"keyword.control.exception" = { fg = "#E08A66" }
+"keyword.operator" = { fg = "#9A7398" }
+"keyword.function" = { fg = "#9A7398" }
+
+"operator" = { fg = "#6270A8" }
+
+"function" = { fg = "#E6C27A" }
+"function.builtin" = { fg = "#E08A66" }
+"function.method" = { fg = "#9A7398" }
+"function.macro" = { fg = "#9A7398" }
+
+"tag" = { fg = "#2B2B3A" }
+"namespace" = { fg = "#6A6A82" }
+
+"diff.plus" = { fg = "#95B3B0", bg = "#F2EADF" }
+"diff.minus" = { fg = "#C25B5B", bg = "#F2EADF" }
+"diff.delta" = { fg = "#6270A8", bg = "#E4DED2" }
+
+"ui.background" = { fg = "#14141E", bg = "#FFF8F2" }
+"ui.separator" = "#F2EADF"
+"ui.selection" = { bg = "#E4DED2" }
+"ui.text" = { fg = "#2B2B3A" }
+
+"ui.cursor" = { fg = "#FFF8F2", bg = "#9A7398" }
+"ui.cursor.normal" = { fg = "#9A7398", bg = "#FFF8F2" }
+
+"ui.linenr" = { fg = "#6A6A82", bg = "#FFF8F2" }
+"ui.linenr.selected" = { fg = "#4C4C63" }
+
+"ui.statusline" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"ui.statusline.inactive" = { fg = "#6A6A82" }
+"ui.statusline.normal" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"ui.statusline.insert" = { fg = "#FFF8F2", bg = "#E6C27A" }
+
+"ui.popup" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"ui.window" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"ui.menu" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"ui.menu.selected" = { fg = "#2B2B3A", bg = "#E4DED2" }
+
+"diagnostic.error" = { fg = "#2B2B3A", bg = "#F2EADF", underline = { color = "#C25B5B", style = "curl" } }
+"diagnostic.warning" = { fg = "#2B2B3A", bg = "#F2EADF", underline = { color = "#E08A66", style = "curl" } }
+
+"error" = { fg = "#2B2B3A", bg = "#F2EADF" }
+"warning" = { fg = "#2B2B3A", bg = "#F2EADF" }
