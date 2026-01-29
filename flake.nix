@@ -51,6 +51,7 @@
     dms.url = "github:AvengeMedia/DankMaterialShell";
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
+      # url = "github:XansiVA/noctalia-shell/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### Display Managers

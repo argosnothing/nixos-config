@@ -16,7 +16,6 @@
 
       # Apps
       gui-apps
-      microsoft-edge
       firefox
       zen-browser
       memacs

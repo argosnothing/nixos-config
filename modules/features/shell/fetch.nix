@@ -28,6 +28,10 @@
           $1         ▝▀▀▀    ▀▀▀▀▘       $2"*="
         '';
         position = "left";
+        color = {
+          "1" = "red";
+          "2" = "magenta";
+        };
       };
 
       display = {
@@ -117,11 +121,6 @@
 
         "custom"
 
-        {
-          key = "AGE ";
-          type = "disk";
-          format = "{days} days old";
-        }
         {
           key = "UP  ";
           type = "uptime";
