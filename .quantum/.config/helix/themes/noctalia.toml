@@ -123,7 +123,7 @@ delta = "#89b4fa"
 # Template colors
 primary = "#8b2e2e"
 surfaceTint = "#8b2e2e"
-onPrimary = "#e4ded2"
+onPrimary = "#1c1c28"
 primaryContainer = "#3f0d0d"
 onPrimaryContainer = "#f2d9d9"
 
