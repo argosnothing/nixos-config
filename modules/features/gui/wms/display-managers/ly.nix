@@ -5,7 +5,9 @@
         defaultSession = config.my.session.name;
         ly = {
           enable = true;
-          bigclock = "en";
+          settings = {
+            bigclock = "en";
+          };
         };
       };
     };

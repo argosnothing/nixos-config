@@ -5,7 +5,14 @@
     lib,
     ...
   }: let
-    noctalia-shell = inputs.noctalia-shell.packages.${pkgs.system}.default;
+    noctalia-shell = inputs.noctalia-shell.packages.${pkgs.system}.default.overrideAttrs {
+      postPatch = ''
+        ### Credit, Iynaix
+        # don't want to add python3 to the global path
+        substituteInPlace Services/Theming/TemplateProcessor.qml \
+          --replace-fail "python3" "${lib.getExe pkgs.python3}"
+      '';
+    };
   in {
     my = {
       desktop-shells = {
@@ -32,7 +39,7 @@
 
             # invalid json, no instances running, so start noctalia-shell
             if [[ ! "$RAW_OUTPUT" == "["* ]]; then
-              ${lib.getExe noctalia-shell}
+              systemctl --user restart noctalia-shell
               exit
             fi
 
@@ -47,7 +54,7 @@
             # different instance, kill previous instances
             if [[ ! "$NOCTALIA_PATH" =~ "${noctalia-shell}" ]]; then
               killall .quickshell-wrapper
-              ${lib.getExe noctalia-shell}
+              systemctl --user restart noctalia-shell
               sleep 2
             fi
 
@@ -84,6 +91,31 @@
         ];
       }}";
     };
+
+    # Systemd service for noctalia-shell
+    systemd.user.services.noctalia-shell = {
+      description = "Noctalia Shell - Wayland desktop shell";
+      documentation = ["https://docs.noctalia.dev/docs"];
+      partOf = ["graphical-session.target"];
+      restartTriggers = [noctalia-shell];
+      wantedBy = ["hyprland-session.target"];
+      after = ["hyprland-session.target"];
+
+      environment = {
+        PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
+        QT_QPA_PLATFORMTHEME = "gtk3";
+        HOME = "/home/${config.my.username}";
+        XDG_CONFIG_HOME = "/home/${config.my.username}/.config";
+        QS_ICON_THEME = config.my.icons.name;
+      };
+
+      serviceConfig = {
+        ExecStart = lib.getExe noctalia-shell;
+        Restart = "on-failure";
+        KillMode = "process";
+      };
+    };
+
     my.persist.home = {
       directories = [".config/noctalia"];
       cache.directories = [

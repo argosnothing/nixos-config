@@ -1,14 +1,12 @@
 {
   flake.modules.nixos.hyprland = {
     lib,
-    config,
+    pkgs,
     ...
-  }: let
-    inherit (config.my) desktop-shells;
-  in {
+  }: {
     my.wm.hyprland.settings = lib.mkAfter [
       ''
-        exec-once = ${desktop-shells.execCommand}
+        exec-once = ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user start hyprland-session.target
       ''
     ];
   };

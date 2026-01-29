@@ -14,12 +14,12 @@
       package = mkOption {
         description = "Set Icon Pack";
         type = package;
-        default = pkgs.tela-icon-theme;
+        default = pkgs.papirus-icon-theme;
       };
       name = mkOption {
         description = "Set Icon Name";
         type = str;
-        default = "Tela-dark";
+        default = "Papirus-Dark";
       };
     };
     config = {

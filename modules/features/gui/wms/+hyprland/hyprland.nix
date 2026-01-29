@@ -50,5 +50,14 @@ in {
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
       hj.files.".config/hypr/hyprland.conf".text = hyprland-settings;
+
+      systemd.user.targets.hyprland-session = {
+        unitConfig = {
+          Description = "Hyprland compositor session";
+          BindsTo = ["graphical-session.target"];
+          Wants = ["graphical-session-pre.target"];
+          After = ["graphical-session-pre.target"];
+        };
+      };
     };
 }
