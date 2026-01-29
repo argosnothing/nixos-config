@@ -4,6 +4,7 @@
       helix
       nixd
       nil
+      lldb
     ];
     quantum.directories = [
       ".config/helix"
