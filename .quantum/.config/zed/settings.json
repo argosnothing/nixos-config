@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "helix_mode": true,
   "file_finder": {
     "skip_focus_for_active_in_search": false,
   },
@@ -43,6 +44,6 @@
   "theme": {
     "mode": "dark",
     "light": "Oxocarbon Dark (IBM Carbon)",
-    "dark": "VSCode Dark Modern",
+    "dark": "Noctalia Dark",
   },
 }

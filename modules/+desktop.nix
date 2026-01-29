@@ -22,6 +22,7 @@
       memacs
       work
       uhk
+      zed
 
       # Meta
       impermanence

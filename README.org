@@ -56,6 +56,7 @@
 - hjem user module is aliased to =hj=
 - Themes are currently largely handled =imperatively= through matugen (
   using noctalia-shell )
+- Parts of my config are not managed explicitly through nix. I like to edit certain things on the fly so i use [[https://github.com/argosnothing/nixos-quantum][nixos quantum]] to bind mount certain config files in a similar way to the impermanence module.
 
 * Credits
 :PROPERTIES:

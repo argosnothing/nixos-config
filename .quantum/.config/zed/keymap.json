@@ -28,7 +28,7 @@
       "space D": "editor::GoToTypeDefinition",
       "space i": "editor::GoToImplementation",
       "space r": "editor::FindAllReferences",
-      "space h": "editor::Hover",
+      "space k": "editor::Hover",
       "space s": "project_symbols::Toggle",
       "space a": "editor::ToggleCodeActions",
       "space e": "diagnostics::Deploy",
