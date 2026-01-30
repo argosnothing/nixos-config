@@ -30,7 +30,6 @@
       zfs
     ];
     my = {
-      session.name = "mango";
       cursor.speed = -0.35;
       theme.polarity = "dark";
       fonts.size = 11;
