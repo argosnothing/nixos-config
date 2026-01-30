@@ -96,22 +96,15 @@
     };
 
     # Systemd service for noctalia-shell
-    systemd.user.services.noctalia-shell = let
-      session-name = config.my.session.name;
-    in {
+    systemd.user.services.noctalia-shell = {
       description = "Noctalia Shell - Wayland desktop shell";
       documentation = ["https://docs.noctalia.dev/docs"];
       partOf = ["graphical-session.target"];
       restartTriggers = [noctalia-shell];
-      wantedBy = ["${session-name}-session.target"];
-      after = ["${session-name}-session.target"];
 
       environment = {
         PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
-        QT_QPA_PLATFORM = "wayland";
         QT_QPA_PLATFORMTHEME = "gtk3";
-        HOME = "/home/${config.my.username}";
-        XDG_CONFIG_HOME = "/home/${config.my.username}/.config";
         QS_ICON_THEME = config.my.icons.name;
       };
 
@@ -121,6 +114,9 @@
         KillMode = "process";
       };
     };
+
+    # start after WM initializes
+    my.startup-services = ["noctalia-shell.service"];
 
     my.persist.home = {
       directories = [".config/noctalia"];

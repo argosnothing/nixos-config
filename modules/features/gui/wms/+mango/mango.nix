@@ -16,7 +16,6 @@ in {
       wm
       icons
       gtk
-      compositor-service
     ];
   in {
     imports =
@@ -38,6 +37,7 @@ in {
           dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS >/dev/null 2>&1 &
           dbus-update-activation-environment --systemd DISPLAY &
           dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+          systemctl --user restart mango-session.target &
           ${config.my.desktop-shells.execCommand} &
           ${lib.getExe pkgs.xwayland-satellite} :11 &
         '';
@@ -62,5 +62,17 @@ in {
       pkgs.wf-recorder
       pkgs.xwayland-satellite
     ];
+
+    # systemd session target for mango
+    systemd.user.targets.mango-session = {
+      unitConfig = {
+        Description = "mango compositor session";
+        Documentation = ["man:systemd.special(7)"];
+        BindsTo = ["graphical-session.target"];
+        Wants = ["graphical-session-pre.target"] ++ config.my.startup-services;
+        Before = config.my.startup-services;
+        After = ["graphical-session-pre.target"];
+      };
+    };
   };
 }
