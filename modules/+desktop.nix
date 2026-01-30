@@ -22,6 +22,7 @@
       work
       uhk
       zed
+      flatpak
 
       # Meta
       impermanence

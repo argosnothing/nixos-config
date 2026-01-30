@@ -1,12 +1,13 @@
 {inputs, ...}: {
-  flake.modules.nixos.flatpak = {
+  flake.modules.nixos.flatpak = {pkgs, ...}: {
     imports = [
       inputs.nix-flatpak.nixosModules.nix-flatpak
     ];
     xdg.portal.enable = true;
-    my.persist.root.directories = ["/var/lib/flatpkak"];
+    my.persist.root.directories = ["/var/lib/flatpak"];
     my.persist.home.directories = [
       ".local/share/bolt-launcher"
+      ".var/app"
       ".config/bolt-launcher"
     ];
 
@@ -22,9 +23,6 @@
       ];
 
       packages = [
-        "app.zen_browser.zen"
-        "org.freedesktop.Platform.Compat.i386//23.08"
-        "org.freedesktop.Platform.GL32.nvidia-580-76-05//1.4"
       ];
 
       overrides = {
