@@ -108,6 +108,7 @@
 
       environment = {
         PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
+        QT_QPA_PLATFORM = "wayland";
         QT_QPA_PLATFORMTHEME = "gtk3";
         HOME = "/home/${config.my.username}";
         XDG_CONFIG_HOME = "/home/${config.my.username}/.config";
