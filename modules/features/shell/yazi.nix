@@ -24,6 +24,10 @@
         "inode/directory" = "yazi.desktop";
         "x-directory/normal" = "yazi.desktop";
       };
+      associations = {
+        "inode/directory" = ["yazi.desktop"];
+        "x-directory/normal" = ["yazi.desktop"];
+      };
     };
     my.persist.home.directories = [
       ".config/yazi"

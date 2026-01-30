@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.firefox = {pkgs, ...}: {
+  flake.modules.nixos.firefox = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -9,6 +13,7 @@
       ".local/share/firefoxpwa"
     ];
     my.persist.home.cache.directories = [".cache/mozilla"];
+    my.default.associations."text/html" = lib.mkAfter ["firefox.desktop"];
     environment.systemPackages = with pkgs; [
       firefoxpwa
     ];
