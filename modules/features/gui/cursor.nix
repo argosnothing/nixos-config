@@ -41,6 +41,7 @@
       environment.variables = {
         XCURSOR_THEME = config.my.cursor.name;
         XCURSOR_SIZE = toString config.my.cursor.size;
+        XCURSOR_PATH = lib.mkForce "${config.my.cursor.package}/share/icons";
       };
 
       programs.dconf.enable = true;
