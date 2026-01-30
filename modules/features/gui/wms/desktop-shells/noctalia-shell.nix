@@ -106,10 +106,14 @@
         PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
         QT_QPA_PLATFORMTHEME = "gtk3";
         QS_ICON_THEME = config.my.icons.name;
+        XCURSOR_THEME = config.my.cursor.name;
+        XCURSOR_SIZE = toString config.my.cursor.size;
+        XCURSOR_PATH = "${config.my.cursor.package}/share/icons";
       };
 
       serviceConfig = {
         ExecStart = lib.getExe noctalia-shell;
+        ExecStartPost = "${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd XCURSOR_THEME XCURSOR_SIZE XCURSOR_PATH";
         Restart = "on-failure";
         KillMode = "process";
       };
