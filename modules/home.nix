@@ -30,9 +30,6 @@
       ];
 
       hjem = {
-        extraModules = [
-          inputs.hjem-rum.hjemModules.default
-        ];
         clobberByDefault = true;
         linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         users.${username} = {
