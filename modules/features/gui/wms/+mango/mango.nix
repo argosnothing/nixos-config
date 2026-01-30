@@ -16,6 +16,7 @@ in {
       wm
       icons
       gtk
+      compositor-service
     ];
   in {
     imports =
@@ -33,8 +34,9 @@ in {
           dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
           dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS >/dev/null 2>&1 &
           dbus-update-activation-environment --systemd DISPLAY &
-           ${config.my.desktop-shells.execCommand} &
-           ${lib.getExe pkgs.xwayland-satellite} :11 &
+          dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+          ${config.my.desktop-shells.execCommand} &
+          ${lib.getExe pkgs.xwayland-satellite} :11 &
         '';
         executable = true;
       };

@@ -96,13 +96,15 @@
     };
 
     # Systemd service for noctalia-shell
-    systemd.user.services.noctalia-shell = {
+    systemd.user.services.noctalia-shell = let
+      session-name = config.my.session.name;
+    in {
       description = "Noctalia Shell - Wayland desktop shell";
       documentation = ["https://docs.noctalia.dev/docs"];
       partOf = ["graphical-session.target"];
       restartTriggers = [noctalia-shell];
-      wantedBy = ["hyprland-session.target"];
-      after = ["hyprland-session.target"];
+      wantedBy = ["${session-name}-session.target"];
+      after = ["${session-name}-session.target"];
 
       environment = {
         PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
