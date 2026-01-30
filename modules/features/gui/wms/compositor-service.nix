@@ -12,8 +12,8 @@
         BindsTo = ["graphical-session.target"];
         Wants = ["graphical-session-pre.target"];
         After = ["graphical-session-pre.target"];
-        WantedBy = ["graphical-session.target"];
       };
+      wantedBy = ["graphical-session.target"];
     };
   };
 }

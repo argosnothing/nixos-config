@@ -12,7 +12,7 @@
     ];
     imports = with config.flake.modules.nixos; [
       # WM
-      hyprland-bundle
+      mango-bundle
 
       # Apps
       gui-apps
@@ -30,6 +30,7 @@
       zfs
     ];
     my = {
+      session.name = "mango";
       cursor.speed = -0.35;
       theme.polarity = "dark";
       fonts.size = 11;
