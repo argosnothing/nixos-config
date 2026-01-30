@@ -65,7 +65,7 @@
 For collectively dragging me, kicking and screaming, across multiple
 finish lines
 
-- [[https://github.com/Michael-C-Buckley/home-config][Jet]]
+- [[https://github.com/Michael-C-Buckley/nixos][Jet]]
 - [[https://github.com/iynaix/dotfiles][Iynaix]]
 - [[https://github.com/saygo-png/nixos][Saygo]]
 - [[https://github.com/emzywastaken/dotfiles][Emzy]]
