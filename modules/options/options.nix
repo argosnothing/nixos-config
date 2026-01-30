@@ -1,7 +1,7 @@
 ## Options for the system.
 {lib, ...}: let
   inherit (lib) mkOption mkEnableOption;
-  inherit (lib.types) listOf str;
+  inherit (lib.types) listOf str attrsOf;
   assertNoHomeDirs = paths:
     assert (lib.assertMsg (!lib.any (lib.hasPrefix "/home") paths) "/home used in a root persist!"); paths;
 in {
@@ -15,6 +15,24 @@ in {
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
+      default = {
+        apps = mkOption {
+          type = attrsOf str;
+          default = {};
+          example = {
+            "text/html" = "firefox.desktop";
+            "x-scheme-handler/http" = "firefox.desktop";
+            "x-scheme-handler/https" = "firefox.desktop";
+            "inode/directory" = "thunar.desktop";
+          };
+          description = "MIME type to .desktop file mappings for default applications";
+        };
+        associations = mkOption {
+          type = attrsOf (listOf str);
+          default = {};
+          description = "Additional applications that can handle each MIME type";
+        };
+      };
       persist = {
         enable = mkEnableOption "Enable Impermanence";
         keep-user-override = mkEnableOption "Ignore all home level persists and simply persist ~";
