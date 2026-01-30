@@ -38,12 +38,18 @@
       ];
 
       variables = {
-        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
         NIXOS_OZONE_WL = "1";
         ELECTRON_ENABLE_LOGGING = "0";
         EDITOR = "hx";
         VISUAL = "hx";
       };
     };
+
+    systemd.user.extraConfig = ''
+      DefaultEnvironment="NIXOS_OZONE_WL=1"
+      DefaultEnvironment="ELECTRON_OZONE_PLATFORM_HINT=wayland"
+      DefaultEnvironment="OZONE_PLATFORM=wayland"
+    '';
   };
 }

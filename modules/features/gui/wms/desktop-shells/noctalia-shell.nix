@@ -109,11 +109,13 @@
         XCURSOR_THEME = config.my.cursor.name;
         XCURSOR_SIZE = toString config.my.cursor.size;
         XCURSOR_PATH = "${config.my.cursor.package}/share/icons";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        NIXOS_OZONE_WL = "1";
+        ELECTRON_ENABLE_LOGGING = "0";
       };
 
       serviceConfig = {
         ExecStart = lib.getExe noctalia-shell;
-        ExecStartPost = "${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd XCURSOR_THEME XCURSOR_SIZE XCURSOR_PATH";
         Restart = "on-failure";
         KillMode = "process";
       };
