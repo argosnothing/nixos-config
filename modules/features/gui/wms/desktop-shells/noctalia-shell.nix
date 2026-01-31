@@ -101,15 +101,17 @@
       documentation = ["https://docs.noctalia.dev/docs"];
       partOf = ["graphical-session.target"];
       restartTriggers = [noctalia-shell];
-      wantedBy = ["hyprland-session.target"];
-      after = ["hyprland-session.target"];
 
       environment = {
         PATH = lib.mkForce "/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
         QT_QPA_PLATFORMTHEME = "gtk3";
-        HOME = "/home/${config.my.username}";
-        XDG_CONFIG_HOME = "/home/${config.my.username}/.config";
         QS_ICON_THEME = config.my.icons.name;
+        XCURSOR_THEME = config.my.cursor.name;
+        XCURSOR_SIZE = toString config.my.cursor.size;
+        XCURSOR_PATH = "${config.my.cursor.package}/share/icons";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        NIXOS_OZONE_WL = "1";
+        ELECTRON_ENABLE_LOGGING = "0";
       };
 
       serviceConfig = {
@@ -118,6 +120,9 @@
         KillMode = "process";
       };
     };
+
+    # start after WM initializes
+    my.startup-services = ["noctalia-shell.service"];
 
     my.persist.home = {
       directories = [".config/noctalia"];

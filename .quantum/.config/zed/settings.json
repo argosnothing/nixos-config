@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "which_key": {
+    "delay_ms": 994,
+    "enabled": true
+  },
   "helix_mode": true,
   "file_finder": {
     "skip_focus_for_active_in_search": false,

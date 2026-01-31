@@ -44,6 +44,12 @@
         XCURSOR_PATH = lib.mkForce "${config.my.cursor.package}/share/icons";
       };
 
+      hj.files.".icons/default".source = "${config.my.cursor.package}/share/icons/${config.my.cursor.name}";
+      hj.files.".Xresources".text = ''
+        Xcursor.theme: ${config.my.cursor.name}
+        Xcursor.size: ${toString config.my.cursor.size}
+      '';
+
       programs.dconf.enable = true;
 
       programs.dconf.profiles.user.databases = [

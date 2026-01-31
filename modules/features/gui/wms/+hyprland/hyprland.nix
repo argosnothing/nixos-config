@@ -51,11 +51,13 @@ in {
       };
       hj.files.".config/hypr/hyprland.conf".text = hyprland-settings;
 
+      # systemd session target for hyprland
       systemd.user.targets.hyprland-session = {
         unitConfig = {
           Description = "Hyprland compositor session";
           BindsTo = ["graphical-session.target"];
-          Wants = ["graphical-session-pre.target"];
+          Wants = ["graphical-session-pre.target"] ++ config.my.startup-services;
+          Before = config.my.startup-services;
           After = ["graphical-session-pre.target"];
         };
       };
