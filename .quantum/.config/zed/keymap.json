@@ -19,7 +19,7 @@
     },
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Editor && vim_mode == helix_normal",
     "bindings": {
       "space": null,
       "space space": "file_finder::Toggle",
@@ -49,6 +49,12 @@
     "bindings": {
       "g space": null,
       "space enter": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "(CollabPanel && editing) > Editor",
+    "bindings": {
+      "space": null,
     },
   },
 ]
