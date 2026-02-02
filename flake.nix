@@ -33,6 +33,10 @@
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
+    oxwm = {
+      url = "github:tonybanters/oxwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";

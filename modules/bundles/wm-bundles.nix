@@ -22,6 +22,10 @@ in {
       dms
       sddm-silent
     ];
+    oxwm-bundle.imports = with flake.modules.nixos; [
+      oxwm
+      ly
+    ];
     xfce-bundle.imports = with flake.modules.nixos; [
       xfce
     ];

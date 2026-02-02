@@ -23,6 +23,7 @@
       uhk
       zed
       flatpak
+      bolt-launcher
 
       # Meta
       impermanence

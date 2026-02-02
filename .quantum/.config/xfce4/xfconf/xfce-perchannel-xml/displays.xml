@@ -5,12 +5,12 @@
   <property name="Notify" type="int" value="1"/>
   <property name="AutoEnableProfiles" type="int" value="3"/>
   <property name="Default" type="empty">
-    <property name="Virtual-1" type="string" value="Virtual-1">
+    <property name="DP-0" type="string" value="AUS 27&quot;">
       <property name="Active" type="bool" value="true"/>
-      <property name="EDID" type="string" value="a6881098973bc71e776af7b06139f7062f71fd14"/>
-      <property name="Resolution" type="string" value="1920x1080"/>
-      <property name="RefreshRate" type="double" value="60"/>
-      <property name="ModeFlags" type="uint64" value="10"/>
+      <property name="EDID" type="string" value="841fc1093d3924037c3f0379cb9c65841db534c1"/>
+      <property name="Resolution" type="string" value="2560x1440"/>
+      <property name="RefreshRate" type="double" value="180.00058632112808"/>
+      <property name="ModeFlags" type="uint64" value="9"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="false"/>

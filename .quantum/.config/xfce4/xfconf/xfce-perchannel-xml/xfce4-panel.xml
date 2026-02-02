@@ -50,6 +50,10 @@
         <value type="string" value="wi-fi network connection “blackbox” active: blackbox (58%)"/>
         <value type="string" value="ethernet network connection “wired connection 1” active"/>
       </property>
+      <property name="known-items" type="array">
+        <value type="string" value="steam"/>
+        <value type="string" value="chrome_status_icon_1"/>
+      </property>
     </property>
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -65,11 +69,14 @@
       <property name="recent" type="array">
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="kitty.desktop"/>
-        <value type="string" value="org.xfce.ristretto.desktop"/>
-        <value type="string" value="org.xfce.mousepad.desktop"/>
-        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="vesktop.desktop"/>
+        <value type="string" value="xfce-wmtweaks-settings.desktop"/>
+        <value type="string" value="xfce4-settings-editor.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
         <value type="string" value="xfce-display-settings.desktop"/>
-        <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="xfce-mouse-settings.desktop"/>
+        <value type="string" value="zen-beta.desktop"/>
       </property>
       <property name="profile-shape" type="int" value="1"/>
       <property name="button-icon" type="string" value="/home/salivala/nixos-config/.media/icons/NixOS.svg"/>

@@ -1,7 +1,6 @@
 {
   inputs,
   lib,
-  config,
   ...
 }: {
   flake.modules.nixos.impermanence = {config, ...}: let
@@ -9,6 +8,10 @@
     username = config.user.name;
   in {
     my.persist.enable = true;
+    my.persist.home.cache.directories = [
+      ".cache/nix"
+    ];
+
     imports = [
       inputs.impermanence.nixosModules.impermanence
     ];

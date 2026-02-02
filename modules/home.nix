@@ -15,7 +15,7 @@
       inputs.hjem.nixosModules.default
       (lib.mkAliasOptionModule ["hj"] ["hjem" "users" username])
     ];
-    config = {
+    config = lib.optional {
       my.persist.home.directories = lib.mkAfter [
         ".local/share/direnv"
         ".local/share/keyrings"

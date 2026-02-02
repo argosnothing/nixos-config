@@ -2,7 +2,7 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="empty"/>
+    <property name="ThemeName" type="string" value="Adwaita-dark"/>
     <property name="IconThemeName" type="empty"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
@@ -30,7 +30,7 @@
     <property name="MenuImages" type="empty"/>
     <property name="ButtonImages" type="empty"/>
     <property name="MenuBarAccel" type="empty"/>
-    <property name="CursorThemeName" type="empty"/>
+    <property name="CursorThemeName" type="string" value="Adwaita"/>
     <property name="CursorThemeSize" type="empty"/>
     <property name="DecorationLayout" type="string" value="icon,menu:minimize,maximize,close"/>
     <property name="DialogsUseHeader" type="empty"/>
@@ -38,5 +38,8 @@
   </property>
   <property name="Gdk" type="empty">
     <property name="WindowScalingFactor" type="empty"/>
+  </property>
+  <property name="Xfce" type="empty">
+    <property name="SyncThemes" type="bool" value="true"/>
   </property>
 </channel>

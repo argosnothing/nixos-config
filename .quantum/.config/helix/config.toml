@@ -1,9 +1,13 @@
 theme = "noctalia"
 
 [editor]
+bufferline = "always"
 line-number = "relative"
 mouse = false
 editor-config = false
+
+[editor.lsp]
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"

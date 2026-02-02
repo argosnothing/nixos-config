@@ -19,6 +19,7 @@ in {
       wmctrl
     ];
     services = {
+      picom.enable = true;
       displayManager = {
         gdm.enable = true;
         defaultSession = "xfce";

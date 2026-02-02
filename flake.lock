@@ -1274,11 +1274,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769822822,
-        "narHash": "sha256-sxLaI/NiVTpWsPDJMFjFP11hb5fGIf3HPK9ONh0+amk=",
+        "lastModified": 1770044084,
+        "narHash": "sha256-i7EOevX0Whfxq4Krb8Jo8v0nNEbdVQ8YJ9r3o/e6LrU=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "9f8ac95dd803e0c7aef09d4b5e75b50750cb70dd",
+        "rev": "168c16da7a418dad1ead2880c235a28ce26e1891",
         "type": "github"
       },
       "original": {
@@ -1309,6 +1309,26 @@
       "original": {
         "owner": "notashelf",
         "repo": "nvf",
+        "type": "github"
+      }
+    },
+    "oxwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769353233,
+        "narHash": "sha256-sw7VkfefdRr1H7wQnB5n+uAZTTRfFOVMPEDOkcw5tsk=",
+        "owner": "tonybanters",
+        "repo": "oxwm",
+        "rev": "115d06e029495531c127c7eccbd8ea79bf98946a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tonybanters",
+        "repo": "oxwm",
         "type": "github"
       }
     },
@@ -1396,6 +1416,7 @@
         "nixpkgs-wsl": "nixpkgs-wsl",
         "noctalia-shell": "noctalia-shell",
         "nvf": "nvf",
+        "oxwm": "oxwm",
         "quantum": "quantum",
         "silent-sddm": "silent-sddm",
         "sops-nix": "sops-nix",

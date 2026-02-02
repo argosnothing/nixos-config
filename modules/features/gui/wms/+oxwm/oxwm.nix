@@ -19,7 +19,10 @@ in {
     imports = nixos-modules;
     services.xserver = {
       enable = true;
-      windowManager.oxwm.enable = true;
+      windowManager.oxwm = {
+        enable = true;
+        package = inputs.oxwm.packages.${pkgs.system}.default;
+      };
     };
     my.persist.home.directories = [".config/oxwm"];
   };
