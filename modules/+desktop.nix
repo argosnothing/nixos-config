@@ -24,6 +24,7 @@
       zed
       flatpak
       bolt-launcher
+      dino
 
       # Meta
       impermanence
