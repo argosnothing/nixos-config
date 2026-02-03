@@ -1,7 +1,5 @@
-* Shell
-:PROPERTIES:
-:CUSTOM_ID: shell
-:END:
+# Shell
+
 Generally anything having to do with stuff ran in a shell, shells
 themselves or terminals. Expect to find my scripts here as well as shell
 utilities.

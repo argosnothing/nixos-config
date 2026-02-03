@@ -1321,22 +1321,22 @@
         "type": "github"
       }
     },
-    "noogle-search-tv": {
+    "noogle-search": {
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1770075834,
-        "narHash": "sha256-UouTn8suvhu3l56plz1HIyjM5xA+lIiXM11B+ixo9pY=",
+        "lastModified": 1770081997,
+        "narHash": "sha256-SVFDsP0UWmaqVaOxmkA2WM1uHzGtzaT8kYp+yA74DgA=",
         "owner": "argosnothing",
-        "repo": "noogle-search-tv",
-        "rev": "2de618d87a170fde1fac02f71307c9a712aabc57",
+        "repo": "noogle-search",
+        "rev": "ca4b35c3bbb2a462f629aa1e60f338528879c9fc",
         "type": "github"
       },
       "original": {
         "owner": "argosnothing",
-        "repo": "noogle-search-tv",
+        "repo": "noogle-search",
         "type": "github"
       }
     },
@@ -1468,7 +1468,7 @@
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nixpkgs-wsl": "nixpkgs-wsl",
         "noctalia-shell": "noctalia-shell",
-        "noogle-search-tv": "noogle-search-tv",
+        "noogle-search": "noogle-search",
         "nvf": "nvf",
         "oxwm": "oxwm",
         "quantum": "quantum",

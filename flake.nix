@@ -101,8 +101,8 @@
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
     ### Other
-    noogle-search-tv = {
-      url = "github:argosnothing/noogle-search-tv";
+    noogle-search = {
+      url = "github:argosnothing/noogle-search";
     };
   };
 }

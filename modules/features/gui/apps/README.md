@@ -1,5 +1,3 @@
-* Gui Apps
-:PROPERTIES:
-:CUSTOM_ID: gui-apps
-:END:
+# Gui Apps
+
 Things are put in folders mainly for organization.
