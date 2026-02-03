@@ -8,6 +8,11 @@
     hjem = {
       url = "github:/feel-co/hjem";
     };
+    hjem-impure = {
+      url = "github:Rexcrazy804/hjem-impure";
+      inputs.nixpkgs.follows = "";
+      inputs.hjem.follows = "";
+    };
     ### Applications
     nvf = {
       url = "github:notashelf/nvf";

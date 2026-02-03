@@ -37,9 +37,15 @@
       ];
 
       hjem = {
+        extraModules = [inputs.hjem-impure.hjemModules.default];
         clobberByDefault = true;
         linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         users.${username} = {
+          impure = {
+            enable = true;
+            dotsDir = "${../.impure}";
+            dotsDirImpure = "/home/${username}/nixos-config/.impure";
+          };
           enable = true;
           user = username;
           directory = "/home/${username}";

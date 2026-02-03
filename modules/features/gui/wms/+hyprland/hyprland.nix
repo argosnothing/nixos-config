@@ -12,6 +12,12 @@ in {
     ...
   }:
     with lib; let
+      # Override hyprland-test to use clang and lower optimization to avoid GCC crash
+      hyprland-pkg = inputs.hyprland-test.packages.${pkgs.system}.hyprland.overrideAttrs (old: {
+        stdenv = pkgs.clangStdenv;
+        NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -O1";
+      });
+
       plugin-dir = pkgs.symlinkJoin {
         name = "hyprland-plugins";
         paths = [
@@ -71,7 +77,7 @@ in {
       };
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland-test.packages.${pkgs.system}.hyprland;
+        package = hyprland-pkg;
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
 
