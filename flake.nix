@@ -51,6 +51,7 @@
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
       # url = "github:XansiVA/noctalia-shell/main";
+      # url = "github:argosnothing/noctalia-shell/testing";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### Display Managers

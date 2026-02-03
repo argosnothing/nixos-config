@@ -48,6 +48,6 @@
   "theme": {
     "mode": "dark",
     "light": "Oxocarbon Dark (IBM Carbon)",
-    "dark": "Noctalia Dark",
+    "dark": "VSCode Dark Modern",
   },
 }

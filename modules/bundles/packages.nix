@@ -17,5 +17,8 @@
         inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
       ]
       ++ [inputs.noogle-search.packages.${pkgs.system}.default];
+    my.persist.home.cache.directories = [
+      ".cache/noogle-search"
+    ];
   };
 }

@@ -8,15 +8,11 @@
 [
   {
     "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
+    "bindings": {},
   },
   {
     "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
+    "bindings": {},
   },
   {
     "context": "Editor && vim_mode == helix_normal",
@@ -24,17 +20,7 @@
       "space": null,
       "space space": "file_finder::Toggle",
       "space f": "workspace::Open",
-      "space d": "editor::GoToDefinition",
-      "space D": "editor::GoToTypeDefinition",
-      "space i": "editor::GoToImplementation",
-      "space r": "editor::FindAllReferences",
-      "space k": "editor::Hover",
-      "space s": "project_symbols::Toggle",
-      "space a": "editor::ToggleCodeActions",
-      "space e": "diagnostics::Deploy",
-      "space q": "pane::CloseActiveItem",
       "space tab": "tab_switcher::Toggle",
-      "space c r": "debugger::Rerun",
       "space g": [
         "task::Spawn",
         {
@@ -42,6 +28,17 @@
         },
       ],
       "space t": "workspace::NewTerminal",
+      "space d": null,
+      "space d d": "debugger::Start",
+      "space d b": "editor::ToggleBreakpoint",
+      "space d c": "debugger::Continue",
+      "space d s": "debugger::StepOver",
+      "space d i": "debugger::StepInto",
+      "space d o": "debugger::StepOut",
+      "space d r": "debugger::Restart",
+      "space d t": "debugger::Stop",
+      "space d p": "debugger::Pause",
+      "space d k": "debugger::ToggleExpandItem",
     },
   },
   {

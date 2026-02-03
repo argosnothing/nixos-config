@@ -18,7 +18,32 @@ in {
           inputs.hyprsplit.packages.${pkgs.system}.hyprsplit
         ];
       };
-      hyprland-settings = builtins.concatStringsSep "\n" config.my.wm.hyprland.settings;
+
+      # Generate Nix-interpolated configuration
+      inherit (config.my) cursor monitors desktop-shells;
+
+      monitorConfigs =
+        map (
+          monitor:
+            "monitor = ${monitor.name},"
+            + "${toString monitor.dimensions.width}x${toString monitor.dimensions.height}@${toString monitor.refresh},"
+            + "${toString monitor.position.x}x${toString monitor.position.y},"
+            + "${toString monitor.scale}"
+        )
+        monitors;
+
+      hyprland-nix-config = ''
+        ${builtins.concatStringsSep "\n" monitorConfigs}
+        env = XCURSOR_THEME,${cursor.name}
+        env = XCURSOR_SIZE,${toString cursor.size}
+        env = HYPRCURSOR_SIZE,${toString cursor.size}
+        env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+        $menu = ${desktop-shells.launcherCommand}
+        exec-once = ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user restart hyprland-session.target
+        exec-once = ${lib.getExe pkgs.xorg.xrdb} -merge ~/.Xresources
+        exec-once = hyprctl plugin load "$HYPR_PLUGIN_DIR/lib/libhyprsplit.so"
+      '';
+
       nixos-modules = with flake.modules.nixos; [
         wm
         nemo
@@ -49,7 +74,10 @@ in {
         package = inputs.hyprland.packages.${pkgs.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
-      hj.files.".config/hypr/hyprland.conf".text = hyprland-settings;
+
+      hj.files.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+
+      hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
 
       # systemd session target for hyprland
       systemd.user.targets.hyprland-session = {
