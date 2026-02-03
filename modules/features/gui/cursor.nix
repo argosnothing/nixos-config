@@ -1,6 +1,6 @@
 {
   # This is for manually defining cursor stuff. I should not need to include this on most desktop environments
-  # Mainly used to lighter stuff like xfce and window managers without batteries included.
+  # Mainly used for lighter stuff like xfce and window managers without batteries included.
   # This both makes options available and enables them. I don't anticipate other modules to draw on these options
   # outside of hosts that want to configure the options.
   flake.modules.nixos.cursor = {

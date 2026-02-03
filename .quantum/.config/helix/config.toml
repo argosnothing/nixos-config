@@ -8,6 +8,18 @@ editor-config = false
 
 [editor.lsp]
 display-inlay-hints = true
+display-messages = true
+
+[editor.statusline]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+left = ["mode", "spinner", "diagnostics"]
+right = ["position", "separator", "total-line-numbers"]
+separator = "|"
+
+[editor.indent-guides]
+character = "|"
+render = true
+skip-levels = 1
 
 [editor.cursor-shape]
 insert = "bar"

@@ -15,7 +15,14 @@
       inputs.hjem.nixosModules.default
       (lib.mkAliasOptionModule ["hj"] ["hjem" "users" username])
     ];
-    config = lib.optional {
+    config = {
+      hj.xdg.config.files."mimeapps.list" = {
+        generator = lib.generators.toINI {};
+        value = {
+          "Default Applications" = config.my.default.apps;
+          "Added Associations" = lib.mapAttrs (_: apps: lib.concatStringsSep ";" apps + ";") config.my.default.associations;
+        };
+      };
       my.persist.home.directories = lib.mkAfter [
         ".local/share/direnv"
         ".local/share/keyrings"
