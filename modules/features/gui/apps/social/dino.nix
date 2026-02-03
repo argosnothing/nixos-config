@@ -4,6 +4,7 @@
       dino
     ];
     my.persist.home.directories = [
-      ".local/share/dino" ];
+      ".local/share/dino"
+    ];
   };
 }

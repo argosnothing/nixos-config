@@ -71,11 +71,11 @@ in {
       };
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+        package = inputs.hyprland-test.packages.${pkgs.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
 
-      hj.files.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+      hj.files.".config/hypr/hyprland.conf".source = ./hyprland-test.conf;
 
       hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
 
