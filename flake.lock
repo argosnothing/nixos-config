@@ -377,6 +377,25 @@
         "type": "github"
       }
     },
+    "hjem-impure": {
+      "inputs": {
+        "hjem": [],
+        "nixpkgs": []
+      },
+      "locked": {
+        "lastModified": 1767386580,
+        "narHash": "sha256-6W1iRnwMIMsfY2p7ksvGy6l2+YA0j57mqq3Kv3Y7Yzc=",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "rev": "93145962a2b822b63562c7f482b2fb43be64e119",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1881,6 +1900,7 @@
         "dms": "dms",
         "flake-parts": "flake-parts",
         "hjem": "hjem",
+        "hjem-impure": "hjem-impure",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "hyprland-test": "hyprland-test",
