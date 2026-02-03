@@ -12,7 +12,6 @@ in {
     ...
   }:
     with lib; let
-      # Override hyprland-test to use clang and lower optimization to avoid GCC crash
       hyprland-pkg = inputs.hyprland-test.packages.${pkgs.system}.hyprland.overrideAttrs (old: {
         stdenv = pkgs.clangStdenv;
         NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -O1";
