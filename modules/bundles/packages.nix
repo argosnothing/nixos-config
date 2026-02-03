@@ -16,6 +16,6 @@
         vulkan-tools
         inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
       ]
-      ++ [inputs.noogle-search-tv.packages.${pkgs.system}.noogle-search];
+      ++ [inputs.noogle-search.packages.${pkgs.system}.default];
   };
 }

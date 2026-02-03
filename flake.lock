@@ -1327,11 +1327,11 @@
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1770081997,
-        "narHash": "sha256-SVFDsP0UWmaqVaOxmkA2WM1uHzGtzaT8kYp+yA74DgA=",
+        "lastModified": 1770086769,
+        "narHash": "sha256-pPRYZCQxYGifFuP00crmp7HY1oBAoS8y8mciJbv4cUA=",
         "owner": "argosnothing",
         "repo": "noogle-search",
-        "rev": "ca4b35c3bbb2a462f629aa1e60f338528879c9fc",
+        "rev": "786dfd023e7b6f3f159f112ca4ac800c4efd69cf",
         "type": "github"
       },
       "original": {
