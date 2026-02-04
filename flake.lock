@@ -1753,11 +1753,11 @@
         "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1770136291,
-        "narHash": "sha256-FLXX7B/FZGOYykV6n42/stGjePBb9eRfqAhrDDr+lKw=",
+        "lastModified": 1770167180,
+        "narHash": "sha256-Gc/+twc9XFIZaZ2wDoqc1AS0nPgpDXS32NUuX2dlAKY=",
         "owner": "argosnothing",
         "repo": "noogle-search",
-        "rev": "e40477020c13b0162da69d8e1ca95b02e63aea01",
+        "rev": "02b5bafd7c773454e42858357e13aa5a0097d7ab",
         "type": "github"
       },
       "original": {
