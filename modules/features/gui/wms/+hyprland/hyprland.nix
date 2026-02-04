@@ -46,7 +46,6 @@ in {
         $menu = ${desktop-shells.launcherCommand}
         exec-once = ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user restart hyprland-session.target
         exec-once = ${lib.getExe pkgs.xorg.xrdb} -merge ~/.Xresources
-        exec-once = hyprctl plugin load "$HYPR_PLUGIN_DIR/lib/libhyprsplit.so"
       '';
 
       nixos-modules = with flake.modules.nixos; [
@@ -83,6 +82,7 @@ in {
       };
 
       hj.files.".config/hypr/hyprland.conf".source = dots + "/hyprland-test.conf";
+      hj.files.".config/hypr/move-focus.sh".source = dots + "/move-focus.sh";
       hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
 
       # systemd session target for hyprland

@@ -1,5 +1,5 @@
 [[language]]
-auto-format = true
+auto-format = false
 name = "nix"
 
 [language-server.nixd]
