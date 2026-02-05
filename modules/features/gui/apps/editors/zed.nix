@@ -15,11 +15,11 @@ in {
     hj.files = let
       dotsDir = config.impure-dir;
     in {
-      ".config/zed/keymap.json" = dotsDir + "/zed/keymap.json";
-      ".config/zed/keymap_backup.json" = dotsDir + "/zed/keymap_backup.json";
-      ".config/zed/settings.json" = dotsDir + "/zed/settings.json";
-      ".config/zed/tasks.json" = dotsDir + "/zed/tasks.json";
-      ".config/zed/themes/noctalia.json" = dotsDir + "/zed/themes/noctalia.json";
+      ".config/zed/keymap.json".source = dotsDir + "/zed/keymap.json";
+      ".config/zed/keymap_backup.json".source = dotsDir + "/zed/keymap_backup.json";
+      ".config/zed/settings.json".source = dotsDir + "/zed/settings.json";
+      ".config/zed/tasks.json".source = dotsDir + "/zed/tasks.json";
+      ".config/zed/themes/noctalia.json".source = dotsDir + "/zed/themes/noctalia.json";
     };
     programs.nix-ld.enable = true;
     hj.packages = with flake.packages.${system}; [zeditor];

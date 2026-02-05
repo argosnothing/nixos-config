@@ -13,9 +13,9 @@
     hj.files = let
       dotsDir = config.impure-dir;
     in {
-      ".config/helix/config.toml" = dotsDir + "/helix/config.toml";
-      ".config/helix/languages.toml" = dotsDir + "/helix/languages.toml";
-      ".config/helix/themes/noctalia.toml" = dotsDir + "/helix/themes/noctalia.toml";
+      ".config/helix/config.toml".source = dotsDir + "/helix/config.toml";
+      ".config/helix/languages.toml".source = dotsDir + "/helix/languages.toml";
+      ".config/helix/themes/noctalia.toml".source = dotsDir + "/helix/themes/noctalia.toml";
     };
   };
 }
