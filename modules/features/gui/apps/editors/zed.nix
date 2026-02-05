@@ -1,7 +1,11 @@
 {config, ...}: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.zed = {pkgs, config, ...}: let
+  flake.modules.nixos.zed = {
+    pkgs,
+    config,
+    ...
+  }: let
     inherit (pkgs.stdenv.hostPlatform) system;
   in {
     my.persist.home.directories = [

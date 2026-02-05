@@ -20,10 +20,6 @@ in {
     ];
   in {
     imports = nixos-modules;
-    config.quantum = {
-      quantum-dir = "/home/${username}/nixos-config/.quantum";
-      inherit username;
-    };
     config.my.username = username;
   };
 }

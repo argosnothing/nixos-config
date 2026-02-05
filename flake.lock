@@ -1857,22 +1857,6 @@
         "type": "github"
       }
     },
-    "quantum": {
-      "locked": {
-        "lastModified": 1769644057,
-        "narHash": "sha256-m2J6qC1WP/QFvsWSA4MXrHIzUhE9m1buIILJfG0fGf0=",
-        "owner": "argosnothing",
-        "repo": "nixos-quantum",
-        "rev": "b815d878726875089dde513e0f8c068576a16ec7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "argosnothing",
-        "ref": "develop",
-        "repo": "nixos-quantum",
-        "type": "github"
-      }
-    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -1922,7 +1906,6 @@
         "noogle-search": "noogle-search",
         "nvf": "nvf",
         "oxwm": "oxwm",
-        "quantum": "quantum",
         "silent-sddm": "silent-sddm",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",

@@ -33,10 +33,6 @@ in {
       xwayland-satellite
     ];
     hj.files.".config/niri/config.kdl".text = niri-settings;
-    quantum.entangle-folders = {
-      "niri/.config/gtk-3.0" = ".config/gtk-3.0";
-      "niri/.config/gtk-4.0" = ".config/gtk-4.0";
-    };
     my = {
       icons = {
         package = pkgs.rose-pine-icon-theme;

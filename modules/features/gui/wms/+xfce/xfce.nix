@@ -35,8 +35,5 @@ in {
         };
       };
     };
-    quantum.directories = [
-      ".config/xfce4"
-    ];
   };
 }

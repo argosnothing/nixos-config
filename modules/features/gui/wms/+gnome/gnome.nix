@@ -16,11 +16,6 @@
       name = "Adwaita";
       size = 15;
     };
-    quantum.entangle-folders = {
-      "gnome/.config/gtk-3.0" = ".config/gtk-3.0";
-      "gnome/.config/gtk-4.0" = ".config/gtk-4.0";
-      "gnome/.config/paperwm" = ".config/paperwm";
-    };
     my.persist = {
       home.directories = [
         ".local/share/gnome-shell"
