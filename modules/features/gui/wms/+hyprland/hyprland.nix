@@ -82,7 +82,6 @@ in {
       };
 
       hj.files.".config/hypr/hyprland.conf".source = dots + "/hyprland-test.conf";
-      hj.files.".config/hypr/move-focus.sh".source = dots + "/move-focus.sh";
       hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
 
       # systemd session target for hyprland
