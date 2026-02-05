@@ -1,3 +1,6 @@
+### Monitor Module
+# THE source of truth for what is going on with my monitors
+# Unless im using a desktop module that doesn't use it :)
 {lib, ...}: let
   inherit (lib.types) listOf submodule str int float;
   inherit (lib) mkOption mkEnableOption;

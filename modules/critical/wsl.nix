@@ -1,8 +1,6 @@
-{
-  inputs,
-  config,
-  ...
-}: {
+### WSL
+# Nix for when i'm sinful and need to repent.
+{inputs, ...}: {
   flake.modules.nixos.windows = {pkgs, ...}: {
     imports = [
       inputs.nixos-wsl.nixosModules.default

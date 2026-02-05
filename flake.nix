@@ -14,16 +14,10 @@
       inputs.hjem.follows = "";
     };
     ### Applications
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zed = {
       url = "github:zed-industries/zed";
     };
-    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    zwift.url = "github:netbrain/zwift";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

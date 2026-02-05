@@ -1,3 +1,6 @@
+### Fonts Module
+# THE source of truth for what the hell is going on with my fonts
+# If something isn't using this for fonts, it's because I forgor
 {
   flake.modules.nixos.options = {
     pkgs,

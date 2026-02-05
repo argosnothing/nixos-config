@@ -1,3 +1,5 @@
+### ZFS
+# The only filesystem I use and the only filesystem that matters...
 # https://github.com/iynaix/dotfiles/blob/978cc85a40fc298ac9163d893a4cf37725bf45de/modules/zfs.nix#L4
 {config, ...}: let
   inherit (config.flake) settings;

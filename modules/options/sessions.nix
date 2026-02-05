@@ -1,3 +1,4 @@
+# Sessions Module
 # Window Managers and desktop environments can register stuff here
 # This is currently unused, but in the future could be useful if i want to
 # generate a display manager menu or something explicitly.

@@ -1,3 +1,5 @@
+### SOPS
+# Likely the reason you are unable to run my flake :)
 {
   inputs,
   self,

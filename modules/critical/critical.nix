@@ -1,3 +1,6 @@
+### Critical Flake Infrastructure
+# A collection of very important dendritic modules for my flake, kept as modules for special
+# hosts like the wsl that handle some of these options through the wsl module :)
 {inputs, ...}: {
   imports = [
     inputs.flake-parts.flakeModules.modules

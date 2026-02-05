@@ -1,3 +1,7 @@
+### Impermanence (curtesy of Iynaix)
+# Consumer for the impermanence options in my flake.
+# If you include this module you are enabling impermanence on the system!
+# good luck!
 {
   inputs,
   lib,

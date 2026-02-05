@@ -1,4 +1,6 @@
-## Options for the system.
+### Base Options Module
+# All code executed in modules assumes these options are available, even if they don't get used.
+# options.nix will be in other folders as well, and those will be scoped to the modules that needs those options
 {lib, ...}: let
   inherit (lib) mkOption mkEnableOption;
   inherit (lib.types) listOf str attrsOf;

@@ -10,6 +10,8 @@
       nixd
       rofi
     ];
+    my.wm.hyprland.active-config = "testing";
+
     imports = with config.flake.modules.nixos; [
       # WM
       hyprland-bundle
@@ -33,7 +35,6 @@
     ];
     my = {
       cursor.speed = -0.35;
-      theme.polarity = "dark";
       fonts.size = 11;
       is-vm = false;
       monitors = [
