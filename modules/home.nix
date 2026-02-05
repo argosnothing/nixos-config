@@ -14,6 +14,7 @@
     imports = [
       inputs.hjem.nixosModules.default
       (lib.mkAliasOptionModule ["hj"] ["hjem" "users" username])
+      (lib.mkAliasOptionModule ["impure-dir"] ["hjem" "users" username "impure" "dotsDir"])
     ];
     config = {
       hj.xdg.config.files."mimeapps.list" = {

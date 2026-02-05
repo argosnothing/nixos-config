@@ -55,7 +55,7 @@ in {
         gtk
       ];
 
-      dots = config.hj.impure.dotsDir;
+      dots = config.impure-dir;
     in {
       imports = nixos-modules;
       environment.sessionVariables = {HYPR_PLUGIN_DIR = plugin-dir;};
@@ -81,7 +81,7 @@ in {
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
 
-      hj.files.".config/hypr/hyprland.conf".source = dots + "/hyprland-test.conf";
+      hj.files.".config/hypr/hyprland.conf".source = dots + "/hyprland-test/hyprland-test.conf";
       hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
 
       # systemd session target for hyprland

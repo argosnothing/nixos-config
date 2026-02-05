@@ -100,9 +100,6 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-    quantum = {
-      url = "github:argosnothing/nixos-quantum/develop";
-    };
     ### Containerization
     nix-flatpak = {
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
