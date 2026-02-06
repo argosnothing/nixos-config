@@ -24,7 +24,10 @@
       enable = true;
       flake = "${flakedir}";
     };
-
+    hj.files.".local/bin/nht" = {
+      source = config.impure-dir + "/.local/bin/nht";
+      executable = true;
+    };
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "rebuilds" (rebuild "switch"))
       (pkgs.writeShellScriptBin "rebuildb" (rebuild "boot"))

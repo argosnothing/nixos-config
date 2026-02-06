@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+time nix eval "$NH_FLAKE"#nixosConfigurations."$hostname".config.system.build.toplevel --substituters " " --option eval-cache false --raw --read-only
