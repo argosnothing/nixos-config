@@ -8,6 +8,9 @@
     ];
     hj = {
       files = {
+        ".config/fish/conf.d/local-bin-path.fish".text = ''
+          fish_add_path ~/.local/bin
+        '';
         ".config/fish/conf.d/show-base16.fish".text = ''
                     function show-base16
             for i in (seq 0 15)

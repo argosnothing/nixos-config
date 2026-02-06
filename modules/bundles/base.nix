@@ -3,7 +3,7 @@
 {config, ...}: let
   inherit (config) flake;
 in {
-  flake.modules.nixos.base = {pkgs, ...}: let
+  flake.modules.nixos.base = let
     username = "salivala";
     nixos-modules = with flake.modules.nixos; [
       options
