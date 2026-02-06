@@ -28,10 +28,6 @@
           $1         ▝▀▀▀    ▀▀▀▀▘       $2"*="
         '';
         position = "left";
-        color = {
-          "1" = "red";
-          "2" = "magenta";
-        };
       };
 
       display = {

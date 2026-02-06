@@ -25,10 +25,6 @@
       };
     };
     ### Window Managers
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
@@ -40,10 +36,6 @@
     hyprland-test.url = "github:vaxerski/hyprland/layouts-rethonked";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprsplit = {
-      url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
     ### Desktop Shells
@@ -60,10 +52,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### System Level
-    nixos-grub-themes = {
-      url = "github:jeslie0/nixos-grub-themes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
@@ -72,9 +60,6 @@
     };
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl/release-25.05";
-    };
-    nixpkgs-wsl = {
-      url = "github:NixOS/nixpkgs/nixos-25.05";
     };
     systems = {
       url = "github:nix-systems/default";
