@@ -7,6 +7,7 @@
       graphics.enable = true;
       bluetooth.enable = true;
     };
+    my.wm.hyprland.active-config = "testing";
     imports = with config.flake.modules.nixos; [
       hyprland-bundle
       gui-apps
@@ -26,7 +27,6 @@
       impermanence
     ];
     my = {
-      theme.polarity = "dark";
       cursor.speed = 0.30;
       is-vm = false;
       monitors = [
