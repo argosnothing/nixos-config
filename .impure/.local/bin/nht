@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 time nix eval "$NH_FLAKE"#nixosConfigurations."$hostname".config.system.build.toplevel --substituters " " --option eval-cache false --raw --read-only
