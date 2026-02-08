@@ -27,6 +27,7 @@
       flatpak
       bolt-launcher
       dino
+      vscode
 
       # Meta
       impermanence
