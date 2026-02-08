@@ -25,11 +25,7 @@
           networking.hostName = lib.mkDefault name;
           nixpkgs = {
             hostPlatform = lib.mkDefault system;
-            overlays = [
-              (_: super: {
-                inherit (super.stdenv.hostPlatform) system;
-              })
-            ];
+            overlays = config.flake.nixpkgs.overlays;
             config = {
               allowUnfree = true;
               showAliases = true;
@@ -52,11 +48,7 @@
           networking.hostName = lib.mkDefault name;
           nixpkgs = {
             hostPlatform = lib.mkDefault system;
-            overlays = [
-              (_: super: {
-                inherit (super.stdenv.hostPlatform) system;
-              })
-            ];
+            overlays = config.flake.nixpkgs.overlays;
             config = {
               allowUnfree = true;
               showAliases = true;
