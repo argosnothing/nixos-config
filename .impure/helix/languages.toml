@@ -45,6 +45,17 @@ indent = { tab-width = 2, unit = "  " }
 name = "rust"
 indent = { tab-width = 2, unit = "  " }
 
+[language.debugger]
+command = "lldb-dap"
+name = "lldb-dap"
+transport = "stdio"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ {name = "binary", completion = "filename" }]
+args = {program = "{0}"}
+
 [[language]]
 name = "go"
 indent = { tab-width = 2, unit = "  " }

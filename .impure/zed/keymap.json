@@ -20,6 +20,7 @@
       "space": null,
       "space space": "file_finder::Toggle",
       "space f": "workspace::Open",
+
       "space tab": "tab_switcher::Toggle",
       "space g": [
         "task::Spawn",
@@ -39,6 +40,7 @@
       "space d t": "debugger::Stop",
       "space d p": "debugger::Pause",
       "space d k": "debugger::ToggleExpandItem",
+      "space m": null,
     },
   },
   {
