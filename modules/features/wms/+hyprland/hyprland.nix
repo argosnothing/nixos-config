@@ -45,8 +45,8 @@ in {
 
       dots = config.impure-dir;
     in {
-      imports = nixos-modules;
       my = {
+        wm.hyprland.active-config = "testing";
         session.name = "hyprland";
         icons = {
           package = pkgs.rose-pine-icon-theme;
@@ -56,12 +56,13 @@ in {
           enable = true;
           name = "Simp1e-Dark";
         };
+        persist.home = {
+          directories = [
+            ".config/hypr"
+          ];
+        };
       };
-      my.persist.home = {
-        directories = [
-          ".config/hypr"
-        ];
-      };
+      imports = nixos-modules;
       programs.hyprland = {
         enable = true;
         package = active-config.package;

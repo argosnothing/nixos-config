@@ -1,14 +1,14 @@
-{
+{inputs, ...}: {
   flake.modules.nixos.helix = {
     pkgs,
     config,
     ...
   }: {
     environment.systemPackages = with pkgs; [
-      helix
       nixd
       nil
       lldb
+      helix
     ];
     hj.files = let
       dotsDir = config.impure-dir;

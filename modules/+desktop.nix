@@ -10,7 +10,6 @@
       nixd
       rofi
     ];
-    my.wm.hyprland.active-config = "testing";
 
     imports = with config.flake.modules.nixos; [
       # WM
@@ -27,6 +26,8 @@
       flatpak
       bolt-launcher
       dino
+      vscode
+      obs
 
       # Meta
       impermanence

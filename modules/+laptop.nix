@@ -7,9 +7,10 @@
       graphics.enable = true;
       bluetooth.enable = true;
     };
-    my.wm.hyprland.active-config = "testing";
+    # my.wm.hyprland.active-config = "testing";
     imports = with config.flake.modules.nixos; [
-      hyprland-bundle
+      # hyprland-bundle
+      scroll
       gui-apps
 
       vscode
