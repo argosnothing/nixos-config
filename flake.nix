@@ -28,6 +28,10 @@
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
+    scroll = {
+      url = "github:AsahiRocks/scroll-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     oxwm = {
       url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
