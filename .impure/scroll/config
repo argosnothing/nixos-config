@@ -1,5 +1,6 @@
 include ~/.config/scroll/noctalia
 include ~/.config/scroll/scroll-nix
+include /etc/scroll/config.d/*
 
 set $mod Mod4
 set $left h

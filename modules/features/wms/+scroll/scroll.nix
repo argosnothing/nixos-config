@@ -25,7 +25,7 @@ in {
       ${builtins.concatStringsSep "\n" monitorConfigs}
       seat seat0 xcursor_theme ${cursor.name} ${toString cursor.size}
       set $menu ${desktop-shells.launcherCommand}
-      exec ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user restart scroll-session.target
+      exec ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_DATA_DIRS && systemctl --user restart scroll-session.target
       exec ${lib.getExe pkgs.xorg.xrdb} -merge ~/.Xresources
     '';
 
@@ -60,10 +60,13 @@ in {
       xdgOpenUsePortal = true;
       config = {
         common = {
-          default = "gtk gnome";
-          "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-          "org.freedesktop.impl.portal.Screenshot" = "gnome";
+          default = "gtk";
+          "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+          "org.freedesktop.impl.portal.Screenshot" = "wlr";
           "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
+        };
+        scroll = {
+          default = "gtk";
         };
       };
       extraPortals = with pkgs; [
@@ -94,6 +97,9 @@ in {
 
         # Configure Electron to use Wayland instead of X11
         export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+        # Set default browser
+        export BROWSER=zen
       '';
     };
 
