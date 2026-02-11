@@ -8,6 +8,7 @@ in {
   flake.modules.nixos.scroll = {
     pkgs,
     lib,
+    config,
     ...
   }: let
     inherit (config.my) cursor monitors desktop-shells;
@@ -15,8 +16,8 @@ in {
       map (
         monitor:
           "output ${monitor.name} "
-          + "resolution ${monitor.dimensions.width}x${monitor.dimensions.height}@${monitor.refresh}Hz "
-          + "position ${monitor.position.x},${monitor.position.y}"
+          + "resolution ${toString monitor.dimensions.width}x${toString monitor.dimensions.height}@${toString monitor.refresh}Hz "
+          + "position ${toString monitor.position.x},${toString monitor.position.y}"
       )
       monitors;
 
@@ -86,7 +87,7 @@ in {
         export SDL_VIDEODRIVER=wayland
         export CLUTTER_BACKEND=wayland
 
-        # XDG desktop variables to set scroll as the desktop
+        # XDG desktop variables to set scroll as tse desktop
         export XDG_CURRENT_DESKTOP=scroll
         export XDG_SESSION_TYPE=wayland
         export XDG_SESSION_DESKTOP=scroll
@@ -102,7 +103,7 @@ in {
     # systemd session target for scroll
     systemd.user.targets.scroll-session = {
       unitConfig = {
-        Description = "Scroll compositor session";
+        Description = "scroll compositor session";
         BindsTo = ["graphical-session.target"];
         Wants = ["graphical-session-pre.target"] ++ config.my.startup-services;
         Before = config.my.startup-services;
