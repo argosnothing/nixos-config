@@ -14,7 +14,6 @@
 
     scratchpad-binds = lib.optionalString config.my.wm.niri.use-scratchpads ''
       Mod+0 { toggle-workspace-visibility "stash"; }
-      Mod+Shift+0 { toggle-workspace-visibility "work"; }
       Mod+Q            { spawn "niri-scratchpad" "create" "1" "--as-float"; }
       Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float"; }
       Mod+G            { spawn "niri-scratchpad" "create" "3" "--as-float"; }
@@ -65,13 +64,6 @@
           workspace "stash" {
               open-on-output "DP-1"
               hidden true
-          }
-          workspace "work" {
-              open-on-output "DP-1"
-              hidden true
-          }
-          workspace "test" {
-              open-on-output "DP-1"
           }
         '')
         ''
