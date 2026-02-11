@@ -11,7 +11,6 @@ in {
     ...
   }: let
     dots = config.impure-dir;
-    niri-settings = builtins.concatStringsSep "\n" config.my.wm.niri.settings;
     nixos-modules = with flake.modules.nixos; [
       wm
       nemo
@@ -35,6 +34,8 @@ in {
     ];
     hj.files.".config/niri/config.kdl".source = dots + "/niri/config.kdl";
     my = {
+      session.name = "niri";
+      wm.niri.use-scratchpads = true;
       icons = {
         package = pkgs.rose-pine-icon-theme;
         name = "rose-pine";
@@ -44,6 +45,17 @@ in {
       };
       cursor.enable = true;
       persist.home.directories = [".config/niri"];
+    };
+
+    # systemd session target for niri
+    systemd.user.targets.niri-session = {
+      unitConfig = {
+        Description = "Niri compositor session";
+        BindsTo = ["graphical-session.target"];
+        Wants = ["graphical-session-pre.target"] ++ config.my.startup-services;
+        Before = config.my.startup-services;
+        After = ["graphical-session-pre.target"];
+      };
     };
   };
 }

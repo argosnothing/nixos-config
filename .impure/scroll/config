@@ -7,9 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
 set $term kitty
-# Your preferred application launcher
 
 ### Idle configuration
 #

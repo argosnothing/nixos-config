@@ -13,7 +13,7 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      scroll-bundle
+      niri-bundle
 
       # Apps
       gui-apps
@@ -22,7 +22,6 @@
       memacs
       work
       uhk
-      zed
       flatpak
       bolt-launcher
       dino
@@ -52,19 +51,6 @@
           };
           scale = 1.0;
           refresh = 180.001;
-        }
-        {
-          name = "DP-2";
-          dimensions = {
-            width = 1920;
-            height = 1080;
-          };
-          position = {
-            x = 2560;
-            y = 205;
-          };
-          scale = 1.0;
-          refresh = 60.0;
         }
       ];
     };

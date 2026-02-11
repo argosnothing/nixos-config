@@ -37,6 +37,9 @@
 
     nix-settings = builtins.concatStringsSep "\n" ([
         ''
+          spawn-at-startup "${lib.getExe' pkgs.dbus "dbus-update-activation-environment"}" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "NIXOS_OZONE_WL"
+          spawn-sh-at-startup "systemctl --user restart niri-session.target"
+
           xwayland-satellite {
             path "${lib.getExe pkgs.xwayland-satellite-unstable}"
           }
