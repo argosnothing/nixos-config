@@ -12,6 +12,11 @@ in {
       noctalia-shell
       ly
     ];
+    scroll-bundle.imports = with flake.modules.nixos; [
+      scroll
+      noctalia-shell
+      ly
+    ];
     mango-bundle.imports = with flake.modules.nixos; [
       mango
       noctalia-shell

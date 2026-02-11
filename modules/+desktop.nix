@@ -13,7 +13,7 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      hyprland-bundle
+      scroll-bundle
 
       # Apps
       gui-apps
