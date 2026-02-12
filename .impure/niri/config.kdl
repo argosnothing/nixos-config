@@ -135,6 +135,10 @@ recent-windows {
   }
 }
 
+debug {
+  wait-for-frame-completion-before-queueing
+}
+
 binds {
   Mod+Return { spawn "kitty"; }
   Mod+Slash { show-hotkey-overlay; }

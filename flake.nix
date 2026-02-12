@@ -1,8 +1,32 @@
 {
   description = "Turtles Strange Nix Configuration";
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;}
-    (inputs.import-tree ./modules);
+
+  #  https://github.com/Michael-C-Buckley/nixos/blob/156070cec0f70b1d448b9e36b7f5259248e107f2/flake.nix#L36
+  outputs = {
+    nixpkgs,
+    flake-parts,
+    ...
+  } @ inputs: let
+    inherit (nixpkgs.lib) hasPrefix lists;
+    inherit (nixpkgs.lib.fileset) toList fileFilter;
+    mkImport = path: toList (fileFilter (f: f.hasExt "nix" && !(hasPrefix "_" f.name)) path);
+  in
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux" "aarch64-linux"];
+      imports = lists.flatten [
+        (mkImport ./modules)
+        (mkImport ./packages)
+      ];
+      perSystem = {
+        system,
+        ...
+      }: {
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+    };
   inputs = {
     ### Userland
     hjem = {
