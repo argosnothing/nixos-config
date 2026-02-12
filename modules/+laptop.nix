@@ -10,7 +10,7 @@
     # my.wm.hyprland.active-config = "testing";
     imports = with config.flake.modules.nixos; [
       # hyprland-bundle
-      scroll
+      niri-bundle
       gui-apps
 
       vscode
