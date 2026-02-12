@@ -1,9 +1,10 @@
 {
-  flake.modules.nixos.element-desktop = {
-    hm = {
-      programs.element-desktop = {
-        enable = true;
-      };
+  flake.modules.nixos.element-desktop = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      element-desktop
+    ];
+    my.persist = {
+      home.directories = [".config/element"];
     };
   };
 }

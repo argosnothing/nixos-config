@@ -12,7 +12,7 @@ in {
       keyd
       user
       home
-      gnome-keyring
+      auth
       nix-settings
       misc
       shell-apps

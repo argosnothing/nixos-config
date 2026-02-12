@@ -24,7 +24,7 @@
       uhk
       flatpak
       bolt-launcher
-      dino
+      element-desktop
       vscode
       obs
 
