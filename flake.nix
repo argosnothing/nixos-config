@@ -17,10 +17,7 @@
         (mkImport ./modules)
         (mkImport ./packages)
       ];
-      perSystem = {
-        system,
-        ...
-      }: {
+      perSystem = {system, ...}: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
