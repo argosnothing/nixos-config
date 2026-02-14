@@ -4,7 +4,7 @@
       element-desktop
     ];
     my.persist = {
-      home.directories = [".config/element"];
+      home.directories = [".config/Element"];
     };
   };
 }
