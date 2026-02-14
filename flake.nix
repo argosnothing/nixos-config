@@ -48,6 +48,12 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    noogle-search = {
+      url = "github:argosnothing/noogle-search";
+    };
+    matui = {
+      url = "github:pkulak/matui";
+    };
     ### Window Managers
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/v25.11-hidden-workspaces";
@@ -111,8 +117,5 @@
       url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
     ### Other
-    noogle-search = {
-      url = "github:argosnothing/noogle-search";
-    };
   };
 }
