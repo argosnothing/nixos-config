@@ -17,7 +17,6 @@
             efiSupport = true;
             devices = ["nodev"];
           };
-          grub.theme = inputs.nixos-grub-themes.packages.${system}.nixos;
           efi.canTouchEfiVariables = true;
         };
         consoleLogLevel = 3;
