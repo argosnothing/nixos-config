@@ -13,6 +13,7 @@
       touchpad
       zfs
       helix
+      matrix-home-server
     ];
     my = {
       is-vm = false;

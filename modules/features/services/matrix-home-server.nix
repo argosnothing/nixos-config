@@ -4,7 +4,7 @@
     lib,
     ...
   }: let
-    domain = "argos_nothing.me";
+    domain = "argos-nothing.me";
     matrixDomain = "matrix.${domain}";
     clientConfig = {
       "m.homeserver".base_url = "https://${matrixDomain}";
@@ -51,7 +51,7 @@
           };
         };
 
-        max_upload_size_mib = 100;
+        max_upload_size_mib = 400;
         url_preview_enabled = true;
         enable_registration = false;
         enable_metrics = false;
@@ -92,7 +92,7 @@
           proxy_set_header X-Forwarded-For $remote_addr;
           proxy_set_header X-Forwarded-Proto $scheme;
           proxy_set_header Host $host;
-          client_max_body_size 100M;
+          client_max_body_size 400M;
         '';
       };
     };
