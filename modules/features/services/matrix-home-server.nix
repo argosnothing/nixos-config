@@ -76,6 +76,7 @@
       ];
     };
 
+    services.nginx.enable = true;
     services.nginx.virtualHosts.${domain} = {
       enableACME = true;
       forceSSL = true;
