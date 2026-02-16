@@ -5,14 +5,14 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      memacs
-      xfce-bundle
-      firefox
+      niri-bundle
+      zen-browser
       impermanence
       grub
       battery
       touchpad
       zfs
+      helix
     ];
     my = {
       is-vm = false;
