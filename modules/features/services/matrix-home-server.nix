@@ -25,7 +25,7 @@
       acceptTerms = true;
       defaults.email = "argosnothing@gmail.com";
     };
-    services.matrix-matrix-synapse = {
+    services.matrix-synapse = {
       enable = true;
       settings = {
         server_name = domain;
@@ -81,13 +81,13 @@
       enableACME = true;
       forceSSL = true;
       locations."= /.well-known/matrix/server".extraConfig = mkWellKnown serverConfig;
-      locations."= /.well-known/matrix/client".extraConfig = mkWellKnown serverConfig;
+      locations."= /.well-known/matrix/client".extraConfig = mkWellKnown clientConfig;
     };
     services.nginx.virtualHosts.${matrixDomain} = {
       enableACME = true;
       forceSSL = true;
       proxyPass = "http://127.0.0.1:8008";
-      extraCoinfig = ''
+      extraConfig = ''
         proxy_set_header X-Forwarded-For $remote_addr;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header Host $host;
