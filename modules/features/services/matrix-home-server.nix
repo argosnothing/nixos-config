@@ -19,12 +19,6 @@
       return 200 '${builtins.toJSON data}';
     '';
   in {
-    services.openssh.enable = true;
-    services.nginx.enable = true;
-    security.acme = {
-      acceptTerms = true;
-      defaults.email = "argosnothing@gmail.com";
-    };
     services.matrix-synapse = {
       enable = true;
       settings = {
@@ -40,12 +34,13 @@
             x_forwarded = true;
             resources = [
               {
-                name = ["client" "federation"];
-                compress = "true";
+                names = ["client" "federation"];
+                compress = true;
               }
             ];
           }
         ];
+
         database = {
           name = "psycopg2";
           allow_unsafe_locale = true;
@@ -55,11 +50,13 @@
             host = "/run/postgresql";
           };
         };
-        max_upload_size_mib = 400;
+
+        max_upload_size_mib = 100;
         url_preview_enabled = true;
         enable_registration = false;
         enable_metrics = false;
-        registration_shared_secret_path = "var/lib/matrix-synapse/registration_secret";
+        registration_shared_secret_path = "/var/lib/matrix-synapse/registration_secret";
+
         trusted_key_servers = [
           {
             server_name = "matrix.org";
@@ -67,36 +64,39 @@
         ];
       };
     };
+
     services.postgresql = {
       enable = true;
       ensureDatabases = ["matrix-synapse"];
       ensureUsers = [
         {
           name = "matrix-synapse";
-          ensureDbOwnserhip = true;
+          ensureDBOwnership = true;
         }
       ];
     };
+
     services.nginx.virtualHosts.${domain} = {
       enableACME = true;
       forceSSL = true;
       locations."= /.well-known/matrix/server".extraConfig = mkWellKnown serverConfig;
       locations."= /.well-known/matrix/client".extraConfig = mkWellKnown clientConfig;
     };
+
     services.nginx.virtualHosts.${matrixDomain} = {
       enableACME = true;
       forceSSL = true;
-      proxyPass = "http://127.0.0.1:8008";
-      extraConfig = ''
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header Host $host;
-        client_max_body_size 400M;
-      '';
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8008";
+        extraConfig = ''
+          proxy_set_header X-Forwarded-For $remote_addr;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header Host $host;
+          client_max_body_size 100M;
+        '';
+      };
     };
 
     networking.firewall.allowedTCPPorts = [8448];
-    environment.systemPackages = with pkgs; [
-    ];
   };
 }
