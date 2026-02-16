@@ -82,6 +82,7 @@
     };
 
     services.nginx.enable = true;
+    services.openssh.enable = true;
     services.nginx.virtualHosts.${domain} = {
       enableACME = true;
       forceSSL = true;
