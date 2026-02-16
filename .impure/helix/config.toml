@@ -28,3 +28,8 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
+space = ":fmt"
+tab = ":buffer-next"
