@@ -98,5 +98,9 @@
     };
 
     networking.firewall.allowedTCPPorts = [8448];
+
+    my.persist.root.directories = [
+      "/var/lib/postgresql"
+    ];
   };
 }
