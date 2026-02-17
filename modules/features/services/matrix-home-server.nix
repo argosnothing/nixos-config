@@ -1,9 +1,5 @@
 {
-  flake.modules.nixos.matrix-home-server = {
-    pkgs,
-    lib,
-    ...
-  }: let
+  flake.modules.nixos.matrix-home-server = let
     domain = "argos-nothing.me";
     matrixDomain = "matrix.${domain}";
     clientConfig = {
