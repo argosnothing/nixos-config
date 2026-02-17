@@ -47,6 +47,7 @@
         };
 
         max_upload_size_mib = 400;
+        max_upload_size = "400M";
         url_preview_enabled = true;
         enable_registration = false;
         enable_metrics = false;
@@ -95,7 +96,6 @@
           client_max_body_size 400M;
         '';
       };
-
     };
 
     services.nginx.virtualHosts.${matrixDomain} = {
