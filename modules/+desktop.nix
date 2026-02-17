@@ -27,7 +27,6 @@
       element-desktop
       vscode
       obs
-      matrix-home-server
 
       # Meta
       impermanence
