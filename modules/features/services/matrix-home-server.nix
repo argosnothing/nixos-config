@@ -8,7 +8,6 @@
     matrixDomain = "matrix.${domain}";
     clientConfig = {
       "m.homeserver".base_url = "https://${matrixDomain}";
-      "m.identity_server" = {};
     };
     serverConfig = {
       "m.server" = "${matrixDomain}:443";
@@ -83,17 +82,31 @@
 
     services.nginx.enable = true;
     services.openssh.enable = true;
+
     services.nginx.virtualHosts.${domain} = {
       enableACME = true;
       forceSSL = true;
+
       locations."= /.well-known/matrix/server".extraConfig = mkWellKnown serverConfig;
       locations."= /.well-known/matrix/client".extraConfig = mkWellKnown clientConfig;
+
+      locations."/_matrix" = {
+        proxyPass = "http://127.0.0.1:8008";
+        extraConfig = ''
+          proxy_set_header X-Forwarded-For $remote_addr;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header Host $host;
+          client_max_body_size 400M;
+        '';
+      };
+
     };
 
     services.nginx.virtualHosts.${matrixDomain} = {
       enableACME = true;
       forceSSL = true;
-      locations."/" = {
+
+      locations."/_matrix" = {
         proxyPass = "http://127.0.0.1:8008";
         extraConfig = ''
           proxy_set_header X-Forwarded-For $remote_addr;
@@ -104,7 +117,7 @@
       };
     };
 
-    networking.firewall.allowedTCPPorts = [8448];
+    networking.firewall.allowedTCPPorts = [8448 80 443 22];
 
     my.persist.root.directories = [
       "/var/lib/postgresql"
