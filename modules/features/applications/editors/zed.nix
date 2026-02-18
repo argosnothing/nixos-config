@@ -19,7 +19,6 @@ in {
       ".config/zed/keymap_backup.json".source = dotsDir + "/zed/keymap_backup.json";
       ".config/zed/settings.json".source = dotsDir + "/zed/settings.json";
       ".config/zed/tasks.json".source = dotsDir + "/zed/tasks.json";
-      ".config/zed/themes/noctalia.json".source = dotsDir + "/zed/themes/noctalia.json";
     };
     programs.nix-ld.enable = true;
     hj.packages = with flake.packages.${system}; [zeditor];
