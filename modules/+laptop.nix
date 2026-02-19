@@ -21,6 +21,7 @@
 
       battery
       touchpad
+      iamb
 
       # don't touch this
       uefi
