@@ -3,14 +3,13 @@
 - Non-dendritic configuration now lives on the
   [legacy](https://github.com/argosnothing/nixos-config/tree/legacy)
   branch.
-- Dendritic config based around import-tree and flake parts, with an
-  emphasis on blurring the lines between home and system.
+- Dendritic config that blurs the line between home and system.
 - If you are one of those mentioned in the credits here and don't want
   to be mentioned, just let me know.
 
 ## Things I do
 
-- Dendritic pattern with modules folder being evaluated at flake level.
+- Dendritic pattern with modules and packages folders being evaluated at flake level.
 - Impermanence in system and home. Per module persistance so wm switches
   don't pollute user space.
 - Hjem
@@ -29,24 +28,16 @@
 
 #### Meta
 
-- My aspiration is that this repo will be beginner friendly enough to be
-  used as an educational tool for learning to create your own config. If
-  there is anywhere you feel could be explained in more detail feel free
-  to message me, and I will work towards incorporating it in a README.md
-  file in the appropriate directory.
-  - I also have a
-    [starter config](https://github.com/argosnothing/nixos-kickstart)
-    that has a similar structure if you want to start from scratch with
-    stuff like dendritic and zfs.
-- My config makes heavy use of README.md, and I try to have every
-  directory contain its own readme with more granular descriptions of
-  its purpose and modules.
+- I also have a [starter config](https://github.com/argosnothing/nixos-kickstart)
+that has a similar structure if you want to start from scratch with
+stuff like dendritic and zfs, although I need to update it  :p
 
 #### Notes, implementation details.
 
 - hjem user module is aliased to `hj`
-- Themes are currently largely handled `imperatively` through matugen (
-  using noctalia-shell )
+- Themes are currently largely handled `imperatively` through noctalia
+- Most of my wm configs use a hybrid approach of hjem-impure for symlinking and
+  nix-generated files to carry over things like monitor data and storepaths. 
 
 ## Credits
 
