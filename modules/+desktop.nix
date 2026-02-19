@@ -28,10 +28,10 @@
       bolt-launcher
       element-desktop
       iamb
-      cinny
       vscode
       obs
       remmina
+      winboat
 
       # Meta
       impermanence
