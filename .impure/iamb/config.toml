@@ -1,0 +1,9 @@
+[profiles.user]
+user_id = "@argos_nothing:argos-nothing.me"
+
+[settings]
+image_preview = {}
+# open_command = ["viu"]
+
+[dirs]
+downloads="~/Downloads"

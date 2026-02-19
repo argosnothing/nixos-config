@@ -64,6 +64,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="qimgv";
+  open-floating true
+}
+
+window-rule {
   match app-id="kitty_floating"
   opacity 0.8
   open-floating true

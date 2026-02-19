@@ -2,6 +2,8 @@
   flake.modules.nixos.laptop = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wdisplays
+      viu
+      qimgv
     ];
     hardware = {
       graphics.enable = true;
@@ -16,7 +18,6 @@
       vscode
       zed
       work
-      krita
       zen-browser
 
       battery
