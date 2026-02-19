@@ -31,6 +31,7 @@
       cinny
       vscode
       obs
+      remmina
 
       # Meta
       impermanence
