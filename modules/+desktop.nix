@@ -9,6 +9,8 @@
       waybar
       nixd
       rofi
+      viu
+      qimgv
     ];
 
     imports = with config.flake.modules.nixos; [
@@ -25,6 +27,8 @@
       flatpak
       bolt-launcher
       element-desktop
+      iamb
+      cinny
       vscode
       obs
 
