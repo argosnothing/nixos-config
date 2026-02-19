@@ -14,6 +14,7 @@
   don't pollute user space.
 - Hjem
 - Sops dependent install process, bring your own keys, secrets.
+- Single user only
 - Coupled user/system modules, inspired by
   [saygo's](https://github.com/saygo-png/nixos) configuration.
 - Some code here, such as the impermanence module is +stolen+ borrowed
