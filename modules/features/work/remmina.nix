@@ -3,8 +3,8 @@
 in {
   flake.modules.nixos.remmina = {pkgs, ...}: {
     environment.systemPackages = [
-      # pkgs.remmina
-      # pkgs.pcsclite
+      pkgs.remmina
+      pkgs.pcsclite
       flake.packages.${pkgs.system}.rdp
     ];
   };

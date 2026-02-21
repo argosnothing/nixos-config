@@ -32,6 +32,7 @@
       obs
       remmina
       winboat
+      looking-glass
 
       # Meta
       impermanence
