@@ -1,10 +1,11 @@
 {config, ...}: let
   inherit (config) flake;
-  in{
+in {
   flake.modules.nixos.remmina = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      remmina
-      pcsclite
-    ] ++ flake.packages.${pkgs.system}.rdp;
+    environment.systemPackages = [
+      # pkgs.remmina
+      # pkgs.pcsclite
+      flake.packages.${pkgs.system}.rdp
+    ];
   };
 }
