@@ -9,6 +9,7 @@
       nil
       lldb
       helix
+      bash-language-server
     ];
     hj.files = let
       dotsDir = config.impure-dir;

@@ -32,6 +32,9 @@
       obs
       remmina
       winboat
+      looking-glass
+      virtualization
+      fluxer
 
       # Meta
       impermanence
