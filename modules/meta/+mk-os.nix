@@ -14,7 +14,7 @@
   wsl = mkWsl "x86_64-linux";
 
   mkWsl = system: name:
-    inputs.nixpkgs-wsl.lib.nixosSystem {
+    inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         config.flake.modules.nixos.cursor
