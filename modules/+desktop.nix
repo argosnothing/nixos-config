@@ -34,6 +34,7 @@
       winboat
       looking-glass
       virtualization
+      fluxer
 
       # Meta
       impermanence

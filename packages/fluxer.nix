@@ -1,20 +1,19 @@
 {
   perSystem = {
-    packages.ns = {
-      lib,
-      appimageTools,
-      fetchurl,
-    }: let
+    pkgs,
+    lib,
+    ...
+  }: {
+    packages.fluxer = let
       pname = "fluxer";
       version = "stable";
-
-      src = fetchurl {
+      src = pkgs.fetchurl {
         name = "Fluxer.AppImage";
         url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/appimage";
         hash = "sha256-GdoBK+Z/d2quEIY8INM4IQy5tzzIBBM+3CgJXQn0qAw=";
       };
     in
-      appimageTools.wrapType2 {
+      pkgs.appimageTools.wrapType2 {
         inherit pname version src;
 
         extraInstallCommands = ''
