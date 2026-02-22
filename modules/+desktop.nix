@@ -33,6 +33,7 @@
       remmina
       winboat
       looking-glass
+      virtualization
 
       # Meta
       impermanence
