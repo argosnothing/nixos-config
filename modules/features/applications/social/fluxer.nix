@@ -5,5 +5,6 @@ in {
     environment.systemPackages = [
       flake.packages.${pkgs.system}.fluxer
     ];
+    my.persist.home.directories = [".config/fluxer"];
   };
 }
