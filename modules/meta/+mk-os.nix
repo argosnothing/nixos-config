@@ -52,6 +52,7 @@
             config = {
               allowUnfree = true;
               showAliases = true;
+              allowBroken = true;
               permittedInsecurePackages = [
                 "libsoup-2.74.3"
               ];

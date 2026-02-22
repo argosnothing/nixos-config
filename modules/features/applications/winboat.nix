@@ -1,8 +1,10 @@
-{config, ...}: let
-  inherit (config.flake) settings;
-in {
-  flake.modules.nixos.winboat = {pkgs, ...}: {
-    users.users.${settings.username} = {
+{
+  flake.modules.nixos.winboat = {
+    pkgs,
+    config,
+    ...
+  }: {
+    users.users.${config.my.username} = {
       extraGroups = ["docker"];
     };
     virtualisation = {

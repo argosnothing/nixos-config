@@ -9,6 +9,8 @@
       waybar
       nixd
       rofi
+      viu
+      qimgv
     ];
 
     imports = with config.flake.modules.nixos; [
@@ -25,8 +27,14 @@
       flatpak
       bolt-launcher
       element-desktop
+      iamb
       vscode
       obs
+      remmina
+      winboat
+      looking-glass
+      virtualization
+      fluxer
 
       # Meta
       impermanence
