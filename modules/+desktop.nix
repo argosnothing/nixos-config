@@ -19,22 +19,22 @@
 
       # Apps
       gui-apps
-      firefox
+      # firefox
       zen-browser
-      memacs
+      # memacs
       work
-      uhk
+      # uhk
       flatpak
-      bolt-launcher
-      element-desktop
-      iamb
-      vscode
-      obs
+      # bolt-launcher
+      # element-desktop
+      # iamb
+      # vscode
+      # obs
       remmina
-      winboat
-      looking-glass
-      virtualization
-      fluxer
+      # winboat
+      # looking-glass
+      # virtualization
+      # fluxer
 
       # Meta
       impermanence
