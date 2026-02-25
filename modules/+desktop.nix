@@ -19,18 +19,18 @@
 
       # Apps
       gui-apps
-      # firefox
+      firefox
       zen-browser
       # memacs
       work
       # uhk
-      flatpak
+      # flatpak
       # bolt-launcher
       # element-desktop
       # iamb
       # vscode
       # obs
-      remmina
+      # remmina
       # winboat
       # looking-glass
       # virtualization

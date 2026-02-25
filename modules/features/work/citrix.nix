@@ -18,7 +18,7 @@ in {
       pkgs.p11-kit
       # Once again... I have failed.
       #(inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.citrix-workspace.override {inherit extraCerts;})
-      # (pkgs.citrix_workspace.override {inherit extraCerts;})
+      (pkgs.citrix_workspace.override {inherit extraCerts;})
     ];
     my.persist.home = {
       directories = [

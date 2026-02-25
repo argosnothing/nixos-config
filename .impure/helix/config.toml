@@ -38,6 +38,14 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+
+C-l = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output lazygit',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
 [keys.normal.space]
 i = ":toggle lsp.display-inlay-hints"
 space = ":fmt"
