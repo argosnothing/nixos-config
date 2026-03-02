@@ -24,7 +24,7 @@
 
 - [Flake entrypoint](flake.nix)
 - [nixosConfigurations.nix](modules/nixosConfigurations.nix)
-  - [+mk-os.nix](modules/utility/+mk-os.nix) (Implementation for
+  - [+mk-os.nix](modules/meta/+mk-os.nix) (Implementation for
     linux host create func)
 
 #### Meta
