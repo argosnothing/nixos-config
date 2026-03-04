@@ -75,10 +75,6 @@ window-rule {
   baba-is-float true
 }
 
-workspace "stash2" {
-    open-on-output "DP-1"
-}
-
 window-rule {
   match title="RuneLite"
   open-floating true

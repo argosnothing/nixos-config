@@ -21,6 +21,7 @@
       gui-apps
       firefox
       zen-browser
+      matrix-home-server
       # memacs
       work
       # uhk
@@ -28,7 +29,7 @@
       # bolt-launcher
       # element-desktop
       # iamb
-      # vscode
+      vscode
       # obs
       # remmina
       # winboat
