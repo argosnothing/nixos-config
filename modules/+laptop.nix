@@ -16,13 +16,13 @@
       gui-apps
 
       vscode
-      zed
       work
       zen-browser
 
       battery
       touchpad
       iamb
+      uhk
 
       # don't touch this
       uefi
