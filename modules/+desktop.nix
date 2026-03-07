@@ -30,6 +30,7 @@
       # element-desktop
       # iamb
       vscode
+      uhk
       # obs
       # remmina
       # winboat
