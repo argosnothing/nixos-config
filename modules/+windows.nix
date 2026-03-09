@@ -16,6 +16,7 @@
       nix-settings
       options
       misc
+      packages
     ];
     my = {
       username = "nixos";

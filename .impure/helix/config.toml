@@ -2,6 +2,7 @@ theme = "dark_plus"
 
 [editor]
 bufferline = "always"
+true-color = true
 line-number = "relative"
 mouse = false
 editor-config = false
