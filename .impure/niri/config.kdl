@@ -135,8 +135,8 @@ recent-windows {
   binds {
     Mod+Tab         { next-window; }
     Mod+Shift+Tab   { previous-window; }
-    Alt+Tab         { next-window; }
-    Alt+Shift+Tab   { previous-window; }
+    // Alt+Tab         { next-window; }
+    // Alt+Shift+Tab   { previous-window; }
     Mod+grave       { next-window     filter="app-id"; }
     Mod+Shift+grave { previous-window filter="app-id"; }
   }

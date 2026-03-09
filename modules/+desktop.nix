@@ -22,6 +22,7 @@
       firefox
       zen-browser
       matrix-home-server
+      claude-code
       # memacs
       work
       # uhk
@@ -34,7 +35,7 @@
       # obs
       # remmina
       # winboat
-      # looking-glass
+      looking-glass
       # virtualization
       # fluxer
 
@@ -47,6 +48,10 @@
       cursor.speed = -0.35;
       fonts.size = 11;
       is-vm = false;
+      gpu-passthrough = {
+        ids = ["10de:1f08" "10de:10f9" "10de:1ada" "10de:1adb"];
+        kvmfr-size = 128;
+      };
       monitors = [
         {
           name = "DP-1";
