@@ -44,6 +44,20 @@
       uefi
       zfs
     ];
+    services.pipewire.wireplumber.configPackages = [
+      (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/50-default-sink.conf" ''
+        wireplumber.settings = {
+          default.configured-audio-sink = "alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K7-00.analog-stereo"
+        }
+      '')
+    ];
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="sound", ATTR{id}=="K7", RUN+="${pkgs.writeShellScript "fiio-wireplumber-restart" ''
+        ${pkgs.systemd}/bin/systemd-run --no-block --uid=1000 \
+          --setenv=XDG_RUNTIME_DIR=/run/user/1000 \
+          ${pkgs.systemd}/bin/systemctl --user restart wireplumber
+      ''}"
+    '';
     my = {
       cursor.speed = -0.35;
       fonts.size = 11;

@@ -75,8 +75,11 @@
     ### Desktop Shells
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
-      # url = "github:XansiVA/noctalia-shell/main";
-      # url = "github:argosnothing/noctalia-shell/testing";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### Display Managers
@@ -105,9 +108,6 @@
       url = "github:nix-community/impermanence";
     };
     ### Meta
-    import-tree = {
-      url = "github:vic/import-tree";
-    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

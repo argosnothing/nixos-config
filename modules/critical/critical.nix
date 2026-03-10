@@ -154,6 +154,7 @@
         alsa.support32Bit = true;
         pulse.enable = true;
       };
+      my.persist.home.directories = [".local/state/wireplumber"];
     };
   };
 }
