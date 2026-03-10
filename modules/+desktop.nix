@@ -23,23 +23,12 @@
       zen-browser
       matrix-home-server
       claude-code
-      # memacs
-      work
-      # uhk
-      # flatpak
-      # bolt-launcher
-      # element-desktop
-      # iamb
       vscode
       uhk
-      # obs
-      # remmina
-      # winboat
       looking-glass
-      # virtualization
-      # fluxer
+      toys
 
-      # Meta
+      # Meta - no touchy
       impermanence
       uefi
       zfs
