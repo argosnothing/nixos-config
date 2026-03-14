@@ -25,7 +25,6 @@ in {
     labwc-bundle.imports = with flake.modules.nixos; [
       labwc
       dms
-      sddm-silent
     ];
     oxwm-bundle.imports = with flake.modules.nixos; [
       oxwm

@@ -38,12 +38,15 @@
       fonts.size = 11;
       is-vm = false;
       gpu-passthrough = {
+        # RTX 2060 (0a:00.0)
         ids = ["10de:1f08" "10de:10f9" "10de:1ada" "10de:1adb"];
+        # RTX 4070 (09:00.0)
+        # ids = ["10de:2786" "10de:22bc"];
         kvmfr-size = 128;
       };
       monitors = [
         {
-          name = "DP-1";
+          name = "ASUSTek COMPUTER INC VG27AQ3A T9LMAV021310";
           is-primary = true;
           dimensions = {
             width = 2560;

@@ -58,12 +58,16 @@
         (lib.optionalString (desktop-shells.name != "dank-shell") ''
           spawn-at-startup "${desktop-shells.execCommand}"
         '')
-        (lib.optionalString config.my.wm.niri.use-scratchpads ''
-          workspace "stash" {
-              open-on-output "DP-1"
-              hidden true
-          }
-        '')
+        (lib.optionalString config.my.wm.niri.use-scratchpads (
+          let
+            primary = lib.findFirst (m: m.is-primary) (builtins.head monitors) monitors;
+          in ''
+            workspace "stash" {
+                open-on-output "${primary.name}"
+                hidden true
+            }
+          ''
+        ))
         ''
           binds {
             Mod+Shift+G { spawn "kitty" "-T" "pamix" "${lib.getExe pkgs.pamix}"; }
