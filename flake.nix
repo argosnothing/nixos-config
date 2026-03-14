@@ -83,10 +83,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### Display Managers
-    silent-sddm = {
-      url = "github:/uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ### System Level
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";

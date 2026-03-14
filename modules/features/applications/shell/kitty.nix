@@ -14,6 +14,7 @@
         include ~/.config/kitty/themes/noctalia.conf
         shell_integration no-rc
         enable_audio_bell no
+        hide_window_decorations yes
         font_size ${toString size}
         shell ${lib.getExe pkgs.fish}
         window_margin_width 5
