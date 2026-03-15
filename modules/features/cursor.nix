@@ -45,6 +45,9 @@
       };
 
       hj.files.".icons/default".source = "${config.my.cursor.package}/share/icons/${config.my.cursor.name}";
+      hj.files.".icons/${config.my.cursor.name}".source = "${config.my.cursor.package}/share/icons/${config.my.cursor.name}";
+      hj.files.".local/share/icons/default".source = "${config.my.cursor.package}/share/icons/${config.my.cursor.name}";
+      hj.files.".local/share/icons/${config.my.cursor.name}".source = "${config.my.cursor.package}/share/icons/${config.my.cursor.name}";
       hj.files.".Xresources".text = ''
         Xcursor.theme: ${config.my.cursor.name}
         Xcursor.size: ${toString config.my.cursor.size}
