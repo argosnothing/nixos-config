@@ -36,6 +36,9 @@
         description = "The cursor size.";
       };
     };
+    ### The great cursoring.
+    # Throw symlinks every place an application will look for for cursors. Because
+    # this is linux and we can't just agree on a single place :)
     config = mkIf config.my.cursor.enable {
       environment.systemPackages = [config.my.cursor.package];
       environment.variables = {
