@@ -5,6 +5,7 @@
   flake.modules.nixos.auth = {
     config,
     pkgs,
+    options,
     ...
   }: {
     config = lib.mkMerge [
@@ -68,11 +69,11 @@
           };
         };
       }
-      {
+      (lib.mkIf options.my.session.isDefined {
         services.displayManager = {
           defaultSession = config.my.session.name;
         };
-      }
+      })
     ];
   };
 }

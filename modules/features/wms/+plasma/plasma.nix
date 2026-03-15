@@ -56,13 +56,19 @@
         ".config/kgammarc"
         ".config/kmixrc"
         ".config/kdebugrc"
+        ".config/kwinoutputconfig.json"
+        ".config/powermanagementprofilesrc"
+        ".config/kded5rc"
         ".local/share/recently-used.xbel"
         ".local/share/user-places.xbel"
-        ".gtkrc-2.0"
+        ".local/state/kickerstaterc"
+        ".local/state/konsolestaterc"
+        ".local/state/kactivitymanagerdstaterc"
       ];
 
       home.directories = [
         ".config/kdeconnect"
+        ".config/kdedefaults"
         ".config/gtk-3.0"
         ".config/gtk-4.0"
         ".config/xsettingsd"
@@ -72,6 +78,7 @@
         ".local/share/kscreen"
         ".local/share/kwalletd"
         ".local/share/kactivitymanagerd"
+        ".local/share/baloo"
         ".local/share/dolphin"
         ".local/share/konsole"
         ".local/share/kxmlgui5"
@@ -89,18 +96,18 @@
         ".cache/kwin"
         ".cache/plasma"
         ".cache/plasma-svgelements"
+        ".cache/plasmashell"
+        ".cache/ksplash"
         ".cache/kio"
         ".cache/ksvg"
         ".cache/thumbnails"
         ".cache/baloo"
-        ".cache/fontconfig"
+        ".cache/qtshadercache-x86_64-little_endian-lp64"
+        # ".cache/fontconfig"
         ".cache/mesa_shader_cache"
       ];
 
-      home.cache.files = [
-        ".cache/icon-cache.kcache"
-        ".cache/ksycoca6"
-      ];
+      home.cache.files = [];
 
       root.directories = [
         "/var/lib/sddm"

@@ -16,6 +16,7 @@
     imports = with config.flake.modules.nixos; [
       # WM
       niri-bundle
+      # plasma
 
       # Apps
       gui-apps
