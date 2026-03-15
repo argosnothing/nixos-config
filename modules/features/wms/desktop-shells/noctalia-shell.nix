@@ -1,8 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.noctalia-shell-systemd = {
-    pkgs,
-    ...
-  }: {
+  flake.modules.nixos.noctalia-shell = {pkgs, ...}: {
     my = {
       desktop-shells = {
         execCommand = "noctalia-shell";
@@ -18,7 +15,7 @@
     };
     environment.systemPackages =
       [
-        inputs.noctalia.packages.${pkgs.system}.default
+        inputs.noctalia-shell.packages.${pkgs.system}.default
       ]
       ++ (with pkgs; [
         kdePackages.qt5compat
