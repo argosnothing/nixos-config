@@ -27,7 +27,6 @@
       vscode
       uhk
       looking-glass
-      toys
 
       # Meta - no touchy
       impermanence
