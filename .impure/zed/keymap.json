@@ -22,10 +22,16 @@
       "space f": "workspace::Open",
 
       "space tab": "tab_switcher::Toggle",
-      "space g": [
+      "ctrl-l": [
         "task::Spawn",
         {
           "task_name": "lazygit",
+        },
+      ],
+      "ctrl-y": [
+        "task::Spawn",
+        {
+          "task_name": "yazi",
         },
       ],
       "space t": "workspace::NewTerminal",
@@ -41,6 +47,7 @@
       "space d p": "debugger::Pause",
       "space d k": "debugger::ToggleExpandItem",
       "space m": null,
+      "escape": "buffer_search::Dismiss",
     },
   },
   {
@@ -54,6 +61,12 @@
     "context": "(CollabPanel && editing) > Editor",
     "bindings": {
       "space": null,
+    },
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "escape": "buffer_search::Dismiss",
     },
   },
 ]

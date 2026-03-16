@@ -27,6 +27,7 @@
       vscode
       uhk
       looking-glass
+      zed
 
       # Meta - no touchy
       impermanence

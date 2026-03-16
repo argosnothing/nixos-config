@@ -7,4 +7,12 @@
     "reveal": "always",
     "reveal_target": "center",
   },
+  {
+    "label": "yazi",
+    "command": "sh -c 'rm -f /tmp/zed-yazi-chooser; yazi \"$ZED_FILE\" --chooser-file=/tmp/zed-yazi-chooser; [ -s /tmp/zed-yazi-chooser ] && zeditor \"$(cat /tmp/zed-yazi-chooser)\"; exit'",
+    "use_new_terminal": true,
+    "hide": "always",
+    "reveal": "always",
+    "reveal_target": "center",
+  },
 ]

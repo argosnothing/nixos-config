@@ -9,7 +9,7 @@
 {
   "which_key": {
     "delay_ms": 994,
-    "enabled": true
+    "enabled": true,
   },
   "helix_mode": true,
   "file_finder": {
@@ -31,11 +31,13 @@
     "selections_menu": true,
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
     },
     "model_parameters": [],
   },
@@ -43,11 +45,11 @@
   "buffer_line_height": "standard",
   "buffer_font_family": "Cascadia Code",
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 15.0,
+  "ui_font_size": 15,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "dark",
     "light": "Oxocarbon Dark (IBM Carbon)",
-    "dark": "One Dark",
+    "dark": "Noctalia Dark",
   },
 }
