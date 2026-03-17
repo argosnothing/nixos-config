@@ -25,6 +25,9 @@
     "shell": {
       "program": "fish",
     },
+    "font_features": {
+      "ligatures": true,
+    },
   },
   "toolbar": {
     "code_actions": false,

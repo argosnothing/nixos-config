@@ -34,6 +34,12 @@
           "task_name": "yazi",
         },
       ],
+      "ctrl-h": [
+        "task::Spawn",
+        {
+          "task_name": "hx",
+        },
+      ],
       "space t": "workspace::NewTerminal",
       "space d": null,
       "space d d": "debugger::Start",
