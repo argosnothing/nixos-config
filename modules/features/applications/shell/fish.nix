@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.fish = {
+  flake.modules.nixos.fish = {config, ...}: {
     programs.fish = {
       enable = true;
     };
@@ -8,6 +8,7 @@
     ];
     hj = {
       files = {
+        ".config/fish/config.fish".source = config.impure-dir + "/fish/config.fish";
         ".config/fish/conf.d/local-bin-path.fish".text = ''
           fish_add_path ~/.local/bin
         '';

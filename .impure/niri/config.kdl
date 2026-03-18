@@ -1,7 +1,7 @@
 include "noctalia.kdl"
 include "nix.kdl"
 
-prefer-no-csd
+ // prefer-no-csd
 
 input {
   mod-key "Super"
@@ -41,7 +41,12 @@ layout {
     width 2
   }
   border {
-    width 2
+    off
+    width 3
+  }
+  tab-indicator {
+    on
+    position "bottom"
   }
   background-color "transparent"
 }
@@ -50,13 +55,14 @@ animations {
 }
 
 overview {
+  zoom 0.25
   workspace-shadow {
     off
   }
 }
 
 window-rule {
-  geometry-corner-radius 0.0
+  geometry-corner-radius 13.0
   opacity 0.99
   clip-to-geometry true
   draw-border-with-background false

@@ -54,13 +54,19 @@ transport = "stdio"
 name = "binary"
 request = "launch"
 completion = [ {name = "binary", completion = "filename" }]
-args = {program = "{0}", cwd = "${1}"}
+args = {program = "{0}"}
+
+[[language.debugger.templates]]
+name = "binary_args"
+request = "launch"
+completion = [ {name = "binary", completion = "filename" }, {name = "args" }]
+args = {program = "{0}", args = ["{1}"]}
 
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
 completion = ["pid"]
-args = {pid = "${0}"}
+args = {pid = "{0}"}
 
 [[language]]
 name = "go"
@@ -70,9 +76,45 @@ indent = { tab-width = 2, unit = "  " }
 name = "c"
 indent = { tab-width = 2, unit = "  " }
 
+[language.debugger]
+command = "gdb"
+args = ["--interpreter=dap"]
+name = "gdb"
+transport = "stdio"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ {name = "binary", completion = "filename" }]
+args = {program = "{0}"}
+
+[[language.debugger.templates]]
+name = "attach"
+request = "attach"
+completion = ["pid"]
+args = {pid = "{0}"}
+
 [[language]]
 name = "cpp"
 indent = { tab-width = 2, unit = "  " }
+
+[language.debugger]
+command = "gdb"
+args = ["--interpreter=dap"]
+name = "gdb"
+transport = "stdio"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ {name = "binary", completion = "filename" }]
+args = {program = "{0}"}
+
+[[language.debugger.templates]]
+name = "attach"
+request = "attach"
+completion = ["pid"]
+args = {pid = "{0}"}
 
 [[language]]
 name = "java"

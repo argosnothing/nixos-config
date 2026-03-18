@@ -7,6 +7,55 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "inline_code_actions": true,
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "line_numbers": true,
+    "folds": false,
+    "breakpoints": false,
+    "runnables": false,
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true,
+    "show_tab_bar_buttons": false,
+  },
+  "debugger": {
+    "button": false,
+  },
+  "search": {
+    "button": false,
+  },
+  "diagnostics": {
+    "button": false,
+  },
+  "status_bar": {
+    "cursor_position_button": false,
+  },
+  "window_decorations": "server",
+  "title_bar": {
+    "show_branch_icon": false,
+    "show_branch_name": true,
+    "show_menus": false,
+    "show_onboarding_banner": false,
+    "show_project_items": true,
+    "show_sign_in": false,
+    "show_user_menu": true,
+    "show_user_picture": true,
+  },
+  "project_panel": {
+    "button": false,
+  },
   "which_key": {
     "delay_ms": 994,
     "enabled": true,
@@ -19,6 +68,7 @@
     "enabled": false,
   },
   "terminal": {
+    "button": false,
     "toolbar": {
       "breadcrumbs": true,
     },
@@ -30,8 +80,11 @@
     },
   },
   "toolbar": {
+    "agent_review": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
     "code_actions": false,
-    "selections_menu": true,
+    "selections_menu": false,
   },
   "agent": {
     "tool_permissions": {
@@ -52,7 +105,7 @@
   "buffer_font_size": 14.0,
   "theme": {
     "mode": "dark",
-    "light": "Oxocarbon Dark (IBM Carbon)",
-    "dark": "Noctalia Dark",
+    "light": "Fleet Light",
+    "dark": "VSCode Dark Modern",
   },
 }
