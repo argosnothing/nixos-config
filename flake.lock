@@ -2200,15 +2200,16 @@
         "rust-overlay": "rust-overlay_6"
       },
       "locked": {
-        "lastModified": 1773678792,
-        "narHash": "sha256-GmNoVGBYoqaRNJ3wMy1gHiW1Mjv/sFcv5qfcudCkoAI=",
-        "owner": "zed-industries",
+        "lastModified": 1773687410,
+        "narHash": "sha256-SEKtBRvruAN053w7mjpcsCqFaHbkg5eESxNX4QKAHms=",
+        "owner": "GoldStrikeArch",
         "repo": "zed",
-        "rev": "30b7178f6717301ece536b7653cc1e4ca17471de",
+        "rev": "7e88e3d9e0be33ee373ca1373448f14fb8b260bf",
         "type": "github"
       },
       "original": {
-        "owner": "zed-industries",
+        "owner": "GoldStrikeArch",
+        "ref": "feat/add-helix-amp-jump-feature",
         "repo": "zed",
         "type": "github"
       }
