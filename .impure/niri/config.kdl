@@ -1,7 +1,7 @@
 include "noctalia.kdl"
 include "nix.kdl"
 
- // prefer-no-csd
+ prefer-no-csd
 
 input {
   mod-key "Super"

@@ -23,6 +23,7 @@
       kernelParams = [
         "nvidida-drm.fbdev=1"
         "NVreg_EnableGpuFirmware=0"
+        "usbcore.autosuspend=-1"
       ];
       extraModulePackages = [];
     };

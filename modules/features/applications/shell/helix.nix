@@ -14,6 +14,7 @@
         bash-language-server
       ]
       ++ [inputs.helix.packages.${pkgs.system}.default];
+    my.persist.home.directories = [".config/helix/themes"];
 
     hj.files = let
       dotsDir = config.impure-dir;
