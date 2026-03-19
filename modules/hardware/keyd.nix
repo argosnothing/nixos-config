@@ -8,6 +8,9 @@
           main = {
             capslock = "overload(control, esc)";
           };
+          "shift" = {
+            esc = "~";
+          };
         };
       };
     };
