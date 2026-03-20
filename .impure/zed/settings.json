@@ -106,6 +106,6 @@
   "theme": {
     "mode": "dark",
     "light": "Fleet Light",
-    "dark": "VSCode Dark Modern",
+    "dark": "Gruvbox Dark Hard",
   },
 }
