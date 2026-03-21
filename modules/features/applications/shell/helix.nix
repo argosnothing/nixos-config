@@ -1,3 +1,9 @@
+# Steel forge plugins (e.g. scooter, presence):
+# `forge pkg install --git` is BROKEN — return! in maybe-git-clone escapes the
+# entire threading pipeline, returning a raw path string instead of a parsed cog hash.
+# Instead, clone/cd into the package dir and run:
+#   nix-shell -p cargo rustc gcc pkg-config --run "cd <pkg-dir> && forge install --force"
+# cargo is needed because forge compiles native dylibs.
 {inputs, ...}: {
   flake.modules.nixos.helix = {
     pkgs,
@@ -14,13 +20,14 @@
       ]
       # ++ [inputs.helix.packages.${pkgs.system}.default];
       ++ [
-        (inputs.helix-steel.packages.${pkgs.system}.default.overrideAttrs {
-          cargoBuildFeatures = ["steel"];
-        })
-        pkgs.steel
+        (inputs.helix-steel.packages.${pkgs.system}.default.overrideAttrs (oldAttrs: {
+          cargoBuildFlags = (oldAttrs.cargoBuildFlags or []) ++ ["--features" "steel,git"];
+        }))
+        (inputs.steel.packages.${pkgs.system}.default)
       ];
     my.persist.home.directories = [
       ".config/helix/themes"
+      ".local/share/steel"
     ];
 
     hj.files = let

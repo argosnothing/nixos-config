@@ -117,6 +117,8 @@
 
     my.persist.root.directories = [
       "/var/lib/postgresql"
+      "/var/lib/matrix-synapse"
+      "/var/lib/acme"
     ];
   };
 }

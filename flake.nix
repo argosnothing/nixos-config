@@ -42,8 +42,14 @@
     helix = {
       url = "github:helix-editor/helix";
     };
-    helix-steel.url = "github:mattwparas/helix/steel-event-system";
-    helix-steel.inputs.nixpkgs.follows = "nixpkgs";
+    steel = {
+      url = "github:mattwparas/steel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    helix-steel = {
+      url = "github:mattwparas/helix/steel-event-system";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
