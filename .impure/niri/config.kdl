@@ -5,6 +5,7 @@ include "nix.kdl"
 
 input {
   mod-key "Super"
+  warp-mouse-to-focus
 
   keyboard {
   }

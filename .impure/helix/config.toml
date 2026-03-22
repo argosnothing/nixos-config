@@ -1,4 +1,4 @@
-theme = "gruvbox_material_dark_hard"
+theme = "rose_pine_moon"
 
 [editor]
 bufferline = "always"

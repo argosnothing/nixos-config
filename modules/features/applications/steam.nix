@@ -2,6 +2,14 @@
   flake.modules.nixos.steam = {pkgs, ...}: {
     programs.steam = {
       enable = true;
+      package = pkgs.steam.override {
+        extraLibraries = p:
+          with p; [
+            libpulseaudio
+            pipewire
+          ];
+        # extraProfile = "systemctl --user restart pipewire pipewire-pulse wireplumber";
+      };
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;

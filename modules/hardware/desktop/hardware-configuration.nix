@@ -39,29 +39,5 @@
     hardware.enableRedistributableFirmware = true;
     hardware.firmware = [pkgs.broadcom-bt-firmware];
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-    # Moving this audio stuff here because its an eyesore and i don't like looking at it. also it's technically a hardware configuration
-    # bite me.
-    services.pipewire.wireplumber.configPackages = [
-      (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/50-default-sink.conf" ''
-        wireplumber.settings = {
-          default.configured-audio-sink = "alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K7-00.analog-stereo"
-        }
-      '')
-      (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-fiio-k7-profile.conf" ''
-        monitor.alsa.rules = [
-          {
-            matches = [
-              { device.name = "alsa_card.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K7-00" }
-            ]
-            actions = {
-              update-props = {
-                device.profile = "output:analog-stereo"
-              }
-            }
-          }
-        ]
-      '')
-    ];
   };
 }
