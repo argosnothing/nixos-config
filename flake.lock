@@ -1678,11 +1678,11 @@
         "nixpkgs": "nixpkgs_15"
       },
       "locked": {
-        "lastModified": 1774200838,
-        "narHash": "sha256-WKE7udO5aBa1N+hYUDUTTFcaK+LvgIrLGzEbBvqMDD4=",
+        "lastModified": 1774213737,
+        "narHash": "sha256-jL48CwyJ+2U8MgQsbtbqx+JL1uGnXTi5u7YsKe+KALs=",
         "owner": "argosnothing",
         "repo": "nvim.nix",
-        "rev": "0ace108d66393ab2bc497331c47525bda9216822",
+        "rev": "bab80ae7cb072f87a943ce6d0ea74cc0154b17fd",
         "type": "github"
       },
       "original": {

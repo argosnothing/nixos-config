@@ -4,6 +4,9 @@
       ".local/state/mnw"
       ".local/share/mnw"
     ];
+    environment.systemPackages = with pkgs; [
+      fd
+    ];
 
     hj.packages = [inputs.nvim-nix.packages.${pkgs.system}.default];
   };
