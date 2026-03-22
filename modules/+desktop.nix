@@ -28,6 +28,7 @@
       uhk
       looking-glass
       zed
+      nvim
 
       # Meta - no touchy
       impermanence

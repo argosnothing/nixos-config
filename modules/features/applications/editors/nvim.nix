@@ -1,9 +1,5 @@
-{...}: {
-  flake.modules.nixos.nvim = {
-    pkgs,
-    inputs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.nvim = {pkgs, ...}: {
     my.persist.home.directories = [
       ".local/state/mnw"
       ".local/share/mnw"
