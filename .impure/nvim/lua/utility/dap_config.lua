@@ -37,7 +37,10 @@ dap.configurations.rust = {
         end,
         cwd = "${workspaceFolder}",
         stopOnEntry = false,
-        args = {},
+        args = function()
+            local input = vim.fn.input("Args: ")
+            return vim.split(input, " ", { trimempty = true })
+        end,
     },
 }
 
