@@ -10,6 +10,9 @@ in {
       ".cache/mnw"
     ];
 
+    environment.systemPackages = with pkgs; [
+      fd
+    ];
     hj.packages = [flake.packages.${system}.nvim.devMode];
   };
 }
