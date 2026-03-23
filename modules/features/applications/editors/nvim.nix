@@ -3,6 +3,7 @@
     my.persist.home.directories = [
       ".local/state/mnw"
       ".local/share/mnw"
+      ".cache/mnw"
     ];
     environment.systemPackages = with pkgs; [
       fd

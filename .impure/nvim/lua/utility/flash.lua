@@ -1,0 +1,7 @@
+vim.keymap.set("n", "gw", function()
+    vim.cmd("packadd hop.nvim")
+    local hop = require("hop")
+    hop.setup({ keys = "abcdefghijklmnopqrstuvwxyz" })
+    vim.keymap.set({ "n", "x", "o" }, "gw", "<cmd>HopWord<cr>", { desc = "Jump to word" })
+    vim.cmd("HopWord")
+end, { desc = "Jump to word" })
