@@ -11,6 +11,6 @@ vim.keymap.set("n", "<leader>aa", function()
             },
         },
     })
-    vim.keymap.set("n", "<leader>aa", "<cmd>ClaudeCodeToggle<cr>", { desc = "Toggle Claude Code" })
-    vim.cmd("ClaudeCodeToggle")
+    vim.keymap.set("n", "<leader>aa", "<cmd>ClaudeCode<cr>", { desc = "Toggle Claude Code" })
+    vim.cmd("ClaudeCode")
 end, { desc = "Toggle Claude Code" })

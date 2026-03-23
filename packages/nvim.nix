@@ -41,7 +41,6 @@
       todo-comments-nvim
       blink-cmp
       claude-code-nvim
-      plenary-nvim
       nvim-dap-ui
       nvim-dap-python
       kanso-nvim
