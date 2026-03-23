@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>aa", function()
+local function load_claude()
     vim.cmd("packadd plenary.nvim")
     vim.cmd("packadd claude-code.nvim")
     require("claude-code").setup({
@@ -11,6 +11,8 @@ vim.keymap.set("n", "<leader>aa", function()
             },
         },
     })
-    vim.keymap.set("n", "<leader>aa", "<cmd>ClaudeCode<cr>", { desc = "Toggle Claude Code" })
     vim.cmd("ClaudeCode")
-end, { desc = "Toggle Claude Code" })
+end
+
+vim.keymap.set("n", "<leader>aa", load_claude, { desc = "Toggle Claude Code" })
+vim.keymap.set("n", "<C-,>", load_claude, { desc = "Toggle Claude Code" })
