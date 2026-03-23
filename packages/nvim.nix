@@ -40,7 +40,8 @@
       gitsigns-nvim
       todo-comments-nvim
       blink-cmp
-      avante-nvim
+      claude-code-nvim
+      plenary-nvim
       nvim-dap-ui
       nvim-dap-python
       kanso-nvim
@@ -49,6 +50,21 @@
       gruvbox-nvim
       tokyonight-nvim
       catppuccin-nvim
+      dracula-nvim
+      everforest
+      nightfox-nvim
+      nord-nvim
+      onedark-nvim
+      material-nvim
+      sonokai
+      cyberdream-nvim
+      melange-nvim
+      nightfly
+      monokai-pro-nvim
+      modus-themes-nvim
+      github-nvim-theme
+      fleet-theme-nvim
+      oxocarbon-nvim
     ];
 
     extraBinPath = with pkgs; [

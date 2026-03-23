@@ -8,6 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
     "claude-acp": {
       "type": "registry"
     }
@@ -106,6 +109,6 @@
   "theme": {
     "mode": "dark",
     "light": "Fleet Light",
-    "dark": "Rosé Pine Moon",
+    "dark": "Carbonfox - blurred",
   },
 }
