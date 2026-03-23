@@ -1,14 +1,15 @@
-{inputs, ...}: {
-  flake.modules.nixos.nvim = {pkgs, ...}: {
+{config, ...}: let
+  inherit (config) flake;
+in {
+  flake.modules.nixos.nvim = {pkgs, ...}: let
+    inherit (pkgs.stdenv.hostPlatform) system;
+  in {
     my.persist.home.directories = [
       ".local/state/mnw"
       ".local/share/mnw"
       ".cache/mnw"
     ];
-    environment.systemPackages = with pkgs; [
-      fd
-    ];
 
-    hj.packages = [inputs.nvim-nix.packages.${pkgs.system}.default];
+    hj.packages = [flake.packages.${system}.nvim.devMode];
   };
 }

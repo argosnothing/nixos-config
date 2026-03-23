@@ -1443,19 +1443,6 @@
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1773734432,
-        "narHash": "sha256-RUGFJsZyqsAuWCL9eESO8PCv4qiBx6/h+GDyHbFAmLs=",
-        "rev": "cda48547b432e8d3b18b4180ba07473762ec8558",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre964459.cda48547b432/nixexprs.tar.xz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
-      }
-    },
-    "nixpkgs_16": {
-      "locked": {
         "lastModified": 1773821835,
         "narHash": "sha256-p0tPeJJbg+PKaH741F1CWa9Bf9vf6g02HK9V/g4TkHo=",
         "rev": "b40629efe5d6ec48dd1efba650c797ddbd39ace0",
@@ -1467,7 +1454,7 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
-    "nixpkgs_17": {
+    "nixpkgs_16": {
       "locked": {
         "lastModified": 1769789167,
         "narHash": "sha256-kKB3bqYJU5nzYeIROI82Ef9VtTbu4uA3YydSk/Bioa8=",
@@ -1672,25 +1659,6 @@
         "type": "github"
       }
     },
-    "nvim-nix": {
-      "inputs": {
-        "mnw": "mnw",
-        "nixpkgs": "nixpkgs_15"
-      },
-      "locked": {
-        "lastModified": 1774278776,
-        "narHash": "sha256-0G47QICNXhCbiet0rsjQE8DxnSXliNxgFR0hc6iBW6A=",
-        "owner": "argosnothing",
-        "repo": "nvim.nix",
-        "rev": "ef4b0e1c4aa1cc15da259af532ed4be50a64e2b5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "argosnothing",
-        "repo": "nvim.nix",
-        "type": "github"
-      }
-    },
     "oxwm": {
       "inputs": {
         "nixpkgs": [
@@ -1769,6 +1737,7 @@
         "hyprland-test": "hyprland-test",
         "impermanence": "impermanence",
         "matui": "matui",
+        "mnw": "mnw",
         "my-niri": "my-niri",
         "niri": "niri",
         "niri-scratchpad": "niri-scratchpad",
@@ -1779,7 +1748,6 @@
         "noctalia-qs": "noctalia-qs",
         "noctalia-shell": "noctalia-shell",
         "noogle-search": "noogle-search",
-        "nvim-nix": "nvim-nix",
         "oxwm": "oxwm",
         "scroll": "scroll",
         "sops-nix": "sops-nix",
@@ -2036,7 +2004,7 @@
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_16",
+        "nixpkgs": "nixpkgs_15",
         "systems": "systems_8"
       },
       "locked": {
@@ -2385,7 +2353,7 @@
       "inputs": {
         "crane": "crane",
         "flake-parts": "flake-parts_3",
-        "nixpkgs": "nixpkgs_17",
+        "nixpkgs": "nixpkgs_16",
         "rust-overlay": "rust-overlay_7"
       },
       "locked": {

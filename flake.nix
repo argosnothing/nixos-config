@@ -39,8 +39,8 @@
       url = "github:GoldStrikeArch/zed/feat/add-helix-amp-jump-feature";
       # url = "github:zed-industries/zed";
     };
-    nvim-nix = {
-      url = "github:argosnothing/nvim.nix";
+    mnw = {
+      url = "github:gerg-l/mnw";
     };
     helix = {
       url = "github:helix-editor/helix";
