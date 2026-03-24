@@ -18,10 +18,10 @@
       Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float" "--follow"; }
       Mod+G            { spawn "niri-scratchpad" "target" "--follow" "--spawn" "spotify" "--as-float" "appid" "spotify" ; }
       Mod+P            { spawn "niri-scratchpad" "create" "4" "--as-float"; }
-      Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1" "--follow"; }
-      Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2" "--follow"; }
-      Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "3" "--follow"; }
-      Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "4" "--follow"; }
+      Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1"; }
+      Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2"; }
+      Mod+Ctrl+G       { spawn "niri-scratchpad" "delete" "3"; }
+      Mod+Ctrl+P       { spawn "niri-scratchpad" "delete" "4"; }
     '';
 
     monitorConfigs =
