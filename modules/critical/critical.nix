@@ -34,6 +34,7 @@
     misc = {pkgs, ...}: {
       my.persist.root.directories = [
         "/etc/NetworkManager/system-connections"
+        "/var/lib/bluetooth"
       ];
 
       environment = {
