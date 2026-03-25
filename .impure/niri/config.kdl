@@ -74,6 +74,7 @@ blur {
 window-rule {
   background-effect {
     blur true
+    xray false
   }
   geometry-corner-radius 13.0
   opacity 0.91
@@ -84,6 +85,7 @@ window-rule {
 window-rule {
   match app-id="kitty"
   exclude title="^pamix$"
+
   //opacity 1.0
 }
 
@@ -140,6 +142,10 @@ window-rule {
   default-column-width {}
 }
 
+window-rule {
+  match is-floating=true
+}
+
 layer-rule {
   match namespace="^noctalia-wallpaper*"
   place-within-backdrop true
@@ -153,6 +159,13 @@ layer-rule {
 layer-rule {
   match namespace="^noctalia-overview$"
   opacity 0.0
+}
+
+layer-rule {
+  match namespace="^noctalia-background-.*$"
+  background-effect {
+    xray false
+  }
 }
 
 recent-windows {
