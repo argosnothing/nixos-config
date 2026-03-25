@@ -158,6 +158,7 @@ layer-rule {
 
 layer-rule {
   match namespace="^noctalia-overview$"
+  place-within-backdrop true
   opacity 0.0
 }
 
@@ -166,6 +167,11 @@ layer-rule {
   background-effect {
     xray false
   }
+}
+
+layer-rule {
+  match namespace="^noctalia-desktop-widgets*"
+  place-within-backdrop true
 }
 
 recent-windows {
