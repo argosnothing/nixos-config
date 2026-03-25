@@ -8,7 +8,9 @@
             libpulseaudio
             pipewire
           ];
-        # extraProfile = "systemctl --user restart pipewire pipewire-pulse wireplumber";
+        # https://github.com/valvesoftware/steam-for-linux/issues/9289
+        # TODO: Keep an eye on this issue, restarting audio on steam start is not ideal.
+        extraProfile = "systemctl --user restart pipewire pipewire-pulse wireplumber";
       };
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;

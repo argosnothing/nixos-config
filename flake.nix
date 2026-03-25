@@ -36,8 +36,8 @@
     };
     ### Applications
     zed = {
-      url = "github:GoldStrikeArch/zed/feat/add-helix-amp-jump-feature";
-      # url = "github:zed-industries/zed";
+      # url = "github:GoldStrikeArch/zed/feat/add-helix-amp-jump-feature";
+      url = "github:zed-industries/zed";
     };
     mnw = {
       url = "github:gerg-l/mnw";

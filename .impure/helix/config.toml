@@ -1,4 +1,4 @@
-theme = "rose_pine_moon"
+theme = "carbon"
 
 [editor]
 bufferline = "always"
@@ -47,6 +47,11 @@ C-l = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+C-d = ":half-page-down-smooth"
+C-u = ":half-page-up-smooth"
+pageup = ":page-up-smooth"
+pagedown = ":page-down-smooth"
+
 [keys.normal.space]
 i = ":toggle lsp.display-inlay-hints"
 space = ":fmt"

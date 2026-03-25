@@ -27,7 +27,8 @@
       vscode
       uhk
       looking-glass
-      zed
+      bolt-launcher
+      # zed
       nvim
 
       # Meta - no touchy
