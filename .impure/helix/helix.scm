@@ -3,7 +3,7 @@
 (require (prefix-in helix. "helix/commands.scm"))
 (require (prefix-in helix.static. "helix/static.scm"))
 
-(provide shell git-add open-helix-scm open-init-scm)
+(provide shell git-add open-helix-scm open-init-scm nnd-write-bp)
 
 (define (current-path)
   (let* ([focus (editor-focus)]
@@ -33,5 +33,12 @@
 ;; Opens the init.scm file
 (define (open-init-scm)
   (helix.open (helix.static.get-init-scm-path)))
-  
-	
+
+;;@doc
+;; Write current file:line to /tmp/nnd-bp for nnd-launch to pick up
+(define (nnd-write-bp)
+  (let* ([path (current-path)]
+         [line (+ 1 (helix.static.get-current-line-number))]
+         [bp (string-append path ":" (number->string line))])
+    (helix.run-shell-command (string-append "echo " bp " > /tmp/nnd-bp"))))
+

@@ -1,4 +1,6 @@
-(require (prefix-in helix-discord-rpc. "helix-discord-rpc/helix-discord-rpc.scm"))
+(require
+  (prefix-in helix-discord-rpc. "helix-discord-rpc/helix-discord-rpc.scm"))
+(helix-discord-rpc.discord-rpc-connect)
 (require "scooter/scooter.scm")
 (require "smooth-scroll/smooth-scroll.scm")
 ; (require "fake-warp/fake-warp.scm")

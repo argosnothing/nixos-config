@@ -69,7 +69,8 @@
     ### Window Managers
     niri.url = "github:sodiboo/niri-flake";
     #my-niri.url = "github:argosnothing/niri/v25.11-hidden-workspaces";
-    my-niri.url = "github:argosnothing/niri/hidden-workspaces-blur";
+    #my-niri.url = "github:argosnothing/niri/hidden-workspaces-blur";
+    my-niri.url = "github:argosnothing/niri/hidden-workspaces-blur-backdrop-background";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
     scroll = {
       url = "github:AsahiRocks/scroll-flake";

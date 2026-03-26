@@ -1152,16 +1152,16 @@
         "rust-overlay": "rust-overlay_5"
       },
       "locked": {
-        "lastModified": 1774401406,
-        "narHash": "sha256-Oc35vi9KHxV5f3uH20LZV8O2XC/UgStz8+lSIaSdIJ8=",
+        "lastModified": 1774466008,
+        "narHash": "sha256-2ZEj3zVJvCCGcBOP5RdW6n/dFXVE1vTFDqnmMZQOc/g=",
         "owner": "argosnothing",
         "repo": "niri",
-        "rev": "68f8e0d9dda4129f75e1675f97edd54a1be17515",
+        "rev": "ad85a6dbfb4f45d3df2a711a389133ab8c5a2c50",
         "type": "github"
       },
       "original": {
         "owner": "argosnothing",
-        "ref": "hidden-workspaces-blur",
+        "ref": "hidden-workspaces-blur-backdrop-background",
         "repo": "niri",
         "type": "github"
       }

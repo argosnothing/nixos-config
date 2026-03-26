@@ -7,6 +7,7 @@
 {inputs, ...}: {
   flake.modules.nixos.helix = {
     pkgs,
+    lib,
     config,
     ...
   }: {
@@ -15,8 +16,42 @@
         nixd
         nil
         lldb
+        nnd
         gdb
         bash-language-server
+        (writeShellScriptBin "nnd-launch" ''
+          bp_args=()
+          if [ -f /tmp/nnd-bp ]; then
+            bp=$(cat /tmp/nnd-bp)
+            [ -n "$bp" ] && bp_args=(--breakpoint "$bp")
+            rm -f /tmp/nnd-bp
+          fi
+
+          dir="$PWD"
+          while [ "$dir" != "/" ]; do
+            [ -f "$dir/Cargo.toml" ] && break
+            dir="$(dirname "$dir")"
+          done
+
+          if [ ! -f "$dir/Cargo.toml" ]; then
+            echo "No Cargo.toml found"
+            read -r -p "Press enter to close"
+            exit 1
+          fi
+
+          name=$(${lib.getExe pkgs.gnused} -n '/^\[package\]/,/^\[/{s/^name *= *"\(.*\)"/\1/p}' "$dir/Cargo.toml")
+          if [ -z "$name" ]; then
+            echo "Could not determine binary name from Cargo.toml"
+            read -r -p "Press enter to close"
+            exit 1
+          fi
+
+          binary="$dir/target/debug/$name"
+          echo "Binary: $binary"
+          [ ''${#bp_args[@]} -gt 0 ] && echo "Breakpoint: ''${bp_args[*]}"
+          read -r -p "Args: " args
+          exec nnd "''${bp_args[@]}" "$binary" $args
+        '')
       ]
       # ++ [inputs.helix.packages.${pkgs.system}.default];
       ++ [

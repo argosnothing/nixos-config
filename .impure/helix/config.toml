@@ -56,3 +56,4 @@ pagedown = ":page-down-smooth"
 i = ":toggle lsp.display-inlay-hints"
 space = ":fmt"
 tab = ":buffer-next"
+n = [":nnd-write-bp", ':sh kitty @ launch --type=overlay --cwd=current --hold nnd-launch > /dev/null 2>&1']

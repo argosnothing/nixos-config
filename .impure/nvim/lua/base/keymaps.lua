@@ -11,6 +11,7 @@ local allModes = { "n", "i", "v", "c", "t", "o", "x", "s" }
 
 -- Basics
 map("n", "<leader>qq", "<cmd>quit<cr>", { desc = "Quit" })
+map("n", "<leader>?", function() Snacks.picker.keymaps() end, { desc = "Search Keymaps" })
 map("n", "<Esc>", "<cmd>nohlsearch<cr>")
 map(allModes, "<F1>", "<Nop>") -- Disable F1
 map(allModes, "<C-s>", ":write<cr>")
