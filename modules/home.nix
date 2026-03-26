@@ -27,6 +27,8 @@
       my.persist.home.directories = lib.mkAfter [
         ".local/share/direnv"
         ".local/share/keyrings"
+        ".local/state/lazygit"
+        ".config/lazygit"
         ".config/yazi"
         ".config/sops"
         ".ssh"
@@ -35,8 +37,6 @@
         "Videos"
         "Pictures"
         "Projects"
-        ".config/lazygit/config.yml"
-        ".local/state/lazygit/state.yml"
       ];
 
       hjem = {
