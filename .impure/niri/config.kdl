@@ -19,6 +19,8 @@ input {
   touchpad {
     dwt
     tap
+    accel-profile "adaptive"
+    accel-speed 0.4
     natural-scroll
     scroll-factor 0.5
   }

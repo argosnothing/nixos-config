@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.yazi = {pkgs, ...}: {
+  flake.modules.nixos.yazi = {
+    config,
+    pkgs,
+    ...
+  }: {
     environment.systemPackages = with pkgs; [yazi];
     my.default = {
       apps = {
@@ -11,6 +15,7 @@
         "x-directory/normal" = ["yazi.desktop"];
       };
     };
+    hj.files.".config/yazi/keymap.toml".source = config.impure-dir + "/yazi/keymap.toml";
     my.persist.home.directories = [
       ".config/yazi"
       ".local/state/yazi"
