@@ -10,7 +10,7 @@
       enableFishIntegration = true;
     };
     hj.files = {
-      ".config/television/cable/nix.toml" = config.impure-dir + "/television/cable/nix.toml";
+      ".config/television/cable/nix.toml".source = config.impure-dir + "/television/cable/nix.toml";
     };
   };
 }
