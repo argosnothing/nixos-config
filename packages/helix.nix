@@ -115,14 +115,16 @@
       cargoLock.lockFile = "${discordRpcSrc}/Cargo.lock";
     };
 
-    weztermSrc = pkgs.fetchgit {
-      url = "https://github.com/mattwparas/wezterm.git";
+    weztermSrc = pkgs.fetchFromGitHub {
+      owner = "mattwparas";
+      repo = "wezterm";
       rev = "1bba5e2b90acb9efe864cb3e40aa6bce28da2687";
       hash = "sha256-xOQrR6c3kDuh0L+0EF3Q778UfndPyjNNFHZ3qFtQ3cY=";
     };
 
-    finlUnicodeSrc = pkgs.fetchgit {
-      url = "https://github.com/wez/finl_unicode.git";
+    finlUnicodeSrc = pkgs.fetchFromGitHub {
+      owner = "wez";
+      repo = "finl_unicode";
       rev = "a1892f26245529f2ef3877a9ebd610c96cec07a6";
       hash = "sha256-38S6XH4hldbkb6NP+s7lXa/NR49PI0w3KYqd+jPHND0=";
     };
