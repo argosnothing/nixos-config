@@ -16,6 +16,7 @@ in {
       starship
       fetch
       build-iso
+      television
     ];
   in {
     environment.systemPackages = move-script {
