@@ -60,9 +60,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    noogle-search = {
-      url = "github:argosnothing/noogle-search";
-    };
     matui = {
       url = "github:pkulak/matui";
     };
