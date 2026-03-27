@@ -196,6 +196,8 @@
 
         cp ${../. + "/.impure/helix/init.scm"} $out/config/init.scm
         cp ${../. + "/.impure/helix/helix.scm"} $out/config/helix.scm
+        cp ${../. + "/.impure/helix/config.toml"} $out/config/config.toml
+        cp ${../. + "/.impure/helix/languages.toml"} $out/config/languages.toml
       '';
 
     nnd-launch = pkgs.writeShellScriptBin "nnd-launch" ''
@@ -245,7 +247,7 @@
       export STEEL_HOME
       HELIX_CONFIG="''${XDG_CONFIG_HOME:-$HOME/.config}/helix"
       mkdir -p "$HELIX_CONFIG"
-      for f in init.scm helix.scm; do
+      for f in init.scm helix.scm config.toml languages.toml; do
         [ ! -e "$HELIX_CONFIG/$f" ] && ln -sfn "${steelHome}/config/$f" "$HELIX_CONFIG/$f"
       done
       exec ${helix-base}/bin/hx "$@"

@@ -1,4 +1,4 @@
-theme = "carbon"
+theme = "carbonfox"
 
 [editor]
 bufferline = "always"
