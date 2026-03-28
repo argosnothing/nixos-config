@@ -47,13 +47,8 @@ C-l = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-C-d = ":half-page-down-smooth"
-C-u = ":half-page-up-smooth"
-pageup = ":page-up-smooth"
-pagedown = ":page-down-smooth"
 
-[keys.normal.space]
-i = ":toggle lsp.display-inlay-hints"
-space = ":fmt"
-tab = ":buffer-next"
-n = [":nnd-write-bp", ':sh kitty @ launch --type=overlay --cwd=current --hold nnd-launch > /dev/null 2>&1']
+# [keys.normal.space]
+# i = ":toggle lsp.display-inlay-hints"
+# space = ":fmt"
+# tab = ":buffer-next"

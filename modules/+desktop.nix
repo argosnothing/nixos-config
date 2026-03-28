@@ -28,6 +28,7 @@
       uhk
       looking-glass
       bolt-launcher
+      flatpak
       # zed
       nvim
 

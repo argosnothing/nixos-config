@@ -17,6 +17,12 @@
       (lib.mkAliasOptionModule ["impure-dir"] ["hjem" "users" username "impure" "dotsDir"])
     ];
     config = {
+      services.accounts-daemon.enable = true;
+
+      my.persist.root.directories = [
+        "/var/lib/AccountsService"
+      ];
+
       hj.xdg.config.files."mimeapps.list" = {
         generator = lib.generators.toINI {};
         value = {
@@ -53,6 +59,7 @@
           user = username;
           directory = "/home/${username}";
           files = {
+            ".face".source = "${../.media/icons/profile.png}";
             ".editorconfig".text = ''
               root = true
 
