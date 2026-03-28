@@ -11,6 +11,14 @@
     my.persist.home.directories = [
       ".config/DankMaterialShell"
       ".local/share/state/DankMaterialShell"
+      ".local/share/color-schemes"
+      ".local/state/DankMaterialShell"
+      ".config/dgop"
+    ];
+    my.persist.home.cache.directories = [
+      ".cache/DankMaterialShell"
+      ".cache/wal"
+      ".cache/quickshell"
     ];
     my.desktop-shells = {
       enable = true;
