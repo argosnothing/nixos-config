@@ -41,7 +41,7 @@
 
     environment.persistence = {
       "/persist" = {
-        hideMounts = false;
+        hideMounts = true;
         files = lib.unique cfg.root.files;
         directories = lib.unique (
           [
