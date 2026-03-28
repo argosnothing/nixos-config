@@ -21,6 +21,9 @@
 
       my.persist.root.directories = [
         "/var/lib/AccountsService"
+        "/var/lib/hjem"
+        "/var/lib/systemd"
+        "/var/lib/lastlog"
       ];
 
       hj.xdg.config.files."mimeapps.list" = {
@@ -44,6 +47,7 @@
         "Pictures"
         "Projects"
       ];
+      my.persist.home.files = [".claude.json"];
 
       hjem = {
         extraModules = [inputs.hjem-impure.hjemModules.default];

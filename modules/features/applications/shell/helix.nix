@@ -8,9 +8,16 @@
       inputs.self.packages.${pkgs.system}.helix
     ];
 
-    my.persist.home.directories = [
-      ".config/helix/themes"
-    ];
+    my.persist.home = {
+      directories = [
+        ".config/helix/themes"
+        ".local/share/helix"
+      ];
+
+      cache.directories = [
+        ".cache/helix"
+      ];
+    };
 
     hj.files = let
       dotsDir = config.impure-dir;
