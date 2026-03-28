@@ -4,7 +4,8 @@ in {
   flake.modules.nixos = {
     niri-bundle.imports = with flake.modules.nixos; [
       niri
-      noctalia-shell
+      # noctalia-shell
+      dank-material-shell
       ly
     ];
     hyprland-bundle.imports = with flake.modules.nixos; [
