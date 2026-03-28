@@ -6,6 +6,7 @@
   }: {
     environment.systemPackages = [
       inputs.self.packages.${pkgs.system}.helix
+      pkgs.nnd
     ];
 
     my.persist.home = {
