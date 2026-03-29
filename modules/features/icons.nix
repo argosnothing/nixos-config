@@ -23,6 +23,10 @@
       };
     };
     config = {
+      my.persist.home.directories = [
+        ".local/share/icons"
+        ".icons"
+      ];
       environment.variables = {
         QS_ICON_THEME = icon-name;
         XDG_ICON_THEME = icon-name;

@@ -11,12 +11,12 @@
       };
 
       # Core features
-      enableSystemMonitoring = true; # System monitoring widgets (dgop)
-      enableVPN = true; # VPN management widget
-      enableDynamicTheming = true; # Wallpaper-based theming (matugen)
-      enableAudioWavelength = true; # Audio visualizer (cava)
-      enableCalendarEvents = true; # Calendar integration (khal)
-      enableClipboardPaste = true; # Pasting from the clipboard history (wtype)      quickshell.package = inputs.quickshell.packages.${pkgs.system}.quickshell;
+      enableSystemMonitoring = true;
+      enableVPN = true;
+      enableDynamicTheming = true;
+      enableAudioWavelength = true;
+      enableCalendarEvents = true;
+      enableClipboardPaste = true;
     };
     my.persist.home.directories = [
       ".config/DankMaterialShell"
