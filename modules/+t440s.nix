@@ -1,20 +1,18 @@
-{config, ...}: let
-  flake.modules.nixos.t440s = {
+{config, ...}: {
+  flake.modules.nixos.t440s = {lib, ...}: {
     hardware = {
       graphics.enable = true;
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      niri
-      zellij
-      spicetify
+      xfce
       firefox
-      work
+      gui-apps
 
-      base
       impermanence
-      grub
+      uefi
       battery
+      zfs
       touchpad
     ];
     my = {
@@ -37,6 +35,4 @@
       ];
     };
   };
-in {
-  inherit flake;
 }
