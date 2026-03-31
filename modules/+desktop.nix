@@ -15,8 +15,9 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      niri-bundle
+      # niri-bundle
       # plasma
+      hyprland-bundle
 
       # Apps
       gui-apps
@@ -29,8 +30,6 @@
       looking-glass
       bolt-launcher
       flatpak
-      # zed
-      nvim
 
       # Meta - no touchy
       impermanence
@@ -50,7 +49,7 @@
       };
       monitors = [
         {
-          name = "ASUSTek COMPUTER INC VG27AQ3A T9LMAV021310";
+          name = "DP-1";
           is-primary = true;
           dimensions = {
             width = 2560;
@@ -61,7 +60,7 @@
             y = 0;
           };
           scale = 1.0;
-          refresh = 180.001;
+          refresh = 180.00101;
         }
       ];
     };

@@ -48,7 +48,7 @@ C-l = [
   ':redraw',
 ]
 
-# [keys.normal.space]
-# i = ":toggle lsp.display-inlay-hints"
-# space = ":fmt"
-# tab = ":buffer-next"
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
+space = ":fmt"
+tab = ":buffer-next"
