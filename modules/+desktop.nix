@@ -29,8 +29,6 @@
       looking-glass
       bolt-launcher
       flatpak
-      # zed
-      nvim
 
       # Meta - no touchy
       impermanence

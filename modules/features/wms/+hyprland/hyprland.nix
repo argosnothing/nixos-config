@@ -46,7 +46,7 @@ in {
       dots = config.impure-dir;
     in {
       my = {
-        wm.hyprland.active-config = "testing";
+        wm.hyprland.active-config = "main";
         session.name = "hyprland";
         icons = {
           package = pkgs.rose-pine-icon-theme;
