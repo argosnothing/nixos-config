@@ -5,7 +5,7 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      xfce
+      budgie
       firefox
       gui-apps
 
