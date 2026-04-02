@@ -47,7 +47,6 @@
         "Pictures"
         "Projects"
       ];
-      my.persist.home.files = [".claude.json"];
 
       hjem = {
         extraModules = [inputs.hjem-impure.hjemModules.default];
