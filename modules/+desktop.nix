@@ -15,9 +15,14 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      # niri-bundle
+      niri-bundle
       # plasma
-      hyprland-bundle
+      # hyprland-bundle
+      # budgie
+      # cosmic
+      # gnome
+      # oxwm-bundle
+      # xfce
 
       # Apps
       gui-apps
@@ -30,6 +35,8 @@
       looking-glass
       bolt-launcher
       flatpak
+      zed
+      nvim
 
       # Meta - no touchy
       impermanence
@@ -49,7 +56,7 @@
       };
       monitors = [
         {
-          name = "DP-1";
+          name = "DP-1"; # DP-0 for X. no idea why
           is-primary = true;
           dimensions = {
             width = 2560;

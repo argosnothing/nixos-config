@@ -57,8 +57,6 @@
     };
     ### Window Managers
     niri.url = "github:sodiboo/niri-flake";
-    #my-niri.url = "github:argosnothing/niri/v25.11-hidden-workspaces";
-    #my-niri.url = "github:argosnothing/niri/hidden-workspaces-blur";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces-blur-backdrop-background";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
     scroll = {
@@ -96,6 +94,9 @@
     ### System Level
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+    nixpkgs-nvidia = {
+      url = "github:NixOS/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9";
     };
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/nixos-25.05";

@@ -5,7 +5,7 @@
       {
         settings = {
           "org/gnome/desktop/interface" = {
-            enable-animations = false;
+            enable-animations = true;
           };
         };
       }

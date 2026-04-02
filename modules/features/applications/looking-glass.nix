@@ -53,6 +53,15 @@ in {
 
     my.persist.root.directories = ["/var/lib/libvirt"];
 
-    environment.systemPackages = [pkgs.looking-glass-client];
+    environment.systemPackages = [
+      (pkgs.looking-glass-client.overrideAttrs (old: {
+        postFixup =
+          (old.postFixup or "")
+          + ''
+            substituteInPlace $out/share/applications/looking-glass-client.desktop \
+              --replace-fail "Exec=" "Exec=env __NV_DISABLE_EXPLICIT_SYNC=1 "
+          '';
+      }))
+    ];
   };
 }

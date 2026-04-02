@@ -39,6 +39,7 @@
   mkNixos = system: name:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = {inherit inputs;};
       modules = [
         config.flake.modules.nixos.base
         config.flake.modules.nixos.cursor

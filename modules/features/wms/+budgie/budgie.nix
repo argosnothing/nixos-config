@@ -7,10 +7,10 @@
       ".local/share/contractor"
     ];
     environment.budgie.excludePackages = with pkgs; [
-     mate.mate-terminal
-     gnome-terminal 
-     xterm
-     pluma
+      mate.mate-terminal
+      gnome-terminal
+      xterm
+      pluma
     ];
     services = {
       xserver = {

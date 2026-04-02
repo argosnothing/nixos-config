@@ -21,6 +21,7 @@ in {
       ".config/zed/tasks.json".source = dotsDir + "/zed/tasks.json";
     };
     programs.nix-ld.enable = true;
-    hj.packages = with flake.packages.${system}; [zeditor];
+    # hj.packages = with flake.packages.${system}; [zeditor];
+    environment.systemPackages = with pkgs; [zed-editor];
   };
 }
