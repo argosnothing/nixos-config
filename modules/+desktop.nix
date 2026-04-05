@@ -15,21 +15,11 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      # niri-bundle
-      # plasma
-      # hyprland-bundle
-      # budgie
-      # cosmic
-      # gnome
-      # oxwm-bundle
-      # xfce
-      cinnamon
+      niri-bundle
 
       # Apps
       gui-apps
       firefox
-      zen-browser
-      matrix-home-server
       # claude-code
       vscode
       uhk

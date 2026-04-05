@@ -10,7 +10,7 @@ prefer-no-csd
 input {
   mod-key "Super"
   mod-key-nested "Alt"
-  warp-mouse-to-focus
+  // warp-mouse-to-focus
 
   keyboard {
   }
@@ -78,23 +78,24 @@ blur {
 }
 
 window-rule {
+  match is-floating=true
   background-effect {
     blur true
     xray false
   }
-  geometry-corner-radius 13.0
+  geometry-corner-radius 0.0
   opacity 0.91
   clip-to-geometry true
   draw-border-with-background false
 }
 
-window-rule {
-  match app-id="zed"
-  opacity 0.91
-  background-effect {
-   blur true
-  }
-}
+// window-rule {
+//   match app-id="zed"
+//   opacity 0.91
+//   background-effect {
+//    blur true
+//   }
+// }
 
 window-rule {
   match app-id="kitty"
