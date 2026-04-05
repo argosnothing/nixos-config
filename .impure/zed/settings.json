@@ -109,6 +109,6 @@
   "theme": {
     "mode": "dark",
     "light": "Fleet Light",
-    "dark": "Carbonfox - blurred",
+    "dark": "Carbonfox - opaque",
   },
 }

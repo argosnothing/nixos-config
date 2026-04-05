@@ -3,9 +3,10 @@ theme = "carbonfox"
 [editor]
 bufferline = "always"
 true-color = true
-line-number = "relative"
+line-number = "absolute"
 mouse = false
 editor-config = false
+gutters = ["diagnostics"]
 
 [editor.lsp]
 display-inlay-hints = true

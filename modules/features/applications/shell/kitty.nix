@@ -8,7 +8,10 @@
     inherit (config.my.fonts) size;
   in {
     environment.systemPackages = [pkgs.kitty];
-    my.persist.home.directories = [".config/kitty"];
+    my.persist.home = {
+      directories = [".config/kitty"];
+      cache.directories = [".cache/kitty"];
+    };
     hj.files.".config/kitty/kitty.conf".source = config.impure-dir + "/kitty/kitty.conf";
     hj.files.".config/kitty/nix.conf" = {
       text = ''

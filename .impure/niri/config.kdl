@@ -89,6 +89,14 @@ window-rule {
 }
 
 window-rule {
+  match app-id="zed"
+  opacity 0.91
+  background-effect {
+   blur true
+  }
+}
+
+window-rule {
   match app-id="kitty"
   exclude title="^pamix$"
 
@@ -135,18 +143,12 @@ window-rule {
   open-maximized true
 }
 
-window-rule {
-  match app-id="Emacs"
-  opacity 1.00
-  open-fullscreen false
-  open-maximized true
-}
-
-window-rule {
-  match app-id="Zed"
-  opacity 1.00
-  default-column-width {}
-}
+// window-rule {
+//   match app-id="Emacs"
+//   opacity 1.00
+//   open-fullscreen false
+//   open-maximized true
+// }
 
 window-rule {
   match is-floating=true
