@@ -11,7 +11,6 @@
     };
     # my.wm.hyprland.active-config = "testing";
     imports = with config.flake.modules.nixos; [
-      # hyprland-bundle
       niri-bundle
       gui-apps
 
