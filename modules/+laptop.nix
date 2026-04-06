@@ -16,7 +16,6 @@
 
       vscode
       work
-      zen-browser
 
       battery
       touchpad

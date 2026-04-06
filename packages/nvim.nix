@@ -36,11 +36,14 @@
       nvim-lspconfig
       conform-nvim
       oil-nvim
+      neo-tree-nvim
+      plenary-nvim
+      nui-nvim
       hop-nvim
       gitsigns-nvim
       todo-comments-nvim
       blink-cmp
-      claude-code-nvim
+      claudecode-nvim
       nvim-dap-ui
       nvim-dap-python
       kanso-nvim

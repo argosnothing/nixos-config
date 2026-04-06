@@ -1,18 +1,15 @@
 local function load_claude()
-    vim.cmd("packadd plenary.nvim")
-    vim.cmd("packadd claude-code.nvim")
-    require("claude-code").setup({
-        window = {
-            position = "float",
-            float = {
-                width = "80%",
-                height = "80%",
-                border = "rounded",
-            },
-        },
-    })
+    vim.cmd("packadd claudecode.nvim")
+    require("claudecode").setup({})
     vim.cmd("ClaudeCode")
 end
 
-vim.keymap.set("n", "<leader>aa", load_claude, { desc = "Toggle Claude Code" })
-vim.keymap.set("n", "<C-,>", load_claude, { desc = "Toggle Claude Code" })
+vim.keymap.set("n", "<leader>ac", load_claude, { desc = "Toggle Claude" })
+vim.keymap.set("n", "<C-,>", load_claude, { desc = "Toggle Claude" })
+vim.keymap.set("n", "<leader>af", "<cmd>ClaudeCodeFocus<cr>", { desc = "Focus Claude" })
+vim.keymap.set("v", "<leader>as", "<cmd>ClaudeCodeSend<cr>", { desc = "Send selection to Claude" })
+vim.keymap.set("n", "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", { desc = "Add buffer to Claude" })
+vim.keymap.set("n", "<leader>aC", "<cmd>ClaudeCode --continue<cr>", { desc = "Continue Claude" })
+vim.keymap.set("n", "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", { desc = "Select Claude model" })
+vim.keymap.set("n", "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", { desc = "Accept diff" })
+vim.keymap.set("n", "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", { desc = "Deny diff" })

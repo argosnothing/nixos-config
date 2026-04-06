@@ -8,9 +8,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	group = augroup("auto_reload"),
+	command = "checktime",
+})
+
 -- Trim trailing whitespace on save
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = augroup("trim_whitespace"),
 	pattern = "*",
-	command = [[%s/\s\+$//e]],
+	command = [[silent! %s/\s\+$//e]],
 })

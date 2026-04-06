@@ -6,7 +6,6 @@
     };
     imports = with config.flake.modules.nixos; [
       niri-bundle
-      zen-browser
       impermanence
       grub
       battery
