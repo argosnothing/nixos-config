@@ -13,6 +13,15 @@
   linux = mkNixos "x86_64-linux";
   wsl = mkWsl "x86_64-linux";
 
+  mk-pkgs-stable = system:
+    import inputs.nixpkgs-stable {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        allowAliases = true;
+      };
+    };
+
   mkWsl = system: name:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
@@ -39,7 +48,10 @@
   mkNixos = system: name:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+        pkgs-stable = mk-pkgs-stable system;
+      };
       modules = [
         config.flake.modules.nixos.base
         config.flake.modules.nixos.cursor

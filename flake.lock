@@ -372,11 +372,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1775396924,
-        "narHash": "sha256-fne1hoKrECf3X/9qVgwa3oJZn6iSw0R5vHEgZLdK7uU=",
+        "lastModified": 1775416789,
+        "narHash": "sha256-0IELkB6YXCZGqZqLdmOcTw8mki6NNhDmG47y7Qynuj8=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "6983b1906caf31e89d9c92cd04d3b6dc69218bff",
+        "rev": "aaa2fc342f002bf4acd965f1ad2ead3796347e35",
         "type": "github"
       },
       "original": {
@@ -917,16 +917,16 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1767313136,
-        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
+        "lastModified": 1775305101,
+        "narHash": "sha256-/74n1oQPtKG52Yw41cbToxspxHbYz6O3vi+XEw16Qe8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+        "rev": "36a601196c4ebf49e035270e10b2d103fe39076b",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-25.05",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1729,11 +1729,11 @@
         "rust-overlay": "rust-overlay_6"
       },
       "locked": {
-        "lastModified": 1775372806,
-        "narHash": "sha256-15ElpUQaSGHsP1lMgl1XcIa9Wi1XJ0Vi54o5eIw45pA=",
+        "lastModified": 1775412722,
+        "narHash": "sha256-TFEzVRWWWRFE2vajJIJjr01Jj2eypImwepeIYTv6OJI=",
         "owner": "zed-industries",
         "repo": "zed",
-        "rev": "77ee72e665da02d33ca661d97fc58b1c97d81ca2",
+        "rev": "1ebcde8164933e6a729fc5f76a23b7d2e7b7f422",
         "type": "github"
       },
       "original": {

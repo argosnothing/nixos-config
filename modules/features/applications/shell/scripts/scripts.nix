@@ -1,8 +1,9 @@
-{config, ...}: let
-  inherit (config.flake.lib) mk-pkgs-stable;
-in {
-  flake.modules.nixos.misc-scripts = {pkgs, ...}: let
-    pkgs-stable = mk-pkgs-stable pkgs;
+{
+  flake.modules.nixos.misc-scripts = {
+    pkgs,
+    pkgs-stable,
+    ...
+  }: let
   in {
     environment.systemPackages = with pkgs-stable; [
       pkgs.wl-clipboard

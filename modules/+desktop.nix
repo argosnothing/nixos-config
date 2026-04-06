@@ -20,7 +20,7 @@
       # Apps
       gui-apps
       firefox
-      # claude-code
+      claude-code
       vscode
       uhk
       looking-glass

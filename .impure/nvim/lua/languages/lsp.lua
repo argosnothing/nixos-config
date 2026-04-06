@@ -25,6 +25,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
         map("<leader>af", vim.lsp.buf.format, "Format")
         map("<leader>cd", function() Snacks.picker.diagnostics() end, "Diagnostics")
+        map("<leader>i", function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end, "Toggle Inlay Hints")
     end,
 })
 

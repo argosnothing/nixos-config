@@ -26,7 +26,7 @@ vim.lsp.config("nil_ls", {
 	},
 })
 
-vim.lsp.enable("nil_ls")
+-- vim.lsp.enable("nil_ls")
 
 -- Nixd ---------------------------
 
@@ -34,10 +34,18 @@ vim.lsp.config("nixd", {
 	cmd = { "nixd" },
 	filetypes = { "nix" },
 	root_markers = { "flake.nix", ".git" },
+	capabilities = lsp.capabilities,
 	settings = {
 		nixd = {
-			enableFormatting = false,
-			diagnostics = true,
+			formatting = { command = { "alejandra" } },
+			nixpkgs = {
+				expr = "import (builtins.getFlake (toString /home/salivala/nixos-config)).inputs.nixpkgs { }",
+			},
+			options = {
+				nixos = {
+					expr = "(builtins.getFlake (toString /home/salivala/nixos-config)).nixosConfigurations.desktop.options",
+				},
+			},
 		},
 	},
 })
