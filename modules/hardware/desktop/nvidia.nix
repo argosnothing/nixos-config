@@ -14,7 +14,7 @@ in {
       powerManagement.finegrained = false;
       open = true;
       nvidiaSettings = true;
-      package = (pkgs-nvidia.linuxKernel.packagesFor config.boot.kernelPackages.kernel).nvidiaPackages.stable;
+      # package = (pkgs-nvidia.linuxKernel.packagesFor config.boot.kernelPackages.kernel).nvidiaPackages.stable;
     };
   };
 }
