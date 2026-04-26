@@ -131,6 +131,7 @@
           download-buffer-size = 268435456;
           substituters = [
             "https://cache.nixos.org/"
+            "https://niri.cachix.org"
           ];
           trusted-public-keys = [
             "niri.cachix.org-1:T+M3pBd3DkFdBvA+SviyNv0glk+rPZsAocRAGYMddww="

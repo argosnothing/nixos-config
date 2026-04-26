@@ -15,8 +15,8 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      #niri-bundle
-      cinnamon
+      niri-bundle
+      # cinnamon
 
       # Apps
       gui-apps

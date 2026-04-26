@@ -30,6 +30,9 @@ in {
           ".local/share/mime"
           ".config/evolution"
         ];
+        files = [
+          ".config/cinnamon-monitors.xml"
+        ];
       };
     };
   };

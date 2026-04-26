@@ -35,8 +35,6 @@
       gamemode
       mangohud
       steam-run
-      lutris
-      bottles
       heroic
     ];
 
