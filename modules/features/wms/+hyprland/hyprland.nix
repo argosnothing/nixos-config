@@ -17,24 +17,32 @@ in {
 
       monitorConfigs =
         map (
-          monitor:
-            "monitor = ${monitor.name},"
-            + "${toString monitor.dimensions.width}x${toString monitor.dimensions.height}@${toString monitor.refresh},"
-            + "${toString monitor.position.x}x${toString monitor.position.y},"
-            + "${toString monitor.scale}"
+          monitor: ''
+            hl.monitor({
+                output = "${monitor.name}",
+                mode = "${toString monitor.dimensions.width}x${toString monitor.dimensions.height}@${toString monitor.refresh}",
+                position = "${toString monitor.position.x}x${toString monitor.position.y}",
+                scale = ${toString monitor.scale},
+            })
+          ''
         )
         monitors;
 
+      dbus-cmd = lib.getExe' pkgs.dbus "dbus-update-activation-environment";
+      xrdb-cmd = lib.getExe pkgs.xorg.xrdb;
+
       hyprland-nix-config = ''
         ${builtins.concatStringsSep "\n" monitorConfigs}
-        env = XCURSOR_THEME,${cursor.name}
-        env = XCURSOR_SIZE,${toString cursor.size}
-        env = HYPRCURSOR_SIZE,${toString cursor.size}
-        env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-        $menu = ${desktop-shells.launcherCommand}
-        exec-once = ${lib.getExe' pkgs.dbus "dbus-update-activation-environment"} --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user restart hyprland-session.target
-        exec-once = ${lib.getExe pkgs.xorg.xrdb} -merge ~/.Xresources
-        exec-once = ${desktop-shells.execCommand}
+        hl.env("XCURSOR_THEME", "${cursor.name}")
+        hl.env("XCURSOR_SIZE", "${toString cursor.size}")
+        hl.env("HYPRCURSOR_SIZE", "${toString cursor.size}")
+        hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+        menu = "${desktop-shells.launcherCommand}"
+        hl.on("hyprland.start", function()
+            hl.exec_cmd("${dbus-cmd} --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user restart hyprland-session.target")
+            hl.exec_cmd("${xrdb-cmd} -merge ~/.Xresources")
+            hl.exec_cmd("${desktop-shells.execCommand}")
+        end)
       '';
 
       nixos-modules = with flake.modules.nixos; [
@@ -70,8 +78,8 @@ in {
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       };
 
-      hj.files.".config/hypr/hyprland.conf".source = dots + "/hyprland/${active-config.route}/hyprland.conf";
-      hj.files.".config/hypr/hyprland-nix.conf".text = hyprland-nix-config;
+      hj.files.".config/hypr/hyprland.lua".source = dots + "/hyprland/${active-config.route}/hyprland.lua";
+      hj.files.".config/hypr/hyprland-nix.lua".text = hyprland-nix-config;
 
       # systemd session target for hyprland
       systemd.user.targets.hyprland-session = {

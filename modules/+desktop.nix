@@ -15,7 +15,7 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      niri-bundle
+      hyprland-bundle
       # cinnamon
 
       # Apps
@@ -55,11 +55,25 @@
             height = 1440;
           };
           position = {
-            x = 0;
+            x = 1367;
             y = 0;
           };
           scale = 1.0;
           refresh = 180.00101;
+        }
+        {
+          name = "HDMI-A-1";
+          is-primary = false;
+          dimensions = {
+            width = 1366;
+            height = 768;
+          };
+          position = {
+            x = 0;
+            y = 0;
+          };
+          scale = 1.0;
+          refresh = 60.00;
         }
       ];
     };

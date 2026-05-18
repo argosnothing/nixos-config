@@ -5,7 +5,6 @@
       wev
       wget
       fzf
-      ytfzf
       desktop-file-utils
       nix-direnv
       direnv
