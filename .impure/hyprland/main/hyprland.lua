@@ -128,7 +128,7 @@ hl.window_rule({
 hl.window_rule({
     name = "zed-opaque",
     match = { class = "^(dev%.zed%.Zed)$" },
-    opacity = { active = 1.0, inactive = 1.0, fullscreen = 1.0 },
+    opacity = "1.0 override 1.0 override 1.0 override",
 })
 hl.window_rule({
     name = "lazygit-float",
@@ -163,8 +163,8 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Escape", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 1 }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = 2 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + CTRL + SHIFT + S", hl.dsp.exec_cmd("snip"))
 
 -- Focus movement
