@@ -36,7 +36,7 @@ hl.config({
     },
 
     decoration = {
-        rounding = 8,
+        rounding = 0,
         rounding_power = 8,
         dim_special = 0.1,
 
@@ -107,52 +107,52 @@ hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "al
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "slidevert" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
-hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
-hl.workspace_rule({ workspace = "s[1]", gaps_out = 80, gaps_in = 24 })
-hl.workspace_rule({ workspace = "2" })
-hl.workspace_rule({ workspace = "3" })
+-- hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
+-- hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
+-- hl.workspace_rule({ workspace = "s[1]", gaps_out = 80, gaps_in = 24 })
+-- hl.workspace_rule({ workspace = "2" })
+-- hl.workspace_rule({ workspace = "3" })
 
-hl.window_rule({
-    name = "no-border-tiled-tv1",
-    match = { float = false, workspace = "w[tv1]s[false]" },
-    border_size = 0,
-    rounding = 0,
-})
-hl.window_rule({
-    name = "no-border-tiled-f1",
-    match = { float = false, workspace = "f[1]s[false]" },
-    border_size = 0,
-    rounding = 0,
-})
-hl.window_rule({
-    name = "zed-opaque",
-    match = { class = "^(dev%.zed%.Zed)$" },
-    opacity = "1.0 override 1.0 override 1.0 override",
-})
-hl.window_rule({
-    name = "lazygit-float",
-    match = { title = "^lazygit$" },
-    float = true,
-})
-hl.window_rule({
-    name = "special-workspace-style",
-    match = { workspace = "s[true]" },
-    rounding = 10,
-    border_size = 3,
-})
-hl.window_rule({
-    name = "work-no-border",
-    match = { workspace = "name:work" },
-    rounding = 0,
-    border_size = 0,
-})
-hl.window_rule({
-    name = "worktest-no-border",
-    match = { workspace = "name:worktest" },
-    rounding = 0,
-    border_size = 0,
-})
+-- hl.window_rule({
+--     name = "no-border-tiled-tv1",
+--     match = { float = false, workspace = "w[tv1]s[false]" },
+--     border_size = 0,
+--     rounding = 0,
+-- })
+-- hl.window_rule({
+--     name = "no-border-tiled-f1",
+--     match = { float = false, workspace = "f[1]s[false]" },
+--     border_size = 0,
+--     rounding = 0,
+-- })
+-- hl.window_rule({
+--     name = "zed-opaque",
+--     match = { class = "^(dev%.zed%.Zed)$" },
+--     opacity = "1.0 override 1.0 override 1.0 override",
+-- })
+-- hl.window_rule({
+--     name = "lazygit-float",
+--     match = { title = "^lazygit$" },
+--     float = true,
+-- })
+-- hl.window_rule({
+--     name = "special-workspace-style",
+--     match = { workspace = "s[true]" },
+--     rounding = 0,
+--     border_size = 3,
+-- })
+-- hl.window_rule({
+--     name = "work-no-border",
+--     match = { workspace = "name:work" },
+--     rounding = 0,
+--     border_size = 0,
+-- })
+-- hl.window_rule({
+--     name = "worktest-no-border",
+--     match = { workspace = "name:worktest" },
+--     rounding = 0,
+--     border_size = 0,
+-- })
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
@@ -163,7 +163,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Escape", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + CTRL + SHIFT + S", hl.dsp.exec_cmd("snip"))
 
@@ -241,3 +241,6 @@ hl.bind(mainMod .. " + CTRL + U", hl.dsp.window.move({ workspace = "+1" }))
 hl.bind(mainMod .. " + CTRL + I", hl.dsp.window.move({ workspace = "-1" }))
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "+1" }))
 hl.bind(mainMod .. " + CTRL + W", hl.dsp.window.move({ workspace = "-1" }))
+
+-- This loads Noctalia-generated Hyprland colors.
+dofile("/home/salivala/.config/hypr/noctalia/noctalia-colors.lua")

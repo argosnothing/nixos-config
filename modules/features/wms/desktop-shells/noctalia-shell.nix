@@ -2,8 +2,8 @@
   flake.modules.nixos.noctalia-shell = {pkgs, ...}: {
     my = {
       desktop-shells = {
-        execCommand = "noctalia-shell";
-        launcherCommand = "noctalia-shell ipc call launcher toggle";
+        execCommand = "noctalia";
+        launcherCommand = "noctalia msg panel-open launcher";
         name = "noctalia-shell";
       };
     };
@@ -38,7 +38,10 @@
       ]);
 
     my.persist.home = {
-      directories = [".config/noctalia"];
+      directories = [
+        ".config/noctalia"
+        ".local/state/noctalia"
+      ];
       cache.directories = [
         ".cache/noctalia"
         ".cache/quickshell"

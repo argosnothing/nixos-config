@@ -15,7 +15,8 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      hyprland-bundle
+      # hyprland-bundle
+      cosmic
       # cinnamon
 
       # Apps

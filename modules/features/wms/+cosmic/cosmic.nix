@@ -6,6 +6,10 @@
       ".config/cosmic"
       ".local/share/cosmic"
       ".local/state/cosmic"
+      ".local/state/cosmic-comp"
+    ];
+    my.persist.root.directories = [
+      "/var/lib/cosmic-greeter"
     ];
   };
 }
