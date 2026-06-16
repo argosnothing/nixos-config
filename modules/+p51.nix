@@ -6,13 +6,16 @@
     };
     imports = with config.flake.modules.nixos; [
       niri-bundle
+      helix
       impermanence
+      firefox
+      zed
+      claude-code
+
       grub
       battery
       touchpad
       zfs
-      helix
-      matrix-home-server
     ];
     my = {
       is-vm = false;

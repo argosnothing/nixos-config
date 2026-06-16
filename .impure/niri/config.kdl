@@ -1,4 +1,4 @@
-include "noctalia.kdl"
+include "noctalia.kdl" optional=true
 include "nix.kdl"
 // include "dms/colors.kdl"
 // include "dms/layout.kdl"
