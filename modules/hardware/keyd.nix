@@ -7,6 +7,8 @@
         settings = {
           main = {
             capslock = "overload(control, esc)";
+            backslash = "backspace";
+            backspace = "backslash";
           };
           "shift" = {
             esc = "~";

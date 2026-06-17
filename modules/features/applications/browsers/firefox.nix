@@ -8,6 +8,7 @@
       enable = true;
       enableSSHSupport = true;
     };
+    services.pcscd.enable = true;
     my.persist.home.directories = [
       ".config/mozilla"
       ".local/share/firefoxpwa"
@@ -16,12 +17,18 @@
     my.default.associations."text/html" = lib.mkAfter ["firefox.desktop"];
     environment.systemPackages = with pkgs; [
       firefoxpwa
+      opensc
+      ccid
+      pcsc-tools
     ];
     programs.firefox = {
       enable = true;
       nativeMessagingHosts.packages = [pkgs.firefoxpwa];
       preferences = {
         "widget.use-xdg-desktop-portal.open-uri" = 1;
+      };
+      policies.SecurityDevices = {
+        "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
       };
     };
   };

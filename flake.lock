@@ -663,16 +663,16 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1774466008,
-        "narHash": "sha256-EpS+txHqfHC4tfUIWQ61ZtSuv1ohX4Zy2essHCi+zSA=",
+        "lastModified": 1781631501,
+        "narHash": "sha256-CzY6bcHQ5WooTW+UVj7kf8IyyIq2DxWNiiwY4zdmHg8=",
         "owner": "argosnothing",
         "repo": "niri",
-        "rev": "ad85a6dbfb4f45d3df2a711a389133ab8c5a2c50",
+        "rev": "7d3c48fb47ca76597fbc0ec60bf7e9ccc71cc516",
         "type": "github"
       },
       "original": {
         "owner": "argosnothing",
-        "ref": "hidden-workspaces-blur-backdrop-background",
+        "ref": "hidden-workspaces",
         "repo": "niri",
         "type": "github"
       }

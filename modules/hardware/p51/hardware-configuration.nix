@@ -19,6 +19,7 @@
     boot.kernelParams = [
       "i915.modeset=1"
       "nvidia-drm.modeset=1"
+      "i915.enable_psr=0"
     ];
     boot.extraModulePackages = [];
 

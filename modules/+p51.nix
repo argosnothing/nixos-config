@@ -10,7 +10,9 @@
       impermanence
       firefox
       zed
+      discord
       claude-code
+      flatpak
 
       grub
       battery
