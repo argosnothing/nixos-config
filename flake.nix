@@ -35,20 +35,10 @@
       inputs.hjem.follows = "";
     };
     ### Applications
-    zed = {
-      # url = "github:GoldStrikeArch/zed/feat/add-helix-amp-jump-feature";
-      url = "github:zed-industries/zed";
-    };
-    mnw = {
-      url = "github:gerg-l/mnw";
-    };
     helix = {
       url = "github:helix-editor/helix";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    matui = {
-      url = "github:pkulak/matui";
-    };
     ### Window Managers
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces";
@@ -72,6 +62,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ### Display Managers
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ### System Level
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";

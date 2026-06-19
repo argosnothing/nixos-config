@@ -27,9 +27,10 @@
       preferences = {
         "widget.use-xdg-desktop-portal.open-uri" = 1;
       };
-      policies.SecurityDevices = {
-        "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
-      };
+      # Disabled because I use smartcard passthru to vm
+      # policies.SecurityDevices = {
+      #   "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
+      # };
     };
   };
 }

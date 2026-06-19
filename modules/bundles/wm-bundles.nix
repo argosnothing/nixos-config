@@ -5,7 +5,7 @@ in {
     niri-bundle.imports = with flake.modules.nixos; [
       niri
       noctalia-shell
-      ly
+      noctalia-greeter
     ];
     hyprland-bundle.imports = with flake.modules.nixos; [
       hyprland

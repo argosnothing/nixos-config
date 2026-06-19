@@ -2,6 +2,7 @@
   flake.modules.nixos.steam = {pkgs, ...}: {
     programs.steam = {
       enable = true;
+      extest.enable = true;
       package = pkgs.steam.override {
         extraLibraries = p:
           with p; [

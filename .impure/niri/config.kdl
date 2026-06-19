@@ -63,7 +63,7 @@ animations {
 }
 
 overview {
-  zoom 0.25
+  // zoom 0.25
   workspace-shadow {
     off
   }
@@ -84,7 +84,19 @@ window-rule {
     xray false
   }
   geometry-corner-radius 0.0
-  opacity 0.91
+  opacity 0.81
+  clip-to-geometry true
+  draw-border-with-background false
+}
+
+window-rule {
+  match is-floating=false
+  background-effect {
+    blur true
+    xray false
+  }
+  geometry-corner-radius 0.0
+  opacity 0.95
   clip-to-geometry true
   draw-border-with-background false
 }
@@ -107,6 +119,18 @@ window-rule {
 window-rule {
   match app-id="qimgv";
   open-floating true
+}
+
+window-rule {
+  match title="Steam - Browser*"
+  open-floating true
+}
+
+window-rule {
+  match title="Picture-in-Picture.*"
+  open-floating true
+  default-column-width { proportion 0.25; }
+  default-window-height { proportion 0.25; }
 }
 
 window-rule {
@@ -138,7 +162,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="Wfica"
+  match title="Looking Glass*"
   opacity 1.00
   open-fullscreen false
   open-maximized true
@@ -203,6 +227,28 @@ layer-rule {
   background-effect {
     xray false
   }
+}
+
+layer-rule {
+  match namespace="^noctalia-launcher*$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-panel*$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-bar-default*$"
+  background-effect {
+    xray false
+  }
+  opacity 0.8
 }
 
 layer-rule {

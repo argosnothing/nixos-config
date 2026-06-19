@@ -35,7 +35,7 @@ in {
     hj.files.".config/niri/config.kdl".source = dots + "/niri/config.kdl";
     my = {
       session.name = "niri";
-      wm.niri.use-scratchpads = false;
+      wm.niri.use-scratchpads = true;
       icons = {
         package = pkgs.rose-pine-icon-theme;
         name = "rose-pine";

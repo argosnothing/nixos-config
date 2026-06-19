@@ -16,8 +16,11 @@
     imports = with config.flake.modules.nixos; [
       # WM
       # hyprland-bundle
-      cosmic
+      # cosmic
       # cinnamon
+      niri-bundle
+      # plasma
+      # xfce-bundle
 
       # Apps
       gui-apps
@@ -29,7 +32,6 @@
       bolt-launcher
       flatpak
       zed
-      nvim
 
       # Meta - no touchy
       impermanence
@@ -66,15 +68,15 @@
           name = "HDMI-A-1";
           is-primary = false;
           dimensions = {
-            width = 1366;
-            height = 768;
+            width = 2560;
+            height = 1440;
           };
           position = {
-            x = 0;
-            y = 0;
+            x = 1706;
+            y = 1440;
           };
-          scale = 1.0;
-          refresh = 60.00;
+          scale = 1.30;
+          refresh = 120.00;
         }
       ];
     };
