@@ -21,6 +21,7 @@
     ];
     my = {
       is-vm = false;
+      hardware.keyd.hhkb-override.enable = true;
       monitors = [
         {
           name = "eDP-1";
