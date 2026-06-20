@@ -16,7 +16,7 @@
       Mod+0            { toggle-workspace-visibility "stash"; }
       Mod+Q            { spawn "niri-scratchpad" "create" "1" "--as-float" "--follow"; }
       Mod+E            { spawn "niri-scratchpad" "create" "2" "--as-float" "--follow"; }
-      Mod+G            { spawn "niri-scratchpad" "target" "--follow" "--spawn" "spotify" "--as-float" "appid" "spotify" ; }
+      Mod+G            { spawn "niri-scratchpad" "target" "--follow" "--spawn" "spotify" "--as-float" "appid" "Spotify" ; }
       Mod+P            { spawn "niri-scratchpad" "create" "4" "--follow" "--as-float"; }
       Mod+Ctrl+Q       { spawn "niri-scratchpad" "delete" "1"; }
       Mod+Ctrl+E       { spawn "niri-scratchpad" "delete" "2"; }
