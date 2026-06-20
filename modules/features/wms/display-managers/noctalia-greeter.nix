@@ -3,11 +3,12 @@
     imports = [
       inputs.noctalia-greeter.nixosModules.default
     ];
+    my.persist.root.directories = ["/var/lib/noctalia-greeter"];
     programs.noctalia-greeter = {
       enable = true;
       package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-      greeter-args = "Niri";
+      greeter-args = "--session Niri";
     };
   };
 }
