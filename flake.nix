@@ -41,7 +41,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     ### Window Managers
     niri.url = "github:sodiboo/niri-flake";
-    my-niri.url = "github:argosnothing/niri/hidden-workspaces";
+    my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
     scroll = {
       url = "github:AsahiRocks/scroll-flake";

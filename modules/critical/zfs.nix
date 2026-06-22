@@ -71,6 +71,16 @@ in {
       systemd-udev-settle.enable = false;
     };
 
+    boot.extraModprobeConfig = ''
+      options zfs zfs_arc_max=8589934592
+    '';
+
+    zramSwap = {
+      enable = true;
+      algorithm = "zstd";
+      memoryPercent = 25;
+    };
+
     networking.hostId = settings.networking.hostId;
     services = {
       zfs.autoScrub.enable = true;
