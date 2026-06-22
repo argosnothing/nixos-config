@@ -15,6 +15,12 @@ in {
       hostname = mkOption {type = str;};
       is-vm = mkEnableOption "Is this a vm";
       is-multiple-wm = mkEnableOption "Flag to disable conflicting options for testing/experiment";
+      zfs.arcMax = mkOption {
+        type = lib.types.nullOr lib.types.int;
+        default = null;
+        description = "ZFS ARC max size in bytes. Null means no cap (ZFS default).";
+        example = 8589934592;
+      };
       default = {
         apps = mkOption {
           type = attrsOf str;

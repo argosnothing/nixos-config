@@ -4,7 +4,11 @@
 {config, ...}: let
   inherit (config.flake) settings;
 in {
-  flake.modules.nixos.zfs = {config, ...}: {
+  flake.modules.nixos.zfs = {
+    config,
+    lib,
+    ...
+  }: {
     boot = {
       supportedFilesystems = ["zfs"];
       initrd.supportedFilesystems = ["zfs"];
@@ -71,8 +75,8 @@ in {
       systemd-udev-settle.enable = false;
     };
 
-    boot.extraModprobeConfig = ''
-      options zfs zfs_arc_max=8589934592
+    boot.extraModprobeConfig = lib.mkIf (config.my.zfs.arcMax != null) ''
+      options zfs zfs_arc_max=${toString config.my.zfs.arcMax}
     '';
 
     zramSwap = {

@@ -42,6 +42,7 @@
       cursor.speed = -0.35;
       fonts.size = 11;
       is-vm = false;
+      zfs.arcMax = 8589934592;
       gpu-passthrough = {
         # RTX 2060 (0a:00.0)
         ids = ["10de:1f08" "10de:10f9" "10de:1ada" "10de:1adb"];
