@@ -43,19 +43,6 @@
     niri.url = "github:sodiboo/niri-flake";
     my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
-    scroll = {
-      url = "github:AsahiRocks/scroll-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    oxwm = {
-      url = "github:tonybanters/oxwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     ### Desktop Shells
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";

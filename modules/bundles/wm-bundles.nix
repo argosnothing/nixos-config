@@ -7,29 +7,6 @@ in {
       noctalia-shell
       noctalia-greeter
     ];
-    hyprland-bundle.imports = with flake.modules.nixos; [
-      hyprland
-      noctalia-shell
-      ly
-    ];
-    scroll-bundle.imports = with flake.modules.nixos; [
-      scroll
-      noctalia-shell
-      ly
-    ];
-    mango-bundle.imports = with flake.modules.nixos; [
-      mango
-      noctalia-shell
-      ly
-    ];
-    labwc-bundle.imports = with flake.modules.nixos; [
-      labwc
-      dms
-    ];
-    oxwm-bundle.imports = with flake.modules.nixos; [
-      oxwm
-      ly
-    ];
     xfce-bundle.imports = with flake.modules.nixos; [
       xfce
     ];
