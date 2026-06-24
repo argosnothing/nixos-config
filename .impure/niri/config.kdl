@@ -37,16 +37,16 @@ input {
 
 layout {
   always-center-single-column
-  gaps 7
+  gaps 8
   struts {
     left 3
     right 3
-    top 3
-    bottom 3
+    top 4
+    bottom 4
   }
   focus-ring {
     on
-    width 2
+    width 4
   }
   border {
     off
@@ -63,7 +63,7 @@ animations {
 }
 
 overview {
-  // zoom 0.25
+  zoom 0.25
   workspace-shadow {
     off
   }
