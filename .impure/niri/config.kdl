@@ -89,17 +89,17 @@ window-rule {
   draw-border-with-background false
 }
 
-window-rule {
-  match is-floating=false
-  background-effect {
-    blur true
-    xray false
-  }
-  geometry-corner-radius 0.0
-  opacity 0.95
-  clip-to-geometry true
-  draw-border-with-background false
-}
+// window-rule {
+//   match is-floating=false
+//   background-effect {
+//     blur true
+//     xray false
+//   }
+//   geometry-corner-radius 0.0
+//   opacity 0.95
+//   clip-to-geometry true
+//   draw-border-with-background false
+// }
 
 // window-rule {
 //   match app-id="zed"
