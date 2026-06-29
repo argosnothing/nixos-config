@@ -32,6 +32,7 @@
       bolt-launcher
       flatpak
       zed
+      remmina
 
       # Meta - no touchy
       impermanence

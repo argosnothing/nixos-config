@@ -20,13 +20,10 @@ in {
     ];
     services = {
       picom.enable = true;
-      displayManager = {
-        gdm.enable = true;
-        defaultSession = "xfce";
-      };
+      displayManager.defaultSession = "xfce";
+      xserver.displayManager.lightdm.enable = true;
       xserver = {
         enable = true;
-        videoDrivers = ["modesetting"];
         desktopManager = {
           xterm.enable = false;
           xfce = {
