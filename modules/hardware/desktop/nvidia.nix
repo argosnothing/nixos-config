@@ -1,9 +1,4 @@
-{inputs, ...}: let
-  pkgs-nvidia = import inputs.nixpkgs-nvidia {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
-in {
+{...}: {
   flake.modules.nixos.desktop = {config, ...}: {
     my.persist.home.cache.directories = [".cache/nvidia"];
     services.xserver.videoDrivers = ["nvidia"];
@@ -14,7 +9,7 @@ in {
       powerManagement.finegrained = false;
       open = true;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 }
