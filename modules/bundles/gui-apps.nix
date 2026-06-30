@@ -8,8 +8,6 @@ in {
       firefox
       steam
       audacity
-      spotify-player
-      obsidian
     ];
   in {
     imports = nixos-modules;

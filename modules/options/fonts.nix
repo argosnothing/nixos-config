@@ -81,9 +81,6 @@
     };
     config = {
       my = {
-        persist.home = {
-          directories = [".cache/fontconfig"];
-        };
         fonts = {
           serif = {
             name = "Alegreya Serif";

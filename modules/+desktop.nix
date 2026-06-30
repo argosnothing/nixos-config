@@ -4,11 +4,7 @@
       bluetooth.enable = true;
     };
     environment.systemPackages = with pkgs; [
-      wdisplays
-      wpa_supplicant
-      waybar
       nixd
-      rofi
       viu
       qimgv
     ];
@@ -24,7 +20,6 @@
       rdp
 
       # Meta - no touchy
-      # impermanence
       uefi
       zfs
     ];
@@ -33,13 +28,6 @@
       fonts.size = 11;
       is-vm = false;
       zfs.arcMax = 8589934592;
-      gpu-passthrough = {
-        # RTX 2060 (0a:00.0)
-        ids = ["10de:1f08" "10de:10f9" "10de:1ada" "10de:1adb"];
-        # RTX 4070 (09:00.0)
-        # ids = ["10de:2786" "10de:22bc"];
-        kvmfr-size = 128;
-      };
       monitors = [
         {
           name = "DP-1"; # DP-0 for X. no idea why
