@@ -7,9 +7,6 @@
     username = config.my.username;
   in {
     virtualisation.libvirtd.enable = true;
-    my.persist.root.directories = [
-      "/var/lib/libvirt"
-    ];
     programs.virt-manager = {
       enable = true;
     };

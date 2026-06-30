@@ -8,10 +8,6 @@ in {
   }: let
     inherit (pkgs.stdenv.hostPlatform) system;
   in {
-    my.persist.home.directories = [
-      ".local/share/zed"
-    ];
-
     hj.files = let
       dotsDir = config.impure-dir;
     in {

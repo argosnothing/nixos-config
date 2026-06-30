@@ -11,21 +11,15 @@
     };
     # my.wm.hyprland.active-config = "testing";
     imports = with config.flake.modules.nixos; [
-      niri-bundle
       gui-apps
-
-      vscode
-      work
 
       battery
       touchpad
-      iamb
       uhk
 
       # don't touch this
       uefi
       zfs
-      impermanence
     ];
     my = {
       cursor.speed = 0.30;

@@ -1,6 +1,5 @@
 {...}: {
   flake.modules.nixos.desktop = {config, ...}: {
-    my.persist.home.cache.directories = [".cache/nvidia"];
     services.xserver.videoDrivers = ["nvidia"];
     hardware.graphics.enable = true;
     hardware.nvidia = {

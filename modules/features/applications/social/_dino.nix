@@ -3,8 +3,5 @@
     environment.systemPackages = with pkgs; [
       dino
     ];
-    my.persist.home.directories = [
-      ".local/share/dino"
-    ];
   };
 }

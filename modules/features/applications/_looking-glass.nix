@@ -51,8 +51,6 @@ in {
       }
     );
 
-    my.persist.root.directories = ["/var/lib/libvirt"];
-
     environment.systemPackages = [
       (pkgs.looking-glass-client.overrideAttrs (old: {
         postFixup =

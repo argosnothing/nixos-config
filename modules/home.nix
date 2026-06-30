@@ -19,13 +19,6 @@
     config = {
       services.accounts-daemon.enable = true;
 
-      my.persist.root.directories = [
-        "/var/lib/AccountsService"
-        "/var/lib/hjem"
-        "/var/lib/systemd"
-        "/var/lib/lastlog"
-      ];
-
       hj.xdg.config.files."mimeapps.list" = {
         generator = lib.generators.toINI {};
         value = {
@@ -33,21 +26,6 @@
           "Added Associations" = lib.mapAttrs (_: apps: lib.concatStringsSep ";" apps + ";") config.my.default.associations;
         };
       };
-      my.persist.home.directories = lib.mkAfter [
-        ".local/share/direnv"
-        ".local/share/keyrings"
-        ".local/state/lazygit"
-        ".config/lazygit"
-        ".config/yazi"
-        ".config/sops"
-        ".ssh"
-        "nixos-config"
-        "Downloads"
-        "Videos"
-        "Pictures"
-        "Projects"
-      ];
-
       hjem = {
         extraModules = [inputs.hjem-impure.hjemModules.default];
         clobberByDefault = true;

@@ -7,11 +7,5 @@
       cmake
       man-pages
     ];
-    my.persist = {
-      home.directories = [
-        ".rustup"
-        ".cargo"
-      ];
-    };
   };
 }

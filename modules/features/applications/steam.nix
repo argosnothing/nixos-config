@@ -22,14 +22,6 @@
       ];
     };
 
-    my.persist.home.directories = [
-      ".local/share/Steam"
-      ".steam"
-      ".local/share/lutris"
-      "Games"
-      ".config/heroic"
-    ];
-
     environment.systemPackages = with pkgs; [
       steam-devices-udev-rules
       gamescope

@@ -127,9 +127,6 @@ The *entire* disk will be formatted with a 1GB boot partition
 The following ZFS datasets will be created:
     - zroot/root (mounted at / with blank snapshot)
     - zroot/nix (mounted at /nix)
-    - zroot/tmp (mounted at /tmp)
-    - zroot/persist (mounted at /persist)
-    - zroot/cache (mounted at /cache)
 
 ** IMPORTANT **
 This script assumes that the relevant "fileSystems" are declared within the
@@ -197,7 +194,6 @@ Introduction
     echo "Creating Boot Disk"
     sudo mkfs.fat -F 32 "$BOOTDISK" -n NIXBOOT
 
-    encryption_options=()
     echo "Creating base zpool"
     sudo zpool create -f \
         -o ashift=12 \
@@ -208,7 +204,6 @@ Introduction
         -O xattr=sa \
         -O normalization=formD \
         -O mountpoint=none \
-        "${encryption_options[@]}" \
         zroot "$ZFSDISK"
 
     echo "Creating /"
@@ -223,26 +218,6 @@ Introduction
     sudo zfs create -o mountpoint=legacy zroot/nix
     sudo mount --mkdir -t zfs zroot/nix /mnt/nix
 
-    echo "Creating /tmp"
-    sudo zfs create -o mountpoint=legacy zroot/tmp
-    sudo mount --mkdir -t zfs zroot/tmp /mnt/tmp
-
-    echo "Creating /cache"
-    sudo zfs create -o mountpoint=legacy zroot/cache
-    sudo mount --mkdir -t zfs zroot/cache /mnt/cache
-
-    restore_snapshot=$(yesno "Do you want to restore from a persist snapshot?")
-    if [[ $restore_snapshot == "y" ]]; then
-        echo "Enter full path to snapshot: "
-        read -r snapshot_file_path
-        echo
-        echo "Creating /persist"
-        sudo sh -c "zfs receive -o mountpoint=legacy zroot/persist < '$snapshot_file_path'"
-    else
-        echo "Creating /persist"
-        sudo zfs create -o mountpoint=legacy zroot/persist
-    fi
-    sudo mount --mkdir -t zfs zroot/persist /mnt/persist
     kv_set "IS_PRE_FORMAT" "false"
 fi
 
@@ -256,14 +231,14 @@ fi
 
     username="$(whoami)"
 
-    echo "Staging age key into target /persist before install (for sops-nix)..."
+    echo "Staging age key before install (for sops-nix)..."
     source_age_key="${HOME}/.config/sops/age/keys.txt"
-    target_age_key="/mnt/persist/home/$username/.config/sops/age/keys.txt"
+    target_age_key="/mnt/home/$username/.config/sops/age/keys.txt"
 
     if [[ -f "$source_age_key" ]]; then
         sudo install -d -m700 "$(dirname "$target_age_key")"
         sudo install -m600 "$source_age_key" "$target_age_key"
-        sudo chown -R "$username" "/mnt/persist/home/$username/.config/sops"
+        sudo chown -R "$username" "/mnt/home/$username/.config/sops"
     else
         echo "WARNING: Could not locate $source_age_key; sops secrets may fail during install."
         echo "         Put your key at $target_age_key before reboot, or adjust your sops config."
@@ -273,13 +248,13 @@ fi
     sudo nixos-install --flake "$FLAKE_REF" --option tarball-ttl 0
 
     echo "Copying configuration to installed system..."
-    sudo mkdir -p "/mnt/persist/home/$username/nixos-config"
-    sudo cp -a "$HOME/nixos-config/." "/mnt/persist/home/$username/nixos-config/"
+    sudo mkdir -p "/mnt/home/$username/nixos-config"
+    sudo cp -a "$HOME/nixos-config/." "/mnt/home/$username/nixos-config/"
 
     if sudo chroot /mnt /bin/sh -c "id -u '$username' >/dev/null 2>&1"; then
-        sudo chroot /mnt /bin/sh -c "grp=\$(id -gn '$username' 2>/dev/null || echo users); chown -R '$username':\"\$grp\" /persist/home/'$username' || chown -R '$username' /persist/home/'$username'"
+        sudo chroot /mnt /bin/sh -c "grp=\$(id -gn '$username' 2>/dev/null || echo users); chown -R '$username':\"\$grp\" /home/'$username' || chown -R '$username' /home/'$username'"
     else
-        sudo chown -R "$username" "/mnt/persist/home/$username"
+        sudo chown -R "$username" "/mnt/home/$username"
     fi
 
     echo "Installation complete. It is now safe to reboot."

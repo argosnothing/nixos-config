@@ -32,11 +32,6 @@
     };
 
     misc = {pkgs, ...}: {
-      my.persist.root.directories = [
-        "/etc/NetworkManager/system-connections"
-        "/var/lib/bluetooth"
-      ];
-
       environment = {
         shells = with pkgs; [zsh];
 
@@ -150,7 +145,6 @@
         alsa.support32Bit = true;
         pulse.enable = true;
       };
-      my.persist.home.directories = [".local/state/wireplumber"];
     };
   };
 }

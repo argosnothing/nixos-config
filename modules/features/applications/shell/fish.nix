@@ -3,13 +3,6 @@
     programs.fish = {
       enable = true;
     };
-    my.persist.home.cache.directories = [
-      ".cache/fish"
-    ];
-    my.persist.home.directories = [
-      ".local/share/fish"
-      ".config/fish"
-    ];
     hj = {
       files = {
         ".config/fish/config.fish".source = config.impure-dir + "/fish/config.fish";

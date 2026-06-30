@@ -16,15 +16,6 @@
       name = "Adwaita";
       size = 15;
     };
-    my.persist = {
-      home.directories = [
-        ".local/share/gnome-shell"
-      ];
-      home.cache.directories = [".cache/thumbnails"];
-      home.files = [
-        ".config/monitors.xml"
-      ];
-    };
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;

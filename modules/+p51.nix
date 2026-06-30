@@ -5,14 +5,10 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      niri-bundle
       helix
-      impermanence
       firefox
-      zed
       discord
       claude-code
-      flatpak
 
       grub
       battery

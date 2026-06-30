@@ -4,12 +4,6 @@
       inputs.nix-flatpak.nixosModules.nix-flatpak
     ];
     xdg.portal.enable = true;
-    my.persist.root.directories = ["/var/lib/flatpak"];
-    my.persist.home.directories = [
-      ".local/share/bolt-launcher"
-      ".var/app"
-      ".config/bolt-launcher"
-    ];
 
     services.flatpak = {
       enable = true;

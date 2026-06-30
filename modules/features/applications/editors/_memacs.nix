@@ -45,10 +45,6 @@
       '';
     };
   in {
-    my.persist.home.directories = [
-      ".emacs.d"
-      "org"
-    ];
     environment.systemPackages = [emacsWrapped];
   };
 }

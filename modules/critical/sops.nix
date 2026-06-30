@@ -14,10 +14,7 @@
     in {
       defaultSopsFile = secrets-location;
       defaultSopsFormat = "yaml";
-      age.keyFile =
-        if config.my.persist.enable
-        then "/persist/home/${config.user.name}/.config/sops/age/keys.txt"
-        else "/home/${config.user.name}/.config/sops/age/keys.txt";
+      age.keyFile = "/home/${config.user.name}/.config/sops/age/keys.txt";
       secrets = {
         ssh = {
           sopsFile = secrets-location;

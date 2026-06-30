@@ -15,8 +15,5 @@
       ripgrep
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ns
     ];
-    my.persist.home.cache.directories = [
-      ".cache/noogle-search"
-    ];
   };
 }

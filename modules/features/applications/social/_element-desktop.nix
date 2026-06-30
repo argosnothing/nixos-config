@@ -3,8 +3,5 @@
     environment.systemPackages = with pkgs; [
       element-desktop
     ];
-    my.persist = {
-      home.directories = [".config/Element"];
-    };
   };
 }

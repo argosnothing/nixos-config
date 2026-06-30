@@ -15,27 +15,16 @@
 
     imports = with config.flake.modules.nixos; [
       # WM
-      # hyprland-bundle
-      # cosmic
-      # cinnamon
-      # niri-bundle
       plasma
-      # xfce-bundle
 
       # Apps
       gui-apps
       firefox
       claude-code
-      vscode
-      uhk
-      looking-glass
-      bolt-launcher
-      flatpak
-      zed
       rdp
 
       # Meta - no touchy
-      impermanence
+      # impermanence
       uefi
       zfs
     ];

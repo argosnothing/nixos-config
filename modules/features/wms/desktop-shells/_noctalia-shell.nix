@@ -61,16 +61,5 @@
         material-symbols
       ]);
 
-    my.persist.home = {
-      directories = [
-        ".config/noctalia"
-        ".local/state/noctalia"
-      ];
-      cache.directories = [
-        ".cache/noctalia"
-        ".cache/quickshell"
-        ".cache/wal"
-      ];
-    };
   };
 }

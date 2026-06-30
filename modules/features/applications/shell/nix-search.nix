@@ -31,8 +31,5 @@
       };
     };
 
-    my.persist.home.cache.directories = [
-      ".cache/nix-search-tv"
-    ];
   };
 }

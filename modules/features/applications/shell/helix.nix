@@ -5,20 +5,10 @@
     ...
   }: {
     environment.systemPackages = [
-      inputs.self.packages.${pkgs.system}.helix
+      # inputs.self.packages.${pkgs.system}.helix
+      pkgs.helix
       pkgs.nnd
     ];
-
-    my.persist.home = {
-      directories = [
-        ".config/helix/themes"
-        ".local/share/helix"
-      ];
-
-      cache.directories = [
-        ".cache/helix"
-      ];
-    };
 
     hj.files = let
       dotsDir = config.impure-dir;

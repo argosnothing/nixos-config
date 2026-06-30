@@ -38,21 +38,6 @@
     helix = {
       url = "github:helix-editor/helix";
     };
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    ### Window Managers
-    niri.url = "github:sodiboo/niri-flake";
-    my-niri.url = "github:argosnothing/niri/hidden-workspaces-develop";
-    niri-scratchpad.url = "github:argosnothing/niri-scratchpad/hidden-workspaces";
-    ### Desktop Shells
-    noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ### Display Managers
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ### System Level
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -70,17 +55,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
     ### Meta
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    ### Containerization
-    nix-flatpak = {
-      url = "https://flakehub.com/f/gmodena/nix-flatpak/0.6.0.tar.gz";
     };
     ### Other
   };

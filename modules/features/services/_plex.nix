@@ -8,7 +8,6 @@
       };
     });
   in {
-    my.persist.root.directories = ["/var/lib/plex"];
     services = {
       plex = {
         enable = true;

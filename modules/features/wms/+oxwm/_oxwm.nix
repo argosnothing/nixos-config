@@ -77,6 +77,5 @@ in {
       enable = true;
       name = "Simp1e-Dark";
     };
-    my.persist.home.directories = [".config/oxwm" ".config/nitrogen"];
   };
 }

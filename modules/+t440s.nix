@@ -5,11 +5,9 @@
       bluetooth.enable = true;
     };
     imports = with config.flake.modules.nixos; [
-      budgie
       firefox
       gui-apps
 
-      impermanence
       uefi
       battery
       zfs

@@ -9,6 +9,5 @@
       uhk-agent
       uhk-udev-rules
     ];
-    my.persist.home.directories = [".config/uhk-agent"];
   };
 }

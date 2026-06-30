@@ -30,11 +30,5 @@
     #     };
     #   };
     # };
-    my.persist.home.directories = [
-      ".config/discord"
-      ".config/vencord"
-      ".config/vesktop"
-      ".config/dissent"
-    ];
   };
 }

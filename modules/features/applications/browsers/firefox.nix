@@ -9,11 +9,6 @@
       enableSSHSupport = true;
     };
     services.pcscd.enable = true;
-    my.persist.home.directories = [
-      ".config/mozilla"
-      ".local/share/firefoxpwa"
-    ];
-    my.persist.home.cache.directories = [".cache/mozilla"];
     my.default.associations."text/html" = lib.mkAfter ["firefox.desktop"];
     environment.systemPackages = with pkgs; [
       opensc

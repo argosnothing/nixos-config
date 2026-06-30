@@ -115,10 +115,5 @@
 
     networking.firewall.allowedTCPPorts = [8448 80 443 22];
 
-    my.persist.root.directories = [
-      "/var/lib/postgresql"
-      "/var/lib/matrix-synapse"
-      "/var/lib/acme"
-    ];
   };
 }

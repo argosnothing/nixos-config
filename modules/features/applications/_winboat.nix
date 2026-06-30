@@ -21,11 +21,6 @@
         enableOnBoot = true;
       };
     };
-    my.persist.home.directories = [
-      ".winboat"
-      ".config/winboat"
-      "Windows"
-    ];
     environment.systemPackages = [
       pkgs.winboat
       pkgs.freerdp

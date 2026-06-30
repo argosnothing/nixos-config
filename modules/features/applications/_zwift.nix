@@ -1,22 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.zwift = {config, ...}: {
     imports = [inputs.zwift.nixosModules.zwift];
-    my = {
-      persist = {
-        root = {
-          directories = [
-            "/var/lib/zwift"
-            "/opt/wine-devel"
-          ];
-          cache.directories = [
-            "/var/tmp"
-          ];
-        };
-        home.directories = [
-          ".local/share/containers"
-        ];
-      };
-    };
 
     services.xserver = {
       enable = true;

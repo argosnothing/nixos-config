@@ -7,11 +7,8 @@ in {
       discord
       firefox
       steam
-      nemo
       audacity
       spotify-player
-      spicetify
-      gajim
       obsidian
     ];
   in {
