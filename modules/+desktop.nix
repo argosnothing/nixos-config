@@ -18,8 +18,8 @@
       # hyprland-bundle
       # cosmic
       # cinnamon
-      niri-bundle
-      # plasma
+      # niri-bundle
+      plasma
       # xfce-bundle
 
       # Apps
