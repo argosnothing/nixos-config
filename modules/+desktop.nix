@@ -32,7 +32,7 @@
       bolt-launcher
       flatpak
       zed
-      remmina
+      rdp
 
       # Meta - no touchy
       impermanence
