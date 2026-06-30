@@ -78,7 +78,7 @@ in {
     default = {};
   };
 
-  flake = {
+  config.flake = {
     nixpkgs.overlays = [
       (_: super: {
         inherit (super.stdenv.hostPlatform) system;
@@ -174,5 +174,5 @@ in {
     };
   };
 
-  systems = import inputs.systems;
+  config.systems = import inputs.systems;
 }

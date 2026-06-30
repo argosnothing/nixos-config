@@ -45,7 +45,6 @@
 
         printf 'file://%s\n' "$TMP_GIF" | wl-copy --type text/uri-list
       '')
-
     ];
   };
 }

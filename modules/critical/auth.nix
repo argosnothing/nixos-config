@@ -48,7 +48,6 @@
           enable = true;
           enableSSHSupport = true;
         };
-
       }
       (lib.mkIf options.my.session.isDefined {
         services.displayManager = {

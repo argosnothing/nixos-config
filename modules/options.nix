@@ -12,7 +12,7 @@
     };
   };
 
-  flake.modules.nixos.options = {
+  config.flake.modules.nixos.options = {
     pkgs,
     lib,
     config,
@@ -64,49 +64,102 @@
             dimensions = mkOption {
               type = submodule {
                 options = {
-                  width = mkOption {type = int; example = 1920; default = 1920;};
-                  height = mkOption {type = int; example = 1080; default = 1080;};
+                  width = mkOption {
+                    type = int;
+                    example = 1920;
+                    default = 1920;
+                  };
+                  height = mkOption {
+                    type = int;
+                    example = 1080;
+                    default = 1080;
+                  };
                 };
               };
             };
             position = mkOption {
               type = submodule {
                 options = {
-                  x = mkOption {type = int; default = 0;};
-                  y = mkOption {type = int; default = 0;};
+                  x = mkOption {
+                    type = int;
+                    default = 0;
+                  };
+                  y = mkOption {
+                    type = int;
+                    default = 0;
+                  };
                 };
               };
             };
-            scale = mkOption {type = float; default = 1.0;};
-            refresh = mkOption {type = float; default = 60.0;};
+            scale = mkOption {
+              type = float;
+              default = 1.0;
+            };
+            refresh = mkOption {
+              type = float;
+              default = 60.0;
+            };
           };
         });
       };
 
       fonts = {
-        size = mkOption {type = int; default = 11;};
+        size = mkOption {
+          type = int;
+          default = 11;
+        };
         sizes = mkOption {
           default = {};
           type = submodule {
             options = {
-              applications = mkOption {type = int; default = size;};
-              terminal = mkOption {type = int; default = size;};
-              desktop = mkOption {type = int; default = size;};
-              popups = mkOption {type = int; default = size;};
+              applications = mkOption {
+                type = int;
+                default = size;
+              };
+              terminal = mkOption {
+                type = int;
+                default = size;
+              };
+              desktop = mkOption {
+                type = int;
+                default = size;
+              };
+              popups = mkOption {
+                type = int;
+                default = size;
+              };
             };
           };
         };
         mono = {
-          name = mkOption {default = "FiraCode Nerd Font"; type = str;};
-          package = mkOption {default = pkgs.nerd-fonts.fira-code; type = package;};
+          name = mkOption {
+            default = "FiraCode Nerd Font";
+            type = str;
+          };
+          package = mkOption {
+            default = pkgs.nerd-fonts.fira-code;
+            type = package;
+          };
         };
         sans = {
-          name = mkOption {default = "Noto Sans"; type = str;};
-          package = mkOption {default = pkgs.noto-fonts; type = package;};
+          name = mkOption {
+            default = "Noto Sans";
+            type = str;
+          };
+          package = mkOption {
+            default = pkgs.noto-fonts;
+            type = package;
+          };
         };
         serif = {
-          name = mkOption {default = "Noto Serif"; type = str;};
-          package = mkOption {default = pkgs.noto-fonts; type = package;};
+          name = mkOption {
+            default = "Noto Serif";
+            type = str;
+          };
+          package = mkOption {
+            default = pkgs.noto-fonts;
+            type = package;
+          };
         };
       };
 
@@ -138,8 +191,14 @@
 
     config = {
       my.fonts = {
-        serif = {name = "Alegreya Serif"; package = pkgs.google-fonts;};
-        mono = {name = "Cascadia Code"; package = pkgs.cascadia-code;};
+        serif = {
+          name = "Alegreya Serif";
+          package = pkgs.google-fonts;
+        };
+        mono = {
+          name = "Cascadia Code";
+          package = pkgs.cascadia-code;
+        };
       };
       fonts.packages = with pkgs; [
         mono.package

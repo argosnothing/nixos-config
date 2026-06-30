@@ -38,7 +38,6 @@ in {
         fsType = "zfs";
         neededForBoot = true;
       };
-
     };
     systemd.services = {
       # https://github.com/openzfs/zfs/issues/10891

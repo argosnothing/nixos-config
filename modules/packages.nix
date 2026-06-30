@@ -10,12 +10,12 @@
           rm $out/bin/hx
           makeWrapper ${inputs.helix.packages.${pkgs.system}.default}/bin/hx $out/bin/hx \
             --prefix PATH : ${pkgs.lib.makeBinPath (with pkgs; [
-              nixd
-              nil
-              lldb
-              gdb
-              bash-language-server
-            ])}
+            nixd
+            nil
+            lldb
+            gdb
+            bash-language-server
+          ])}
         '';
       };
 
@@ -34,9 +34,9 @@
           rm $out/bin/xfreerdp
           makeWrapper ${pkgs.freerdp}/bin/xfreerdp $out/bin/xfreerdp \
             --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [
-              pkgs.opensc
-              pkgs.p11-kit
-            ]}
+            pkgs.opensc
+            pkgs.p11-kit
+          ]}
         '';
       };
     };
