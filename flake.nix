@@ -15,7 +15,6 @@
       systems = ["x86_64-linux" "aarch64-linux"];
       imports = lists.flatten [
         (mkImport ./modules)
-        (mkImport ./packages)
       ];
       perSystem = {system, ...}: {
         _module.args.pkgs = import nixpkgs {
