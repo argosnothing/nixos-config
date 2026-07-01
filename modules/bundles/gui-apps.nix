@@ -10,6 +10,7 @@ in {
       audacity
     ];
   in {
+    environment.systemPackages = with pkgs; [spotify];
     imports = nixos-modules;
   };
 }
